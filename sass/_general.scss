@@ -1,0 +1,224 @@
+$gray: #C8C8C8;
+$pmts-blue: #3e94cc;
+$logout-red: #C10000;
+$darken-gray: darken($gray, 40%);
+$header-width : 30%;
+$main-width: (100% - $header-width);
+$loggedin-header-width: 20%;
+$loggedin-main-width: (100% - $loggedin-header-width);
+$header-padding: 50px;
+
+%clearfix {
+	clear: both;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $body-font-family;
+	display: flex;
+	font-size: 16px;
+	line-height: 1.6;
+	background: lighten($pmts-blue, 10%);
+
+	background: {
+		image: url(../images/certificate-background.jpg);
+		size: cover;
+		position: top right;
+	}
+
+	min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $header-font-family;
+}
+
+header {
+	width: $header-width;
+	padding: $header-padding;
+	background: white;
+	color: $darken-gray;
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+}
+
+.logo {
+	background: {
+		image: url(../images/pmts-logo-certificate.png);
+		size: cover;
+		position: right top;
+		repeat: no-repeat;
+	}
+
+	width: 140px;
+	height: 140px;
+	margin: 0 auto 45px;
+}
+
+.login-form {
+	width: 100%;
+	margin: 0 auto;
+}
+
+form {
+	margin-bottom: 21px;
+
+	label {
+		display: block;
+		font-size: 14px;
+		padding-bottom: 8px;
+	}
+
+	input {
+		border: none;
+		background-color: $gray;
+		width: 100%;
+		height: 45px;
+		margin: 0 auto 28px;
+		padding: 12px;
+	}
+
+
+	.rememberme {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+
+		label {
+			margin-top: 12px;
+			display: block;
+		}
+
+		input[type="submit"] {
+			width: 100px;
+			height: 40px;
+			margin: 0;
+			background: $pmts-blue;
+			color: white;
+
+		}
+	}
+
+	input[type="checkbox"] {
+		width: 13px;
+		height: 13px;
+		top: -1px;
+		
+
+		margin-right: 10px;
+	}
+}
+
+.copyright {
+
+	@extend .login-form;
+	@extend %clearfix;
+
+	font-size: 14px;
+	line-height: 1.6;
+	margin-top: 40px;
+}
+
+.main {
+	color: white;
+	padding: 30px 60px 0;
+	width: $main-width;
+	display: flex;
+	align-content: stretch;
+
+	h1 {
+		text-align: center;
+	}
+}
+
+.logged-in {
+	
+	header {
+		width: $loggedin-header-width;
+		justify-content: flex-start;
+		padding: 50px 0;
+
+		h3 {
+			text-align: center;
+			margin-bottom: 16px;
+		}
+	}
+
+	.main {
+		width: $loggedin-main-width;
+	}
+}
+
+.main-content {
+	width: 90%;
+	margin: 0 auto;
+	background: {
+		image: url('../images/pmts-watermark-logo.png');
+		color: white;
+		size: cover;
+		repeat: no-repeat;
+		position: left top;
+	};
+	padding: 50px 0 80px;
+	color: $darken-gray;
+	margin-top: 80px;
+	box-shadow: 0 8px 40px transparentize($darken-gray, 0.6);
+
+	h1 {
+		text-align: center;
+		margin-bottom: 48px;
+	}
+
+	p {
+		display: block;
+		width: 74%;
+		margin: 0 auto 42px;
+	}
+}
+
+.logout {
+	text-align: center;
+
+	a { 
+		padding: 8px;
+		color: $logout-red; 
+		text-decoration: none; 
+	}
+}
+
+ul.nav {
+	list-style: none;
+	width: 100%;
+	padding: 0;
+	border-top: 1px solid darken($gray, 10%);
+	box-shadow: 0 0 12px transparentize(gray, 0.6);
+
+	li a {
+		display: block;
+		color: $darken-gray;
+		padding: 12px 24px;
+		text-decoration: none;
+
+		border-bottom: 1px solid darken($gray, 10%);
+
+		&:hover {
+			background: darken($gray, 10%);
+			color: white;
+		}
+
+		&.deactivated {
+			color: $gray;
+
+			&:hover {
+				background: white;
+			}
+		}
+	}
+}

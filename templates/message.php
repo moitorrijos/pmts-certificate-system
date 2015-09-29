@@ -1,0 +1,1 @@
+<h1><?php echo bloginfo('title'); ?></h1>
