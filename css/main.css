@@ -381,7 +381,8 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: stretch; }
+  align-items: stretch;
+  box-shadow: 2px 0 12px rgba(98, 98, 98, 0.6); }
 
 .logo {
   background-image: url(../images/pmts-logo-certificate.png);

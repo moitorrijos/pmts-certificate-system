@@ -47,6 +47,8 @@ header {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: stretch;
+
+	box-shadow: 2px 0 12px transparentize($darken-gray, .4);
 }
 
 .logo {
