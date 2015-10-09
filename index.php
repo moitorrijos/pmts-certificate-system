@@ -1,9 +1,5 @@
-<?php get_header(); ?>
+<?php get_header();
 
-	<div class="main">
+is_user_logged_in() ? get_template_part('templates/the-naked-loop') : get_template_part('templates/the_message');
 
-		<?php is_user_logged_in() ? get_template_part('templates/the-naked-loop') : get_template_part('templates/the_message'); ?>
-
-	</div>
-
-<?php get_footer(); ?>
+get_footer(); ?>

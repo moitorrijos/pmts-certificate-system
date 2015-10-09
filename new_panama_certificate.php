@@ -1,14 +1,16 @@
 <?php 
 
 /**
- * Template Name: Certificates Page
+ * Template Name: New Panama Certificate
  */
 
 if( is_user_logged_in() ) {
+	
+	acf_form_head();
 
 	get_header();
 
-	get_template_part( 'templates/certifcate_page_loop' );
+	get_template_part( 'templates/new_panama_certificate_loop' );
 
 	get_footer();
 

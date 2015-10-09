@@ -384,6 +384,9 @@ header {
   align-items: stretch;
   box-shadow: 2px 0 12px rgba(98, 98, 98, 0.6); }
 
+.fa.fa {
+  font-size: 0.9em; }
+
 .logo {
   background-image: url(../images/pmts-logo-certificate.png);
   background-size: cover;
@@ -444,14 +447,45 @@ form {
     text-align: center; }
 
 .logged-in header {
-  width: 20%;
+  width: 25%;
   justify-content: flex-start;
   padding: 50px 0; }
   .logged-in header h3 {
     text-align: center;
     margin-bottom: 16px; }
 .logged-in .main {
-  width: 80%; }
+  width: 75%; }
+
+.buttons {
+  margin: 16px 0 48px; }
+
+.align-right {
+  text-align: right; }
+
+a.logout-button, a.new-certificate-button, a.download-button, .acf-form-submit.acf-form-submit input[type="submit"] {
+  padding: 4px 22px;
+  text-decoration: none;
+  color: white;
+  margin-left: 8px;
+  display: inline-block; }
+
+a.logout-button {
+  background-color: #C10000; }
+  a.logout-button:hover {
+    background-color: #a80000; }
+
+a.new-certificate-button {
+  background-color: #49C943; }
+  a.new-certificate-button:hover {
+    background-color: #3cbc36; }
+
+a.download-button {
+  background-color: #D37A4F; }
+  a.download-button:hover {
+    background-color: #ce6b3b; }
+
+a.back-link {
+  color: #D37A4F; }
 
 .main-content {
   width: 90%;
@@ -461,7 +495,7 @@ form {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left top;
-  padding: 50px 0 80px;
+  padding: 50px 40px 80px;
   color: #626262;
   margin-top: 80px;
   box-shadow: 0 8px 40px rgba(98, 98, 98, 0.4); }
@@ -475,27 +509,53 @@ form {
 
 .logout {
   text-align: center; }
-  .logout a {
-    padding: 8px;
-    color: #C10000;
-    text-decoration: none; }
 
 ul.nav {
   list-style: none;
   width: 100%;
   padding: 0;
-  border-top: 1px solid #afafaf;
-  box-shadow: 0 0 12px rgba(128, 128, 128, 0.4); }
+  border-top: 1px solid #C8C8C8; }
   ul.nav li a {
     display: block;
     color: #626262;
-    padding: 12px 24px;
+    padding: 12px 24px 12px 48px;
     text-decoration: none;
-    border-bottom: 1px solid #afafaf; }
+    border-bottom: 1px solid #C8C8C8; }
     ul.nav li a:hover {
-      background: #afafaf;
+      background: #C8C8C8;
       color: white; }
     ul.nav li a.deactivated {
       color: #C8C8C8; }
       ul.nav li a.deactivated:hover {
         background: white; }
+
+.acf-field .acf-label label {
+  font-size: 16px;
+  line-height: 1.6; }
+
+form input {
+  background: transparent;
+  border: 1px solid #C8C8C8;
+  padding: 18px 24px; }
+
+.acf-field input[type="text"],
+.acf-field input[type="password"],
+.acf-field input[type="number"],
+.acf-field input[type="search"],
+.acf-field input[type="email"],
+.acf-field input[type="url"] {
+  height: 40px; }
+
+.acf-form-submit.acf-form-submit input[type="submit"] {
+  padding: 8px 12px;
+  color: white;
+  display: block;
+  background-color: #49C943;
+  width: 200px;
+  margin-top: 32px; }
+
+.acf-fields > .acf-field {
+  padding: 0;
+  margin-bottom: 32px; }
+
+/*# sourceMappingURL=main.css.map */

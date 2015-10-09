@@ -1,10 +1,13 @@
 $gray: #C8C8C8;
 $pmts-blue: #3e94cc;
 $logout-red: #C10000;
+$cool-green: #49C943;
+$cool-yellow: #D3D13A;
+$cool-orange: #D37A4F;
 $darken-gray: darken($gray, 40%);
 $header-width : 30%;
 $main-width: (100% - $header-width);
-$loggedin-header-width: 20%;
+$loggedin-header-width: 25%;
 $loggedin-main-width: (100% - $loggedin-header-width);
 $header-padding: 50px;
 
@@ -49,6 +52,10 @@ header {
 	align-items: stretch;
 
 	box-shadow: 2px 0 12px transparentize($darken-gray, .4);
+}
+
+.fa.fa {
+	font-size: 0.9em;
 }
 
 .logo {
@@ -158,6 +165,53 @@ form {
 	}
 }
 
+.buttons {
+	margin: 16px 0 48px;
+}
+
+.align-right {
+	text-align: right;
+}
+
+%cool-button {
+	padding: 4px 22px;
+	text-decoration: none;
+	color: white;
+	margin-left: 8px;
+	display: inline-block;
+}
+
+a.logout-button {
+	@extend %cool-button;
+	background-color: $logout-red;
+
+	&:hover {
+		background-color: darken($logout-red, 5%);
+	}
+}
+
+a.new-certificate-button {
+	@extend %cool-button;
+	background-color: $cool-green;
+
+	&:hover {
+		background-color: darken($cool-green, 5%);
+	}
+}
+
+a.download-button {
+	@extend %cool-button;
+	background-color: $cool-orange;
+
+	&:hover {
+		background-color: darken($cool-orange, 5%);
+	}
+}
+
+a.back-link {
+	color: $cool-orange;
+}
+
 .main-content {
 	width: 90%;
 	margin: 0 auto;
@@ -168,7 +222,7 @@ form {
 		repeat: no-repeat;
 		position: left top;
 	};
-	padding: 50px 0 80px;
+	padding: 50px 40px 80px;
 	color: $darken-gray;
 	margin-top: 80px;
 	box-shadow: 0 8px 40px transparentize($darken-gray, 0.6);
@@ -187,31 +241,24 @@ form {
 
 .logout {
 	text-align: center;
-
-	a { 
-		padding: 8px;
-		color: $logout-red; 
-		text-decoration: none; 
-	}
 }
 
 ul.nav {
 	list-style: none;
 	width: 100%;
 	padding: 0;
-	border-top: 1px solid darken($gray, 10%);
-	box-shadow: 0 0 12px transparentize(gray, 0.6);
+	border-top: 1px solid $gray;
 
 	li a {
 		display: block;
 		color: $darken-gray;
-		padding: 12px 24px;
+		padding: 12px 24px 12px 48px;
 		text-decoration: none;
 
-		border-bottom: 1px solid darken($gray, 10%);
+		border-bottom: 1px solid $gray;
 
 		&:hover {
-			background: darken($gray, 10%);
+			background: $gray;
 			color: white;
 		}
 
@@ -223,4 +270,42 @@ ul.nav {
 			}
 		}
 	}
+}
+
+.acf-field .acf-label label {
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+form input {
+	background: transparent;
+	border: 1px solid $gray;
+	padding: 18px 24px;
+}
+
+.acf-field input[type="text"],
+.acf-field input[type="password"],
+.acf-field input[type="number"],
+.acf-field input[type="search"],
+.acf-field input[type="email"],
+.acf-field input[type="url"] {
+	height: 16px * 2.5;
+}
+
+.acf-form-submit.acf-form-submit {
+
+	input[type="submit"] {
+		@extend %cool-button;
+		padding: 8px 12px;
+		color: white;
+		display: block;
+		background-color: $cool-green;
+		width: 200px;
+		margin-top: 32px;
+	}
+}
+
+.acf-fields > .acf-field {
+	padding: 0;
+	margin-bottom: 16px * 2;
 }

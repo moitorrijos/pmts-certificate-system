@@ -1,13 +1,17 @@
-<div class="main-content">
+<div class="main">
 
-	<?php if( have_posts() ) : while( have_posts() ) : the_post();
+	<div class="main-content">
 
-	the_title('<h1>', '</h1>'); the_content(); endwhile; else :
+		<?php if( have_posts() ) : while( have_posts() ) : the_post();
 
-	get_template_part('templates/404_message');
+		the_title('<h1>', '</h1>'); the_content(); endwhile; else :
 
-	endif;
+		get_template_part('templates/404_message');
 
-	?>
+		endif;
+
+		?>
+
+	</div>
 
 </div>
