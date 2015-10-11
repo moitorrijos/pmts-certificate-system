@@ -165,7 +165,6 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -294,8 +293,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -360,6 +357,9 @@ th {
 
 body {
   font-family: "Raleway", Verdana, sans-serif;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   font-size: 16px;
   line-height: 1.6;
@@ -374,14 +374,27 @@ h1, h2, h3, h4, h5, h6 {
 
 header {
   width: 30%;
-  padding: 50px;
+  padding: 40px;
   background: white;
   color: #626262;
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   box-shadow: 2px 0 12px rgba(98, 98, 98, 0.6); }
 
 .fa.fa {
@@ -415,8 +428,14 @@ form {
     padding: 12px; }
   form .rememberme {
     position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between; }
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
     form .rememberme label {
       margin-top: 12px;
       display: block; }
@@ -439,22 +458,30 @@ form {
 
 .main {
   color: white;
-  padding: 30px 60px 0;
+  padding: 10px 60px 0;
   width: 70%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-content: stretch; }
+  -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+          align-content: stretch; }
   .main h1 {
     text-align: center; }
 
 .logged-in header {
-  width: 25%;
-  justify-content: flex-start;
+  width: 22%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding: 50px 0; }
   .logged-in header h3 {
     text-align: center;
     margin-bottom: 16px; }
 .logged-in .main {
-  width: 75%; }
+  width: 78%; }
 
 .buttons {
   margin: 16px 0 48px; }
@@ -495,7 +522,7 @@ a.back-link {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left top;
-  padding: 50px 40px 80px;
+  padding: 50px 70px;
   color: #626262;
   margin-top: 80px;
   box-shadow: 0 8px 40px rgba(98, 98, 98, 0.4); }
@@ -533,10 +560,15 @@ ul.nav {
   font-size: 16px;
   line-height: 1.6; }
 
-form input {
-  background: transparent;
-  border: 1px solid #C8C8C8;
-  padding: 18px 24px; }
+form.acf-form input {
+  background: white;
+  padding: 18px 24px;
+  border: 1px solid #bbbbbb; }
+form.acf-form .course-date {
+  width: 50%;
+  float: left; }
+form.acf-form .instructor-field {
+  clear: both; }
 
 .acf-field input[type="text"],
 .acf-field input[type="password"],
@@ -552,7 +584,7 @@ form input {
   display: block;
   background-color: #49C943;
   width: 200px;
-  margin-top: 32px; }
+  margin: 40px 0; }
 
 .acf-fields > .acf-field {
   padding: 0;

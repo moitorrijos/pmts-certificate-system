@@ -7,9 +7,9 @@ $cool-orange: #D37A4F;
 $darken-gray: darken($gray, 40%);
 $header-width : 30%;
 $main-width: (100% - $header-width);
-$loggedin-header-width: 25%;
+$loggedin-header-width: 22%;
 $loggedin-main-width: (100% - $loggedin-header-width);
-$header-padding: 50px;
+$header-padding: 40px;
 
 %clearfix {
 	clear: both;
@@ -137,7 +137,7 @@ form {
 
 .main {
 	color: white;
-	padding: 30px 60px 0;
+	padding: 10px 60px 0;
 	width: $main-width;
 	display: flex;
 	align-content: stretch;
@@ -222,7 +222,7 @@ a.back-link {
 		repeat: no-repeat;
 		position: left top;
 	};
-	padding: 50px 40px 80px;
+	padding: 50px 70px;
 	color: $darken-gray;
 	margin-top: 80px;
 	box-shadow: 0 8px 40px transparentize($darken-gray, 0.6);
@@ -277,10 +277,22 @@ ul.nav {
 	line-height: 1.6;
 }
 
-form input {
-	background: transparent;
-	border: 1px solid $gray;
-	padding: 18px 24px;
+form.acf-form { 
+	
+	input {
+		background: white;
+		padding: 18px 24px;
+		border: 1px solid darken($gray, 5%);
+	}
+
+	.course-date {
+		width: 50%;
+		float: left;
+	}
+
+	.instructor-field {
+		clear: both;
+	}
 }
 
 .acf-field input[type="text"],
@@ -301,7 +313,7 @@ form input {
 		display: block;
 		background-color: $cool-green;
 		width: 200px;
-		margin-top: 32px;
+		margin: 40px 0;
 	}
 }
 
