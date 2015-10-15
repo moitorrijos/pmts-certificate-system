@@ -19,9 +19,7 @@
 
 			<input type="submit" name="wp-submit" id="lwa_wp-submit" value="<?php esc_attr_e('Log In','login-with-ajax'); ?>" />
 			<input type="hidden" name="login-with-ajax" value="login" />
-			<?php if( !empty($lwa_data['redirect']) ): ?>
-			<input type="hidden" name="redirect_to" value="<?php echo esc_url($lwa_data['redirect']); ?>" />
-			<?php endif; ?>
+			<input type="hidden" name="redirect_to" value="<?php echo home_url('panama-certificates'); ?>" />
 		</div>
 
 	</form>

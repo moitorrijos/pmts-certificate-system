@@ -2,13 +2,14 @@
 	
 	<div class="main-content">
 		
+		<div class="buttons">
+			<a href="<?php echo home_url('panama-certificates'); ?>" class="back-link"><i class="fa fa-backward"></i>&nbsp; Back to Certificates Table</a>
+		</div>
+
 		<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 
 		<?php the_title('<h1>', '</h1>'); ?>
 
-		<div class="buttons">
-			<a href="<?php echo home_url('panama-certificates'); ?>" class="back-link"><i class="fa fa-backward"></i>&nbsp; Back to Certificates Table</a>
-		</div>
 
 		<?php endwhile; endif;
 
@@ -22,6 +23,7 @@
 			),
 			'submit_value' => __("Create Certificate", 'certificate-system'),
 			'updated_message' => __("Certificate Created", 'certificate-system'),
+			'return' => '%post_url%',
 		);
 
 
@@ -33,12 +35,3 @@
 	</div>
 
 </div>
-
-<script type="text/javascript">
-(function($) {
-	
-	// setup fields
-	acf.do_action('append', $('#popup-id'));
-	
-})(jQuery);	
-</script>

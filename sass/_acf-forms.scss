@@ -1,0 +1,36 @@
+.acf-form input[type="text"],
+.acf-form input[type="password"],
+.acf-form input[type="number"],
+.acf-form input[type="search"],
+.acf-form input[type="email"],
+.acf-form input[type="url"] {
+	height: 16px * 2.5;
+	padding: 8px 15px;
+}
+
+.acf-form-submit.acf-form-submit {
+
+	input[type="submit"] {
+		@extend %cool-button;
+		padding: 8px 12px;
+		font-size: 1.1rem;
+		color: white;
+		display: block;
+		background-color: $cool-green;
+		width: 200px;
+		margin: 40px 0;
+	}
+}
+
+.acf-fields > .acf-field {
+	padding: 0;
+	margin-bottom: 16px * 2;
+	border-top: none;
+}
+
+.acf-field.acf-field {
+	border-bottom: 1px solid lighten($gray, 10%);
+	border-top-width: 0;
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+}

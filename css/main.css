@@ -349,11 +349,20 @@ td,
 th {
   padding: 0; }
 
+/**
+ * Colors
+ */
 .copyright {
   clear: both; }
 
 * {
   box-sizing: border-box; }
+
+html {
+  font-size: 14px; }
+  @media only screen and (max-width: 1700px) {
+    html {
+      font-size: 12px; } }
 
 body {
   font-family: "Raleway", Verdana, sans-serif;
@@ -361,22 +370,22 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 16px;
   line-height: 1.6;
   background: #66aad7;
   background-image: url(../images/certificate-background.jpg);
   background-size: cover;
   background-position: top right;
+  height: initial;
   min-height: 100vh; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", Geneva, Verdana, sans-serif; }
 
 header {
-  width: 30%;
+  width: 25%;
   padding: 40px;
   background: white;
-  color: #626262;
+  color: #556a7b;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -395,19 +404,17 @@ header {
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  box-shadow: 2px 0 12px rgba(98, 98, 98, 0.6); }
+  box-shadow: 2px 0 12px rgba(85, 106, 123, 0.6); }
 
 .fa.fa {
-  font-size: 0.9em; }
+  font-size: 0.9rem; }
 
 .logo {
-  background-image: url(../images/pmts-logo-certificate.png);
-  background-size: cover;
-  background-position: right top;
-  background-repeat: no-repeat;
-  width: 140px;
-  height: 140px;
+  width: 60%;
+  max-width: 180px;
   margin: 0 auto 45px; }
+  .logo > img {
+    width: 100%; }
 
 .login-form, .copyright {
   width: 100%;
@@ -417,11 +424,11 @@ form {
   margin-bottom: 21px; }
   form label {
     display: block;
-    font-size: 14px;
+    font-size: 1rem;
     padding-bottom: 8px; }
   form input {
     border: none;
-    background-color: #C8C8C8;
+    background-color: #C5CFD7;
     width: 100%;
     height: 45px;
     margin: 0 auto 28px;
@@ -452,14 +459,14 @@ form {
     margin-right: 10px; }
 
 .copyright {
-  font-size: 14px;
+  font-size: 0.9rem;
   line-height: 1.6;
   margin-top: 40px; }
 
 .main {
   color: white;
   padding: 10px 60px 0;
-  width: 70%;
+  width: 75%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -471,17 +478,20 @@ form {
     text-align: center; }
 
 .logged-in header {
-  width: 22%;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  width: 15%;
   padding: 50px 0; }
   .logged-in header h3 {
-    text-align: center;
+    padding-left: 22px;
     margin-bottom: 16px; }
 .logged-in .main {
-  width: 78%; }
+  width: 85%; }
+
+.navigation {
+  margin-bottom: 48px; }
 
 .buttons {
   margin: 16px 0 48px; }
@@ -522,10 +532,13 @@ a.back-link {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left top;
-  padding: 50px 70px;
-  color: #626262;
+  padding: 20px 50px;
+  color: #556a7b;
   margin-top: 80px;
-  box-shadow: 0 8px 40px rgba(98, 98, 98, 0.4); }
+  box-shadow: 0 8px 40px rgba(85, 106, 123, 0.4); }
+  @media only screen and (max-width: 1700px) {
+    .main-content {
+      width: 100%; } }
   .main-content h1 {
     text-align: center;
     margin-bottom: 48px; }
@@ -535,51 +548,56 @@ a.back-link {
     margin: 0 auto 42px; }
 
 .logout {
-  text-align: center; }
+  text-align: center;
+  margin: 0; }
+  .logout a {
+    margin: 0; }
 
 ul.nav {
   list-style: none;
   width: 100%;
   padding: 0;
-  border-top: 1px solid #C8C8C8; }
+  border-top: 1px solid #C5CFD7; }
   ul.nav li a {
     display: block;
-    color: #626262;
-    padding: 12px 24px 12px 48px;
+    color: #556a7b;
+    padding: 12px 24px 12px 22px;
     text-decoration: none;
-    border-bottom: 1px solid #C8C8C8; }
+    border-bottom: 1px solid #C5CFD7; }
     ul.nav li a:hover {
-      background: #C8C8C8;
+      background: #C5CFD7;
       color: white; }
     ul.nav li a.deactivated {
-      color: #C8C8C8; }
+      color: #C5CFD7; }
       ul.nav li a.deactivated:hover {
         background: white; }
 
 .acf-field .acf-label label {
-  font-size: 16px;
+  font-size: 1.2rem;
   line-height: 1.6; }
 
 form.acf-form input {
   background: white;
   padding: 18px 24px;
-  border: 1px solid #bbbbbb; }
+  border: 1px solid #b6c3cd; }
 form.acf-form .course-date {
   width: 50%;
   float: left; }
 form.acf-form .instructor-field {
   clear: both; }
 
-.acf-field input[type="text"],
-.acf-field input[type="password"],
-.acf-field input[type="number"],
-.acf-field input[type="search"],
-.acf-field input[type="email"],
-.acf-field input[type="url"] {
-  height: 40px; }
+.acf-form input[type="text"],
+.acf-form input[type="password"],
+.acf-form input[type="number"],
+.acf-form input[type="search"],
+.acf-form input[type="email"],
+.acf-form input[type="url"] {
+  height: 40px;
+  padding: 8px 15px; }
 
 .acf-form-submit.acf-form-submit input[type="submit"] {
   padding: 8px 12px;
+  font-size: 1.1rem;
   color: white;
   display: block;
   background-color: #49C943;
@@ -588,6 +606,42 @@ form.acf-form .instructor-field {
 
 .acf-fields > .acf-field {
   padding: 0;
-  margin-bottom: 32px; }
+  margin-bottom: 32px;
+  border-top: none; }
+
+.acf-field.acf-field {
+  border-bottom: 1px solid #e3e8ec;
+  border-top-width: 0;
+  padding-bottom: 40px;
+  margin-bottom: 40px; }
+
+table {
+  font-size: 0.9rem;
+  width: 100%; }
+  table thead > tr {
+    background-color: #3e94cc; }
+  table th {
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    border: 1px solid white; }
+    table th.date {
+      width: 10%; }
+    table th.name, table th.instructor {
+      width: 20%; }
+  table tr {
+    background: white; }
+    table tr:nth-child(even) {
+      background: #f2f4f6; }
+    table tr:hover {
+      background: #e3e8ec; }
+  table td {
+    border: 1px solid #98aab8;
+    padding: 8px; }
+
+@media print {
+  .no-print {
+    display: none; } }
 
 /*# sourceMappingURL=main.css.map */

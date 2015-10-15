@@ -1,0 +1,42 @@
+table {
+	font-size: 0.9rem;
+	width: 100%;
+
+	thead > tr {
+		background-color: $pmts-blue;
+	}
+
+	th {
+		font-weight: normal;
+		color: white;
+		text-align: center;
+		padding: 12px 0;
+		border: 1px solid white;
+
+		&.date {
+			width: 10%;
+		}
+
+		&.name, &.instructor {
+			width: 20%;
+		}
+	}
+
+	tr {
+		background: white;
+
+		&:nth-child(even) {
+			background: lighten($gray, 15%);
+		}
+
+		&:hover {
+			background: lighten($gray, 10%);
+		}
+	}
+
+	td {
+		border: 1px solid darken($gray, 15%);
+		padding: 8px;
+	}
+
+}

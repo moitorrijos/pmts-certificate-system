@@ -8,8 +8,10 @@
 
 <body <?php body_class(); ?> >
 
-<header>
-	<div class="logo"></div>
+<header class="no-print">
+	<div class="logo">
+		<img src="<?php echo IMAGESPATH . '/pmts-logo-certificate.png'; ?>" />
+	</div>
 
 	<?php if ( is_user_logged_in() ) {
 
