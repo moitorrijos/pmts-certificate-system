@@ -4,28 +4,28 @@
 		
 		<?php
 
-		if( have_posts() ) : while( have_posts() ) : the_post();
-		the_title('<h1>', '</h1>'); the_content(); endwhile;
-		endif; wp_reset_query();
+			if( have_posts() ) : while( have_posts() ) : the_post();
+			the_title('<h1>', '</h1>'); the_content(); endwhile;
+			endif; wp_reset_query();
 
 		?>
 
 		<div class="buttons align-right">
-			<a href="#0" class="download-button"><i class="fa fa-download"></i>&nbsp; Download Excel</a>
+			<a href="#0" class="download-xls-button"><i class="fa fa-download"></i>&nbsp; Download Excel</a>
 			<a href="<?php echo home_url('new-panama-certificate'); ?>" class="new-certificate-button"><i class="fa fa-plus-square"></i>&nbsp; Create New Certificate</a>
 		</div>
 
-		<table>
+		<table class="download-xls-table">
 			<thead>
 				<tr>
-					<th class="name">Participant's Name</th>
+					<th class="short-title">Participant's Name</th>
 					<th>Passport/ID No.</th>
 					<th>Course taken</th>
-					<th class="date">Start Date</th>
-					<th class="date">End Date</th>
-					<th class="instructor">Instructor</th>
+					<th class="number">Start Date</th>
+					<th class="number">End Date</th>
+					<th class="short-title">Instructor</th>
 					<th>Place of training</th>
-					<th class="date">Date of Issue</th>
+					<th class="number">Date of Issue</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -50,14 +50,14 @@
 				<?php endwhile; else : for ($i = 0; $i < 10; $i++) : ?>
 
 				<tr>
-					<td> data +++ </td>
-					<td> data +++ </td>
-					<td> data +++ </td>
-					<td> data +++ </td>
-					<td> data +++ </td>
-					<td> data +++ </td>
-					<td> data +++ </td>
-					<td> data +++ </td>
+					<td> data goes here. </td>
+					<td> data goes here. </td>
+					<td> data goes here. </td>
+					<td> data </td>
+					<td> data </td>
+					<td> data goes here. </td>
+					<td> data goes here. </td>
+					<td> data </td>
 				</tr>
 
 				<?php endfor; endif; ?>

@@ -474,8 +474,12 @@ form {
   -webkit-align-content: stretch;
       -ms-flex-line-pack: stretch;
           align-content: stretch; }
-  .main h1 {
-    text-align: center; }
+  .main > h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px #6a8499; }
 
 .logged-in header {
   -webkit-box-pack: start;
@@ -499,7 +503,7 @@ form {
 .align-right {
   text-align: right; }
 
-a.logout-button, a.new-certificate-button, a.download-button, .acf-form-submit.acf-form-submit input[type="submit"] {
+a.logout-button, a.new-certificate-button, .download-xls-button, .acf-form-submit.acf-form-submit input[type="submit"] {
   padding: 4px 22px;
   text-decoration: none;
   color: white;
@@ -516,9 +520,9 @@ a.new-certificate-button {
   a.new-certificate-button:hover {
     background-color: #3cbc36; }
 
-a.download-button {
+.download-xls-button {
   background-color: #D37A4F; }
-  a.download-button:hover {
+  .download-xls-button:hover {
     background-color: #ce6b3b; }
 
 a.back-link {
@@ -595,14 +599,21 @@ form.acf-form .instructor-field {
   height: 40px;
   padding: 8px 15px; }
 
-.acf-form-submit.acf-form-submit input[type="submit"] {
-  padding: 8px 12px;
-  font-size: 1.1rem;
-  color: white;
-  display: block;
-  background-color: #49C943;
-  width: 200px;
-  margin: 40px 0; }
+.acf-form-submit.acf-form-submit {
+  width: 400px;
+  position: relative; }
+  .acf-form-submit.acf-form-submit input[type="submit"] {
+    padding: 8px 12px;
+    font-size: 1.1rem;
+    color: white;
+    display: block;
+    background-color: #49C943;
+    width: 200px; }
+  .acf-form-submit.acf-form-submit span.acf-spinner {
+    position: absolute;
+    top: 12px;
+    left: 30px;
+    background: transparent url(../images/spinner.gif) no-repeat 50% 50%; }
 
 .acf-fields > .acf-field {
   padding: 0;
@@ -615,6 +626,15 @@ form.acf-form .instructor-field {
   padding-bottom: 40px;
   margin-bottom: 40px; }
 
+.updated {
+  padding: 10px 20px;
+  background: #bcebba;
+  border: 1px solid #49C943;
+  width: 30%;
+  margin-bottom: 32px; }
+  .updated p {
+    margin: 0; }
+
 table {
   font-size: 0.9rem;
   width: 100%; }
@@ -626,19 +646,31 @@ table {
     text-align: center;
     padding: 12px 0;
     border: 1px solid white; }
-    table th.date {
-      width: 10%; }
-    table th.name, table th.instructor {
+    table th.short-number {
+      width: 5%; }
+    table th.number {
+      width: 7%; }
+    table th.short-title {
       width: 20%; }
+    table th.title {
+      width: 40%; }
   table tr {
     background: white; }
     table tr:nth-child(even) {
       background: #f2f4f6; }
-    table tr:hover {
-      background: #e3e8ec; }
+  table tbody > tr:hover {
+    background: #e3e8ec; }
   table td {
     border: 1px solid #98aab8;
     padding: 8px; }
+    table td.centered {
+      text-align: center; }
+    table td a {
+      color: #286a96;
+      text-decoration: none;
+      display: block; }
+      table td a:hover {
+        color: #225c82; }
 
 @media print {
   .no-print {

@@ -13,12 +13,20 @@ table {
 		padding: 12px 0;
 		border: 1px solid white;
 
-		&.date {
-			width: 10%;
+		&.short-number {
+			width: 5%;
 		}
 
-		&.name, &.instructor {
+		&.number {
+			width: 7%;
+		}
+
+		&.short-title {
 			width: 20%;
+		}
+
+		&.title {
+			width: 40%;
 		}
 	}
 
@@ -28,15 +36,29 @@ table {
 		&:nth-child(even) {
 			background: lighten($gray, 15%);
 		}
-
-		&:hover {
-			background: lighten($gray, 10%);
-		}
+	}
+	
+	tbody > tr:hover {
+		background: lighten($gray, 10%);
 	}
 
 	td {
 		border: 1px solid darken($gray, 15%);
 		padding: 8px;
+		
+		&.centered {
+			text-align: center;
+		}
+
+		a {
+			color: darken($pmts-blue, 15%);
+			text-decoration: none;
+			display: block;
+
+			&:hover {
+				color: darken($pmts-blue, 20%);
+			}
+		}
 	}
 
 }

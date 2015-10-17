@@ -28,7 +28,7 @@
 			</a>
 		</li>
 		<li>
-			<a href="#0" class="deactivated">
+			<a href="<?php echo home_url( 'courses-list' ); ?>">
 				<?php echo $graduation_fa; ?>&nbsp; Courses
 			</a>
 		</li>

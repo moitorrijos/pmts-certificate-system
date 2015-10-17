@@ -9,6 +9,9 @@
 }
 
 .acf-form-submit.acf-form-submit {
+	
+	width: 400px;
+	position: relative;
 
 	input[type="submit"] {
 		@extend %cool-button;
@@ -18,7 +21,13 @@
 		display: block;
 		background-color: $cool-green;
 		width: 200px;
-		margin: 40px 0;
+	}
+
+	span.acf-spinner {
+		position: absolute; 
+		top: 12px;
+		left: 30px;
+	    background: transparent url(../images/spinner.gif) no-repeat 50% 50%;
 	}
 }
 
@@ -33,4 +42,17 @@
 	border-top-width: 0;
 	padding-bottom: 40px;
 	margin-bottom: 40px;
+}
+
+.updated {
+	padding: 10px 20px;
+	background: lighten($cool-green, 30%);
+	border: 1px solid $cool-green;
+	width: 30%;
+
+	margin-bottom: 32px;
+
+	p {
+		margin: 0;
+	}
 }
