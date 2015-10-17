@@ -9,9 +9,9 @@
 
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-			the_title( '<h1>', '</h1>' );
 
 			$course_options = array(
+				'post_title' => true,
 				'updated_message' => '<i class="fa fa-check"></i> &nbsp; Course Updated',
 			);
 

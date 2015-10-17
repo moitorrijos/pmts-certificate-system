@@ -33,7 +33,7 @@
 			</a>
 		</li>
 		<li>
-			<a href="#0" class="deactivated">
+			<a href="<?php echo home_url( 'instructors-list' ); ?>">
 				<?php echo $users_fa; ?>&nbsp; Instructors
 			</a>
 		</li>

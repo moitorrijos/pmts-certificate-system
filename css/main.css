@@ -371,7 +371,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   line-height: 1.6;
-  background: #66aad7;
+  background-color: #66aad7;
   background-image: url(../images/certificate-background.jpg);
   background-size: cover;
   background-position: top right;

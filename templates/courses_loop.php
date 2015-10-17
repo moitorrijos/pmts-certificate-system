@@ -23,7 +23,7 @@
 			<tbody>
 					
 				<?php 
-					$args = array( 'post_type' => 'courses', 'posts_per_page' => '100' );
+					$args = array( 'post_type' => 'courses', 'posts_per_page' => -1 );
 					$courses = new WP_Query($args);
 					if ( $courses->have_posts() ) : while ( $courses->have_posts() ) : $courses->the_post();
 				?>
@@ -39,14 +39,14 @@
 				<?php endwhile; else : ?>
 
 				<tr>
-					<td> data +++ </td>
-					<td> data +++ </td>
-					<td> data +++ </td>
-					<td> data +++ </td>
-					<td> data +++ </td>
-					<td> data +++ </td>
-					<td> data +++ </td>
-					<td> data +++ </td>
+					<td> no data. </td>
+					<td> no data. </td>
+					<td> no data. </td>
+					<td> no data. </td>
+					<td> no data. </td>
+					<td> no data. </td>
+					<td> no data. </td>
+					<td> no data. </td>
 				</tr>
 
 				<?php endif; ?>

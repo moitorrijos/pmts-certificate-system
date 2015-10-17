@@ -18,13 +18,14 @@ body {
 	font-family: $body-font-family;
 	display: flex;
 	line-height: 1.6;
-	background: lighten($pmts-blue, 10%);
 
 	background: {
+		color: lighten($pmts-blue, 10%);
 		image: url(../images/certificate-background.jpg);
 		size: cover;
 		position: top right;
 	}
+
 	height: initial;
 	min-height: 100vh;
 }
