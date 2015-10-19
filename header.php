@@ -8,7 +8,7 @@
 
 <body <?php body_class(); ?> >
 
-<header class="no-print">
+<header>
 	<div class="logo">
 		<img src="<?php echo IMAGESPATH . '/pmts-logo-certificate.png'; ?>" />
 	</div>

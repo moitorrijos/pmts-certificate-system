@@ -16,7 +16,6 @@ html {
 
 body {
 	font-family: $body-font-family;
-	display: flex;
 	line-height: 1.6;
 
 	background: {
@@ -27,7 +26,11 @@ body {
 	}
 
 	height: initial;
-	min-height: 100vh;
+
+	@media screen {
+		min-height: 100vh;
+		display: flex;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {

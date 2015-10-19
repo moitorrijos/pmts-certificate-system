@@ -1,7 +1,56 @@
-@media print {
+@media only print {
 
-.no-print {
-	display: none;
-}
+	html {
+		font-size: 11pt;
+	}
 
+	body {
+		display: block;
+	}
+
+	h1 {
+		margin: 0.25in 0;
+	}
+
+	.no-print {
+		display: none;
+	}
+
+	header {
+		display: none;
+	}
+
+	.logged-in .main {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.buttons {
+		display: none;
+	}
+
+	.main-content {
+		display: block;
+
+		margin: 0;
+		padding: 0.25in;
+		width: 100%;
+
+		box-shadow: none;
+	}
+
+	table {
+		page-break-inside:auto;
+
+		thead { 
+			display: table-header-group; 
+		}
+		
+		tr    { 
+			page-break-inside:avoid; 
+			page-break-after:auto;
+		}
+	}
 }

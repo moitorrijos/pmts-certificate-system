@@ -18,12 +18,5 @@ require get_template_directory() . '/post-types/certificates.php';
 require get_template_directory() . '/post-types/courses.php';
 require get_template_directory() . '/post-types/instructors.php';
 require get_template_directory() . '/post-types/resolutions.php';
-
-//require get_template_directory() . '/post-types/custom-fields/acf-courses.php';
-//require get_template_directory() . '/post-types/custom-fields/acf-certificates.php';
-
 require get_template_directory() . '/post-types/admin-columns/custom-admin-columns-courses.php';
-
 require get_template_directory() . '/post-types/includes/change-title-lable.php';
-
-//require get_template_directory() . '/post-types/wpbody/wp-body-courses.php';

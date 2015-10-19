@@ -366,17 +366,19 @@ html {
 
 body {
   font-family: "Raleway", Verdana, sans-serif;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   line-height: 1.6;
   background-color: #66aad7;
   background-image: url(../images/certificate-background.jpg);
   background-size: cover;
   background-position: top right;
-  height: initial;
-  min-height: 100vh; }
+  height: initial; }
+  @media screen {
+    body {
+      min-height: 100vh;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; } }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", Geneva, Verdana, sans-serif; }
@@ -689,8 +691,44 @@ table {
       table td a:hover {
         color: #225c82; }
 
-@media print {
+@media only print {
+  html {
+    font-size: 11pt; }
+
+  body {
+    display: block; }
+
+  h1 {
+    margin: 0.25in 0; }
+
   .no-print {
-    display: none; } }
+    display: none; }
+
+  header {
+    display: none; }
+
+  .logged-in .main {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0; }
+
+  .buttons {
+    display: none; }
+
+  .main-content {
+    display: block;
+    margin: 0;
+    padding: 0.25in;
+    width: 100%;
+    box-shadow: none; }
+
+  table {
+    page-break-inside: auto; }
+    table thead {
+      display: table-header-group; }
+    table tr {
+      page-break-inside: avoid;
+      page-break-after: auto; } }
 
 /*# sourceMappingURL=main.css.map */
