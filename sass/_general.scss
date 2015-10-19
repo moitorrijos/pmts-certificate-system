@@ -256,26 +256,50 @@ ul.nav {
 	padding: 0;
 	border-top: 1px solid $gray;
 
-	li a {
-		display: block;
-		color: $darken-gray;
-		padding: 12px 24px 12px 22px;
-		text-decoration: none;
+	li {
+		
+		a {
+			display: block;
+			color: $darken-gray;
+			padding: 12px 24px 12px 22px;
+			text-decoration: none;
+			background: white;
 
-		border-bottom: 1px solid $gray;
+			border-bottom: 1px solid $gray;
 
-		&:hover {
-			background: $gray;
-			color: white;
+			&:hover {
+				color: white;
+				background: $pmts-blue;
+			}
+
+			i._mi {
+				display: inline-block;
+				margin-right: 12px;
+			}
 		}
 
-		&.deactivated {
+		&.deactivated a {
 			color: $gray;
 
 			&:hover {
+				color: $gray;
 				background: white;
 			}
 		}
+
+		&.current-menu-item a {
+			color: white;
+			background: $pmts-blue;
+		}
+	}
+}
+
+a.deactivated {
+	color: $gray;
+	background: lighten($gray, 10%);
+
+	&:hover {
+		background: white;
 	}
 }
 

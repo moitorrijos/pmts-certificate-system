@@ -567,14 +567,28 @@ ul.nav {
     color: #556a7b;
     padding: 12px 24px 12px 22px;
     text-decoration: none;
+    background: white;
     border-bottom: 1px solid #C5CFD7; }
     ul.nav li a:hover {
-      background: #C5CFD7;
-      color: white; }
-    ul.nav li a.deactivated {
-      color: #C5CFD7; }
-      ul.nav li a.deactivated:hover {
-        background: white; }
+      color: white;
+      background: #3e94cc; }
+    ul.nav li a i._mi {
+      display: inline-block;
+      margin-right: 12px; }
+  ul.nav li.deactivated a {
+    color: #C5CFD7; }
+    ul.nav li.deactivated a:hover {
+      color: #C5CFD7;
+      background: white; }
+  ul.nav li.current-menu-item a {
+    color: white;
+    background: #3e94cc; }
+
+a.deactivated {
+  color: #C5CFD7;
+  background: #e3e8ec; }
+  a.deactivated:hover {
+    background: white; }
 
 .acf-field .acf-label label {
   font-size: 1.2rem;
@@ -652,6 +666,8 @@ table {
     table th.number {
       width: 7%; }
     table th.short-title {
+      width: 10%; }
+    table th.middle-title {
       width: 20%; }
     table th.title {
       width: 40%; }

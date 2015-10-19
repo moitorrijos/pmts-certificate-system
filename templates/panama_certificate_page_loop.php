@@ -12,7 +12,7 @@
 
 		<div class="buttons align-right">
 			<a href="#0" class="download-xls-button"><i class="fa fa-download"></i>&nbsp; Download Excel</a>
-			<a href="<?php echo home_url('new-panama-certificate'); ?>" class="new-certificate-button"><i class="fa fa-plus-square"></i>&nbsp; Create New Certificate</a>
+			<a href="<?php echo home_url('panama-certificates/new-panama-certificate/'); ?>" class="new-certificate-button"><i class="fa fa-plus-square"></i>&nbsp; Create New Certificate</a>
 		</div>
 
 		<table class="download-xls-table">

@@ -5,12 +5,18 @@
 		<?php
 
 		if( have_posts() ) : while( have_posts() ) : the_post();
-		the_title('<h1>', '</h1>'); the_content(); endwhile;
+		the_title('<h1>', '</h1>'); endwhile;
 		endif; wp_reset_query();
 
 		?>
 
-		<table>
+		<div class="buttons align-right">
+			<a href="#0" class="download-xls-button"><i class="fa fa-download"></i>&nbsp; Download table to Excel</a>
+			<a href="#0" class="new-certificate-button deactivated"><i class="fa fa-plus-square"></i>&nbsp; Add Instructor</a>
+		</div>
+
+
+		<table class="download-xls-table">
 			<thead>
 				<tr>
 					<th class="short-title">Instructor's Name</th>
