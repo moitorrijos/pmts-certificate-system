@@ -6,6 +6,8 @@
 
 if ( is_user_logged_in() ) {
 
+	acf_form_head();
+
 	get_header();
 
 	get_template_part( 'templates/the-certificate' );

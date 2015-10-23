@@ -1,0 +1,102 @@
+%centered {
+	text-align: center;
+}
+
+%britanic {
+	font-family: 'britannic-bold';
+	text-transform: uppercase;
+	font-style: normal;
+}
+
+.certify.certify {
+	@extend %centered;
+	margin-top: 8rem;
+	font-family: 'diploma';
+	font-size: 2rem;
+}
+
+.participant-name.participant-name {
+	@extend %centered;
+	font-family: 'coronet';
+	font-size: 5rem;
+	margin: 32px 0;
+}
+
+.attended {
+	@extend %centered;
+}
+
+.course.course {
+	@extend %britanic;
+	@extend %centered;
+}
+
+.certificate {
+	position: relative;
+	font-size: 1.2rem;
+	padding: 0 36px;
+
+	@media screen and (min-width: 1200px) {
+		margin: 0 48px;
+	}
+
+	p, ul, ol {
+		font-family: $certificate-italic-font;
+		margin: 32px 0;
+	}
+
+
+
+	.boldies {
+		font-family: $certificate-italic-bold;
+		padding: 0 12px;
+	}
+
+	.undies {
+		@extend .boldies;
+		border-bottom: 1px solid $darken-gray;
+		padding-bottom: 3px;
+	}
+
+	.overies {
+		@extend .boldies;
+		border-top: 1px solid $darken-gray;
+	}
+
+	.half {
+		width: 50%;
+		float: left;
+	}
+
+	.quarter {
+		width: 25%;
+	}
+
+	.full {
+		clear: both;
+		width: 100%;
+	}
+
+	.to-right {
+		float: right;
+	}
+
+	.signature {
+		@extend .to-right;
+		@extend .quarter;
+		@extend .overies;
+		@extend .align-center;
+
+		margin: 76px 0 40px;
+	}
+
+	.certificate-codes.certificate-codes {
+		@extend .full;
+
+		.boldies.boldies {
+			font-family: 'britannic-bold';
+		}
+
+		p { margin: 0; }
+	}
+}

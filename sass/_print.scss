@@ -1,15 +1,17 @@
 @media only print {
 
-	html {
-		font-size: 11pt;
-	}
-
 	body {
 		display: block;
 	}
 
-	h1 {
-		margin: 0.25in 0;
+	h1, h2, h3, p {
+		color: black;
+		margin: 0.125in 0;
+	}
+
+	p {
+		font-size: 10pt;
+		line-height: 1.1;
 	}
 
 	.no-print {
@@ -33,6 +35,7 @@
 
 	.main-content {
 		display: block;
+		height: 100vh;
 
 		margin: 0;
 		padding: 0.25in;
@@ -41,16 +44,63 @@
 		box-shadow: none;
 	}
 
+	.edit-certificate-form {
+		display: none;
+	}
+
+	thead { 
+		display: table-header-group; 
+	}
+
 	table {
 		page-break-inside:auto;
 
-		thead { 
-			display: table-header-group; 
-		}
 		
 		tr    { 
 			page-break-inside:avoid; 
 			page-break-after:auto;
 		}
 	}
+
+	.certify.certify {
+		margin-top: 0.75in;
+		margin-bottom: 0;
+	}
+
+	.participant-name.participant-name {
+		font-size: 42pt;
+		margin: 0.125in 0;
+	}
+
+	.certificate {
+		padding: 0 0.33in;
+	
+	}
+
+	.signature.signature {
+		font-size: 9pt;
+		margin-top: 0.5in;
+		margin-bottom: 0in;
+	}
+
+	.short.short {
+		margin-top: 0;
+	}
+
+	.undies.undies {
+		font-size: 10pt;
+	}
+
+	.spacey.spacey {
+		margin-right: 0.125in;
+	}
+
+	.certificate-codes.certificate-codes {
+		p {
+			font-size: 9pt;
+			font-weight: normal;
+			font-style: normal;
+		}
+	}
+
 }

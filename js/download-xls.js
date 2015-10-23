@@ -2,7 +2,8 @@
 $(function() {
 
 var $downloadXlsBtn = $('.download-xls-button'),
-	$downloadXlsTable = $('.download-xls-table');
+	$downloadXlsTable = $('.download-xls-table'),
+	$printBtn = $('.print-button');
 
 $downloadXlsBtn.click(function(e){
 
@@ -18,5 +19,9 @@ $downloadXlsBtn.click(function(e){
 
 });
 
+$printBtn.on('click', function(){
+	window.print();
 });
-})(jQuery); 
+
+});
+})(jQuery);

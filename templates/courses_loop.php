@@ -10,10 +10,7 @@
 
 		?>
 
-		<div class="buttons align-right">
-			<a href="#0" class="download-xls-button"><i class="fa fa-download"></i>&nbsp; Download Table to Excel</a>
-			<a href="#0" class="new-certificate-button deactivated"><i class="fa fa-plus-square"></i>&nbsp; Add Course</a>
-		</div>
+		<?php get_template_part('templates/buttons-div'); ?>
 
 		<table class="download-xls-table">
 			<thead>

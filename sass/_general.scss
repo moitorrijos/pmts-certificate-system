@@ -171,8 +171,16 @@ form {
 	margin: 16px 0 48px;
 }
 
+.short-margin.short-margin {
+	margin: 8px 0;
+}
+
 .align-right {
 	text-align: right;
+}
+
+.align-center {
+	text-align: center;
 }
 
 %cool-button {
@@ -201,6 +209,15 @@ a.new-certificate-button {
 	}
 }
 
+a.print-button {
+	@extend %cool-button;
+	background-color: $pmts-blue;
+
+	&:hover {
+		background-color: darken($pmts-blue, 5%);
+	}
+}
+
 .download-xls-button {
 	@extend %cool-button;
 	background-color: $cool-orange;
@@ -208,6 +225,10 @@ a.new-certificate-button {
 	&:hover {
 		background-color: darken($cool-orange, 5%);
 	}
+}
+
+.edit-button {
+	@extend .download-xls-button;
 }
 
 a.back-link {
@@ -239,11 +260,6 @@ a.back-link {
 		margin-bottom: 48px;
 	}
 
-	p {
-		display: block;
-		width: 74%;
-		margin: 0 auto 42px;
-	}
 }
 
 .logout {
@@ -302,7 +318,7 @@ a.deactivated {
 	background: lighten($gray, 10%);
 
 	&:hover {
-		background: white;
+		background: lighten($gray, 10%);
 	}
 }
 
@@ -327,4 +343,8 @@ form.acf-form {
 	.instructor-field {
 		clear: both;
 	}
+}
+
+.edit-certificate-form {
+	display: none;
 }
