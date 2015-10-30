@@ -42,14 +42,20 @@
 
 	p, ul, ol {
 		font-family: $certificate-italic-font;
-		margin: 32px 0;
+		margin: 40px 0 32px;
 	}
 
-
+	.short.short {
+		margin-top: 0;
+	}
 
 	.boldies {
 		font-family: $certificate-italic-bold;
 		padding: 0 12px;
+	}
+
+	.unpaddies {
+		font-family: $certificate-italic-bold;
 	}
 
 	.undies {

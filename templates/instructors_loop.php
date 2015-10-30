@@ -39,7 +39,7 @@
 
 							if ( $authorized_courses ) {
 								foreach ( $authorized_courses as $authorized_course ) {
-									echo get_the_title( $authorized_course->ID ) . ', ';
+									echo get_the_title( $authorized_course->ID ) . ' · ';
 								}
 							}
 						?>

@@ -56,3 +56,8 @@
 		margin: 0;
 	}
 }
+
+.acf-field[data-width] + .acf-field[data-width] {
+	border-left-width: 0;
+	margin-left: 2%;
+}

@@ -236,7 +236,7 @@ a.back-link {
 }
 
 .main-content {
-	width: 90%;
+	width: 96%;
 
 	@media only screen and (max-width: 1700px) {
 		width: 100%;
@@ -250,7 +250,7 @@ a.back-link {
 		repeat: no-repeat;
 		position: left top;
 	};
-	padding: 20px 50px;
+	padding: 20px 40px;
 	color: $darken-gray;
 	margin-top: 80px;
 	box-shadow: 0 8px 40px transparentize($darken-gray, 0.6);

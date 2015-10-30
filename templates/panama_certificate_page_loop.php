@@ -17,13 +17,13 @@
 				<tr>
 					<th class="middle-title">Participant's Name</th>
 					<th class="short-title">Passport/ID No.</th>
-					<th>Course taken</th>
-					<th>Start Date</th>
-					<th>End Date</th>
+					<th class=" middle-title">Course taken</th>
+					<th class="number">Start Date</th>
+					<th class="number">End Date</th>
 					<th class="short-title">Instructor</th>
-					<th>Place of training</th>
-					<th>Date of Issue</th>
-					<th class="short-title">Register Code</th>
+					<th>Office</th>
+					<th class="number">Issue Date</th>
+					<th class="middle-title">Register Code</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -36,6 +36,8 @@
 					$course = get_field('course');
 
 					$instructor = get_field('instructor');
+
+					$office = get_field('office');
 
 					$start_date = DateTime::createFromFormat( 'Ymd', get_field('start_date') );
 
@@ -62,22 +64,22 @@
 						<?php echo get_the_title($course->ID); ?>
 					</td>
 					<td class="centered">
-						<?php echo $start_date->format('d F Y'); ?>
+						<?php echo $start_date->format('d/m/y'); ?>
 					</td>
 					<td class="centered">
-						<?php echo $end_date->format('d F Y'); ?>
+						<?php echo $end_date->format('d/m/y'); ?>
 					</td>
 					<td class="centered">
 						<?php echo get_the_title($instructor->ID); ?>
 					</td>
 					<td class="centered">
-						<?php echo the_field('place_of_training'); ?>
+						<?php echo get_the_title($office->ID); ?>
 					</td>
 					<td class="centered">
-						<?php echo $issue_date->format('d F Y'); ?>
+						<?php echo $issue_date->format('d/m/y'); ?>
 					</td>
 					<td class="centered">
-						<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $issue_month . '-00' . $course->ID; ?>
+						<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-0' . $office->number . '-0' . get_the_ID(); ?>
 					</td>
 				</tr>
 

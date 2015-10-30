@@ -576,14 +576,14 @@ a.back-link {
   color: #D37A4F; }
 
 .main-content {
-  width: 90%;
+  width: 96%;
   margin: 0 auto;
   background-image: url("../images/pmts-watermark-logo.png");
   background-color: white;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left top;
-  padding: 20px 50px;
+  padding: 20px 40px;
   color: #556a7b;
   margin-top: 80px;
   box-shadow: 0 8px 40px rgba(85, 106, 123, 0.4); }
@@ -695,6 +695,10 @@ form.acf-form .instructor-field {
   .updated p {
     margin: 0; }
 
+.acf-field[data-width] + .acf-field[data-width] {
+  border-left-width: 0;
+  margin-left: 2%; }
+
 table {
   font-size: 0.9rem;
   width: 100%;
@@ -762,10 +766,14 @@ table {
       margin: 0 48px; } }
   .certificate p, .certificate ul, .certificate ol {
     font-family: "texgyreadventoritalic";
-    margin: 32px 0; }
+    margin: 40px 0 32px; }
+  .certificate .short.short {
+    margin-top: 0; }
   .certificate .boldies, .certificate .undies, .certificate .overies, .certificate .signature {
     font-family: "texgyreadventorbold_italic";
     padding: 0 12px; }
+  .certificate .unpaddies {
+    font-family: "texgyreadventorbold_italic"; }
   .certificate .undies {
     border-bottom: 1px solid #556a7b;
     padding-bottom: 3px; }
@@ -855,7 +863,7 @@ table {
     margin-top: 0; }
 
   .undies.undies {
-    font-size: 10pt; }
+    font-size: 9pt; }
 
   .spacey.spacey {
     margin-right: 0.125in; }
