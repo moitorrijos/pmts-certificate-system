@@ -38,6 +38,8 @@
 
 			$issue_year = $issue_date->format('y');
 
+			$certificate_ID = $certificate_ID;
+
 		?>
 
 		<div class="certificate">
@@ -71,7 +73,7 @@
 					
 				<p class="short">
 					Course Timetable: 
-					<span class="undies"><?php echo 'CT/' . $issue_year . '-0' . $office->number . '-' . '035';?> * * * </span>
+					<span class="undies"><?php echo 'CT/' . $issue_year . '-0' . $office->number . '-' . '0' . ( intval($course->ID) - intval($certificate_ID) ); ?> * * * </span>
 				</p>
 
 			</div>
