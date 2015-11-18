@@ -8,7 +8,7 @@
 ?>
 
 <div class="navigation">
-	<h3><?php echo $user_fa; ?>&nbsp; Welcome <?php echo $current_user->display_name; ?></h3>
+	<h3><?php echo $user_fa; ?>&nbsp; Hi <?php echo $current_user->display_name; ?></h3>
 	
 	<?php get_template_part( 'templates/nav-menu' ); ?>
 

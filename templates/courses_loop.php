@@ -10,7 +10,12 @@
 
 		?>
 
-		<?php get_template_part('templates/buttons-div'); ?>
+		<?php 
+
+			get_template_part('templates/buttons-div'); 
+			get_template_part('templates/search-bar' );
+			
+		?>
 
 		<table class="download-xls-table">
 			<thead>
