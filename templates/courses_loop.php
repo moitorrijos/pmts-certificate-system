@@ -1,6 +1,6 @@
 <div class="main">
 
-	<div class="main-content">
+	<div class="main-content" id="search-list">
 		
 		<?php
 
@@ -18,6 +18,7 @@
 		?>
 
 		<table class="download-xls-table">
+
 			<thead>
 				<tr>
 					<th class="title">Course Name</th>
@@ -27,7 +28,8 @@
 					<th>Regulation</th>
 				</tr>
 			</thead>
-			<tbody>
+
+			<tbody class="list">
 					
 				<?php 
 					$args = array( 'post_type' => 'courses', 'posts_per_page' => -1 );
@@ -36,9 +38,9 @@
 				?>
 
 				<tr>
-					<td><a href="<?php echo the_permalink(); ?>"><?php the_title('', ''); ?></a></td>
-					<td class="centered"><?php the_field('abbr'); ?></td>
-					<td class="centered"><?php the_field('imo_no'); ?></td>
+					<td class="list-col-1"><a href="<?php echo the_permalink(); ?>"><?php the_title('', ''); ?></a></td>
+					<td class="centered list-col-2"><?php the_field('abbr'); ?></td>
+					<td class="centered list-col-3"><?php the_field('imo_no'); ?></td>
 					<td class="centered"><?php the_field('duration'); ?></td>
 					<td><?php the_field('regulation'); ?></td>
 				</tr>

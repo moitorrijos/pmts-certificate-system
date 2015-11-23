@@ -1,6 +1,6 @@
 <div class="main">
 
-	<div class="main-content">
+	<div class="main-content" id="search-list">
 		
 		<?php
 
@@ -10,7 +10,9 @@
 
 		?>
 
-		<?php get_template_part('templates/buttons-div'); ?>
+		<?php
+			get_template_part('templates/buttons-div');
+		 ?>
 
 		<table class="download-xls-table">
 			<thead>
@@ -20,7 +22,7 @@
 					<th class="title">Instructors</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody class="list">
 					
 				<?php 
 					$args = array( 'post_type' => 'office', 'posts_per_page' => -1 );
@@ -30,9 +32,9 @@
 				?>
 
 				<tr>
-					<td class="centered"><a href="<?php echo the_permalink(); ?>"><?php the_title('', ''); ?></a></td>
-					<td class="centered"><?php the_field('number'); ?></td>
-					<td>
+					<td class="centered list-col-1"><a href="<?php echo the_permalink(); ?>"><?php the_title('', ''); ?></a></td>
+					<td class="centered list-col-2"><?php the_field('number'); ?></td>
+					<td class="list-col-3">
 						<?php
 							$instructors = get_field('instructors');
 							if ( $instructors ) { 

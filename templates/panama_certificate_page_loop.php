@@ -17,7 +17,7 @@
 				<tr>
 					<th class="middle-title">Participant's Name</th>
 					<th class="short-title">Passport/ID No.</th>
-					<th class=" middle-title">Course taken</th>
+					<th class="short-title">Course taken (Abbr)</th>
 					<th class="number">Start Date</th>
 					<th class="number">End Date</th>
 					<th class="short-title">Instructor</th>
@@ -61,7 +61,7 @@
 						<?php echo the_field('passport_id'); ?>
 					</td>
 					<td class="centered">
-						<?php echo get_the_title($course->ID); ?>
+						<?php echo /*get_the_title($course->ID)*/$course->abbr; ?>
 					</td>
 					<td class="centered">
 						<?php echo $start_date->format('d/m/y'); ?>

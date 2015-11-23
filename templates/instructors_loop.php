@@ -1,6 +1,6 @@
 <div class="main">
 
-	<div class="main-content">
+	<div class="main-content" id="search-list">
 		
 		<?php
 
@@ -10,18 +10,21 @@
 
 		?>
 
-		<?php get_template_part('templates/buttons-div'); ?>
+		<?php
+		 	get_template_part('templates/buttons-div');
+		 	get_template_part('templates/search-bar');
+		 ?>
 
 		<table class="download-xls-table">
 			<thead>
 				<tr>
-					<th class="short-title">Instructor's Name</th>
+					<th class="short-title">Instructor Name</th>
 					<th class="number">Nationality</th>
 					<th class="number">Place of Training</th>
 					<th class="title">Authorized Courses</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody class="list">
 					
 				<?php 
 					$args = array( 'post_type' => 'instructors', 'posts_per_page' => -1 );
@@ -30,9 +33,9 @@
 				?>
 
 				<tr>
-					<td><a href="<?php echo the_permalink(); ?>"><?php the_title('', ''); ?></a></td>
-					<td class="centered"><?php the_field('nationality'); ?></td>
-					<td class="centered"><?php the_field('instructor_residence'); ?></td>
+					<td class="list-col-1"><a href="<?php echo the_permalink(); ?>"><?php the_title('', ''); ?></a></td>
+					<td class="centered list-col-2"><?php the_field('nationality'); ?></td>
+					<td class="centered "><?php the_field('instructor_residence'); ?></td>
 					<td>
 						<?php 
 							$authorized_courses = get_field( 'authorized_courses' );

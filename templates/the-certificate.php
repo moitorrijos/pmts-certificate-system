@@ -38,7 +38,7 @@
 
 			$issue_year = $issue_date->format('y');
 
-			$certificate_ID = $certificate_ID;
+			$certificate_ID = get_the_ID();
 
 		?>
 
