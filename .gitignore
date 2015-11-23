@@ -64,3 +64,4 @@ node_modules
 # General CodeKit files to ignore
 config.codekit
 /min
+/sass/.sass-cache
