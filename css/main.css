@@ -355,34 +355,70 @@ th {
   src: url("../fonts/texgyreadventor_bold_macroman/texgyreadventor-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/texgyreadventor_bold_macroman/texgyreadventor-bold-webfont.woff") format("woff"), url("../fonts/texgyreadventor_bold_macroman/texgyreadventor-bold-webfont.ttf") format("truetype"), url("../fonts/texgyreadventor_bold_macroman/texgyreadventor-bold-webfont.svg#texgyreadventorbold") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'texgyreadventorbold_italic';
   src: url("../fonts/texgyreadventor_bolditalic_macroman/texgyreadventor-bolditalic-webfont.eot");
   src: url("../fonts/texgyreadventor_bolditalic_macroman/texgyreadventor-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/texgyreadventor_bolditalic_macroman/texgyreadventor-bolditalic-webfont.woff") format("woff"), url("../fonts/texgyreadventor_bolditalic_macroman/texgyreadventor-bolditalic-webfont.ttf") format("truetype"), url("../fonts/texgyreadventor_bolditalic_macroman/texgyreadventor-bolditalic-webfont.svg#texgyreadventorbold_italic") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'texgyreadventoritalic';
   src: url("../fonts/texgyreadventor_italic_macroman/texgyreadventor-italic-webfont.eot");
   src: url("../fonts/texgyreadventor_italic_macroman/texgyreadventor-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/texgyreadventor_italic_macroman/texgyreadventor-italic-webfont.woff") format("woff"), url("../fonts/texgyreadventor_italic_macroman/texgyreadventor-italic-webfont.ttf") format("truetype"), url("../fonts/texgyreadventor_italic_macroman/texgyreadventor-italic-webfont.svg#texgyreadventoritalic") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'texgyreadventorregular';
   src: url("../fonts/texgyreadventor_regular_macroman/texgyreadventor-regular-webfont.eot");
   src: url("../fonts/texgyreadventor_regular_macroman/texgyreadventor-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/texgyreadventor_regular_macroman/texgyreadventor-regular-webfont.woff") format("woff"), url("../fonts/texgyreadventor_regular_macroman/texgyreadventor-regular-webfont.ttf") format("truetype"), url("../fonts/texgyreadventor_regular_macroman/texgyreadventor-regular-webfont.svg#texgyreadventorregular") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'britannic-bold';
   src: url("../fonts/britannic/2F7DB2_0_0.eot");
   src: url("../fonts/britannic/2F7DB2_0_0.eot?#iefix") format("embedded-opentype"), url("../fonts/britannic/2F7DB2_0_0.woff2") format("woff2"), url("../fonts/britannic/2F7DB2_0_0.woff") format("woff"), url("../fonts/britannic/2F7DB2_0_0.ttf") format("truetype"); }
+
 @font-face {
   font-family: 'diploma';
   src: url("../fonts/diploma.ttf") format("truetype"); }
+
 @font-face {
   font-family: 'coronet';
   src: url("../fonts/coronet.ttf") format("truetype"); }
+
+/* Archivo Narrow */
+@font-face {
+  font-family: 'archivo_narrowbold';
+  src: url("../fonts/archivo-narrow/archivo_narrow_700-webfont.eot");
+  src: url("../fonts/archivo-narrow/archivo_narrow_700-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-narrow/archivo_narrow_700-webfont.woff2") format("woff2"), url("../fonts/archivo-narrow/archivo_narrow_700-webfont.woff") format("woff"), url("../fonts/archivo-narrow/archivo_narrow_700-webfont.ttf") format("truetype"), url("../fonts/archivo-narrow/archivo_narrow_700-webfont.svg#archivo_narrowbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'archivo_narrowbold_italic';
+  src: url("../fonts/archivo-narrow/archivo_narrow_700italic-webfont.eot");
+  src: url("../fonts/archivo-narrow/archivo_narrow_700italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-narrow/archivo_narrow_700italic-webfont.woff2") format("woff2"), url("../fonts/archivo-narrow/archivo_narrow_700italic-webfont.woff") format("woff"), url("../fonts/archivo-narrow/archivo_narrow_700italic-webfont.ttf") format("truetype"), url("../fonts/archivo-narrow/archivo_narrow_700italic-webfont.svg#archivo_narrowbold_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'archivo_narrowitalic';
+  src: url("../fonts/archivo-narrow/archivo_narrow_italic-webfont.eot");
+  src: url("../fonts/archivo-narrow/archivo_narrow_italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-narrow/archivo_narrow_italic-webfont.woff2") format("woff2"), url("../fonts/archivo-narrow/archivo_narrow_italic-webfont.woff") format("woff"), url("../fonts/archivo-narrow/archivo_narrow_italic-webfont.ttf") format("truetype"), url("../fonts/archivo-narrow/archivo_narrow_italic-webfont.svg#archivo_narrowitalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'archivo_narrowregular';
+  src: url("../fonts/archivo-narrow/archivo_narrow_regular-webfont.eot");
+  src: url("../fonts/archivo-narrow/archivo_narrow_regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-narrow/archivo_narrow_regular-webfont.woff2") format("woff2"), url("../fonts/archivo-narrow/archivo_narrow_regular-webfont.woff") format("woff"), url("../fonts/archivo-narrow/archivo_narrow_regular-webfont.ttf") format("truetype"), url("../fonts/archivo-narrow/archivo_narrow_regular-webfont.svg#archivo_narrowregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 /**
  * Colors
  */
@@ -527,6 +563,7 @@ form {
   .logged-in header h3 {
     padding-left: 22px;
     margin-bottom: 16px; }
+
 .logged-in .main {
   width: 85%; }
 
@@ -641,9 +678,11 @@ form.acf-form input {
   background: white;
   padding: 18px 24px;
   border: 1px solid #b6c3cd; }
+
 form.acf-form .course-date {
   width: 50%;
   float: left; }
+
 form.acf-form .instructor-field {
   clear: both; }
 
@@ -804,75 +843,111 @@ table {
   .certificate .certificate-codes.certificate-codes p, .the-test .certificate-codes.certificate-codes p {
     margin: 0; }
 
-.the-test {
-  display: none; }
-  .the-test p, .the-test ul, .the-test ol {
-    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-    margin: 16px 0; }
-  .the-test .undies {
-    display: block;
-    width: 75%;
-    padding: 8px 0 2px; }
-  .the-test h2 {
-    margin-bottom: 16px; }
-  .the-test h3 {
-    padding: 16px 0 0; }
+.separator {
+  border: 1px solid #d4dbe1;
+  margin: 72px 0; }
 
-table.test-results {
-  color: #2E2E2E; }
-  table.test-results th {
-    color: #2E2E2E;
-    background-color: #EFEFEF;
-    border: 1px solid #9B9B9B;
-    padding: 4px; }
-  table.test-results td {
-    border: 1px solid #9B9B9B;
-    padding: 4px; }
-  table.test-results tr:nth-child(even) {
-    background: #EFEFEF; }
-  table.test-results tfoot td {
-    padding: 6px; }
-  table.test-results tfoot td.result {
-    vertical-align: middle;
-    text-align: right; }
-  table.test-results tfoot td.percent {
-    font-style: italic;
+.the-test p, .the-test ul, .the-test ol {
+  font-family: "archivo_narrowregular";
+  margin: 8px 0; }
+
+.the-test h1, .the-test h2, .the-test h3, .the-test h4, .the-test h5, .the-test h6 {
+  font-family: "archivo_narrowregular"; }
+
+.the-test .undies {
+  display: block;
+  width: 75%;
+  padding: 8px 0 2px; }
+
+.the-test h2 {
+  margin-bottom: 16px; }
+
+.the-test table td {
+  border: 1px solid black;
+  background-color: white; }
+  .the-test table td p {
+    font-size: 14px;
+    line-height: 1.1;
+    margin: 0; }
+
+table.test-header td h2 {
+  font-size: 18px;
+  line-height: 1.1;
+  margin: 0; }
+
+table.test-header td ul {
+  font-size: 14px;
+  list-style: none;
+  padding: 0; }
+
+table.participant-information td .participant-info {
+  font-weight: bold;
+  margin: 0; }
+
+ul.answers {
+  list-style: none;
+  page-break-after: 0;
+  height: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  padding: 0; }
+  ul.answers li {
+    width: 160px;
+    margin: 2px 0; }
+    ul.answers li span.answer {
+      font-weight: bold;
+      padding-left: 20px; }
+
+.test-score-result {
+  width: 200px;
+  text-align: right;
+  float: right;
+  font-size: 1.5em;
+  font-size: 14px; }
+  .test-score-result .final-test-score {
     font-weight: bold;
-    font-size: 1.8em;
-    text-align: center; }
+    font-size: 18px;
+    font-style: italic; }
+  .test-score-result .passed {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+    font-style: italic; }
 
 @media only print {
   body {
-    display: block; }
-
+    display: block;
+    background: white; }
   h1, h2, h3, p {
     color: black;
     margin: 0.125in 0; }
-
-  p {
+  h3 {
+    font-size: 12pt;
+    padding: 0; }
+  p, ul {
     font-size: 10pt;
     line-height: 1.1; }
-
   p.attended {
     font-size: 9pt;
     line-height: 1;
     margin: 0.125in 0; }
-
   .no-print {
     display: none; }
-
   header {
     display: none; }
-
   .logged-in .main {
     display: block;
     width: 100%;
     margin: 0;
     padding: 0; }
-
   .buttons {
     display: none; }
-
   .main-content {
     display: block;
     /* height: 100vh; */
@@ -880,51 +955,63 @@ table.test-results {
     padding: 0.25in;
     width: 100%;
     box-shadow: none; }
-
   .edit-certificate-form {
     display: none; }
-
   thead {
     display: table-header-group; }
-
   table {
     page-break-inside: auto; }
     table tr {
       page-break-inside: avoid;
       page-break-after: auto; }
-
   .certify.certify {
     margin-top: 0.75in;
     margin-bottom: 0; }
-
   .participant-name.participant-name {
     font-size: 42pt;
     margin: 0.125in 0; }
-
   .certificate, .the-test {
-    padding: 0 0.33in;
-    page-break-after: always; }
-
+    padding: 0 0.33in; }
   .signature.signature {
     font-size: 9pt;
     margin-top: 0.5in;
     margin-bottom: 0in; }
-
   .short.short {
     margin-top: 0; }
-
   .undies.undies {
     font-size: 9pt; }
-
   .spacey.spacey {
     margin-right: 0.125in; }
-
   .certificate-codes.certificate-codes p {
     font-size: 9pt;
     font-weight: normal;
     font-style: normal; }
-
+  table.test-header {
+    page-break-before: always; }
+  hr.separator {
+    display: none; }
   .the-test {
-    display: block; } }
-
+    display: block; }
+    .the-test table {
+      color: black; }
+      .the-test table td {
+        color: black; }
+        .the-test table td h2 {
+          font-size: 12pt; }
+        .the-test table td p {
+          font-size: 9pt; }
+        .the-test table td ul {
+          font-size: 9pt; }
+    .the-test ul li {
+      color: black; }
+    .the-test .signature {
+      margin-top: 1in; }
+  ul.answers {
+    height: 1.8in; }
+    ul.answers li {
+      color: black;
+      font-size: 9pt; }
+      ul.answers li span.answer {
+        float: right;
+        padding-right: 40px; } }
 /*# sourceMappingURL=main.css.map */

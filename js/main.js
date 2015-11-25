@@ -3,6 +3,7 @@ $(function() {
 
 var certForm = $('.edit-certificate-form'),
 	certDiv = $('.certificate'),
+	testDiv = $('.the-test'),
 	editBtn = $('.edit-button'),
 	coursesList,
 	options = {
@@ -11,6 +12,7 @@ var certForm = $('.edit-certificate-form'),
 
 function fadeCertDivOut() {
 	certDiv.fadeOut('fast');
+	testDiv.fadeOut('fast');
 	certForm.fadeIn();
 }
 

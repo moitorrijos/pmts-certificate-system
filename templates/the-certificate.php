@@ -90,7 +90,7 @@
 			<div class="full">
 	
 				<p>
-					This course fulfills minimum requirements of <span class="unpaddies"><?php echo $course->regulation; ?></span> of the IMO International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended. <span class="unpaddies">IMO Model Course <?php echo $course->imo_no; ?></span>
+					This course fulfills minimum requirements of <span class="unpaddies"><?php echo $course->regulation; ?></span> of the IMO International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended. <br><span class="unpaddies">IMO Model Course <?php echo $course->imo_no; ?></span>
 				</p>
 				
 			</div>
@@ -156,106 +156,134 @@
 
 		</div>
 
+		<hr class="separator">
+
 		<div class="the-test">
 
-			<h2>Answer Sheet for <?php echo get_the_title($course->ID); ?></h2>
+			<table class="test-header">
+				<tbody>
+					<tr>
+						<td>
+							<h2>Panama Maritime Training Services, Inc.</h2>
+							<p>Computer Based Test Resutls for <?php echo get_the_title($course->ID); ?> Course IMO No. <?php echo $course->imo_no; ?></p>
+						</td>
+						<td rowspan="2">
+							<ul>
+								<li>Code: ATT</li>
+								<li>Revision: 02</li>
+								<li>Date: 12/12/2015</li>
+								<li>Pages 1 of 1</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>Date of Examination: <?php echo $issue_date->format('d F Y'); ?></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
-			<div class="half">
-				<p>
-					Taken by (Participant's Name):
-					<span class="undies"><?php echo the_field('name'); ?></span>
-				</p>
+			<p>Participant's Information: </p>
 
-			</div>
+			<table class="participant-information">
+				<tbody>
+					<tr>
+						<td>
+							<p>Name:</p>
+							<p class="participant-info"><?php echo the_field('name'); ?></p>
+						</td>
+						<td>
+							<p>Passport/ID No.:</p>
+							<p class="participant-info"><?php echo the_field('passport_id'); ?></p>
+						</td>
+						<td>
+							<p>Date and Place of Birth:</p>
+							<p class="participant-info"><?php echo the_field('date_of_birth'); ?> <?php echo the_field('place_of_birth'); ?></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>Place of Training:</p>
+							<p class="participant-info"><?php echo get_the_title( $office->ID ); ?></p>
+						</td>
+						<td>
+							<p>Start Date:</p>
+							<p class="participant-info"><?php echo $issue_date->format('d F Y'); ?></p>
+						</td>
+						<td>
+							<p>End Date:</p>
+							<p class="participant-info"><?php echo $end_date->format('d F Y'); ?></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
-			<div class="half">
-				<p>
-					Participant's ID/Passport No.:
-					<span class="undies"><?php echo the_field('passport_id'); ?></span>
-				</p>
-			</div>
-
-			<div class="half">
-				<p>
-					Participant's Place of Birth:
-					<span class="undies"><?php echo the_field('place_of_birth'); ?></span>
-				</p>
-			</div>
-
-			<div class="half">
-				<p>
-					Participant's Date of Birth:
-					<span class="undies"><?php echo the_field('date_of_birth'); ?></span>
-				</p>
-			</div>
-
-			<div class="half">
-				<p>
-					Participant's Rank:
-					<span class="undies">
-						<?php echo the_field('rank'); ?> * * *
-					</span>
-				</p>
-			</div>
-
-			<div class="half">
-				<p>
-					Place of Training:
-					<span class="undies"><?php echo get_the_title( $office->ID ); ?></span>
-				</p>
-			</div>
-
-			<div class="half">
-				<p>
-					Start Course Date:
-					<span class="undies"><?php echo $start_date->format('d F Y'); ?></span>
-				</p>
-			</div>
-
-			<div class="half">
-				<p>
-					End Course Date:
-					<span class="undies"><?php echo $end_date->format('d F Y'); ?></span>
-				</p>
+			<div class="full">
+				<h3>Test Specifications (as seen on computer based test):</h3>
+				<ul>
+					<li>The participant has up to 60 minutes to finish the test.</li>
+					<li>The test is taken in computer based program.</li>
+					<li>Test is carried out without assistance</li>
+					<li>Scoring is from 0 to 100%. Minimum 70% to pass.</li>
+					<li>Multiple choice exam, click the correct answer.</li>
+					<li>Voluntarily fiil out evaluation form at the end of the test for instructor and course. (If form is not filled we assume you are completely satisfied with the training services).</li>
+					<li>Each answer has a score of 4 percent (25 questions).</li>
+					<li>For questions refer to computer based test.</li>
+				</ul>
 			</div>
 
 			<div class="full">
-				<h3>Test Results</h3>
+				<h3>Answers</h3>
 				<!-- Test Results Table -->
-
-				<table class="test-results">
-					<thead>
-						<tr>
-							<th class="middle-title centered">Question</th>
-							<th class="short-title centered">Answer</th>
-						</tr>
-					</thead>
-					<tbody>
+				<ul class="answers">
 					<?php for ($i = 1; $i <= 25; $i++) : ?>
-						<tr>
-							<td>Question <?php echo $i; ?></td>
-							<td class="centered">&#10004;</td>
-						</tr>
+						<li>Question <?php echo $i ?>: <span class="answer">Correct</span></li>
 					<?php endfor; ?>
-					</tbody>
-					<tfoot>
-						<tr>
-							<td class="result">Result</td>
-							<td class="percent">78%</td>
-						</tr>
-					</tfoot>
-				</table>
-
+					
+				</ul>
 			</div>
+
+			<div class="test-score-result">
+				<p>Test Score: <span class="final-test-score">100%</span> <span class="passed">Passed</span></p>
+			</div>
+
+			<div class="full"></div>
 			
 			<div class="signature">
-				<p class="short-margin">Participant Signature</p>
+				<p>General Director</p>
 			</div>
 
-			<div class="certificate-codes">
-				<p><span class="boldies">(10/15) Rev. 14</span> <span class="boldies to-right">F-TI-02</span></p>
-			</div>
+			<div class="full"></div>
 
+		</div>
+
+		<hr class="separator">
+
+		<div class="the-test">
+			<table class="test-header">
+				<tbody>
+					<tr>
+						<td>
+							<h2>Panama Maritime Training Services, Inc.</h2>
+							<p>Practical Evaluation Criteria for <?php echo get_the_title($course->ID); ?> <span class="imo-course-heading">IMO Model Course No. <?php echo $course->imo_no; ?></span></p>
+						</td>
+						<td rowspan="2">
+							<ul>
+								<li>Code: EXAM</li>
+								<li>Revision: 02</li>
+								<li>Date: 12/12/2015</li>
+								<li>Pages 1 of 1</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>Date of Examination: <?php echo $issue_date->format('d F Y'); ?></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 
 		<div class="edit-certificate-form">
