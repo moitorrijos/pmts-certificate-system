@@ -15,7 +15,7 @@
 		padding: 0;
 	}
 
-	p, ul {
+	p, ul, ol {
 		font-size: 10pt;
 		line-height: 1.1;
 	}
@@ -127,11 +127,21 @@
 
 		table {
 			color: black;
+
+			thead th {
+				font-size: 10pt;
+				font-weight: bold;
+			}
+
 			td {
 				color: black;
+				font-size: 9pt;
+
 				h2 { font-size: 12pt; }
 				p { font-size: 9pt; }
 				ul { font-size: 9pt; }
+
+				&.pass-fail { font-size: 11pt; }
 			}
 		}
 
@@ -148,11 +158,22 @@
 			color: black;
 			font-size: 9pt;
 
+			&.test-score-result { padding-right: 40px; }
+
 			span.answer {
 				float: right;
 				padding-right: 40px;
 			
 			}
+		}
+	}
+
+	ol.general-equipment {
+		
+		li {
+			color: black;
+			font-size: 9pt;
+
 		}
 	}
 

@@ -852,7 +852,7 @@ table {
   margin: 8px 0; }
 
 .the-test h1, .the-test h2, .the-test h3, .the-test h4, .the-test h5, .the-test h6 {
-  font-family: "archivo_narrowregular"; }
+  font-family: "archivo_narrowbold"; }
 
 .the-test .undies {
   display: block;
@@ -862,13 +862,21 @@ table {
 .the-test h2 {
   margin-bottom: 16px; }
 
-.the-test table td {
-  border: 1px solid black;
-  background-color: white; }
-  .the-test table td p {
-    font-size: 14px;
-    line-height: 1.1;
-    margin: 0; }
+.the-test table {
+  font-family: "archivo_narrowregular";
+  font-size: 16px; }
+  .the-test table thead > tr > th {
+    font-family: "archivo_narrowbold";
+    background: white;
+    border: 1px solid black;
+    color: black; }
+  .the-test table td {
+    border: 1px solid black;
+    background-color: white; }
+    .the-test table td p {
+      font-size: 14px;
+      line-height: 1.1;
+      margin: 0; }
 
 table.test-header td h2 {
   font-size: 18px;
@@ -900,25 +908,27 @@ ul.answers {
     width: 160px;
     margin: 2px 0; }
     ul.answers li span.answer {
-      font-weight: bold;
-      padding-left: 20px; }
+      font-weight: bold; }
 
 .test-score-result {
   width: 200px;
-  text-align: right;
-  float: right;
-  font-size: 1.5em;
-  font-size: 14px; }
+  text-align: right; }
   .test-score-result .final-test-score {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 21px;
     font-style: italic; }
   .test-score-result .passed {
     display: block;
     margin: 0;
     padding: 0;
-    font-size: 0.8em;
+    font-size: 16px;
     font-style: italic; }
+
+h3.observations {
+  width: 100%;
+  padding-bottom: 32px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid black; }
 
 @media only print {
   body {
@@ -930,7 +940,7 @@ ul.answers {
   h3 {
     font-size: 12pt;
     padding: 0; }
-  p, ul {
+  p, ul, ol {
     font-size: 10pt;
     line-height: 1.1; }
   p.attended {
@@ -994,14 +1004,20 @@ ul.answers {
     display: block; }
     .the-test table {
       color: black; }
+      .the-test table thead th {
+        font-size: 10pt;
+        font-weight: bold; }
       .the-test table td {
-        color: black; }
+        color: black;
+        font-size: 9pt; }
         .the-test table td h2 {
           font-size: 12pt; }
         .the-test table td p {
           font-size: 9pt; }
         .the-test table td ul {
           font-size: 9pt; }
+        .the-test table td.pass-fail {
+          font-size: 11pt; }
     .the-test ul li {
       color: black; }
     .the-test .signature {
@@ -1011,7 +1027,12 @@ ul.answers {
     ul.answers li {
       color: black;
       font-size: 9pt; }
+      ul.answers li.test-score-result {
+        padding-right: 40px; }
       ul.answers li span.answer {
         float: right;
-        padding-right: 40px; } }
+        padding-right: 40px; }
+  ol.general-equipment li {
+    color: black;
+    font-size: 9pt; } }
 /*# sourceMappingURL=main.css.map */
