@@ -70,11 +70,6 @@
 
 			</div>
  			<div class="half">
-					
-				<p class="short">
-					Course Timetable: 
-					<span class="undies"><?php echo 'CT/' . $issue_year . '-0' . $office->number . '-' . '0' . ( intval($course->ID) - intval($certificate_ID) ); ?> * * * </span>
-				</p>
 
 			</div>
 
