@@ -10,7 +10,13 @@
 
 		?>
 
-		<?php get_template_part('templates/buttons-div'); ?>
+		<?php 
+			get_template_part('templates/buttons-div');
+			$args = array( 'post_type' => 'certificates', 'posts_per_page' => '25' );
+			$certs = new WP_Query($args);
+
+			if ( $certs->have_posts() ) :
+		?>
 
 		<table class="download-xls-table">
 			<thead>
@@ -28,28 +34,20 @@
 			</thead>
 			<tbody>
 					
-				<?php 
-					$args = array( 'post_type' => 'certificates', 'posts_per_page' => '25' );
-					$certs = new WP_Query($args);
-					if ( $certs->have_posts() ) : while ( $certs->have_posts() ) : $certs->the_post();
+			<?php 
 
-					$course = get_field('course');
+				while ( $certs->have_posts() ) : $certs->the_post();
 
-					$instructor = get_field('instructor');
+				$course = get_field('course');
+				$instructor = get_field('instructor');
+				$office = get_field('office');
+				$start_date = DateTime::createFromFormat( 'Ymd', get_field('start_date') );
+				$end_date = DateTime::createFromFormat( 'Ymd', get_field('end_date') );
+				$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
+				$issue_month = $issue_date->format('m');
+				$issue_year = $issue_date->format('y');
 
-					$office = get_field('office');
-
-					$start_date = DateTime::createFromFormat( 'Ymd', get_field('start_date') );
-
-					$end_date = DateTime::createFromFormat( 'Ymd', get_field('end_date') );
-
-					$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
-
-					$issue_month = $issue_date->format('m');
-
-					$issue_year = $issue_date->format('y');
-
-				?>
+			?>
 
 				<tr>
 					<td>
@@ -85,16 +83,7 @@
 
 				<?php endwhile; else : ?>
 
-				<tr>
-					<td> No data. </td>
-					<td> No data. </td>
-					<td> No data. </td>
-					<td> No data. </td>
-					<td> No data. </td>
-					<td> No data. </td>
-					<td> No data. </td>
-					<td> No data. </td>
-				</tr>
+				<p>There are no certificates yet. To create a new certificate <a href="<?php echo home_url( 'new-certificate' ); ?>">click here</a>.</p>
 
 				<?php endif; ?>
 			</tbody>

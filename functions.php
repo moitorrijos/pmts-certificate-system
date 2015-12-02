@@ -13,6 +13,8 @@ function register_my_styles_and_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'register_my_styles_and_scripts' );
 
+show_admin_bar(false);
+
 require get_template_directory() . '/includes/register-nav-menus.php';
 require get_template_directory() . '/post-types/certificates.php';
 require get_template_directory() . '/post-types/courses.php';
@@ -21,3 +23,4 @@ require get_template_directory() . '/post-types/resolutions.php';
 require get_template_directory() . '/post-types/offices.php';
 require get_template_directory() . '/post-types/admin-columns/custom-admin-columns-courses.php';
 require get_template_directory() . '/post-types/includes/change-title-lable.php';
+require get_template_directory() . '/post-types/custom-fields/acf-code.php';

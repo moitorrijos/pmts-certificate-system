@@ -632,8 +632,8 @@ a.back-link {
     margin-bottom: 48px; }
 
 .logout {
-  text-align: center;
-  margin: 0; }
+  margin: 0;
+  padding-left: 22px; }
   .logout a {
     margin: 0; }
 

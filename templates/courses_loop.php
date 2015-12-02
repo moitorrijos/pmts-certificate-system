@@ -21,9 +21,9 @@
 
 			<thead>
 				<tr>
+					<th class="number">Course IMO Number</th>
 					<th class="title">Course Name</th>
 					<th class="number">Course Abbreaviation</th>
-					<th class="number">Course IMO Number</th>
 					<th class="short-number">Duration</th>
 					<th>Regulation</th>
 				</tr>
@@ -38,9 +38,15 @@
 				?>
 
 				<tr>
+					<td class="centered list-col-3"><?php
+						if ( get_field('imo_no') ) { 
+							echo get_field('imo_no'); 
+						} else {
+							echo '* * *';
+						}
+					?></td>
 					<td class="list-col-1"><a href="<?php echo the_permalink(); ?>"><?php the_title('', ''); ?></a></td>
 					<td class="centered list-col-2"><?php the_field('abbr'); ?></td>
-					<td class="centered list-col-3"><?php the_field('imo_no'); ?></td>
 					<td class="centered"><?php the_field('duration'); ?></td>
 					<td><?php the_field('regulation'); ?></td>
 				</tr>
@@ -56,6 +62,7 @@
 					<td> no data. </td>
 					<td> no data. </td>
 					<td> no data. </td>
+					
 				</tr>
 
 				<?php endif; ?>

@@ -8,15 +8,17 @@
 ?>
 
 <div class="navigation">
-	<h3><?php echo $user_fa; ?>&nbsp; Hi <?php echo $current_user->display_name; ?></h3>
+	<p class="logout">
+		<?php echo $user_fa; ?>&nbsp; Hi <?php echo $current_user->display_name; ?>
+	</p>
 	
 	<?php get_template_part( 'templates/nav-menu' ); ?>
 
+	<p class="logout">
+		<a href="<?php echo wp_logout_url( '/panama-certificates' ); ?>" class="logout-button">
+			<?php echo $signout_fa; ?> 
+			Click to Logout
+		</a>
+	</p>
+	
 </div>
-
-<p class="logout">
-	<a href="<?php echo wp_logout_url( '/panama-certificates' ); ?>" class="logout-button">
-		<?php echo $signout_fa; ?> 
-		Click to Logout
-	</a>
-</p>
