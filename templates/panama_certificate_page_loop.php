@@ -23,7 +23,7 @@
 				<tr>
 					<th class="middle-title">Participant's Name</th>
 					<th class="short-title">Passport/ID No.</th>
-					<th class="short-title">Course taken (Abbr)</th>
+					<th class="number">Course (Abbr)</th>
 					<th class="number">Start Date</th>
 					<th class="number">End Date</th>
 					<th class="short-title">Instructor</th>
@@ -46,13 +46,14 @@
 				$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
 				$issue_month = $issue_date->format('m');
 				$issue_year = $issue_date->format('y');
+				$no_posts = 196;
 
 			?>
 
 				<tr>
 					<td>
 						<a href="<?php echo the_permalink(); ?>">
-							<?php echo the_field('name'); ?>
+							<?php echo the_field('participants_name'); ?>
 						</a>
 					</td>
 					<td class="centered">
@@ -71,24 +72,24 @@
 						<?php echo get_the_title($instructor->ID); ?>
 					</td>
 					<td class="centered">
-						<?php echo get_the_title($office->ID); ?>
+						<?php echo $office; ?>
 					</td>
 					<td class="centered">
 						<?php echo $issue_date->format('d/m/y'); ?>
 					</td>
 					<td class="centered">
-						<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-0' . $office->number . '-0' . get_the_ID(); ?>
+						<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-0' . (intval( get_the_id() ) - $no_posts); ?>
 					</td>
 				</tr>
 
 				<?php endwhile; else : ?>
 
-				<p>There are no certificates yet. To create a new certificate <a href="<?php echo home_url( 'new-certificate' ); ?>">click here</a>.</p>
+				<p>There are no certificates yet. To create a new certificate <a href="<?php echo home_url( 'panama-certificates/new-panama-certificate' ); ?>">click here</a>.</p>
 
 				<?php endif; ?>
 			</tbody>
 		</table>
-
 	</div>
+
 
 </div>

@@ -582,7 +582,7 @@ form {
 .align-center, .certificate .signature, .the-test .signature {
   text-align: center; }
 
-a.logout-button, a.new-certificate-button, a.print-button, .download-xls-button, .edit-button, .acf-form-submit.acf-form-submit input[type="submit"] {
+a.logout-button, a.new-certificate-button, a.print-button, .download-xls-button, .clear-data-button, .edit-button, .acf-form-submit.acf-form-submit input[type="submit"] {
   padding: 4px 22px;
   text-decoration: none;
   color: white;
@@ -604,9 +604,9 @@ a.print-button {
   a.print-button:hover {
     background-color: #3287be; }
 
-.download-xls-button, .edit-button {
+.download-xls-button, .clear-data-button, .edit-button {
   background-color: #D37A4F; }
-  .download-xls-button:hover, .edit-button:hover {
+  .download-xls-button:hover, .clear-data-button:hover, .edit-button:hover {
     background-color: #ce6b3b; }
 
 a.back-link {
@@ -802,7 +802,8 @@ table {
 .participant-name.participant-name {
   font-family: 'coronet';
   font-size: 5rem;
-  margin: 32px 0; }
+  margin: 32px 0;
+  text-transform: capitalize; }
 
 .certificate, .the-test {
   position: relative;
@@ -942,7 +943,7 @@ h3.observations {
     padding: 0; }
   p, ul, ol {
     font-size: 10pt;
-    line-height: 1.1; }
+    line-height: 1.5; }
   p.attended {
     font-size: 9pt;
     line-height: 1;
@@ -960,7 +961,6 @@ h3.observations {
     display: none; }
   .main-content {
     display: block;
-    /* height: 100vh; */
     margin: 0;
     padding: 0.25in;
     width: 100%;
@@ -984,7 +984,7 @@ h3.observations {
     padding: 0 0.33in; }
   .signature.signature {
     font-size: 9pt;
-    margin-top: 0.5in;
+    margin-top: 0.55in;
     margin-bottom: 0in; }
   .short.short {
     margin-top: 0; }

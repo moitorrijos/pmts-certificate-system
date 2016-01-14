@@ -14,11 +14,10 @@
 	
 	<?php get_template_part( 'templates/nav-menu' ); ?>
 
-	<p class="logout">
-		<a href="<?php echo wp_logout_url( '/panama-certificates' ); ?>" class="logout-button">
-			<?php echo $signout_fa; ?> 
-			Click to Logout
-		</a>
-	</p>
-	
+
+	<a href="<?php echo wp_logout_url( '/panama-certificates' ); ?>" class="logout-button">
+		<?php echo $signout_fa; ?> 
+		Click to Logout
+	</a>
+
 </div>

@@ -227,6 +227,10 @@ a.print-button {
 	}
 }
 
+.clear-data-button {
+	@extend .download-xls-button;
+}
+
 .edit-button {
 	@extend .download-xls-button;
 }
