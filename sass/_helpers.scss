@@ -1,6 +1,10 @@
 $darken-gray: darken($gray, 40%);
 $header-width : 25%;
 $main-width: (100% - $header-width);
-$loggedin-header-width: 15%;
-$loggedin-main-width: (100% - $loggedin-header-width);
+$loggedin-header-width: 280px;
+$loggedin-main-width: 100%;
 $header-padding: 40px;
+
+%smooth-animation {
+	transition: all 0.25s ease-in-out;
+}

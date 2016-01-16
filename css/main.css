@@ -422,6 +422,10 @@ th {
 /**
  * Colors
  */
+.logged-in header, .logged-in header a.toggle-menu {
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out; }
+
 .copyright {
   clear: both; }
 
@@ -437,6 +441,7 @@ html {
 body {
   font-family: Verdana, sans-serif;
   line-height: 1.6;
+  position: relative;
   background-color: #66aad7;
   background-image: url(../images/certificate-background.jpg);
   background-size: cover;
@@ -459,6 +464,7 @@ header {
   background: white;
   color: #556a7b;
   position: relative;
+  z-index: 10;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -477,6 +483,8 @@ header {
       -ms-flex-align: stretch;
           align-items: stretch;
   box-shadow: 2px 0 12px rgba(85, 106, 123, 0.6); }
+  header .toggle-menu {
+    display: none; }
 
 .fa.fa {
   font-size: 0.9rem; }
@@ -484,7 +492,7 @@ header {
 .logo {
   width: 60%;
   max-width: 180px;
-  margin: 0 auto 45px; }
+  margin: 0 auto 60px; }
   .logo > img {
     width: 100%; }
 
@@ -554,18 +562,43 @@ form {
     text-shadow: 0 0 12px #6a8499; }
 
 .logged-in header {
+  width: 280px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -280px;
+  padding: 16px 0;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
-          justify-content: flex-start;
-  width: 15%;
-  padding: 50px 0; }
+          justify-content: flex-start; }
+  .logged-in header.show-menu {
+    left: 0; }
   .logged-in header h3 {
     padding-left: 22px;
     margin-bottom: 16px; }
+  .logged-in header a.toggle-menu {
+    display: block;
+    padding: 16px 22px;
+    color: #556a7b;
+    text-decoration: none;
+    position: fixed;
+    top: 32px;
+    left: 0;
+    text-align: right;
+    background: white; }
+    .logged-in header a.toggle-menu i.fa.fa {
+      font-size: 1.2em;
+      position: relative;
+      top: 1px;
+      margin-left: 12px; }
+    .logged-in header a.toggle-menu:hover {
+      background-color: #f2f4f6; }
+    .logged-in header a.toggle-menu.hide-button {
+      left: 280px; }
 
 .logged-in .main {
-  width: 85%; }
+  width: 100%; }
 
 .navigation {
   margin-bottom: 48px; }
@@ -590,7 +623,10 @@ a.logout-button, a.new-certificate-button, a.print-button, .download-xls-button,
   display: inline-block; }
 
 a.logout-button {
-  background-color: #C10000; }
+  background-color: #C10000;
+  display: block;
+  padding: 12px 22px;
+  margin-left: 0; }
   a.logout-button:hover {
     background-color: #a80000; }
 
@@ -641,7 +677,8 @@ ul.nav {
   list-style: none;
   width: 100%;
   padding: 0;
-  border-top: 1px solid #C5CFD7; }
+  border-top: 1px solid #C5CFD7;
+  margin-bottom: 48px; }
   ul.nav li a {
     display: block;
     color: #556a7b;
@@ -653,8 +690,14 @@ ul.nav {
       color: white;
       background: #3e94cc; }
     ul.nav li a i._mi {
-      display: inline-block;
       margin-right: 12px; }
+  ul.nav li.nav-button a {
+    text-align: right; }
+    ul.nav li.nav-button a i._mi {
+      position: relative;
+      top: 5px;
+      margin-right: 0;
+      margin-left: 18px; }
   ul.nav li.deactivated a {
     color: #C5CFD7; }
     ul.nav li.deactivated a:hover {
@@ -938,6 +981,9 @@ h3.observations {
   h1, h2, h3, p {
     color: black;
     margin: 0.125in 0; }
+  h2.course {
+    font-size: 12pt;
+    margin: 0.25in 0; }
   h3 {
     font-size: 12pt;
     padding: 0; }

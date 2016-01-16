@@ -1,3 +1,5 @@
+<?php $show_menu = '<i class="fa fa-reorder"></i>'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +11,11 @@
 <body <?php body_class(); ?> >
 
 <header>
+
+	<a href="#0" class="toggle-menu">
+		<?php echo $show_menu; ?>
+	</a>
+
 	<div class="logo">
 		<img src="<?php echo IMAGESPATH . '/pmts-logo-certificate.png'; ?>" />
 	</div>
