@@ -12,25 +12,29 @@
 
 <header>
 
-	<a href="#0" class="toggle-menu">
-		<?php echo $show_menu; ?>
-	</a>
 
-	<div class="logo">
-		<img src="<?php echo IMAGESPATH . '/pmts-logo-certificate.png'; ?>" />
-	</div>
 
-	<?php if ( is_user_logged_in() ) {
+		<a href="#0" class="toggle-menu">
+			<?php echo $show_menu; ?>
+		</a>
 
-			get_template_part('templates/navigation');
+		<div class="logo">
+			<img src="<?php echo IMAGESPATH . '/pmts-logo-certificate.png'; ?>" />
+		</div>
 
-		} else {
+		<?php if ( is_user_logged_in() ) {
 
-			get_template_part('plugins/login-with-ajax/widget_out');
+				get_template_part('templates/navigation');
 
-			get_template_part('pmts-copyright');
+			} else {
 
-		}
-	?>
+				get_template_part('plugins/login-with-ajax/widget_out');
+
+				get_template_part('pmts-copyright');
+
+			}
+		?>
+
+
 
 </header>

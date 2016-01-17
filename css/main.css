@@ -463,8 +463,9 @@ header {
   padding: 40px;
   background: white;
   color: #556a7b;
-  position: relative;
+  position: fixed;
   z-index: 10;
+  box-shadow: 0 0 6px black;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -482,7 +483,8 @@ header {
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  box-shadow: 2px 0 12px rgba(85, 106, 123, 0.6); }
+  height: 100vh;
+  background: white; }
   header .toggle-menu {
     display: none; }
 
@@ -563,7 +565,8 @@ form {
 
 .logged-in header {
   width: 280px;
-  position: absolute;
+  height: 100vh;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: -280px;
@@ -579,14 +582,15 @@ form {
     margin-bottom: 16px; }
   .logged-in header a.toggle-menu {
     display: block;
-    padding: 16px 22px;
+    padding: 16px 22px 16px 8px;
     color: #556a7b;
     text-decoration: none;
     position: fixed;
     top: 32px;
     left: 0;
     text-align: right;
-    background: white; }
+    background: white;
+    box-shadow: 6px 0 6px -2px rgba(0, 0, 0, 0.2); }
     .logged-in header a.toggle-menu i.fa.fa {
       font-size: 1.2em;
       position: relative;
