@@ -29,5 +29,6 @@ require get_template_directory() . '/post-types/offices.php';
 require get_template_directory() . '/post-types/admin-columns/custom-admin-columns-courses.php';
 require get_template_directory() . '/post-types/includes/change-title-lable.php';
 require get_template_directory() . '/post-types/custom-fields/acf-code.php';
+require get_template_directory() . '/includes/acf-total-certificate-number.php';
 require get_template_directory() . '/includes/acf-save-post-data.php';
 require get_template_directory() . '/includes/acf-remove-post-data.php';

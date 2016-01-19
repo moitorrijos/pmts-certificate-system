@@ -13,6 +13,7 @@
 	h2.course {
 		font-size: 12pt;
 		margin: 0.25in 0;
+		line-height: 1.1;
 	}
 
 	h3 {
@@ -22,13 +23,14 @@
 
 	p, ul, ol {
 		font-size: 10pt;
-		line-height: 1.5;
+		line-height: 1.2;
+		margin: .125in 0;
 	}
 
 	p.attended {
 		font-size: 9pt;
 		line-height: 1;
-		margin: 0.125in 0;
+		margin: .125in 0;
 	}
 
 	.no-print {
@@ -79,7 +81,7 @@
 	}
 
 	.certify.certify {
-		margin-top: 0.75in;
+		margin-top: 0.65in;
 		margin-bottom: 0;
 	}
 
@@ -94,7 +96,7 @@
 
 	.signature.signature {
 		font-size: 9pt;
-		margin-top: 0.55in;
+		margin-top: 0.25in;
 		margin-bottom: 0in;
 	}
 

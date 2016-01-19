@@ -12,7 +12,14 @@
 
 		<?php 
 			get_template_part('templates/buttons-div');
-			$args = array( 'post_type' => 'certificates', 'posts_per_page' => '25' );
+			$args = array( 
+				'post_type' 		=> 'certificates', 
+				'posts_per_page' 	=> -1,
+				'meta_key' 			=> 'date_of_issuance',
+				'orderby'			=> 'meta_value_num',
+				'order'				=> 'DESC'
+			);
+			
 			$certs = new WP_Query($args);
 
 			if ( $certs->have_posts() ) :
