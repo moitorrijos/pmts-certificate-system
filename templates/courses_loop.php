@@ -26,7 +26,7 @@
 					<th class="number">Course Abbreaviation</th>
 					<th class="short-number">Duration in days</th>
 					<th class="short-number">Duration in hours</th>
-					<th>Regulation</th>
+					<th class="short-number">Total Certificates</th>
 				</tr>
 			</thead>
 
@@ -50,7 +50,7 @@
 					<td class="centered list-col-2"><?php the_field('abbr'); ?></td>
 					<td class="centered"><?php the_field('duration'); ?></td>
 					<td class="centered"><?php the_field('duration_hours'); ?></td>
-					<td><?php the_field('regulation'); ?></td>
+					<td class="centered"><?php the_field('total_certificates'); ?></td>
 				</tr>
 
 				<?php endwhile; else : ?>

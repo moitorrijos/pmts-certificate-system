@@ -126,7 +126,7 @@
 
 					<span class="undies">
 
-						<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-' . $leading_zero . $register_code ?> * * * 
+						<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-' . $leading_zero . $register_code; ?> * * * 
 
 					</span>                 
 

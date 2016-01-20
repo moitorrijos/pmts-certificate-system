@@ -10,6 +10,8 @@
 
 <body <?php body_class(); ?> >
 
+<div class="loader"></div>
+
 <header>
 
 

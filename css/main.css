@@ -454,6 +454,19 @@ body {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; } }
+  body.page-template-new_panama_certificate.page-template-new_panama_certificate .invoice-field.invoice-field {
+    display: none; }
+  body.page-template-new_panama_certificate.page-template-new_panama_certificate .paid-field.paid-field {
+    display: none; }
+
+.loader {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7) url("../images/background-spinner.gif") center 50vh no-repeat;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Geneva, Verdana, sans-serif; }
@@ -747,7 +760,8 @@ form.acf-form .instructor-field {
 
 .acf-form-submit.acf-form-submit {
   width: 400px;
-  position: relative; }
+  position: relative;
+  margin: 16px 0; }
   .acf-form-submit.acf-form-submit input[type="submit"] {
     padding: 8px 12px;
     font-size: 1.1rem;
@@ -758,8 +772,10 @@ form.acf-form .instructor-field {
   .acf-form-submit.acf-form-submit span.acf-spinner {
     position: absolute;
     top: 12px;
-    left: 30px;
-    background: transparent url(../images/spinner.gif) no-repeat 50% 50%; }
+    left: 25px;
+    width: 175px;
+    background: #49C943 url(../images/spinner.gif) no-repeat 50% 50%;
+    z-index: 100; }
 
 .acf-fields > .acf-field {
   padding: 0;
@@ -812,7 +828,7 @@ table {
     table th.short-title {
       width: 12%; }
     table th.middle-title {
-      width: 25%; }
+      width: 20%; }
     table th.title {
       width: 40%; }
   table tr {
@@ -832,6 +848,10 @@ table {
       display: block; }
       table td a:hover {
         color: #225c82; }
+    table td a.add-invoice {
+      padding: 4px 8px;
+      background: #49C943;
+      color: white; }
 
 .certify, .participant-name, .attended, .course {
   text-align: center; }

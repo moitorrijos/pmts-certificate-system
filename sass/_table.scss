@@ -27,7 +27,7 @@ table {
 		}
 
 		&.middle-title {
-			width: 25%;
+			width: 20%;
 		}
 
 		&.title {
@@ -63,6 +63,12 @@ table {
 			&:hover {
 				color: darken($pmts-blue, 20%);
 			}
+		}
+
+		a.add-invoice {
+			padding: 4px 8px;
+			background: $cool-green;
+			color: white;
 		}
 	}
 

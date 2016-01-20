@@ -7,7 +7,9 @@ var certForm = 	$('.edit-certificate-form'),
 	editBtn = 	$('.edit-button'),
 	toggleBtn	=	$('a.toggle-menu'),
 	$header = 	$('header'),
+	$loader = $('.loader'),
 	coursesList,
+	$navA = $('.nav').find('li').find('a'),
 	options = {
 		valueNames : ['list-col-1', 'list-col-2', 'list-col-3']
 	};
@@ -28,7 +30,20 @@ function toggleMenu() {
 }
 
 toggleBtn.on('click', toggleMenu);
-/*toggleBtn.find('i').on('click', toggleMenu);*/
+
+$(document).on('click', function(event) {
+  if (!$(event.target).closest('header').length) {
+    $header.removeClass('show-menu');
+    toggleBtn.removeClass('hide-button');
+  }
+});
+
+$navA.on('click', function() {
+    $header.removeClass('show-menu');
+    toggleBtn.removeClass('hide-button');
+    $loader.show();
+});
+
 
 });
 })(jQuery);

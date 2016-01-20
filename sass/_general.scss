@@ -32,6 +32,18 @@ body {
 		min-height: 100vh;
 		display: flex;
 	}
+
+	&.page-template-new_panama_certificate.page-template-new_panama_certificate {
+		.invoice-field.invoice-field { display: none; }
+		.paid-field.paid-field { display: none; }
+	}
+}
+
+.loader {
+	position: absolute;
+	background: rgba(255, 255, 255, 0.7) url('../images/background-spinner.gif') center 50vh no-repeat;
+	top: 0; left: 0; bottom: 0; right: 0;
+	display: none;
 }
 
 h1, h2, h3, h4, h5, h6 {

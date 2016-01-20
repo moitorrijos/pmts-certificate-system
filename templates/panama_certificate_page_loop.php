@@ -37,6 +37,7 @@
 					<th>Office</th>
 					<th class="number">Issue Date</th>
 					<th class="middle-title">Register Code</th>
+					<th class="middle-title">Invoice No.</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -45,6 +46,7 @@
 
 				while ( $certs->have_posts() ) : $certs->the_post();
 
+				$add_plus = '<i class="fa fa-plus-square"></i>';
 				$course = get_field('course');
 				$instructor = get_field('instructor');
 				$office = get_field('office');
@@ -53,7 +55,28 @@
 				$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
 				$issue_month = $issue_date->format('m');
 				$issue_year = $issue_date->format('y');
-				$no_posts = 196;
+				$register_code =  get_post_meta(get_the_ID(), 'register_code', true);
+
+				if ( $register_code > 9999 ) {
+
+					$leading_zero = '';
+
+				} elseif ( $register_code > 999 && $register_code < 9999 ) {
+
+					$leading_zero = '0';
+
+				} elseif ( $register_code > 99 && $register_code <= 999 ) {
+
+					$leading_zero = '00';
+
+				} elseif ( $register_code > 9 && $register_code <= 99 ) {
+
+					$leading_zero = '000';
+
+				} else {
+
+					$leading_zero = '0000';
+				}
 
 			?>
 
@@ -67,7 +90,7 @@
 						<?php echo the_field('passport_id'); ?>
 					</td>
 					<td class="centered">
-						<?php echo /*get_the_title($course->ID)*/$course->abbr; ?>
+						<?php echo $course->abbr; ?>
 					</td>
 					<td class="centered">
 						<?php echo $start_date->format('d/m/y'); ?>
@@ -85,7 +108,14 @@
 						<?php echo $issue_date->format('d/m/y'); ?>
 					</td>
 					<td class="centered">
-						<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-0' . (intval( get_the_id() ) - $no_posts); ?>
+						<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-' . $leading_zero . $register_code; ?>
+					</td>
+					<td class="centered">
+						<?php if ( get_field('invoice_no') ) : ?>
+							<?php the_field('invoice_no') ; ?>
+						<?php else : ?>
+							<a href="#" class="add-invoice"><?php echo $add_plus; ?> Add Invoice</a>
+						<?php endif; ?>
 					</td>
 				</tr>
 

@@ -12,6 +12,7 @@
 	
 	width: 400px;
 	position: relative;
+	margin: 16px 0;
 
 	input[type="submit"] {
 		@extend %cool-button;
@@ -26,8 +27,10 @@
 	span.acf-spinner {
 		position: absolute; 
 		top: 12px;
-		left: 30px;
-	    background: transparent url(../images/spinner.gif) no-repeat 50% 50%;
+		left: 25px;
+		width: 175px;
+	    background: $cool-green url(../images/spinner.gif) no-repeat 50% 50%;
+	    z-index: 100;
 	}
 }
 
