@@ -472,7 +472,6 @@ header {
   padding: 40px;
   background: white;
   color: #556a7b;
-  position: fixed;
   z-index: 10;
   box-shadow: 0 0 6px black;
   display: -webkit-box;
