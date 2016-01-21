@@ -44,6 +44,15 @@ $navA.on('click', function() {
     $loader.show();
 });
 
+var windowHref = window.location.href,
+	acfHref = 'acf-form',
+	indexOfAcfHref = windowHref.lastIndexOf(acfHref),
+	acfHrefReturned = windowHref.slice( indexOfAcfHref, windowHref.length );
+
+if ( acfHrefReturned === acfHref ) {
+	certDiv.hide();
+	certForm.show();
+}
 
 });
 })(jQuery);

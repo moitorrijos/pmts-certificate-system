@@ -560,7 +560,7 @@ form {
 
 .main {
   color: white;
-  padding: 10px 60px 0;
+  padding: 10px 30px 0;
   width: 75%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -673,7 +673,7 @@ a.back-link {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left top;
-  padding: 20px 40px;
+  padding: 20px;
   color: #556a7b;
   margin-top: 80px;
   box-shadow: 0 8px 40px rgba(85, 106, 123, 0.4); }
@@ -801,6 +801,9 @@ form.acf-form .instructor-field {
   border-left-width: 0;
   margin-left: 2%; }
 
+ul.acf-radio-list li input, ul.acf-checkbox-list li input {
+  width: inherit; }
+
 input.search {
   box-sizing: border-box;
   border-radius: 4px;
@@ -850,7 +853,7 @@ table {
         color: #225c82; }
     table td a.add-invoice {
       padding: 4px 8px;
-      background: #49C943;
+      background: #D37A4F;
       color: white; }
 
 .certify, .participant-name, .attended, .course {

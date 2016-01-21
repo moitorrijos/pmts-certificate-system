@@ -64,3 +64,7 @@
 	border-left-width: 0;
 	margin-left: 2%;
 }
+
+ul.acf-radio-list li input, ul.acf-checkbox-list li input {
+	width: inherit;
+}

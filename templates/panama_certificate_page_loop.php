@@ -38,6 +38,8 @@
 					<th class="number">Issue Date</th>
 					<th class="middle-title">Register Code</th>
 					<th class="middle-title">Invoice No.</th>
+					<th class="short-title">Paid</th>
+					<th class="middle-title">Edit</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -46,7 +48,7 @@
 
 				while ( $certs->have_posts() ) : $certs->the_post();
 
-				$add_plus = '<i class="fa fa-plus-square"></i>';
+				$edit = '<i class="fa fa-pencil-square-o"></i>';
 				$course = get_field('course');
 				$instructor = get_field('instructor');
 				$office = get_field('office');
@@ -113,9 +115,15 @@
 					<td class="centered">
 						<?php if ( get_field('invoice_no') ) : ?>
 							<?php the_field('invoice_no') ; ?>
-						<?php else : ?>
-							<a href="#" class="add-invoice"><?php echo $add_plus; ?> Add Invoice</a>
 						<?php endif; ?>
+					</td>
+					<td class="centered">
+						<?php if ( get_field('paid') ) : ?>
+							<?php the_field('paid'); ?>
+						<?php endif; ?>
+					</td>
+					<td class="centered">
+						<a href="<?php echo the_permalink(); ?>/#acf-form" class="add-invoice"><?php echo $edit; ?></a>
 					</td>
 				</tr>
 
