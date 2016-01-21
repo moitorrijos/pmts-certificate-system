@@ -1,3 +1,4 @@
+
 .acf-form input[type="text"],
 .acf-form input[type="password"],
 .acf-form input[type="number"],
@@ -68,3 +69,10 @@
 ul.acf-radio-list li input, ul.acf-checkbox-list li input {
 	width: inherit;
 }
+
+/* body {
+	&.page-template-new_panama_certificate.page-template-new_panama_certificate {
+		.invoice-field.invoice-field { display: none; }
+		.paid-field.paid-field { display: none; }
+	}
+} */

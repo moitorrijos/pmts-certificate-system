@@ -454,10 +454,6 @@ body {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; } }
-  body.page-template-new_panama_certificate.page-template-new_panama_certificate .invoice-field.invoice-field {
-    display: none; }
-  body.page-template-new_panama_certificate.page-template-new_panama_certificate .paid-field.paid-field {
-    display: none; }
 
 .loader {
   position: absolute;
@@ -632,7 +628,7 @@ form {
 .align-center, .certificate .signature, .the-test .signature {
   text-align: center; }
 
-a.logout-button, a.new-certificate-button, a.print-button, .download-xls-button, .clear-data-button, .edit-button, .acf-form-submit.acf-form-submit input[type="submit"] {
+a.logout-button, a.new-certificate-button, a.print-button, a.view-button, .download-xls-button, .clear-data-button, .edit-button, .acf-form-submit.acf-form-submit input[type="submit"] {
   padding: 4px 22px;
   text-decoration: none;
   color: white;
@@ -652,10 +648,13 @@ a.new-certificate-button {
   a.new-certificate-button:hover {
     background-color: #3cbc36; }
 
-a.print-button {
+a.print-button, a.view-button {
   background-color: #3e94cc; }
-  a.print-button:hover {
+  a.print-button:hover, a.view-button:hover {
     background-color: #3287be; }
+
+a.view-button {
+  display: none; }
 
 .download-xls-button, .clear-data-button, .edit-button {
   background-color: #D37A4F; }
@@ -804,6 +803,12 @@ form.acf-form .instructor-field {
 ul.acf-radio-list li input, ul.acf-checkbox-list li input {
   width: inherit; }
 
+/* body {
+	&.page-template-new_panama_certificate.page-template-new_panama_certificate {
+		.invoice-field.invoice-field { display: none; }
+		.paid-field.paid-field { display: none; }
+	}
+} */
 input.search {
   box-sizing: border-box;
   border-radius: 4px;
@@ -845,15 +850,29 @@ table {
     padding: 8px; }
     table td.centered {
       text-align: center; }
+    table td i.fa.fa {
+      font-size: 1.4em; }
+    table td i.fa-check-circle, table td i.fa-times-circle {
+      padding: 8px 22px;
+      /* color: white; */ }
+    table td.paid, table td.edit {
+      padding: 0; }
+    table td.yes {
+      color: #60d05b; }
+    table td.no {
+      color: #c10000; }
     table td a {
       color: #286a96;
       text-decoration: none;
       display: block; }
       table td a:hover {
         color: #225c82; }
+    table td.edit i.fa.fa {
+      color: #bf5f30; }
     table td a.add-invoice {
-      padding: 4px 8px;
-      background: #D37A4F;
+      width: 100%;
+      height: 100%;
+      padding: 8px 18px;
       color: white; }
 
 .certify, .participant-name, .attended, .course {

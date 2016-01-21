@@ -22,6 +22,12 @@
 
 			</a>
 
+			<a href="#0" class="view-button"><i class="fa fa-eye"></i>
+
+				View Certificate
+
+			</a>
+
 			<a href="<?php echo home_url('panama-certificates/new-panama-certificate');?>" class="new-certificate-button">
 
 				Create New Certificate
@@ -252,7 +258,15 @@
 
 		<div class="edit-certificate-form">
 
-			<?php acf_form(); ?>
+			<?php 
+				
+				$certificate_options = array(
+					'updated_message' => __("Certificate Updated", 'certificate-system'),
+				);
+
+				acf_form(); 
+
+			?>
 
 		</div>
 

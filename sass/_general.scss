@@ -32,11 +32,6 @@ body {
 		min-height: 100vh;
 		display: flex;
 	}
-
-	&.page-template-new_panama_certificate.page-template-new_panama_certificate {
-		.invoice-field.invoice-field { display: none; }
-		.paid-field.paid-field { display: none; }
-	}
 }
 
 .loader {
@@ -276,6 +271,11 @@ a.print-button {
 	&:hover {
 		background-color: darken($pmts-blue, 5%);
 	}
+}
+
+a.view-button {
+	@extend a.print-button;
+	display: none;
 }
 
 .download-xls-button {

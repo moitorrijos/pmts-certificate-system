@@ -117,12 +117,14 @@
 							<?php the_field('invoice_no') ; ?>
 						<?php endif; ?>
 					</td>
-					<td class="centered">
-						<?php if ( get_field('paid') ) : ?>
-							<?php the_field('paid'); ?>
+					<td class="centered paid <?php get_field('paid') ? the_field('paid') : ''; ?>" >
+						<?php if ( get_field('paid') == 'yes' ) : ?>
+							<i class="fa fa-check-circle"></i>
+						<?php elseif ( get_field('paid') == 'no') : ?>
+							<i class="fa fa-times-circle"></i>
 						<?php endif; ?>
 					</td>
-					<td class="centered">
+					<td class="centered edit">
 						<a href="<?php echo the_permalink(); ?>/#acf-form" class="add-invoice"><?php echo $edit; ?></a>
 					</td>
 				</tr>

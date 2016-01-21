@@ -55,6 +55,27 @@ table {
 			text-align: center;
 		}
 
+		i.fa.fa {
+			font-size: 1.4em;
+		}
+
+		i.fa-check-circle, i.fa-times-circle {
+			padding: 8px 22px;
+			/* color: white; */
+		}
+
+		&.paid, &.edit {
+			padding: 0;
+		}
+
+		&.yes {
+			color: lighten($cool-green, 6%);
+		}
+
+		&.no {
+			color: saturate($logout-red, 15%);
+		}
+
 		a {
 			color: darken($pmts-blue, 15%);
 			text-decoration: none;
@@ -65,9 +86,15 @@ table {
 			}
 		}
 
+		&.edit {
+			i.fa.fa { 
+				color: darken($cool-orange, 10%);
+			}
+		}
+
 		a.add-invoice {
-			padding: 4px 8px;
-			background: $cool-orange;
+			width: 100%; height: 100%;
+			padding: 8px 18px;
 			color: white;
 		}
 	}

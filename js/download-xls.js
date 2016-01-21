@@ -2,8 +2,7 @@
 $(function() {
 
 var $downloadXlsBtn = $('.download-xls-button'),
-	$downloadXlsTable = $('.download-xls-table'),
-	$printBtn = $('.print-button');
+	$downloadXlsTable = $('.download-xls-table');
 
 $downloadXlsBtn.click(function(e){
 
@@ -17,10 +16,6 @@ $downloadXlsBtn.click(function(e){
 		filename: "panama-certs-" + timeStamp,
 	});
 
-});
-
-$printBtn.on('click', function(){
-	window.print();
 });
 
 });
