@@ -27,12 +27,14 @@
 					<th class="short-number">Duration in days</th>
 					<th class="short-number">Duration in hours</th>
 					<th class="short-number">Total Certificates</th>
+					<th class="short-number">Edit</th>
 				</tr>
 			</thead>
 
 			<tbody class="list">
 
 				<?php
+					$edit = '<i class="fa fa-pencil-square-o"></i>';
 					$args = array( 'post_type' => 'courses', 'posts_per_page' => -1 );
 					$courses = new WP_Query($args);
 					if ( $courses->have_posts() ) : while ( $courses->have_posts() ) : $courses->the_post();
@@ -51,6 +53,9 @@
 					<td class="centered"><?php the_field('duration'); ?></td>
 					<td class="centered"><?php the_field('duration_hours'); ?></td>
 					<td class="centered"><?php the_field('total_certificates'); ?></td>
+					<td class="centered edit">
+						<a href="<?php echo the_permalink(); ?>/" class="edit-form"><?php echo $edit; ?></a>
+					</td>
 				</tr>
 
 				<?php endwhile; else : ?>

@@ -869,7 +869,7 @@ table {
         color: #225c82; }
     table td.edit i.fa.fa {
       color: #bf5f30; }
-    table td a.add-invoice {
+    table td a.edit-form {
       width: 100%;
       height: 100%;
       padding: 8px 18px;

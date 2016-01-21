@@ -4,6 +4,8 @@
 		
 		<?php
 
+		$edit = '<i class="fa fa-pencil-square-o"></i>';
+
 		if( have_posts() ) : while( have_posts() ) : the_post();
 		the_title('<h1>', '</h1>'); endwhile;
 		endif; wp_reset_query();
@@ -22,6 +24,7 @@
 					<th class="number">Nationality</th>
 					<th class="number">Place of Training</th>
 					<th class="title">Authorized Courses</th>
+					<th class="short-number">Edit</th>
 				</tr>
 			</thead>
 			<tbody class="list">
@@ -46,6 +49,9 @@
 								}
 							}
 						?>
+					</td>
+					<td class="centered edit">
+						<a href="<?php echo the_permalink(); ?>" class="edit-form"><?php echo $edit; ?></a>
 					</td>
 				</tr>
 

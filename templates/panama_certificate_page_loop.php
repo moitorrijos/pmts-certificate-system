@@ -125,7 +125,7 @@
 						<?php endif; ?>
 					</td>
 					<td class="centered edit">
-						<a href="<?php echo the_permalink(); ?>/#acf-form" class="add-invoice"><?php echo $edit; ?></a>
+						<a href="<?php echo the_permalink(); ?>/#acf-form" class="edit-form"><?php echo $edit; ?></a>
 					</td>
 				</tr>
 
