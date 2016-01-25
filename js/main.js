@@ -29,6 +29,7 @@ function fadeCertDivOut() {
 function fadeCertDivIn() {
 	$viewBtn.hide();
 	$certDiv.fadeIn('fast');
+	$certForm.hide();
 	$printBtn.css('display', 'inline-block');
 	$editBtn.css('display', 'inline-block');
 }

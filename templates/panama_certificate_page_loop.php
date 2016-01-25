@@ -15,12 +15,16 @@
 			$args = array( 
 				'post_type' 		=> 'certificates', 
 				'posts_per_page' 	=> -1,
+				'monthnum'			=> date('n'),
+				'year'				=> date('Y'),
 				'meta_key' 			=> 'date_of_issuance',
 				'orderby'			=> 'meta_value_num',
 				'order'				=> 'DESC'
 			);
 			
 			$certs = new WP_Query($args);
+
+			/*$certs = get_posts($agrs);*/
 
 			if ( $certs->have_posts() ) :
 		?>
@@ -48,6 +52,8 @@
 
 				while ( $certs->have_posts() ) : $certs->the_post();
 
+				/*foreach ($certs as $cert) : setup_postdata( $cert );*/
+
 				$edit = '<i class="fa fa-pencil-square-o"></i>';
 				$course = get_field('course');
 				$instructor = get_field('instructor');
@@ -63,7 +69,7 @@
 
 					$leading_zero = '';
 
-				} elseif ( $register_code > 999 && $register_code < 9999 ) {
+				} elseif ( $register_code > 999 && $register_code <= 9999 ) {
 
 					$leading_zero = '0';
 
@@ -136,6 +142,14 @@
 				<?php endif; ?>
 			</tbody>
 		</table>
+
+		<?php the_posts_pagination( array(
+
+			'prev_text'				=> 'Previous Month',
+			'next_text'				=> 'Next Month',
+
+		) ); ?>
+
 	</div>
 
 
