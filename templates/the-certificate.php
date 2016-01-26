@@ -6,15 +6,20 @@
 
 			<a href="<?php echo home_url('panama-certificates'); ?>" class="back-link"><i class="fa fa-backward"></i>
 
+
 				Back to Certificates List
 
 			</a>
 
-			<a href="#0" class="edit-button"><i class="fa fa-pencil"></i>
+			<?php if ( current_user_can( 'activate_plugins' ) ) : ?>
 
-				Edit Certificate
+				<a href="#0" class="edit-button"><i class="fa fa-pencil"></i>
 
-			</a>
+					Edit Certificate
+
+				</a>
+
+			<?php endif; ?>
 
 			<a href="#0" class="print-button"><i class="fa fa-print"></i>
 
@@ -256,19 +261,23 @@
 
 		</div>
 
-		<div class="edit-certificate-form">
+		<?php if (current_user_can( 'activate_plugins' ) ) : ?>
 
-			<?php 
-				
-				$certificate_options = array(
-					'updated_message' => __("Certificate Updated", 'certificate-system'),
-				);
+			<div class="edit-certificate-form">
 
-				acf_form(); 
+				<?php 
+					
+					$certificate_options = array(
+						'updated_message' => __("Certificate Updated", 'certificate-system'),
+					);
 
-			?>
+					acf_form(); 
 
-		</div>
+				?>
+
+			</div>
+
+		<?php endif; ?>
 
 	<?php endwhile; endif; ?>
 

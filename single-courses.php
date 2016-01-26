@@ -6,13 +6,23 @@
 
 if ( is_user_logged_in() ) {
 
-	acf_form_head();
+	if ( current_user_can( 'activate_plugins' ) ) {
 
-	get_header();
+		acf_form_head();
 
-	get_template_part( 'templates/edit-courses' );
+		get_header();
 
-	get_footer();
+		get_template_part( 'templates/edit-courses' );
+
+		get_footer();
+
+	} else {
+
+		wp_redirect( home_url() );
+
+		exit;
+
+	}
 
 } else {
 

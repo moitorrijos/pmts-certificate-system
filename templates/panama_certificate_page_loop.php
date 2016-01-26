@@ -43,7 +43,9 @@
 					<th class="middle-title">Register Code</th>
 					<th class="middle-title">Invoice No.</th>
 					<th class="short-title">Paid</th>
-					<th class="middle-title">Edit</th>
+					<?php if ( current_user_can('activate_plugins') ) : ?>
+						<th class="middle-title">Edit</th>
+					<?php endif; ?>
 				</tr>
 			</thead>
 			<tbody>
@@ -131,9 +133,11 @@
 							<i class="fa fa-times-circle"></i>
 						<?php endif; ?>
 					</td>
-					<td class="centered edit">
-						<a href="<?php echo the_permalink(); ?>/#acf-form" class="edit-form"><?php echo $edit; ?></a>
-					</td>
+					<?php if ( current_user_can('activate_plugins') ) : ?>
+						<td class="centered edit">
+							<a href="<?php echo the_permalink(); ?>/#acf-form" class="edit-form"><?php echo $edit; ?></a>
+						</td>
+					<?php endif; ?>
 				</tr>
 
 				<?php endwhile; else : ?>

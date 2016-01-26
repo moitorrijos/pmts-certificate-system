@@ -24,7 +24,9 @@
 					<th class="number">Nationality</th>
 					<th class="number">Place of Training</th>
 					<th class="title">Authorized Courses</th>
-					<th class="short-number">Edit</th>
+					<?php if ( current_user_can( 'activate_plugins' ) ) : ?>
+						<th class="short-number">Edit</th>
+					<?php endif; ?>
 				</tr>
 			</thead>
 			<tbody class="list">
@@ -36,7 +38,13 @@
 				?>
 
 				<tr>
-					<td class="list-col-1"><a href="<?php echo the_permalink(); ?>"><?php the_title('', ''); ?></a></td>
+					<td class="list-col-1">
+						<?php if ( current_user_can( 'activate_plugins' ) ) : ?>
+							<a href="<?php echo the_permalink(); ?>"><?php the_title('', ''); ?></a>
+						<?php else : ?>
+							<?php the_title( '', '' ); ?>
+						<?php endif; ?>
+					</td>
 					<td class="centered list-col-2"><?php the_field('nationality'); ?></td>
 					<td class="centered "><?php the_field('instructor_residence'); ?></td>
 					<td>
@@ -50,9 +58,11 @@
 							}
 						?>
 					</td>
-					<td class="centered edit">
-						<a href="<?php echo the_permalink(); ?>" class="edit-form"><?php echo $edit; ?></a>
-					</td>
+					<?php if ( current_user_can( 'activate_plugins') ) : ?>
+						<td class="centered edit">
+							<a href="<?php echo the_permalink(); ?>" class="edit-form"><?php echo $edit; ?></a>
+						</td>
+					<?php endif; ?>
 				</tr>
 
 				<?php endwhile; else : ?>

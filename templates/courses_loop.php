@@ -48,7 +48,15 @@
 							echo '* * *';
 						}
 					?></td>
-					<td class="list-col-1"><a href="<?php echo the_permalink(); ?>"><?php the_title('', ''); ?></a></td>
+					<td class="list-col-1">
+						<?php if ( current_user_can( 'activate_plugins' ) ) : ?>
+							<a href="<?php echo the_permalink(); ?>">
+								<?php the_title('', ''); ?>
+							</a>
+						<?php else : ?>
+							<?php the_title( '', '' ); ?>
+						<?php endif; ?>
+					</td>
 					<td class="centered list-col-2"><?php the_field('abbr'); ?></td>
 					<td class="centered"><?php the_field('duration'); ?></td>
 					<td class="centered"><?php the_field('duration_hours'); ?></td>
