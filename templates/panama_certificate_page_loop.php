@@ -64,6 +64,7 @@
 				$issue_month = $issue_date->format('m');
 				$issue_year = $issue_date->format('y');
 				$register_code =  get_post_meta(get_the_ID(), 'register_code', true);
+				$post_date = get_the_date( date('d/m/y'), get_the_ID() );
 
 				if ( $register_code > 9999 ) {
 
@@ -113,7 +114,7 @@
 						<?php echo $office; ?>
 					</td>
 					<td class="centered">
-						<?php echo $issue_date->format('d/m/y'); ?>
+						<?php echo $issue_date->format('d/m/y') /*get_the_date('d/m/y')*/; ?>
 					</td>
 					<td class="centered">
 						<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-' . $leading_zero . $register_code; ?>

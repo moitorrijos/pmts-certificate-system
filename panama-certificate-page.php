@@ -10,6 +10,8 @@ if( is_user_logged_in() ) {
 
 	get_template_part( 'templates/panama_certificate_page_loop' );
 
+	/*get_template_part( 'panama_certificates_per_month' );*/
+
 	get_footer();
 
 } else {

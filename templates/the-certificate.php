@@ -172,9 +172,9 @@
 
 				<p class="short">
 
-					End Course Date:
+					Course Delivery Mode:
 
-					<span class="undies"><?php echo $end_date->format('d F Y'); ?></span>
+					<span class="undies">In Classroom</span>
 
 				</p>
 
@@ -184,9 +184,9 @@
 
 				<p class="short">
 
-					Course Delivery Mode:
+					End Course Date:
 
-					<span class="undies">In Classroom</span>
+					<span class="undies"><?php echo $end_date->format('d F Y'); ?></span>
 
 				</p>
 
