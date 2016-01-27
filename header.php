@@ -16,7 +16,7 @@
 
 
 
-		<a href="#0" class="toggle-menu">
+		<a href="#0" class="toggle-menu not-link">
 			<?php echo $show_menu; ?>
 		</a>
 

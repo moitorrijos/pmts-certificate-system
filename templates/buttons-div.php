@@ -78,11 +78,11 @@ $add_button = new AddButton;
 ?>
 
 <div class="buttons align-right">
-	<a href="#0" class="download-xls-button"><i class="fa fa-download"></i>&nbsp; Download Table to Excel</a>
+	<a href="#0" class="download-xls-button not-link"><i class="fa fa-download"></i>&nbsp; Download Table to Excel</a>
 	
 	<?php if ( current_user_can('activate_plugins') ) : ?>
 
-		<a href="<?php echo $add_button->button_link(); ?>" class="new-certificate-button <?php echo $add_button->is_deactivated(); ?>">
+		<a href="<?php echo $add_button->button_link(); ?>" class="new-certificate-button <?php echo $add_button->is_deactivated(); ?> not-link">
 			<i class="fa fa-plus-square"></i>&nbsp; <?php echo $add_button->button_value(); ?>
 		</a>
 

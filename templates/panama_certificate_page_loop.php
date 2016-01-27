@@ -14,7 +14,7 @@
 			get_template_part('templates/buttons-div');
 			$args = array( 
 				'post_type' 		=> 'certificates', 
-				'posts_per_page' 	=> -1,
+				'posts_per_page' 	=> 75,
 				'monthnum'			=> date('n'),
 				'year'				=> date('Y'),
 				'meta_key' 			=> 'date_of_issuance',

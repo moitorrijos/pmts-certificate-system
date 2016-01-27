@@ -21,9 +21,9 @@
 
 			<thead>
 				<tr>
-					<th class="number">Course IMO Number</th>
+					<th class="number">IMO No.</th>
 					<th class="title">Course Name</th>
-					<th class="number">Course Abbreaviation</th>
+					<th class="number">Abbr</th>
 					<th class="short-number">Duration in days</th>
 					<th class="short-number">Duration in hours</th>
 					<th class="short-number">Total Certificates</th>

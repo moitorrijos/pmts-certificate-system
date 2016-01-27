@@ -72,5 +72,9 @@ $navA.on('click', function() {
     $loader.show();
 });
 
+$('a').not('.not-link').on('click', function(){
+	$loader.fadeIn('fast');
+});
+
 });
 })(jQuery);

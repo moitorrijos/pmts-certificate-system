@@ -13,7 +13,7 @@
 
 			<?php if ( current_user_can( 'activate_plugins' ) ) : ?>
 
-				<a href="#0" class="edit-button"><i class="fa fa-pencil"></i>
+				<a href="#0" class="edit-button not-link"><i class="fa fa-pencil"></i>
 
 					Edit Certificate
 
@@ -21,13 +21,13 @@
 
 			<?php endif; ?>
 
-			<a href="#0" class="print-button"><i class="fa fa-print"></i>
+			<a href="#0" class="print-button not-link"><i class="fa fa-print"></i>
 
 				Print Certificate
 
 			</a>
 
-			<a href="#0" class="view-button"><i class="fa fa-eye"></i>
+			<a href="#0" class="view-button not-link"><i class="fa fa-eye"></i>
 
 				View Certificate
 
