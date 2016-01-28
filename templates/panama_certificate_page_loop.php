@@ -2,16 +2,13 @@
 
 	<div class="main-content">
 		
-		<?php
-
-			if( have_posts() ) : while( have_posts() ) : the_post();
-			the_title('<h1>', '</h1>'); endwhile;
-			endif; wp_reset_query();
-
-		?>
+		<h1>Panama Certificates</h1>
 
 		<?php 
 			get_template_part('templates/buttons-div');
+
+			$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
 			$args = array( 
 				'post_type' 		=> 'certificates', 
 				'posts_per_page' 	=> 75,
@@ -19,12 +16,13 @@
 				'year'				=> date('Y'),
 				'meta_key' 			=> 'date_of_issuance',
 				'orderby'			=> 'meta_value_num',
-				'order'				=> 'DESC'
+				'order'				=> 'DESC',
+				'paged'				=> $paged,
 			);
-			
+
 			$certs = new WP_Query($args);
 
-			/*$certs = get_posts($agrs);*/
+			/*var_dump($certs->max_num_pages); die;*/
 
 			if ( $certs->have_posts() ) :
 		?>
@@ -53,8 +51,6 @@
 			<?php 
 
 				while ( $certs->have_posts() ) : $certs->the_post();
-
-				/*foreach ($certs as $cert) : setup_postdata( $cert );*/
 
 				$edit = '<i class="fa fa-pencil-square-o"></i>';
 				$course = get_field('course');
@@ -116,7 +112,7 @@
 						<?php echo $office; ?>
 					</td>
 					<td class="centered">
-						<?php echo $issue_date->format('d/m/y') /*get_the_date('d/m/y')*/; ?>
+						<?php echo $issue_date->format('d/m/y'); ?>
 					</td>
 					<td class="centered">
 						<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-' . $leading_zero . $register_code; ?>
@@ -133,14 +129,16 @@
 							<i class="fa fa-times-circle"></i>
 						<?php endif; ?>
 					</td>
+
 					<?php if ( current_user_can('activate_plugins') ) : ?>
 						<td class="centered edit">
 							<a href="<?php echo the_permalink(); ?>/#acf-form" class="edit-form"><?php echo $edit; ?></a>
 						</td>
 					<?php endif; ?>
+
 				</tr>
 
-				<?php endwhile; else : ?>
+				<?php endwhile; else : ?> 
 
 				<p>There are no certificates yet. To create a new certificate <a href="<?php echo home_url( 'panama-certificates/new-panama-certificate' ); ?>">click here</a>.</p>
 
@@ -148,14 +146,15 @@
 			</tbody>
 		</table>
 
-		<?php the_posts_pagination( array(
+		<?php if ($certs->max_num_pages > 1) :  ?>
 
-			'prev_text'				=> 'Previous Month',
-			'next_text'				=> 'Next Month',
+			<div class="paginate">
+				<?php previous_posts_link('&#10094; Previous Page'); ?>
+				<?php next_posts_link('Next Page &#10095;', $certs->max_num_pages); ?>
+			</div>
 
-		) ); ?>
+		<?php endif; ?>
 
 	</div>
-
 
 </div>

@@ -99,3 +99,13 @@ table {
 		}
 	}
 }
+
+.paginate {
+	a {
+		color: white;
+		text-decoration: none;
+		margin-right: 20px;
+		background: darken($cool-green, 10%);
+		padding: 2px 18px;
+	}
+}
