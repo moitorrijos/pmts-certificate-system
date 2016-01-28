@@ -271,7 +271,7 @@
 						'updated_message' => __("Certificate Updated", 'certificate-system'),
 					);
 
-					acf_form(); 
+					acf_form($certificate_options); 
 
 				?>
 
