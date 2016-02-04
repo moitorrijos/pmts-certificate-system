@@ -6,7 +6,7 @@
 
 if ( is_user_logged_in() ) {
 
-	if ( current_user_can( 'activate_plugins' ) ) {
+	if ( current_user_can( 'edit_pages' ) ) {
 
 		acf_form_head();
 

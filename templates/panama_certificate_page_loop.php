@@ -41,7 +41,7 @@
 					<th class="middle-title">Register Code</th>
 					<th class="middle-title">Invoice No.</th>
 					<th class="short-title">Paid</th>
-					<?php if ( current_user_can('activate_plugins') ) : ?>
+					<?php if ( current_user_can('edit_pages') ) : ?>
 						<th class="middle-title">Edit</th>
 					<?php endif; ?>
 				</tr>
@@ -130,7 +130,7 @@
 						<?php endif; ?>
 					</td>
 
-					<?php if ( current_user_can('activate_plugins') ) : ?>
+					<?php if ( current_user_can('edit_pages') ) : ?>
 						<td class="centered edit">
 							<a href="<?php echo the_permalink(); ?>/#acf-form" class="edit-form"><?php echo $edit; ?></a>
 						</td>

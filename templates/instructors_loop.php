@@ -24,7 +24,7 @@
 					<th class="number">Nationality</th>
 					<th class="number">Place of Training</th>
 					<th class="title">Authorized Courses</th>
-					<?php if ( current_user_can( 'activate_plugins' ) ) : ?>
+					<?php if ( current_user_can( 'edit_pages' ) ) : ?>
 						<th class="short-number">Edit</th>
 					<?php endif; ?>
 				</tr>
@@ -39,7 +39,7 @@
 
 				<tr>
 					<td class="list-col-1">
-						<?php if ( current_user_can( 'activate_plugins' ) ) : ?>
+						<?php if ( current_user_can( 'edit_pages' ) ) : ?>
 							<a href="<?php echo the_permalink(); ?>"><?php the_title('', ''); ?></a>
 						<?php else : ?>
 							<?php the_title( '', '' ); ?>
@@ -58,7 +58,7 @@
 							}
 						?>
 					</td>
-					<?php if ( current_user_can( 'activate_plugins') ) : ?>
+					<?php if ( current_user_can( 'edit_pages') ) : ?>
 						<td class="centered edit">
 							<a href="<?php echo the_permalink(); ?>" class="edit-form"><?php echo $edit; ?></a>
 						</td>

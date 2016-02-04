@@ -49,7 +49,7 @@
 						}
 					?></td>
 					<td class="list-col-1">
-						<?php if ( current_user_can( 'activate_plugins' ) ) : ?>
+						<?php if ( current_user_can( 'edit_pages' ) ) : ?>
 							<a href="<?php echo the_permalink(); ?>">
 								<?php the_title('', ''); ?>
 							</a>

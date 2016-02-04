@@ -11,7 +11,7 @@
 
 			</a>
 
-			<?php if ( current_user_can( 'activate_plugins' ) ) : ?>
+			<?php if ( current_user_can( 'edit_pages' ) ) : ?>
 
 				<a href="#0" class="edit-button not-link"><i class="fa fa-pencil"></i>
 
@@ -261,7 +261,7 @@
 
 		</div>
 
-		<?php if (current_user_can( 'activate_plugins' ) ) : ?>
+		<?php if (current_user_can( 'edit_pages' ) ) : ?>
 
 			<div class="edit-certificate-form">
 
