@@ -90,8 +90,6 @@
 				$leading_zero = '0000';
 			}
 
-			/*$leading_zero = $register_code > 9999 ? '' : '000';*/
-
 		?>
 
 		<div class="certificate">
