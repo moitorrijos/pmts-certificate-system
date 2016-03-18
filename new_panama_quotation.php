@@ -1,14 +1,16 @@
 <?php 
 
 /**
- * Template Name: Courses Page
+ * Template Name: New Panama Quotation
  */
 
 if( is_user_logged_in() ) {
+	
+	acf_form_head();
 
 	get_header();
 
-	get_template_part( 'templates/courses_loop' );
+	get_template_part( 'templates/new_panama_quotation_loop' );
 
 	get_footer();
 

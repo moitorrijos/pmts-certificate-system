@@ -20,9 +20,7 @@
 			<?php echo $show_menu; ?>
 		</a>
 
-		<div class="logo">
-			<img src="<?php echo IMAGESPATH . '/pmts-logo-certificate.png'; ?>" />
-		</div>
+		<?php get_template_part('templates/logo_image'); ?>
 
 		<?php if ( is_user_logged_in() ) {
 

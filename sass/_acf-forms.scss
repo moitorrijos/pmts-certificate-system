@@ -66,13 +66,45 @@
 	margin-left: 2%;
 }
 
-ul.acf-radio-list li input, ul.acf-checkbox-list li input {
-	width: inherit;
+li a {
+	cursor: pointer;
 }
 
-/* body {
-	&.page-template-new_panama_certificate.page-template-new_panama_certificate {
-		.invoice-field.invoice-field { display: none; }
-		.paid-field.paid-field { display: none; }
+ul.acf-radio-list li, ul.acf-checkbox-list li {
+	width: 50%;
+	display: inline-block;
+
+	input {
+		width: inherit;
 	}
-} */
+}
+
+.acf-button {
+	@extend %cool-button;
+	background: $cool-green;
+}
+
+table.acf-table {
+	thead {
+
+		tr {
+			
+			th { 
+				color: white;
+				background: $pmts-blue;
+				font-weight: bold; 
+				padding: 1em 2em;
+				font-size: 12px;
+			}
+		}
+	}
+
+	tr td.acf-field {
+		vertical-align: middle;
+		padding: 10px;
+
+		input {
+			height: 30px;
+		}
+	}
+}

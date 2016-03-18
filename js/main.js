@@ -72,7 +72,7 @@ $navA.on('click', function() {
     $loader.show();
 });
 
-$('a').not('.not-link').on('click', function(){
+$('a').not('.not-link, .acf-button').on('click', function(){
 	$loader.fadeIn('fast');
 });
 

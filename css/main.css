@@ -554,6 +554,10 @@ form {
   line-height: 1.6;
   margin-top: 40px; }
 
+.clearfix {
+  width: 100%;
+  clear: both; }
+
 .main {
   color: white;
   padding: 10px 30px 0;
@@ -628,7 +632,7 @@ form {
 .align-center, .certificate .signature, .the-test .signature {
   text-align: center; }
 
-a.logout-button, a.new-certificate-button, a.print-button, a.view-button, .download-xls-button, .clear-data-button, .edit-button, .acf-form-submit.acf-form-submit input[type="submit"] {
+a.logout-button, a.new-certificate-button, a.print-button, a.view-button, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
   padding: 4px 22px;
   text-decoration: none;
   color: white;
@@ -656,9 +660,9 @@ a.print-button, a.view-button {
 a.view-button {
   display: none; }
 
-.download-xls-button, .clear-data-button, .edit-button {
+.download-xls-button, .clear-data-button, .edit-button, .edit-quote-button {
   background-color: #D37A4F; }
-  .download-xls-button:hover, .clear-data-button:hover, .edit-button:hover {
+  .download-xls-button:hover, .clear-data-button:hover, .edit-button:hover, .edit-quote-button:hover {
     background-color: #ce6b3b; }
 
 a.back-link {
@@ -745,9 +749,6 @@ form.acf-form .course-date {
 form.acf-form .instructor-field {
   clear: both; }
 
-.edit-certificate-form {
-  display: none; }
-
 .acf-form input[type="text"],
 .acf-form input[type="password"],
 .acf-form input[type="number"],
@@ -800,15 +801,31 @@ form.acf-form .instructor-field {
   border-left-width: 0;
   margin-left: 2%; }
 
-ul.acf-radio-list li input, ul.acf-checkbox-list li input {
-  width: inherit; }
+li a {
+  cursor: pointer; }
 
-/* body {
-	&.page-template-new_panama_certificate.page-template-new_panama_certificate {
-		.invoice-field.invoice-field { display: none; }
-		.paid-field.paid-field { display: none; }
-	}
-} */
+ul.acf-radio-list li, ul.acf-checkbox-list li {
+  width: 50%;
+  display: inline-block; }
+  ul.acf-radio-list li input, ul.acf-checkbox-list li input {
+    width: inherit; }
+
+.acf-button {
+  background: #49C943; }
+
+table.acf-table thead tr th {
+  color: white;
+  background: #3e94cc;
+  font-weight: bold;
+  padding: 1em 2em;
+  font-size: 12px; }
+
+table.acf-table tr td.acf-field {
+  vertical-align: middle;
+  padding: 10px; }
+  table.acf-table tr td.acf-field input {
+    height: 30px; }
+
 input.search {
   box-sizing: border-box;
   border-radius: 4px;
@@ -850,6 +867,8 @@ table {
     padding: 8px; }
     table td.centered {
       text-align: center; }
+    table td.align-right {
+      text-align: right; }
     table td i.fa.fa {
       font-size: 1.4em; }
     table td i.fa-check-circle, table td i.fa-times-circle {
@@ -861,6 +880,14 @@ table {
       color: #60d05b; }
     table td.no {
       color: #c10000; }
+    table td.total {
+      font-weight: bold;
+      text-align: right; }
+    table td.quote-footer {
+      border-top: 2px solid #556a7b; }
+    table td.total-price {
+      border-bottom: 2px solid #556a7b;
+      font-weight: bold; }
     table td a {
       color: #286a96;
       text-decoration: none;
@@ -939,6 +966,41 @@ table {
     font-family: 'britannic-bold'; }
   .certificate .certificate-codes.certificate-codes p, .the-test .certificate-codes.certificate-codes p {
     margin: 0; }
+
+.edit-certificate-form {
+  display: none; }
+
+.quotation-logo h4.quote-number {
+  display: inline-block;
+  float: right;
+  color: #C10000; }
+
+.quotation-logo .logo {
+  width: 600px;
+  margin: 0 40px 32px 0;
+  float: left; }
+
+.quotation-logo .company-info {
+  width: 600px;
+  float: left; }
+  .quotation-logo .company-info h4 {
+    font-size: 1.4rem;
+    margin: 4px 0; }
+  .quotation-logo .company-info p {
+    margin: 4px 0;
+    line-height: 1.2; }
+
+table.participant-info, table.referer-info {
+  width: 40%; }
+
+table.participant-info {
+  float: left; }
+
+table.referer-info {
+  float: right; }
+
+.edit-quote-form {
+  display: none; }
 
 .separator {
   border: 1px solid #d4dbe1;
@@ -1027,7 +1089,10 @@ h3.observations {
   margin-bottom: 16px;
   border-bottom: 1px solid black; }
 
-@media only print {
+@media only print and (color) {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact; }
   body {
     display: block;
     background: white; }
@@ -1049,6 +1114,10 @@ h3.observations {
     font-size: 9pt;
     line-height: 1;
     margin: .125in 0; }
+  p.bank-info {
+    font-size: 8pt;
+    line-height: 1.1;
+    margin: .125in 0; }
   .no-print {
     display: none; }
   header {
@@ -1068,13 +1137,30 @@ h3.observations {
     box-shadow: none; }
   .edit-certificate-form {
     display: none; }
-  thead {
-    display: table-header-group; }
   table {
-    page-break-inside: auto; }
+    page-break-inside: auto;
+    color: black; }
+    table thead {
+      display: table-header-group; }
+      table thead > th {
+        font-size: 8pt;
+        color: #556a7b;
+        padding: 0.1in; }
     table tr {
       page-break-inside: avoid;
       page-break-after: auto; }
+    table td {
+      color: black;
+      font-size: 7pt;
+      padding: 0.1in; }
+      table td h2 {
+        font-size: 12pt; }
+      table td p {
+        font-size: 9pt; }
+      table td ul {
+        font-size: 9pt; }
+      table td.pass-fail {
+        font-size: 11pt; }
   .certify.certify {
     margin-top: 0.65in;
     margin-bottom: 0; }
@@ -1103,22 +1189,6 @@ h3.observations {
     display: none; }
   .the-test {
     display: block; }
-    .the-test table {
-      color: black; }
-      .the-test table thead th {
-        font-size: 10pt;
-        font-weight: bold; }
-      .the-test table td {
-        color: black;
-        font-size: 9pt; }
-        .the-test table td h2 {
-          font-size: 12pt; }
-        .the-test table td p {
-          font-size: 9pt; }
-        .the-test table td ul {
-          font-size: 9pt; }
-        .the-test table td.pass-fail {
-          font-size: 11pt; }
     .the-test ul li {
       color: black; }
     .the-test .signature {
@@ -1135,5 +1205,14 @@ h3.observations {
         padding-right: 40px; }
   ol.general-equipment li {
     color: black;
-    font-size: 9pt; } }
+    font-size: 9pt; }
+  .quotation .quotation-logo h4 {
+    font-size: 9pt;
+    margin: 0 0 0.1in 0; }
+  .quotation .quotation-logo .logo {
+    width: 1.5in; }
+  .quotation .quotation-logo .company-info {
+    width: 3in; }
+    .quotation .quotation-logo .company-info p {
+      font-size: 7pt; } }
 /*# sourceMappingURL=main.css.map */

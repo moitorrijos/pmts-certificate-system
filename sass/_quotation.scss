@@ -1,0 +1,49 @@
+.quotation-logo {
+	
+	h4.quote-number {
+		display: inline-block;
+		float: right;
+		color: $logout-red;
+	}
+
+	.logo {
+		width: 600px;
+		margin: 0 40px 32px 0;
+		float: left;
+	}
+
+	.company-info {
+		width: 600px;
+		float: left;
+
+		h4 {
+			font-size: 1.4rem;
+			margin: 4px 0;
+		}
+
+		p {
+			margin: 4px 0;
+			line-height: 1.2;
+		}
+	}
+}
+
+table.participant-info, table.referer-info {
+	width: 40%;
+}
+
+table.participant-info {
+	float: left;
+}
+
+table.referer-info {
+	float: right;
+}
+
+.edit-quote-button {
+	@extend .edit-button;
+}
+
+.edit-quote-form {
+	display: none;
+}

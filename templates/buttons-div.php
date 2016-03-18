@@ -22,6 +22,12 @@ class AddButton {
 
 			$add_value = 'Add Office';
 			return $add_value;
+
+		} elseif ( is_page_template( 'panama-quotation-page.php' ) ) {
+
+			$add_value = 'Add Quotations';
+			return $add_value;
+
 		}
 	}
 
@@ -38,13 +44,19 @@ class AddButton {
 	
 		} elseif ( is_page_template( 'panama-certificate-page.php' ) ) {
 	
-			$add_link = '/new-panama-certificate/';
+			$add_link = '/panama-certificates/new-panama-certificate/';
 			return $add_link;
 	
 		} elseif ( is_page_template( 'offices-page.php' ) ) {
 
 			$add_link = '#0';
 			return $add_link;
+
+		} elseif ( is_page_template( 'panama-quotation-page.php' ) ) {
+
+			$add_link = '/panama-quotations/new-panama-quotation/';
+			return $add_link;
+			
 		}
 	}
 
@@ -72,8 +84,6 @@ class AddButton {
 } 
 
 $add_button = new AddButton;
-
-
 
 ?>
 

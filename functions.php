@@ -10,9 +10,11 @@ function register_my_styles_and_scripts() {
 
 	wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:700', array(), '2015', 'all');
 
-	wp_enqueue_script( 'main-js', THEMEROOT . '/js/min/main-min.js', array(), '20151118', true);
+	wp_enqueue_script( 'main-js', THEMEROOT . '/js/min/main-min.js', array('jquery'), '20151118', true);
 
 	wp_enqueue_script( 'listmin-js', THEMEROOT . '/js/min/list-min.js', array(), '20151118', true);
+
+	wp_enqueue_script( 'quotation-js', THEMEROOT . '/js/quotation.js', array('jquery'), '20160317', true );
 
 }
 
@@ -26,6 +28,8 @@ require get_template_directory() . '/post-types/courses.php';
 require get_template_directory() . '/post-types/instructors.php';
 require get_template_directory() . '/post-types/resolutions.php';
 require get_template_directory() . '/post-types/offices.php';
+require get_template_directory() . '/post-types/quotations.php';
+require get_template_directory() . '/post-types/quotation-code-title.php';
 require get_template_directory() . '/post-types/admin-columns/custom-admin-columns-courses.php';
 require get_template_directory() . '/post-types/includes/change-title-lable.php';
 require get_template_directory() . '/post-types/custom-fields/acf-code.php';

@@ -22,8 +22,6 @@
 
 			$certs = new WP_Query($args);
 
-			/*var_dump($certs->max_num_pages); die;*/
-
 			if ( $certs->have_posts() ) :
 		?>
 
@@ -36,7 +34,7 @@
 					<th class="number">Start Date</th>
 					<th class="number">End Date</th>
 					<th class="short-title">Instructor</th>
-					<th>Office</th>
+					<!-- th>Office</th -->
 					<th class="number">Issue Date</th>
 					<th class="middle-title">Register Code</th>
 					<th class="middle-title">Invoice No.</th>
@@ -108,9 +106,9 @@
 					<td class="centered">
 						<?php echo get_the_title($instructor->ID); ?>
 					</td>
-					<td class="centered">
-						<?php echo $office; ?>
-					</td>
+					<!-- td class="centered">
+						<?php // echo $office; ?>
+					</td-->
 					<td class="centered">
 						<?php echo $issue_date->format('d/m/y'); ?>
 					</td>

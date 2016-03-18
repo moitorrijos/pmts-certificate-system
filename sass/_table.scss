@@ -55,6 +55,10 @@ table {
 			text-align: center;
 		}
 
+		&.align-right {
+			text-align: right;
+		}
+
 		i.fa.fa {
 			font-size: 1.4em;
 		}
@@ -75,6 +79,21 @@ table {
 		&.no {
 			color: saturate($logout-red, 15%);
 		}
+
+		&.total {
+			font-weight: bold;
+			text-align: right;
+		}
+
+		&.quote-footer {
+			border-top: 2px solid $darken-gray;
+		}
+
+		&.total-price {
+			border-bottom: 2px solid $darken-gray;
+			font-weight: bold;
+		}
+
 
 		a {
 			color: darken($pmts-blue, 15%);
