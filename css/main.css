@@ -826,6 +826,12 @@ table.acf-table tr td.acf-field {
   table.acf-table tr td.acf-field input {
     height: 30px; }
 
+.acf-field-message.acf-field-message.acf-field-message {
+  border: none; }
+  .acf-field-message.acf-field-message.acf-field-message .acf-label label {
+    text-align: center;
+    font-size: 1.5em; }
+
 input.search {
   box-sizing: border-box;
   border-radius: 4px;

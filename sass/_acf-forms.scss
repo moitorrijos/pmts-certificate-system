@@ -108,3 +108,12 @@ table.acf-table {
 		}
 	}
 }
+
+.acf-field-message.acf-field-message.acf-field-message {
+	border: none;
+
+	.acf-label label {
+		text-align: center;
+		font-size: 1.5em;
+	}
+}
