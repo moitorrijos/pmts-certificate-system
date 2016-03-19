@@ -5,6 +5,7 @@ function startsession() {
 	if (!session_id()){
 
 		session_start();
+    
 	}
 }
 
@@ -78,4 +79,4 @@ function my_cert_title_updater( $post_id ) {
 }
 
 // run after ACF saves the $_POST['fields'] data
-  add_action('acf/save_post', 'my_cert_title_updater', 18);
+add_action('acf/save_post', 'my_cert_title_updater', 18);

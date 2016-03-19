@@ -36,3 +36,4 @@ require get_template_directory() . '/post-types/custom-fields/acf-code.php';
 require get_template_directory() . '/includes/acf-total-certificate-number.php';
 require get_template_directory() . '/includes/acf-save-post-data.php';
 require get_template_directory() . '/includes/acf-remove-post-data.php';
+require get_template_directory() . '/includes/add-local-remote-button-admin-bar.php';
