@@ -449,11 +449,7 @@ body {
   height: initial; }
   @media screen {
     body {
-      min-height: 100vh;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex; } }
+      min-height: 100vh; } }
 
 .loader {
   position: absolute;
@@ -501,7 +497,6 @@ header {
   font-size: 0.9rem; }
 
 .logo {
-  width: 60%;
   max-width: 180px;
   margin: 0 auto 32px; }
   .logo > img {
@@ -577,24 +572,29 @@ form {
     text-shadow: 0 0 12px #6a8499; }
 
 .logged-in header {
-  width: 280px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: -280px;
-  padding: 16px 0;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start; }
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row; }
   .logged-in header.show-menu {
     left: 0; }
   .logged-in header h3 {
     padding-left: 22px;
     margin-bottom: 16px; }
   .logged-in header a.toggle-menu {
-    display: block;
+    display: none;
     padding: 16px 22px 16px 8px;
     color: #556a7b;
     text-decoration: none;
@@ -618,7 +618,7 @@ form {
   width: 100%; }
 
 .navigation {
-  margin-bottom: 48px; }
+  width: 60%; }
 
 .buttons {
   margin: 16px 0 48px; }
@@ -640,10 +640,8 @@ a.logout-button, a.new-certificate-button, a.print-button, a.view-button, .downl
   display: inline-block; }
 
 a.logout-button {
-  background-color: #C10000;
-  display: block;
-  padding: 12px 22px;
-  margin-left: 0; }
+  background-color: #ed2121;
+  padding: 12px 22px; }
   a.logout-button:hover {
     background-color: #a80000; }
 
@@ -670,6 +668,7 @@ a.back-link {
 
 .main-content {
   width: 96%;
+  min-height: 100vh;
   margin: 0 auto;
   background-image: url("../images/pmts-watermark-logo.png");
   background-color: white;
@@ -678,7 +677,7 @@ a.back-link {
   background-position: left top;
   padding: 20px;
   color: #556a7b;
-  margin-top: 80px;
+  margin-top: 40px;
   box-shadow: 0 8px 40px rgba(85, 106, 123, 0.4); }
   @media only screen and (max-width: 1700px) {
     .main-content {
@@ -688,44 +687,46 @@ a.back-link {
     margin-bottom: 48px; }
 
 .logout {
-  margin: 0;
-  padding-left: 22px; }
+  margin: 0 40px 0 0; }
   .logout a {
     margin: 0; }
 
 ul.nav {
   list-style: none;
-  width: 100%;
+  float: left;
   padding: 0;
-  border-top: 1px solid #C5CFD7;
-  margin-bottom: 48px; }
-  ul.nav li a {
-    display: block;
-    color: #556a7b;
-    padding: 12px 24px 12px 22px;
-    text-decoration: none;
-    background: white;
-    border-bottom: 1px solid #C5CFD7; }
-    ul.nav li a:hover {
+  margin: 0;
+  display: table;
+  width: 100%; }
+  ul.nav li {
+    display: table-cell; }
+    ul.nav li a {
+      display: block;
+      color: #556a7b;
+      padding: 12px 22px;
+      text-decoration: none;
+      background: white;
+      border-right: 1px solid #C5CFD7; }
+      ul.nav li a:hover {
+        color: white;
+        background: #7bb6dc; }
+      ul.nav li a i._mi {
+        margin-right: 12px; }
+    ul.nav li.nav-button a {
+      text-align: right; }
+      ul.nav li.nav-button a i._mi {
+        position: relative;
+        top: 5px;
+        margin-right: 0;
+        margin-left: 18px; }
+    ul.nav li.deactivated a {
+      color: #C5CFD7; }
+      ul.nav li.deactivated a:hover {
+        color: #C5CFD7;
+        background: white; }
+    ul.nav li.current-menu-item a {
       color: white;
       background: #3e94cc; }
-    ul.nav li a i._mi {
-      margin-right: 12px; }
-  ul.nav li.nav-button a {
-    text-align: right; }
-    ul.nav li.nav-button a i._mi {
-      position: relative;
-      top: 5px;
-      margin-right: 0;
-      margin-left: 18px; }
-  ul.nav li.deactivated a {
-    color: #C5CFD7; }
-    ul.nav li.deactivated a:hover {
-      color: #C5CFD7;
-      background: white; }
-  ul.nav li.current-menu-item a {
-    color: white;
-    background: #3e94cc; }
 
 a.deactivated {
   color: #C5CFD7;
@@ -997,7 +998,7 @@ table {
     line-height: 1.2; }
 
 table.participant-info, table.referer-info {
-  width: 40%; }
+  width: 45%; }
 
 table.participant-info {
   float: left; }
@@ -1126,7 +1127,7 @@ h3.observations {
     margin: .125in 0; }
   .no-print {
     display: none; }
-  header {
+  .logged-in header {
     display: none; }
   .logged-in .main {
     display: block;

@@ -1,8 +1,8 @@
 @media only print and (color){
 
 	* {
-	  -webkit-print-color-adjust: exact;
-	  print-color-adjust: exact;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
 	}
 
 	body {
@@ -48,7 +48,7 @@
 		display: none;
 	}
 
-	header {
+	.logged-in header {
 		display: none;
 	}
 

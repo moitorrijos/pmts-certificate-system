@@ -69,9 +69,9 @@
 			<table class="participant-info">
 				<thead>
 					<tr>
-						<th>Participant's Name:</th>
+						<th>Name:</th>
 						<?php if ( get_field('participants_email') ) : ?>
-						<th>Participant's Email:</th>
+						<th>Email:</th>
 						<?php endif; ?>
 					</tr>
 				</thead>

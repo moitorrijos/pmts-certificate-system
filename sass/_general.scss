@@ -30,7 +30,7 @@ body {
 
 	@media screen {
 		min-height: 100vh;
-		display: flex;
+		//display: flex;
 	}
 }
 
@@ -72,9 +72,10 @@ header {
 
 	& > img { width: 100%; }
 
-	width: 60%;
+	//width: 20%;
 	max-width: 180px;
 	margin: 0 auto 32px;
+	//height: 32px;
 }
 
 .login-form {
@@ -165,14 +166,20 @@ form {
 .logged-in {
 	
 	header {
-		width: $loggedin-header-width;
-		height: 100vh;
-		position: fixed;
-		top: 0; bottom: 0;
-		left: -($loggedin-header-width);
-		padding: 16px 0;
+		//width: $loggedin-header-width;
+		//height: 100vh;
+		//position: fixed;
+		//top: 0; bottom: 0;
+		//left: -($loggedin-header-width);
+		//padding: 16px 0;
+		height: 100%;
+		width: 100%;
+		padding: 0;
 		@extend %smooth-animation;
-		justify-content: flex-start;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+
 
 		&.show-menu {
 			left: 0;
@@ -184,8 +191,9 @@ form {
 		}
 		
 		a.toggle-menu {
-
-			display: block;
+			
+			//display: block;
+			display: none;
 			padding: 16px 22px 16px 8px;
 			color: $darken-gray;
 			text-decoration: none;
@@ -220,7 +228,8 @@ form {
 }
 
 .navigation {
-	margin-bottom: 16px * 3;
+	width: 60%;
+	//margin-bottom: 16px * 3;
 }
 
 .buttons {
@@ -250,10 +259,10 @@ form {
 
 a.logout-button {
 	@extend %cool-button;
-	background-color: $logout-red;
-	display: block;
+	background-color: lighten(desaturate($logout-red, 15%), 15%);
+	//display: block;
 	padding: 12px 22px;
-	margin-left: 0;
+	//margin-left: 12px;
 
 	&:hover {
 		background-color: darken($logout-red, 5%);
@@ -306,6 +315,7 @@ a.back-link {
 
 .main-content {
 	width: 96%;
+	min-height: 100vh;
 
 	@media only screen and (max-width: 1700px) {
 		width: 100%;
@@ -321,7 +331,7 @@ a.back-link {
 	};
 	padding: 20px;
 	color: $darken-gray;
-	margin-top: 80px;
+	margin-top: 40px;
 	box-shadow: 0 8px 40px transparentize($darken-gray, 0.6);
 
 	h1 {
@@ -332,33 +342,39 @@ a.back-link {
 }
 
 .logout {
-	margin: 0;
-	padding-left: 22px;
+	margin: 0 40px 0 0;
+	//padding-left: 22px;
 
 	a { margin: 0; }
 }
 
 ul.nav {
 	list-style: none;
-	width: 100%;
+	//width: 600px;
+	float: left;
 	padding: 0;
-	border-top: 1px solid $gray;
-	margin-bottom: 48px;
+	margin: 0;
+	//border-top: 1px solid $gray;
+	//margin-bottom: 48px;
+	display: table;
+	width: 100%;
 
 	li {
+		display: table-cell;
 		
 		a {
 			display: block;
 			color: $darken-gray;
-			padding: 12px 24px 12px 22px;
+			padding: 12px 22px;
 			text-decoration: none;
 			background: white;
+			border-right: 1px solid $gray;
 
-			border-bottom: 1px solid $gray;
+			//border-bottom: 1px solid $gray;
 
 			&:hover {
 				color: white;
-				background: $pmts-blue;
+				background: lighten($pmts-blue, 15%);
 			}
 
 			i._mi {
