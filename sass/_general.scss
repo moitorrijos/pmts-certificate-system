@@ -30,7 +30,6 @@ body {
 
 	@media screen {
 		min-height: 100vh;
-		//display: flex;
 	}
 }
 
@@ -72,10 +71,8 @@ header {
 
 	& > img { width: 100%; }
 
-	//width: 20%;
 	max-width: 180px;
 	margin: 0 auto 32px;
-	//height: 32px;
 }
 
 .login-form {
@@ -166,12 +163,6 @@ form {
 .logged-in {
 	
 	header {
-		//width: $loggedin-header-width;
-		//height: 100vh;
-		//position: fixed;
-		//top: 0; bottom: 0;
-		//left: -($loggedin-header-width);
-		//padding: 16px 0;
 		height: 100%;
 		width: 100%;
 		padding: 0;
@@ -192,7 +183,6 @@ form {
 		
 		a.toggle-menu {
 			
-			//display: block;
 			display: none;
 			padding: 16px 22px 16px 8px;
 			color: $darken-gray;
@@ -229,7 +219,6 @@ form {
 
 .navigation {
 	width: 60%;
-	//margin-bottom: 16px * 3;
 }
 
 .buttons {
@@ -260,9 +249,7 @@ form {
 a.logout-button {
 	@extend %cool-button;
 	background-color: lighten(desaturate($logout-red, 15%), 15%);
-	//display: block;
 	padding: 12px 22px;
-	//margin-left: 12px;
 
 	&:hover {
 		background-color: darken($logout-red, 5%);
@@ -343,19 +330,16 @@ a.back-link {
 
 .logout {
 	margin: 0 40px 0 0;
-	//padding-left: 22px;
 
 	a { margin: 0; }
 }
 
 ul.nav {
+	border-left: 1px solid $gray;
 	list-style: none;
-	//width: 600px;
 	float: left;
 	padding: 0;
 	margin: 0;
-	//border-top: 1px solid $gray;
-	//margin-bottom: 48px;
 	display: table;
 	width: 100%;
 
@@ -369,8 +353,8 @@ ul.nav {
 			text-decoration: none;
 			background: white;
 			border-right: 1px solid $gray;
+			text-align: center;
 
-			//border-bottom: 1px solid $gray;
 
 			&:hover {
 				color: white;

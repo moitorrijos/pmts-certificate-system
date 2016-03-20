@@ -692,6 +692,7 @@ a.back-link {
     margin: 0; }
 
 ul.nav {
+  border-left: 1px solid #C5CFD7;
   list-style: none;
   float: left;
   padding: 0;
@@ -706,7 +707,8 @@ ul.nav {
       padding: 12px 22px;
       text-decoration: none;
       background: white;
-      border-right: 1px solid #C5CFD7; }
+      border-right: 1px solid #C5CFD7;
+      text-align: center; }
       ul.nav li a:hover {
         color: white;
         background: #7bb6dc; }
