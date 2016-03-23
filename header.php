@@ -24,6 +24,8 @@
 
 			} else {
 
+				get_template_part( 'templates/logo_image' );
+
 				get_template_part('plugins/login-with-ajax/widget_out');
 
 				get_template_part('pmts-copyright');

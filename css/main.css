@@ -489,7 +489,8 @@ header {
       -ms-flex-align: stretch;
           align-items: stretch;
   height: 100vh;
-  background: white; }
+  background: white;
+  float: left; }
   header .toggle-menu {
     display: none; }
 
@@ -572,6 +573,7 @@ form {
     text-shadow: 0 0 12px #6a8499; }
 
 .logged-in header {
+  float: none;
   height: 100%;
   width: 100%;
   padding: 0;
@@ -711,7 +713,8 @@ ul.nav {
       text-align: center; }
       ul.nav li a:hover {
         color: white;
-        background: #7bb6dc; }
+        background: #7bb6dc;
+        border-right: 1px solid #3e94cc; }
       ul.nav li a i._mi {
         margin-right: 12px; }
     ul.nav li.nav-button a {

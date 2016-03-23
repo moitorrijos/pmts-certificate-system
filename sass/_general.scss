@@ -58,6 +58,7 @@ header {
 	align-items: stretch;
 	height: 100vh;
 	background: white;
+	float: left;
 
 	.toggle-menu { display: none; }
 
@@ -163,6 +164,7 @@ form {
 .logged-in {
 	
 	header {
+		float: none;
 		height: 100%;
 		width: 100%;
 		padding: 0;
@@ -359,6 +361,7 @@ ul.nav {
 			&:hover {
 				color: white;
 				background: lighten($pmts-blue, 15%);
+				border-right: 1px solid $pmts-blue;
 			}
 
 			i._mi {
@@ -395,7 +398,6 @@ ul.nav {
 		}
 	}
 }
-
 
 a.deactivated {
 	color: $gray;
