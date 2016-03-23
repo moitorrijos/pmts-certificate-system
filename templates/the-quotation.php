@@ -120,6 +120,7 @@
 					<tr>
 						<th class="short-number">IMO No.</th>
 						<th class="title">Course Name</th>
+						<th class="number">Duration</th>
 						<th class="short-number">Price</th>
 					</tr>
 				</thead>
@@ -127,8 +128,8 @@
 				<?php while( have_rows('courses') ) : the_row(); 
 					$course = get_sub_field('course_name');
 					$course_price = get_sub_field('price');
-					// $is_renewal = get_sub_field('renewal');
-					// $is_panamanian = get_sub_field('panamanian');
+					$is_renewal = get_sub_field('renewal');
+					$is_panamanian = get_sub_field('panamanian');
 				?>
 					<tr>
 						<td class="align-right">
@@ -143,17 +144,18 @@
 							<?php echo get_the_title($course->ID); ?>
 							(<?php echo $course->abbr; ?>)
 						</td>
+						<td class="centered"><?php echo $course->duration_hours; ?> hours</td>
 						<td class="centered course-price">$<?php echo $course_price; ?>.00</td>
 					</tr>
 				<?php endwhile; ?>
 				</tbody>
 				<tfoot>
 					<tr>
-						<td colspan="2" class="total quote-footer">Government Fee</td>
+						<td colspan="3" class="total quote-footer">Government Fee</td>
 						<td id="government-fee" class="centered quote-footer"></td>
 					</tr>
 					<tr>
-						<td colspan="2" class="total">Total</td>
+						<td colspan="3" class="total">Total</td>
 						<td id="total-price" class="centered total-price"></td>
 					</tr>
 				</tfoot>
@@ -163,7 +165,8 @@
 				<strong>Nota:</strong> Pago a Panama Maritime Training Services, Inc. <br>
 				Cuenta Corriente Banco Banistmo No. 0101090844 <br>
 				Cuenta Corriente Banco General No. 03-29-01-025184 <br>
-				Clave, Visa, MasterCard en Local.
+				Clave, Visa, MasterCard en Local.<br>
+				<?php var_dump($is_renewal . ' ' . $is_panamanian); ?>
 			</p>
 
 			<?php endif; ?>
