@@ -3,6 +3,10 @@ table {
 	width: 100%;
 	margin-bottom: 32px;
 
+	thead {
+		display: table-header-group;
+	}
+
 	thead > tr {
 		background-color: $pmts-blue;
 	}
@@ -11,7 +15,7 @@ table {
 		font-weight: normal;
 		color: white;
 		text-align: center;
-		padding: 12px 0;
+		padding: 8px 0;
 		border: 1px solid white;
 
 		&.short-number {
@@ -85,12 +89,12 @@ table {
 			text-align: right;
 		}
 
-		&.quote-footer {
-			border-top: 2px solid $darken-gray;
+		&.government-fee {
+			border-bottom: 2px solid $darken-gray
 		}
 
 		&.total-price {
-			border-bottom: 2px solid $darken-gray;
+			border-bottom: 3px solid $darken-gray;
 			font-weight: bold;
 		}
 
@@ -116,6 +120,10 @@ table {
 			padding: 8px 18px;
 			color: white;
 		}
+	}
+
+	tfoot {
+		border-top: 2px solid $darken-gray;
 	}
 }
 

@@ -4,8 +4,8 @@
 
 		<div class="buttons">
 
-			<a href="<?php echo home_url('panama-certificates'); ?>" class="back-link"><i class="fa fa-backward"></i>
-
+			<a href="<?php echo home_url('panama-certificates'); ?>" class="back-link">
+				&laquo;
 
 				Back to Certificates List
 

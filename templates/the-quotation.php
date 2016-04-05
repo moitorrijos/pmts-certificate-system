@@ -4,7 +4,8 @@
 		
 		<div class="buttons">
 			
-			<a href="<?php echo home_url('panama-quotations'); ?>" class="back-link"><i class="fa fa-backward"></i>
+			<a href="<?php echo home_url('panama-quotations'); ?>" class="back-link">
+			&laquo;
 
 			Back to Quotations Page
 
@@ -57,7 +58,7 @@
 					<p>Maritime Training Tailored to You</p>
 					<p>77th Street, San Francisco</p>
 					<p>InterMaritime Building</p>
-					<p>&nbsp;</p>	
+					<p>&nbsp;</p>
 					<p>Local Phone: +(507) 395-2801 / +(507) 322-0013</p>
 					<p>E-Mail: info@panamamaritimetraining.com</p>
 					<p>Web: www.panamamaritimetraining.com</p>
@@ -69,7 +70,7 @@
 			<table class="participant-info">
 				<thead>
 					<tr>
-						<th>Name:</th>
+						<th>Name</th>
 						<?php if ( get_field('participants_email') ) : ?>
 						<th>Email:</th>
 						<?php endif; ?>
@@ -82,6 +83,11 @@
 						<td><?php the_field('participants_email'); ?></td>
 						<?php endif; ?>
 					</tr>
+					<?php if ( get_field('participants_phone_number') ) : ?>
+						<tr>
+							<td colspan="2">Phone: <?php the_field('participants_phone_number'); ?></td>
+						</tr>
+					<?php endif; ?>
 				</tbody>
 			</table>
 
@@ -118,55 +124,101 @@
 				
 				<thead>
 					<tr>
-						<th class="short-number">IMO No.</th>
-						<th class="title">Course Name</th>
-						<th class="number">Duration</th>
+						<th class="title">Service Details</th>
+						<th class="short-number">Quantity</th>
+						<th class="short-number">Unit Price</th>
 						<th class="short-number">Price</th>
 					</tr>
 				</thead>
 				<tbody>
 				<?php while( have_rows('courses') ) : the_row(); 
 					$course = get_sub_field('course_name');
-					$course_price = get_sub_field('price');
-					$is_renewal = get_sub_field('renewal');
+					$quantity = get_sub_field('quantity');
 					$is_panamanian = get_sub_field('panamanian');
+					$is_renewal = get_sub_field('renewal');
+
+					if ( get_sub_field('price') ) {
+						$course_price = get_sub_field('price');
+					} elseif ( $is_panamanian == "yes" && $is_renewal == "no" ) {
+						$course_price = $course->price_panamanian;
+					} elseif ( $is_panamanian == "no" && $is_renewal =="no" ) {
+						$course_price = $course->price_foreign;
+					} elseif ( $is_panamanian == "yes"  && $is_renewal == "yes" ) {
+						$course_price = $course->price_panamanian_renewal;
+					} elseif ( $is_panamanian == "no" && $is_renewal == "yes" ) {
+						$course_price = $course->price_foreign_rewal;
+					}
 				?>
-					<tr>
-						<td class="align-right">
-							<?php if ($course->imo_no) {
-								echo $course->imo_no; 
-							} else {
-								echo '* * *';
-							}
-							?>
-						</td>
+					<tr class="quote-tbody">
 						<td>
+							<?php if ($course->imo_no) : ?>
+								Course IMO No. <?php echo $course->imo_no; ?>
+							<?php endif; ?>
 							<?php echo get_the_title($course->ID); ?>
 							(<?php echo $course->abbr; ?>)
 						</td>
-						<td class="centered"><?php echo $course->duration_hours; ?> hours</td>
-						<td class="centered course-price">$<?php echo $course_price; ?>.00</td>
+						<td class="centered service-quantity" id="service-quantity">
+							<?php echo $quantity ?>
+						</td>
+						<td class="centered">
+							$<?php echo number_format(floatval($course_price), 2); ?>
+						</td>
+						<td class="centered course-price service-price-total" >
+							$<?php echo number_format( ($course_price * $quantity), 2 ); ?>
+						</td>
 					</tr>
-				<?php endwhile; ?>
+				<?php endwhile;
+					while( have_rows('other_services') ) : the_row();
+					$service_name = get_sub_field('service_name');
+					$service_price = get_sub_field('service_price');
+					$service_quantity = get_sub_field('service_quantity');
+				 ?>
+				 	<tr class="other-services">
+				 		<td>
+				 			<?php echo $service_name; ?>
+				 		</td>
+				 		<td class="centered service-quantity" id="service-quantity">
+				 			<?php echo $service_quantity; ?>
+				 		</td>
+				 		<td class="centered service-price">
+				 			$<?php echo number_format($service_price, 2); ?>
+				 		</td>
+				 		<td class="centered service-price-total">
+				 			$<?php echo number_format(($service_quantity * $service_price), 2); ?>
+				 		</td>
+				 	</tr>
+				 <?php endwhile; ?>
+
 				</tbody>
 				<tfoot>
+					<?php if (get_field('discount')) : ?>
+						<tr>
+							<td colspan="3" class="total">Discount</td>
+							<td id="discount" class="centered discount">
+								<?php the_field('discount'); ?> %
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3" class="total">Sub Total</td>
+							<td id="subtotal" class="centered subtotal"></td>
+						</tr>
+					<?php endif; ?>
 					<tr>
 						<td colspan="3" class="total quote-footer">Government Fee</td>
-						<td id="government-fee" class="centered quote-footer"></td>
+						<td id="government-fee" class="centered government-fee"></td>
 					</tr>
 					<tr>
-						<td colspan="3" class="total">Total</td>
+						<td colspan="3" class="total">Grand Total</td>
 						<td id="total-price" class="centered total-price"></td>
 					</tr>
 				</tfoot>
 			</table>
 
 			<p class="bank-info">
-				<strong>Nota:</strong> Pago a Panama Maritime Training Services, Inc. <br>
-				Cuenta Corriente Banco Banistmo No. 0101090844 <br>
-				Cuenta Corriente Banco General No. 03-29-01-025184 <br>
-				Clave, Visa, MasterCard en Local.<br>
-				<?php var_dump($is_renewal . ' ' . $is_panamanian); ?>
+				<strong>Note:</strong> Pay to Panama Maritime Training Services, Inc. <br>
+				Checking Account (Cuenta Corriente) Banco General No. 03-29-01-025184-0,<br>
+				Checking Account (Cuenta Corriente) Banco Banistmo No. 0101090844,<br>
+				Clave, Visa, MasterCard in Office.
 			</p>
 
 			<?php endif; ?>

@@ -16,12 +16,24 @@ function register_my_styles_and_scripts() {
 
 	wp_enqueue_script( 'quotation-js', THEMEROOT . '/js/quotation.js', array('jquery'), '20160317', true );
 
+	if ( is_page_template( 'panama-quotation-page.php' || is_page_template( 'panama-certificate-page.php' ) ) ) {
+
+		wp_enqueue_script( 'reload_js', THEMEROOT . '/js/reload-page.js', array(), '20160405', true );
+		
+	}
+
 }
 
 add_action( 'wp_enqueue_scripts', 'register_my_styles_and_scripts' );
 
 show_admin_bar(false);
 
+function search_form() {
+	return get_search_form();
+}
+add_shortcode( 'search', 'search_form' );
+
+require get_template_directory() . '/includes/add_html5_support.php';
 require get_template_directory() . '/includes/register-nav-menus.php';
 require get_template_directory() . '/post-types/certificates.php';
 require get_template_directory() . '/post-types/courses.php';

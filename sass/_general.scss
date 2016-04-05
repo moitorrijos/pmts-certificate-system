@@ -92,7 +92,6 @@ form {
 
 	input {
 		border: none;
-		background-color: $gray;
 		width: 100%;
 		height: 45px;
 		margin: 0 auto 28px;
@@ -225,6 +224,10 @@ form {
 
 .buttons {
 	margin: 16px 0 48px;
+
+	a.back-link {
+		margin-right: 20px;	
+	}
 }
 
 .short-margin.short-margin {

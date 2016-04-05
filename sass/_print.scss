@@ -67,7 +67,7 @@
 		display: block;
 
 		margin: 0;
-		padding: 0.25in;
+		padding: 0.1in;
 		width: 100%;
 
 		box-shadow: none;
@@ -83,13 +83,13 @@
 		color: black;
 		
 		thead { 
-			display: table-header-group; 
+			display: table-header-group;
 			
 			& > th {
 				font-size: 8pt;
 				//background: $darken-gray;
 				color: $darken-gray;
-				padding: 0.1in;
+				padding: 0.05in;
 			}
 		}
 

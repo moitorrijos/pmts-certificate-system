@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title><?php bloginfo('title'); wp_title('|'); ?></title>
+	<title><?php wp_title(''); ?></title>
 	<?php wp_head(); ?>
 </head>
 
