@@ -1,8 +1,12 @@
-.quotation-logo {
+.quotation-logo-table {
 	
+	@extend %flexbox-box;
+	justify-content: space-between;
+
 	h4.quote-number {
 		display: inline-block;
 		float: right;
+		margin: 0;
 		color: $logout-red;
 	}
 
@@ -15,6 +19,7 @@
 	.company-info {
 		width: 600px;
 		float: left;
+		font-size: 0.8rem;
 
 		h4 {
 			font-size: 1.4rem;
@@ -24,6 +29,23 @@
 		p {
 			margin: 4px 0;
 			line-height: 1.2;
+		}
+	}
+}
+
+table.quote-info-table {
+
+	tr {
+		background: white;
+		font-size: 0.8rem;
+
+		th {
+			color: $darken-gray;
+			border: 1px solid $gray;
+		}
+
+		td {
+			border: 1px solid $gray;
 		}
 	}
 }

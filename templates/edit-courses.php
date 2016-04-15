@@ -2,8 +2,12 @@
 	<div class="main-content">
 
 		<div class="buttons">
-			<a href="<?php echo home_url('courses-list'); ?>" class="back-link">&laquo; Back to Courses List</a>
-			<?php previous_post_link('%link &raquo'); ?>
+			&laquo; <a href="<?php echo home_url('courses-list'); ?>" class="back-link">Back to Courses List</a>
+
+			<div class="prev-next-links">
+				<?php next_post_link( '&laquo %link' ); ?> | 
+				<?php previous_post_link('%link &raquo'); ?>
+			</div>
 		</div>
 
 		<?php

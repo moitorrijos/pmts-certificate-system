@@ -10,17 +10,22 @@ function register_my_styles_and_scripts() {
 
 	wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:700', array(), '2015', 'all');
 
+
 	wp_enqueue_script( 'main-js', THEMEROOT . '/js/min/main-min.js', array('jquery'), '20151118', true);
 
 	wp_enqueue_script( 'listmin-js', THEMEROOT . '/js/min/list-min.js', array(), '20151118', true);
 
-	wp_enqueue_script( 'quotation-js', THEMEROOT . '/js/quotation.js', array('jquery'), '20160317', true );
+	if ( is_singular( 'quotation' ) ) {
 
-	if ( is_page_template( 'panama-quotation-page.php' || is_page_template( 'panama-certificate-page.php' ) ) ) {
+		wp_enqueue_script( 'quotation-js', THEMEROOT . '/js/quotation.js', array('jquery'), '20160317', true );
+		
+	}
+
+	if ( is_page( array( 8, 208 ) ) ) {
 
 		wp_enqueue_script( 'reload_js', THEMEROOT . '/js/reload-page.js', array(), '20160405', true );
 		
-	}
+	} 
 
 }
 
@@ -49,3 +54,4 @@ require get_template_directory() . '/includes/acf-total-certificate-number.php';
 require get_template_directory() . '/includes/acf-save-post-data.php';
 require get_template_directory() . '/includes/acf-remove-post-data.php';
 require get_template_directory() . '/includes/add-local-remote-button-admin-bar.php';
+require get_template_directory() . '/includes/duplicate-quotations.php';

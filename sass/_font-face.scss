@@ -127,3 +127,15 @@
     font-style: normal;
 
 }
+
+@font-face {
+    font-family: 'coronet';
+    src: url('../fonts/coronet-bold/coronet-bold.eot');
+    src: url('../fonts/coronet-bold/coronet-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/coronet-bold/coronet-bold.woff2') format('woff2'),
+         url('../fonts/coronet-bold/coronet-bold.woff') format('woff'),
+         url('../fonts/coronet-bold/coronet-bold.ttf') format('truetype'),
+         url('../fonts/coronet-bold/coronet-bold.svg#archivo_narrowregular') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}

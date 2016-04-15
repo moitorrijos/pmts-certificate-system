@@ -50,18 +50,38 @@
 
 		<div class="quotation">
 
-			<div class="quotation-logo">
-				<h4 class="quote-number"><?php echo get_the_title(); ?></h4>
-				<?php get_template_part('templates/logo_image'); ?>
-				<div class="company-info">
-					<h4>Panama Maritime Training Services, Inc.</h4>
-					<p>Maritime Training Tailored to You</p>
-					<p>77th Street, San Francisco</p>
-					<p>InterMaritime Building</p>
-					<p>&nbsp;</p>
-					<p>Local Phone: +(507) 395-2801 / +(507) 322-0013</p>
-					<p>E-Mail: info@panamamaritimetraining.com</p>
-					<p>Web: www.panamamaritimetraining.com</p>
+			<div class="quotation-logo-table">
+				<div class="quotation-logo">
+					<?php get_template_part('templates/logo_image'); ?>
+					<div class="company-info">
+						<h4>Panama Maritime Training Services, Inc.</h4>
+						<p>Maritime Training Tailored to You</p>
+						<p>77th Street, San Francisco</p>
+						<p>InterMaritime Building</p>
+						<p>&nbsp;</p>
+						<p>Local Phone: +(507) 395-2801 / +(507) 322-0013</p>
+						<p>E-Mail: info@panamamaritimetraining.com</p>
+						<p>Web: www.panamamaritimetraining.com</p>
+					</div>
+				</div>
+				<div class="quote-info">
+					<table class="quote-info-table">
+						<thead>
+							<tr>
+								<th>Quote Number</th>
+								<th>Date</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><h4 class="quote-number"><?php echo get_the_title(); ?></h4></td>
+								<td><?php echo get_the_date(); ?></td>
+							</tr>
+							<tr>
+								<td colspan="2" class="centered">Quote Valid for 45 days</td>
+							</tr>
+						</tbody>	
+					</table>
 				</div>
 			</div>
 
@@ -131,7 +151,8 @@
 					</tr>
 				</thead>
 				<tbody>
-				<?php while( have_rows('courses') ) : the_row(); 
+				<?php if ( have_rows('courses') ) :
+					while( have_rows('courses') ) : the_row(); 
 					$course = get_sub_field('course_name');
 					$quantity = get_sub_field('quantity');
 					$is_panamanian = get_sub_field('panamanian');
@@ -157,17 +178,18 @@
 							<?php echo get_the_title($course->ID); ?>
 							(<?php echo $course->abbr; ?>)
 						</td>
-						<td class="centered service-quantity" id="service-quantity">
+						<td class="centered course-quantity" id="service-quantity">
 							<?php echo $quantity ?>
 						</td>
 						<td class="centered">
-							$<?php echo number_format(floatval($course_price), 2); ?>
+							$<?php echo number_format( floatval($course_price), 2); ?>
 						</td>
 						<td class="centered course-price service-price-total" >
 							$<?php echo number_format( ($course_price * $quantity), 2 ); ?>
 						</td>
 					</tr>
-				<?php endwhile;
+				<?php endwhile; endif; wp_reset_query();
+					if ( have_rows('other_services') ) :
 					while( have_rows('other_services') ) : the_row();
 					$service_name = get_sub_field('service_name');
 					$service_price = get_sub_field('service_price');
@@ -184,10 +206,10 @@
 				 			$<?php echo number_format($service_price, 2); ?>
 				 		</td>
 				 		<td class="centered service-price-total">
-				 			$<?php echo number_format(($service_quantity * $service_price), 2); ?>
+				 			$<?php echo number_format( ($service_quantity * $service_price), 2); ?>
 				 		</td>
 				 	</tr>
-				 <?php endwhile; ?>
+				 <?php endwhile; endif; wp_reset_query(); ?>
 
 				</tbody>
 				<tfoot>
@@ -214,12 +236,31 @@
 				</tfoot>
 			</table>
 
-			<p class="bank-info">
-				<strong>Note:</strong> Pay to Panama Maritime Training Services, Inc. <br>
-				Checking Account (Cuenta Corriente) Banco General No. 03-29-01-025184-0,<br>
-				Checking Account (Cuenta Corriente) Banco Banistmo No. 0101090844,<br>
-				Clave, Visa, MasterCard in Office.
-			</p>
+			<div class="bank-info">
+				
+
+			</div>
+			
+			<div class="bank-info">
+				<h4>PAYMENT INFORMATION.</h4>
+				<p>
+					<strong>CITIBANK NEW YORK, N.Y.</strong><br>
+					SWIFT CODE: CITIUS33<br>
+					ABA # 021000089<br>
+
+				</p>
+				<p>
+					Credit to:<br>
+					<strong>BANCO GENERAL, S.A. - PANAMA</strong><br>
+					Swift Code: BAGEPAPA<br>
+					Account No.: 10951934<br>
+				</p>
+				<p>
+					Further credit to:<br>
+					PANAMA MARITIME TRAINING SERVICES, INC.<br>
+					BANK ACCOUNT NUMBER:  03-29-01-025184-0<br>
+				</p>
+			</div>
 
 			<?php endif; ?>
 

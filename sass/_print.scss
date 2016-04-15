@@ -15,10 +15,21 @@
 		margin: 0.125in 0;
 	}
 
+	.main-content {
+		display: block;
+		background-image: none;
+
+		margin: 0;
+		padding: 0.1in;
+		width: 100%;
+
+		box-shadow: none;
+	}
+
 	h2.course {
-		font-size: 12pt;
-		margin: 0.25in 0;
-		line-height: 1.1;
+		font-size: 14pt;
+		margin: 0.33in 0;
+		line-height: 1.2;
 	}
 
 	h3 {
@@ -28,20 +39,20 @@
 
 	p, ul, ol {
 		font-size: 10pt;
-		line-height: 1.2;
-		margin: .125in 0;
+		line-height: 1.5;
+		margin: .100in 0;
 	}
 
 	p.attended {
-		font-size: 9pt;
+		font-size: 10pt;
 		line-height: 1;
-		margin: .125in 0;
+		margin: .133in 0;
 	}
 
 	p.bank-info {
 		font-size: 8pt;
 		line-height: 1.1;
-		margin: .125in 0;
+		margin: .100in 0;
 	}
 
 	.no-print {
@@ -63,15 +74,7 @@
 		display: none;
 	}
 
-	.main-content {
-		display: block;
 
-		margin: 0;
-		padding: 0.1in;
-		width: 100%;
-
-		box-shadow: none;
-	}
 
 	.edit-certificate-form {
 		display: none;
@@ -87,7 +90,6 @@
 			
 			& > th {
 				font-size: 8pt;
-				//background: $darken-gray;
 				color: $darken-gray;
 				padding: 0.05in;
 			}
@@ -105,48 +107,71 @@
 			padding: 0.1in;
 
 			h2 { font-size: 12pt; }
-			p { font-size: 9pt; }
-			ul { font-size: 9pt; }
+			p { font-size: 10pt; }
+			ul { font-size: 10pt; }
 
 			&.pass-fail { font-size: 11pt; }
 		}
 	}
 
-	.certify.certify {
-		margin-top: 0.65in;
+	h3.certify.certify {
+		margin-top: 1.25in;
 		margin-bottom: 0;
+		font-size: 24pt;
 	}
 
 	.participant-name.participant-name {
 		font-size: 42pt;
-		margin: 0.125in 0;
+		word-break: break-all;
+		margin: 0.175in 0;
 	}
 
 	.certificate {
 		padding: 0 0.33in;
-	}
+		
+		width: 8in;
+		height: 10.5in;
+		margin: 0 auto;
 
-	.signature.signature {
-		font-size: 9pt;
-		margin-top: 0.25in;
-		margin-bottom: 0in;
+		overflow: hidden;
+		position: relative;
+		
+		p {
+			margin: 0.2in 0;
+		}
 	}
 
 	.short.short {
-		margin-top: 0;
+		margin: 0 0 0.2in;
 	}
 
 	.undies.undies {
-		font-size: 9pt;
+		font-size: 10pt;
+
+		&.bottom {
+			width: 1.65in;
+		}
 	}
 
 	.spacey.spacey {
-		margin-right: 0.125in;
+		margin-right: 0.100in;
+	}
+
+	.signature.signature {
+		font-size: 10pt;
+		margin-bottom: 0.25in;
+	}
+
+	.signature-cert-codes {
+		position: absolute;
+		bottom: 0;
+		width: 90%;
 	}
 
 	.certificate-codes.certificate-codes {
+
 		p {
-			font-size: 9pt;
+			font-size: 10pt;
 			font-weight: normal;
 			font-style: normal;
 		}
@@ -160,8 +185,6 @@
 		display: none;
 	}
 
-
-
 	.the-test {
 		display: block;
 
@@ -169,7 +192,7 @@
 		ul li { color: black; }
 
 		.signature {
-			margin-top: 1in;
+			margin-top: 0;
 		}
 	}
 
@@ -177,7 +200,7 @@
 		height: 1.8in;
 		li { 
 			color: black;
-			font-size: 9pt;
+			font-size: 10pt;
 
 			&.test-score-result { padding-right: 40px; }
 
@@ -193,17 +216,21 @@
 		
 		li {
 			color: black;
-			font-size: 9pt;
+			font-size: 10pt;
 
 		}
 	}
 
 	.quotation {
 
+		p {
+			font-size: 8pt;
+		}
+
 		.quotation-logo {
 
 			h4 {
-				font-size: 9pt;
+				font-size: 10pt;
 				margin: 0 0 0.1in 0;
 			}
 
@@ -219,6 +246,12 @@
 				}
 			}
 
+		}
+
+		table.quote-info-table {
+			td {
+				padding: 0.05in 0.1in;
+			}
 		}
 
 	}

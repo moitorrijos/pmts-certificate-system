@@ -69,10 +69,10 @@ $(document).on('click', function(event) {
 $navA.on('click', function() {
     $header.removeClass('show-menu');
     $toggleBtn.removeClass('hide-button');
-    $loader.show();
+    $loader.show().delay(3000).hide();
 });
 
-$('a').not('.not-link, .acf-button, .select2-search-choice-close').on('click', function(){
+$('a').not('.not-link, .acf-button, .select2-search-choice-close, a.acf-icon').on('click', function(){
 	$loader.fadeIn('fast');
 });
 

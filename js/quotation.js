@@ -6,27 +6,34 @@ var $totalPrice = $('#total-price');
 var $serviceQuantity = $('#service-quanity');
 var $servicePrice = $('#service-price');
 var $coursePrice = $('.course-price');
+var $courseQuantity = $('.course-quantity');
 var $servicePriceTotal = $('td.service-price-total');
 
 var $quotationDiv = $('.quotation');
-var $editQuoteBtn = $('a.edit-quote-button');
+var $editQuoteBtn = $('.edit-quote-button');
 var $printBtn = $('.print-button');
 var $viewBtn = $('.view-button');
 var $editQuoteForm = $('.edit-quote-form');
 
-var coursePrice = parseInt($coursePrice.html().substr(1));
+var coursePrice = parseInt($coursePrice.html().trim().substr(1));
 var serviceQuanity = parseInt($serviceQuantity.html());
 
-var totalGovFee = parseInt($coursePrice.length * 5);
-
+var courseQuantityArray = [];
 var priceArray = [];
+
+$courseQuantity.each(function(){
+	var $this = $(this);
+	courseQuantityArray.push( parseInt( $this.html().trim() ) );
+});
+
+$servicePriceTotal.each(function(){
+	var $this = $(this);
+	priceArray.push( parseInt( $this.html().trim().replace(/,/g, '').substr(1) ) );
+});
+
 
 function servicePriceInline() {
 	return coursePrice * serviceQuanity;
-}
-
-function sumTotalGovFee(){
-	return '$' + totalGovFee + '.00';	
 }
 
 function add(a, b) {
@@ -39,13 +46,15 @@ function numberWithCommas(x) {
 
 $servicePrice.html( servicePriceInline );
 
-$govFee.html( sumTotalGovFee );
+var govFee = courseQuantityArray.reduce(add, 0);
 
-for (var i = 0; i < $servicePriceTotal.length; i++) {
-	priceArray.push(parseInt($servicePriceTotal[i].innerHTML.trim().substr(1)));
+var totalGovFee = govFee * 5;
+
+function sumTotalGovFee(){
+	return '$' + parseInt(totalGovFee).toFixed(2);	
 }
 
-console.log(priceArray);
+$govFee.html( sumTotalGovFee );
 
 var sum = priceArray.reduce(add, 0);
 

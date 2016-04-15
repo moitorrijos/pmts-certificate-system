@@ -59,6 +59,10 @@
 
 			$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
 
+			$expiry_date_timestamp = strtotime( '+5 years',  strtotime( get_field('date_of_issuance') ) );
+
+			$expiry_date = date( 'd F Y', $expiry_date_timestamp );
+
 			$issue_month = $issue_date->format('m');
 
 			$issue_year = $issue_date->format('y');
@@ -119,23 +123,21 @@
 				<p>
 					Participant's Place and Date of Birth:
 
-					<span class="undies">* * * <?php echo the_field('place_of_birth'); ?>, <?php echo the_field('date_of_birth'); ?> * * *</span>
+					<span class="undies">* * * 
+						<span class="paddies"><?php echo the_field('place_of_birth'); ?></span> 
+						<?php echo the_field('date_of_birth'); ?> * * *</span>
 
 				</p>
 
 			</div>
 
- 			<div class="half">
-
-			</div>
-
-			<div class="half">
+			<div class="full">
 
                 <p class="short">Register Code:
 
 					<span class="undies">
 
-						<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-' . $leading_zero . $register_code; ?> * * * 
+						* * * <?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-' . $leading_zero . $register_code; ?> * * * 
 
 					</span>                 
 
@@ -145,7 +147,7 @@
 
 			<div class="full">
 
-				<p>
+				<p class="resolution-p">
 					This course fulfills minimum requirements of
 					
 					<span class="unpaddies"><?php echo $course->regulation; ?></span>
@@ -153,8 +155,11 @@
 					of the IMO International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended.
 					
 					<span class="unpaddies">
+						<?php if ($course->imo_no) : ?>
 
-						IMO Model Course <?php echo $course->imo_no; ?>. 
+							IMO Model Course <?php echo $course->imo_no; ?>.
+
+						<?php endif; ?>
 
 						Course duration <?php echo $course->duration; ?> days (<?php echo $course->duration_hours  ?> hours)
 
@@ -168,7 +173,7 @@
 
                 <p class="short">Start Course Date:
 
-					<span class="undies"><?php echo $start_date->format('d F Y'); ?></span>
+					<span class="undies bottom start-date"><?php echo $start_date->format('d F Y'); ?></span>
 
 				</p>
 
@@ -177,7 +182,7 @@
 
 					Course Delivery Mode:
 
-					<span class="undies">In Classroom</span>
+					<span class="undies bottom delivery-mode">In Classroom</span>
 
 				</p>
 
@@ -189,7 +194,7 @@
 
 					End Course Date:
 
-					<span class="undies"><?php echo $end_date->format('d F Y'); ?></span>
+					<span class="undies bottom end-date"><?php echo $end_date->format('d F Y'); ?></span>
 
 				</p>
 
@@ -201,7 +206,7 @@
 
 					Place of Training:
 
-					<span class="undies"><?php echo $office; ?></span>
+					<span class="undies bottom place-of-training"><?php echo $office; ?></span>
 
 				</p>
 
@@ -237,7 +242,19 @@
 
 					<span class="unpaddies">
 
-						 <?php echo $issue_date->format('d F Y'); ?>
+						 <?php echo $issue_date->format('d F Y'); ?>.
+
+					</span>
+
+				</p>
+
+				<p>
+
+					This certificate is valid until
+
+					<span class="unpaddies">
+						
+						<?php echo $expiry_date; ?>
 
 					</span>
 
@@ -245,19 +262,31 @@
 
 			</div>
 
-			<div class="signature">
+			<div class="signature-cert-codes">
+				
+				<div class="signature">
 
-				<p class="short-margin">General Director</p>
+					<p class="short-margin">General Director</p>
 
+				</div>
+		
+				<div class="certificate-codes">
+
+					<p>
+						<span class="boldies">(10/15) Rev. 14</span>
+						<?php if ( $course->f_ti ) : ?>
+							<span class="boldies to-right">
+								F-TI-<?php echo $course->f_ti;  ?>
+							</span>
+						<?php endif; ?>
+					</p>
+
+				</div>
+				
 			</div>
 
-			<div class="certificate-codes">
 
-				<p><span class="boldies">(10/15) Rev. 14</span> <span class="boldies to-right">F-TI-02</span></p>
-
-			</div>
-
-		</div>
+		</div>	
 
 		<?php if (current_user_can( 'edit_pages' ) ) : ?>
 

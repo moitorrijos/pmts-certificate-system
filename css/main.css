@@ -419,12 +419,28 @@ th {
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'coronet';
+  src: url("../fonts/coronet-bold/coronet-bold.eot");
+  src: url("../fonts/coronet-bold/coronet-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/coronet-bold/coronet-bold.woff2") format("woff2"), url("../fonts/coronet-bold/coronet-bold.woff") format("woff"), url("../fonts/coronet-bold/coronet-bold.ttf") format("truetype"), url("../fonts/coronet-bold/coronet-bold.svg#archivo_narrowregular") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
 /**
  * Colors
  */
 .logged-in header, .logged-in header a.toggle-menu {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
+
+.quotation-logo-table {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap; }
 
 .copyright {
   clear: both; }
@@ -625,6 +641,8 @@ form {
   margin: 16px 0 48px; }
   .buttons a.back-link {
     margin-right: 20px; }
+  .buttons div.prev-next-links {
+    float: right; }
 
 .short-margin.short-margin {
   margin: 8px 0; }
@@ -930,19 +948,22 @@ table {
   text-align: center; }
 
 .course {
-  font-family: 'britannic-bold';
+  font-family: "britannic-bold";
   text-transform: uppercase;
   font-style: normal; }
 
 .certify.certify {
   margin-top: 8rem;
   font-family: 'diploma';
-  font-size: 2rem; }
+  font-size: 38px; }
 
 .participant-name.participant-name {
-  font-family: 'coronet';
+  font-family: "coronet";
   font-size: 5rem;
+  font-weight: bold;
+  line-height: 1;
   margin: 32px 0;
+  letter-spacing: -1px;
   text-transform: capitalize; }
 
 .certificate, .the-test {
@@ -958,13 +979,21 @@ table {
   .certificate .short.short, .the-test .short.short {
     margin-top: 0; }
   .certificate .boldies, .the-test .boldies, .certificate .undies, .the-test .undies, .certificate .overies, .the-test .overies, .certificate .signature, .the-test .signature {
-    font-family: "texgyreadventorbold_italic";
-    padding: 0 12px; }
+    font-family: "texgyreadventorbold_italic"; }
+  .certificate .paddies, .the-test .paddies {
+    margin-right: 12px; }
   .certificate .unpaddies, .the-test .unpaddies {
     font-family: "texgyreadventorbold_italic"; }
   .certificate .undies, .the-test .undies {
     border-bottom: 1px solid #556a7b;
-    padding-bottom: 3px; }
+    display: inline-block;
+    text-align: center;
+    margin-left: 14px;
+    padding: 0 20px 2px; }
+    .certificate .undies.bottom, .the-test .undies.bottom {
+      width: 175px; }
+    .certificate .undies.start-date, .the-test .undies.start-date {
+      margin-left: 45px; }
   .certificate .overies, .the-test .overies, .certificate .signature, .the-test .signature {
     border-top: 1px solid #556a7b; }
   .certificate .half, .the-test .half {
@@ -972,40 +1001,56 @@ table {
     float: left; }
   .certificate .quarter, .the-test .quarter, .certificate .signature, .the-test .signature {
     width: 25%; }
-  .certificate .full, .the-test .full, .certificate .certificate-codes, .certificate .the-test .certificate-codes, .the-test .certificate .certificate-codes, .the-test .certificate-codes {
+  .certificate .full, .the-test .full, .certificate .certificate-codes, .the-test .certificate-codes {
     clear: both;
     width: 100%; }
   .certificate .to-right, .the-test .to-right, .certificate .signature, .the-test .signature {
     float: right; }
   .certificate .signature, .the-test .signature {
-    margin: 76px 0 40px; }
-  .certificate .certificate-codes.certificate-codes .boldies.boldies, .the-test .certificate-codes.certificate-codes .boldies.boldies, .certificate .certificate-codes.certificate-codes .undies, .the-test .certificate-codes.certificate-codes .certificate .undies, .certificate .the-test .certificate-codes.certificate-codes .undies, .certificate .certificate-codes.certificate-codes .the-test .undies, .the-test .certificate .certificate-codes.certificate-codes .undies, .the-test .certificate-codes.certificate-codes .undies, .certificate .certificate-codes.certificate-codes .overies, .the-test .certificate-codes.certificate-codes .certificate .overies, .certificate .the-test .certificate-codes.certificate-codes .overies, .certificate .certificate-codes.certificate-codes .the-test .overies, .the-test .certificate .certificate-codes.certificate-codes .overies, .the-test .certificate-codes.certificate-codes .overies, .certificate .certificate-codes.certificate-codes .signature, .the-test .certificate-codes.certificate-codes .certificate .signature, .certificate .the-test .certificate-codes.certificate-codes .signature, .certificate .certificate-codes.certificate-codes .the-test .signature, .the-test .certificate .certificate-codes.certificate-codes .signature, .the-test .certificate-codes.certificate-codes .signature {
-    font-family: 'britannic-bold'; }
-  .certificate .certificate-codes.certificate-codes p, .the-test .certificate-codes.certificate-codes p {
-    margin: 0; }
+    margin-bottom: 40px; }
+
+.certificate-codes.certificate-codes .boldies.boldies, .certificate-codes.certificate-codes .certificate .undies, .certificate .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .the-test .undies, .the-test .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .certificate .overies, .certificate .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .the-test .overies, .the-test .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .certificate .signature, .certificate .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .the-test .signature, .the-test .certificate-codes.certificate-codes .signature {
+  font-family: 'britannic-bold'; }
+
+.certificate-codes.certificate-codes p {
+  margin: 0; }
 
 .edit-certificate-form {
   display: none; }
 
-.quotation-logo h4.quote-number {
-  display: inline-block;
-  float: right;
-  color: #C10000; }
+.quotation-logo-table {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .quotation-logo-table h4.quote-number {
+    display: inline-block;
+    float: right;
+    margin: 0;
+    color: #C10000; }
+  .quotation-logo-table .logo {
+    width: 600px;
+    margin: 0 40px 32px 0;
+    float: left; }
+  .quotation-logo-table .company-info {
+    width: 600px;
+    float: left;
+    font-size: 0.8rem; }
+    .quotation-logo-table .company-info h4 {
+      font-size: 1.4rem;
+      margin: 4px 0; }
+    .quotation-logo-table .company-info p {
+      margin: 4px 0;
+      line-height: 1.2; }
 
-.quotation-logo .logo {
-  width: 600px;
-  margin: 0 40px 32px 0;
-  float: left; }
-
-.quotation-logo .company-info {
-  width: 600px;
-  float: left; }
-  .quotation-logo .company-info h4 {
-    font-size: 1.4rem;
-    margin: 4px 0; }
-  .quotation-logo .company-info p {
-    margin: 4px 0;
-    line-height: 1.2; }
+table.quote-info-table tr {
+  background: white;
+  font-size: 0.8rem; }
+  table.quote-info-table tr th {
+    color: #556a7b;
+    border: 1px solid #C5CFD7; }
+  table.quote-info-table tr td {
+    border: 1px solid #C5CFD7; }
 
 table.participant-info, table.referer-info {
   width: 45%; }
@@ -1116,25 +1161,32 @@ h3.observations {
   h1, h2, h3, p {
     color: black;
     margin: 0.125in 0; }
+  .main-content {
+    display: block;
+    background-image: none;
+    margin: 0;
+    padding: 0.1in;
+    width: 100%;
+    box-shadow: none; }
   h2.course {
-    font-size: 12pt;
-    margin: 0.25in 0;
-    line-height: 1.1; }
+    font-size: 14pt;
+    margin: 0.33in 0;
+    line-height: 1.2; }
   h3 {
     font-size: 12pt;
     padding: 0; }
   p, ul, ol {
     font-size: 10pt;
-    line-height: 1.2;
-    margin: .125in 0; }
+    line-height: 1.5;
+    margin: .100in 0; }
   p.attended {
-    font-size: 9pt;
+    font-size: 10pt;
     line-height: 1;
-    margin: .125in 0; }
+    margin: .133in 0; }
   p.bank-info {
     font-size: 8pt;
     line-height: 1.1;
-    margin: .125in 0; }
+    margin: .100in 0; }
   .no-print {
     display: none; }
   .logged-in header {
@@ -1146,12 +1198,6 @@ h3.observations {
     padding: 0; }
   .buttons {
     display: none; }
-  .main-content {
-    display: block;
-    margin: 0;
-    padding: 0.1in;
-    width: 100%;
-    box-shadow: none; }
   .edit-certificate-form {
     display: none; }
   table {
@@ -1173,31 +1219,45 @@ h3.observations {
       table td h2 {
         font-size: 12pt; }
       table td p {
-        font-size: 9pt; }
+        font-size: 10pt; }
       table td ul {
-        font-size: 9pt; }
+        font-size: 10pt; }
       table td.pass-fail {
         font-size: 11pt; }
-  .certify.certify {
-    margin-top: 0.65in;
-    margin-bottom: 0; }
+  h3.certify.certify {
+    margin-top: 1.25in;
+    margin-bottom: 0;
+    font-size: 24pt; }
   .participant-name.participant-name {
     font-size: 42pt;
-    margin: 0.125in 0; }
+    word-break: break-all;
+    margin: 0.175in 0; }
   .certificate, .the-test {
-    padding: 0 0.33in; }
-  .signature.signature {
-    font-size: 9pt;
-    margin-top: 0.25in;
-    margin-bottom: 0in; }
+    padding: 0 0.33in;
+    width: 8in;
+    height: 10.5in;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative; }
+    .certificate p, .the-test p {
+      margin: 0.2in 0; }
   .short.short {
-    margin-top: 0; }
+    margin: 0 0 0.2in; }
   .undies.undies {
-    font-size: 9pt; }
+    font-size: 10pt; }
+    .undies.undies.bottom {
+      width: 1.65in; }
   .spacey.spacey {
-    margin-right: 0.125in; }
+    margin-right: 0.100in; }
+  .signature.signature {
+    font-size: 10pt;
+    margin-bottom: 0.25in; }
+  .signature-cert-codes {
+    position: absolute;
+    bottom: 0;
+    width: 90%; }
   .certificate-codes.certificate-codes p {
-    font-size: 9pt;
+    font-size: 10pt;
     font-weight: normal;
     font-style: normal; }
   table.test-header {
@@ -1209,12 +1269,12 @@ h3.observations {
     .the-test ul li {
       color: black; }
     .the-test .signature {
-      margin-top: 1in; }
+      margin-top: 0; }
   ul.answers {
     height: 1.8in; }
     ul.answers li {
       color: black;
-      font-size: 9pt; }
+      font-size: 10pt; }
       ul.answers li.test-score-result {
         padding-right: 40px; }
       ul.answers li span.answer {
@@ -1222,14 +1282,18 @@ h3.observations {
         padding-right: 40px; }
   ol.general-equipment li {
     color: black;
-    font-size: 9pt; }
+    font-size: 10pt; }
+  .quotation p {
+    font-size: 8pt; }
   .quotation .quotation-logo h4 {
-    font-size: 9pt;
+    font-size: 10pt;
     margin: 0 0 0.1in 0; }
   .quotation .quotation-logo .logo {
     width: 1.5in; }
   .quotation .quotation-logo .company-info {
     width: 3in; }
     .quotation .quotation-logo .company-info p {
-      font-size: 7pt; } }
+      font-size: 7pt; }
+  .quotation table.quote-info-table td {
+    padding: 0.05in 0.1in; } }
 /*# sourceMappingURL=main.css.map */

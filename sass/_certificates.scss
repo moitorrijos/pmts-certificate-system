@@ -3,7 +3,7 @@
 }
 
 %britanic {
-	font-family: 'britannic-bold';
+	font-family: $certificate-name;
 	text-transform: uppercase;
 	font-style: normal;
 }
@@ -12,14 +12,17 @@
 	@extend %centered;
 	margin-top: 8rem;
 	font-family: 'diploma';
-	font-size: 2rem;
+	font-size: 38px;
 }
 
 .participant-name.participant-name {
 	@extend %centered;
-	font-family: 'coronet';
+	font-family: $participant-name-font;
 	font-size: 5rem;
+	font-weight: bold;
+	line-height: 1;
 	margin: 32px 0;
+	letter-spacing: -1px;
 	text-transform: capitalize;
 }
 
@@ -52,7 +55,10 @@
 
 	.boldies {
 		font-family: $certificate-italic-bold;
-		padding: 0 12px;
+	}
+
+	.paddies {
+		margin-right: 12px;
 	}
 
 	.unpaddies {
@@ -62,7 +68,18 @@
 	.undies {
 		@extend .boldies;
 		border-bottom: 1px solid $darken-gray;
-		padding-bottom: 3px;
+		display: inline-block;
+		text-align: center;
+		margin-left: 14px;
+		padding: 0 20px 2px;
+
+		&.bottom {
+			width: 175px;
+		}
+
+		&.start-date {
+			margin-left: 45px;
+		}
 	}
 
 	.overies {
@@ -94,18 +111,19 @@
 		@extend .overies;
 		@extend .align-center;
 
-		margin: 76px 0 40px;
+		margin-bottom: 40px;
 	}
 
-	.certificate-codes.certificate-codes {
-		@extend .full;
+}
 
-		.boldies.boldies {
-			font-family: 'britannic-bold';
-		}
+.certificate-codes.certificate-codes {
+	@extend .full;
 
-		p { margin: 0; }
+	.boldies.boldies {
+		font-family: 'britannic-bold';
 	}
+
+	p { margin: 0; }
 }
 
 .edit-certificate-form {
