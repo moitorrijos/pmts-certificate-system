@@ -24,6 +24,7 @@
 				<tr>
 					<th class="short-title">Participant's Name</th>
 					<th class="short-number">Quotation Number</th>
+					<th class="short-number">Date</th>
 					<th class="short-number">Edit</th>
 				</tr>
 			</thead>
@@ -39,6 +40,7 @@
 						</a>
 					</td>
 					<td class="centered"><?php echo get_the_title(); ?></td>
+					<td class="centered"><?php echo get_the_date(); ?></td>
 					<td class="centered edit">
 						<a href="<?php echo the_permalink(); ?>/" class="edit-form"><?php echo $edit; ?></a>
 					</td>
