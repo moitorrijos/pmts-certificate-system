@@ -39,7 +39,7 @@ class AddButton {
 			
 		} elseif ( is_page_template( 'instructors-page.php' ) ) {
 	
-			$add_link = '#0';
+			$add_link = '/instructors-list/new-panama-instructor/';
 			return $add_link;
 	
 		} elseif ( is_page_template( 'panama-certificate-page.php' ) ) {
@@ -68,7 +68,7 @@ class AddButton {
 			
 		} elseif ( is_page_template( 'instructors-page.php' ) ) {
 	
-			$deactivated = 'deactivated';
+			$deactivated = '';
 			return $deactivated;
 	
 		} elseif ( is_page_template( 'panama-certificate-page.php' ) ) {

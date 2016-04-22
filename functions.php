@@ -15,6 +15,12 @@ function register_my_styles_and_scripts() {
 
 	wp_enqueue_script( 'listmin-js', THEMEROOT . '/js/min/list-min.js', array(), '20151118', true);
 
+	if ( is_page_template( 'new_panama_certificate.php' ) ) {
+
+		wp_enqueue_script( 'search-passport', THEMEROOT . '/js/search-passport.js', array('jquery'), '20160421', true );
+
+	}
+
 	if ( is_singular( 'quotation' ) ) {
 
 		wp_enqueue_script( 'quotation-js', THEMEROOT . '/js/quotation.js', array('jquery'), '20160317', true );

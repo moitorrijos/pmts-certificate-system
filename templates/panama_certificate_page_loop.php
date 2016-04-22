@@ -88,7 +88,7 @@
 				<tr>
 					<td>
 						<a href="<?php echo the_permalink(); ?>">
-							<?php echo the_field('participants_name'); ?>
+							<?php echo the_field('students_name'); ?>
 						</a>
 					</td>
 					<td class="centered">

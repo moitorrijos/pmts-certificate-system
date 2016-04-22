@@ -45,7 +45,7 @@
 
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-			$participants_name = get_field('participants_name');
+			$students_name = get_field('students_name');
 
 			$course = get_field('course');
 
@@ -100,7 +100,11 @@
 
 			<h3 class="certify">Certify that:</h3>
 
-			<h1 class="participant-name"> * * * <?php echo $participants_name; ?> * * * </h1>
+			<h1 class="participant-name"> 
+				<span class="stars">* * *</span>
+			 	<?php echo $students_name; ?>
+			 	<span class="stars">* * *</span>
+			</h1>
 
 			<p class="attended">Has satisfactorily attended course on:</p>
 
@@ -137,7 +141,7 @@
 
 					<span class="undies">
 
-						* * * <?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-' . $leading_zero . $register_code; ?> * * * 
+						* * *<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-' . $leading_zero . $register_code; ?>* * * 
 
 					</span>                 
 

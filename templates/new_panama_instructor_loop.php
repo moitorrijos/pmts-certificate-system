@@ -4,7 +4,7 @@
 		
 		<div class="buttons">
 			
-			<a href="<?php echo home_url('panama-quotations'); ?>" class="back-link">&laquo; Back to Quotation Table</a>
+			<a href="<?php echo home_url('instructors-list'); ?>" class="back-link">&laquo; Back to Instructors Table</a>
 
 		</div>
 
@@ -21,14 +21,16 @@
 
 			'post_id' 	=> 'new_post',
 
+			'post_title' => true,
+
 			'new_post'	=> array(
-				'post_type'		=> 'quotation',
+				'post_type'		=> 'instructors',
 				'post_status'	=> 'publish'
 			),
 
-			'submit_value' => __("Create Quotation", 'certificate-system'),
+			'submit_value' => __("Create Instructor", 'certificate-system'),
 
-			'updated_message' => __("Certificate Created", 'certificate-system'),
+			'updated_message' => __("Instructor Created", 'certificate-system'),
 
 			'return' => '%post_url%',
 

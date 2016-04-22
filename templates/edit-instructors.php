@@ -2,7 +2,7 @@
 	<div class="main-content">
 
 		<div class="buttons">
-			<a href="<?php echo home_url('instructors-list'); ?>" class="back-link"><i class="fa fa-backward"></i>&nbsp; Back to Instructors List</a>
+			<a href="<?php echo home_url('instructors-list'); ?>" class="back-link">&laquo; Back to Instructors List</a>
 		</div>
 
 		<?php

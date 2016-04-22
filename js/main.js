@@ -10,6 +10,9 @@ var $certForm 		= 	$('.edit-certificate-form'),
 	$printBtn 		= 	$('.print-button'),
 	$navA 			= 	$('.nav').find('li').find('a'),
 	$viewBtn 		= 	$('.view-button'),
+	$searchIdNoBtn 	= 	$('.search-id-no-button'),
+	$searchStdBtn 	= 	$('.search-student-form'),
+	$closeBtn 		= 	$('.close-button'),
 	windowHref 		= 	window.location.href,
 	acfHref 		= 	'acf-form',
 	indexOfAcfHref 	= 	windowHref.lastIndexOf(acfHref),
@@ -50,8 +53,6 @@ if ( acfHrefReturned === acfHref ) {
 	$editBtn.hide();
 }
 
-var coursesList = new List('search-list', options);
-
 function toggleMenu() {
 	$header.toggleClass('show-menu');
 	$toggleBtn.toggleClass('hide-button');
@@ -66,15 +67,35 @@ $(document).on('click', function(event) {
   }
 });
 
-$navA.on('click', function() {
-    $header.removeClass('show-menu');
-    $toggleBtn.removeClass('hide-button');
-    $loader.show().delay(3000).hide();
-});
+function searchStudentFormFadeOut() {
+	$searchStdBtn.fadeOut('fast');
+}
 
-$('a').not('.not-link, .acf-button, .select2-search-choice-close, a.acf-icon').on('click', function(){
-	$loader.fadeIn('fast');
-});
+function searchStudentFormFadeIn(e) {
+	e.preventDefault();
+	$searchStdBtn.fadeIn('fast');
+}
+
+$closeBtn.on('click', searchStudentFormFadeOut );
+
+$searchIdNoBtn.on('click', searchStudentFormFadeIn);
+
+function showLoader() {
+	$header.removeClass('show-menu');
+    $toggleBtn.removeClass('hide-button');
+    $loader.fadeIn('fast');
+    setTimeout( function(){
+    	$loader.fadeOut('fast');
+    } , 3000);
+}
+
+$navA.on('click', showLoader );
+
+$('a')
+.not('.not-link, .acf-button, .select2-search-choice-close, a.acf-icon')
+.on('click', showLoader );
+
+var coursesList = new List('search-list', options);
 
 });
 })(jQuery);

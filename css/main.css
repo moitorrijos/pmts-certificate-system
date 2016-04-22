@@ -535,6 +535,8 @@ form {
     height: 45px;
     margin: 0 auto 28px;
     padding: 12px; }
+    form input[type="text"] {
+      border: 1px solid #7bb6dc; }
   form .rememberme {
     position: relative;
     display: -webkit-box;
@@ -653,7 +655,7 @@ form {
 .align-center, .certificate .signature, .the-test .signature {
   text-align: center; }
 
-a.logout-button, a.new-certificate-button, a.print-button, a.view-button, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
+a.logout-button, a.new-certificate-button, .print-button, .search-id-no-button, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
   padding: 4px 22px;
   text-decoration: none;
   color: white;
@@ -671,9 +673,9 @@ a.new-certificate-button {
   a.new-certificate-button:hover {
     background-color: #3cbc36; }
 
-a.print-button, a.view-button {
+.print-button, .search-id-no-button {
   background-color: #3e94cc; }
-  a.print-button:hover, a.view-button:hover {
+  .print-button:hover, .search-id-no-button:hover {
     background-color: #3287be; }
 
 a.view-button {
@@ -765,7 +767,7 @@ a.deactivated {
 form.acf-form input {
   background: white;
   padding: 18px 24px;
-  border: 1px solid #b6c3cd; }
+  border: 1px solid #98aab8; }
 
 form.acf-form .course-date {
   width: 50%;
@@ -1018,6 +1020,49 @@ table {
 .edit-certificate-form {
   display: none; }
 
+.search-student-form {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.75); }
+  .search-student-form form.search-by-id-no {
+    position: relative;
+    width: 45%;
+    margin: 15% auto;
+    padding: 4em;
+    background: white;
+    border: 1px solid #e3e8ec; }
+    .search-student-form form.search-by-id-no div.close-button {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      padding-top: 4px;
+      background: #C10000;
+      color: white;
+      text-align: center;
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      cursor: pointer; }
+      .search-student-form form.search-by-id-no div.close-button:hover {
+        background: #f40000; }
+    .search-student-form form.search-by-id-no input[type="text"] {
+      font-size: 1.1em;
+      text-align: center; }
+    .search-student-form form.search-by-id-no input[type="submit"] {
+      background: #3e94cc;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      color: white;
+      letter-spacing: 1px;
+      font-size: 1.2em; }
+
 .quotation-logo-table {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -1029,7 +1074,7 @@ table {
     margin: 0;
     color: #C10000; }
   .quotation-logo-table .logo {
-    width: 600px;
+    width: 140px;
     margin: 0 40px 32px 0;
     float: left; }
   .quotation-logo-table .company-info {
@@ -1205,16 +1250,16 @@ h3.observations {
     color: black; }
     table thead {
       display: table-header-group; }
-      table thead > th {
+      table thead th {
         font-size: 8pt;
-        color: #556a7b;
-        padding: 0.05in; }
+        text-transform: uppercase;
+        padding: 0.1in; }
     table tr {
       page-break-inside: avoid;
       page-break-after: auto; }
     table td {
       color: black;
-      font-size: 7pt;
+      font-size: 8pt;
       padding: 0.1in; }
       table td h2 {
         font-size: 12pt; }
@@ -1232,6 +1277,8 @@ h3.observations {
     font-size: 42pt;
     word-break: break-all;
     margin: 0.175in 0; }
+    .participant-name.participant-name span.stars {
+      font-size: 28pt; }
   .certificate, .the-test {
     padding: 0 0.33in;
     width: 8in;
@@ -1254,7 +1301,7 @@ h3.observations {
     margin-bottom: 0.25in; }
   .signature-cert-codes {
     position: absolute;
-    bottom: 0;
+    bottom: 0.125in;
     width: 90%; }
   .certificate-codes.certificate-codes p {
     font-size: 10pt;
@@ -1283,17 +1330,27 @@ h3.observations {
   ol.general-equipment li {
     color: black;
     font-size: 10pt; }
-  .quotation p {
-    font-size: 8pt; }
-  .quotation .quotation-logo h4 {
-    font-size: 10pt;
-    margin: 0 0 0.1in 0; }
-  .quotation .quotation-logo .logo {
-    width: 1.5in; }
-  .quotation .quotation-logo .company-info {
-    width: 3in; }
-    .quotation .quotation-logo .company-info p {
-      font-size: 7pt; }
-  .quotation table.quote-info-table td {
-    padding: 0.05in 0.1in; } }
+  .quotation {
+    width: 8.5in;
+    height: 10.5in;
+    margin: 0 auto; }
+    .quotation p {
+      font-size: 8pt; }
+    .quotation .quotation-logo h4 {
+      font-size: 10pt;
+      margin: 0 0 0.1in 0; }
+    .quotation .quotation-logo .logo {
+      width: 1.25in; }
+    .quotation .quotation-logo .company-info {
+      width: 3in; }
+      .quotation .quotation-logo .company-info p {
+        font-size: 8pt;
+        line-height: 1; }
+    .quotation .quotation-logo .bank-info p {
+      font-size: 8pt;
+      line-height: 1; }
+    .quotation .quotation-logo .bank-info h4 {
+      margin-top: 0; }
+    .quotation table.quote-info-table td {
+      padding: 0.05in 0.1in; } }
 /*# sourceMappingURL=main.css.map */

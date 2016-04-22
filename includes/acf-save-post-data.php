@@ -11,12 +11,9 @@ function startsession() {
 
 add_action( 'init', 'startsession', 1);
 
-
 function save_post_to_session_vars( $post_id ) {
   
-  if ( is_page_template( 'panama-certificate-page.php' ) ) {
-
-    $_SESSION['participants_name'] = get_field('participants_name', $post_id);
+    $_SESSION['students_name'] = get_field('students_name', $post_id);
 
     $_SESSION['passport_id'] = get_field('passport_id', $post_id);
 
@@ -24,7 +21,6 @@ function save_post_to_session_vars( $post_id ) {
 
     $_SESSION['date_of_birth'] = get_field('date_of_birth', $post_id);
 
-  }
 }
 
 // run after ACF saves the $_POST['acf'] data
@@ -34,9 +30,9 @@ add_action('acf/save_post', 'save_post_to_session_vars', 20);
 function load_session_vars_to_fields( $field ) {
 
 
-    if ($field['name'] == 'participants_name' && isset($_SESSION['participants_name'])){
+    if ($field['name'] == 'students_name' && isset($_SESSION['students_name'])){
 
-        $field['value'] = $_SESSION['participants_name'];   
+        $field['value'] = $_SESSION['students_name'];   
 
     }
 
@@ -76,7 +72,7 @@ function my_cert_title_updater( $post_id ) {
 
    	$this_cert['ID'] = $post_id;
 
-   	$this_cert_part_name = get_field('participants_name');
+   	$this_cert_part_name = get_field('students_name');
 
    	$this_cert_course = get_field('course');
 

@@ -1,14 +1,26 @@
+<?php get_template_part('templates/search_by_id_no_form') ?>
+
 <div class="main">
 	
 	<div class="main-content">
 		
 		<div class="buttons">
 			
-			<a href="<?php echo home_url('panama-certificates'); ?>" class="back-link"><i class="fa fa-backward"></i>&nbsp; Back to Certificates Table</a>
+			<a href="<?php echo home_url('panama-certificates'); ?>" class="back-link">
+
+				&laquo; Back to Certificates Table
+
+			</a>
 
 			<a href="<?php echo home_url();?>/panama-certificates/new-panama-certificate?action=clear_session" class="clear-data-button">
 
 				Clear Certificate Data
+
+			</a>
+
+			<a href="#0" class="search-id-no-button not-link">
+
+				Search by ID/Passport No
 
 			</a>
 

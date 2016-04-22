@@ -22,15 +22,15 @@
 				<tr>
 					<th class="short-title">Instructor Name</th>
 					<th class="number">Nationality</th>
-					<th class="number">Place of Training</th>
-					<th class="title">Authorized Courses</th>
+					<th class="number">Rank and Competence</th>
+					<th class="number">Instructor Code</th>
 					<?php if ( current_user_can( 'edit_pages' ) ) : ?>
 						<th class="short-number">Edit</th>
 					<?php endif; ?>
 				</tr>
 			</thead>
 			<tbody class="list">
-					
+
 				<?php 
 					$args = array( 'post_type' => 'instructors', 'posts_per_page' => -1 );
 					$instructors = new WP_Query($args);
@@ -46,18 +46,8 @@
 						<?php endif; ?>
 					</td>
 					<td class="centered list-col-2"><?php the_field('nationality'); ?></td>
-					<td class="centered "><?php the_field('instructor_residence'); ?></td>
-					<td>
-						<?php 
-							$authorized_courses = get_field( 'authorized_courses' );
-
-							if ( $authorized_courses ) {
-								foreach ( $authorized_courses as $authorized_course ) {
-									echo get_the_title( $authorized_course->ID ) . ' · ';
-								}
-							}
-						?>
-					</td>
+					<td class="centered "><?php the_field('rank_competence'); ?></td>
+					<td class="centered"><?php the_field('instructor_code'); ?></td>
 					<?php if ( current_user_can( 'edit_pages') ) : ?>
 						<td class="centered edit">
 							<a href="<?php echo the_permalink(); ?>" class="edit-form"><?php echo $edit; ?></a>
