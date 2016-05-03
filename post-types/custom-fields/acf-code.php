@@ -726,6 +726,27 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
+		array (
+			'key' => 'field_5728ffb5d7616',
+			'label' => 'Nationality',
+			'name' => 'nationality',
+			'type' => 'text',
+			//'instructions' => 'Participant\'s country of birth (or nationality).',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => 25,
 				'class' => 'nationality',
 				'id' => '',
 			),
@@ -737,6 +758,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
+
 		array (
 			'key' => 'field_5619ac69b2aab',
 			'label' => 'Date of Birth',

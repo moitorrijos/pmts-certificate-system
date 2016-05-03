@@ -833,6 +833,14 @@ form.acf-form .instructor-field {
     background-color: #49C943;
     width: 200px; }
 
+.acf-input.acf-input {
+  position: relative; }
+  .acf-input.acf-input .acf-error-message {
+    position: absolute;
+    top: -105%;
+    z-index: 1;
+    margin: 0; }
+
 span.acf-spinner.acf-spinner.acf-spinner {
   position: absolute;
   top: 12px;
@@ -1116,6 +1124,13 @@ table {
         height: 20px;
         background: #3e94cc url("../images/search-spinner.gif") no-repeat top center;
         left: 35%; }
+  .search-student-form .error-message {
+    display: none;
+    background: #f15050;
+    border: 1px solid #C10000;
+    color: white;
+    text-align: center;
+    padding: 4px; }
 
 .quotation-logo-table {
   -webkit-box-pack: justify;
@@ -1268,9 +1283,9 @@ h3.observations {
     width: 100%;
     box-shadow: none; }
   h2.course {
-    font-size: 14pt;
+    font-size: 15pt;
     margin: 0.33in 0;
-    line-height: 1.2; }
+    line-height: 1.1; }
   h3 {
     font-size: 12pt;
     padding: 0; }

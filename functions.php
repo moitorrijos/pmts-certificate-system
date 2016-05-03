@@ -16,6 +16,8 @@ function register_my_styles_and_scripts() {
 
 	if ( is_page_template( 'new_panama_certificate.php' ) ) {
 
+		wp_enqueue_script( 'moment-js', THEMEROOT . '/js/moment.js', array(), '20160428', true );
+
 		wp_enqueue_script( 'search_passport', THEMEROOT . '/js/search-passport.js', array('jquery'), '20160421', true );
 
 		wp_localize_script( 'search_passport', 'pmtscs_ajax_object', array(
@@ -23,7 +25,7 @@ function register_my_styles_and_scripts() {
 			'ajaxurl' => admin_url( 'admin-ajax.php' ) )
 		);
 
-		wp_enqueue_script( 'datepicker-extend', THEMEROOT . '/js/datepicker-extend.js', array('jquery'), '20160422', true );
+		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/form-field-magic.js', array('jquery'), '20160422', true );
 
 	}
 
@@ -33,7 +35,7 @@ function register_my_styles_and_scripts() {
 
 		wp_enqueue_style( 'fullcalendar-print-css', '//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.0/fullcalendar.print.css', array(), '20160428', 'all' );
 
-		wp_enqueue_script( 'moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js', array(), '20160428', true );
+		wp_enqueue_script( 'moment-js', THEMEROOT . '/js/moment.js', array(), '20160428', true );
 
 		wp_enqueue_script( 'fullcalendar-js', '//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.0/fullcalendar.min.js', array( 'jquery' ), '20160428', true );
 

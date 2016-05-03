@@ -195,4 +195,15 @@
 			}
 		}
 	}
+
+	.error-message {
+		display: none;
+		background: desaturate(lighten($logout-red, 25%), 15%);
+		border: 1px solid $logout-red;
+		color: white;
+		text-align: center;
+		padding: 4px;
+
+	}
 }
+

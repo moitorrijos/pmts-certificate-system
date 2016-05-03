@@ -9,9 +9,9 @@
 	padding: 8px 15px;
 }
 
-	.hide-me {
-		margin: 0; padding: 0;
-	}
+.hide-me {
+	margin: 0; padding: 0;
+}
 
 .acf-form-submit.acf-form-submit {
 	
@@ -29,6 +29,17 @@
 		width: 200px;
 	}
 
+}
+
+.acf-input.acf-input {
+	position: relative;
+
+	.acf-error-message {
+		position: absolute;
+		top: -105%;
+		z-index: 1;
+		margin: 0;
+	}
 }
 
 span.acf-spinner.acf-spinner.acf-spinner {

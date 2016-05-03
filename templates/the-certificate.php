@@ -136,16 +136,42 @@
 			</div>
 
 			<div class="full">
+				
 
-                <p class="short">Register Code:
+			</div>
 
-					<span class="undies">
+			<div class="full">
 
-						* * *<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-' . $leading_zero . $register_code; ?>* * * 
+				<div class="half">
 
-					</span>                 
+					<p class="short">
+						
+						Participant's Nationality:
 
-				</p>
+						<span class="undies">* * *
+						
+								<?php echo the_field('nationality'); ?>
+						* * *
+
+						</span>	
+
+					</p>
+
+				</div>
+
+				<div class="half">
+
+	                <p class="short">Register Code:
+
+						<span class="undies">
+
+							* * *<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-' . $leading_zero . $register_code; ?>* * * 
+
+						</span>                 
+
+					</p>
+
+				</div>
 
 			</div>
 

@@ -11,6 +11,10 @@
 			<span class="search-spinner"></span>
 		</div>
 
+		<div class="error-message">
+			<p>Sorry, the passport number was not found.</p>
+		</div>
+
 	</form>
 
 </div>
