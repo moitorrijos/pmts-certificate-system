@@ -6,11 +6,11 @@ function pmtscs_ajax_search_by_id_passport() {
 
 	global $wpdb;
 
-	/*if ( !check_ajax_referer( 'search_by_id_passport', 'security' ) ) {
+	if ( !check_ajax_referer( 'pmtscs_passport', 'security' ) ) {
 
 		return wp_send_json_error('Invalid security threshold, please try again later.');
 
-	}*/
+	}
 
 	$passport_no = $_POST['passport_no'];
 

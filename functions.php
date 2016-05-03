@@ -18,7 +18,7 @@ function register_my_styles_and_scripts() {
 
 		wp_enqueue_script( 'search_passport', THEMEROOT . '/js/search-passport.js', array('jquery'), '20160421', true );
 
-		wp_localize_script( 'search_passport', 'pmtscs_ajax_object', array( 
+		wp_localize_script( 'search_passport', 'pmtscs_ajax_object', array(
 			'security' => wp_create_nonce( 'pmtscs_passport' ),
 			'ajaxurl' => admin_url( 'admin-ajax.php' ) )
 		);

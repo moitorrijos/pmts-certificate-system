@@ -7,9 +7,9 @@ var $searchByIdNoForm = $('#search-by-id-no'),
 	$searchByIdInput = $('input#search_by_id_passport'),
 	$searchSpinner = $('span.search-spinner');
 
-function ajaxSearchId(e){
+function ajaxSearchId( event ){
 
-	e.preventDefault();
+	event.preventDefault();
 	$searchSpinner.show();
 
 	if ( $searchByIdInput.val() === '' ) {
@@ -42,6 +42,7 @@ function ajaxSearchId(e){
 			$searchByIdInput
 				.addClass('animated shake');
 			$searchSpinner.hide();
+			console.log( error );
 			return;
 		}
 	});
