@@ -146,7 +146,9 @@
 		margin: 15% auto;
 		padding: 4em ;
 		background: white;
-		border: 1px solid lighten($gray, 10%);
+		border: 1px solid lighten($gray, 5%);
+		box-shadow: 0 0 12px lighten($gray, 10%);
+
 
 		div.close-button {
 			width: 28px; height: 28px;
@@ -177,6 +179,20 @@
 			color: white;
 			letter-spacing: 1px;
 			font-size: 1.2em;
+		}
+
+		.submit-btn {
+			width: 100%;
+			position: relative;
+
+			span.search-spinner {
+				display: none;
+				position: absolute;
+				top: 12px;
+				width: 30%; height: 20px;
+				background: $pmts-blue url('../images/search-spinner.gif') no-repeat top center;
+				left: 35%;
+			}
 		}
 	}
 }

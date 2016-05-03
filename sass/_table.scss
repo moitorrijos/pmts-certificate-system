@@ -18,12 +18,16 @@ table {
 		padding: 8px 0;
 		border: 1px solid white;
 
+		&.short-short-number {
+			width: 1%;
+		}
+
 		&.short-number {
-			width: 5%;
+			width: 2%;
 		}
 
 		&.number {
-			width: 7%;
+			width: 5%;
 		}
 
 		&.short-title {

@@ -100,9 +100,18 @@
 					<tr>
 						<td><?php the_field('participants_name'); ?></td>
 						<?php if ( get_field('participants_email') ) : ?>
-						<td><?php the_field('participants_email'); ?></td>
+						<td>
+							<a href="mailto:<?php the_field('participants_email'); ?>">
+								<?php the_field('participants_email'); ?>
+							</a>
+						</td>
 						<?php endif; ?>
 					</tr>
+					<?php if ( get_field('participants_nationality') ) : ?>
+						<tr>
+							<td colspan="2" >Nationality: <?php the_field('participants_nationality'); ?></td>
+						</tr>
+					<?php endif; ?>
 					<?php if ( get_field('participants_phone_number') ) : ?>
 						<tr>
 							<td colspan="2">Phone: <?php the_field('participants_phone_number'); ?></td>
@@ -144,6 +153,7 @@
 				
 				<thead>
 					<tr>
+						<th class="short-number">No.</th>
 						<th class="title">Service Details</th>
 						<th class="short-number">Quantity</th>
 						<th class="short-number">Unit Price</th>
@@ -171,6 +181,9 @@
 					}
 				?>
 					<tr class="quote-tbody">
+						<td class="centered">
+							<?php echo get_row_index(); ?>
+						</td>
 						<td>
 							<?php if ($course->imo_no) : ?>
 								Course IMO No. <?php echo $course->imo_no; ?>
@@ -215,22 +228,22 @@
 				<tfoot>
 					<?php if (get_field('discount')) : ?>
 						<tr>
-							<td colspan="3" class="total">Discount</td>
+							<td colspan="4" class="total">Discount</td>
 							<td id="discount" class="centered discount">
 								<?php the_field('discount'); ?> %
 							</td>
 						</tr>
 						<tr>
-							<td colspan="3" class="total">Sub Total</td>
+							<td colspan="4" class="total">Sub Total</td>
 							<td id="subtotal" class="centered subtotal"></td>
 						</tr>
 					<?php endif; ?>
 					<tr>
-						<td colspan="3" class="total quote-footer">Government Fee</td>
+						<td colspan="4" class="total quote-footer">Government Fee</td>
 						<td id="government-fee" class="centered government-fee"></td>
 					</tr>
 					<tr>
-						<td colspan="3" class="total">Grand Total</td>
+						<td colspan="4" class="total">Grand Total</td>
 						<td id="total-price" class="centered total-price"></td>
 					</tr>
 				</tfoot>

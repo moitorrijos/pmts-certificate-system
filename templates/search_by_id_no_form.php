@@ -1,14 +1,15 @@
-<div class="search-student-form">
+<div class="search-student-form" id="search-student-form">
 
-	<form action="" class="search-by-id-no">
+	<form action="" id="search-by-id-no" class="search-by-id-no">
 
 		<div class="close-button">X</div>
 
-		<label for="action"></label>
-
-		<input name="action" type="text" placeholder="SEARCH ID OR PASSPORT NO">
-
-		<input type="submit" value="Search">
+		<input name="search_by_id_passport" id="search_by_id_passport" type="text" placeholder="SEARCH ID OR PASSPORT NO">
+		
+		<div class="submit-btn">
+			<input type="submit" value="Search" id="search-by-id-submit">
+			<span class="search-spinner"></span>
+		</div>
 
 	</form>
 

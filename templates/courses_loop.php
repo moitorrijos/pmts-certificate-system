@@ -21,11 +21,14 @@
 
 			<thead>
 				<tr>
-					<th class="number">IMO No.</th>
+					<th class="short-number">No.</th>
+					<th class="short-number">IMO No.</th>
 					<th class="title">Course Name</th>
 					<th class="number">Abbr</th>
 					<th class="short-number">Duration in days</th>
 					<th class="short-number">Duration in hours</th>
+					<th class="short-number">Price Panamanian New</th>
+					<th class="short-number">Price Foreign New</th>
 					<th class="short-number">F-TI</th>
 					<th class="short-number">Total Certificates</th>
 					<th class="short-number">Edit</th>
@@ -39,9 +42,16 @@
 					$args = array( 'post_type' => 'courses', 'posts_per_page' => -1 );
 					$courses = new WP_Query($args);
 					if ( $courses->have_posts() ) : while ( $courses->have_posts() ) : $courses->the_post();
+
+					$price_panamanian = get_field('price_panamanian');
+					$price_foreign = get_field('price_foreign');
+
 				?>
 
 				<tr>
+					<td class="centered">
+						<?php echo $courses->current_post + 1; ?>
+					</td>
 					<td class="centered list-col-3"><?php
 						if ( get_field('imo_no') ) {
 							echo get_field('imo_no');
@@ -61,6 +71,8 @@
 					<td class="centered list-col-2"><?php the_field('abbr'); ?></td>
 					<td class="centered"><?php the_field('duration'); ?></td>
 					<td class="centered"><?php the_field('duration_hours'); ?></td>
+					<td class="centered"><?php echo number_format($price_panamanian, 2); ?></td>
+					<td class="centered"><?php echo number_format($price_foreign, 2); ?></td>
 					<td class="centered"><?php the_field('f_ti'); ?></td>
 					<td class="centered"><?php the_field('total_certificates'); ?></td>
 					<td class="centered edit">

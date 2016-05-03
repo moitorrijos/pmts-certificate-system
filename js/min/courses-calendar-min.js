@@ -1,0 +1,1 @@
+!function($){$(function(){var n=$("#courses-calendar");n.fullCalendar({})})}(jQuery);

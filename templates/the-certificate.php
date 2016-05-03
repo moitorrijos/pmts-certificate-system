@@ -102,7 +102,7 @@
 
 			<h1 class="participant-name"> 
 				<span class="stars">* * *</span>
-			 	<?php echo $students_name; ?>
+			 	<?php echo ucwords($students_name); ?>
 			 	<span class="stars">* * *</span>
 			</h1>
 

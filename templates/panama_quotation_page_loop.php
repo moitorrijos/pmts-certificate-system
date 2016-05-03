@@ -9,6 +9,7 @@
 		endif; wp_reset_query();
 
 		get_template_part('templates/buttons-div');
+		get_template_part('templates/search-bar' );
 
 		$args = array( 'post_type' => 'quotation', 'posts_per_page' => 75 );
 		$edit = '<i class="fa fa-pencil-square-o"></i>';
@@ -34,13 +35,13 @@
 				<?php while ( $courses->have_posts() ) : $courses->the_post(); ?>
 				
 				<tr>
-					<td>
+					<td class="list-col-1">
 						<a href="<?php echo the_permalink(); ?>">
 							<?php the_field('participants_name'); ?>
 						</a>
 					</td>
-					<td class="centered"><?php echo get_the_title(); ?></td>
-					<td class="centered"><?php echo get_the_date(); ?></td>
+					<td class="centered list-col-2"><?php echo get_the_title(); ?></td>
+					<td class="centered list-col-3"><?php echo get_the_date(); ?></td>
 					<td class="centered edit">
 						<a href="<?php echo the_permalink(); ?>/" class="edit-form"><?php echo $edit; ?></a>
 					</td>

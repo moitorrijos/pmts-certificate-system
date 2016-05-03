@@ -4,7 +4,7 @@ function unsetsession(){
 
 	if (isset($_GET['action']) && $_GET['action'] == 'clear_session'){
 
-		unset($_SESSION['participants_name']);
+		unset($_SESSION['students_name']);
 
 		unset($_SESSION['passport_id']);
 

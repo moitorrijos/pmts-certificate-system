@@ -12,8 +12,6 @@
 			$args = array( 
 				'post_type' 		=> 'certificates', 
 				'posts_per_page' 	=> 75,
-				'monthnum'			=> date('n'),
-				'year'				=> date('Y'),
 				'meta_key' 			=> 'date_of_issuance',
 				'orderby'			=> 'meta_value_num',
 				'order'				=> 'DESC',
@@ -37,10 +35,10 @@
 					<!-- th>Office</th -->
 					<th class="number">Issue Date</th>
 					<th class="middle-title">Register Code</th>
-					<th class="middle-title">Invoice No.</th>
-					<th class="short-title">Paid</th>
+					<!-- th class="middle-title">Invoice No.</th>
+					<th class="short-title">Paid</th -->
 					<?php if ( current_user_can('edit_pages') ) : ?>
-						<th class="middle-title">Edit</th>
+						<th class="number">Edit</th>
 					<?php endif; ?>
 				</tr>
 			</thead>
@@ -115,18 +113,18 @@
 					<td class="centered">
 						<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-' . $leading_zero . $register_code; ?>
 					</td>
-					<td class="centered">
-						<?php if ( get_field('invoice_no') ) : ?>
-							<?php the_field('invoice_no') ; ?>
-						<?php endif; ?>
+					<!-- td class="centered">
+						<?php //if ( get_field('invoice_no') ) : ?>
+							<?php //the_field('invoice_no') ; ?>
+						<?php //endif; ?>
 					</td>
-					<td class="centered paid <?php get_field('paid') ? the_field('paid') : ''; ?>" >
-						<?php if ( get_field('paid') == 'yes' ) : ?>
+					<td class="centered paid <?php //get_field('paid') ? the_field('paid') : ''; ?>" >
+						<?php // if ( get_field('paid') == 'yes' ) : ?>
 							<i class="fa fa-check-circle"></i>
-						<?php elseif ( get_field('paid') == 'no') : ?>
+						<?php // elseif ( get_field('paid') == 'no') : ?>
 							<i class="fa fa-times-circle"></i>
-						<?php endif; ?>
-					</td>
+						<?php // endif; ?>
+					</td -->
 
 					<?php if ( current_user_can('edit_pages') ) : ?>
 						<td class="centered edit">

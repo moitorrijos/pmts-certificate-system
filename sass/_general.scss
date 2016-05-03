@@ -1,4 +1,4 @@
-%clearfix {
+.clearfix {
 	clear: both;
 }
 
@@ -134,7 +134,7 @@ form {
 .copyright {
 
 	@extend .login-form;
-	@extend %clearfix;
+	@extend .clearfix;
 
 	font-size: 0.9rem;
 	line-height: 1.6;
@@ -290,7 +290,7 @@ a.new-certificate-button {
 }
 
 a.view-button {
-	@extend a.print-button;
+	@extend .print-button;
 	display: none;
 }
 
@@ -338,7 +338,7 @@ a.back-link {
 
 	h1 {
 		text-align: center;
-		margin-bottom: 48px;
+		margin-bottom: 24px;
 	}
 
 }
