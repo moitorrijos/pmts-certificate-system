@@ -239,7 +239,9 @@
 						</tr>
 					<?php endif; ?>
 					<tr>
-						<td colspan="4" class="total quote-footer">Government Fee</td>
+						<td colspan="4" class="total quote-footer" data-govfee="<?php the_field('government_fee'); ?>">
+							Certificate Government Fee
+						</td>
 						<td id="government-fee" class="centered government-fee"></td>
 					</tr>
 					<tr>

@@ -15,6 +15,8 @@ var $printBtn = $('.print-button');
 var $viewBtn = $('.view-button');
 var $editQuoteForm = $('.edit-quote-form');
 
+var $quoteFooter = $('.quote-footer');
+
 var coursePrice = parseInt($coursePrice.html().trim().substr(1));
 var serviceQuanity = parseInt($serviceQuantity.html());
 
@@ -46,9 +48,11 @@ function numberWithCommas(x) {
 
 $servicePrice.html( servicePriceInline );
 
+var dataGovFee = ($quoteFooter.data('govfee') === '') ? 5 : $quoteFooter.data('govfee');
+
 var govFee = courseQuantityArray.reduce(add, 0);
 
-var totalGovFee = govFee * 5;
+var totalGovFee = govFee * dataGovFee;
 
 function sumTotalGovFee(){
 	return '$' + parseInt(totalGovFee).toFixed(2);	
