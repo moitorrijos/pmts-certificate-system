@@ -1,6 +1,6 @@
 <div class="main">
 
-	<div class="main-content">
+	<div class="main-content" id="search-list">
 
 		<?php
 
@@ -30,7 +30,7 @@
 				</tr>
 			</thead>
 
-			<tbody>
+			<tbody class="list">
 				
 				<?php while ( $courses->have_posts() ) : $courses->the_post(); ?>
 				
