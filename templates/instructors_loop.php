@@ -17,7 +17,7 @@
 		 	get_template_part('templates/search-bar');
 		 ?>
 
-		<table class="download-xls-table">
+		<table class="system download-xls-table">
 			<thead>
 				<tr>
 					<th class="short-short-number">No.</th>

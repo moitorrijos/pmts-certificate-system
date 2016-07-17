@@ -1,0 +1,20 @@
+div.login-form {
+	position: relative;
+
+	.status-message {
+		border: 1px solid $cool-yellow;
+		background: lighten($cool-yellow, 25%);
+		padding: 8px 2em;
+		text-align: center;
+		margin-bottom: 16px;
+
+		display: none;
+	}
+
+	.login-loading-animation {
+		@extend %absolutely;
+		background: rgba(255, 255, 255, 0.7) url('../images/background-spinner.gif') center 30% no-repeat;
+		
+		display: none;
+	}
+}

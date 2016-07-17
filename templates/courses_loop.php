@@ -17,7 +17,7 @@
 
 		?>
 
-		<table class="download-xls-table">
+		<table class="system download-xls-table">
 
 			<thead>
 				<tr>

@@ -433,7 +433,7 @@ th {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
-.quotation-logo-table {
+.certificate .full, .certificate .certificate-codes, .quotation-logo-table {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -441,6 +441,15 @@ th {
   -webkit-flex-flow: row wrap;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap; }
+
+div.login-form .login-loading-animation, div.copyright .login-loading-animation {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; }
 
 .animated {
   -webkit-animation-duration: 0.75s;
@@ -490,14 +499,23 @@ body {
   font-family: Verdana, sans-serif;
   line-height: 1.6;
   position: relative;
-  background-color: #66aad7;
+  background-color: #3287be;
   background-image: url(../images/certificate-background.jpg);
   background-size: cover;
   background-position: top right;
+  background-repeat: no-repeat;
   height: initial; }
+  body.logged-in {
+    background-image: none; }
   @media screen {
     body {
       min-height: 100vh; } }
+
+.centered {
+  text-align: center; }
+
+.long {
+  margin-bottom: 40px; }
 
 .loader {
   position: absolute;
@@ -509,16 +527,19 @@ body {
   right: 0;
   display: none; }
 
+a {
+  color: #3e94cc;
+  text-decoration: none; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: Geneva, Verdana, sans-serif; }
 
 header {
-  width: 25%;
+  width: 40%;
   padding: 40px;
   background: white;
   color: #556a7b;
   z-index: 10;
-  box-shadow: 0 0 6px black;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -539,6 +560,9 @@ header {
   height: 100vh;
   background: white;
   float: left; }
+  @media only screen and (min-width: 1080px) {
+    header {
+      width: 25%; } }
   header .toggle-menu {
     display: none; }
 
@@ -546,7 +570,7 @@ header {
   font-size: 0.9rem; }
 
 .logo {
-  max-width: 180px;
+  max-width: 150px;
   margin: 0 auto 32px; }
   .logo > img {
     width: 100%; }
@@ -567,7 +591,8 @@ form {
     height: 45px;
     margin: 0 auto 28px;
     padding: 12px; }
-    form input[type="text"] {
+    form input[type="text"], form input[type="password"] {
+      background: #d4dbe1;
       border: 1px solid #7bb6dc; }
   form .rememberme {
     position: relative;
@@ -606,7 +631,7 @@ form {
 .main {
   color: white;
   padding: 10px 30px 0;
-  width: 75%;
+  width: 60%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -684,10 +709,10 @@ form {
 .align-right {
   text-align: right; }
 
-.align-center, .certificate .signature, .the-test .signature {
+.align-center, .certificate .signature {
   text-align: center; }
 
-a.logout-button, a.new-certificate-button, .print-button, .search-id-no-button, a.view-button, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
+a.logout-button, a.new-certificate-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
   padding: 4px 22px;
   text-decoration: none;
   color: white;
@@ -705,10 +730,13 @@ a.new-certificate-button {
   a.new-certificate-button:hover {
     background-color: #3cbc36; }
 
-.print-button, .search-id-no-button, a.view-button {
+.print-button, .search-id-no-button, .change-office-button, a.view-button {
   background-color: #3e94cc; }
-  .print-button:hover, .search-id-no-button:hover, a.view-button:hover {
+  .print-button:hover, .search-id-no-button:hover, .change-office-button:hover, a.view-button:hover {
     background-color: #3287be; }
+
+.change-office-button {
+  background-color: #7a91a3; }
 
 a.view-button {
   display: none; }
@@ -732,14 +760,13 @@ a.back-link {
   background-position: left top;
   padding: 20px;
   color: #556a7b;
-  margin-top: 40px;
-  box-shadow: 0 8px 40px rgba(85, 106, 123, 0.4); }
+  margin-top: 40px; }
   @media only screen and (max-width: 1700px) {
     .main-content {
       width: 100%; } }
   .main-content h1 {
     text-align: center;
-    margin-bottom: 24px; }
+    margin-bottom: 8px; }
 
 .logout {
   margin: 0 40px 0 0; }
@@ -791,6 +818,19 @@ a.deactivated {
   background: #e3e8ec; }
   a.deactivated:hover {
     background: #e3e8ec; }
+
+div.login-form, div.copyright {
+  position: relative; }
+  div.login-form .status-message, div.copyright .status-message {
+    border: 1px solid #D3D13A;
+    background: #eae9a2;
+    padding: 8px 2em;
+    text-align: center;
+    margin-bottom: 16px;
+    display: none; }
+  div.login-form .login-loading-animation, div.copyright .login-loading-animation {
+    background: rgba(255, 255, 255, 0.7) url("../images/background-spinner.gif") center 30% no-repeat;
+    display: none; }
 
 .acf-field .acf-label label {
   font-size: 1.2rem;
@@ -846,7 +886,7 @@ span.acf-spinner.acf-spinner.acf-spinner {
   top: 12px;
   left: 25px;
   width: 175px;
-  background: #49C943 url(../images/spinner.gif) no-repeat 50% 50%;
+  background: #49C943 url(../images/create-new-spinner.gif) no-repeat 50% 50%;
   z-index: 100; }
 
 .acf-fields > .acf-field {
@@ -915,79 +955,80 @@ input.search {
   width: 100%;
   margin-bottom: 32px; }
 
-table {
+table.system {
   font-size: 0.9rem;
   width: 100%;
   margin-bottom: 32px; }
-  table thead {
+  table.system thead {
     display: table-header-group; }
-  table thead > tr {
+  table.system thead > tr {
     background-color: #3e94cc; }
-  table th {
+  table.system th {
     font-weight: normal;
     color: white;
     text-align: center;
     padding: 8px 0;
     border: 1px solid white; }
-    table th.short-short-number {
+    table.system th.short-short-number {
       width: 1%; }
-    table th.short-number {
+    table.system th.short-number {
       width: 2%; }
-    table th.number {
+    table.system th.number {
       width: 5%; }
-    table th.short-title {
+    table.system th.short-title {
       width: 12%; }
-    table th.middle-title {
+    table.system th.middle-title {
       width: 20%; }
-    table th.title {
+    table.system th.title {
       width: 40%; }
-  table tr {
+  table.system tr {
     background: white; }
-    table tr:nth-child(even) {
+    table.system tr:nth-child(even) {
       background: #f2f4f6; }
-  table tbody > tr:hover {
+  table.system tbody > tr:hover {
     background: #e3e8ec; }
-  table td {
+  table.system td {
     border: 1px solid #98aab8;
     padding: 8px; }
-    table td.centered {
+    table.system td.centered {
       text-align: center; }
-    table td.align-right {
+    table.system td.align-right {
       text-align: right; }
-    table td i.fa.fa {
+    table.system td i.fa.fa {
       font-size: 1.4em; }
-    table td i.fa-check-circle, table td i.fa-times-circle {
+    table.system td i.fa-check-circle, table.system td i.fa-times-circle {
       padding: 8px 22px;
       /* color: white; */ }
-    table td.paid, table td.edit {
+    table.system td.paid, table.system td.edit {
       padding: 0; }
-    table td.yes {
+    table.system td.yes {
       color: #60d05b; }
-    table td.no {
+    table.system td.no {
       color: #c10000; }
-    table td.total {
+    table.system td.total {
       font-weight: bold;
       text-align: right; }
-    table td.government-fee {
+    table.system td.government-fee {
       border-bottom: 2px solid #556a7b; }
-    table td.total-price {
+    table.system td.total-price {
       border-bottom: 3px solid #556a7b;
       font-weight: bold; }
-    table td a {
+    table.system td a {
       color: #286a96;
       text-decoration: none;
       display: block; }
-      table td a:hover {
+      table.system td a:hover {
         color: #225c82; }
-    table td.edit i.fa.fa {
+    table.system td.edit i.fa.fa {
       color: #bf5f30; }
-    table td a.edit-form {
+    table.system td a.edit-form {
       width: 100%;
       height: 100%;
       padding: 8px 18px;
       color: white; }
-  table tfoot {
-    border-top: 2px solid #556a7b; }
+  table.system tfoot {
+    border-top: 2px solid #556a7b;
+    display: table-row-group; }
 
 .paginate a {
   color: white;
@@ -1018,50 +1059,60 @@ table {
   letter-spacing: -1px;
   text-transform: capitalize; }
 
-.certificate, .the-test {
+.certificate {
   position: relative;
   font-size: 1.2rem;
-  padding: 0 36px; }
+  padding: 0 36px;
+  /* .half {
+		width: 50%;
+		float: left;
+	} */ }
   @media screen and (min-width: 1200px) {
-    .certificate, .the-test {
+    .certificate {
       margin: 0 48px; } }
-  .certificate p, .the-test p, .certificate ul, .the-test ul, .certificate ol, .the-test ol {
+  .certificate p, .certificate ul, .certificate ol {
     font-family: "texgyreadventoritalic";
     margin: 40px 0 32px; }
-  .certificate .short.short, .the-test .short.short {
+  .certificate .short.short {
     margin-top: 0; }
-  .certificate .boldies, .the-test .boldies, .certificate .undies, .the-test .undies, .certificate .overies, .the-test .overies, .certificate .signature, .the-test .signature {
+  .certificate .boldies, .certificate .undies, .certificate .overies, .certificate .signature {
     font-family: "texgyreadventorbold_italic"; }
-  .certificate .paddies, .the-test .paddies {
+  .certificate .paddies {
     margin-right: 12px; }
-  .certificate .unpaddies, .the-test .unpaddies {
+  .certificate .unpaddies {
     font-family: "texgyreadventorbold_italic"; }
-  .certificate .undies, .the-test .undies {
+  .certificate .undies {
     border-bottom: 1px solid #556a7b;
     display: inline-block;
     text-align: center;
     margin-left: 14px;
     padding: 0 20px 2px; }
-    .certificate .undies.bottom, .the-test .undies.bottom {
+    .certificate .undies.bottom {
       width: 175px; }
-    .certificate .undies.start-date, .the-test .undies.start-date {
+    .certificate .undies.start-date {
       margin-left: 45px; }
-  .certificate .overies, .the-test .overies, .certificate .signature, .the-test .signature {
+  .certificate .resolution-p {
+    text-align: justify; }
+  .certificate .overies, .certificate .signature {
     border-top: 1px solid #556a7b; }
-  .certificate .half, .the-test .half {
-    width: 50%;
-    float: left; }
-  .certificate .quarter, .the-test .quarter, .certificate .signature, .the-test .signature {
+  .certificate .quarter, .certificate .signature {
     width: 25%; }
-  .certificate .full, .the-test .full, .certificate .certificate-codes, .the-test .certificate-codes {
+  .certificate .full, .certificate .certificate-codes {
     clear: both;
-    width: 100%; }
-  .certificate .to-right, .the-test .to-right, .certificate .signature, .the-test .signature {
+    width: 100%;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .certificate .to-right, .certificate .signature {
     float: right; }
-  .certificate .signature, .the-test .signature {
-    margin-bottom: 40px; }
+  .certificate .three-stars {
+    letter-spacing: 2px; }
+  .certificate .signature {
+    margin-bottom: 40px;
+    display: none; }
 
-.certificate-codes.certificate-codes .boldies.boldies, .certificate-codes.certificate-codes .certificate .undies, .certificate .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .the-test .undies, .the-test .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .certificate .overies, .certificate .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .the-test .overies, .the-test .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .certificate .signature, .certificate .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .the-test .signature, .the-test .certificate-codes.certificate-codes .signature {
+.certificate-codes.certificate-codes .boldies.boldies, .certificate-codes.certificate-codes .certificate .undies, .certificate .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .certificate .overies, .certificate .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .certificate .signature, .certificate .certificate-codes.certificate-codes .signature {
   font-family: 'britannic-bold'; }
 
 .certificate-codes.certificate-codes p {
@@ -1070,7 +1121,7 @@ table {
 .edit-certificate-form {
   display: none; }
 
-.search-student-form {
+.search-student-form, .change-office-outer {
   display: none;
   position: absolute;
   height: 100%;
@@ -1081,56 +1132,77 @@ table {
   right: 0;
   z-index: 100;
   background: rgba(255, 255, 255, 0.75); }
-  .search-student-form form.search-by-id-no {
-    position: relative;
-    width: 45%;
-    margin: 15% auto;
-    padding: 4em;
-    background: white;
-    border: 1px solid #d4dbe1;
-    box-shadow: 0 0 12px #e3e8ec; }
-    .search-student-form form.search-by-id-no div.close-button {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      padding-top: 4px;
-      background: #C10000;
-      color: white;
-      text-align: center;
-      position: absolute;
-      right: -10px;
-      top: -10px;
-      cursor: pointer; }
-      .search-student-form form.search-by-id-no div.close-button:hover {
-        background: #f40000; }
-    .search-student-form form.search-by-id-no input[type="text"] {
-      font-size: 1.1em;
-      text-align: center; }
-    .search-student-form form.search-by-id-no input[type="submit"] {
-      background: #3e94cc;
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      color: white;
-      letter-spacing: 1px;
-      font-size: 1.2em; }
-    .search-student-form form.search-by-id-no .submit-btn {
-      width: 100%;
-      position: relative; }
-      .search-student-form form.search-by-id-no .submit-btn span.search-spinner {
-        display: none;
-        position: absolute;
-        top: 12px;
-        width: 30%;
-        height: 20px;
-        background: #3e94cc url("../images/search-spinner.gif") no-repeat top center;
-        left: 35%; }
-  .search-student-form .error-message {
-    display: none;
-    background: #f15050;
-    border: 1px solid #C10000;
+
+div.close-button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  padding-top: 4px;
+  background: #C10000;
+  color: white;
+  text-align: center;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  cursor: pointer; }
+  div.close-button:hover {
+    background: #f40000; }
+
+.search-student-form form.search-by-id-no {
+  position: relative;
+  width: 45%;
+  margin: 15% auto;
+  padding: 4em;
+  background: white;
+  border: 1px solid #d4dbe1;
+  box-shadow: 0 0 12px #e3e8ec; }
+  .search-student-form form.search-by-id-no input[type="text"] {
+    font-size: 1.1em;
+    text-align: center; }
+  .search-student-form form.search-by-id-no input[type="submit"] {
+    background: #3e94cc;
+    margin-bottom: 16px;
+    text-transform: uppercase;
     color: white;
-    text-align: center;
-    padding: 4px; }
+    letter-spacing: 1px;
+    font-size: 1.2em; }
+  .search-student-form form.search-by-id-no .submit-btn {
+    width: 100%;
+    position: relative; }
+    .search-student-form form.search-by-id-no .submit-btn span.search-spinner {
+      display: none;
+      position: absolute;
+      top: 12px;
+      width: 30%;
+      height: 20px;
+      background: #3e94cc url("../images/search-spinner.gif") no-repeat top center;
+      left: 35%; }
+
+.search-student-form .error-message {
+  display: none;
+  background: #f15050;
+  border: 1px solid #C10000;
+  color: white;
+  text-align: center;
+  padding: 4px; }
+
+.change-office-outer .change-office-inner {
+  position: relative;
+  background: white;
+  width: 300px;
+  margin: 15% auto;
+  box-shadow: 0 0 12px #a7b6c2; }
+
+.change-office-outer ul.offices-nav {
+  width: 100%;
+  list-style: none;
+  padding: 16px 32px 32px; }
+  .change-office-outer ul.offices-nav li a {
+    display: block;
+    padding: 8px 12px;
+    border-bottom: 1px solid #3e94cc; }
+    .change-office-outer ul.offices-nav li a:hover {
+      background: #dfedf7; }
 
 .quotation-logo-table {
   -webkit-box-pack: justify;
@@ -1157,6 +1229,9 @@ table {
       margin: 4px 0;
       line-height: 1.2; }
 
+table.quote-info-table thead > tr {
+  background: #f2f4f6; }
+
 table.quote-info-table tr {
   background: white;
   font-size: 0.8rem; }
@@ -1178,92 +1253,14 @@ table.referer-info {
 .edit-quote-form {
   display: none; }
 
-.separator {
-  border: 1px solid #d4dbe1;
-  margin: 72px 0; }
+.fc-view-container {
+  background: white; }
 
-.the-test p, .the-test ul, .the-test ol {
-  font-family: "archivo_narrowregular";
-  margin: 8px 0; }
+.fc-center h2 {
+  font-size: 1.6rem; }
 
-.the-test h1, .the-test h2, .the-test h3, .the-test h4, .the-test h5, .the-test h6 {
-  font-family: "archivo_narrowbold"; }
-
-.the-test .undies {
-  display: block;
-  width: 75%;
-  padding: 8px 0 2px; }
-
-.the-test h2 {
-  margin-bottom: 16px; }
-
-.the-test table {
-  font-family: "archivo_narrowregular";
-  font-size: 16px; }
-  .the-test table thead > tr > th {
-    font-family: "archivo_narrowbold";
-    background: white;
-    border: 1px solid black;
-    color: black; }
-  .the-test table td {
-    border: 1px solid black;
-    background-color: white; }
-    .the-test table td p {
-      font-size: 14px;
-      line-height: 1.1;
-      margin: 0; }
-
-table.test-header td h2 {
-  font-size: 18px;
-  line-height: 1.1;
-  margin: 0; }
-
-table.test-header td ul {
-  font-size: 14px;
-  list-style: none;
-  padding: 0; }
-
-table.participant-information td .participant-info {
-  font-weight: bold;
-  margin: 0; }
-
-ul.answers {
-  list-style: none;
-  page-break-after: 0;
-  height: 300px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column wrap;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  padding: 0; }
-  ul.answers li {
-    width: 160px;
-    margin: 2px 0; }
-    ul.answers li span.answer {
-      font-weight: bold; }
-
-.test-score-result {
-  width: 200px;
-  text-align: right; }
-  .test-score-result .final-test-score {
-    font-weight: bold;
-    font-size: 21px;
-    font-style: italic; }
-  .test-score-result .passed {
-    display: block;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    font-style: italic; }
-
-h3.observations {
-  width: 100%;
-  padding-bottom: 32px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid black; }
+.fc-day:hover {
+  background: #f3f3f3; }
 
 @media only print and (color) {
   * {
@@ -1278,23 +1275,21 @@ h3.observations {
   .main-content {
     display: block;
     background-image: none;
-    margin: 0;
-    padding: 0.1in;
-    width: 100%;
+    margin: 0 auto;
+    width: 8.5in;
     box-shadow: none; }
   h2.course {
-    font-size: 15pt;
-    margin: 0.33in 0;
+    font-size: 17pt;
+    margin: 0.30in 0;
     line-height: 1.1; }
   h3 {
     font-size: 12pt;
     padding: 0; }
   p, ul, ol {
-    font-size: 10pt;
+    font-size: 11pt;
     line-height: 1.5;
     margin: .100in 0; }
   p.attended {
-    font-size: 10pt;
     line-height: 1;
     margin: .133in 0; }
   p.bank-info {
@@ -1348,30 +1343,35 @@ h3.observations {
     margin: 0.175in 0; }
     .participant-name.participant-name span.stars {
       font-size: 28pt; }
-  .certificate, .the-test {
-    padding: 0 0.33in;
+  .certificate {
+    padding: 0 0.5in;
     width: 8in;
     height: 10.5in;
     margin: 0 auto;
     overflow: hidden;
     position: relative; }
-    .certificate p, .the-test p {
+    .certificate p {
       margin: 0.2in 0; }
   .short.short {
-    margin: 0 0 0.2in; }
+    margin: 0 0 0.25in; }
   .undies.undies {
-    font-size: 10pt; }
+    font-size: 10pt;
+    padding: 0  0.05in;
+    margin-left: 0.05in; }
     .undies.undies.bottom {
       width: 1.65in; }
   .spacey.spacey {
     margin-right: 0.100in; }
   .signature.signature {
+    display: block;
     font-size: 10pt;
+    width: 2.25in;
     margin-bottom: 0.25in; }
   .signature-cert-codes {
     position: absolute;
-    bottom: 0.125in;
-    width: 90%; }
+    bottom: 0;
+    width: 100%;
+    padding-right: 1in; }
   .certificate-codes.certificate-codes p {
     font-size: 10pt;
     font-weight: normal;
@@ -1401,7 +1401,7 @@ h3.observations {
     font-size: 10pt; }
   .quotation {
     width: 8.5in;
-    height: 10.5in;
+    height: 10in;
     margin: 0 auto; }
     .quotation p {
       font-size: 8pt; }

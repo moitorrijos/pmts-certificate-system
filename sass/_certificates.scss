@@ -82,15 +82,19 @@
 		}
 	}
 
+	.resolution-p {
+		text-align: justify;
+	}
+
 	.overies {
 		@extend .boldies;
 		border-top: 1px solid $darken-gray;
 	}
 
-	.half {
+	/* .half {
 		width: 50%;
 		float: left;
-	}
+	} */
 
 	.quarter {
 		width: 25%;
@@ -99,10 +103,16 @@
 	.full {
 		clear: both;
 		width: 100%;
+		@extend %flexbox-box;
+		justify-content: space-between;
 	}
 
 	.to-right {
 		float: right;
+	}
+
+	.three-stars {
+		letter-spacing: 2px;
 	}
 
 	.signature {
@@ -112,6 +122,7 @@
 		@extend .align-center;
 
 		margin-bottom: 40px;
+		display: none;
 	}
 
 }
@@ -130,7 +141,7 @@
 	display: none;
 }
 
-.search-student-form {
+%the-outer-div {
 	display: none;
 	position: absolute;
 	height: 100%;
@@ -139,6 +150,28 @@
 	left: 0; right: 0;
 	z-index: 100;
 	background: transparentize(white, .25);
+	
+}
+
+div.close-button {
+	width: 28px; height: 28px;
+	border-radius: 50%;
+	padding-top: 4px;
+	background: $logout-red;
+	color: white;
+	text-align: center;
+	position: absolute;
+	right: -10px;
+	top: -10px;
+	cursor: pointer;
+
+	&:hover {
+		background: lighten($logout-red, 10%);
+	}
+}
+
+.search-student-form {
+	@extend %the-outer-div;
 
 	form.search-by-id-no {
 		position: relative;
@@ -148,24 +181,6 @@
 		background: white;
 		border: 1px solid lighten($gray, 5%);
 		box-shadow: 0 0 12px lighten($gray, 10%);
-
-
-		div.close-button {
-			width: 28px; height: 28px;
-			border-radius: 50%;
-			padding-top: 4px;
-			background: $logout-red;
-			color: white;
-			text-align: center;
-			position: absolute;
-			right: -10px;
-			top: -10px;
-			cursor: pointer;
-
-			&:hover {
-				background: lighten($logout-red, 10%);
-			}
-		}
 
 		input[type="text"] {
 			font-size: 1.1em;
@@ -207,3 +222,31 @@
 	}
 }
 
+.change-office-outer {
+	@extend %the-outer-div;
+	//display: block;
+
+	.change-office-inner {
+		position: relative;
+		background: white;
+		width: 300px;
+		margin: 15% auto;
+		box-shadow: 0 0 12px darken($gray, 10%);
+	}
+
+	ul.offices-nav {
+		width: 100%;
+		list-style: none;
+		padding: 16px 32px 32px;
+
+		li a {
+			display: block;
+			padding: 8px 12px;
+			border-bottom: 1px solid $pmts-blue;
+
+			&:hover {
+				background: lighten($pmts-blue, 40%);
+			}
+		}
+	}
+}

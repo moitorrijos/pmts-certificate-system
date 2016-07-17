@@ -12,14 +12,14 @@ function local_remote_admin_bar($wp_admin_bar){
 			'id' 	=> 'remote-button',
 			'title' => 'Go to Remote',
 			'href' 	=> 'http://certificates.panamamaritimetraining.com/wp-admin/',
-			'meta'	=> array( 'class' => 'admin-bar-remote-button' )
+			'meta'	=> array( 'class' => 'admin-bar-remote-button', 'target' => '_blank' )
 		);
 	} else {
 		$admin_bar_args = array(
 			'id' 	=> 'local-button',
 			'title' => 'Go to Local',
 			'href' 	=> 'http://certificate-system:8888/wp-admin/',
-			'meta'	=> array( 'class' => 'admin-bar-local-button' )
+			'meta'	=> array( 'class' => 'admin-bar-local-button', 'target' => '_blank' )
 		);
 	}
 	$wp_admin_bar->add_node($admin_bar_args);

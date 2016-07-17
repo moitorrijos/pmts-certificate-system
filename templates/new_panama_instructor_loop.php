@@ -6,6 +6,12 @@
 			
 			<a href="<?php echo home_url('instructors-list'); ?>" class="back-link">&laquo; Back to Instructors Table</a>
 
+			<!-- <a href="<?php //echo home_url();?>/instructors-list/new-panama-instructor/?action=add_instructors" class="clear-data-button">
+
+				Add All Instructors
+
+			</a> -->
+
 		</div>
 
 		<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>

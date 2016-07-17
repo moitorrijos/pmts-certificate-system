@@ -30,29 +30,28 @@
 
 		<?php the_title('<h1>', '</h1>'); ?>
 
-
 		<?php endwhile; endif;
 
-		$options = array(
+			$options = array(
 
-			'id' 		=> '',
+				'id' 		=> '',
 
-			'post_id' 	=> 'new_post',
+				'post_id' 	=> 'new_post',
 
-			'new_post'	=> array(
-				'post_type'		=> 'certificates',
-				'post_status'	=> 'publish'
-			),
+				'new_post'	=> array(
+					'post_type'		=> 'certificates',
+					'post_status'	=> 'publish'
+				),
 
-			'submit_value' => __("Create Certificate", 'certificate-system'),
+				'submit_value' => __("Create Certificate", 'certificate-system'),
 
-			'updated_message' => __("Certificate Created", 'certificate-system'),
+				'updated_message' => __("Certificate Created", 'certificate-system'),
 
-			'return' => '%post_url%',
+				'return' => '%post_url%',
 
-		);
+			);
 
-		acf_form( $options );
+			acf_form( $options );
 
 		?>
 

@@ -11,28 +11,31 @@
 		get_template_part('templates/buttons-div');
 		get_template_part('templates/search-bar' );
 
-		$args = array( 'post_type' => 'quotation', 'posts_per_page' => 75 );
+		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+		$args = array( 'post_type' => 'quotation', 'showposts' => 200, 'paged' => $paged );
 		$edit = '<i class="fa fa-pencil-square-o"></i>';
-		$courses = new WP_Query($args);
+		$quotes = new WP_Query($args);
 
-		if ( $courses->have_posts() ) :
+		if ( $quotes->have_posts() ) :
 			
 		?>
 
-		<table class="download-xls-table">
+		<table class="system download-xls-table">
 
 			<thead>
 				<tr>
-					<th class="short-title">Participant's Name</th>
+					<th class="middle-title">Participant's Name</th>
+					<th class="short-title">Client's Name</th>
 					<th class="short-number">Quotation Number</th>
-					<th class="short-number">Date</th>
-					<th class="short-number">Edit</th>
+					<th class="short-number">Created By</th>
+					<th class="number">Date</th>
+					<th class="short-short-number">Edit</th>
 				</tr>
 			</thead>
 
 			<tbody class="list">
 				
-				<?php while ( $courses->have_posts() ) : $courses->the_post(); ?>
+				<?php while ( $quotes->have_posts() ) : $quotes->the_post(); ?>
 				
 				<tr>
 					<td class="list-col-1">
@@ -40,22 +43,41 @@
 							<?php the_field('participants_name'); ?>
 						</a>
 					</td>
-					<td class="centered list-col-2"><?php echo get_the_title(); ?></td>
+					<td class="list-col-2">
+						<?php the_field('clients_name'); ?>
+					</td>
+					<td class="centered"><?php echo get_the_title(); ?></td>
+					<td class="centered"><?php echo get_the_author(); ?></td>
 					<td class="centered list-col-3"><?php echo get_the_date(); ?></td>
 					<td class="centered edit">
 						<a href="<?php echo the_permalink(); ?>/" class="edit-form"><?php echo $edit; ?></a>
 					</td>
 				</tr>
 
-				<?php endwhile; else : ?>
-
-				<p>There are no quotes created yet. To create a new quote <a href="<?php echo home_url( 'panama-quotations/new-panama-quotation' ); ?>">click here</a>.</p>
-
-				<?php endif; ?>
+				<?php endwhile; ?>
 
 			</tbody>
 
 		</table>
+
+		<?php if ( $quotes->max_num_pages > 1 ) : ?>
+		
+			<div class="paginate">
+	    		<?php next_posts_link('&laquo; Older Quotes', $quotes->max_num_pages); ?>
+				<?php previous_posts_link('Newer Quotes &raquo;') ?>
+			</div>
+
+		<?php endif; ?>
+
+		<?php else : ?>
+
+		<p>There are no quotes created yet. To create a new quote 
+
+		<a href="<?php echo home_url( 'panama-quotations/new-panama-quotation' ); ?>">click here</a>.
+
+		</p>
+
+		<?php endif; ?>
 
 	</div>
 

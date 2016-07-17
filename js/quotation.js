@@ -5,7 +5,6 @@ var $govFee = $('#government-fee');
 var $totalPrice = $('#total-price');
 var $serviceQuantity = $('#service-quanity');
 var $servicePrice = $('#service-price');
-var $coursePrice = $('.course-price');
 var $courseQuantity = $('.course-quantity');
 var $servicePriceTotal = $('td.service-price-total');
 
@@ -15,13 +14,19 @@ var $printBtn = $('.print-button');
 var $viewBtn = $('.view-button');
 var $editQuoteForm = $('.edit-quote-form');
 
+var $quoteTbody = $('tr.quote-tbody');
 var $quoteFooter = $('.quote-footer');
 
-var coursePrice = parseInt($coursePrice.html().trim().substr(1));
+if ( $('.course-price').length ) {
+	var $coursePrice = $('.course-price');
+	var coursePrice = parseInt($coursePrice.html().trim().substr(1));
+}
+
 var serviceQuanity = parseInt($serviceQuantity.html());
 
 var courseQuantityArray = [];
 var priceArray = [];
+
 
 $courseQuantity.each(function(){
 	var $this = $(this);
@@ -64,12 +69,24 @@ var sum = priceArray.reduce(add, 0);
 
 var totalPriceCourse = sum + totalGovFee;
 
+if ( !$('#government-fee').length ) {
+
+	totalPriceCourse = sum;
+
+} 
+
 if ( $('#discount').length && $('#subtotal').length ) {
+	var $subTotalDiscount = $('#subtotal-discount');
 	var $subTotal = $('#subtotal');
-	var discount = parseInt( $('#discount').html() );
+	var $discount = $('#discount');
+	//var discount = parseInt( $('#discount').html() );
+	var discount = $discount.data('discount');
+	var discountSubTotal = ( sum * (discount / 100) );
 	var subTotal = sum - ( sum * (discount / 100));
 	var grandTotalPrice = subTotal + totalGovFee;
 
+	$subTotalDiscount.html('$' + numberWithCommas( parseFloat(sum).toFixed(2) ) );
+	$discount.html('-$' + numberWithCommas( parseFloat(discountSubTotal).toFixed(2) ) );
 	$subTotal.html('$' + numberWithCommas( parseFloat(subTotal).toFixed(2) ) );
 	$totalPrice.html('$' + numberWithCommas( parseFloat(grandTotalPrice).toFixed(2) ) );
 
@@ -78,6 +95,12 @@ if ( $('#discount').length && $('#subtotal').length ) {
 	$totalPrice.html('$' + numberWithCommas( parseFloat(totalPriceCourse).toFixed(2) ) );
 
 }
+
+
+
+$quoteTbody.find('td.numbers-col').each( function( item ){
+	$(this).text( item + 1 );
+});
 
 //Edit Quote Functionality
 function fadeQuoteDivOut(){

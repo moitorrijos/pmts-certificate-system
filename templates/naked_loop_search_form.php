@@ -10,9 +10,13 @@
 
 		endif; wp_reset_query();
 
-		get_search_form();
-
 		?>
+
+		<form action="#0" class="search-certificate">
+			<input name="search_certificate" id="search_certificate" type="text" placeholder="SEARCH ID OR PASSPORT NO">
+			<input type="submit" value="Search" id="search_certificate_submit">
+			<span class="search-spinner"></span>
+		</form>
 
 	</div>
 

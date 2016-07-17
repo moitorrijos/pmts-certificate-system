@@ -89,6 +89,21 @@ $add_button = new AddButton;
 
 <div class="buttons align-right">
 	<a href="#0" class="download-xls-button not-link"><i class="fa fa-download"></i>&nbsp; Download Table to Excel</a>
+
+	<?php if ( is_page_template( 'panama-certificate-page.php' ) ) : ?>
+
+		<!-- <a href="#0" class="change-office-button not-link">
+			<i class="fa fa-building"></i>&nbsp; Change Office
+		</a> -->
+
+		<a href="#0" class="search-id-no-button not-link">
+
+			<i class="fa fa-search" aria-hidden="true"></i>&nbsp;
+			Search Certificate
+
+		</a>
+
+	<?php endif; ?>
 	
 	<?php if ( current_user_can('edit_pages') ) : ?>
 

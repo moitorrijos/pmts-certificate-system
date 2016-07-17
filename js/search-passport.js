@@ -9,6 +9,10 @@ var $searchByIdNoForm = $('#search-by-id-no'),
 	$studentPassportNoField = $('input#acf-field_5612fe8fe2a39'),
 	$studentPlaceOfBirth = $('input#acf-field_5612fef2fdc33'),
 	$studentDateOfBirth = $('input#acf-field_5619ac69b2aab'),
+	$studentNationality = $('input#acf-field_5728ffb5d7616'),
+	$startDateInput = $('input#acf-field_56130060acfc8'),
+	$endDateInput = $('input#acf-field_56130098acfc9'),
+	$dateOfIssuance = $('input#acf-field_5619b16e70c02'),
 	$errorMessage = $('.error-message'),
 	$searchSpinner = $('span.search-spinner');
 
@@ -44,24 +48,76 @@ function ajaxSearchId( event ){
 				$searchByIdSubmit.val('Done');
 				$searchStudentForm.fadeOut('slow');
 
+				var studentsName, passportId, placeOfBirth, nationality, dateOfBirth, startDate, endDate;
 
-				var studentDateOfBirth = response.data.student_info[6].meta_value;
+				response.data.student_info.forEach(function(element){
 
-				$studentNameField.val( response.data.student_info[0].meta_value );
+					if (element.meta_key === 'students_name') {
+
+						studentsName = element.meta_value;
+
+					} else if ( element.meta_key === 'passport_id') {
+
+						passportId = element.meta_value;
+
+					} else if ( element.meta_key  === 'place_of_birth') {
+
+						placeOfBirth = element.meta_value;
+
+					} else if ( element.meta_key === 'student_nationality' ) {
+
+						nationality = element.meta_value;
+
+					} else if ( element.meta_key === 'date_of_birth' ) {
+
+						dateOfBirth = element.meta_value;
+
+					} else if ( element.meta_key === 'start_date' ) {
+
+						startDate = element.meta_value;
+
+					} else if ( element.meta_key === 'end_date' ) {
+
+						endDate = element.meta_value;
+
+					}
+				});
+
 				$studentPassportNoField.val( response.data.passport_no );
-				$studentPlaceOfBirth.val( response.data.student_info[4].meta_value  );
-				$studentDateOfBirth.next('input').val( moment( studentDateOfBirth ).format('MMMM D, YYYY') );
+
+				$studentNameField.val( studentsName );
+
+				$studentPlaceOfBirth.val( placeOfBirth  );
+
+				$studentNationality.val( nationality );
+
+				$studentDateOfBirth.val( dateOfBirth );
+
+				$studentDateOfBirth.next('input').val( moment( dateOfBirth ).format('MMMM D, YYYY') );
+
+				$startDateInput.val( startDate );
+
+				$startDateInput.next('input').val( moment( startDate ).format('MMMM D, YYYY') );
+
+				$endDateInput.val( endDate );
+
+				$endDateInput.next('input').val( moment( endDate ).format('MMMM D, YYYY') );
+
+				$dateOfIssuance.val( endDate );
+				
+				$dateOfIssuance.next('input').val( moment( endDate ).format('MMMM D, YYYY') );
 
 			} else {
 
-				this.error();
 				$errorMessage.slideDown('fast');
-				
+				$searchSpinner.hide();
+				$searchByIdSubmit.val('Try Again');
+
 			}
 
 		},
 
-		error : function( error ) {
+		error : function() {
 			$searchByIdInput
 				.addClass('animated shake');
 			$searchSpinner.hide();

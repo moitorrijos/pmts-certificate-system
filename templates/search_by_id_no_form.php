@@ -1,6 +1,6 @@
 <div class="search-student-form" id="search-student-form">
 
-	<form action="" id="search-by-id-no" class="search-by-id-no">
+	<form action="#0" id="search-by-id-no" class="search-by-id-no">
 
 		<div class="close-button">X</div>
 

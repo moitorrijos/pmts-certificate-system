@@ -16,19 +16,19 @@
 	}
 
 	.main-content {
+
 		display: block;
 		background-image: none;
 
-		margin: 0;
-		padding: 0.1in;
-		width: 100%;
+		margin: 0 auto;
+		width: 8.5in;
 
 		box-shadow: none;
 	}
 
 	h2.course {
-		font-size: 15pt;
-		margin: 0.33in 0;
+		font-size: 17pt;
+		margin: 0.30in 0;
 		line-height: 1.1;
 	}
 
@@ -38,13 +38,13 @@
 	}
 
 	p, ul, ol {
-		font-size: 10pt;
+		font-size: 11pt;
 		line-height: 1.5;
 		margin: .100in 0;
 	}
 
 	p.attended {
-		font-size: 10pt;
+
 		line-height: 1;
 		margin: .133in 0;
 	}
@@ -131,7 +131,7 @@
 	}
 
 	.certificate {
-		padding: 0 0.33in;
+		padding: 0 0.5in;
 		
 		width: 8in;
 		height: 10.5in;
@@ -142,15 +142,18 @@
 		
 		p {
 			margin: 0.2in 0;
+
 		}
 	}
 
 	.short.short {
-		margin: 0 0 0.2in;
+		margin: 0 0 0.25in;
 	}
 
 	.undies.undies {
 		font-size: 10pt;
+		padding: 0  0.05in;
+		margin-left: 0.05in;
 
 		&.bottom {
 			width: 1.65in;
@@ -162,14 +165,17 @@
 	}
 
 	.signature.signature {
+		display: block;
 		font-size: 10pt;
+		width: 2.25in;
 		margin-bottom: 0.25in;
 	}
 
 	.signature-cert-codes {
 		position: absolute;
-		bottom: 0.125in;
-		width: 90%;
+		bottom: 0;
+		width: 100%;
+		padding-right: 1in;
 	}
 
 	.certificate-codes.certificate-codes {
@@ -227,7 +233,7 @@
 
 	.quotation {
 		width: 8.5in;
-		height: 10.5in;
+		height: 10in;
 		margin: 0 auto;
 
 		p {

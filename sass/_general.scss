@@ -20,10 +20,15 @@ body {
 	position: relative;
 
 	background: {
-		color: lighten($pmts-blue, 10%);
+		color: darken($pmts-blue, 5%);
 		image: url(../images/certificate-background.jpg);
 		size: cover;
 		position: top right;
+		repeat: no-repeat;
+	}
+
+	&.logged-in {
+		background-image: none;
 	}
 
 	height: initial;
@@ -31,6 +36,14 @@ body {
 	@media screen {
 		min-height: 100vh;
 	}
+}
+
+.centered {
+	text-align: center;
+}
+
+.long {
+	margin-bottom: 40px;
 }
 
 .loader {
@@ -41,17 +54,26 @@ body {
 	display: none;
 }
 
+a {
+	color: $pmts-blue;
+	text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: $header-font-family;
 }
 
 header {
 	width: $header-width;
+
+	@media only screen and (min-width: 1080px ) {
+		width: 25%;
+	}
+
 	padding: $header-padding;
 	background: white;
 	color: $darken-gray;
 	z-index: 10;
-	box-shadow: 0 0 6px black;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -72,7 +94,7 @@ header {
 
 	& > img { width: 100%; }
 
-	max-width: 180px;
+	max-width: 150px;
 	margin: 0 auto 32px;
 }
 
@@ -97,7 +119,8 @@ form {
 		margin: 0 auto 28px;
 		padding: 12px;
 
-		&[type="text"] {
+		&[type="text"], &[type="password"] {
+			background: lighten($gray, 5%);
 			border: 1px solid lighten($pmts-blue, 15%);
 		}
 	}
@@ -173,7 +196,6 @@ form {
 		display: flex;
 		justify-content: space-between;
 		flex-direction: row;
-
 
 		&.show-menu {
 			left: 0;
@@ -289,6 +311,11 @@ a.new-certificate-button {
 	@extend .print-button;
 }
 
+.change-office-button {
+	@extend .print-button;
+	background-color: darken($gray, 25%);
+}
+
 a.view-button {
 	@extend .print-button;
 	display: none;
@@ -334,11 +361,10 @@ a.back-link {
 	padding: 20px;
 	color: $darken-gray;
 	margin-top: 40px;
-	box-shadow: 0 8px 40px transparentize($darken-gray, 0.6);
 
 	h1 {
 		text-align: center;
-		margin-bottom: 24px;
+		margin-bottom: 8px;
 	}
 
 }
@@ -418,28 +444,5 @@ a.deactivated {
 
 	&:hover {
 		background: lighten($gray, 10%);
-	}
-}
-
-.acf-field .acf-label label {
-	font-size: 1.2rem;
-	line-height: 1.6;
-}
-
-form.acf-form { 
-	
-	input {
-		background: white;
-		padding: 18px 24px;
-		border: 1px solid darken($gray, 15%);
-	}
-
-	.course-date {
-		width: 50%;
-		float: left;
-	}
-
-	.instructor-field {
-		clear: both;
 	}
 }

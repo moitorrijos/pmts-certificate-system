@@ -9,6 +9,7 @@ var $endDateField = $('#acf-field_56130098acfc9'),
 $endDateField.parent('div').on('change', function(){
 
 	var endDate = $endDateField.val();
+	$issueDateField.val(endDate);
 	$issueDateField.next('input').val( moment(endDate).format('MMMM D, YYYY') );
 
 });

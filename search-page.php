@@ -8,7 +8,7 @@ if( is_user_logged_in() ) {
 
 	get_header();
 
-	get_template_part( 'templates/search_form' );
+	get_template_part( 'templates/naked_loop_search_form' );
 
 	get_footer();
 

@@ -51,6 +51,8 @@
 
 			$instructor = get_field('instructor');
 
+			$place_of_birth = get_field('place_of_birth');
+
 			$office = get_field('office');
 
 			$start_date = DateTime::createFromFormat( 'Ymd', get_field('start_date') );
@@ -77,7 +79,7 @@
 
 				$leading_zero = '';
 
-			} elseif ( $register_code > 999 && $register_code < 9999 ) {
+			} elseif ( $register_code > 999 && $register_code <= 9999 ) {
 
 				$leading_zero = '0';
 
@@ -101,9 +103,9 @@
 			<h3 class="certify">Certify that:</h3>
 
 			<h1 class="participant-name"> 
-				<span class="stars">* * *</span>
+				<span class="three-stars">***</span>
 			 	<?php echo ucwords($students_name); ?>
-			 	<span class="stars">* * *</span>
+			 	<span class="three-stars">***</span>
 			</h1>
 
 			<p class="attended">Has satisfactorily attended course on:</p>
@@ -116,7 +118,11 @@
 
 					Participant's Passport / ID No.:
 
-					<span class="undies"> * * * <?php echo the_field('passport_id'); ?> * * * </span>
+					<span class="undies"> 
+					<span class="three-stars">***</span> 
+				 	<?php echo the_field('passport_id'); ?>
+				 	<span class="three-stars">***</span> 
+					</span>
 
 				</p>
 
@@ -124,39 +130,36 @@
 
 			<div class="full">
 
-				<p>
+				<p class="short">
 					Participant's Place and Date of Birth:
 
-					<span class="undies">* * * 
-						<span class="paddies"><?php echo the_field('place_of_birth'); ?></span> 
-						<?php echo the_field('date_of_birth'); ?> * * *</span>
+					<span class="undies">
+						<span class="three-stars">***</span> 
+						<span class="paddies"><?php echo $place_of_birth; ?></span> 
+						<?php echo the_field('date_of_birth'); ?>
+						<span class="three-stars">***</span>
+					</span>
 
 				</p>
-
-			</div>
-
-			<div class="full">
-				
 
 			</div>
 
 			<div class="full">
 
 				<div class="half">
-
+					
 					<p class="short">
 						
 						Participant's Nationality:
 
-						<span class="undies">* * *
-						
-								<?php echo the_field('nationality'); ?>
-						* * *
-
-						</span>	
+						<span class="undies">
+							<span class="three-stars">***</span> 
+							<?php echo the_field('student_nationality'); ?>
+							<span class="three-stars">***</span>
+						</span>
 
 					</p>
-
+					
 				</div>
 
 				<div class="half">
@@ -164,20 +167,20 @@
 	                <p class="short">Register Code:
 
 						<span class="undies">
-
-							* * *<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-01-' . $leading_zero . $register_code; ?>* * * 
-
+							<span class="three-stars">***</span> 
+							<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . $leading_zero . $register_code; ?>
+							<span class="three-stars">***</span> 
 						</span>                 
 
 					</p>
-
+					
 				</div>
 
 			</div>
 
 			<div class="full">
 
-				<p class="resolution-p">
+				<p class="resolution-p short">
 					This course fulfills minimum requirements of
 					
 					<span class="unpaddies"><?php echo $course->regulation; ?></span>
@@ -199,52 +202,67 @@
 
 			</div>
 
-			<div class="half">
+			<?php if ($office->name === 'Panama') : ?>
 
-                <p class="short">Start Course Date:
+				<div class="full">
+					
+					<div class="half">
+						
+		                <p class="short">Start Course Date:
 
-					<span class="undies bottom start-date"><?php echo $start_date->format('d F Y'); ?></span>
+							<span class="undies bottom start-date"><?php echo $start_date->format('d F Y'); ?></span>
 
-				</p>
+						</p>
 
+					</div>
 
-				<p class="short">
+					<div class="half">
+						
+						<p class="short">
 
-					Course Delivery Mode:
+							End Course Date:
 
-					<span class="undies bottom delivery-mode">In Classroom</span>
+							<span class="undies bottom end-date"><?php echo $end_date->format('d F Y'); ?></span>
 
-				</p>
+						</p>
+						
+					</div>
 
-			</div>
+				</div>
 
-			<div class="half">
+			<?php endif; ?>
 
-				<p class="short">
+			<div class="full">
+				
+				<div class="half">
+					
+					<p class="short">
 
-					End Course Date:
+						Course Delivery Mode:
 
-					<span class="undies bottom end-date"><?php echo $end_date->format('d F Y'); ?></span>
+						<span class="undies bottom delivery-mode">In Classroom</span>
 
-				</p>
+					</p>
+					
+				</div>
 
-			</div>
+				<div class="half">
+					
+					<p class="short">
 
-			<div class="half">
+						Place of Training:
 
-				<p class="short">
+						<span class="undies bottom place-of-training"><?php echo $office->name; ?></span>
 
-					Place of Training:
-
-					<span class="undies bottom place-of-training"><?php echo $office; ?></span>
-
-				</p>
+					</p>
+					
+				</div>
 
 			</div>
 
 			<div class="full">
 
-				<p>
+				<p class="short">
 
 					This course has been approved by the Government of <span class="unpaddies">PANAMA</span>
 
@@ -258,7 +276,7 @@
 
 				</p>
 
-				<p>
+				<p class="short">
 
 					This certificate was issued in
 
@@ -275,10 +293,6 @@
 						 <?php echo $issue_date->format('d F Y'); ?>.
 
 					</span>
-
-				</p>
-
-				<p>
 
 					This certificate is valid until
 
@@ -302,33 +316,50 @@
 		
 				<div class="certificate-codes">
 
-					<p>
-						<span class="boldies">(10/15) Rev. 14</span>
-						<?php if ( $course->f_ti ) : ?>
-							<span class="boldies to-right">
-								F-TI-<?php echo $course->f_ti;  ?>
-							</span>
-						<?php endif; ?>
-					</p>
+					<div class="half">
+						
+						<p>
+							
+							<?php if ( $course->revision ) : ?>
+								<span class="boldies"><?php echo $course->revision; ?></span>
+							<?php else : ?>
+								<span class="boldies">(10/15) Rev. 14</span>
+							<?php endif; ?>
+
+						</p>
+
+					</div>
+
+					<div class="half">
+						
+						<p>
+
+							<?php if ( $course->f_ti ) : ?>
+								<span class="boldies to-right">
+									F-TI-<?php echo $course->f_ti;  ?>
+								</span>
+							<?php endif; ?>
+
+						</p>
+
+					</div>
 
 				</div>
-				
+
 			</div>
 
-
-		</div>	
+		</div>
 
 		<?php if (current_user_can( 'edit_pages' ) ) : ?>
 
 			<div class="edit-certificate-form">
 
 				<?php 
-					
 					$certificate_options = array(
 						'updated_message' => __("Certificate Updated", 'certificate-system'),
 					);
 
-					acf_form($certificate_options); 
+					acf_form($certificate_options);
 
 				?>
 

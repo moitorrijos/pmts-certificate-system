@@ -1,9 +1,8 @@
 <?php
 
-add_filter( 'wp_insert_post_data' , 'modify_post_title' , '99', 2 );
-
-function modify_post_title( $data , $postarr )
+function modify_quote_title( $data , $postarr )
 {
+    global $_POST;
 
     if( $data['post_type'] == 'quotation' ) {
 
@@ -31,16 +30,9 @@ function modify_post_title( $data , $postarr )
             $data['post_title'] = 'PMTS/Q/' . date('Y') . '/' . $last_quote_title_number;
         }
 
-
-    } else if ( $data['post_type'] == 'certificates' ) {
-	    	 $args = array(
-            'numberposts' => 1,
-            'orderby' => 'post_date',
-            'order' => 'DESC',
-            'post_type' => 'certificates',
-            'post_status' => 'publish'
-        );
-        $data['post_title'] = 'Certificate/' . date('y-m-d-H-i-s') ;
     }
+
     return $data;
 }
+
+add_filter( 'wp_insert_post_data' , 'modify_quote_title' , '99', 2 );

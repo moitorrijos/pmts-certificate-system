@@ -1,4 +1,27 @@
 
+.acf-field .acf-label label {
+	font-size: 1.2rem;
+	line-height: 1.6;
+}
+
+form.acf-form { 
+	
+	input {
+		background: white;
+		padding: 18px 24px;
+		border: 1px solid darken($gray, 15%);
+	}
+
+	.course-date {
+		width: 50%;
+		float: left;
+	}
+
+	.instructor-field {
+		clear: both;
+	}
+}
+
 .acf-form input[type="text"],
 .acf-form input[type="password"],
 .acf-form input[type="number"],
@@ -47,7 +70,7 @@ span.acf-spinner.acf-spinner.acf-spinner {
 	top: 12px;
 	left: 25px;
 	width: 175px;
-    background: $cool-green url(../images/spinner.gif) no-repeat 50% 50%;
+    background: $cool-green url(../images/create-new-spinner.gif) no-repeat 50% 50%;
     z-index: 100;
 }
 

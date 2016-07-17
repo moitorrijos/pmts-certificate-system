@@ -65,7 +65,7 @@
 					</div>
 				</div>
 				<div class="quote-info">
-					<table class="quote-info-table">
+					<table class="system quote-info-table">
 						<thead>
 							<tr>
 								<th>Quote Number</th>
@@ -87,7 +87,7 @@
 
 			<div class="clearfix"></div>
 			
-			<table class="participant-info">
+			<table class="system participant-info">
 				<thead>
 					<tr>
 						<th>Name</th>
@@ -101,9 +101,7 @@
 						<td><?php the_field('participants_name'); ?></td>
 						<?php if ( get_field('participants_email') ) : ?>
 						<td>
-							<a href="mailto:<?php the_field('participants_email'); ?>">
-								<?php the_field('participants_email'); ?>
-							</a>
+							<?php the_field('participants_email'); ?>
 						</td>
 						<?php endif; ?>
 					</tr>
@@ -114,7 +112,7 @@
 					<?php endif; ?>
 					<?php if ( get_field('participants_phone_number') ) : ?>
 						<tr>
-							<td colspan="2">Phone: <?php the_field('participants_phone_number'); ?></td>
+							<td colspan="2"><?php the_field('participants_phone_number'); ?></td>
 						</tr>
 					<?php endif; ?>
 				</tbody>
@@ -122,7 +120,7 @@
 
 			<?php if ( get_field('clients_email') ) : ?>
 
-			<table class="referer-info">
+			<table class="system referer-info">
 
 				<thead>
 					<tr>
@@ -147,23 +145,25 @@
 
 			<?php endif; ?>
 			
-			<?php if ( have_rows('courses') ) : ?>
 
-			<table>
+			<table class="system">
 				
 				<thead>
 					<tr>
 						<th class="short-number">No.</th>
 						<th class="title">Service Details</th>
+						<!-- <th class="middle-title">Student Name</th> -->
 						<th class="short-number">Quantity</th>
 						<th class="short-number">Unit Price</th>
 						<th class="short-number">Price</th>
 					</tr>
 				</thead>
 				<tbody>
+
 				<?php if ( have_rows('courses') ) :
 					while( have_rows('courses') ) : the_row(); 
 					$course = get_sub_field('course_name');
+					$sub_student = get_sub_field('sub_participants_name');
 					$quantity = get_sub_field('quantity');
 					$is_panamanian = get_sub_field('panamanian');
 					$is_renewal = get_sub_field('renewal');
@@ -181,8 +181,8 @@
 					}
 				?>
 					<tr class="quote-tbody">
-						<td class="centered">
-							<?php echo get_row_index(); ?>
+						<td class="numbers-col centered">
+
 						</td>
 						<td>
 							<?php if ($course->imo_no) : ?>
@@ -191,6 +191,9 @@
 							<?php echo get_the_title($course->ID); ?>
 							(<?php echo $course->abbr; ?>)
 						</td>
+						<!-- <td>
+							<?php //if ($sub_student) { echo $sub_student; } ?>
+						</td> -->
 						<td class="centered course-quantity" id="service-quantity">
 							<?php echo $quantity ?>
 						</td>
@@ -208,7 +211,10 @@
 					$service_price = get_sub_field('service_price');
 					$service_quantity = get_sub_field('service_quantity');
 				 ?>
-				 	<tr class="other-services">
+				 	<tr class="quote-tbody">
+				 		<td class="numbers-col centered">
+
+						</td>
 				 		<td>
 				 			<?php echo $service_name; ?>
 				 		</td>
@@ -228,22 +234,26 @@
 				<tfoot>
 					<?php if (get_field('discount')) : ?>
 						<tr>
-							<td colspan="4" class="total">Discount</td>
-							<td id="discount" class="centered discount">
-								<?php the_field('discount'); ?> %
-							</td>
+							<td colspan="4" class="total">Sub Total</td>
+							<td id="subtotal-discount" class="centered subtotal-discount"></td>
 						</tr>
 						<tr>
-							<td colspan="4" class="total">Sub Total</td>
+							<td colspan="4" class="total" >Discount <?php the_field('discount'); ?>%</td>
+							<td id="discount" class="centered discount" data-discount="<?php the_field('discount'); ?>"></td>
+						</tr>
+						<tr>
+							<td colspan="4" class="total">Sub Total with Discount</td>
 							<td id="subtotal" class="centered subtotal"></td>
 						</tr>
 					<?php endif; ?>
+					<?php if ( have_rows('courses') ) : ?>
 					<tr>
 						<td colspan="4" class="total quote-footer" data-govfee="<?php the_field('government_fee'); ?>">
 							Certificate Government Fee
 						</td>
 						<td id="government-fee" class="centered government-fee"></td>
 					</tr>
+					<?php endif; ?>
 					<tr>
 						<td colspan="4" class="total">Grand Total</td>
 						<td id="total-price" class="centered total-price"></td>
@@ -277,7 +287,7 @@
 				</p>
 			</div>
 
-			<?php endif; ?>
+
 
 		</div>
 

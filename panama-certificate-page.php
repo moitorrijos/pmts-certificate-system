@@ -1,21 +1,18 @@
 <?php 
-
 /**
  * Template Name: Panama Certificates Page
  */
 
+get_header();
+
 if( is_user_logged_in() ) {
 
-	get_header();
-
-	get_template_part( 'templates/panama_certificate_page_loop' );
-
-	get_footer();
+	get_template_part( 'templates/all_certificate_page_loop' );
 
 } else {
 
-	wp_redirect( home_url() );
-	
-	exit;
+	get_template_part('templates/the_message');
 
 }
+
+get_footer();

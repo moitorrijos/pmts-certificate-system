@@ -35,6 +35,10 @@
 
 table.quote-info-table {
 
+	thead > tr {
+		background: lighten($gray, 15%);
+	}
+
 	tr {
 		background: white;
 		font-size: 0.8rem;

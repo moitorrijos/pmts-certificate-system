@@ -86,7 +86,7 @@ function showLoader() {
     $loader.fadeIn('fast');
     setTimeout( function(){
     	$loader.fadeOut('fast');
-    } , 3000);
+    } , 6000);
 }
 
 $navA.on('click', showLoader );
