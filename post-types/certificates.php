@@ -10,8 +10,8 @@ function certificates_init() {
 	register_post_type( 'certificates', array(
 		'labels'            => array(
 			'name'                => __( 'Certificates', 'certificate-system' ),
-			'singular_name'       => __( 'Certificates', 'certificate-system' ),
-			'all_items'           => __( 'Certificates', 'certificate-system' ),
+			'singular_name'       => __( 'Certificate', 'certificate-system' ),
+			'all_items'           => __( 'All Certificates', 'certificate-system' ),
 			'new_item'            => __( 'New Certificates', 'certificate-system' ),
 			'add_new'             => __( 'Add New', 'certificate-system' ),
 			'add_new_item'        => __( 'Add New Certificates', 'certificate-system' ),

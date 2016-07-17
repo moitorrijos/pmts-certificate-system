@@ -6,3 +6,11 @@ input.search {
 	width: 100%;
 	margin-bottom: 32px;
 }
+
+form.filter-form {
+	@extend %flexbox-box;
+
+	.filter-input-text {
+		width: 20%;
+	}
+}

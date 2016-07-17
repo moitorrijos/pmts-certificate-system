@@ -90,7 +90,7 @@
 			<table class="system participant-info">
 				<thead>
 					<tr>
-						<th>Name</th>
+						<th>Participant's Information</th>
 						<?php if ( get_field('participants_email') ) : ?>
 						<th>Email:</th>
 						<?php endif; ?>
@@ -98,7 +98,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><?php the_field('participants_name'); ?></td>
+						<td>Name: <?php the_field('participants_name'); ?></td>
 						<?php if ( get_field('participants_email') ) : ?>
 						<td>
 							<?php the_field('participants_email'); ?>
@@ -112,13 +112,20 @@
 					<?php endif; ?>
 					<?php if ( get_field('participants_phone_number') ) : ?>
 						<tr>
-							<td colspan="2"><?php the_field('participants_phone_number'); ?></td>
+							<td colspan="2">Phone: <?php the_field('participants_phone_number'); ?></td>
+						</tr>
+					<?php endif; ?>
+					<?php if ( get_field('type_of_service') ): ?>
+						<tr>
+							<td colspan="2">
+								Service: <?php the_field('type_of_service') ?>
+							</td>
 						</tr>
 					<?php endif; ?>
 				</tbody>
 			</table>
 
-			<?php if ( get_field('clients_email') ) : ?>
+			<?php if ( get_field('clients_name') ) : ?>
 
 			<table class="system referer-info">
 
@@ -145,7 +152,6 @@
 
 			<?php endif; ?>
 			
-
 			<table class="system">
 				
 				<thead>

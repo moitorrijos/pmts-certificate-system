@@ -264,15 +264,15 @@
 
 				<p class="short">
 
-					This course has been approved by the Government of <span class="unpaddies">PANAMA</span>
+					This course has been approved by the Government of <span class="undiesunpaddies">PANAMA</span>
 
 					By means of Resolution
 
-					<span class="unpaddies"><?php echo the_field('resolution'); ?></span>
+					<span class="undiesunpaddies"><?php echo the_field('resolution'); ?></span>
 
 					of
 
-					<span class="unpaddies"><?php echo the_field('resolution_date'); ?></span>
+					<span class="undiesunpaddies"><?php echo the_field('resolution_date'); ?></span>
 
 				</p>
 
@@ -280,7 +280,7 @@
 
 					This certificate was issued in
 
-					<span class="unpaddies">
+					<span class="undiesunpaddies">
 
 						<?php echo the_field('place_of_issuance');?>
 
@@ -288,7 +288,7 @@
 
 					on
 
-					<span class="unpaddies">
+					<span class="undiesunpaddies">
 
 						 <?php echo $issue_date->format('d F Y'); ?>.
 
@@ -296,7 +296,7 @@
 
 					This certificate is valid until
 
-					<span class="unpaddies">
+					<span class="undiesunpaddies">
 						
 						<?php echo $expiry_date; ?>
 

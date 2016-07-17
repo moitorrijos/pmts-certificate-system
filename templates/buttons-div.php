@@ -93,15 +93,15 @@ $add_button = new AddButton;
 	<?php if ( is_page_template( 'panama-certificate-page.php' ) ) : ?>
 
 		<!-- <a href="#0" class="change-office-button not-link">
-			<i class="fa fa-building"></i>&nbsp; Change Office
-		</a> -->
+			<i class="fa fa-building"></i>&nbsp; Filter Certificates
+		</a>  -->
 
-		<a href="#0" class="search-id-no-button not-link">
+		<!-- <a href="#0" class="search-id-no-button not-link">
 
 			<i class="fa fa-search" aria-hidden="true"></i>&nbsp;
 			Search Certificate
 
-		</a>
+		</a> -->
 
 	<?php endif; ?>
 	

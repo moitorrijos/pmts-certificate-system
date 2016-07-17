@@ -56,11 +56,11 @@ function register_my_styles_and_scripts() {
 
 	}
 
-	if ( is_page( array( 8, 208 ) ) ) {
+	/*if ( is_page( array( 8, 208 ) ) ) {
 
 		wp_enqueue_script( 'reload_js', THEMEROOT . '/js/reload-page.js', array(), '20160405', true );
 	
-	}
+	}*/
 
 }
 

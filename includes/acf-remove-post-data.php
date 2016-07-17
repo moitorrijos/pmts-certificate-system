@@ -1,6 +1,6 @@
 <?php
 
-function unsetsession(){
+function unset_fill_certificate_data(){
 
 	if (isset($_GET['action']) && $_GET['action'] == 'clear_session'){
 
@@ -27,6 +27,7 @@ function unsetsession(){
 		unset($_SESSION['date_of_issuance']);
 
 	}
+
 }
 
-add_action('template_redirect', 'unsetsession');
+add_action('template_redirect', 'unset_fill_certificate_data');

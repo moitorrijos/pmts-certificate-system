@@ -8,7 +8,7 @@
 
 		endwhile; else :
 
-		get_template_part('templates/404_message');
+		get_template_part('templates/the_message');
 
 		endif;
 

@@ -311,6 +311,15 @@ a.new-certificate-button {
 	@extend .print-button;
 }
 
+.fill-form-randomly {
+	@extend %cool-button;
+	background-color: $cool-yellow;
+
+	&:hover {
+		background-color: darken($cool-yellow, 5%);
+	}
+}
+
 .change-office-button {
 	@extend .print-button;
 	background-color: darken($gray, 25%);

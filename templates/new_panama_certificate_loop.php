@@ -24,6 +24,16 @@
 
 			</a>
 
+			<?php if (home_url() == 'http://certificate-system:8888') : ?>
+
+			<a href="<?php echo home_url();?>/panama-certificates/new-panama-certificate?action=fill_form_randomly"" class="fill-form-randomly not-link">
+
+				Fill Form Randomly
+
+			</a>
+
+			<?php endif; ?>
+
 		</div>
 
 		<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>

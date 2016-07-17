@@ -433,7 +433,7 @@ th {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
-.certificate .full, .certificate .certificate-codes, .quotation-logo-table {
+form.filter-form, .certificate .full, .certificate .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -712,7 +712,7 @@ form {
 .align-center, .certificate .signature {
   text-align: center; }
 
-a.logout-button, a.new-certificate-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
+a.logout-button, a.new-certificate-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .fill-form-randomly, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
   padding: 4px 22px;
   text-decoration: none;
   color: white;
@@ -734,6 +734,11 @@ a.new-certificate-button {
   background-color: #3e94cc; }
   .print-button:hover, .search-id-no-button:hover, .change-office-button:hover, a.view-button:hover {
     background-color: #3287be; }
+
+.fill-form-randomly {
+  background-color: #D3D13A; }
+  .fill-form-randomly:hover {
+    background-color: #c7c52c; }
 
 .change-office-button {
   background-color: #7a91a3; }
@@ -955,6 +960,9 @@ input.search {
   width: 100%;
   margin-bottom: 32px; }
 
+form.filter-form .filter-input-text {
+  width: 20%; }
+
 table.system {
   font-size: 0.9rem;
   width: 100%;
@@ -967,20 +975,22 @@ table.system {
     font-weight: normal;
     color: white;
     text-align: center;
-    padding: 8px 0;
+    padding: 8px 12px;
     border: 1px solid white; }
     table.system th.short-short-number {
       width: 1%; }
     table.system th.short-number {
       width: 2%; }
     table.system th.number {
-      width: 5%; }
+      width: 4%; }
     table.system th.short-title {
-      width: 12%; }
+      width: 10%; }
     table.system th.middle-title {
-      width: 20%; }
+      width: 15%; }
     table.system th.title {
-      width: 40%; }
+      width: 33%; }
+    table.system th.sort {
+      cursor: pointer; }
   table.system tr {
     background: white; }
     table.system tr:nth-child(even) {
@@ -1081,6 +1091,9 @@ table.system {
     margin-right: 12px; }
   .certificate .unpaddies {
     font-family: "texgyreadventorbold_italic"; }
+  .certificate .undiesunpaddies {
+    font-family: "texgyreadventorbold_italic";
+    border-bottom: 1px solid #556a7b; }
   .certificate .undies {
     border-bottom: 1px solid #556a7b;
     display: inline-block;
@@ -1121,7 +1134,7 @@ table.system {
 .edit-certificate-form {
   display: none; }
 
-.search-student-form, .change-office-outer {
+.search-student-form, .modal-window-outer {
   display: none;
   position: absolute;
   height: 100%;
@@ -1186,23 +1199,48 @@ div.close-button {
   text-align: center;
   padding: 4px; }
 
-.change-office-outer .change-office-inner {
+.modal-window-outer .modal-window-inner {
   position: relative;
   background: white;
-  width: 300px;
+  width: 80%;
   margin: 15% auto;
-  box-shadow: 0 0 12px #a7b6c2; }
+  box-shadow: 0 0 12px #a7b6c2;
+  padding: 3em; }
 
-.change-office-outer ul.offices-nav {
-  width: 100%;
+.modal-window-outer form {
+  margin-bottom: 0; }
+  .modal-window-outer form input {
+    margin: 0;
+    background-color: #3e94cc; }
+    .modal-window-outer form input[type='submit'] {
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 2px; }
+  .modal-window-outer form .filter-inputs {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around; }
+    .modal-window-outer form .filter-inputs input {
+      width: 33%;
+      margin-bottom: 32px;
+      background-color: white; }
+
+.paginate p {
+  margin-right: 20px;
+  padding: 4px 0;
+  border-bottom: 1px dotted #98aab8; }
+
+ul.pagination {
   list-style: none;
-  padding: 16px 32px 32px; }
-  .change-office-outer ul.offices-nav li a {
+  padding: 0; }
+  ul.pagination li a {
     display: block;
-    padding: 8px 12px;
-    border-bottom: 1px solid #3e94cc; }
-    .change-office-outer ul.offices-nav li a:hover {
-      background: #dfedf7; }
+    padding: 4px 12px;
+    border-radius: 4px;
+    background: #529fd1;
+    border: 1px solid #98aab8;
+    margin-right: 12px;
+    box-shadow: 0 1px 2px #C5CFD7; }
 
 .quotation-logo-table {
   -webkit-box-pack: justify;

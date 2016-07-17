@@ -14,9 +14,15 @@
 
 			$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
-			$panama_certs_args = array( 
+			$panama_certs_args = array(
 				'post_type' 		=> 'certificates',
-				'tax_query'			=> array( array('taxonomy' => 'office', 'field' => 'name', 'terms' => 'Panama') ),
+				'tax_query'			=> array( 
+					array(
+						'taxonomy' 	=> 'office', 
+						'field' 	=> 'name', 
+						'terms' 	=> 'Panama'
+						)
+					),
 				'posts_per_page' 	=> -1,
 				'meta_key' 			=> 'date_of_issuance',
 				'orderby'			=> 'meta_value_num',

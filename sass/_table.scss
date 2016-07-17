@@ -15,7 +15,7 @@ table.system {
 		font-weight: normal;
 		color: white;
 		text-align: center;
-		padding: 8px 0;
+		padding: 8px 12px;
 		border: 1px solid white;
 
 		&.short-short-number {
@@ -27,19 +27,23 @@ table.system {
 		}
 
 		&.number {
-			width: 5%;
+			width: 4%;
 		}
 
 		&.short-title {
-			width: 12%;
+			width: 10%;
 		}
 
 		&.middle-title {
-			width: 20%;
+			width: 15%;
 		}
 
 		&.title {
-			width: 40%;
+			width: 33%;
+		}
+
+		&.sort {
+			cursor: pointer;
 		}
 	}
 

@@ -34,7 +34,7 @@ function offices_taxonomy() {
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
 	);
-	register_taxonomy( 'office', array( 'certificates', ' courses', ' instructors', ' quotation' ), $args );
+	register_taxonomy( 'office', array( 'certificates', 'courses', ' instructors', ' quotation' ), $args );
 
 }
 add_action( 'init', 'offices_taxonomy', 0 );

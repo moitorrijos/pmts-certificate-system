@@ -18,7 +18,11 @@ var $certForm 		= 	$('.edit-certificate-form'),
 	indexOfAcfHref 	= 	windowHref.lastIndexOf(acfHref),
 	acfHrefReturned = 	windowHref.slice( indexOfAcfHref, windowHref.length ),
 	options 		= 	{
-		valueNames : ['list-col-1', 'list-col-2', 'list-col-3']
+		valueNames : ['list-col-1', 'list-col-2', 'list-col-3', 'list-col-4'],
+		page: 75,
+	    plugins: [
+	      ListPagination({})
+	    ]
 	};
 
 function fadeCertDivOut() {
