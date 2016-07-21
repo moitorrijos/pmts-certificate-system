@@ -15,7 +15,7 @@ acf_add_local_field_group(array (
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => 50,
+				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
@@ -38,7 +38,7 @@ acf_add_local_field_group(array (
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => 50,
+				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
@@ -61,7 +61,7 @@ acf_add_local_field_group(array (
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => 50,
+				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
@@ -78,7 +78,7 @@ acf_add_local_field_group(array (
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => 50,
+				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
@@ -88,7 +88,7 @@ acf_add_local_field_group(array (
 			'add_term' => 1,
 			'save_terms' => 0,
 			'load_terms' => 0,
-			'return_format' => 'id',
+			'return_format' => 'object',
 			'multiple' => 0,
 		),
 	),
@@ -97,7 +97,7 @@ acf_add_local_field_group(array (
 			array (
 				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'reports',
+				'value' => 'post',
 			),
 		),
 	),

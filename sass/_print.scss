@@ -232,7 +232,7 @@
 	}
 
 	.quotation {
-		width: 8.5in;
+		width: 8in;
 		height: 10in;
 		margin: 0 auto;
 
@@ -281,4 +281,28 @@
 
 	}
 	
+	.report {
+
+		h1 {
+			font-size: 14pt;
+		}
+
+		p {
+			font-size: 9pt;
+		}
+
+		span.undies {
+			font-size: 9pt;
+			min-width: 1.5in;
+		}
+
+		table {
+			th {
+				font-size: 9pt;
+			}
+			td {
+				font-size: 9pt;
+			}
+		}
+	}
 }

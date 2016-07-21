@@ -50,6 +50,12 @@ function register_my_styles_and_scripts() {
 
 	}
 
+	if ( is_singular( 'reports' ) ) {
+
+		wp_enqueue_script( 'reports_js', THEMEROOT . '/js/report.js', array('jquery'), '20160720', true );
+
+	}
+
 	if ( is_singular( 'quotation' ) ) {
 
 		wp_enqueue_script( 'quotation-js', THEMEROOT . '/js/quotation.js', array('jquery'), '20160317', true );

@@ -18,6 +18,7 @@ require get_template_directory() . '/post-types/resolutions.php';
 require get_template_directory() . '/post-types/quotations.php';
 require get_template_directory() . '/post-types/reports.php';
 require get_template_directory() . '/post-types/quotation-code-title.php';
+require get_template_directory() . '/post-types/reports-code-title.php';
 require get_template_directory() . '/post-types/certificates-post-title.php';
 require get_template_directory() . '/post-types/admin-columns/custom-admin-columns-courses.php';
 require get_template_directory() . '/post-types/includes/change-title-lable.php';
@@ -52,6 +53,7 @@ require get_template_directory() . '/includes/add-local-remote-button-admin-bar.
 require get_template_directory() . '/includes/search-by-id-passport.php';
 require get_template_directory() . '/includes/search-certificates.php';
 require get_template_directory() . '/includes/fill-form-randomly.php';
+require get_template_directory() . '/includes/fill-deck-courses.php';
 require get_template_directory() . '/includes/my_courses_post_object_results.php';
 require get_template_directory() . '/includes/add_leading_zeroes.php';
 

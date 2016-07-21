@@ -28,7 +28,13 @@ class AddButton {
 			$add_value = 'Add Quotations';
 			return $add_value;
 
-		}
+		} elseif ( is_page_template( 'reports-page.php' ) ) {
+
+			$add_value = 'Create New Report';
+			return $add_value;
+
+		} 
+
 	}
 
 	function button_link() {
@@ -57,7 +63,12 @@ class AddButton {
 			$add_link = '/panama-quotations/new-panama-quotation/';
 			return $add_link;
 			
-		}
+		} elseif ( is_page_template( 'reports-page.php' ) ) {
+
+			$add_link = '/panama-reports/new-panama-reports/';
+			return $add_link;
+			
+		} 
 	}
 
 	function is_deactivated() {

@@ -433,7 +433,7 @@ th {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
-form.filter-form, .certificate .full, .certificate .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table {
+form.filter-form, .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -709,7 +709,7 @@ form {
 .align-right {
   text-align: right; }
 
-.align-center, .certificate .signature {
+.align-center, .certificate .signature, .report .signature {
   text-align: center; }
 
 a.logout-button, a.new-certificate-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .fill-form-randomly, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
@@ -736,9 +736,9 @@ a.new-certificate-button {
     background-color: #3287be; }
 
 .fill-form-randomly {
-  background-color: #D3D13A; }
+  background-color: #284f96; }
   .fill-form-randomly:hover {
-    background-color: #c7c52c; }
+    background-color: #234482; }
 
 .change-office-button {
   background-color: #7a91a3; }
@@ -1069,7 +1069,7 @@ table.system {
   letter-spacing: -1px;
   text-transform: capitalize; }
 
-.certificate {
+.certificate, .report {
   position: relative;
   font-size: 1.2rem;
   padding: 0 36px;
@@ -1078,54 +1078,54 @@ table.system {
 		float: left;
 	} */ }
   @media screen and (min-width: 1200px) {
-    .certificate {
+    .certificate, .report {
       margin: 0 48px; } }
-  .certificate p, .certificate ul, .certificate ol {
+  .certificate p, .report p, .certificate ul, .report ul, .certificate ol, .report ol {
     font-family: "texgyreadventoritalic";
     margin: 40px 0 32px; }
-  .certificate .short.short {
+  .certificate .short.short, .report .short.short {
     margin-top: 0; }
-  .certificate .boldies, .certificate .undies, .certificate .overies, .certificate .signature {
+  .certificate .boldies, .report .boldies, .certificate .undies, .report .undies, .certificate .overies, .report .overies, .certificate .signature, .report .signature {
     font-family: "texgyreadventorbold_italic"; }
-  .certificate .paddies {
+  .certificate .paddies, .report .paddies {
     margin-right: 12px; }
-  .certificate .unpaddies {
+  .certificate .unpaddies, .report .unpaddies {
     font-family: "texgyreadventorbold_italic"; }
-  .certificate .undiesunpaddies {
+  .certificate .undiesunpaddies, .report .undiesunpaddies {
     font-family: "texgyreadventorbold_italic";
     border-bottom: 1px solid #556a7b; }
-  .certificate .undies {
+  .certificate .undies, .report .undies {
     border-bottom: 1px solid #556a7b;
     display: inline-block;
     text-align: center;
     margin-left: 14px;
     padding: 0 20px 2px; }
-    .certificate .undies.bottom {
+    .certificate .undies.bottom, .report .undies.bottom {
       width: 175px; }
-    .certificate .undies.start-date {
+    .certificate .undies.start-date, .report .undies.start-date {
       margin-left: 45px; }
-  .certificate .resolution-p {
+  .certificate .uppers, .report .uppers {
+    text-transform: uppercase; }
+  .certificate .resolution-p, .report .resolution-p {
     text-align: justify; }
-  .certificate .overies, .certificate .signature {
+  .certificate .overies, .report .overies, .certificate .signature, .report .signature {
     border-top: 1px solid #556a7b; }
-  .certificate .quarter, .certificate .signature {
+  .certificate .quarter, .report .quarter, .certificate .signature, .report .signature {
     width: 25%; }
-  .certificate .full, .certificate .certificate-codes {
-    clear: both;
-    width: 100%;
+  .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between; }
-  .certificate .to-right, .certificate .signature {
+  .certificate .to-right, .report .to-right, .certificate .signature, .report .signature {
     float: right; }
-  .certificate .three-stars {
+  .certificate .three-stars, .report .three-stars {
     letter-spacing: 2px; }
-  .certificate .signature {
+  .certificate .signature, .report .signature {
     margin-bottom: 40px;
     display: none; }
 
-.certificate-codes.certificate-codes .boldies.boldies, .certificate-codes.certificate-codes .certificate .undies, .certificate .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .certificate .overies, .certificate .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .certificate .signature, .certificate .certificate-codes.certificate-codes .signature {
+.certificate-codes.certificate-codes .boldies.boldies, .certificate-codes.certificate-codes .certificate .undies, .certificate .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .report .undies, .report .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .certificate .overies, .certificate .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .report .overies, .report .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .certificate .signature, .certificate .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .report .signature, .report .certificate-codes.certificate-codes .signature {
   font-family: 'britannic-bold'; }
 
 .certificate-codes.certificate-codes p {
@@ -1291,6 +1291,35 @@ table.referer-info {
 .edit-quote-form {
   display: none; }
 
+.report {
+  font-family: "Times New Roman", serif; }
+  .report h1 {
+    font-family: "Times New Roman", serif;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 1em 0;
+    padding: 0.5em 0;
+    background-color: #182f5a;
+    color: white; }
+  .report p {
+    font-family: "Times New Roman", serif; }
+  .report .half {
+    width: 50%; }
+  .report span.undies {
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+    min-width: 25%; }
+  .report table th {
+    text-transform: none;
+    background-color: #284f96;
+    font-size: 1.2em; }
+  .report table td {
+    font-size: 1.1em; }
+
+.edit-report-form {
+  display: none; }
+
 .fc-view-container {
   background: white; }
 
@@ -1381,14 +1410,14 @@ table.referer-info {
     margin: 0.175in 0; }
     .participant-name.participant-name span.stars {
       font-size: 28pt; }
-  .certificate {
+  .certificate, .report {
     padding: 0 0.5in;
     width: 8in;
     height: 10.5in;
     margin: 0 auto;
     overflow: hidden;
     position: relative; }
-    .certificate p {
+    .certificate p, .report p {
       margin: 0.2in 0; }
   .short.short {
     margin: 0 0 0.25in; }
@@ -1438,7 +1467,7 @@ table.referer-info {
     color: black;
     font-size: 10pt; }
   .quotation {
-    width: 8.5in;
+    width: 8in;
     height: 10in;
     margin: 0 auto; }
     .quotation p {
@@ -1459,5 +1488,16 @@ table.referer-info {
     .quotation .quotation-logo .bank-info h4 {
       margin-top: 0; }
     .quotation table.quote-info-table td {
-      padding: 0.05in 0.1in; } }
+      padding: 0.05in 0.1in; }
+  .report h1 {
+    font-size: 14pt; }
+  .report p {
+    font-size: 9pt; }
+  .report span.undies {
+    font-size: 9pt;
+    min-width: 1.5in; }
+  .report table th {
+    font-size: 9pt; }
+  .report table td {
+    font-size: 9pt; } }
 /*# sourceMappingURL=main.css.map */

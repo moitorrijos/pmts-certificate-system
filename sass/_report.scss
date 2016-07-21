@@ -1,0 +1,49 @@
+.report {
+	@extend .certificate;
+	font-family: $report-font-family;
+
+	h1 { 
+		font-family: $report-font-family;
+		font-size: 1.4em;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		margin: 1em 0;
+		padding: 0.5em 0;
+		background-color: darken($amp-blue, 15%);
+		color: white;
+	}
+
+	p { 
+		font-family: $report-font-family;
+	}
+
+	.half {
+		width: 50%;
+	}
+
+	span.undies { 
+		font-family: $report-font-family;
+		font-weight: bold;
+		min-width: 25%;
+	}
+
+	table {
+
+		th {
+			text-transform: none;
+			background-color: $amp-blue;
+			font-size: 1.2em;
+
+			
+		}
+
+		td {
+			font-size: 1.1em;
+		}
+
+	}
+}
+
+.edit-report-form {
+	display: none;
+}

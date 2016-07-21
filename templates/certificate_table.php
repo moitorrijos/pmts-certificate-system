@@ -15,9 +15,6 @@
 ?>
 
 	<tr>
-		<td class="centered list-col-4">
-			<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . add_leading_zeroes($register_code) . $register_code; ?>
-		</td>
 		<td class="list-col-1">
 			<a href="<?php echo the_permalink(); ?>">
 				<?php echo the_field('students_name'); ?>
@@ -28,6 +25,9 @@
 		</td>
 		<td class="centered list-col-2">
 			<?php echo the_field('passport_id'); ?>
+		</td>
+		<td class="centered list-col-4">
+			<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . add_leading_zeroes($register_code) . $register_code; ?>
 		</td>
 		<td class="centered abbr">
 			<?php echo $course->abbr; ?>

@@ -313,10 +313,10 @@ a.new-certificate-button {
 
 .fill-form-randomly {
 	@extend %cool-button;
-	background-color: $cool-yellow;
+	background-color: $amp-blue;
 
 	&:hover {
-		background-color: darken($cool-yellow, 5%);
+		background-color: darken($amp-blue, 5%);
 	}
 }
 

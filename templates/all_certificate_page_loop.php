@@ -1,7 +1,7 @@
-<div class="main">
++<div class="main">
 
 	<div class="main-content" id="search-list">
-		
+
 		<h1>Panama Certificates</h1>
 		<p class="centered long">All Offices</p>
 
@@ -27,10 +27,10 @@
 				<table class="system download-xls-table">
 					<thead>
 						<tr>
-							<th class="middle-title">Register Code</th>
 							<th class="middle-title">Participant's Name</th>
 							<th class="short-title">Nationality</th>
 							<th class="short-title">Passport/ID No.</th>
+							<th class="middle-title">Register Code</th>
 							<th class="number">Abbr</th>
 							<th class="number">Start Date</th>
 							<th class="number">End Date</th>

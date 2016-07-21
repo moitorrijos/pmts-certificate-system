@@ -87,6 +87,10 @@
 		}
 	}
 
+	.uppers {
+		text-transform: uppercase;
+	}
+
 	.resolution-p {
 		text-align: justify;
 	}
@@ -106,8 +110,6 @@
 	}
 
 	.full {
-		clear: both;
-		width: 100%;
 		@extend %flexbox-box;
 		justify-content: space-between;
 	}
