@@ -42,7 +42,7 @@
 				$course = get_field('name_of_the_course');
 				$instructor = get_field('name_of_the_instructor');
 				$course_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_the_course') );
-				$office = get_field('office');
+				$office = get_field('office_course_taken');
 
 				?>
 				<tr>
@@ -70,10 +70,15 @@
 
 		</table>
 
-		<div class="paginate">
-			<p>Page:</p>
-			<ul class="pagination"></ul>
-		</div>
+		<?php if ($reports_query->max_num_pages > 1) : ?>
+			<div class="paginate">
+				<p>Page:</p>
+				<ul class="pagination">
+					<li><?php echo get_next_posts_link( 'Older Reports', $reports_query->max_num_pages ); ?></li>
+					<li><?php echo get_previous_posts_link( 'Newer Reports' ); ?></li>
+				</ul>
+			</div>
+		<?php endif; ?>
 
 		<?php else : ?>
 

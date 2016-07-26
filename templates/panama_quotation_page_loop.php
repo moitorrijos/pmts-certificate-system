@@ -11,7 +11,11 @@
 		get_template_part('templates/buttons-div');
 		get_template_part('templates/search-bar' );
 
-		$args = array( 'post_type' => 'quotation', 'showposts' => -1 );
+		$args = array( 
+			'post_type' => 'quotation', 
+			'showposts' => 75,	
+		);
+		
 		$edit = '<i class="fa fa-pencil-square-o"></i>';
 		$quotes = new WP_Query($args);
 
@@ -63,10 +67,15 @@
 
 		</table>
 
-		<div class="paginate">
-			<p>Page:</p>
-			<ul class="pagination"></ul>
-		</div>
+		<?php if ($quotes->max_num_pages > 1) : ?>
+			<div class="paginate">
+				<p>Page:</p>
+				<ul class="pagination">
+					<li><?php echo get_next_posts_link( 'Older Quotes', $quotes->max_num_pages ); ?></li>
+					<li><?php echo get_previous_posts_link( 'Newer Quotes' ); ?></li>
+				</ul>
+			</div>
+		<?php endif; ?>
 
 		<?php else : ?>
 

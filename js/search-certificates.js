@@ -7,6 +7,7 @@ var $tbody = $('tbody'),
 	$searchStudentForm = $('#search-student-form'),
 	$searchByIdInput = $('input#search_by_id_passport'),
 	$errorMessage = $('.error-message'),
+	$backLink = $('a.back-link'),
 	$searchSpinner = $('span.search-spinner');
 
 $searchForm.on('submit', function(event){
@@ -41,6 +42,9 @@ $searchForm.on('submit', function(event){
 			$searchSpinner.hide();
 			$tbodytr.remove();
 			$tbody.html( response.data );
+			$backLink.show();
+
+			console.log(response);
 
 			} else {
 				$searchSpinner.hide();

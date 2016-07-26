@@ -15,7 +15,7 @@ acf_add_local_field_group(array (
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => '',
+				'width' => 25,
 				'class' => '',
 				'id' => '',
 			),
@@ -38,7 +38,7 @@ acf_add_local_field_group(array (
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => '',
+				'width' => 25,
 				'class' => '',
 				'id' => '',
 			),
@@ -61,7 +61,7 @@ acf_add_local_field_group(array (
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => '',
+				'width' => 25,
 				'class' => '',
 				'id' => '',
 			),
@@ -72,13 +72,13 @@ acf_add_local_field_group(array (
 		array (
 			'key' => 'field_57890f9dec801',
 			'label' => 'Place that the course was imparted',
-			'name' => 'office',
+			'name' => 'office_course_taken',
 			'type' => 'taxonomy',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => '',
+				'width' => 25,
 				'class' => '',
 				'id' => '',
 			),
@@ -97,7 +97,7 @@ acf_add_local_field_group(array (
 			array (
 				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'post',
+				'value' => 'reports',
 			),
 		),
 	),

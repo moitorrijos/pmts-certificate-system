@@ -4,7 +4,7 @@
 
 		<div class="close-button">X</div>
 
-		<input name="search_by_id_passport" id="search_by_id_passport" type="text" placeholder="SEARCH ID OR PASSPORT NO">
+		<input name="search_by_id_passport" class="search_by_id_passport" id="search_by_id_passport" type="text" placeholder="SEARCH ID OR PASSPORT NO">
 		
 		<div class="submit-btn">
 			<input type="submit" value="Search" id="search-by-id-submit">

@@ -19,10 +19,10 @@ var $certForm 		= 	$('.edit-certificate-form'),
 	acfHrefReturned = 	windowHref.slice( indexOfAcfHref, windowHref.length ),
 	options 		= 	{
 		valueNames : ['list-col-1', 'list-col-2', 'list-col-3', 'list-col-4'],
-		page: 75,
+		/*page: 75,
 	    plugins: [
 	      ListPagination({})
-	    ]
+	    ]*/
 	};
 
 function fadeCertDivOut() {
@@ -90,7 +90,7 @@ function showLoader() {
     $loader.fadeIn('fast');
     setTimeout( function(){
     	$loader.fadeOut('fast');
-    } , 6000);
+    } , 12000);
 }
 
 $navA.on('click', showLoader );

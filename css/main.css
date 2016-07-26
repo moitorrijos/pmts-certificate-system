@@ -429,11 +429,11 @@ th {
 /**
  * Colors
  */
-.logged-in header, .logged-in header a.toggle-menu {
+.logged-in header, .logged-in header a.toggle-menu, form.search-by-id-no .submit-btn input.search-by-id-submit {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
-form.filter-form, .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table {
+.back-create-buttons, form.search-by-id-no, form.filter-form, .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -824,6 +824,14 @@ a.deactivated {
   a.deactivated:hover {
     background: #e3e8ec; }
 
+.back-create-buttons {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .back-create-buttons .back-button-link a {
+    display: none; }
+
 div.login-form, div.copyright {
   position: relative; }
   div.login-form .status-message, div.copyright .status-message {
@@ -836,6 +844,33 @@ div.login-form, div.copyright {
   div.login-form .login-loading-animation, div.copyright .login-loading-animation {
     background: rgba(255, 255, 255, 0.7) url("../images/background-spinner.gif") center 30% no-repeat;
     display: none; }
+
+form.search-by-id-no {
+  margin: 0;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap; }
+  form.search-by-id-no input.search_by_id_passport {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; }
+  form.search-by-id-no .submit-btn {
+    position: relative; }
+    form.search-by-id-no .submit-btn input.search-by-id-submit {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      color: white;
+      background: #3e94cc;
+      padding: 0 20%; }
+      form.search-by-id-no .submit-btn input.search-by-id-submit:hover {
+        background: #3287be; }
+    form.search-by-id-no .submit-btn span.search-spinner {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 100%;
+      height: 20px;
+      background: #3e94cc url("../images/search-spinner.gif") no-repeat top center; }
 
 .acf-field .acf-label label {
   font-size: 1.2rem;
@@ -1439,10 +1474,12 @@ table.referer-info {
     bottom: 0;
     width: 100%;
     padding-right: 1in; }
-  .certificate-codes.certificate-codes p {
-    font-size: 10pt;
-    font-weight: normal;
-    font-style: normal; }
+  .certificate-codes.certificate-codes {
+    clear: both; }
+    .certificate-codes.certificate-codes p {
+      font-size: 10pt;
+      font-weight: normal;
+      font-style: normal; }
   table.test-header {
     page-break-before: always; }
   hr.separator {

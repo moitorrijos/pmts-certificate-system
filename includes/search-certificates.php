@@ -30,7 +30,11 @@ function pmtscs_ajax_search_certificates() {
 			'<tr><td><a href=' . get_permalink( $cert_id->post_id ) . ' >' . 
 			get_post($cert_id->post_id)->students_name . 
 			'</a></td><td class="centered">' .
+			get_post($cert_id->post_id)->student_nationality .
+			'</td><td class="centered">' .
 			get_post($cert_id->post_id)->passport_id .
+			'</td><td class="centered">' .
+			get_post($cert_id->post_id)->pmtscs_register_code . 
 			'</td><td class="centered">' .
 			get_post(get_post( $cert_id->post_id )->course)->abbr .
 			'</td><td class="centered">' .
@@ -42,10 +46,7 @@ function pmtscs_ajax_search_certificates() {
 			'</td><td class="centered">' .
 			DateTime::createFromFormat('Ymd', get_post($cert_id->post_id)->date_of_issuance)->format('d/m/y') .
 			'</td><td class="centered">' .
-			'PMTS/' . 
-			get_post(get_post( $cert_id->post_id )->course)->abbr . '/' .
-			DateTime::createFromFormat('Ymd', get_post($cert_id->post_id)->end_date)->format('y') . '/' . 
-			get_post($cert_id->post_id)->register_code . 
+			get_term(get_post($cert_id->post_id)->office)->name .
 			'</td><td class="centered edit">' .
 				'<a href="' . get_permalink( $cert_id->post_id ) . '" class="edit-form"><i class="fa fa-pencil-square-o"></i></a>' .
 			'</td></tr>';

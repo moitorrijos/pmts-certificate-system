@@ -15,7 +15,7 @@ function modify_certificate_title( $data , $postarr )
             $course_abbr = get_post_meta( $get_course, 'abbr', true );
             $issue_date = DateTime::createFromFormat( 'Ymd', $get_issue_date )->format('d/m/Y');
 
-            $data['post_title'] = $student_name . ' Certificate for ' . $course_abbr . ' ' . $issue_date . '-' . date('His');
+            $data['post_title'] = $student_name . ' ' . $passport . ' ' . $course_abbr . ' ' . $issue_date . '-' . date('His');
 
         }
 

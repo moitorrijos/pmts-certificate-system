@@ -28,7 +28,7 @@ class AddButton {
 			$add_value = 'Add Quotations';
 			return $add_value;
 
-		} elseif ( is_page_template( 'reports-page.php' ) ) {
+		} elseif ( is_page_template( 'panama-reports-page.php' ) ) {
 
 			$add_value = 'Create New Report';
 			return $add_value;
@@ -63,7 +63,7 @@ class AddButton {
 			$add_link = '/panama-quotations/new-panama-quotation/';
 			return $add_link;
 			
-		} elseif ( is_page_template( 'reports-page.php' ) ) {
+		} elseif ( is_page_template( 'panama-reports-page.php' ) ) {
 
 			$add_link = '/panama-reports/new-panama-reports/';
 			return $add_link;
@@ -101,7 +101,7 @@ $add_button = new AddButton;
 <div class="buttons align-right">
 	<a href="#0" class="download-xls-button not-link"><i class="fa fa-download"></i>&nbsp; Download Table to Excel</a>
 
-	<?php if ( is_page_template( 'panama-certificate-page.php' ) ) : ?>
+	<?php //if ( is_page_template( 'panama-certificate-page.php' ) ) : ?>
 
 		<!-- <a href="#0" class="change-office-button not-link">
 			<i class="fa fa-building"></i>&nbsp; Filter Certificates
@@ -114,11 +114,11 @@ $add_button = new AddButton;
 
 		</a> -->
 
-	<?php endif; ?>
+	<?php //endif; ?>
 	
 	<?php if ( current_user_can('edit_pages') ) : ?>
 
-		<a href="<?php echo $add_button->button_link(); ?>" class="new-certificate-button <?php echo $add_button->is_deactivated(); ?> not-link">
+		<a href="<?php echo $add_button->button_link(); ?>" class="new-certificate-button not-link">
 			<i class="fa fa-plus-square"></i>&nbsp; <?php echo $add_button->button_value(); ?>
 		</a>
 

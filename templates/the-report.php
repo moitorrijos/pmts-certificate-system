@@ -34,7 +34,7 @@
 
 			</a>
 
-			<a href="<?php echo home_url('panama-quotations/new-panama-quotation');?>" class="new-certificate-button">
+			<a href="<?php echo home_url('panama-reports/new-panama-reports');?>" class="new-certificate-button">
 
 				Create New Report
 				
@@ -49,7 +49,7 @@
 			$course = get_field('name_of_the_course');
 			$instructor = get_field('name_of_the_instructor');
 			$course_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_the_course') );
-			$office = get_field('office');
+			$office = get_field('office_course_taken');
 
 		 ?>
 

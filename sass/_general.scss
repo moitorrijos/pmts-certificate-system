@@ -278,7 +278,6 @@ form {
 	display: inline-block;
 }
 
-
 a.logout-button {
 	@extend %cool-button;
 	background-color: lighten(desaturate($logout-red, 15%), 15%);
@@ -453,5 +452,17 @@ a.deactivated {
 
 	&:hover {
 		background: lighten($gray, 10%);
+	}
+}
+
+.back-create-buttons {
+
+	@extend %flexbox-box;
+	justify-content: space-between;
+ 
+	.back-button-link {
+		a {
+			display: none;
+		}
 	}
 }
