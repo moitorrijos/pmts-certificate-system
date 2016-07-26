@@ -180,25 +180,37 @@
 
 			<div class="full">
 
-				<p class="resolution-p short">
-					This course fulfills minimum requirements of
-					
-					<span class="unpaddies"><?php echo $course->regulation; ?></span>
-					
-					of the IMO International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended.
-					
-					<span class="unpaddies">
-						<?php if ($course->imo_no) : ?>
+				<?php if ($course->f_ti != '54') : ?>
 
-							IMO Model Course <?php echo $course->imo_no; ?>.
+					<p class="resolution-p short">
+						This course fulfills minimum requirements of
+						
+						<span class="unpaddies"><?php echo $course->regulation; ?></span>
+						
+						of the IMO International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended.
+						
+						<span class="unpaddies">
+							<?php if ($course->imo_no) : ?>
 
-						<?php endif; ?>
+								IMO Model Course <?php echo $course->imo_no; ?>.
 
-						Course duration <?php echo $course->duration; ?> days (<?php echo $course->duration_hours  ?> hours)
+							<?php endif; ?>
 
-					</span>
+							Course duration <?php echo $course->duration; ?> days (<?php echo $course->duration_hours  ?> hours)
 
-				</p>
+						</span>
+
+					</p>
+
+				<?php else : ?>
+
+					<p class="resolution-p short">
+						
+						In recreational power boats above 24 meters in length and unlimited distance of navigation. (En embarcaciones de recreo a motor mayores de 24 metros de eslora y navegación sin límite).
+
+					</p>
+
+				<?php endif; ?>
 
 			</div>
 
