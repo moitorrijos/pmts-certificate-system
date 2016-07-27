@@ -1,3 +1,43 @@
+ul.fill-courses-dropdown {
+	list-style: none;
+	display: inline-block;
+	position: relative;
+
+	li {
+		padding: 8px 12px;
+		color: white;
+		background: $pmts-blue;
+		cursor: pointer;
+
+		ul {
+			list-style: none;
+			white-space: nowrap; 
+			position: absolute;
+			top: 100%; left: 0;
+			visibility: hidden;
+			opacity: 0;
+			@extend %smooth-animation;
+
+			li { padding: 0; }
+
+			li a {
+				display: block;
+				color: white;
+				padding: 8px 12px;
+
+				&:hover {
+					background: darken($pmts-blue, 10%);
+				}
+			}
+		}
+
+		&:hover ul {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+
 .quotation-logo-table {
 	
 	@extend %flexbox-box;

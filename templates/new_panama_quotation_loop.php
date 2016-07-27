@@ -6,11 +6,7 @@
 			
 			<a href="<?php echo home_url('panama-quotations'); ?>" class="back-link">&laquo; Back to Quotation Table</a>
 
-			<a href="<?php echo home_url();?>/panama-quotations/new-panama-quotation/?action=fill_deck_courses" class="fill-form-randomly not-link">
-
-				Basic Safety Courses
-
-			</a>
+			<?php get_template_part( 'templates/fill_courses_button' ); ?>
 
 		</div>
 

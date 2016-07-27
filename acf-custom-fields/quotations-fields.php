@@ -433,7 +433,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		/*array (
 			'key' => 'field_579657f74649d',
 			'label' => 'Total',
 			'name' => 'total',
@@ -455,7 +455,7 @@ acf_add_local_field_group(array (
 			'step' => '',
 			'readonly' => 0,
 			'disabled' => 0,
-		),
+		),*/
 	),
 	'location' => array (
 		array (

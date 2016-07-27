@@ -429,11 +429,11 @@ th {
 /**
  * Colors
  */
-.logged-in header, .logged-in header a.toggle-menu, form.search-by-id-no .submit-btn input.search-by-id-submit {
+.logged-in header, .logged-in header a.toggle-menu, form.search-by-id-no .submit-btn input.search-by-id-submit, ul.fill-courses-dropdown li ul {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
-.back-create-buttons, form.search-by-id-no, form.filter-form, .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table {
+.back-create-buttons, form.search-by-id-no, form.filter-form, .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .report .report-full {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -832,6 +832,42 @@ a.deactivated {
   .back-create-buttons .back-button-link a {
     display: none; }
 
+form.search-by-id-no {
+  margin: 0;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  position: relative; }
+  form.search-by-id-no span.error-message {
+    position: absolute;
+    top: -50%;
+    background: #c10000;
+    color: white;
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+    display: none; }
+  form.search-by-id-no input.search_by_id_passport {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; }
+  form.search-by-id-no .submit-btn {
+    position: relative; }
+    form.search-by-id-no .submit-btn input.search-by-id-submit.search-by-id-submit.search-by-id-submit {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      color: white;
+      background: #3e94cc;
+      padding: 0 20%; }
+      form.search-by-id-no .submit-btn input.search-by-id-submit.search-by-id-submit.search-by-id-submit:hover {
+        background: #3287be; }
+    form.search-by-id-no .submit-btn span.search-spinner {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 100%;
+      height: 20px;
+      background: #3e94cc url("../images/search-spinner.gif") no-repeat top center; }
+
 div.login-form, div.copyright {
   position: relative; }
   div.login-form .status-message, div.copyright .status-message {
@@ -844,33 +880,6 @@ div.login-form, div.copyright {
   div.login-form .login-loading-animation, div.copyright .login-loading-animation {
     background: rgba(255, 255, 255, 0.7) url("../images/background-spinner.gif") center 30% no-repeat;
     display: none; }
-
-form.search-by-id-no {
-  margin: 0;
-  -webkit-flex-flow: row nowrap;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap; }
-  form.search-by-id-no input.search_by_id_passport {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0; }
-  form.search-by-id-no .submit-btn {
-    position: relative; }
-    form.search-by-id-no .submit-btn input.search-by-id-submit {
-      border-top-right-radius: 8px;
-      border-bottom-right-radius: 8px;
-      color: white;
-      background: #3e94cc;
-      padding: 0 20%; }
-      form.search-by-id-no .submit-btn input.search-by-id-submit:hover {
-        background: #3287be; }
-    form.search-by-id-no .submit-btn span.search-spinner {
-      display: none;
-      position: absolute;
-      left: 0;
-      top: 12px;
-      width: 100%;
-      height: 20px;
-      background: #3e94cc url("../images/search-spinner.gif") no-repeat top center; }
 
 .acf-field .acf-label label {
   font-size: 1.2rem;
@@ -1277,6 +1286,35 @@ ul.pagination {
     margin-right: 12px;
     box-shadow: 0 1px 2px #C5CFD7; }
 
+ul.fill-courses-dropdown {
+  list-style: none;
+  display: inline-block;
+  position: relative; }
+  ul.fill-courses-dropdown li {
+    padding: 8px 12px;
+    color: white;
+    background: #3e94cc;
+    cursor: pointer; }
+    ul.fill-courses-dropdown li ul {
+      list-style: none;
+      white-space: nowrap;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      visibility: hidden;
+      opacity: 0; }
+      ul.fill-courses-dropdown li ul li {
+        padding: 0; }
+      ul.fill-courses-dropdown li ul li a {
+        display: block;
+        color: white;
+        padding: 8px 12px; }
+        ul.fill-courses-dropdown li ul li a:hover {
+          background: #2d79aa; }
+    ul.fill-courses-dropdown li:hover ul {
+      visibility: visible;
+      opacity: 1; }
+
 .quotation-logo-table {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -1328,23 +1366,50 @@ table.referer-info {
 
 .report {
   font-family: "Times New Roman", serif; }
-  .report h1 {
-    font-family: "Times New Roman", serif;
-    font-size: 1.4em;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 1em 0;
+  .report .report-title-subtitle {
+    text-align: center;
     padding: 0.5em 0;
+    margin: 1.5em 0;
     background-color: #182f5a;
+    text-transform: uppercase;
     color: white; }
+    .report .report-title-subtitle h1 {
+      font-family: "Times New Roman", serif;
+      font-size: 1.4em;
+      margin: 4px 0;
+      line-height: 1; }
+    .report .report-title-subtitle h2 {
+      font-family: "Times New Roman", serif;
+      font-size: 1.2em;
+      font-style: italic;
+      margin: 4px 0;
+      line-height: 1; }
   .report p {
     font-family: "Times New Roman", serif; }
+  .report p.shorter {
+    margin: 0; }
+  .report p.translation-text {
+    font-size: 0.9;
+    font-style: italic;
+    line-height: 0.9; }
+  .report .report-full {
+    margin-bottom: 2em;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+  .report .report-undies {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    padding-left: 20px; }
   .report .half {
     width: 50%; }
   .report span.undies {
     font-family: "Times New Roman", serif;
-    font-weight: bold;
-    min-width: 25%; }
+    margin: 0;
+    font-weight: bold; }
   .report table th {
     text-transform: none;
     background-color: #284f96;

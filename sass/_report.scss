@@ -2,19 +2,56 @@
 	@extend .certificate;
 	font-family: $report-font-family;
 
-	h1 { 
-		font-family: $report-font-family;
-		font-size: 1.4em;
-		letter-spacing: 1px;
-		text-transform: uppercase;
-		margin: 1em 0;
+	.report-title-subtitle {
+		text-align: center;
 		padding: 0.5em 0;
+		margin: 1.5em 0;
 		background-color: darken($amp-blue, 15%);
+		text-transform: uppercase;
 		color: white;
+
+		h1 { 
+			font-family: $report-font-family;
+			font-size: 1.4em;
+			margin: 4px 0;
+			line-height: 1;
+		}
+
+		h2 {
+			font-family: $report-font-family;
+			font-size: 1.2em;
+			font-style: italic;
+			margin: 4px 0;
+			line-height: 1;
+		}
+		
 	}
+
 
 	p { 
 		font-family: $report-font-family;
+	}
+
+	p.shorter {
+		margin: 0;
+	}
+
+	p.translation-text {
+		font-size: 0.9;
+		font-style: italic;
+		line-height: 0.9;
+	}
+
+	.report-full {
+		margin-bottom: 2em;
+
+		@extend %flexbox-box;
+		justify-content: flex-start;
+	}
+
+	.report-undies {
+		flex-grow: 1;
+		padding-left: 20px;
 	}
 
 	.half {
@@ -23,9 +60,10 @@
 
 	span.undies { 
 		font-family: $report-font-family;
+		margin: 0;
 		font-weight: bold;
-		min-width: 25%;
 	}
+
 
 	table {
 

@@ -466,3 +466,52 @@ a.deactivated {
 		}
 	}
 }
+
+form.search-by-id-no {
+	@extend %flexbox-box;
+	margin: 0;
+	flex-flow: row nowrap;
+	position: relative;
+
+	span.error-message {
+		position: absolute;
+		top: -50%;
+		background: saturate($logout-red, 5%);
+		color: white;
+		padding: 0.5em 1em;
+		font-size: 0.9em;
+
+		display: none;
+	}
+
+	input.search_by_id_passport {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	.submit-btn {
+		position: relative;
+
+		input.search-by-id-submit.search-by-id-submit.search-by-id-submit {
+			border-top-right-radius: 8px;
+			border-bottom-right-radius: 8px;
+			color: white;
+			background: $pmts-blue;
+			padding: 0 20%;
+			@extend %smooth-animation;
+
+			&:hover {
+				background: darken($pmts-blue, 5%);
+			}
+		}
+
+		span.search-spinner {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 12px;
+			width: 100%; height: 20px;
+			background: $pmts-blue url('../images/search-spinner.gif') no-repeat top center;
+		}
+	}
+}
