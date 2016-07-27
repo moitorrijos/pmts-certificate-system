@@ -9,11 +9,14 @@
 		endif; wp_reset_query();
 
 		get_template_part('templates/buttons-div');
-		get_template_part('templates/search-bar' );
+		get_template_part('templates/search_quotation_number');
+
+		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
 		$args = array( 
 			'post_type' => 'quotation', 
-			'showposts' => 75,	
+			'posts_per_page' => 75,
+			'paged' => $paged
 		);
 		
 		$edit = '<i class="fa fa-pencil-square-o"></i>';
