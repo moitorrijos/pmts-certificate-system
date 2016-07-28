@@ -35,7 +35,7 @@
 		$args = array( 
 			'post_type' => 'quotation', 
 			'posts_per_page' => 75,
-			'paged' => $paged
+			'paged' => $paged,
 		);
 		
 		$edit = '<i class="fa fa-pencil-square-o"></i>';

@@ -39,10 +39,16 @@ var $tbody 	= $('tbody'),
 
 			success: function(response){
 
-				console.log(response);
+				if (response.data === '') {
 
-				if (response) {
+					$searchSpinner.hide();
+					$loader.hide();
+					$errorMessage.fadeIn('fast');
+					$searchQuotationInput
+						.css('border', '1px solid #C10000')
+						.addClass('animated shake');
 
+				} else {
 					$searchSpinner.hide();
 					$loader.hide();
 					$backLink.show();
@@ -51,14 +57,6 @@ var $tbody 	= $('tbody'),
 
 					$searchQuotationInput.css('border', '1px solid #3e94cc');
 					$errorMessage.hide();
-
-				} else {
-					$searchSpinner.hide();
-					$loader.hide();
-					$errorMessage.fadeIn('fast');
-					$searchQuotationInput
-						.css('border', '1px solid #C10000')
-						.addClass('animated shake');
 				}
 			}
 
