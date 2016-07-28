@@ -51,16 +51,36 @@ function pmtscs_ajax_search_certificates() {
 				'<a href="' . get_permalink( $cert_id->post_id ) . '" class="edit-form"><i class="fa fa-pencil-square-o"></i></a>' .
 			'</td></tr>';
 
-		}
+		} 
+
+		$certificate_html_list = ob_get_clean();
+
+		return wp_send_json_success( $certificate_html_list );
+
+	} else {
+
+		$search_certificates_args = array(
+			'post_type' => 'certificates',
+			'meta_key' 	=> 'date_of_issuance',
+			'orderby'	=> 'meta_value_num',
+			'order'		=> 'DESC',
+			's'			=> (string)$passport_no
+		);
+
+		$search_certs = new WP_Query( $search_certificates_args );
+
+		ob_start();
+
+		if ( $search_certs->have_posts() ) : while ( $search_certs->have_posts() ) : $search_certs->the_post();
+
+		get_template_part( 'templates/certificate_table' );
+
+		endwhile; endif; wp_reset_query();
 
 		$certificate_html_list = ob_get_clean();
 
 		return wp_send_json_success( $certificate_html_list );
 
 	}
-
-	return;
-
-	//return wp_send_json_error( 'The Passport Number does not exist' );
 
 }

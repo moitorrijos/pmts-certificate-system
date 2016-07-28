@@ -52,6 +52,7 @@ require get_template_directory() . '/includes/acf-remove-post-data.php';
 require get_template_directory() . '/includes/add-local-remote-button-admin-bar.php';
 require get_template_directory() . '/includes/search-by-id-passport.php';
 require get_template_directory() . '/includes/search-certificates.php';
+require get_template_directory() . '/includes/search-quotations.php';
 require get_template_directory() . '/includes/fill-form-randomly.php';
 require get_template_directory() . '/includes/fill-deck-courses.php';
 require get_template_directory() . '/includes/my_courses_post_object_results.php';
