@@ -24,7 +24,7 @@
 		
 		<?php 
 
-			get_template_part('templates/search_certificate_by_id_passport');
+			get_template_part('templates/search_certificate_form');
 
 			$cert_paged = ( get_query_var('page') ) ? intval(get_query_var('page')) : 1;
 
@@ -74,16 +74,6 @@
 			</tbody>
 
 		</table>
-
-		<!-- <?php //if ($certs->max_num_pages > 1) : ?>
-			<div class="paginate">
-				<p>Page:</p>
-				<ul class="pagination">
-					<li><?php //echo get_next_posts_link( 'Older Entries', $certs->max_num_pages ); ?></li>
-					<li><?php //echo get_previous_posts_link( 'Newer Entries' ); ?></li>
-				</ul>
-			</div>
-		<?php //endif; ?> -->
 
 		<?php else: ?>
 			
