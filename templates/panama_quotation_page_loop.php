@@ -1,6 +1,6 @@
 <div class="main">
 
-	<div class="main-content" id="search-list">
+	<div class="main-content">
 
 		<?php
 
@@ -8,8 +8,27 @@
 		the_title('<h1>', '</h1>'); endwhile;
 		endif; wp_reset_query();
 
-		get_template_part('templates/buttons-div');
-		get_template_part('templates/search_quotation_number');
+		?>
+
+		<div class="back-create-buttons">
+
+			<div class="back-button-link buttons">
+				
+				<a href="<?php echo home_url('panama-certificates'); ?>" class="back-link">
+					&laquo;
+
+					Back to Certificates List
+
+				</a>
+			</div>
+
+			<?php get_template_part('templates/buttons-div'); ?>
+			
+		</div>
+
+		<?php
+
+		get_template_part('templates/search_quotation_form');
 
 		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
