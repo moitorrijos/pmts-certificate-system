@@ -64,11 +64,7 @@ function pmtscs_ajax_search_certificates() {
 			'meta_key' 	=> 'date_of_issuance',
 			'orderby'	=> 'meta_value_num',
 			'order'		=> 'DESC',
-<<<<<<< HEAD
-			's'			=> (string)$passport_no
-=======
 			's'			=> $passport_no
->>>>>>> quotation-search-funcitonality
 		);
 
 		$search_certs = new WP_Query( $search_certificates_args );
@@ -76,18 +72,6 @@ function pmtscs_ajax_search_certificates() {
 		ob_start();
 
 		if ( $search_certs->have_posts() ) : while ( $search_certs->have_posts() ) : $search_certs->the_post();
-<<<<<<< HEAD
-
-		get_template_part( 'templates/certificate_table' );
-
-		endwhile; endif; wp_reset_query();
-
-		$certificate_html_list = ob_get_clean();
-
-		return wp_send_json_success( $certificate_html_list );
-
-	}
-=======
 
 		get_template_part( 'templates/certificate_table' );
 
@@ -100,6 +84,5 @@ function pmtscs_ajax_search_certificates() {
 	}
 
 return;
->>>>>>> quotation-search-funcitonality
 
 }
