@@ -8,6 +8,7 @@ var $tbody 	= $('tbody'),
 	$searchStudentForm = $('#search-student-form'),
 	$searchByIdInput = $('input#search_by_id_passport'),
 	$errorMessage = $('span.error-message'),
+	$notFoundMessage = $('span.not-found-message'),
 	$backLink = $('a.back-link'),
 	$searchSpinner = $('span.search-spinner');
 
@@ -17,6 +18,10 @@ $searchForm.on('submit', function(event){
 	$searchSpinner.show();
 	$loader.fadeIn('fast');
 
+	$searchByIdInput.removeClass('animated shake');
+	$errorMessage.hide();
+	$notFoundMessage.hide();
+
 	if ( $searchByIdInput.val() === '' ) {
 		$searchByIdInput
 			.css('border', '1px solid #C10000')
@@ -25,8 +30,6 @@ $searchForm.on('submit', function(event){
 		$loader.hide();
 		return;
 	}
-
-	$searchByIdInput.removeClass('animated shake');
 
 	$.ajax({
 		url		 : certificates_object.ajaxurl,
@@ -43,7 +46,7 @@ $searchForm.on('submit', function(event){
 
 			$searchSpinner.hide();
 			$loader.hide();
-			$errorMessage.fadeIn('fast');
+			$notFoundMessage.fadeIn('fast');
 			$searchByIdInput
 				.css('border', '1px solid #C10000')
 				.addClass('animated shake');
@@ -59,7 +62,13 @@ $searchForm.on('submit', function(event){
 				$searchByIdInput.css('border', '1px solid #3e94cc');
 				$errorMessage.hide();
 			}
-		}
+		},
+		error: function(){
+			$loader.fadeOut('fast');
+    		$searchSpinner.hide();
+    		$errorMessage.fadeIn('fast');
+		},
+		timeout: 8000,
 	});
 
 });

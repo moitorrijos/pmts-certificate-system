@@ -838,7 +838,7 @@ form.search-by-id-no {
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   position: relative; }
-  form.search-by-id-no span.error-message {
+  form.search-by-id-no span.error-message, form.search-by-id-no span.not-found-message {
     position: absolute;
     top: -50%;
     background: #c10000;

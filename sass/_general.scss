@@ -484,6 +484,10 @@ form.search-by-id-no {
 		display: none;
 	}
 
+	span.not-found-message {
+		@extend span.error-message;
+	}
+
 	input.search_by_id_passport {
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;

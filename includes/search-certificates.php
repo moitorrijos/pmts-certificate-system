@@ -64,7 +64,7 @@ function pmtscs_ajax_search_certificates() {
 			'meta_key' 	=> 'date_of_issuance',
 			'orderby'	=> 'meta_value_num',
 			'order'		=> 'DESC',
-			's'			=> $passport_no
+			's'			=> (string)$passport_no
 		);
 
 		$search_certs = new WP_Query( $search_certificates_args );

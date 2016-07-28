@@ -1,5 +1,6 @@
 <form action="#0" id="search-by-id-no" class="search-by-id-no">
-	<span class="error-message">Certificate Not Found.</span>
+	<span class="error-message">Sorry there was a problem, pelase try again.</span>
+	<span class="not-found-message">Certificate Not Found.</span>
 	<input class="search search_by_id_passport" type="search" placeholder="Type Name or Passport/ID No of Participant to search Certificate" id="search_by_id_passport"/>
 
 	<div class="submit-btn">
