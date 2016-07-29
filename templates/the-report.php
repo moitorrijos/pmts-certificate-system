@@ -60,6 +60,24 @@
 
 		 <div class="report">
 
+		 	<div class="amp-logo-text">
+		 		
+		 		<div class="amp-logo">
+		 			
+		 			<img src="<?php echo IMAGESPATH; ?>/amp-logo.png" alt="Logo AMP">
+
+		 		</div>
+
+		 		<div class="amp-text">
+		 			
+		 			<h3>Autoridad Marítima de Panamá | <span class="smaller">Panama Maritime Authority</span></h3>
+
+		 			<h4>Dirección General de Marina Mercante | <span class="smaller">General Directorate of Seafarers</span></h4>
+
+		 		</div>
+
+		 	</div>
+
 			<div class="report-title-subtitle">
 				
 			 	<h1 class="report-title">
@@ -159,70 +177,127 @@
 		 		
 		 	</div>
 
-		 	<div class="full full-report">
+		 	<div class="full report-full">
 
 		 		<div class="half full">
-		 			
-		 			<p class="short">
-		 				
-		 				Nombre del Curso: <span class="undies"><?php echo $course->post_title . ' ' . '(' . $course->abbr . ')'; ?></span>
 
-		 			</p>
+		 			<div class="report-text">
+		 				
+			 			<p class="shorter">
+			 				
+			 				Nombre del Curso: 
+
+			 			</p>
+
+			 			<p class="shorter translation-text">
+			 				
+			 				Name of Course:
+
+			 			</p>
+		 				
+		 			</div>
+
+					<div class="report-undies">
+						
+						<span class="undies"><?php echo $course->post_title . ' ' . '(' . $course->abbr . ')'; ?></span>
+
+					</div>
 
 		 		</div>
 
-		 		<div class="half">
-		 			
-		 			<p class="short">
-		 				
-		 				Nombre del Instructor:
+		 		<div class="half full">
 
+		 			<div class="report-text">
+		 				
+			 			<p class="shorter">
+			 				
+			 				Nombre del Instructor:
+
+			 			</p>
+
+			 			<p class="shorter translation-text">
+			 				
+			 				Name of the Instructor
+
+			 			</p>
+		 				
+		 			</div>
+
+		 			<div class="report-undies">
+		 				
 		 				<span class="undies">
-		 					
+			 					
 		 					<?php echo $instructor->post_title; ?>
 
 		 				</span>
 
-		 			</p>
+		 			</div>
 
 		 		</div>
 
 	 		</div>
 
 
-	 		<div class="full">
+	 		<div class="full report-full">
 
-	 			<div class="half">
-	 				
-	 				<p class="short">
+	 			<div class="half full">
+
+	 				<div class="report-text">
 	 					
-	 					Fecha del Curso: 
+		 				<p class="shorter">
+		 					
+		 					Fecha del Curso: 
 
+		 				</p>
+
+		 				<p class="shorter translation-text">
+		 					
+		 					Date of the Course:
+
+		 				</p>
+	 					
+	 				</div>
+
+	 				<div class="report-undies">
+	 					
 	 					<span class="undies">
-	 						
+		 						
 	 						<?php echo $course_date; ?>
 
 	 					</span>
 
-	 				</p>
+	 				</div>
 	 				
 	 			</div>
-	 			
 
-	 			<div class="half">
-	 				
-	 				<p class="short">
+	 			<div class="half full">
+
+	 				<div class="report-text">
 	 					
-	 					Lugar donde se dictó el curso:
+		 				<p class="shorter">
+		 					
+		 					Lugar donde se dictó el curso:
 
+		 				</p>
+
+		 				<p class="shorter translation-text">
+		 					
+		 					Place where the course was imparted
+
+		 				</p>
+	 					
+	 				</div>
+
+	 				<div class="report-undies">
+	 					
 	 					<span class="undies">
-	 						
+		 						
 	 						<?php echo $office->name; ?>
 
 	 					</span>
 
-	 				</p>
-
+	 				</div>
+	 				
 	 			</div>
 
 	 		</div>
@@ -230,8 +305,6 @@
 			<?php endwhile; endif; wp_reset_query(); ?>
 
 			<?php 
-
-				//var_dump($course_date->format('Ymd')); die();
 
 				$filter_certs_args = array(
 

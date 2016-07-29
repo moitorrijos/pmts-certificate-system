@@ -2,10 +2,47 @@
 	@extend .certificate;
 	font-family: $report-font-family;
 
+	.amp-logo-text {
+		@extend %flexbox-box;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.amp-logo {
+		width: 75px;
+
+		img { width: 100%; }
+	}
+
+	.amp-text {
+		flex-grow: 1;
+		color: $amp-blue;
+
+		h3, h4 {
+			text-align: center;
+			font-family: $report-font-family;
+			font-variant: small-caps;
+			line-height: 1;
+			margin: 4px 0;
+
+			span.smaller {
+				font-size: 0.9em;
+			}
+		}
+
+		h3 {
+			font-size: 1.8em;
+		}
+
+		h4 {
+			font-size: 1.4em;
+		}
+	}
+
 	.report-title-subtitle {
 		text-align: center;
 		padding: 0.5em 0;
-		margin: 1.5em 0;
+		margin: 0.5em 0 1.5em;
 		background-color: darken($amp-blue, 15%);
 		text-transform: uppercase;
 		color: white;
@@ -70,9 +107,7 @@
 		th {
 			text-transform: none;
 			background-color: $amp-blue;
-			font-size: 1.2em;
-
-			
+			font-size: 1.2em;			
 		}
 
 		td {
