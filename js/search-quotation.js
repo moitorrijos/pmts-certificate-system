@@ -7,6 +7,7 @@ var $tbody 	= $('tbody'),
 	$searchQuotationForm = $('#search-quotation-number-form'),
 	$searchQuotationInput = $('input#search-quotation-number'),
 	$errorMessage = $('span.error-message'),
+	$notFoundMessage = $('span.not-found-message'),
 	$backLink = $('a.back-link'),
 	$searchSpinner = $('span.search-spinner');
 
@@ -15,6 +16,10 @@ var $tbody 	= $('tbody'),
 
 		$searchSpinner.show();
 		$loader.fadeIn('fast');
+
+		$searchQuotationInput.removeClass('animated shake');
+		$errorMessage.hide();
+		$notFoundMessage.hide();
 
 		if ( $searchQuotationInput.val() === '' ) {
 			$searchQuotationInput
@@ -25,7 +30,6 @@ var $tbody 	= $('tbody'),
 			return;
 		}
 
-		$searchQuotationInput.removeClass('animated shake');
 
 		$.ajax({
 			url			: quotation_object.ajaxurl,
@@ -39,11 +43,13 @@ var $tbody 	= $('tbody'),
 
 			success: function(response){
 
+				console.log(response);
+
 				if (response.data === '') {
 
 					$searchSpinner.hide();
 					$loader.hide();
-					$errorMessage.fadeIn('fast');
+					$notFoundMessage.fadeIn('fast');
 					$searchQuotationInput
 						.css('border', '1px solid #C10000')
 						.addClass('animated shake');
@@ -58,8 +64,13 @@ var $tbody 	= $('tbody'),
 					$searchQuotationInput.css('border', '1px solid #3e94cc');
 					$errorMessage.hide();
 				}
-			}
-
+			},
+			error: function(){
+				$loader.fadeOut('fast');
+				$searchSpinner.hide();
+				$errorMessage.fadeIn('fast');
+			},
+			timeout: 12000,
 		});
 	});
 

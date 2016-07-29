@@ -9,7 +9,7 @@
 
 			<div class="back-button-link buttons">
 				
-				<a href="<?php echo home_url('panama-certificates'); ?>" class="back-link">
+				<a href="<?php echo home_url(); ?>" class="back-link">
 					&laquo;
 
 					Back to Certificates List

@@ -14,44 +14,39 @@ function pmtscs_ajax_search_certificates() {
 
 	$passport_no = $_POST['passport_no'];
 
-	$certificate_id = $wpdb->get_results(
+	$certificate_ids = $wpdb->get_results(
 
 		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value="' . (string)$passport_no . '" ORDER BY post_id DESC', OBJECT)
 
 	);
 
-	if ( $certificate_id ) {
+	if ( $certificate_ids ) {
+
+		$cert_id = array();
+
+		foreach ( $certificate_ids as $key => $row ) {
+
+			array_push( $cert_id, $row->post_id );
+		}
+
+		$cert_ids_args = array(
+			'post_type' => 'certificates',
+			'meta_key' 	=> 'date_of_issuance',
+			'orderby'	=> 'meta_value_num',
+			'order'		=> 'DESC',
+			'post__in' => $cert_id
+		);
 
 		ob_start();
 
-		foreach ( $certificate_id as $cert_id ) {
+		$cert_ids = new WP_Query( $cert_ids_args );
 
-			echo 
-			'<tr><td><a href=' . get_permalink( $cert_id->post_id ) . ' >' .
-			get_post($cert_id->post_id)->students_name .
-			'</a></td><td class="centered">' .
-			get_post($cert_id->post_id)->student_nationality .
-			'</td><td class="centered">' .
-			get_post($cert_id->post_id)->passport_id .
-			'</td><td class="centered">' .
-			get_post($cert_id->post_id)->pmtscs_register_code .
-			'</td><td class="centered">' .
-			get_post(get_post( $cert_id->post_id )->course)->abbr .
-			'</td><td class="centered">' .
-			DateTime::createFromFormat('Ymd', get_post($cert_id->post_id)->start_date)->format('d/m/y') .
-			'</td><td class="centered">' .
-			DateTime::createFromFormat('Ymd', get_post($cert_id->post_id)->end_date)->format('d/m/y') .
-			'</td><td class="centered">' .
-			get_the_title(get_post($cert_id->post_id)->instructor) .
-			'</td><td class="centered">' .
-			DateTime::createFromFormat('Ymd', get_post($cert_id->post_id)->date_of_issuance)->format('d/m/y') .
-			'</td><td class="centered">' .
-			get_term(get_post($cert_id->post_id)->office)->name .
-			'</td><td class="centered edit">' .
-				'<a href="' . get_permalink( $cert_id->post_id ) . '" class="edit-form"><i class="fa fa-pencil-square-o"></i></a>' .
-			'</td></tr>';
+		if ( $cert_ids->have_posts() ) : 
+		while ( $cert_ids->have_posts() ) : $cert_ids->the_post();
 
-		} 
+		get_template_part( 'templates/certificate_table' );
+
+		endwhile; endif;
 
 		$certificate_html_list = ob_get_clean();
 

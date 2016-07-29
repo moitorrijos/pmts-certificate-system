@@ -68,7 +68,7 @@ $searchForm.on('submit', function(event){
     		$searchSpinner.hide();
     		$errorMessage.fadeIn('fast');
 		},
-		timeout: 8000,
+		timeout: 12000,
 	});
 
 });
