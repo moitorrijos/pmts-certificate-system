@@ -14,26 +14,39 @@ function pmtscs_ajax_search_quotations() {
 
 	$quotation_no = $_POST['quotation_no'];
 
-	$quotation_ids = $wpdb->get_results(
+	$quotation_ids_by_participant = $wpdb->get_results(
 
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "%%' . (string)$quotation_no . '%%" AND meta_key="participants_name"', OBJECT)
+		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "%%' . (string)$quotation_no . '%%" AND meta_key="participants_name"')
 
 	);
 
-	if ($quotation_ids) {
+	$quotation_ids_by_clients = $wpdb->get_results(
 
-		$quote_id = array();
+		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "%%' . (string)$quotation_no . '%%" AND meta_key="clients_name"')
 
-		foreach ( $quotation_ids as $key => $row ) {
+	);
 
-			array_push( $quote_id, $row->post_id );
+	if ($quotation_ids_by_participant || $quotation_ids_by_clients) {
+
+		$quote_ids = array();
+
+		foreach ( $quotation_ids_by_participant as $key => $row ) {
+
+			array_push( $quote_ids, $row->post_id );
 
 		}
 
+		foreach ( $quotation_ids_by_clients as $clients_key => $clients_row ) {
+
+			array_push( $quote_ids, $clients_row->post_id);
+
+		}
+		
 		$quote_ids_args = array(
 			'post_type' => 'quotation',
-			'post__in' => $quote_id
+			'post__in' => $quote_ids
 		);
+		
 
 		ob_start();
 
