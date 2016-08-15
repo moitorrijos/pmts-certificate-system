@@ -83,7 +83,7 @@ function save_post_course_id( $post_id ) {
 			
 			default:
 				function doer_of_stuff() {
-				    return new WP_Error( 'broke', __( "I've fallen and can't get up", "certificate_system" ) );
+				    return new WP_Error( 'broke', __( "There was a Server issue please contact administrator.", "certificate_system" ) );
 				}
 
 				$return = doer_of_stuff();

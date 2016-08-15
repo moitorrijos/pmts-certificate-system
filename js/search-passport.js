@@ -1,3 +1,5 @@
+var pmtscs_ajax_object, moment;
+
 ; (function( $ ) {
 $(function() {
 
@@ -10,9 +12,11 @@ var $searchByIdNoForm = $('#search-by-id-no'),
 	$studentPlaceOfBirth = $('input#acf-field_5612fef2fdc33'),
 	$studentDateOfBirth = $('input#acf-field_5619ac69b2aab'),
 	$studentNationality = $('input#acf-field_5728ffb5d7616'),
-	$startDateInput = $('input#acf-field_56130060acfc8'),
-	$endDateInput = $('input#acf-field_56130098acfc9'),
-	$dateOfIssuance = $('input#acf-field_5619b16e70c02'),
+	$otherCertificates = $('.other-certificates'),
+	$otherCertificatesTable = $('table.other-certificates-table'),
+	// $startDateInput = $('input#acf-field_56130060acfc8'),
+	// $endDateInput = $('input#acf-field_56130098acfc9'),
+	// $dateOfIssuance = $('input#acf-field_5619b16e70c02'),
 	$errorMessage = $('.error-message'),
 	$searchSpinner = $('span.search-spinner');
 
@@ -48,7 +52,9 @@ function ajaxSearchId( event ){
 				$searchByIdSubmit.val('Done');
 				$searchStudentForm.fadeOut('slow');
 
-				var studentsName, passportId, placeOfBirth, nationality, dateOfBirth, startDate, endDate;
+				// console.log(response.data.certificate_table);
+
+				var studentsName, passportId, placeOfBirth, nationality, dateOfBirth/*, startDate, endDate*/;
 
 				response.data.student_info.forEach(function(element){
 
@@ -72,7 +78,7 @@ function ajaxSearchId( event ){
 
 						dateOfBirth = element.meta_value;
 
-					} else if ( element.meta_key === 'start_date' ) {
+					} /*else if ( element.meta_key === 'start_date' ) {
 
 						startDate = element.meta_value;
 
@@ -80,14 +86,14 @@ function ajaxSearchId( event ){
 
 						endDate = element.meta_value;
 
-					}
+					}*/
 				});
 
 				$studentPassportNoField.val( response.data.passport_no );
 
 				$studentNameField.val( studentsName );
 
-				$studentPlaceOfBirth.val( placeOfBirth  );
+				$studentPlaceOfBirth.val( placeOfBirth );
 
 				$studentNationality.val( nationality );
 
@@ -95,17 +101,21 @@ function ajaxSearchId( event ){
 
 				$studentDateOfBirth.next('input').val( moment( dateOfBirth ).format('MMMM D, YYYY') );
 
-				$startDateInput.val( startDate );
+				// $startDateInput.val( startDate );
 
-				$startDateInput.next('input').val( moment( startDate ).format('MMMM D, YYYY') );
+				// $startDateInput.next('input').val( moment( startDate ).format('MMMM D, YYYY') );
 
-				$endDateInput.val( endDate );
+				// $endDateInput.val( endDate );
 
-				$endDateInput.next('input').val( moment( endDate ).format('MMMM D, YYYY') );
+				// $endDateInput.next('input').val( moment( endDate ).format('MMMM D, YYYY') );
 
-				$dateOfIssuance.val( endDate );
+				// $dateOfIssuance.val( endDate );
 				
-				$dateOfIssuance.next('input').val( moment( endDate ).format('MMMM D, YYYY') );
+				// $dateOfIssuance.next('input').val( moment( endDate ).format('MMMM D, YYYY') );
+
+				$otherCertificatesTable.append( response.data.certificate_table );
+
+				$otherCertificates.show();
 
 			} else {
 
@@ -120,6 +130,8 @@ function ajaxSearchId( event ){
 		error : function() {
 			$searchByIdInput
 				.addClass('animated shake');
+			$errorMessage.text('Sorry, an error ocured. Please try again.');
+			$errorMessage.slideDown('fast');
 			$searchSpinner.hide();
 			return;
 		}
@@ -127,6 +139,39 @@ function ajaxSearchId( event ){
 }
 
 $searchByIdNoForm.on('submit', ajaxSearchId );
+
+function searchPassportOnLoad() {
+
+	if ( $studentPassportNoField.val() === '' ) {
+		return;
+	}
+
+	$.ajax({
+		url : pmtscs_ajax_object.ajaxurl,
+		type : 'POST',
+		dataType : 'text',
+		data : {
+			action : 'load_certificates_by_passport',
+			security : pmtscs_ajax_object.security,
+			passport_no : $studentPassportNoField.val().toString()
+		},
+
+		success: function( response ){
+			// console.log( response );
+			$otherCertificatesTable.append(response);
+			$otherCertificates.show();
+			return;
+		},
+
+		error: function( response ){
+			console.log( response );
+			return;
+		}
+	});
+}
+
+//Run the searchPassportOnlLoad function here.
+searchPassportOnLoad();
 
 });
 })(jQuery); 	

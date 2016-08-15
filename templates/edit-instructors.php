@@ -1,13 +1,14 @@
 <div class="main">
 	<div class="main-content">
 
+		<?php 	if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
 		<div class="buttons">
 			<a href="<?php echo home_url('instructors-list'); ?>" class="back-link">&laquo; Back to Instructors List</a>
+			<?php previous_post_link(); ?>
 		</div>
 
 		<?php
-
-			if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 			$instructors_options = array(
 				'post_title' => true,

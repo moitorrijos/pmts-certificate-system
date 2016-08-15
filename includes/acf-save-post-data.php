@@ -37,7 +37,6 @@ function save_post_to_session_vars( $post_id ) {
 
 }
 
-// run after ACF saves the $_POST['acf'] data
 add_action('acf/save_post', 'save_post_to_session_vars', 20);
 
 function load_session_vars_to_fields( $field ) {

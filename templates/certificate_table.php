@@ -27,7 +27,9 @@
 			<?php echo the_field('passport_id'); ?>
 		</td>
 		<td class="centered list-col-4">
+			<a href="<?php echo the_permalink(); ?>">
 			<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . add_leading_zeroes($register_code) . $register_code; ?>
+			</a>
 		</td>
 		<td class="centered abbr">
 			<?php echo $course->abbr; ?>

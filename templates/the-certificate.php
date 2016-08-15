@@ -216,7 +216,7 @@
 
 			<?php if ($office->name === 'Panama') : ?>
 
-				<div class="full">
+				<div class="full dates">
 					
 					<div class="half">
 						
@@ -272,51 +272,51 @@
 
 			</div>
 
-			<div class="full">
+			<p class="short">
 
-				<p class="short">
+				This course has been approved by the Government of <span class="undiesunpaddies">PANAMA</span>
 
-					This course has been approved by the Government of <span class="undiesunpaddies">PANAMA</span>
+				By means of Resolution
 
-					By means of Resolution
+				<span class="undiesunpaddies"><?php echo the_field('resolution'); ?></span>
 
-					<span class="undiesunpaddies"><?php echo the_field('resolution'); ?></span>
+				of
 
-					of
+				<span class="undiesunpaddies"><?php echo the_field('resolution_date'); ?></span>
 
-					<span class="undiesunpaddies"><?php echo the_field('resolution_date'); ?></span>
+			</p>
 
-				</p>
+			<p class="short">
 
-				<p class="short">
+				This certificate was issued in
 
-					This certificate was issued in
+				<span class="undiesunpaddies">
 
-					<span class="undiesunpaddies">
+					<?php echo the_field('place_of_issuance');?>
 
-						<?php echo the_field('place_of_issuance');?>
+				</span>
 
-					</span>
+				on
 
-					on
+				<span class="undiesunpaddies">
 
-					<span class="undiesunpaddies">
+					 <?php echo $issue_date->format('d F Y'); ?>.
 
-						 <?php echo $issue_date->format('d F Y'); ?>.
+				</span>
 
-					</span>
+			</p>
 
-					This certificate is valid until
+			<p class="short">
 
-					<span class="undiesunpaddies">
-						
-						<?php echo $expiry_date; ?>
+				This certificate is valid until
 
-					</span>
+				<span class="undiesunpaddies">
+					
+					<?php echo $expiry_date; ?>
 
-				</p>
+				</span>
 
-			</div>
+			</p>
 
 			<div class="signature-cert-codes">
 				

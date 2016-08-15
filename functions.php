@@ -31,6 +31,7 @@ require get_template_directory() . '/acf-custom-fields/courses-fields.php';
 require get_template_directory() . '/acf-custom-fields/quotations-fields.php';
 require get_template_directory() . '/acf-custom-fields/resolutions-fields.php';
 require get_template_directory() . '/acf-custom-fields/reports-fields.php';
+require get_template_directory() . '/acf-custom-fields/instructors-fields.php';
 
 
 /**
@@ -57,8 +58,8 @@ require get_template_directory() . '/includes/fill-form-randomly.php';
 require get_template_directory() . '/includes/fill-deck-courses.php';
 require get_template_directory() . '/includes/my_courses_post_object_results.php';
 require get_template_directory() . '/includes/add_leading_zeroes.php';
+require get_template_directory() . '/includes/certificate-exists-validation.php';
 
 /**
  * Custom Meta Boxes (other than advanced custom fields)
  */
-require get_template_directory() . '/meta-boxes/pmtscs-register-meta-boxes.php';

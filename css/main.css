@@ -785,7 +785,8 @@ ul.nav {
   padding: 0;
   margin: 0;
   display: table;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
   ul.nav li {
     display: table-cell; }
     ul.nav li a {
@@ -817,6 +818,22 @@ ul.nav {
     ul.nav li.current-menu-item a {
       color: white;
       background: #3e94cc; }
+    ul.nav li ul.sub-menu {
+      padding: 0;
+      position: absolute;
+      top: 100%;
+      white-space: nowrap;
+      display: none; }
+      ul.nav li ul.sub-menu li {
+        display: block; }
+        ul.nav li ul.sub-menu li a {
+          background: #7bb6dc;
+          color: white;
+          border: none; }
+        ul.nav li ul.sub-menu li a:hover {
+          background: #3e94cc; }
+    ul.nav li:hover ul.sub-menu {
+      display: block; }
 
 a.deactivated {
   color: #C5CFD7;
@@ -1091,6 +1108,44 @@ table.system {
   background: #36a930;
   padding: 2px 18px; }
 
+.search-student-form form {
+  position: relative;
+  width: 45%;
+  margin: 15% auto;
+  padding: 4em;
+  background: white;
+  border: 1px solid #d4dbe1;
+  box-shadow: 0 0 12px #e3e8ec; }
+  .search-student-form form input[type="text"] {
+    font-size: 1.1em;
+    text-align: center; }
+  .search-student-form form input[type="submit"] {
+    background: #3e94cc;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 1.2em; }
+  .search-student-form form .submit-btn {
+    width: 100%;
+    position: relative; }
+    .search-student-form form .submit-btn span.search-spinner {
+      display: none;
+      position: absolute;
+      top: 12px;
+      width: 30%;
+      height: 20px;
+      background: #3e94cc url("../images/search-spinner.gif") no-repeat top center;
+      left: 35%; }
+
+.search-student-form .error-message {
+  display: none;
+  background: #f15050;
+  border: 1px solid #C10000;
+  color: white;
+  text-align: center;
+  padding: 4px; }
+
 .certify, .participant-name, .attended, .course {
   text-align: center; }
 
@@ -1116,11 +1171,7 @@ table.system {
 .certificate, .report {
   position: relative;
   font-size: 1.2rem;
-  padding: 0 36px;
-  /* .half {
-		width: 50%;
-		float: left;
-	} */ }
+  padding: 0 36px; }
   @media screen and (min-width: 1200px) {
     .certificate, .report {
       margin: 0 48px; } }
@@ -1154,6 +1205,8 @@ table.system {
     text-align: justify; }
   .certificate .overies, .report .overies, .certificate .signature, .report .signature {
     border-top: 1px solid #556a7b; }
+  .certificate .half, .report .half {
+    width: 50%; }
   .certificate .quarter, .report .quarter, .certificate .signature, .report .signature {
     width: 25%; }
   .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes {
@@ -1205,44 +1258,6 @@ div.close-button {
   div.close-button:hover {
     background: #f40000; }
 
-.search-student-form form.search-by-id-no {
-  position: relative;
-  width: 45%;
-  margin: 15% auto;
-  padding: 4em;
-  background: white;
-  border: 1px solid #d4dbe1;
-  box-shadow: 0 0 12px #e3e8ec; }
-  .search-student-form form.search-by-id-no input[type="text"] {
-    font-size: 1.1em;
-    text-align: center; }
-  .search-student-form form.search-by-id-no input[type="submit"] {
-    background: #3e94cc;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    color: white;
-    letter-spacing: 1px;
-    font-size: 1.2em; }
-  .search-student-form form.search-by-id-no .submit-btn {
-    width: 100%;
-    position: relative; }
-    .search-student-form form.search-by-id-no .submit-btn span.search-spinner {
-      display: none;
-      position: absolute;
-      top: 12px;
-      width: 30%;
-      height: 20px;
-      background: #3e94cc url("../images/search-spinner.gif") no-repeat top center;
-      left: 35%; }
-
-.search-student-form .error-message {
-  display: none;
-  background: #f15050;
-  border: 1px solid #C10000;
-  color: white;
-  text-align: center;
-  padding: 4px; }
-
 .modal-window-outer .modal-window-inner {
   position: relative;
   background: white;
@@ -1285,6 +1300,10 @@ ul.pagination {
     border: 1px solid #98aab8;
     margin-right: 12px;
     box-shadow: 0 1px 2px #C5CFD7; }
+
+.other-certificates {
+  padding: 10px;
+  display: none; }
 
 ul.fill-courses-dropdown {
   list-style: none;
@@ -1558,7 +1577,8 @@ table.referer-info {
     padding: 0  0.05in;
     margin-left: 0.05in; }
     .undies.undies.bottom {
-      width: 1.65in; }
+      width: 1.65in;
+      margin-left: 0.05in; }
   .spacey.spacey {
     margin-right: 0.100in; }
   .signature.signature {
@@ -1646,10 +1666,12 @@ table.referer-info {
   .report.report.report h4 {
     font-size: 11pt; }
   .report.report.report p.shorter {
-    color: black; }
+    color: black;
+    font-size: 10pt; }
   .report.report.report .report-undies {
     padding-left: 0.125in; }
   .report.report.report span.undies {
     min-width: 0.5in;
-    padding: 0 0.25in; } }
+    padding: 0 0.25in;
+    color: black; } }
 /*# sourceMappingURL=main.css.map */

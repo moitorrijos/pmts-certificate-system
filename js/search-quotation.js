@@ -43,8 +43,6 @@ var $tbody 	= $('tbody'),
 
 			success: function(response){
 
-				console.log(response);
-
 				if (response.data === '') {
 
 					$searchSpinner.hide();

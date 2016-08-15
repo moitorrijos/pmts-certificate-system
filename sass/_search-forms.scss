@@ -1,0 +1,50 @@
+.search-student-form {
+	@extend %the-outer-div;
+
+	form {
+		position: relative;
+		width: 45%;
+		margin: 15% auto;
+		padding: 4em ;
+		background: white;
+		border: 1px solid lighten($gray, 5%);
+		box-shadow: 0 0 12px lighten($gray, 10%);
+
+		input[type="text"] {
+			font-size: 1.1em;
+			text-align: center;
+		}
+
+		input[type="submit"] {
+			background: $pmts-blue;
+			margin-bottom: 16px;
+			text-transform: uppercase;
+			color: white;
+			letter-spacing: 1px;
+			font-size: 1.2em;
+		}
+
+		.submit-btn {
+			width: 100%;
+			position: relative;
+
+			span.search-spinner {
+				display: none;
+				position: absolute;
+				top: 12px;
+				width: 30%; height: 20px;
+				background: $pmts-blue url('../images/search-spinner.gif') no-repeat top center;
+				left: 35%;
+			}
+		}
+	}
+
+	.error-message {
+		display: none;
+		background: desaturate(lighten($logout-red, 25%), 15%);
+		border: 1px solid $logout-red;
+		color: white;
+		text-align: center;
+		padding: 4px;
+	}
+}

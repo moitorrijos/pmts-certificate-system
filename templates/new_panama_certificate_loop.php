@@ -1,4 +1,4 @@
-<?php get_template_part('templates/search_by_id_no_form') ?>
+<?php get_template_part('templates/search_student_form') ?>
 
 <div class="main">
 	
@@ -13,13 +13,13 @@
 			</a>
 
 			<a href="<?php echo home_url();?>/panama-certificates/new-panama-certificate?action=clear_session" class="clear-data-button">
-
+				<i class="fa fa-eraser"></i>
 				Clear Certificate Data
 
 			</a>
 
 			<a href="#0" class="search-id-no-button not-link">
-
+				<i class="fa fa-user" aria-hidden="true"></i>
 				Search by ID/Passport No
 
 			</a>
@@ -27,7 +27,7 @@
 			<?php if (home_url() == 'http://certificate-system:8888') : ?>
 
 			<a href="<?php echo home_url();?>/panama-certificates/new-panama-certificate?action=fill_form_randomly"" class="fill-form-randomly not-link">
-
+				<i class="fa fa-futbol-o" aria-hidden="true"></i>
 				Fill Form Randomly
 
 			</a>
@@ -64,6 +64,10 @@
 			acf_form( $options );
 
 		?>
+
+		<div class="other-certificates">
+			<table class="other-certificates-table system"></table>
+		</div>
 
 	</div>
 

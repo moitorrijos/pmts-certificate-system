@@ -1,3 +1,5 @@
+var certificates_object;
+
 ; (function( $ ) {
 $(function() {
 
@@ -41,6 +43,8 @@ $searchForm.on('submit', function(event){
 			passport_no : $searchByIdInput.val().toString()
 		},
 		success: function(response){
+
+			console.log(response);
 
 			if (response.data === '') {
 

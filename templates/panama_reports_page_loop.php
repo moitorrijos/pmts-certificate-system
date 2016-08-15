@@ -9,60 +9,57 @@
 			get_template_part('templates/buttons-div');
 			get_template_part('templates/search-bar');
 
-			$reports_query_args = array(
-				'post_type'		=> 'reports',
-				'post_per_page' => -1,
+			$cert_paged = ( get_query_var('paged') ) ? intval(get_query_var('paged')) : 1;
+
+			$all_certs_args = array(
+				'post_type' 		=> 'certificates',
+				'posts_per_page' 	=> 150,
+				'meta_key' 			=> 'date_of_issuance',
+				'orderby'			=> 'meta_value_num',
+				'order'				=> 'DESC',
+				'paged'				=> $cert_paged,
+				'tax_query'			=> array(
+					array(
+						'taxonomy' 	=> 'office',
+						'field'		=> 'name',
+						'terms'		=> array('Peru', 'Greece', 'Egypt', 'Guyana', 'South Africa', 'India')
+					)
+				)
 			);
 
-			$reports_query = new WP_Query( $reports_query_args );
+			$reports_query = new WP_Query( $all_certs_args );
 
 			if ( $reports_query->have_posts() ) :
 
 		?>
 
 		<table class="system download-xls-table">
-			
+
 			<thead>
-
 				<tr>
-					<th class="middle-title">Instructor's Name</th>
-					<th class="short-title">Date of Course</th>
-					<th class="short-title">Place of Course</th>
-					<th class="middle-title">Report No.</th>
+					<th class="middle-title">Participant's Name</th>
+					<th class="short-title">Nationality</th>
+					<th class="short-title">Passport/ID No.</th>
+					<th class="middle-title">Register Code</th>
+					<th class="number">Abbr</th>
+					<th class="number">Start Date</th>
+					<th class="number">End Date</th>
+					<th class="short-title sort">
+						Instructor
+					</th>
+					<th class="number">Issue Date</th>
+					<th class="number">Office</th>
+					<?php if ( current_user_can('edit_pages') ) : ?>
+						<th class="number">Edit</th>
+					<?php endif; ?>
 				</tr>
-
 			</thead>
 
 			<tbody class="list">
 				
-				<?php 
+				<?php while ( $reports_query->have_posts() ) : $reports_query->the_post(); ?>
 
-				while ( $reports_query->have_posts() ) : $reports_query->the_post();
-
-				$course = get_field('name_of_the_course');
-				$instructor = get_field('name_of_the_instructor');
-				$course_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_the_course') );
-				$office = get_field('office_course_taken');
-
-				?>
-				<tr>
-					
-					<td class="list-col-2">
-						<a href="<?php echo get_permalink() ?>">
-							<?php echo get_the_title( $instructor->ID ); ?>
-						</a>
-					</td>
-					<td class="centered list-col-3">
-						<?php echo $course_date->format('d/m/y'); ?>
-					</td>
-					<td class="centered list-col-4">
-						<?php echo $office->name; ?>
-					</td>
-					<td class="centered list-col-1">
-						<?php echo get_the_title(); ?>
-					</td>
-
-				</tr>
+				<?php get_template_part( 'templates/certificate_table' ); ?>
 
 				<?php endwhile; ?>
 
@@ -84,7 +81,7 @@
 
 		<p>There are no reports created yet. To create a new report 
 
-		<a href="<?php echo home_url(); ?>">click here</a>.
+		<a href="<?php echo home_url('/panama-reports/new-panama-reports/'); ?>">click here</a>.
 
 		</p>
 

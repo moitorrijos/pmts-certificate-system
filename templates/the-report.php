@@ -11,16 +11,11 @@
 
 			</a>
 
-			<?php if ( current_user_can( 'edit_pages' ) ) : ?>
+			<a href="#0" class="edit-button not-link"><i class="fa fa-pencil"></i>
+					
+					Edit Report
 
-				<a href="#0" class="edit-button not-link"><i class="fa fa-pencil"></i>
-						
-						Edit Report
-
-
-				</a>
-
-			<?php endif; ?>
+			</a>
 
 			<a href="#0" class="print-button not-link"><i class="fa fa-print"></i>
 
@@ -31,6 +26,12 @@
 			<a href="#0" class="view-button not-link"><i class="fa fa-eye"></i>
 
 				View Report
+
+			</a>
+
+			<a href="#0" class="download-xls-button not-link"><i class="fa fa-download"></i>
+
+				Download Report Excel
 
 			</a>
 
@@ -46,13 +47,13 @@
 
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
 			
-			setlocale(LC_TIME, 'es_ES');
+			// setlocale(LC_TIME, 'es_ES');
 
 			$course = get_field('name_of_the_course');
 			$instructor = get_field('name_of_the_instructor');
-			$course_date_timestamp = strtotime( get_field('date_of_the_course') );
-			$course_month = strftime( '%B', $course_date_timestamp );
-			$course_date = strftime( '%e de %B de %G', $course_date_timestamp );
+			// $course_date_timestamp = strtotime( get_field('date_of_the_course') );
+			// $course_month = strftime( '%B', $course_date_timestamp );
+			// $course_date = strftime( '%e de %B de %G', $course_date_timestamp );
 			$office = get_field('office_course_taken');
 
 
@@ -60,11 +61,11 @@
 
 		 <div class="report">
 
-		 	<div class="amp-logo-text">
+		 	<!-- <div class="amp-logo-text">
 		 		
 		 		<div class="amp-logo">
 		 			
-		 			<img src="<?php echo IMAGESPATH; ?>/amp-logo.png" alt="Logo AMP">
+		 			<img src="<?php // echo IMAGESPATH; ?>/amp-logo.png" alt="Logo AMP">
 
 		 		</div>
 
@@ -168,14 +169,14 @@
 
 		 			<div class="report-undies">
 		 				
-		 				<span class="undies"><?php echo ucwords($course_month); ?></span>
+		 				<span class="undies"><?php // echo ucwords($course_month); ?></span>
 
 		 			</div>
 		 			
 		 			
 		 		</div>
 		 		
-		 	</div>
+		 	</div> -->
 
 		 	<div class="full report-full">
 
@@ -199,7 +200,7 @@
 
 					<div class="report-undies">
 						
-						<span class="undies"><?php echo $course->post_title . ' ' . '(' . $course->abbr . ')'; ?></span>
+						<span class="undies"><?php echo /*$course->post_title . ' ' . '(' .*/ $course->abbr /*. ')'*/; ?></span>
 
 					</div>
 
@@ -238,7 +239,7 @@
 	 		</div>
 
 
-	 		<div class="full report-full">
+	 		<!-- <div class="full report-full">
 
 	 			<div class="half full">
 
@@ -262,7 +263,7 @@
 	 					
 	 					<span class="undies">
 		 						
-	 						<?php echo $course_date; ?>
+	 						<?php // echo $course_date; ?>
 
 	 					</span>
 
@@ -292,7 +293,7 @@
 	 					
 	 					<span class="undies">
 		 						
-	 						<?php echo $office->name; ?>
+	 						<?php // echo $office->name; ?>
 
 	 					</span>
 
@@ -300,7 +301,7 @@
 	 				
 	 			</div>
 
-	 		</div>
+	 		</div> -->
 
 			<?php endwhile; endif; wp_reset_query(); ?>
 
@@ -322,11 +323,11 @@
 							'key'     => 'course',
 							'value'   => (int) $course->ID,
 						),
-						array(
+						/*array(
 							'key'	=> 'date_of_issuance',
 							'value'	=> get_field('date_of_the_course'),
 							'type'	=> 'numeric',
-						)
+						)*/
 					)
 				);
 
@@ -336,7 +337,7 @@
 
 			 ?>
 
-			<table class="system">
+			<table class="system download-xls-table">
 				
 				<thead>
 					<tr>
@@ -348,14 +349,20 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php while ( $report_certs->have_posts() ) : $report_certs->the_post(); ?>
+					<?php while ( $report_certs->have_posts() ) : $report_certs->the_post();
+						
+						$register_code =  get_post_meta(get_the_ID(), 'register_code', true);
+						$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
+						$issue_year = $issue_date->format('y');
+
+					?>
 
 						<tr id="cert-number">
 							<td class="centered">
 								<?php echo $report_certs->current_post + 1; ?>
 							</td>
 							<td class="centered">
-								<?php echo get_post_meta( get_the_id(), 'pmtscs_register_code', true ); ?>
+								<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . add_leading_zeroes($register_code) . $register_code; ?>
 							</td>
 							<td class="centered">
 								<?php echo the_field('students_name'); ?>
@@ -382,8 +389,6 @@
 
 		?>
 
-		<?php if ( current_user_can('edit_pages') ) : ?>
-
 		<div class="edit-report-form">
 			
 			<?php 
@@ -397,8 +402,6 @@
 			?>
 
 		</div>
-
-		<?php endif; ?>
 
 	<?php endwhile; endif; wp_reset_query(); ?>
 

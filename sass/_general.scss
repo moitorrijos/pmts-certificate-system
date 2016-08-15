@@ -391,6 +391,7 @@ ul.nav {
 	margin: 0;
 	display: table;
 	width: 100%;
+	position: relative;
 
 	li {
 		display: table-cell;
@@ -442,6 +443,32 @@ ul.nav {
 		&.current-menu-item a {
 			color: white;
 			background: $pmts-blue;
+		}
+
+		ul.sub-menu {
+			padding: 0;
+			position: absolute;
+			top: 100%;
+			white-space: nowrap;
+			display: none;
+
+			li {
+				display: block;
+
+				a { 
+					background: lighten($pmts-blue, 15%);
+					color: white;
+					border: none;
+				}
+				
+				a:hover {
+					background: $pmts-blue;
+				}
+			}
+		}
+
+		&:hover ul.sub-menu {
+			display: block;
 		}
 	}
 }

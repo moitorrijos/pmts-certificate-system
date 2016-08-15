@@ -22,7 +22,7 @@
 				<tr>
 					<th class="short-short-number">No.</th>
 					<th class="short-title">Instructor Name</th>
-					<th class="number">Nationality</th>
+					<th class="number">Training Country</th>
 					<th class="number">Rank and Competence</th>
 					<th class="number">Instructor Code</th>
 					<?php if ( current_user_can( 'edit_pages' ) ) : ?>
@@ -36,6 +36,8 @@
 					$args = array( 'post_type' => 'instructors', 'posts_per_page' => -1 );
 					$instructors = new WP_Query($args);
 					if ( $instructors->have_posts() ) : while ( $instructors->have_posts() ) : $instructors->the_post();
+
+					$country_of_training = get_field('nationality');
 				?>
 
 				<tr>
@@ -49,7 +51,7 @@
 							<?php the_title( '', '' ); ?>
 						<?php endif; ?>
 					</td>
-					<td class="centered list-col-2"><?php the_field('nationality'); ?></td>
+					<td class="centered list-col-2"><?php echo $country_of_training; ?></td>
 					<td class="centered "><?php the_field('rank_competence'); ?></td>
 					<td class="centered"><?php the_field('instructor_code'); ?></td>
 					<?php if ( current_user_can( 'edit_pages') ) : ?>
