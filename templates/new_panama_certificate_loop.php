@@ -66,7 +66,25 @@
 		?>
 
 		<div class="other-certificates">
-			<table class="other-certificates-table system"></table>
+			<table class="other-certificates-table system">
+				<thead>
+					<tr>
+						<th class="middle-title">Participant's Name</th>
+						<th class="short-title">Nationality</th>
+						<th class="short-title">Passport/ID No.</th>
+						<th class="middle-title">Register Code</th>
+						<th class="number">Abbr</th>
+						<th class="number">Start Date</th>
+						<th class="number">End Date</th>
+						<th class="short-title sort">
+							Instructor
+						</th>
+						<th class="number">Issue Date</th>
+						<th class="number">Office</th>
+						<th class="number">Edit</th>
+					</tr>
+				</thead>
+			</table>
 		</div>
 
 	</div>
