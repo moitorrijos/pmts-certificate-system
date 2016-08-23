@@ -1,0 +1,18 @@
+/* ============================================================
+  CUSTOM PAGINATION
+============================================================ */
+.custom-pagination {
+  @extend %flexbox-box;
+
+  .page-numbers {
+    display: block;
+    padding: 8px 12px;
+  }
+
+  a.page-numbers {
+    background-color: $pmts-blue;
+    border-radius: 18px;
+    color: white;
+    margin-right: 8px;
+  }
+}

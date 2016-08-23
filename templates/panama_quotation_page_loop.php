@@ -89,15 +89,12 @@
 
 		</table>
 
-		<?php if ($quotes->max_num_pages > 1) : ?>
-			<div class="paginate">
-				<p>Page:</p>
-				<ul class="pagination">
-					<li><?php echo get_next_posts_link( 'Older Quotes', $quotes->max_num_pages ); ?></li>
-					<li><?php echo get_previous_posts_link( 'Newer Quotes' ); ?></li>
-				</ul>
-			</div>
-		<?php endif; ?>
+		<!-- pagination here -->
+	    <?php
+	      if (function_exists('custom_pagination')) {
+	        custom_pagination($quotes->max_num_pages,"",$paged);
+	      }
+	    ?>
 
 		<?php else : ?>
 

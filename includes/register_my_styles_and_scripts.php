@@ -34,7 +34,7 @@ function register_my_styles_and_scripts() {
 			'ajaxurl' => admin_url( 'admin-ajax.php' ) )
 		);
 
-		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/form-field-magic.js', array('jquery'), '20160422', true );
+		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/min/form-field-magic-min.js', array('jquery'), '20160422', true );
 
 	}
 

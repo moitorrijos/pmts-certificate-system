@@ -149,7 +149,7 @@ function searchPassportOnLoad() {
 	$.ajax({
 		url : pmtscs_ajax_object.ajaxurl,
 		type : 'POST',
-		dataType : 'text',
+		dataType : 'html',
 		data : {
 			action : 'load_certificates_by_passport',
 			security : pmtscs_ajax_object.security,
@@ -157,14 +157,16 @@ function searchPassportOnLoad() {
 		},
 
 		success: function( response ){
-			// console.log( response );
-			$otherCertificatesTable.append(response);
-			$otherCertificates.show();
-			return;
+			if ( response != 0 ) {
+				$otherCertificatesTable.append(response);
+				$otherCertificates.show();
+				return;
+			} else {
+				return;
+			}
 		},
 
-		error: function( response ){
-			console.log( response );
+		error: function(){
 			return;
 		}
 	});

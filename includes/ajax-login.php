@@ -21,7 +21,6 @@ function ajax_login(){
     if ( !is_wp_error( $user_signon ) ) {
         echo json_encode(array(
             'loggedin' => true,
-            'message' => 'Login succesfull, redirecting...'
         ));
     } else {
         echo json_encode(array(

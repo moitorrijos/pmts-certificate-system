@@ -15,7 +15,7 @@ acf_add_local_field_group(array (
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => 33,
+				'width' => 25,
 				'class' => '',
 				'id' => '',
 			),
@@ -38,7 +38,7 @@ acf_add_local_field_group(array (
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => 33,
+				'width' => 25,
 				'class' => '',
 				'id' => '',
 			),
@@ -52,7 +52,7 @@ acf_add_local_field_group(array (
 			'return_format' => 'object',
 			'ui' => 1,
 		),
-		/*array (
+		array (
 			'key' => 'field_57890f3d200bb',
 			'label' => 'Date of the Course',
 			'name' => 'date_of_the_course',
@@ -61,14 +61,14 @@ acf_add_local_field_group(array (
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => 33,
+				'width' => 25,
 				'class' => '',
 				'id' => '',
 			),
 			'display_format' => 'F j, Y',
 			'return_format' => 'Ymd',
 			'first_day' => 1,
-		),*/
+		),
 		array (
 			'key' => 'field_57890f9dec801',
 			'label' => 'Place that the course was imparted',
@@ -78,7 +78,7 @@ acf_add_local_field_group(array (
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => 33,
+				'width' => 25,
 				'class' => '',
 				'id' => '',
 			),

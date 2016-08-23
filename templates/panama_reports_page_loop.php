@@ -9,25 +9,20 @@
 			get_template_part('templates/buttons-div');
 			get_template_part('templates/search-bar');
 
-			$cert_paged = ( get_query_var('paged') ) ? intval(get_query_var('paged')) : 1;
+			
 
-			$all_certs_args = array(
-				'post_type' 		=> 'certificates',
+			$report_paged = ( get_query_var('paged') ) ? intval(get_query_var('paged')) : 1;
+
+			$all_reports_args = array(
+				'post_type' 		=> 'reports',
 				'posts_per_page' 	=> 150,
-				'meta_key' 			=> 'date_of_issuance',
+				'meta_key' 			=> 'date_of_the_course',
 				'orderby'			=> 'meta_value_num',
 				'order'				=> 'DESC',
-				'paged'				=> $cert_paged,
-				'tax_query'			=> array(
-					array(
-						'taxonomy' 	=> 'office',
-						'field'		=> 'name',
-						'terms'		=> array('Peru', 'Greece', 'Egypt', 'Guyana', 'South Africa', 'India')
-					)
-				)
+				'paged'				=> $report_paged,
 			);
 
-			$reports_query = new WP_Query( $all_certs_args );
+			$reports_query = new WP_Query( $all_reports_args );
 
 			if ( $reports_query->have_posts() ) :
 
@@ -37,18 +32,9 @@
 
 			<thead>
 				<tr>
-					<th class="middle-title">Participant's Name</th>
-					<th class="short-title">Nationality</th>
-					<th class="short-title">Passport/ID No.</th>
-					<th class="middle-title">Register Code</th>
-					<th class="number">Abbr</th>
-					<th class="number">Start Date</th>
-					<th class="number">End Date</th>
-					<th class="short-title sort">
-						Instructor
-					</th>
-					<th class="number">Issue Date</th>
-					<th class="number">Office</th>
+					<th class="middle-title">Name of the Course</th>
+					<th class="short-title">Name of the Instructor</th>
+					<th class="short-title">Course Issue Date</th>
 					<?php if ( current_user_can('edit_pages') ) : ?>
 						<th class="number">Edit</th>
 					<?php endif; ?>
@@ -57,9 +43,31 @@
 
 			<tbody class="list">
 				
-				<?php while ( $reports_query->have_posts() ) : $reports_query->the_post(); ?>
+				<?php
+					while ( $reports_query->have_posts() ) : 
+					$reports_query->the_post();
+					$edit = '<i class="fa fa-pencil-square-o"></i>';
+					$course = get_field('name_of_the_course');
+					$instructor = get_field('name_of_the_instructor');
+					$date_of_course = DateTime::createFromFormat('Ymd', get_field('date_of_the_course'));
+				?>
 
-				<?php get_template_part( 'templates/certificate_table' ); ?>
+				<tr>
+					<td>
+						<a href="<?php echo the_permalink(); ?>">
+							<?php echo $course->post_title . ' (' . $course->abbr . ')'; ?>
+						</a>
+					</td>
+					<td class="centered">
+						<?php echo $instructor->post_title ?>
+					</td>
+					<td class="centered">
+						<?php echo $date_of_course->format('j F, Y'); ?>
+					</td>
+					<td class="centered edit">
+						<a href="<?php echo the_permalink(); ?>/#acf-form" class="edit-form"><?php echo $edit; ?></a>
+					</td>
+				</tr>
 
 				<?php endwhile; ?>
 

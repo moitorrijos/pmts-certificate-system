@@ -37,7 +37,7 @@ function reports_post_type() {
 		'hierarchical'      => false,
 		'show_ui'           => true,
 		'show_in_nav_menus' => true,
-		'supports'          => array( 'title' ),
+		'supports'          => array( 'title', 'revisions' ),
 		'has_archive'       => true,
 		'rewrite'           => true,
 		'query_var'         => true,

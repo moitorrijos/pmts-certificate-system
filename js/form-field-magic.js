@@ -1,3 +1,5 @@
+var moment, countryNationality
+
 ; (function( $ ) {
 $(function() {
 
@@ -14,11 +16,25 @@ $endDateField.parent('div').on('change', function(){
 
 });
 
-$placeOfBirthField.parent('div').on('change', function(){
+function capitalizeFirstLetter(string) {
+	// var stringArray = ;
+	return string.split(' ').map(function(word){
+		if ( word.toLowerCase() === 'of' || word.toLowerCase() === 'and' || word.toLowerCase === 'the' ) {
+			return word.toLowerCase();
+		} else {
+			return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+		}
+	}).join(' ');
+}
 
-	var nationality = $placeOfBirthField.val();
-	$nationalityField.val( nationality );
-	
+$placeOfBirthField.parent('div').on('change', function(){
+	var placeOfBirth = $placeOfBirthField.val();
+	var capitalizePlaceOfBirth = capitalizeFirstLetter(placeOfBirth);
+	countryNationality.map(function(countryArray){
+		if (capitalizePlaceOfBirth === countryArray[0]) {
+			$nationalityField.val( countryArray[1] );
+		}
+	});
 });
 
 });

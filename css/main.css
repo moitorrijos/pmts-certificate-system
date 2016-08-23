@@ -433,7 +433,7 @@ th {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
-.back-create-buttons, form.search-by-id-no, form.filter-form, .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .report .amp-logo-text, .report .report-full {
+.back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .report .amp-logo-text, .report .report-full {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1145,6 +1145,19 @@ table.system {
   color: white;
   text-align: center;
   padding: 4px; }
+
+/* ============================================================
+  CUSTOM PAGINATION
+============================================================ */
+.custom-pagination .page-numbers {
+  display: block;
+  padding: 8px 12px; }
+
+.custom-pagination a.page-numbers {
+  background-color: #3e94cc;
+  border-radius: 18px;
+  color: white;
+  margin-right: 8px; }
 
 .certify, .participant-name, .attended, .course {
   text-align: center; }
