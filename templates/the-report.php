@@ -143,7 +143,7 @@
 
 					<div class="report-undies">
 						
-						<span class="undies" id="issued-certificates-amount"></span>
+						<span class="undies" id="issued-certificates-amount">0</span>
 
 					</div>
 					
@@ -323,11 +323,11 @@
 							'key'     => 'course',
 							'value'   => (int) $course->ID,
 						),
-						// array(
-						// 	'key'	=> 'date_of_issuance',
-						// 	'value'	=> get_field('date_of_the_course'),
-						// 	'type'	=> 'numeric',
-						// )
+						array(
+							'key'	=> 'date_of_issuance',
+							'value'	=> get_field('date_of_the_course'),
+							'type'	=> 'numeric',
+						)
 					)
 				);
 
@@ -375,7 +375,11 @@
 							</td>
 						</tr>
 
-					<?php endwhile; endif; wp_reset_query(); ?>
+					<?php endwhile; else : ?>
+
+					<p>No hay certificados para este curso en esta fecha.</p>
+
+					<?php endif; wp_reset_query(); ?>
 
 				</tbody>
 
