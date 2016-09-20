@@ -3,7 +3,7 @@
 	<div class="main-content">
 
 		<h1>Panama Certificates</h1>
-		<p class="centered long">All Offices</p>
+		<p class="centered long">Panama Office</p>
 
 		<div class="back-create-buttons">
 
@@ -35,6 +35,21 @@
 				'orderby'			=> 'meta_value_num',
 				'order'				=> 'DESC',
 				'paged'				=> $cert_paged,
+				'tax_query'			=> array( 
+					array(
+						'taxonomy' 	=> 'office', 
+						'field' 	=> 'name', 
+						'terms' 	=> 'Panama'
+						)
+				),
+				// 'meta_query'		=> array(
+				// 	array(
+				// 		'key'	=> 'date_of_issuance',
+				// 		'value'	=> array(20160801, 20160831),
+				// 		'compare' => 'BETWEEN',
+				// 	)
+				// ),
+
 			);
 
 			$certs = new WP_Query($all_certs_args);

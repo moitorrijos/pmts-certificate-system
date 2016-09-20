@@ -71,8 +71,20 @@
 					<td class="centered list-col-2"><?php the_field('abbr'); ?></td>
 					<td class="centered"><?php the_field('duration'); ?></td>
 					<td class="centered"><?php the_field('duration_hours'); ?></td>
-					<td class="centered"><?php echo number_format($price_panamanian, 2); ?></td>
-					<td class="centered"><?php echo number_format($price_foreign, 2); ?></td>
+					<td class="centered">
+						<?php 
+							if (get_field('price_panamanian')) {
+								echo number_format($price_panamanian, 2); 
+							}
+						?>
+					</td>
+					<td class="centered">
+						<?php 
+							if (get_field('price_foreign')){
+								echo number_format($price_foreign, 2);
+							}
+						?>
+					</td>
 					<td class="centered"><?php the_field('f_ti'); ?></td>
 					<td class="centered"><?php the_field('total_certificates'); ?></td>
 					<td class="centered edit">

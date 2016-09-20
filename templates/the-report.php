@@ -354,6 +354,7 @@
 						$register_code =  get_post_meta(get_the_ID(), 'register_code', true);
 						$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
 						$issue_year = $issue_date->format('y');
+						$the_course = get_field('course');
 
 					?>
 
@@ -362,7 +363,7 @@
 								<?php echo $report_certs->current_post + 1; ?>
 							</td>
 							<td class="centered">
-								<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . add_leading_zeroes($register_code) . $register_code; ?>
+								<?php echo 'PMTS/' . $the_course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . add_leading_zeroes($register_code) . $register_code; ?>
 							</td>
 							<td class="centered">
 								<?php echo the_field('students_name'); ?>

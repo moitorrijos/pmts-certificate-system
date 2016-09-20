@@ -18,6 +18,10 @@ body {
 	font-family: $body-font-family;
 	line-height: 1.6;
 	position: relative;
+	
+	&.logged-in {
+		background-image: none;
+	}
 
 	background: {
 		color: darken($pmts-blue, 5%);
@@ -27,9 +31,6 @@ body {
 		repeat: no-repeat;
 	}
 
-	&.logged-in {
-		background-image: none;
-	}
 
 	height: initial;
 
@@ -64,10 +65,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-	width: $header-width;
+	width: 30%;
 
-	@media only screen and (min-width: 1080px ) {
-		width: 25%;
+	@media only screen and ( max-width: 980px ) {
+		width: 50%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	@media only screen and ( max-width: 770px ) {
+		width: 100%;
 	}
 
 	padding: $header-padding;
@@ -189,6 +197,7 @@ form {
 	
 	header {
 		float: none;
+		position: relative;
 		height: 100%;
 		width: 100%;
 		padding: 0;
@@ -204,36 +213,6 @@ form {
 		h3 {
 			padding-left: 22px;
 			margin-bottom: 16px;
-		}
-		
-		a.toggle-menu {
-			
-			display: none;
-			padding: 16px 22px 16px 8px;
-			color: $darken-gray;
-			text-decoration: none;
-			position: fixed;
-			top: 32px;
-			left: 0;
-			text-align: right;
-			background: white;
-			box-shadow: 6px 0 6px -2px rgba(0, 0, 0, 0.2);
-			@extend %smooth-animation;
-
-			i.fa.fa { 
-				font-size: 1.2em;
-				position: relative;
-				top: 1px;
-				margin-left: 12px;
-			}
-
-			&:hover {
-				background-color: lighten($gray, 15%);
-			}
-
-			&.hide-button {
-				left: $loggedin-header-width;
-			}
 		}
 	}
 

@@ -2,7 +2,7 @@
 
 class AddButton {
 
-	function button_value() {
+	public function button_value() {
 		if ( is_page_template( 'courses-page.php' ) ) {
 	
 			$add_value = 'Add Course';
@@ -37,7 +37,7 @@ class AddButton {
 
 	}
 
-	function button_link() {
+	public function button_link() {
 		if ( is_page_template( 'courses-page.php' ) ) {
 	
 			$add_link = '#0';
@@ -71,7 +71,7 @@ class AddButton {
 		} 
 	}
 
-	function is_deactivated() {
+	public function is_deactivated() {
 		if ( is_page_template( 'courses-page.php' ) ) {
 	
 			$deactivated = 'deactivated';

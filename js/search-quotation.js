@@ -9,6 +9,7 @@ var $tbody 	= $('tbody'),
 	$errorMessage = $('span.error-message'),
 	$notFoundMessage = $('span.not-found-message'),
 	$backLink = $('a.back-link'),
+	$customPagination = $('.custom-pagination'),
 	$searchSpinner = $('span.search-spinner');
 
 	$searchQuotationForm.on('submit', function(event){
@@ -29,7 +30,6 @@ var $tbody 	= $('tbody'),
 			$loader.hide();
 			return;
 		}
-
 
 		$.ajax({
 			url			: quotation_object.ajaxurl,
@@ -61,6 +61,7 @@ var $tbody 	= $('tbody'),
 
 					$searchQuotationInput.css('border', '1px solid #3e94cc');
 					$errorMessage.hide();
+					$customPagination.hide();
 				}
 			},
 			error: function(){

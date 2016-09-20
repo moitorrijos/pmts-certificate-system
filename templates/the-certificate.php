@@ -167,9 +167,9 @@
 	                <p class="short">Register Code:
 
 						<span class="undies">
-							<span class="three-stars">***</span> 
+							<span>***</span> 
 							<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . $leading_zero . $register_code; ?>
-							<span class="three-stars">***</span> 
+							<span>***</span> 
 						</span>                 
 
 					</p>
@@ -196,7 +196,9 @@
 
 							<?php endif; ?>
 
-							Course duration <?php echo $course->duration; ?> days (<?php echo $course->duration_hours  ?> hours)
+								Course duration <?php echo $course->duration_hours; ?> hours
+								
+								<!-- Course duration  //echo $course->duration;  days ( echo //$course->duration_hours   hours) -->
 
 						</span>
 

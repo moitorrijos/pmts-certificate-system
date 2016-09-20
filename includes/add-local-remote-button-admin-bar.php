@@ -7,7 +7,7 @@
 function local_remote_admin_bar($wp_admin_bar){
 	$home_url = home_url();
 
-	if ($home_url == 'http://certificate-system:8888'){
+	if ($home_url == 'http://certificate-system.dev'){
 		$admin_bar_args = array(
 			'id' 	=> 'remote-button',
 			'title' => 'Go to Remote',

@@ -429,7 +429,7 @@ th {
 /**
  * Colors
  */
-.logged-in header, .logged-in header a.toggle-menu, form.search-by-id-no .submit-btn input.search-by-id-submit, ul.fill-courses-dropdown li ul {
+.logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, ul.fill-courses-dropdown li ul {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
@@ -535,7 +535,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Geneva, Verdana, sans-serif; }
 
 header {
-  width: 40%;
+  width: 30%;
   padding: 40px;
   background: white;
   color: #556a7b;
@@ -560,9 +560,15 @@ header {
   height: 100vh;
   background: white;
   float: left; }
-  @media only screen and (min-width: 1080px) {
+  @media only screen and (max-width: 980px) {
     header {
-      width: 25%; } }
+      width: 50%;
+      position: absolute;
+      top: 0;
+      left: 0; } }
+  @media only screen and (max-width: 770px) {
+    header {
+      width: 100%; } }
   header .toggle-menu {
     display: none; }
 
@@ -648,6 +654,7 @@ form {
 
 .logged-in header {
   float: none;
+  position: relative;
   height: 100%;
   width: 100%;
   padding: 0;
@@ -669,26 +676,6 @@ form {
   .logged-in header h3 {
     padding-left: 22px;
     margin-bottom: 16px; }
-  .logged-in header a.toggle-menu {
-    display: none;
-    padding: 16px 22px 16px 8px;
-    color: #556a7b;
-    text-decoration: none;
-    position: fixed;
-    top: 32px;
-    left: 0;
-    text-align: right;
-    background: white;
-    box-shadow: 6px 0 6px -2px rgba(0, 0, 0, 0.2); }
-    .logged-in header a.toggle-menu i.fa.fa {
-      font-size: 1.2em;
-      position: relative;
-      top: 1px;
-      margin-left: 12px; }
-    .logged-in header a.toggle-menu:hover {
-      background-color: #f2f4f6; }
-    .logged-in header a.toggle-menu.hide-button {
-      left: 280px; }
 
 .logged-in .main {
   width: 100%; }
@@ -1517,9 +1504,9 @@ table.referer-info {
     font-size: 12pt;
     padding: 0; }
   p, ul, ol {
-    font-size: 11pt;
+    font-size: 10pt;
     line-height: 1.5;
-    margin: .100in 0; }
+    margin: .125in 0; }
   p.attended {
     line-height: 1;
     margin: .133in 0; }
@@ -1542,7 +1529,8 @@ table.referer-info {
     display: none; }
   table {
     page-break-inside: auto;
-    color: black; }
+    color: black;
+    position: relative; }
     table thead {
       display: table-header-group; }
       table thead th {
@@ -1551,7 +1539,8 @@ table.referer-info {
         padding: 0.1in; }
     table tr {
       page-break-inside: avoid;
-      page-break-after: auto; }
+      -webkit-region-break-inside: avoid;
+      page-break-after: always; }
     table td {
       color: black;
       font-size: 8pt;
@@ -1656,17 +1645,20 @@ table.referer-info {
       margin-top: 0; }
     .quotation table.quote-info-table td {
       padding: 0.05in 0.1in; }
-  .report h1 {
-    font-size: 14pt; }
-  .report p {
-    font-size: 9pt; }
-  .report span.undies {
-    font-size: 9pt;
-    min-width: 1.5in; }
-  .report table th {
-    font-size: 9pt; }
-  .report table td {
-    font-size: 9pt; }
+  .report {
+    height: 100%;
+    position: relative; }
+    .report h1 {
+      font-size: 14pt; }
+    .report p {
+      font-size: 9pt; }
+    .report span.undies {
+      font-size: 9pt;
+      min-width: 1.5in; }
+    .report table th {
+      font-size: 9pt; }
+    .report table td {
+      font-size: 9pt; }
   .report.report.report h1, .report.report.report h2 {
     color: white; }
   .report.report.report h1 {

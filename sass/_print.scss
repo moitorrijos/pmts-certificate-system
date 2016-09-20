@@ -38,9 +38,9 @@
 	}
 
 	p, ul, ol {
-		font-size: 11pt;
+		font-size: 10pt;
 		line-height: 1.5;
-		margin: .100in 0;
+		margin: .125in 0;
 	}
 
 	p.attended {
@@ -84,6 +84,7 @@
 	table {
 		page-break-inside:auto;
 		color: black;
+		position: relative;
 		
 		thead { 
 			display: table-header-group;
@@ -98,7 +99,8 @@
 
 		tr    { 
 			page-break-inside:avoid; 
-			page-break-after:auto;
+			-webkit-region-break-inside: avoid;
+			page-break-after:always;
 		}
 
 		td {
@@ -286,6 +288,7 @@
 	}
 	
 	.report {
+		height: 100%;
 
 		h1 {
 			font-size: 14pt;
@@ -308,6 +311,8 @@
 				font-size: 9pt;
 			}
 		}
+
+		position: relative;
 	}
 
 	.report.report.report {

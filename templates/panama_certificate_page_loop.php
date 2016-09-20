@@ -28,6 +28,13 @@
 				'orderby'			=> 'meta_value_num',
 				'order'				=> 'DESC',
 				'paged'				=> $paged,
+				'meta_query'		=> array(
+					array(
+						'key'	=> 'date_of_issuance',
+						'value'	=> array(20160801, 20160831),
+						'compare' => 'BETWEEN',
+					)
+				),
 			);
 
 			$certs = new WP_Query($panama_certs_args);
