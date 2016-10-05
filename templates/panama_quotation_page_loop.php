@@ -84,7 +84,11 @@
 								$course_name = get_sub_field('course_name');
 
 						        // display a sub field value
-						        echo $course_name->abbr . ', ';
+						        $course_abbr = $course_name->abbr;
+
+						        if (get_row_index() != 1) { echo ', '; }
+
+						        echo $course_abbr;
 
 						    endwhile; endif;
 
@@ -95,8 +99,10 @@
 
 								$service_name = get_sub_field('service_name');
 
+								if (get_row_index() != 1) { echo ', '; }
+
 						        // display a sub field value
-						        echo $service_name . ', ';
+						        echo $service_name;
 
 						    endwhile; endif;
 
