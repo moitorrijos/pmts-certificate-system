@@ -433,14 +433,12 @@ th {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
-.back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .report .amp-logo-text, .report .report-full {
+.back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .payment-info, .report .amp-logo-text, .report .report-full {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap; }
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap; }
 
 div.login-form .login-loading-animation, div.copyright .login-loading-animation {
   position: absolute;
@@ -541,20 +539,16 @@ header {
   color: #556a7b;
   z-index: 10;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
   height: 100vh;
@@ -603,11 +597,9 @@ form {
   form .rememberme {
     position: relative;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between; }
     form .rememberme label {
@@ -639,12 +631,13 @@ form {
   padding: 10px 30px 0;
   width: 60%;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-content: stretch;
-      -ms-flex-line-pack: stretch;
-          align-content: stretch; }
+  -ms-flex-line-pack: stretch;
+      align-content: stretch; }
+  @media only screen and (max-width: 700px) {
+    .main {
+      padding: 10px 0; } }
   .main > h1 {
     text-align: center;
     width: 100%;
@@ -659,16 +652,13 @@ form {
   width: 100%;
   padding: 0;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row; }
   .logged-in header.show-menu {
@@ -830,7 +820,6 @@ a.deactivated {
 
 .back-create-buttons {
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between; }
   .back-create-buttons .back-button-link a {
@@ -838,9 +827,8 @@ a.deactivated {
 
 form.search-by-id-no {
   margin: 0;
-  -webkit-flex-flow: row nowrap;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
   position: relative; }
   form.search-by-id-no span.error-message, form.search-by-id-no span.not-found-message {
     position: absolute;
@@ -1211,7 +1199,6 @@ table.system {
     width: 25%; }
   .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes {
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between; }
   .certificate .to-right, .report .to-right, .certificate .signature, .report .signature {
@@ -1276,9 +1263,8 @@ div.close-button {
       text-transform: uppercase;
       letter-spacing: 2px; }
   .modal-window-outer form .filter-inputs {
-    -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-            justify-content: space-around; }
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
     .modal-window-outer form .filter-inputs input {
       width: 33%;
       margin-bottom: 32px;
@@ -1336,7 +1322,6 @@ ul.fill-courses-dropdown {
 
 .quotation-logo-table {
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between; }
   .quotation-logo-table h4.quote-number {
@@ -1383,17 +1368,17 @@ table.referer-info {
 .edit-quote-form {
   display: none; }
 
+.bank-info {
+  margin: 40px; }
+
 .report {
   font-family: "Times New Roman", serif; }
   .report .amp-logo-text {
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
-                -ms-grid-row-align: center;
             align-items: center; }
   .report .amp-logo {
     width: 75px; }
@@ -1401,7 +1386,6 @@ table.referer-info {
       width: 100%; }
   .report .amp-text {
     -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
     color: #284f96; }
@@ -1446,12 +1430,10 @@ table.referer-info {
   .report .report-full {
     margin-bottom: 2em;
     -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
             justify-content: flex-start; }
   .report .report-undies {
     -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
     padding-left: 20px; }
@@ -1510,10 +1492,12 @@ table.referer-info {
   p.attended {
     line-height: 1;
     margin: .133in 0; }
-  p.bank-info {
-    font-size: 8pt;
-    line-height: 1.1;
-    margin: .100in 0; }
+  .bank-info {
+    margin: 0 0.5in 0 0; }
+    .bank-info p {
+      font-size: 8pt;
+      line-height: 1.1;
+      margin: .100in 0; }
   .no-print {
     display: none; }
   .logged-in header {

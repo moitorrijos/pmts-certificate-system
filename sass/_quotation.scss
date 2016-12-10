@@ -113,3 +113,11 @@ table.referer-info {
 .edit-quote-form {
 	display: none;
 }
+
+.payment-info {
+	@extend %flexbox-box;
+}
+
+.bank-info {
+	margin: 40px;
+}

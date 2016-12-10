@@ -180,6 +180,11 @@ form {
 .main {
 	color: white;
 	padding: 10px 30px 0;
+	
+	@media only screen and (max-width: 700px) {
+		padding: 10px 0;
+	}
+
 	width: $main-width;
 	display: flex;
 	align-content: stretch;

@@ -49,10 +49,14 @@
 		margin: .133in 0;
 	}
 
-	p.bank-info {
-		font-size: 8pt;
-		line-height: 1.1;
-		margin: .100in 0;
+	.bank-info {
+		margin: 0 0.5in 0 0;
+
+		p {
+			font-size: 8pt;
+			line-height: 1.1;
+			margin: .100in 0;
+		}
 	}
 
 	.no-print {
@@ -117,6 +121,7 @@
 	}
 
 	h3.certify.certify {
+		// margin-top: 2in;
 		margin-top: 1.25in;
 		margin-bottom: 0;
 		font-size: 24pt;

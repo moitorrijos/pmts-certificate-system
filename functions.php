@@ -44,6 +44,7 @@ require get_template_directory() . '/custom-tax/country-taxonomy.php';
  * Other Includes
  */
 require get_template_directory() . '/includes/ajax-login.php';
+
 require get_template_directory() . '/includes/search_form_remove_admin_bar.php';
 require get_template_directory() . '/includes/add_html5_support.php';
 require get_template_directory() . '/includes/register-nav-menus.php';

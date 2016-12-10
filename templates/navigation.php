@@ -5,6 +5,8 @@
 	$current_user = wp_get_current_user();
 ?>
 <div class="logout">
+
+
 	<a href="<?php echo wp_logout_url( '/panama-certificates' ); ?>" class="logout-button">
 		<?php echo $user_fa; ?>&nbsp; 
 		<span>
@@ -13,6 +15,8 @@
 			<?php echo $signout_fa; ?> 
 		</span>
 	</a>
+
+
 </div>
 
 <div class="navigation">

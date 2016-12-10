@@ -2,6 +2,12 @@
 	
 	<div class="main-content">
 		
+		<?php 
+
+			if ( have_posts() ) : while ( have_posts() ) : the_post() ;
+
+		?>
+
 		<div class="buttons">
 			
 			<a href="<?php echo home_url('panama-quotations'); ?>" class="back-link">
@@ -11,15 +17,11 @@
 
 			</a>
 
-			<?php if ( current_user_can( 'edit_pages' ) ) : ?>
+			<a href="#0" class="edit-quote-button not-link"><i class="fa fa-pencil"></i>
+				
+				Edit Quote
 
-				<a href="#0" class="edit-quote-button not-link"><i class="fa fa-pencil"></i>
-					
-					Edit Quote
-
-				</a>
-
-			<?php endif; ?>
+			</a>
 
 			<a href="#0" class="print-button not-link"><i class="fa fa-print"></i>
 
@@ -40,13 +42,6 @@
 			</a>
 
 		</div>
-
-		<?php 
-
-			if ( have_posts() ) : while ( have_posts() ) : the_post() ;
-
-
-		?>
 
 		<div class="quotation">
 
@@ -158,7 +153,6 @@
 					<tr>
 						<th class="short-number">No.</th>
 						<th class="title">Service Details</th>
-						<!-- <th class="middle-title">Student Name</th> -->
 						<th class="short-number">Quantity</th>
 						<th class="short-number">Unit Price</th>
 						<th class="short-number">Price</th>
@@ -196,10 +190,10 @@
 							<?php endif; ?>
 							<?php echo get_the_title($course->ID); ?>
 							(<?php echo $course->abbr; ?>)
+							<?php if ($is_renewal == "yes"): ?>
+								<b>Renewal</b>
+							<?php endif; ?>
 						</td>
-						<!-- <td>
-							<?php //if ($sub_student) { echo $sub_student; } ?>
-						</td> -->
 						<td class="centered course-quantity" id="service-quantity">
 							<?php echo $quantity ?>
 						</td>
@@ -266,34 +260,8 @@
 					</tr>
 				</tfoot>
 			</table>
-
-			<div class="bank-info">
-				
-
-			</div>
 			
-			<div class="bank-info">
-				<h4>PAYMENT INFORMATION.</h4>
-				<p>
-					<strong>CITIBANK NEW YORK, N.Y.</strong><br>
-					SWIFT CODE: CITIUS33<br>
-					ABA # 021000089<br>
-
-				</p>
-				<p>
-					Credit to:<br>
-					<strong>BANCO GENERAL, S.A. - PANAMA</strong><br>
-					Swift Code: BAGEPAPA<br>
-					Account No.: 10951934<br>
-				</p>
-				<p>
-					Further credit to:<br>
-					PANAMA MARITIME TRAINING SERVICES, INC.<br>
-					BANK ACCOUNT NUMBER:  03-29-01-025184-0<br>
-				</p>
-			</div>
-
-
+			<?php get_template_part( 'templates/bank_info' ); ?>
 
 		</div>
 
