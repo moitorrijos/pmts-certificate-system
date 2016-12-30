@@ -41,6 +41,12 @@
 				
 			</a>
 
+			<a href="#0" class="new-invoice-button"><i class="fa fa-file-text"></i> 
+
+				Create Invoice
+				
+			</a>
+
 		</div>
 
 		<div class="quotation">
@@ -232,18 +238,18 @@
 
 				</tbody>
 				<tfoot>
+					<tr>
+						<td colspan="4" class="total">Sub Total</td>
+						<td id="subtotal" class="centered subtotal-discount"></td>
+					</tr>
 					<?php if (get_field('discount')) : ?>
-						<tr>
-							<td colspan="4" class="total">Sub Total</td>
-							<td id="subtotal-discount" class="centered subtotal-discount"></td>
-						</tr>
 						<tr>
 							<td colspan="4" class="total" >Discount <?php the_field('discount'); ?>%</td>
 							<td id="discount" class="centered discount" data-discount="<?php the_field('discount'); ?>"></td>
 						</tr>
 						<tr>
 							<td colspan="4" class="total">Sub Total with Discount</td>
-							<td id="subtotal" class="centered subtotal"></td>
+							<td id="subtotal-discount" class="centered subtotal"></td>
 						</tr>
 					<?php endif; ?>
 					<?php if ( have_rows('courses') ) : ?>
@@ -265,8 +271,6 @@
 
 		</div>
 
-		<?php if ( current_user_can('edit_pages') ) : ?>
-
 		<div class="edit-quote-form">
 			
 			<?php 
@@ -280,8 +284,6 @@
 			?>
 
 		</div>
-
-		<?php endif; ?>
 
 		<?php endwhile; endif; ?>
 

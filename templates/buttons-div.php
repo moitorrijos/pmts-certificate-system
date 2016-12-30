@@ -31,6 +31,11 @@ function pmtscs_button_value() {
 		$add_value = 'Create New Report';
 		return $add_value;
 
+	} elseif ( is_page_template( 'application-form-page.php' ) ) {
+
+		$add_value = 'Create New Application';
+		return $add_value;
+
 	}
 
 }
@@ -66,7 +71,12 @@ function pmtscs_button_link() {
 		$add_link = '/panama-reports/new-panama-reports/';
 		return $add_link;
 		
-	} 
+	} elseif ( is_page_template( 'application-form-page.php' ) ) {
+
+		$add_link = '/application-forms/new-application-forms/';
+		return $add_link;
+		
+	}
 }
 
 ?>
@@ -75,8 +85,12 @@ function pmtscs_button_link() {
 
 	<a href="#0" class="download-xls-button not-link"><i class="fa fa-download"></i>&nbsp; Download Table to Excel</a>
 
+	<?php if( current_user_can('edit_pages') || is_page_template( 'panama-quotation-page.php' ) ) : ?>
+
 	<a href="<?php echo pmtscs_button_link(); ?>" class="new-certificate-button not-link">
 		<i class="fa fa-plus-square"></i>&nbsp; <?php echo pmtscs_button_value(); ?>
 	</a>
+
+	<?php endif; ?>
 
 </div>

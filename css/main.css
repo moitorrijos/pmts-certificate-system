@@ -689,7 +689,7 @@ form {
 .align-center, .certificate .signature, .report .signature {
   text-align: center; }
 
-a.logout-button, a.new-certificate-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .fill-form-randomly, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
+a.logout-button, a.new-certificate-button, a.new-invoice-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .fill-form-randomly, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
   padding: 4px 22px;
   text-decoration: none;
   color: white;
@@ -706,6 +706,12 @@ a.new-certificate-button {
   background-color: #49C943; }
   a.new-certificate-button:hover {
     background-color: #3cbc36; }
+
+a.new-invoice-button {
+  background-color: #D37A4F;
+  float: right; }
+  a.new-invoice-button:hover {
+    background-color: #ce6b3b; }
 
 .print-button, .search-id-no-button, .change-office-button, a.view-button {
   background-color: #3e94cc; }
@@ -1187,6 +1193,10 @@ table.system {
       width: 175px; }
     .certificate .undies.start-date, .report .undies.start-date {
       margin-left: 45px; }
+    .certificate .undies .register-code, .report .undies .register-code {
+      text-transform: uppercase; }
+  .certificate .passies, .report .passies {
+    text-transform: uppercase; }
   .certificate .uppers, .report .uppers {
     text-transform: uppercase; }
   .certificate .resolution-p, .report .resolution-p {
@@ -1195,6 +1205,10 @@ table.system {
     border-top: 1px solid #556a7b; }
   .certificate .half, .report .half {
     width: 50%; }
+  .certificate .short-half, .report .short-half {
+    width: 40%; }
+  .certificate .long-half, .report .long-half {
+    width: 60%; }
   .certificate .quarter, .report .quarter, .certificate .signature, .report .signature {
     width: 25%; }
   .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes {

@@ -16,6 +16,8 @@ require get_template_directory() . '/post-types/courses.php';
 require get_template_directory() . '/post-types/instructors.php';
 require get_template_directory() . '/post-types/resolutions.php';
 require get_template_directory() . '/post-types/quotations.php';
+require get_template_directory() . '/post-types/invoices.php';
+require get_template_directory() . '/post-types/application-forms.php';
 require get_template_directory() . '/post-types/reports.php';
 require get_template_directory() . '/post-types/quotation-code-title.php';
 require get_template_directory() . '/post-types/reports-code-title.php';
@@ -29,10 +31,10 @@ require get_template_directory() . '/post-types/includes/change-title-lable.php'
 require get_template_directory() . '/acf-custom-fields/certificates-fields.php';
 require get_template_directory() . '/acf-custom-fields/courses-fields.php';
 require get_template_directory() . '/acf-custom-fields/quotations-fields.php';
+require get_template_directory() . '/acf-custom-fields/application-forms-fields.php';
 require get_template_directory() . '/acf-custom-fields/resolutions-fields.php';
 require get_template_directory() . '/acf-custom-fields/reports-fields.php';
 require get_template_directory() . '/acf-custom-fields/instructors-fields.php';
-
 
 /**
  * Custom Taxonomies
@@ -61,5 +63,3 @@ require get_template_directory() . '/includes/my_courses_post_object_results.php
 require get_template_directory() . '/includes/add_leading_zeroes.php';
 require get_template_directory() . '/includes/certificate-exists-validation.php';
 require get_template_directory() . '/includes/custom-pagination.php';
-
-

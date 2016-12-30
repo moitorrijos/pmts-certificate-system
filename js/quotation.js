@@ -27,7 +27,6 @@ var serviceQuanity = parseInt($serviceQuantity.html());
 var courseQuantityArray = [];
 var priceArray = [];
 
-
 $courseQuantity.each(function(){
 	var $this = $(this);
 	courseQuantityArray.push( parseInt( $this.html().trim() ) );
@@ -37,7 +36,6 @@ $servicePriceTotal.each(function(){
 	var $this = $(this);
 	priceArray.push( parseInt( $this.html().trim().replace(/,/g, '').substr(1) ) );
 });
-
 
 function servicePriceInline() {
 	return coursePrice * serviceQuanity;
@@ -67,7 +65,13 @@ $govFee.html( sumTotalGovFee );
 
 var sum = priceArray.reduce(add, 0);
 
-var totalPriceCourse = sum + totalGovFee;
+var $subTotal = $('#subtotal');
+
+var subTotal = sum;
+
+$subTotal.html('$' + parseFloat(sum).toFixed(2));
+
+var totalPriceCourse = subTotal + totalGovFee;
 
 if ( !$('#government-fee').length ) {
 
@@ -77,17 +81,15 @@ if ( !$('#government-fee').length ) {
 
 if ( $('#discount').length && $('#subtotal').length ) {
 	var $subTotalDiscount = $('#subtotal-discount');
-	var $subTotal = $('#subtotal');
 	var $discount = $('#discount');
-	//var discount = parseInt( $('#discount').html() );
 	var discount = $discount.data('discount');
 	var discountSubTotal = ( sum * (discount / 100) );
-	var subTotal = sum - ( sum * (discount / 100));
-	var grandTotalPrice = subTotal + totalGovFee;
+	var subTotalDiscount = sum - ( sum * (discount / 100));
+	var grandTotalPrice = subTotalDiscount + totalGovFee;
+	//$subTotal.html('$' + numberWithCommas( parseFloat(subTotalDiscount).toFixed(2) ) );
 
-	$subTotalDiscount.html('$' + numberWithCommas( parseFloat(sum).toFixed(2) ) );
+	$subTotalDiscount.html('$' + numberWithCommas( parseFloat(subTotalDiscount).toFixed(2) ) );
 	$discount.html('-$' + numberWithCommas( parseFloat(discountSubTotal).toFixed(2) ) );
-	$subTotal.html('$' + numberWithCommas( parseFloat(subTotal).toFixed(2) ) );
 	$totalPrice.html('$' + numberWithCommas( parseFloat(grandTotalPrice).toFixed(2) ) );
 
 } else {
@@ -95,8 +97,6 @@ if ( $('#discount').length && $('#subtotal').length ) {
 	$totalPrice.html('$' + numberWithCommas( parseFloat(totalPriceCourse).toFixed(2) ) );
 
 }
-
-
 
 $quoteTbody.find('td.numbers-col').each( function( item ){
 	$(this).text( item + 1 );

@@ -85,6 +85,15 @@
 		&.start-date {
 			margin-left: 45px;
 		}
+
+		.register-code {
+			text-transform: uppercase;
+		}
+
+	}
+	
+	.passies {
+		text-transform: uppercase;
 	}
 
 	.uppers {
@@ -102,6 +111,18 @@
 
 	.half {
 		width: 50%;
+
+		&.long {
+			
+		}
+	}
+
+	.short-half {
+		width: 40%;
+	}
+
+	.long-half {
+		width: 60%;
 	}
 
 	.quarter {
@@ -120,6 +141,8 @@
 	.three-stars {
 		letter-spacing: 2px;
 	}
+
+
 
 	.signature {
 		@extend .to-right;

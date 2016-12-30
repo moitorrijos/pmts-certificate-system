@@ -7,7 +7,7 @@
 		"uuidString": "C0C0AF90-40CA-404E-9387-2CAFCEAACD89"
 		}
 	],
-"creatorBuild": "25444",
+"creatorBuild": "25479",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -121,6 +121,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/custom-tax\/office-taxonomy.php",
+		"oF": 0
+		},
+	"\/custom-tax\/training-place-taxonomy.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/custom-tax\/training-place-taxonomy.php",
 		"oF": 0
 		},
 	"\/favicon.ico": {
@@ -760,6 +766,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/fill-deck-courses.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/fill-deck-courses-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/form-data-localstorage.js": {
 		"ft": 64,
 		"mi": 1,
@@ -864,6 +879,15 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/js\/min\/min\/download-xls-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/min\/fill-deck-courses-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/min\/fill-deck-courses-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1266,6 +1290,12 @@
 		"oAP": "\/post-types\/admin-columns\/custom-admin-columns-courses.php",
 		"oF": 0
 		},
+	"\/post-types\/application-forms.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/post-types\/application-forms.php",
+		"oF": 0
+		},
 	"\/post-types\/certificates-post-title.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -1324,6 +1354,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/post-types\/instructors.php",
+		"oF": 0
+		},
+	"\/post-types\/invoices.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/post-types\/invoices.php",
 		"oF": 0
 		},
 	"\/post-types\/offices.php": {
@@ -2531,6 +2567,10 @@
 			"active": 0,
 			"optionString": "{'properties': 'always'}"
 			},
+		"capitalized-comments": {
+			"active": 0,
+			"optionString": "'always', {'ignoreInlineComments': false, 'ignoreConsecutiveComments': false}"
+			},
 		"class-methods-use-this": {
 			"active": 0,
 			"optionString": "{'exceptMethods': []}"
@@ -2694,6 +2734,10 @@
 		"max-statements": {
 			"active": 0,
 			"optionString": "{'max': 10}, {'ignoreTopLevelFunctions': true}"
+			},
+		"max-statements-per-line": {
+			"active": 0,
+			"optionString": "{'max': 1}"
 			},
 		"multiline-ternary": {
 			"active": 0,
@@ -3059,6 +3103,10 @@
 			"active": 0,
 			"optionString": "'except-parens'"
 			},
+		"no-return-await": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-script-url": {
 			"active": 0,
 			"optionString": ""
@@ -3290,6 +3338,10 @@
 		"radix": {
 			"active": 0,
 			"optionString": "'always'"
+			},
+		"require-await": {
+			"active": 0,
+			"optionString": ""
 			},
 		"require-jsdoc": {
 			"active": 0,
@@ -4123,6 +4175,10 @@
 			},
 		"space-colon": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"support-ie8": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"toplevel": {

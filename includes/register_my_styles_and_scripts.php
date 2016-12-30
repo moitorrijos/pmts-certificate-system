@@ -74,11 +74,17 @@ function register_my_styles_and_scripts() {
 
 	}
 
-	/*if ( is_page( array( 8, 208 ) ) ) {
+	// if ( is_page_template( 'new_panama_quotation.php' ) ) {
 
-		wp_enqueue_script( 'reload_js', THEMEROOT . '/js/reload-page.js', array(), '20160405', true );
-	
-	}*/
+	// 	wp_enqueue_script( 'fill_deck_courses', THEMEROOT . '/js/fill-deck-courses.js', array('jquery'), '20161220', true );
+
+	// 	wp_localize_script( 'fill_deck_courses', 'fill_deck_object', array(
+	// 			'ajaxurl'	=> admin_url( 'admin-ajax.php' ),
+				
+	// 		) 
+	// 	);
+
+	// }
 
 }
 

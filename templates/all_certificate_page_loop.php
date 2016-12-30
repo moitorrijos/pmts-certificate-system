@@ -1,14 +1,4 @@
-<?php 
 
-$current_user_id = get_current_user_id(); 
-
-if ( $current_user_id == 13 ) {
-
-	die();
-
-}
-
-?>
 
 <div class="main">
 
@@ -42,29 +32,26 @@ if ( $current_user_id == 13 ) {
 
 			$all_certs_args = array( 
 				'post_type' 		=> 'certificates',
-				'posts_per_page' 	=> -1,
+				// 'posts_per_page' 	=> -1,
 				'posts_per_page' 	=> 75,
 				'meta_key' 			=> 'date_of_issuance',
 				'orderby'			=> 'meta_value_num',
 				'order'				=> 'DESC',
 				'paged'				=> $cert_paged,
-				'tax_query'			=> array( 
-					array(
-						'taxonomy' 	=> 'office', 
-						'field' 	=> 'name', 
-						'terms' 	=> 'Panama'
-						)
-				),
-				'meta_query'		=> array(
-					array(
-						'key'	=> 'date_of_issuance',
-						'value'	=> array(20161001, 20161031),
-						'compare' => 'BETWEEN',
-					),
-					// array(
-					// 	'key'	=> 'course'
-					// )
-				),
+				// 'tax_query'			=> array( 
+				// 	array(
+				// 		'taxonomy' 	=> 'office', 
+				// 		'field' 	=> 'name', 
+				// 		'terms' 	=> 'Panama'
+				// 		)
+				// ),
+				// 'meta_query'		=> array(
+				// 	array(
+				// 		'key'	=> 'date_of_issuance',
+				// 		'value'	=> array(20161101, 20161130),
+				// 		'compare' => 'BETWEEN',
+				// 	),
+				// ),
 
 			);
 

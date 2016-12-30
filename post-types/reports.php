@@ -31,7 +31,7 @@ function reports_post_type() {
 		'filter_items_list'     => __( 'Filter reports list', 'certificate-system' ),
 	);
 	$reports_post_args = array(
-		'label'                 => __( 'Report', 'certificate-system' ),
+		'label'                 => __( 'Reports', 'certificate-system' ),
 		'description'           => __( 'Reports Description', 'certificate-system' ),
 		'public'            => true,
 		'hierarchical'      => false,

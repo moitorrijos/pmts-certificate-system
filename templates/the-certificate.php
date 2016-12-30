@@ -19,8 +19,6 @@
 
 				</a>
 
-			<?php endif; ?>
-
 			<a href="#0" class="print-button not-link"><i class="fa fa-print"></i>
 
 				Print Certificate
@@ -38,6 +36,8 @@
 				Create New Certificate
 				
 			</a>
+
+			<?php endif; ?>
 
 		</div>
 
@@ -118,7 +118,7 @@
 
 					Participant's Passport / ID No.:
 
-					<span class="undies"> 
+					<span class="undies passies"> 
 					<span class="three-stars">***</span> 
 				 	<?php echo the_field('passport_id'); ?>
 				 	<span class="three-stars">***</span> 
@@ -168,7 +168,9 @@
 
 						<span class="undies">
 							<span>***</span> 
-							<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . $leading_zero . $register_code; ?>
+							<span class="register-code">
+								<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . $leading_zero . $register_code; ?>
+							</span>
 							<span>***</span> 
 						</span>                 
 
@@ -216,57 +218,125 @@
 
 			</div>
 
-			<?php if ($office->name === 'Panama') : ?>
-
-				<div class="full dates">
+			<div class="full dates">
+				
+				<div class="half">
 					
-					<div class="half">
-						
-		                <p class="short">Start Course Date:
+	                <p class="short">Start Course Date:
 
-							<span class="undies bottom start-date"><?php echo $start_date->format('d F Y'); ?></span>
+						<span class="undies bottom start-date"><?php echo $start_date->format('d F Y'); ?></span>
 
-						</p>
-
-					</div>
-
-					<div class="half">
-						
-						<p class="short">
-
-							End Course Date:
-
-							<span class="undies bottom end-date"><?php echo $end_date->format('d F Y'); ?></span>
-
-						</p>
-						
-					</div>
+					</p>
 
 				</div>
 
-			<?php endif; ?>
-
-			<div class="full">
-				
 				<div class="half">
 					
 					<p class="short">
 
-						Course Delivery Mode:
+						End Course Date:
 
-						<span class="undies bottom delivery-mode">In Classroom</span>
+						<span class="undies bottom end-date"><?php echo $end_date->format('d F Y'); ?></span>
 
 					</p>
 					
 				</div>
 
-				<div class="half">
+			</div>
+
+			<div class="full">
+				
+				<div class=" 
+					<?php 
+
+						if (get_field('delivery_mode') == 'On Board') {
+
+							echo 'short-half';
+
+						} else {
+
+							echo 'half';
+
+						} ?>"
+
+				>
+					
+					<p class="short">
+
+						Course Delivery Mode:
+
+						<span class="undies delivery-mode
+
+							<?php 
+
+							if (get_field('delivery_mode') == 'On Board') {
+
+								echo '';
+
+							} else {
+
+								echo 'bottom';
+
+							} ?>
+
+						">
+							
+							<?php 
+
+								if ( get_field('delivery_mode') ) {
+
+									the_field('delivery_mode'); 
+
+								} else {
+
+									echo 'In Classroom';
+									
+								}
+
+
+							?>
+								
+						</span>
+
+					</p>
+					
+				</div>
+
+				<div class="
+
+					<?php 
+
+						if (get_field('delivery_mode') == 'On Board') {
+
+							echo 'long-half';
+
+						} else {
+
+							echo 'half';
+
+						} ?>"
+
+				">
 					
 					<p class="short">
 
 						Place of Training:
 
-						<span class="undies bottom place-of-training"><?php echo $office->name; ?></span>
+						<span class="undies place-of-training
+
+						<?php 
+
+						if (get_field('delivery_mode') == 'On Board') {
+
+							echo '';
+
+						} else {
+
+							echo 'bottom';
+
+						} ?>
+
+						"><?php echo $office->name; ?></span>
 
 					</p>
 					

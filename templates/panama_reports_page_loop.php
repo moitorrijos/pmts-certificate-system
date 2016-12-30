@@ -64,9 +64,11 @@
 					<td class="centered">
 						<?php echo $date_of_course->format('j F, Y'); ?>
 					</td>
+					<?php if ( current_user_can('edit_pages') ) : ?>
 					<td class="centered edit">
 						<a href="<?php echo the_permalink(); ?>/#acf-form" class="edit-form"><?php echo $edit; ?></a>
 					</td>
+					<?php endif; ?>
 				</tr>
 
 				<?php endwhile; ?>

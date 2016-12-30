@@ -1,7 +1,5 @@
 <?php get_template_part('templates/search_by_id_no_form'); ?>
 
-<?php get_template_part('templates/change_office_div'); ?>
-
 <div class="main">
 
 	<div class="main-content">

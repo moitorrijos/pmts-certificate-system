@@ -40,6 +40,8 @@ function save_post_course_id( $post_id ) {
 
 		$total_india_certificates = get_field('total_india_certificates', $course->ID);
 
+		$total_ob_certificates = get_field('total_ob_certificates', $course->ID);
+
 		/**
 		 * Switch Case for certificate register code
 		 * This adds one to total certificate according to the office number and course taken.
@@ -82,14 +84,8 @@ function save_post_course_id( $post_id ) {
 				break;
 			
 			default:
-				function doer_of_stuff() {
-				    return new WP_Error( 'broke', __( "There was a Server issue please contact administrator.", "certificate_system" ) );
-				}
-
-				$return = doer_of_stuff();
-				if( is_wp_error( $return ) ) {
-				    echo $return->get_error_message();
-				}
+				update_field('total_ob_certificates', $total_ob_certificates+1, $course->ID);
+				update_post_meta($post_id, 'register_code', $total_ob_certificates+1);
 				break;
 		}
 

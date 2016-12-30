@@ -281,6 +281,17 @@ a.new-certificate-button {
 	}
 }
 
+a.new-invoice-button {
+	@extend %cool-button;
+	background-color: $cool-orange;
+
+	float: right;
+
+	&:hover {
+		background-color: darken($cool-orange, 5%);
+	}
+}
+
 .print-button {
 	@extend %cool-button;
 	background-color: $pmts-blue;

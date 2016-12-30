@@ -31,7 +31,9 @@
 					<th class="short-number">Price Foreign New</th>
 					<th class="short-number">F-TI</th>
 					<th class="short-number">Total Certificates</th>
+					<?php if ( current_user_can('edit_pages') ) : ?>
 					<th class="short-number">Edit</th>
+					<?php endif; ?>
 				</tr>
 			</thead>
 
@@ -87,9 +89,11 @@
 					</td>
 					<td class="centered"><?php the_field('f_ti'); ?></td>
 					<td class="centered"><?php the_field('total_certificates'); ?></td>
+					<?php if ( current_user_can('edit_pages') ) : ?>
 					<td class="centered edit">
 						<a href="<?php echo the_permalink(); ?>/" class="edit-form"><?php echo $edit; ?></a>
 					</td>
+					<?php endif; ?>
 				</tr>
 
 				<?php endwhile; else : ?>

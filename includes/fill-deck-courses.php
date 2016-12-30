@@ -1,5 +1,18 @@
 <?php
 
+// add_action( 'wp_ajax_fill_deck_courses', 'ajax_fill_deck_courses' );
+
+// function ajax_fill_deck_courses() {
+
+// 	$row = array(
+// 		'course_name' 	=> get_the_title( 92 ),
+// 		'quantity'		=> 1,
+// 	);
+
+
+// 	return wp_send_json_success( 'Hello' );
+
+// }
 
 function fill_deck_courses( $field ) {
 
@@ -13,8 +26,7 @@ function fill_deck_courses( $field ) {
 				array( 'field_56e04a980c978' => 91 ),
 				array( 'field_56e04a980c978' => 96 ),
 				array( 'field_56e04a980c978' => 69 ),
-				array( 'field_56e04a980c978' => 70 ),
-				array( 'field_56e04a980c978' => 61 ),
+				array( 'field_56e04a980c978' => 62 ),
 
 			);
 
