@@ -21,6 +21,7 @@ require get_template_directory() . '/post-types/application-forms.php';
 require get_template_directory() . '/post-types/reports.php';
 require get_template_directory() . '/post-types/quotation-code-title.php';
 require get_template_directory() . '/post-types/reports-code-title.php';
+require get_template_directory() . '/post-types/application-form-code-title.php';
 require get_template_directory() . '/post-types/certificates-post-title.php';
 require get_template_directory() . '/post-types/admin-columns/custom-admin-columns-courses.php';
 require get_template_directory() . '/post-types/includes/change-title-lable.php';
