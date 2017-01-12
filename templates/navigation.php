@@ -9,8 +9,8 @@
 
 	<a href="<?php echo wp_logout_url( '/panama-certificates' ); ?>" class="logout-button">
 		<?php echo $user_fa; ?>&nbsp; 
-		<span>
-			Hi <?php echo $current_user->display_name; ?>
+		Hi <?php echo $current_user->display_name; ?>
+		<span class="click-logout">
 			Click to Logout
 			<?php echo $signout_fa; ?> 
 		</span>

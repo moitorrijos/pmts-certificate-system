@@ -230,6 +230,12 @@ form {
 	width: 60%;
 }
 
+.click-logout {
+	@media only screen and (max-width: 1280px) {
+		display: block;
+	}
+}
+
 .buttons {
 	margin: 16px 0 48px;
 
@@ -266,6 +272,11 @@ a.logout-button {
 	@extend %cool-button;
 	background-color: lighten(desaturate($logout-red, 15%), 15%);
 	padding: 12px 22px;
+
+	@media only screen and (max-width: 1280px) {
+		text-align: center;
+		font-size: 12px;
+	}
 
 	&:hover {
 		background-color: darken($logout-red, 5%);

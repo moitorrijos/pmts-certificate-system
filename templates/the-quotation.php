@@ -41,11 +41,15 @@
 				
 			</a>
 
-			<a href="#0" class="new-invoice-button"><i class="fa fa-file-text"></i> 
+			<?php if ( current_user_can( 'edit_pages' ) ) : ?>
 
-				Create Invoice
-				
-			</a>
+				<a href="#0" class="new-invoice-button"><i class="fa fa-file-text"></i> 
+
+					Create Invoice
+					
+				</a>
+
+			<?php endif; ?>
 
 		</div>
 

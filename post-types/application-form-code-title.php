@@ -11,7 +11,7 @@ function modify_application_code( $data , $postarr )
 
         if ($published_applications == 0) {
 
-            $data['post_title'] = 'PMTS/APP/' . date('Y') . '/' . '111' ;
+            $data['post_title'] = 'PMTS/APF/' . date('Y') . '/' . '111' ;
 
         } else {
         	 $args = array(

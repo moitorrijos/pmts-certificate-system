@@ -27,6 +27,9 @@
 
 		if ( $application_forms->have_posts() ) :
 
+			
+
+
 	 	?>
 
 		<table class="system">
@@ -45,12 +48,49 @@
 			</thead>
 			<tbody>
 				
-				<?php while ( $application_forms->have_posts() ) : $application->the_post(); ?>
+				<?php 
+
+					while ( $application_forms->have_posts() ) : 
+
+						$application_forms->the_post(); 
+						
+						$participants_name = get_field('participants_name_app');
+
+						$participants_id = get_field('passport_id_app');
+
+				?>
 
 					<tr>
-						<td>Hello</td>
-						<td class="centered">Hello</td>
-						<td class="centered">Hello</td>
+						<td>
+							<a href="<?php the_permalink(); ?>">
+								<?php echo $participants_name; ?>
+							</a>
+						</td>
+						<td class="centered">
+							<?php echo $participants_id; ?>
+						</td>
+						<td class="centered">
+							<a href="<?php echo the_permalink(); ?>">
+								<?php echo the_title(); ?>
+							</a>
+						</td>
+						<td class="centered">
+							<?php 
+
+								if ( have_rows('courses_app') ) : 
+
+								while( have_rows('courses_app') ) : the_row(); 
+								
+								$courses = get_sub_field('course_name_app');
+
+								if (get_row_index() != 1) { echo ', '; }
+
+								echo $courses->abbr;
+
+								endwhile; endif;
+							?>
+
+						</td>
 						<?php if ( current_user_can( 'edit_pages' ) ) : ?>
 							<td class="centered edit">Edit</td>
 						<?php endif; ?>

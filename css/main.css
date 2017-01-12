@@ -433,7 +433,7 @@ th {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
-.back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .payment-info, .report .amp-logo-text, .report .report-full {
+.back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .application-form .full, .report .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .payment-info, .report .amp-logo-text, .report .report-full {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -673,6 +673,10 @@ form {
 .navigation {
   width: 60%; }
 
+@media only screen and (max-width: 1280px) {
+  .click-logout {
+    display: block; } }
+
 .buttons {
   margin: 16px 0 48px; }
   .buttons a.back-link {
@@ -686,7 +690,7 @@ form {
 .align-right {
   text-align: right; }
 
-.align-center, .certificate .signature, .report .signature {
+.align-center, .certificate .signature, .application-form .signature, .report .signature {
   text-align: center; }
 
 a.logout-button, a.new-certificate-button, a.new-invoice-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .fill-form-randomly, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
@@ -699,6 +703,10 @@ a.logout-button, a.new-certificate-button, a.new-invoice-button, .print-button, 
 a.logout-button {
   background-color: #ed2121;
   padding: 12px 22px; }
+  @media only screen and (max-width: 1280px) {
+    a.logout-button {
+      text-align: center;
+      font-size: 12px; } }
   a.logout-button:hover {
     background-color: #a80000; }
 
@@ -1162,68 +1170,70 @@ table.system {
   letter-spacing: -1px;
   text-transform: capitalize; }
 
-.certificate, .report {
+.certificate, .application-form, .report {
   position: relative;
   font-size: 1.2rem;
   padding: 0 36px; }
   @media screen and (min-width: 1200px) {
-    .certificate, .report {
+    .certificate, .application-form, .report {
       margin: 0 48px; } }
-  .certificate p, .report p, .certificate ul, .report ul, .certificate ol, .report ol {
+  .certificate p, .application-form p, .report p, .certificate ul, .application-form ul, .report ul, .certificate ol, .application-form ol, .report ol {
     font-family: "texgyreadventoritalic";
     margin: 40px 0 32px; }
-  .certificate .short.short, .report .short.short {
+  .certificate .short.short, .application-form .short.short, .report .short.short {
     margin-top: 0; }
-  .certificate .boldies, .report .boldies, .certificate .undies, .report .undies, .certificate .overies, .report .overies, .certificate .signature, .report .signature {
+  .certificate .boldies, .application-form .boldies, .report .boldies, .certificate .undies, .application-form .undies, .report .undies, .certificate .overies, .application-form .overies, .report .overies, .certificate .signature, .application-form .signature, .report .signature {
     font-family: "texgyreadventorbold_italic"; }
-  .certificate .paddies, .report .paddies {
+  .certificate .paddies, .application-form .paddies, .report .paddies {
     margin-right: 12px; }
-  .certificate .unpaddies, .report .unpaddies {
+  .certificate .unpaddies, .application-form .unpaddies, .report .unpaddies {
     font-family: "texgyreadventorbold_italic"; }
-  .certificate .undiesunpaddies, .report .undiesunpaddies {
+  .certificate .undiesunpaddies, .application-form .undiesunpaddies, .report .undiesunpaddies {
     font-family: "texgyreadventorbold_italic";
     border-bottom: 1px solid #556a7b; }
-  .certificate .undies, .report .undies {
+  .certificate .undies, .application-form .undies, .report .undies {
     border-bottom: 1px solid #556a7b;
     display: inline-block;
     text-align: center;
     margin-left: 14px;
     padding: 0 20px 2px; }
-    .certificate .undies.bottom, .report .undies.bottom {
+    .certificate .undies.bottom, .application-form .undies.bottom, .report .undies.bottom {
       width: 175px; }
-    .certificate .undies.start-date, .report .undies.start-date {
+    .certificate .undies.start-date, .application-form .undies.start-date, .report .undies.start-date {
       margin-left: 45px; }
-    .certificate .undies .register-code, .report .undies .register-code {
+    .certificate .undies .register-code, .application-form .undies .register-code, .report .undies .register-code {
       text-transform: uppercase; }
-  .certificate .passies, .report .passies {
+  .certificate .passies, .application-form .passies, .report .passies {
     text-transform: uppercase; }
-  .certificate .uppers, .report .uppers {
+  .certificate .uppers, .application-form .uppers, .report .uppers {
     text-transform: uppercase; }
-  .certificate .resolution-p, .report .resolution-p {
+  .certificate .resolution-p, .application-form .resolution-p, .report .resolution-p {
     text-align: justify; }
-  .certificate .overies, .report .overies, .certificate .signature, .report .signature {
+  .certificate .overies, .application-form .overies, .report .overies, .certificate .signature, .application-form .signature, .report .signature {
     border-top: 1px solid #556a7b; }
-  .certificate .half, .report .half {
+  .certificate .half, .application-form .half, .report .half {
     width: 50%; }
-  .certificate .short-half, .report .short-half {
+  .certificate .short-half, .application-form .short-half, .report .short-half {
     width: 40%; }
-  .certificate .long-half, .report .long-half {
+  .certificate .long-half, .application-form .long-half, .report .long-half {
     width: 60%; }
-  .certificate .quarter, .report .quarter, .certificate .signature, .report .signature {
+  .certificate .quarter, .application-form .quarter, .report .quarter, .certificate .signature, .application-form .signature, .report .signature {
     width: 25%; }
-  .certificate .full, .report .full, .certificate .certificate-codes, .report .certificate-codes {
+  .certificate .thirds, .application-form .thirds, .report .thirds {
+    width: 33%; }
+  .certificate .full, .application-form .full, .report .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
-  .certificate .to-right, .report .to-right, .certificate .signature, .report .signature {
+  .certificate .to-right, .application-form .to-right, .report .to-right, .certificate .signature, .application-form .signature, .report .signature {
     float: right; }
-  .certificate .three-stars, .report .three-stars {
+  .certificate .three-stars, .application-form .three-stars, .report .three-stars {
     letter-spacing: 2px; }
-  .certificate .signature, .report .signature {
+  .certificate .signature, .application-form .signature, .report .signature {
     margin-bottom: 40px;
     display: none; }
 
-.certificate-codes.certificate-codes .boldies.boldies, .certificate-codes.certificate-codes .certificate .undies, .certificate .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .report .undies, .report .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .certificate .overies, .certificate .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .report .overies, .report .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .certificate .signature, .certificate .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .report .signature, .report .certificate-codes.certificate-codes .signature {
+.certificate-codes.certificate-codes .boldies.boldies, .certificate-codes.certificate-codes .certificate .undies, .certificate .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .application-form .undies, .application-form .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .report .undies, .report .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .certificate .overies, .certificate .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .application-form .overies, .application-form .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .report .overies, .report .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .certificate .signature, .certificate .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .application-form .signature, .application-form .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .report .signature, .report .certificate-codes.certificate-codes .signature {
   font-family: 'britannic-bold'; }
 
 .certificate-codes.certificate-codes p {
@@ -1304,6 +1314,9 @@ ul.pagination {
 .other-certificates {
   padding: 10px;
   display: none; }
+
+.application-form h2 {
+  text-align: center; }
 
 ul.fill-courses-dropdown {
   list-style: none;
@@ -1561,14 +1574,14 @@ table.referer-info {
     margin: 0.175in 0; }
     .participant-name.participant-name span.stars {
       font-size: 28pt; }
-  .certificate, .report {
+  .certificate, .application-form, .report {
     padding: 0 0.5in;
     width: 8in;
     height: 10.5in;
     margin: 0 auto;
     overflow: hidden;
     position: relative; }
-    .certificate p, .report p {
+    .certificate p, .application-form p, .report p {
       margin: 0.2in 0; }
   .short.short {
     margin: 0 0 0.25in; }

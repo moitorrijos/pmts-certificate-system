@@ -15,6 +15,12 @@
 		"oAP": "\/.gitignore",
 		"oF": 0
 		},
+	"\/acf-custom-fields\/application-forms-fields.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/acf-custom-fields\/application-forms-fields.php",
+		"oF": 0
+		},
 	"\/acf-custom-fields\/certificates-fields.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -55,6 +61,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/acf-v4\/front-end-form.php",
+		"oF": 0
+		},
+	"\/application-form-page.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/application-form-page.php",
 		"oF": 0
 		},
 	"\/certificate_tr.php": {
@@ -1096,6 +1108,12 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/new_application_form_page.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/new_application_form_page.php",
+		"oF": 0
+		},
 	"\/new_panama_certificate.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -1288,6 +1306,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/post-types\/admin-columns\/custom-admin-columns-courses.php",
+		"oF": 0
+		},
+	"\/post-types\/application-form-code-title.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/post-types\/application-form-code-title.php",
 		"oF": 0
 		},
 	"\/post-types\/application-forms.php": {
@@ -1774,6 +1798,12 @@
 		"oAP": "\/searchpage.php",
 		"oF": 0
 		},
+	"\/single-applications.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/single-applications.php",
+		"oF": 0
+		},
 	"\/single-certificates.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -1836,6 +1866,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/all_certificate_page_loop.php",
+		"oF": 0
+		},
+	"\/templates\/application_form_loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/application_form_loop.php",
 		"oF": 0
 		},
 	"\/templates\/bank_info.php": {
@@ -1952,6 +1988,12 @@
 		"oAP": "\/templates\/navigation.php",
 		"oF": 0
 		},
+	"\/templates\/new_application_form_loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/new_application_form_loop.php",
+		"oF": 0
+		},
 	"\/templates\/new_panama_certificate_loop.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -2046,6 +2088,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/search_student_form.php",
+		"oF": 0
+		},
+	"\/templates\/the-application.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/the-application.php",
 		"oF": 0
 		},
 	"\/templates\/the-certificate.php": {

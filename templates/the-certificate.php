@@ -75,27 +75,6 @@
 
 			$register_code =  get_post_meta(get_the_ID(), 'register_code', true);
 
-			if ( $register_code > 9999 ) {
-
-				$leading_zero = '';
-
-			} elseif ( $register_code > 999 && $register_code <= 9999 ) {
-
-				$leading_zero = '0';
-
-			} elseif ( $register_code > 99 && $register_code <= 999 ) {
-
-				$leading_zero = '00';
-
-			} elseif ( $register_code > 9 && $register_code <= 99 ) {
-
-				$leading_zero = '000';
-
-			} else {
-
-				$leading_zero = '0000';
-			}
-
 		?>
 
 		<div class="certificate">
@@ -169,7 +148,7 @@
 						<span class="undies">
 							<span>***</span> 
 							<span class="register-code">
-								<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . $leading_zero . $register_code; ?>
+								<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . add_leading_zeroes($register_code) . $register_code; ?>
 							</span>
 							<span>***</span> 
 						</span>                 

@@ -7,8 +7,7 @@
 		<?php 
 
 			get_template_part('templates/buttons-div');
-			get_template_part('templates/search-bar');
-
+			
 			// $instructor = 'Rapitis Georgios';
 			// $course = 'Proficiency in Personal Survival Techniques';
 

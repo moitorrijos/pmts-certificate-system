@@ -129,6 +129,10 @@
 		width: 25%;
 	}
 
+	.thirds {
+		width: 33%;
+	}
+
 	.full {
 		@extend %flexbox-box;
 		justify-content: space-between;
@@ -272,4 +276,12 @@ ul.pagination {
 .other-certificates {
 	padding: 10px;
 	display: none;
+}
+
+.application-form {
+	@extend .certificate;
+
+	h2 {
+		text-align: center;
+	}
 }

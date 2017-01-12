@@ -33,23 +33,38 @@
 			$all_certs_args = array( 
 				'post_type' 		=> 'certificates',
 				// 'posts_per_page' 	=> -1,
-				'posts_per_page' 	=> 75,
-				'meta_key' 			=> 'date_of_issuance',
-				'orderby'			=> 'meta_value_num',
+				'posts_per_page' 	=> 55,
+				// 'meta_key' 			=> 'date_of_issuance',
+				// 'orderby'			=> 'meta_value_num',
 				'order'				=> 'DESC',
 				'paged'				=> $cert_paged,
-				// 'tax_query'			=> array( 
+				'tax_query'			=> array( 
+					array(
+						'taxonomy' 	=> 'office', 
+						'field' 	=> 'name', 
+						'terms' 	=> 'Panama'
+						)
+				),
+				'meta_query'		=> array(
+					array(
+						'key'	=> 'date_of_issuance',
+						'value'	=> array(20161201, 20161231),
+						'compare' => 'BETWEEN',
+					),
+				),
+				// 'date_query'	=> array(
 				// 	array(
-				// 		'taxonomy' 	=> 'office', 
-				// 		'field' 	=> 'name', 
-				// 		'terms' 	=> 'Panama'
-				// 		)
-				// ),
-				// 'meta_query'		=> array(
-				// 	array(
-				// 		'key'	=> 'date_of_issuance',
-				// 		'value'	=> array(20161101, 20161130),
-				// 		'compare' => 'BETWEEN',
+				// 		'after' => array(
+				// 			'year'	=> 2017,
+				// 			'month'	=> 1,
+				// 			'day'	=> 4,
+				// 		),
+				// 		'before' => array(
+				// 			'year' => 2017,
+				// 			'month' => 1,
+				// 			'day' => 5,
+				// 		),
+				// 		'inclusive' => true,
 				// 	),
 				// ),
 
