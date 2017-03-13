@@ -285,3 +285,13 @@ ul.pagination {
 		text-align: center;
 	}
 }
+
+.blackies {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.reddy {
+	background-color: lighten($logout-red, 25%);
+	color: white;
+}

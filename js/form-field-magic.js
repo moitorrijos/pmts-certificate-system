@@ -11,13 +11,13 @@ var $endDateField = $('#acf-field_56130098acfc9'),
 $endDateField.parent('div').on('change', function(){
 
 	var endDate = $endDateField.val();
+	console.log(endDate);
 	$issueDateField.val(endDate);
-	$issueDateField.next('input').val( moment(endDate).format('MMMM D, YYYY') );
+	$issueDateField.next('input').val( moment(endDate).format('D MMMM YYYY') );
 
 });
 
 function capitalizeFirstLetter(string) {
-	// var stringArray = ;
 	return string.split(' ').map(function(word){
 		if ( word.toLowerCase() === 'of' || word.toLowerCase() === 'and' || word.toLowerCase === 'the' ) {
 			return word.toLowerCase();

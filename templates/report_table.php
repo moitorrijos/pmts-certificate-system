@@ -1,7 +1,5 @@
 <?php 
 
-	//var_dump($course_date->format('Ymd')); die();
-
 	$filter_certs_args = array(
 
 		'post_type'		=> 'certificates',

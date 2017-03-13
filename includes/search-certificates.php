@@ -31,6 +31,7 @@ function pmtscs_ajax_search_certificates() {
 
 		$cert_ids_args = array(
 			'post_type' => 'certificates',
+			'posts_per_page' 	=> -1,
 			'meta_key' 	=> 'date_of_issuance',
 			'orderby'	=> 'meta_value_num',
 			'order'		=> 'DESC',

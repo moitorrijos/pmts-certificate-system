@@ -45,14 +45,14 @@
 						'terms' 	=> 'Panama'
 						)
 				),
-				'meta_query'		=> array(
-					array(
-						'key'	=> 'date_of_issuance',
-						'value'	=> array(20161201, 20161231),
-						'compare' => 'BETWEEN',
-					),
-				),
-				// 'date_query'	=> array(
+				// 'meta_query'		=> array(
+				// 	array(
+				// 		'key'	=> 'date_of_issuance',
+				// 		'value'	=> array(20170201, 20170228),
+				// 		'compare' => 'BETWEEN',
+				// 	),
+				// ),
+				// // 'date_query'	=> array(
 				// 	array(
 				// 		'after' => array(
 				// 			'year'	=> 2017,

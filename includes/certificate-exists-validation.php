@@ -11,11 +11,9 @@ function cert_exists_validate_value( $valid ){
 
 	$template_string = str_replace($template_dir, '', $page_template);
 
-	// var_dump( $_POST['acf'] ); die();
-
 	$template_string = str_replace($template_dir, '', $page_template);
 
-	// Bail early if the certificate is in edit mode.
+	// if User is Editing certificate don't do anything.
 	if ( $template_string != '/new_panama_certificate.php' ) {
 
 		return $valid;
@@ -32,6 +30,11 @@ function cert_exists_validate_value( $valid ){
 	$student_passport = $_POST['acf']['field_5612fe8fe2a39'];
 	$course_id = $_POST['acf']['field_5612ff11fdc34'];
 	
+	/**
+	 * Check all certificates with the the course provided
+	 * if this certificate already has the passport/id provided
+	 * return an error.
+	 */
 	$certificate_exists = get_posts(array(
 		'post_type' => 'certificates',
 		'meta_query' => array(

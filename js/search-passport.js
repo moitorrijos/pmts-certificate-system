@@ -14,11 +14,15 @@ var $searchByIdNoForm = $('#search-by-id-no'),
 	$studentNationality = $('input#acf-field_5728ffb5d7616'),
 	$otherCertificates = $('.other-certificates'),
 	$otherCertificatesTable = $('table.other-certificates-table'),
-	// $startDateInput = $('input#acf-field_56130060acfc8'),
-	// $endDateInput = $('input#acf-field_56130098acfc9'),
-	// $dateOfIssuance = $('input#acf-field_5619b16e70c02'),
 	$errorMessage = $('.error-message'),
-	$searchSpinner = $('span.search-spinner');
+	$searchSpinner = $('span.search-spinner'),
+	$select2chosen1 = $('#select2-chosen-1'),
+	$select2choice = $('.select2-choice'),
+	$officeInput = $('#acf-field_561d82af8c0a7-input');
+
+$select2chosen1.html('Panama');
+$select2choice.removeClass('select2-default');
+$officeInput.val('3');
 
 function ajaxSearchId( event ){
 
@@ -47,14 +51,12 @@ function ajaxSearchId( event ){
 
 		success : function( response ) {
 			if ( response.success ) {
-				
+
 				$searchSpinner.hide();
 				$searchByIdSubmit.val('Done');
 				$searchStudentForm.fadeOut('slow');
 
-				// console.log(response.data.certificate_table);
-
-				var studentsName, passportId, placeOfBirth, nationality, dateOfBirth/*, startDate, endDate*/;
+				var studentsName, passportId, placeOfBirth, nationality, dateOfBirth;
 
 				response.data.student_info.forEach(function(element){
 
@@ -78,15 +80,7 @@ function ajaxSearchId( event ){
 
 						dateOfBirth = element.meta_value;
 
-					} /*else if ( element.meta_key === 'start_date' ) {
-
-						startDate = element.meta_value;
-
-					} else if ( element.meta_key === 'end_date' ) {
-
-						endDate = element.meta_value;
-
-					}*/
+					} 
 				});
 
 				$studentPassportNoField.val( response.data.passport_no );
@@ -100,18 +94,6 @@ function ajaxSearchId( event ){
 				$studentDateOfBirth.val( dateOfBirth );
 
 				$studentDateOfBirth.next('input').val( moment( dateOfBirth ).format('MMMM D, YYYY') );
-
-				// $startDateInput.val( startDate );
-
-				// $startDateInput.next('input').val( moment( startDate ).format('MMMM D, YYYY') );
-
-				// $endDateInput.val( endDate );
-
-				// $endDateInput.next('input').val( moment( endDate ).format('MMMM D, YYYY') );
-
-				// $dateOfIssuance.val( endDate );
-				
-				// $dateOfIssuance.next('input').val( moment( endDate ).format('MMMM D, YYYY') );
 
 				$otherCertificatesTable.append( response.data.certificate_table );
 
@@ -157,7 +139,7 @@ function searchPassportOnLoad() {
 		},
 
 		success: function( response ){
-			if ( response != 0 ) {
+			if ( response !== 0 ) {
 				$otherCertificatesTable.append(response);
 				$otherCertificates.show();
 				return;

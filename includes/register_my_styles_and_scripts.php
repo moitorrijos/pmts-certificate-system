@@ -16,7 +16,7 @@ function register_my_styles_and_scripts() {
 
 		wp_localize_script( 'ajax_login', 'ajax_obj', array(
 			'ajaxurl'		=> admin_url( 'admin-ajax.php' ),
-			'redirecturl' 	=> 'panama-certificates',
+			'redirecturl' 	=> home_url(),
 			'security'		=> wp_create_nonce( 'pmtscs_login' ),
 			'errormessage' 	=> 'Sorry, username and password ane incorrect. Please try again, or contact administrator for password reset.',
 		) );
@@ -24,8 +24,6 @@ function register_my_styles_and_scripts() {
 	}
 
 	if ( is_page_template( 'new_panama_certificate.php' ) ) {
-
-		wp_enqueue_script( 'moment-js', THEMEROOT . '/js/moment.js', array(), '20160428', true );
 
 		wp_enqueue_script( 'search_passport', THEMEROOT . '/js/search-passport.js', array('jquery'), '20160421', true );
 
@@ -35,6 +33,12 @@ function register_my_styles_and_scripts() {
 		);
 
 		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/min/form-field-magic-min.js', array('jquery'), '20160422', true );
+
+	}
+
+	if ( is_page_template( 'new_application_form_page.php' ) ) {
+
+		wp_enqueue_script( 'country-to-nationality', THEMEROOT . '/js/min/country-to-nationality-min.js', array('jquery'), '20160422', true );
 
 	}
 
@@ -62,9 +66,23 @@ function register_my_styles_and_scripts() {
 
 	}
 
+
+
+	if ( is_singular( 'certificates' ) ) {
+
+		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/min/form-field-magic-min.js', array('jquery'), '20160422', true );
+
+	}
+
 	if ( is_singular( 'reports' ) ) {
 
 		wp_enqueue_script( 'reports_js', THEMEROOT . '/js/report.js', array('jquery'), '20160720', true );
+
+	}
+
+	if ( is_singular( 'applications' ) ) {
+
+		wp_enqueue_script( 'application_form', THEMEROOT . '/js/application-form.js', array('jquery'), '20160720', true );
 
 	}
 
@@ -72,19 +90,14 @@ function register_my_styles_and_scripts() {
 
 		wp_enqueue_script( 'quotation-js', THEMEROOT . '/js/quotation.js', array('jquery'), '20160317', true );
 
+		wp_enqueue_script( 'create_invoice', THEMEROOT . '/js/create-invoice.js', array('jquery'), '20161220', true );
+
+		wp_localize_script( 'create_invoice', 'new_invoice_object', array(
+				'security'	=> wp_create_nonce( 'new_invoice_nonce' ),
+				'ajaxurl'	=> admin_url( 'admin-ajax.php' ),
+			) 
+		);
 	}
-
-	// if ( is_page_template( 'new_panama_quotation.php' ) ) {
-
-	// 	wp_enqueue_script( 'fill_deck_courses', THEMEROOT . '/js/fill-deck-courses.js', array('jquery'), '20161220', true );
-
-	// 	wp_localize_script( 'fill_deck_courses', 'fill_deck_object', array(
-	// 			'ajaxurl'	=> admin_url( 'admin-ajax.php' ),
-				
-	// 		) 
-	// 	);
-
-	// }
 
 }
 

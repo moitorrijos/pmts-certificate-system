@@ -147,6 +147,7 @@ var countryNationality = [
 ['South Korea','South Korean'],
 ['Spain','Spanish'],
 ['Sri Lanka','Sri Lankan'],
+['St. Vincent and the Grenadines', 'Vincentian'],
 ['Sudan','Sudanese'],
 ['Suriname','Surinamese'],
 ['Swaziland','Swazi'],

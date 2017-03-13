@@ -28,7 +28,7 @@
 		</td>
 		<td class="centered list-col-4">
 			<a href="<?php echo the_permalink(); ?>">
-			<?php echo 'PMTS/' . $course->abbr . '/' . $issue_date->format('m') . '-' . $office->slug . '-' . add_leading_zeroes($register_code) . $register_code; ?>
+			<?php echo 'PMTS/' . $course->abbr . '/' . $issue_date->format('y') . '-' . strtoupper($office->slug) . '-' . add_leading_zeroes($register_code) . $register_code; ?>
 			</a>
 		</td>
 		<td class="centered abbr">

@@ -7,19 +7,6 @@ $(function() {
 	var $printBtn = $('.print-button');
 	var $viewBtn = $('.view-button');
 
-function certificateAmountCount() {
-
-	var issuedCerts = $('#issued-certificates-amount');
-	var trCertNumbers = $('tr#cert-number');
-
-	issuedCerts.html( trCertNumbers.length );
-
-}
-
-if ( $('tr#cert-number').length ) {
-	certificateAmountCount();
-}
-
 //Edit Quote Functionality
 function fadeReportDivOut(){
 	$reportDiv.hide();

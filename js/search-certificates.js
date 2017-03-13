@@ -78,4 +78,4 @@ $searchForm.on('submit', function(event){
 });
 
 });
-})(jQuery); 	
+})(jQuery);

@@ -106,6 +106,16 @@ table.system {
 			font-weight: bold;
 		}
 
+		&.nightly {
+			background: $amp-blue;
+			color: white;
+		}
+
+		&.daily {
+			background: $cool-orange;
+			color: white;
+		}
+
 
 		a {
 			color: darken($pmts-blue, 15%);

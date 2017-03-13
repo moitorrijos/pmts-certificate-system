@@ -148,7 +148,7 @@
 						<span class="undies">
 							<span>***</span> 
 							<span class="register-code">
-								<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . add_leading_zeroes($register_code) . $register_code; ?>
+								<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . strtoupper($office->slug) . '-' . add_leading_zeroes($register_code) . $register_code; ?>
 							</span>
 							<span>***</span> 
 						</span>                 
@@ -197,32 +197,36 @@
 
 			</div>
 
-			<div class="full dates">
-				
-				<div class="half">
+			<?php if ($office->term_id == 3) : ?>
+
+				<div class="full dates">
 					
-	                <p class="short">Start Course Date:
+					<div class="half">
+						
+		                <p class="short">Start Course Date:
 
-						<span class="undies bottom start-date"><?php echo $start_date->format('d F Y'); ?></span>
+							<span class="undies bottom start-date"><?php echo $start_date->format('d F Y'); ?></span>
 
-					</p>
+						</p>
+
+					</div>
+
+					<div class="half">
+						
+						<p class="short">
+
+							End Course Date:
+
+							<span class="undies bottom end-date"><?php echo $end_date->format('d F Y'); ?></span>
+
+						</p>
+						
+					</div>
 
 				</div>
 
-				<div class="half">
-					
-					<p class="short">
-
-						End Course Date:
-
-						<span class="undies bottom end-date"><?php echo $end_date->format('d F Y'); ?></span>
-
-					</p>
-					
-				</div>
-
-			</div>
-
+			<?php endif; ?>
+			
 			<div class="full">
 				
 				<div class=" 

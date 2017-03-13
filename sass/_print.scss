@@ -43,6 +43,10 @@
 		margin: .125in 0;
 	}
 
+	.not-for-print {
+		display: none;
+	}
+
 	p.attended {
 
 		line-height: 1;
@@ -110,7 +114,7 @@
 		td {
 			color: black;
 			font-size: 8pt;
-			padding: 0.1in;
+			padding: 0.055in;
 
 			h2 { font-size: 12pt; }
 			p { font-size: 10pt; }
@@ -148,7 +152,7 @@
 		position: relative;
 		
 		p {
-			margin: 0.2in 0;
+			margin: 0.05in 0;
 
 		}
 	}
@@ -289,7 +293,6 @@
 				padding: 0.05in 0.1in;
 			}
 		}
-
 	}
 	
 	.report {
@@ -352,6 +355,74 @@
 			min-width: 0.5in;
 			padding: 0 0.25in;
 			color: black;
+		}
+	}
+
+	.application-for-print {
+		display: block;
+
+		.application-page {
+			
+			width: 8in;
+			height: 10.5in;
+			margin: 0 auto;
+
+			page-break-before: always;
+			
+			h1 {
+				font-size: 16pt;
+			}
+
+			h3 {
+				font-size: 12pt;
+			}
+
+			h4 {
+				font-size: 10pt;
+			}
+
+			h1, h2, h3, h4 {
+				color: black;
+			}
+
+			ul li {
+				font-size: 9pt;
+			}
+
+			.pmts-header {
+				min-height: 1.55in;
+			}
+
+			.exam-answers {
+				
+				ol {
+					margin-bottom: 0.225in;
+					// font-size: 11pt;
+					
+					li {
+						margin: 0 0 0.125in;;
+					}
+				}
+
+			}
+
+			.application-signatures {
+				padding: 0 0.5in;
+			}
+
+			.name-of-course {
+
+				width: 4.75in;
+
+
+				h3 {
+					font-size: 11pt;
+
+					&.course-full-name {
+						line-height: 1.4;
+					}
+				}
+			}
 		}
 	}
 }

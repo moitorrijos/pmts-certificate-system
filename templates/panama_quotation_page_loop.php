@@ -34,7 +34,7 @@
 
 		$args = array( 
 			'post_type' => 'quotation', 
-			'posts_per_page' => 75,
+			'posts_per_page' => 18,
 			'paged' => $paged,
 		);
 		

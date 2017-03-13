@@ -7,15 +7,12 @@
 		<?php 
 
 			get_template_part('templates/buttons-div');
-			get_template_part('templates/search-bar');
-
-			
 
 			$report_paged = ( get_query_var('paged') ) ? intval(get_query_var('paged')) : 1;
 
 			$all_reports_args = array(
 				'post_type' 		=> 'reports',
-				'posts_per_page' 	=> 150,
+				'posts_per_page' 	=> 30,
 				'meta_key' 			=> 'date_of_the_course',
 				'orderby'			=> 'meta_value_num',
 				'order'				=> 'DESC',
@@ -33,10 +30,11 @@
 			<thead>
 				<tr>
 					<th class="middle-title">Name of the Course</th>
-					<th class="short-title">Name of the Instructor</th>
-					<th class="short-title">Course Issue Date</th>
+					<th class="number">Name of the Instructor</th>
+					<th class="number">Course Issue Date</th>
+					<th class="short-number">Students</th>
 					<?php if ( current_user_can('edit_pages') ) : ?>
-						<th class="number">Edit</th>
+						<th class="short-short-number">Edit</th>
 					<?php endif; ?>
 				</tr>
 			</thead>
@@ -63,6 +61,11 @@
 					</td>
 					<td class="centered">
 						<?php echo $date_of_course->format('j F, Y'); ?>
+					</td>
+					<td class="centered">
+						<?php 
+							echo get_participant_number($instructor->ID, $course->ID, get_field('date_of_the_course'));
+						?>
 					</td>
 					<?php if ( current_user_can('edit_pages') ) : ?>
 					<td class="centered edit">

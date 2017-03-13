@@ -1,5 +1,3 @@
-<?php $show_menu = '<i class="fa fa-reorder"></i>'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +12,6 @@
 <div class="loader"></div>
 
 <header>
-
-		<a href="#0" class="toggle-menu not-link">
-			<?php echo $show_menu; ?>
-		</a>
 
 		<?php if ( is_user_logged_in() ) {
 

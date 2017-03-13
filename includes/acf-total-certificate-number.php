@@ -12,6 +12,9 @@ function save_post_course_id( $post_id ) {
 
 	$template_string = str_replace($template_dir, '', $page_template);
 
+	/**
+	 * If user is creating a new certificate add 1 to total certificates number
+	 */
 	if( $template_string == $new_certificate_template && get_post_type( $post_id ) == 'certificates' ){
 
 		/**
@@ -46,7 +49,6 @@ function save_post_course_id( $post_id ) {
 		 * Switch Case for certificate register code
 		 * This adds one to total certificate according to the office number and course taken.
 		 */
-
 		switch ( (string) $office->name ) {
 			case 'Panama':
 				update_field('total_panama_certificates', $total_panama_certificates+1, $course->ID);
@@ -92,7 +94,6 @@ function save_post_course_id( $post_id ) {
 		/**
 		 * Issue Dates an Register Code
 		 */
-
 		$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance', $post_id) );
 
 		$issue_month = $issue_date->format('m');
@@ -101,32 +102,7 @@ function save_post_course_id( $post_id ) {
 
 		$register_code =  get_post_meta($post_id, 'register_code', true);
 
-		/**
-		 * The leading zeroes for the Register Code.
-		 */
-
-		if ( $register_code > 9999 ) {
-
-			$leading_zero = '';
-
-		} elseif ( $register_code > 999 && $register_code <= 9999 ) {
-
-			$leading_zero = '0';
-
-		} elseif ( $register_code > 99 && $register_code <= 999 ) {
-
-			$leading_zero = '00';
-
-		} elseif ( $register_code > 9 && $register_code <= 99 ) {
-
-			$leading_zero = '000';
-
-		} else {
-
-			$leading_zero = '0000';
-		}
-
-		$pmtscs_register_code_value = 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . $leading_zero . $register_code;
+		$pmtscs_register_code_value = 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . add_leading_zeroes($register_code) . $register_code;
 
 		update_post_meta($post_id, 'pmtscs_register_code', $pmtscs_register_code_value);
 

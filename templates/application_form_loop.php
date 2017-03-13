@@ -42,7 +42,9 @@
 					<th class="middle-title">Application Code</th>
 					<th class="title">Courses Taken</th>
 					<?php if ( current_user_can('edit_pages') ) : ?>
-						<th class="number">Edit</th>
+						<th class="number">
+							Edit
+						</th>
 					<?php endif; ?>
 				</tr>
 			</thead>
@@ -92,13 +94,17 @@
 
 						</td>
 						<?php if ( current_user_can( 'edit_pages' ) ) : ?>
-							<td class="centered edit">Edit</td>
+							<td class="centered edit">
+								<a href="<?php echo the_permalink(); ?>" class="edit-form">
+									<i class="fa fa-pencil-square-o"></i>
+								</a>
+							</td>
 						<?php endif; ?>
 					</tr>
 
 				<?php endwhile; else : ?>
 
-				<p>No Applications created, please <a href="<?php echo home_url('/application-forms/new-application-forms/') ?>">click here to create aplication...</a></p>
+				<p>No Applications created, please <a href="<?php echo home_url('/application-forms/new-application-form/') ?>">click here to create aplication...</a></p>
 
 			</tbody>
 

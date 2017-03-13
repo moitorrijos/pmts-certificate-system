@@ -143,7 +143,13 @@
 
 					<div class="report-undies">
 						
-						<span class="undies" id="issued-certificates-amount">0</span>
+						<span class="undies" id="issued-certificates-amount">
+							
+							<?php 
+								echo get_participant_number($instructor->ID, $course->ID, get_field('date_of_the_course'));
+							?>
+
+						</span>
 
 					</div>
 					
@@ -363,7 +369,7 @@
 								<?php echo $report_certs->current_post + 1; ?>
 							</td>
 							<td class="centered">
-								<?php echo 'PMTS/' . $the_course->abbr . '/' . $issue_year . '-' . $office->slug . '-' . add_leading_zeroes($register_code) . $register_code; ?>
+								<?php echo 'PMTS/' . $the_course->abbr . '/' . $issue_year . '-' . strtoupper($office->slug) . '-' . add_leading_zeroes($register_code) . $register_code; ?>
 							</td>
 							<td class="centered">
 								<?php echo the_field('students_name'); ?>

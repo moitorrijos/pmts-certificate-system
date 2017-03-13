@@ -41,15 +41,15 @@
 				
 			</a>
 
-			<?php if ( current_user_can( 'edit_pages' ) ) : ?>
+			<!--?php //if ( current_user_can( 'edit_pages' ) ) : ?>
 
-				<a href="#0" class="new-invoice-button"><i class="fa fa-file-text"></i> 
+				<!-- <a href="#0" class="new-invoice-button" data-post_id="<//?//php //echo get_the_id(); ?>"><i class="fa fa-file-text"></i> 
 
 					Create Invoice
 					
-				</a>
+				</a> -->
 
-			<?php endif; ?>
+			<!--?php // endif; ?-->
 
 		</div>
 
@@ -83,7 +83,8 @@
 								<td><?php echo get_the_date(); ?></td>
 							</tr>
 							<tr>
-								<td colspan="2" class="centered">Quote Valid for 45 days</td>
+								<td class="centered">Quote Valid for 45 days</td>
+								<td class="centered">Prepared by: <?php the_author(); ?></td>
 							</tr>
 						</tbody>	
 					</table>

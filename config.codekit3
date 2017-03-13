@@ -7,12 +7,18 @@
 		"uuidString": "C0C0AF90-40CA-404E-9387-2CAFCEAACD89"
 		}
 	],
-"creatorBuild": "25479",
+"creatorBuild": "25568",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/.gitignore",
+		"oF": 0
+		},
+	"\/404.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/404.php",
 		"oF": 0
 		},
 	"\/acf-custom-fields\/application-forms-fields.php": {
@@ -37,6 +43,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/acf-custom-fields\/instructors-fields.php",
+		"oF": 0
+		},
+	"\/acf-custom-fields\/invoices-fields.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/acf-custom-fields\/invoices-fields.php",
 		"oF": 0
 		},
 	"\/acf-custom-fields\/quotations-fields.php": {
@@ -555,6 +567,16 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/images\/pmts-monochrome-logo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/images\/pmts-monochrome-logo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/images\/pmts-watermark-logo.png": {
 		"ft": 32768,
 		"iS": 60644,
@@ -631,6 +653,18 @@
 		"oAP": "\/includes\/certificate-exists-validation.php",
 		"oF": 0
 		},
+	"\/includes\/create-new-invoice.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/includes\/create-new-invoice.php",
+		"oF": 0
+		},
+	"\/includes\/create-table-with.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/includes\/create-table-with.php",
+		"oF": 0
+		},
 	"\/includes\/custom-pagination.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -667,6 +701,12 @@
 		"oAP": "\/includes\/form-data-localstorage.php",
 		"oF": 0
 		},
+	"\/includes\/get_participant_number.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/includes\/get_participant_number.php",
+		"oF": 0
+		},
 	"\/includes\/meta-viewport.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -677,6 +717,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/includes\/my_courses_post_object_results.php",
+		"oF": 0
+		},
+	"\/includes\/pmtscs_header_for_print.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/includes\/pmtscs_header_for_print.php",
 		"oF": 0
 		},
 	"\/includes\/register-nav-menus.php": {
@@ -715,6 +761,18 @@
 		"oAP": "\/includes\/search_form_remove_admin_bar.php",
 		"oF": 0
 		},
+	"\/includes\/student_info_complete_table.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/includes\/student_info_complete_table.php",
+		"oF": 0
+		},
+	"\/includes\/student_info_short_table.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/includes\/student_info_short_table.php",
+		"oF": 0
+		},
 	"\/index.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -751,6 +809,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/application-form.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/application-form-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/country-nationality.js": {
 		"ft": 64,
 		"mi": 1,
@@ -760,11 +827,29 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/country-to-nationality.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/country-to-nationality-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/courses-calendar.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/min\/courses-calendar-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/create-invoice.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/create-invoice-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -868,11 +953,29 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/min\/country-to-nationality-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/min\/country-to-nationality-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/min\/courses-calendar-min.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/js\/min\/min\/courses-calendar-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/min\/create-invoice-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/min\/create-invoice-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1024,7 +1127,7 @@
 	"\/js\/moment.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/js\/min\/moment-min.js",
 		"oF": 0,
 		"sC": 1,
@@ -1160,6 +1263,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/panama-courses-calendar-page.php",
+		"oF": 0
+		},
+	"\/panama-invoice-page.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/panama-invoice-page.php",
 		"oF": 0
 		},
 	"\/panama-quotation-page.php": {
@@ -1532,6 +1641,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/sass\/_application-form.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/css\/_application-form.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/sass\/_certificates.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1822,6 +1944,12 @@
 		"oAP": "\/single-instructors.php",
 		"oF": 0
 		},
+	"\/single-invoice.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/single-invoice.php",
+		"oF": 0
+		},
 	"\/single-office.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -1964,6 +2092,12 @@
 		"oAP": "\/templates\/logo_image.php",
 		"oF": 0
 		},
+	"\/templates\/logo_svg.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/logo_svg.php",
+		"oF": 0
+		},
 	"\/templates\/naked_loop_message.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -2036,6 +2170,12 @@
 		"oAP": "\/templates\/panama_courses_calendar_page_loop.php",
 		"oF": 0
 		},
+	"\/templates\/panama_invoice_page_loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/panama_invoice_page_loop.php",
+		"oF": 0
+		},
 	"\/templates\/panama_quotation_page_loop.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -2046,6 +2186,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/panama_reports_page_loop.php",
+		"oF": 0
+		},
+	"\/templates\/pmts-headers\/request-for-training.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/pmts-headers\/request-for-training.php",
 		"oF": 0
 		},
 	"\/templates\/quotation_table.php": {
@@ -2102,6 +2248,12 @@
 		"oAP": "\/templates\/the-certificate.php",
 		"oF": 0
 		},
+	"\/templates\/the-invoice.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/the-invoice.php",
+		"oF": 0
+		},
 	"\/templates\/the-naked-loop.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -2131,16 +2283,66 @@
 		"oA": 0,
 		"oAP": "\/templates\/the_message.php",
 		"oF": 0
+		},
+	"\/templates\/training-docs\/application_pages.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/training-docs\/application_pages.php",
+		"oF": 0
+		},
+	"\/templates\/training-docs\/application_signatures.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/training-docs\/application_signatures.php",
+		"oF": 0
+		},
+	"\/templates\/training-docs\/classroom_instructor_evaluation.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/training-docs\/classroom_instructor_evaluation.php",
+		"oF": 0
+		},
+	"\/templates\/training-docs\/days_table.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/training-docs\/days_table.php",
+		"oF": 0
+		},
+	"\/templates\/training-docs\/exam_answers.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/training-docs\/exam_answers.php",
+		"oF": 0
+		},
+	"\/templates\/training-docs\/practical_exam_results.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/training-docs\/practical_exam_results.php",
+		"oF": 0
 		}
 	},
 "hooks": [
 	],
 "manualImportLinks": {
+	"\/js\/country-to-nationality.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/country-nationality.js",
+			"position": 0,
+			"type": 0
+			}
+		],
 	"\/js\/form-field-magic.js": [
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/js\/country-nationality.js",
+			"linkedFileAbbreviatedPath": "\/js\/moment.js",
 			"position": 0,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/js\/country-nationality.js",
+			"position": 1,
 			"type": 0
 			}
 		],
@@ -2819,6 +3021,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-await-in-loop": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
@@ -3036,6 +3242,10 @@
 			"optionString": "{'grouping': false, 'allowCall': false }"
 			},
 		"no-mixed-spaces-and-tabs": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-multi-assign": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -3359,9 +3569,17 @@
 			"active": 0,
 			"optionString": "{'destructuring': 'any', 'ignoreReadBeforeAssign': false}"
 			},
+		"prefer-destructuring": {
+			"active": 0,
+			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
+			},
 		"prefer-numeric-literals": {
 			"active": 0,
 			"optionString": ""
+			},
+		"prefer-promise-reject-errors": {
+			"active": 0,
+			"optionString": "{'allowEmptyReject': false}"
 			},
 		"prefer-rest-params": {
 			"active": 0,
@@ -3456,6 +3674,10 @@
 			"optionString": ""
 			},
 		"template-curly-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"template-tag-spacing": {
 			"active": 0,
 			"optionString": "'never'"
 			},

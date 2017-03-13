@@ -36,6 +36,11 @@ function pmtscs_button_value() {
 		$add_value = 'Create New Application';
 		return $add_value;
 
+	} elseif ( is_page_template( 'panama-invoice-page.php' ) ) {
+
+		$add_value = 'Create New Quotation';
+		return $add_value;
+
 	}
 
 }
@@ -73,10 +78,15 @@ function pmtscs_button_link() {
 		
 	} elseif ( is_page_template( 'application-form-page.php' ) ) {
 
-		$add_link = '/application-forms/new-application-forms/';
+		$add_link = '/application-forms/new-application-form/';
 		return $add_link;
 		
-	}
+	} elseif ( is_page_template( 'panama-invoice-page.php' ) ) {
+
+		$add_link = '/panama-quotations/new-panama-quotation/';
+		return $add_link;
+		
+	} 
 }
 
 ?>

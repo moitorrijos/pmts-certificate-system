@@ -228,16 +228,22 @@ form {
 
 .navigation {
 	width: 60%;
+
+	@media only screen and (max-width: 980px) {
+		width: 100%;
+	}
 }
 
 .click-logout {
-	@media only screen and (max-width: 1280px) {
-		display: block;
-	}
+	display: block;
 }
 
 .buttons {
 	margin: 16px 0 48px;
+
+	a:first-child {
+		margin-right: 20px;
+	}
 
 	a.back-link {
 		margin-right: 20px;	
@@ -268,10 +274,13 @@ form {
 	display: inline-block;
 }
 
+$button-padding: 12px 22px;
+
 a.logout-button {
 	@extend %cool-button;
 	background-color: lighten(desaturate($logout-red, 15%), 15%);
-	padding: 12px 22px;
+	padding: $button-padding;
+	display: block;
 
 	@media only screen and (max-width: 1280px) {
 		text-align: center;
@@ -384,7 +393,12 @@ a.back-link {
 }
 
 .logout {
-	margin: 0 40px 0 0;
+	// margin: 0 40px 0 0;
+	width: 190px;
+
+	@media only screen and (max-width: 980px) {
+		margin: 0;
+	}
 
 	a { margin: 0; }
 }
@@ -392,12 +406,12 @@ a.back-link {
 ul.nav {
 	border-left: 1px solid $gray;
 	list-style: none;
-	float: left;
 	padding: 0;
 	margin: 0;
+	position: relative;
+	flex-grow: 1;
 	display: table;
 	width: 100%;
-	position: relative;
 
 	li {
 		display: table-cell;
@@ -405,10 +419,11 @@ ul.nav {
 		a {
 			display: block;
 			color: $darken-gray;
-			padding: 12px 22px;
+			padding: $button-padding;
 			text-decoration: none;
 			background: white;
 			border-right: 1px solid $gray;
+			line-height: 2.2;
 			text-align: center;
 
 
@@ -419,7 +434,8 @@ ul.nav {
 			}
 
 			i._mi {
-				margin-right: 12px;
+				display: block;
+				margin: 0;
 			}
 
 		}
@@ -551,4 +567,12 @@ form.search-by-id-no {
 			background: $pmts-blue url('../images/search-spinner.gif') no-repeat top center;
 		}
 	}
+}
+
+.edit-application-form {
+	display: none;
+}
+
+.italize {
+	font-style: italic;
 }
