@@ -1,6 +1,11 @@
 <?php
 
-function pmtscs_header_for_print( $course_obj, $instructor_app, $page_number ){
+function pmtscs_header_for_print( 
+	$doc_code, 
+	$revision_number,
+	$course_obj, 
+	$instructor_app, 
+	$page_number ){
 
 	?>
 
@@ -29,13 +34,13 @@ function pmtscs_header_for_print( $course_obj, $instructor_app, $page_number ){
 		<div class="codes">
 			
 			<p class="super-short">
-				Code: F-SCS-11
+				Code: <?php echo $doc_code; ?>
 			</p>
 			<p class="super-short">
-				Revision: 12
+				Revision: <?php echo $revision_number; ?>
 			</p>
 			<p class="super-short">
-				Date: 31/01/17
+				Date: 01/04/17
 			</p>
 			<p class="super-short">
 				Page <?php echo $page_number; ?> of 

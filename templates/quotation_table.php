@@ -22,7 +22,7 @@
 				if (get_row_index() != 1) { echo ', '; }
 
 		        // display a sub field value
-		        echo $course_name->abbr . ', ';
+		        echo $course_name->abbr;
 
 		    endwhile; endif;
 
@@ -34,7 +34,8 @@
 				$service_name = get_sub_field('service_name');
 
 				// if is not the last index print comma.
-				if (get_row_index() != 1) { echo ', '; }
+				// if (get_row_index() != 1) { echo ', '; }
+				echo ', ';
 
 		        // display a sub field value
 		        echo $service_name;

@@ -15,6 +15,10 @@
 		margin: 0.125in 0;
 	}
 
+	.not-for-print.not-for-print.not-for-print.not-for-print.not-for-print {
+		display: none;
+	}
+
 	.main-content {
 
 		display: block;
@@ -43,9 +47,7 @@
 		margin: .125in 0;
 	}
 
-	.not-for-print {
-		display: none;
-	}
+	
 
 	p.attended {
 
@@ -365,6 +367,11 @@
 			
 			width: 8in;
 			height: 10.5in;
+
+			&.gmdss-evaluation {
+				height: 13.5in;
+			}
+
 			margin: 0 auto;
 
 			page-break-before: always;

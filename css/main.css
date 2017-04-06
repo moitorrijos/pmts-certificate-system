@@ -429,7 +429,7 @@ th {
 /**
  * Colors
  */
-.logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, ul.fill-courses-dropdown li ul {
+.logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, .certificate .certificate-author, .application-form .certificate-author, .report .certificate-author, .application-page .certificate-author, .certificate .certificate-author p.small span.certificate-info, .application-form .certificate-author p.small span.certificate-info, .report .certificate-author p.small span.certificate-info, .application-page .certificate-author p.small span.certificate-info, ul.fill-courses-dropdown li ul, .application-sent, .application-sent-error {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
@@ -699,7 +699,7 @@ form {
 .align-center, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
   text-align: center; }
 
-a.logout-button, a.new-certificate-button, a.new-invoice-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .fill-form-randomly, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
+a.logout-button, a.new-certificate-button, a.duplicate-certificate-button, a.new-invoice-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .fill-form-randomly, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
   padding: 4px 22px;
   text-decoration: none;
   color: white;
@@ -722,6 +722,12 @@ a.new-certificate-button {
   a.new-certificate-button:hover {
     background-color: #3cbc36; }
 
+a.duplicate-certificate-button {
+  background-color: #e5e328;
+  color: #284f96; }
+  a.duplicate-certificate-button:hover {
+    background-color: #D3D13A; }
+
 a.new-invoice-button {
   background-color: #D37A4F;
   float: right; }
@@ -743,6 +749,10 @@ a.new-invoice-button {
 
 a.view-button {
   display: none; }
+
+p.small {
+  font-size: 0.75em;
+  letter-spacing: 1px; }
 
 .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button {
   background-color: #D37A4F; }
@@ -1099,8 +1109,12 @@ table.system {
       background: #284f96;
       color: white; }
     table.system td.daily {
-      background: #D37A4F;
-      color: white; }
+      background: #e5e328;
+      color: #284f96; }
+    table.system td.printly a {
+      display: block;
+      color: #284f96;
+      font-size: 0.9em; }
     table.system td a {
       color: #286a96;
       text-decoration: none;
@@ -1202,6 +1216,30 @@ table.system {
   position: relative;
   font-size: 1.2rem;
   padding: 0 36px; }
+  .certificate .certificate-author, .application-form .certificate-author, .report .certificate-author, .application-page .certificate-author {
+    padding: 4px 8px;
+    background: #3cbc36;
+    display: inline-block;
+    border-radius: 12px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 26px; }
+    .certificate .certificate-author p.small, .application-form .certificate-author p.small, .report .certificate-author p.small, .application-page .certificate-author p.small {
+      margin: 0;
+      color: white; }
+      .certificate .certificate-author p.small i, .application-form .certificate-author p.small i, .report .certificate-author p.small i, .application-page .certificate-author p.small i {
+        margin-right: 4px; }
+      .certificate .certificate-author p.small span.certificate-info, .application-form .certificate-author p.small span.certificate-info, .report .certificate-author p.small span.certificate-info, .application-page .certificate-author p.small span.certificate-info {
+        width: 0;
+        opacity: 0;
+        display: none; }
+        .certificate .certificate-author p.small span.certificate-info.appear, .application-form .certificate-author p.small span.certificate-info.appear, .report .certificate-author p.small span.certificate-info.appear, .application-page .certificate-author p.small span.certificate-info.appear {
+          display: inline;
+          opacity: 1; }
+    .certificate .certificate-author.info-display, .application-form .certificate-author.info-display, .report .certificate-author.info-display, .application-page .certificate-author.info-display {
+      width: 360px; }
   @media screen and (min-width: 1200px) {
     .certificate, .application-form, .report, .application-page {
       margin: 0 48px; } }
@@ -1519,6 +1557,36 @@ table.referer-info {
 .application-for-print {
   display: none; }
 
+.application-form {
+  overflow: hidden; }
+
+.translate-down.translate-down.translate-down {
+  margin-top: 0; }
+
+.application-sent.application-sent {
+  background-color: #e5e328;
+  padding: 20px 40px;
+  color: #284f96;
+  margin-top: -120px;
+  height: 120px;
+  display: none; }
+  .application-sent.application-sent p {
+    font-size: 1.1em;
+    margin: 0; }
+
+.application-sent-error.application-sent-error {
+  background-color: #f40000;
+  color: white;
+  padding: 20px 40px;
+  margin-top: -120px;
+  height: 120px;
+  display: none; }
+  .application-sent-error.application-sent-error p {
+    margin: 0; }
+  .application-sent-error.application-sent-error a {
+    color: white;
+    text-decoration: underline; }
+
 .application-page {
   position: relative; }
   .application-page h1, .application-page h2, .application-page h3, .application-page h4 {
@@ -1562,21 +1630,28 @@ table.referer-info {
     .application-page .application-signatures .signature-line {
       border-bottom: 2px solid black;
       margin-top: 32px; }
-  .application-page table.days {
+  .application-page table.days, .application-page table.evaluation-score {
     width: 100%; }
-    .application-page table.days th {
+    .application-page table.days th, .application-page table.evaluation-score th {
       text-transform: uppercase;
       text-decoration: underline;
       background: #e2e2e2;
       border: 3px double #afafaf; }
-    .application-page table.days td {
+    .application-page table.days td, .application-page table.evaluation-score td {
       vertical-align: middle;
       border: 3px double #afafaf;
       line-height: 1;
-      width: 14.2857142857%;
-      height: 33px; }
-      .application-page table.days td:last-child, .application-page table.days td:nth-last-child(2) {
+      width: 16.6666666667%;
+      height: 34px; }
+      .application-page table.days td:last-child, .application-page table.evaluation-score td:last-child, .application-page table.days td:nth-last-child(2), .application-page table.evaluation-score td:nth-last-child(2) {
         background: #cdcdcd; }
+  .application-page table.evaluation-score td {
+    width: 18%;
+    height: 70px; }
+    .application-page table.evaluation-score td:last-child {
+      width: 46%; }
+    .application-page table.evaluation-score td:last-child, .application-page table.evaluation-score td:nth-last-child(2) {
+      background: transparent; }
   .application-page table.evaluation, .application-page table.practical-eval {
     width: 100%; }
     .application-page table.evaluation th, .application-page table.practical-eval th {
@@ -1621,15 +1696,17 @@ p.super-short.super-short {
   margin: 2px 0; }
 
 table.student-info {
-  width: 100%;
+  width: 668px;
   border: 4px groove #626262;
   margin-bottom: 16px; }
   table.student-info td {
     border: 1px solid #6F6F6F;
     border-right: 2px medium solid #6F6F6F;
     border-bottom: 2px solid #6F6F6F;
-    width: 25%;
+    width: 135px;
     vertical-align: top; }
+    table.student-info td:nth-child(odd) {
+      width: 199px; }
     table.student-info td p {
       line-height: 0.75;
       margin: 4px 0;
@@ -1666,6 +1743,8 @@ table.student-info {
   h1, h2, h3, p {
     color: black;
     margin: 0.125in 0; }
+  .not-for-print.not-for-print.not-for-print.not-for-print.not-for-print {
+    display: none; }
   .main-content {
     display: block;
     background-image: none;
@@ -1683,8 +1762,6 @@ table.student-info {
     font-size: 10pt;
     line-height: 1.5;
     margin: .125in 0; }
-  .not-for-print {
-    display: none; }
   p.attended {
     line-height: 1;
     margin: .133in 0; }
@@ -1866,6 +1943,8 @@ table.student-info {
       height: 10.5in;
       margin: 0 auto;
       page-break-before: always; }
+      .application-for-print .application-page.gmdss-evaluation {
+        height: 13.5in; }
       .application-for-print .application-page h1 {
         font-size: 16pt; }
       .application-for-print .application-page h3 {

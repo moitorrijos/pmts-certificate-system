@@ -10,7 +10,7 @@
 
 		<div class="buttons">
 			
-			<a href="<?php echo home_url('panama-quotations'); ?>" class="back-link">
+			<a href="<?php echo get_permalink( 208 ); ?>" class="back-link">
 			&laquo;
 
 			Back to Quotations Page
@@ -35,7 +35,16 @@
 
 			</a>
 
-			<a href="<?php echo home_url('panama-quotations/new-panama-quotation');?>" class="new-certificate-button">
+			<a 	href="#0" 
+				class="duplicate-certificate-button not-link" 
+				data-post_id="<?php echo get_the_ID(); ?>"
+			>
+
+				Duplicate Quotation
+				
+			</a>
+
+			<a href="<?php echo get_permalink( 222 );?>" class="new-certificate-button ">
 
 				Create New Quotation
 				

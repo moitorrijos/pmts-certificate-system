@@ -23,7 +23,10 @@
 			<strong>CITIBANK NEW YORK, N.Y.</strong><br>
 			SWIFT Code: CITIUS33<br>
 			ABA # 021000089<br>
-
+			Address: 
+			111 Wall Street
+			New York, NY 10043<br>
+			Phone: +1 917-746-1193
 		</p>
 		<p>
 			Credit to:<br>

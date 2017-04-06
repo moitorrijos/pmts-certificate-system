@@ -19,6 +19,7 @@
 			</a>
 
 			<a href="#0" class="search-id-no-button not-link">
+			
 				<i class="fa fa-user" aria-hidden="true"></i>
 				Search by ID/Passport No
 

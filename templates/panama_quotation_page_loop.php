@@ -99,7 +99,8 @@
 
 								$service_name = get_sub_field('service_name');
 
-								if (get_row_index() != 1) { echo ', '; }
+								// if (get_row_index() != 1) { echo ', '; }
+								echo ', ';
 
 						        // display a sub field value
 						        echo $service_name;

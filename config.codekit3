@@ -7,7 +7,7 @@
 		"uuidString": "C0C0AF90-40CA-404E-9387-2CAFCEAACD89"
 		}
 	],
-"creatorBuild": "25568",
+"creatorBuild": "25813",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -533,7 +533,10 @@
 		"oA": 0,
 		"oAP": "\/images\/amp-logo.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
 		},
 	"\/images\/background-spinner.gif": {
 		"ft": 4194304,
@@ -541,7 +544,7 @@
 		"oA": 0,
 		"oAP": "\/images\/background-spinner.gif",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/images\/certificate-background.jpg": {
 		"ft": 16384,
@@ -549,7 +552,9 @@
 		"oA": 0,
 		"oAP": "\/images\/certificate-background.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
 		},
 	"\/images\/create-new-spinner.gif": {
 		"ft": 4194304,
@@ -557,7 +562,7 @@
 		"oA": 0,
 		"oAP": "\/images\/create-new-spinner.gif",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/images\/pmts-logo-certificate.png": {
 		"ft": 32768,
@@ -565,7 +570,10 @@
 		"oA": 0,
 		"oAP": "\/images\/pmts-logo-certificate.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
 		},
 	"\/images\/pmts-monochrome-logo.svg": {
 		"ft": 2097152,
@@ -583,7 +591,10 @@
 		"oA": 0,
 		"oAP": "\/images\/pmts-watermark-logo.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
 		},
 	"\/images\/search-spinner.gif": {
 		"ft": 4194304,
@@ -591,7 +602,7 @@
 		"oA": 0,
 		"oAP": "\/images\/search-spinner.gif",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"\/includes\/acf-remove-post-data.php": {
 		"ft": 8192,
@@ -677,10 +688,10 @@
 		"oAP": "\/includes\/custom_wordpress_from_name.php",
 		"oF": 0
 		},
-	"\/includes\/duplicate-quotations.php": {
+	"\/includes\/duplicate-quote-pmtscs.php": {
 		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/includes\/duplicate-quotations.php",
+		"oA": 2,
+		"oAP": "\/includes\/duplicate-quote-pmtscs.php",
 		"oF": 0
 		},
 	"\/includes\/fill-deck-courses.php": {
@@ -725,6 +736,12 @@
 		"oAP": "\/includes\/pmtscs_header_for_print.php",
 		"oF": 0
 		},
+	"\/includes\/practical_exam_results.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/includes\/practical_exam_results.php",
+		"oF": 0
+		},
 	"\/includes\/register-nav-menus.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -759,6 +776,18 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/includes\/search_form_remove_admin_bar.php",
+		"oF": 0
+		},
+	"\/includes\/send-application-pmtscs.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/includes\/send-application-pmtscs.php",
+		"oF": 0
+		},
+	"\/includes\/start_session.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/includes\/start_session.php",
 		"oF": 0
 		},
 	"\/includes\/student_info_complete_table.php": {
@@ -818,6 +847,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/author-information.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/author-information-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/country-nationality.js": {
 		"ft": 64,
 		"mi": 1,
@@ -859,6 +897,15 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/js\/min\/download-xls-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/duplicate-quotation.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/duplicate-quotation-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -908,6 +955,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/keymaster.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/js\/min\/keymaster-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/list-pagination.js": {
 		"ft": 64,
 		"mi": 1,
@@ -953,6 +1009,24 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/min\/application-form-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/min\/application-form-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/min\/author-information-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/min\/author-information-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/min\/country-to-nationality-min.js": {
 		"ft": 64,
 		"mi": 1,
@@ -994,6 +1068,15 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/js\/min\/min\/download-xls-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/min\/duplicate-quotation-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/min\/duplicate-quotation-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1124,6 +1207,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/min\/send-application-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/min\/send-application-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/moment.js": {
 		"ft": 64,
 		"mi": 1,
@@ -1183,6 +1275,15 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/min\/search-quotation-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/send-application.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/send-application-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1307,7 +1408,10 @@
 		"oA": 0,
 		"oAP": "\/pmts-cert-system\/pmts-cert-system-60@2x.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/pmts-cert-system\/pmts-cert-system-60@3x.png": {
 		"ft": 32768,
@@ -1315,7 +1419,10 @@
 		"oA": 0,
 		"oAP": "\/pmts-cert-system\/pmts-cert-system-60@3x.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/pmts-cert-system\/pmts-cert-system-76.png": {
 		"ft": 32768,
@@ -1323,7 +1430,10 @@
 		"oA": 0,
 		"oAP": "\/pmts-cert-system\/pmts-cert-system-76.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/pmts-cert-system\/pmts-cert-system-76@2x.png": {
 		"ft": 32768,
@@ -1331,7 +1441,10 @@
 		"oA": 0,
 		"oAP": "\/pmts-cert-system\/pmts-cert-system-76@2x.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/pmts-cert-system\/pmts-cert-system-AppStore.png": {
 		"ft": 32768,
@@ -1339,7 +1452,10 @@
 		"oA": 0,
 		"oAP": "\/pmts-cert-system\/pmts-cert-system-AppStore.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/pmts-cert-system\/pmts-cert-system-AppStore@2x.png": {
 		"ft": 32768,
@@ -1347,7 +1463,10 @@
 		"oA": 0,
 		"oAP": "\/pmts-cert-system\/pmts-cert-system-AppStore@2x.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/pmts-cert-system\/pmts-cert-system-Small-40.png": {
 		"ft": 32768,
@@ -1355,7 +1474,10 @@
 		"oA": 0,
 		"oAP": "\/pmts-cert-system\/pmts-cert-system-Small-40.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/pmts-cert-system\/pmts-cert-system-Small-40@2x.png": {
 		"ft": 32768,
@@ -1363,7 +1485,10 @@
 		"oA": 0,
 		"oAP": "\/pmts-cert-system\/pmts-cert-system-Small-40@2x.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/pmts-cert-system\/pmts-cert-system-Small-40@3x.png": {
 		"ft": 32768,
@@ -1371,7 +1496,10 @@
 		"oA": 0,
 		"oAP": "\/pmts-cert-system\/pmts-cert-system-Small-40@3x.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/pmts-cert-system\/pmts-cert-system-Small.png": {
 		"ft": 32768,
@@ -1379,7 +1507,10 @@
 		"oA": 0,
 		"oAP": "\/pmts-cert-system\/pmts-cert-system-Small.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/pmts-cert-system\/pmts-cert-system-Small@2x.png": {
 		"ft": 32768,
@@ -1387,7 +1518,10 @@
 		"oA": 0,
 		"oAP": "\/pmts-cert-system\/pmts-cert-system-Small@2x.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/pmts-cert-system\/pmts-cert-system-Small@3x.png": {
 		"ft": 32768,
@@ -1395,7 +1529,10 @@
 		"oA": 0,
 		"oAP": "\/pmts-cert-system\/pmts-cert-system-Small@3x.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/pmts-certificate-system-app-icon.png": {
 		"ft": 32768,
@@ -1403,7 +1540,10 @@
 		"oA": 0,
 		"oAP": "\/pmts-certificate-system-app-icon.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/pmts-copyright.php": {
 		"ft": 8192,
@@ -1894,7 +2034,10 @@
 		"oA": 0,
 		"oAP": "\/screenshot.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/search-page.php": {
 		"ft": 8192,
@@ -1906,6 +2049,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/search-result-page.php",
+		"oF": 0
+		},
+	"\/search_certificate_page_loop.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/search_certificate_page_loop.php",
 		"oF": 0
 		},
 	"\/searchform.php": {
@@ -2284,6 +2433,12 @@
 		"oAP": "\/templates\/the_message.php",
 		"oF": 0
 		},
+	"\/templates\/training-docs\/applicant-signature.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/training-docs\/applicant-signature.php",
+		"oF": 0
+		},
 	"\/templates\/training-docs\/application_pages.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -2308,10 +2463,22 @@
 		"oAP": "\/templates\/training-docs\/days_table.php",
 		"oF": 0
 		},
+	"\/templates\/training-docs\/evaluation-score.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/training-docs\/evaluation-score.php",
+		"oF": 0
+		},
 	"\/templates\/training-docs\/exam_answers.php": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/templates\/training-docs\/exam_answers.php",
+		"oF": 0
+		},
+	"\/templates\/training-docs\/instructor-signature.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/training-docs\/instructor-signature.php",
 		"oF": 0
 		},
 	"\/templates\/training-docs\/practical_exam_results.php": {
@@ -2365,6 +2532,12 @@
 			"followForSyntaxChecking": 0,
 			"linkedFileAbbreviatedPath": "\/js\/download-xls.js",
 			"position": 1,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/js\/keymaster.js",
+			"position": 2,
 			"type": 0
 			}
 		]
@@ -3045,6 +3218,10 @@
 			"active": 1,
 			"optionString": ""
 			},
+		"no-compare-neg-zero": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-cond-assign": {
 			"active": 1,
 			"optionString": "'except-parens'"
@@ -3329,6 +3506,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-prototype-builtins": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-redeclare": {
 			"active": 1,
 			"optionString": "{'builtinGlobals': false}"
@@ -3524,6 +3705,10 @@
 		"no-with": {
 			"active": 0,
 			"optionString": ""
+			},
+		"nonblock-statement-body-position": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"object-curly-newline": {
 			"active": 0,
@@ -4124,7 +4309,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"quality": 100
 		},
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
@@ -4147,14 +4333,6 @@
 		"autoOutputPathStyle": 0,
 		"orderOutput": 0,
 		"outputStyle": 1
-		},
-	"languageDefaultsJSX": {
-		"autoOutputAction": 0,
-		"autoOutputPathFilenamePattern": "*.js",
-		"autoOutputPathRelativePath": "",
-		"autoOutputPathReplace1": "jsx",
-		"autoOutputPathReplace2": "js",
-		"autoOutputPathStyle": 0
 		},
 	"languageDefaultsKIT": {
 		"autoOutputAction": 0,
@@ -4217,7 +4395,9 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"optimizerType": 1,
+		"quality": 100
 		},
 	"languageDefaultsPUG": {
 		"autoOutputAction": 0,

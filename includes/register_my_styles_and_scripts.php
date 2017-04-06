@@ -61,16 +61,16 @@ function register_my_styles_and_scripts() {
 		wp_localize_script( 'search_quotation', 'quotation_object', array(
 				'security' 	=> wp_create_nonce( 'pmtscs_quotation' ),
 				'ajaxurl'	=> admin_url( 'admin-ajax.php' )
-			) 
+			)
 		);
 
 	}
 
-
-
 	if ( is_singular( 'certificates' ) ) {
 
 		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/min/form-field-magic-min.js', array('jquery'), '20160422', true );
+
+		wp_enqueue_script( 'author_information', THEMEROOT . '/js/min/author-information-min.js', array('jquery'), '20160422', true );
 
 	}
 
@@ -84,6 +84,14 @@ function register_my_styles_and_scripts() {
 
 		wp_enqueue_script( 'application_form', THEMEROOT . '/js/application-form.js', array('jquery'), '20160720', true );
 
+		wp_enqueue_script( 'send_application', THEMEROOT . '/js/send-application.js', array('jquery'), '20170404', true );
+
+		wp_localize_script( 'send_application', 'send_application_obj', array(
+				'security'	=> wp_create_nonce( 'send_application_nonce' ),
+				'ajaxurl'	=> admin_url('admin-ajax.php'),
+			) 
+		);
+
 	}
 
 	if ( is_singular( 'quotation' ) ) {
@@ -91,6 +99,15 @@ function register_my_styles_and_scripts() {
 		wp_enqueue_script( 'quotation-js', THEMEROOT . '/js/quotation.js', array('jquery'), '20160317', true );
 
 		wp_enqueue_script( 'create_invoice', THEMEROOT . '/js/create-invoice.js', array('jquery'), '20161220', true );
+
+		wp_enqueue_script( 'duplicate_quotation', THEMEROOT . '/js/duplicate-quotation.js', array('jquery'), '20170321', true );
+
+		wp_localize_script( 'duplicate_quotation', 'duplicate_quote_obj', array(
+				'security'	=> wp_create_nonce( 'duplicate_quote_nonce' ),
+				'ajaxurl'	=> admin_url( 'admin-ajax.php' ),
+				'redirect_url'	=> get_permalink( 222 ),
+			) 
+		);		
 
 		wp_localize_script( 'create_invoice', 'new_invoice_object', array(
 				'security'	=> wp_create_nonce( 'new_invoice_nonce' ),

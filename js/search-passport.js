@@ -3,7 +3,10 @@ var pmtscs_ajax_object, moment;
 ; (function( $ ) {
 $(function() {
 
-var $searchByIdNoForm = $('#search-by-id-no'),
+var $searchByIdNoForm = $('form#search-by-id-no'),
+	$searchStdForm 	= 	$('.search-student-form'),
+	$closeBtn 		= 	$('.close-button'),
+	$searchIdNoBtn 	= 	$('.search-id-no-button'),
 	$searchByIdSubmit = $('#search-by-id-submit'),
 	$searchStudentForm = $('#search-student-form'),
 	$searchByIdInput = $('input#search_by_id_passport'),
@@ -15,14 +18,35 @@ var $searchByIdNoForm = $('#search-by-id-no'),
 	$otherCertificates = $('.other-certificates'),
 	$otherCertificatesTable = $('table.other-certificates-table'),
 	$errorMessage = $('.error-message'),
-	$searchSpinner = $('span.search-spinner'),
-	$select2chosen1 = $('#select2-chosen-1'),
-	$select2choice = $('.select2-choice'),
-	$officeInput = $('#acf-field_561d82af8c0a7-input');
+	$searchSpinner = $('span.search-spinner');
 
-$select2chosen1.html('Panama');
-$select2choice.removeClass('select2-default');
-$officeInput.val('3');
+function searchStudentFormFadeOut() {
+	$searchStdForm.fadeOut('fast');
+	$('form.acf-form input:text').first().focus();
+}
+
+function searchStudentFormFadeIn(e) {
+	e.preventDefault();
+	$searchStdForm.fadeIn('fast');
+	$searchByIdInput.focus();
+}
+
+$searchByIdNoForm.on('click', function(event){
+	event.stopPropagation();
+});
+
+$closeBtn.on('click', searchStudentFormFadeOut );
+
+$(document).on('keyup', function(event){
+	if(event.keyCode === 27) {
+		searchStudentFormFadeOut();
+	}
+});
+
+$searchStudentForm.on('click', searchStudentFormFadeOut);
+
+$searchIdNoBtn.on('click', searchStudentFormFadeIn);
+
 
 function ajaxSearchId( event ){
 

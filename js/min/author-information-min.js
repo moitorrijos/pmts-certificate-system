@@ -1,0 +1,1 @@
+!function($){var e=$(".certificate-author");e.on("mouseenter",function(){$(this).addClass("info-display"),setTimeout(function(){e.find("span").addClass("appear")},300)}),e.on("mouseleave",function(){setTimeout(function(){e.removeClass("info-display"),e.find("span").removeClass("appear")},600)})}(jQuery);

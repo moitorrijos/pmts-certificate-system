@@ -27,10 +27,9 @@
 			<th>Thursday</th>
 			<th>Friday</th>
 			<th>Saturday</th>
-			<th>Sunday</th>
 		</tr>
 	</thead>
 	<tbody>
-		<?php echo create_table_with(7, 7); ?>
+		<?php echo create_table_with(6, 4); ?>
 	</tbody>
 </table>

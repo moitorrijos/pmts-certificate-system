@@ -4,9 +4,53 @@
 	
 }
 
+.application-form {
+	overflow: hidden;
+}
+
+.translate-down.translate-down.translate-down {
+	margin-top: 0;
+}
+
+.application-sent.application-sent {
+	background-color: saturate($cool-yellow, 15%);
+	padding: 20px 40px;
+	color: $amp-blue;
+	margin-top: -120px;
+	height: 120px;
+	display: none;
+	@extend %smooth-animation;
+	
+
+	p {
+		font-size: 1.1em;
+		margin: 0;
+	}
+}
+
+.application-sent-error.application-sent-error {
+	background-color: lighten($logout-red, 10%);
+	color: white;
+	padding: 20px 40px;
+	margin-top: -120px;
+	height: 120px;
+	display: none;
+	@extend %smooth-animation;
+
+	p {
+		margin: 0;
+	}
+
+	a {
+		color: white;
+		text-decoration: underline;
+	}
+}
+
 .application-page {
 	@extend .report;
 	position: relative;
+
 	
 	h1, h2, h3, h4 {
 		font-family: $report-font-family;
@@ -82,12 +126,29 @@
 			vertical-align: middle;
 			border: 3px double lighten($dark-gray, 25%);
 			line-height: 1;
-			width: (100% / 7);
-			height: 33px;
+			width: (100% / 6);
+			height: 34px;
 
 			&:last-child, &:nth-last-child(2) {
 				background: lighten($dark-gray, 37%);
 			}
+		}
+	}
+
+	table.evaluation-score {
+		@extend table.days;
+		td {
+			width: 18%;
+			height: 70px;
+
+			&:last-child {
+				width: ( 100% - (18% * 3) );
+			}
+
+			&:last-child, &:nth-last-child(2) {
+				background: transparent;
+			}
+			
 		}
 	}
 
@@ -161,7 +222,7 @@ p.super-short.super-short {
 
 
 table.student-info {
-	width: 100%;
+	width: 668px;
 	border: 4px groove darken($dark-gray, 5%);
 	margin-bottom: 16px;
 
@@ -169,8 +230,12 @@ table.student-info {
 		border: 1px solid $dark-gray;
 		border-right: 2px medium solid $dark-gray;
 		border-bottom: 2px solid $dark-gray;
-		width: 25%;
+		width: 135px;
 		vertical-align: top;
+
+		&:nth-child(odd) {
+			width: (668px/2) - 135px;
+		}
 
 		p {
 			line-height: 0.75;

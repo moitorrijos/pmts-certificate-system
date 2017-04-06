@@ -1,1 +1,1 @@
-var new_invoice_object;!function($){$(function(){var o=$(".new-invoice-button"),n=$(".loader");o.on("click",function(){var c=o.data("post_id");$.ajax({url:new_invoice_object.ajaxurl,type:"POST",data:{action:"create_new_invoice",post_id:c},success:function(o){console.log("Success",o),n.fadeOut("fast")},error:function(){console.log("Error")}})})})}(jQuery);
+!function($){$(function(){})}(jQuery);

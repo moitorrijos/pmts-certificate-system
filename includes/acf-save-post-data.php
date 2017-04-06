@@ -1,16 +1,5 @@
 <?php
 
-function startsession() { 
-	
-	if (!session_id()){
-
-		session_start();
-    
-	}
-}
-
-add_action( 'init', 'startsession', 1);
-
 function save_post_to_session_vars( $post_id ) {
   
     $_SESSION['students_name'] = get_field('students_name', $post_id);

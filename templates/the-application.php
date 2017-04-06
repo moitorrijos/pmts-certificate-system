@@ -30,7 +30,13 @@
 
 			</a>
 
-			<a href="<?php echo home_url('application-forms/new-application-form');?>" class="new-certificate-button">
+			<a href="#0" class="duplicate-certificate-button"><i class="fa fa-paper-plane"></i>
+				
+				Send Application
+
+			</a>
+
+			<a href="<?php echo get_permalink(7190);?>" class="new-certificate-button"><i class="fa fa-plus-square"></i>
 
 				Create New Application
 				
@@ -56,20 +62,47 @@
 
 			$place_of_training_slug = get_field('place_of_training_app');
 
-			$place_of_training = get_term_by( 'slug', '01', 'office' );
+			$place_of_training = get_term_by( 'slug', $place_of_training_slug, 'office' );
 
 			$delivery_mode = get_field('course_deliver_mode_app');
 
 		?>
 
-		<div class="application-form not-for-print">
+		<div class="application-form not-for-print" data-post_id="<?php echo the_id(); ?>">
+
+			<div class="full application-sent">
+
+				<p>
+
+					The certificate has been sent to PMTS Main Office for printing. If you need any changes please contact the main office. The local time in Panama is 
+					<?php  
+						date_default_timezone_set("America/Panama");
+						echo date("h:i a");
+					?>
+
+				</p>
+
+			</div>
+
+			<div class="full application-sent-error">
+				
+				<p>
+					
+					Sorry, there was a problem, please try again later. If  you need to send this application please send it via email to <a href="mailto:certificates@panamamaritimetraining.com">certificates@panamamaritimetraining.com</a>. Local time in Panama is 
+					<?php  
+						date_default_timezone_set("America/Panama");
+						echo date("h:i a");
+					?>
+				</p>
+
+			</div>
 
 			<h2>Participant Information</h2>
 
 			<div class="full">
 
 
-				<div class="half">
+				<div class="thirds">
 					
 					<p>
 						Full Name: 
@@ -85,7 +118,7 @@
 					
 				</div>
 
-				<div class="half">
+				<div class="thirds">
 					
 					<p>
 
@@ -94,6 +127,22 @@
 						<span class="undies">
 						
 							<?php echo $participants_id; ?>
+
+						</span>
+
+					</p>
+
+				</div>
+
+				<div class="thirds">
+					
+					<p>
+						
+						Date of Birth:
+
+						<span class="undies">
+							
+							<?php echo $participants_date_of_birth->format('d F Y'); ?>
 
 						</span>
 
@@ -141,11 +190,11 @@
 					
 					<p>
 						
-						Date of Birth:
+						Place of Training
 
 						<span class="undies">
 							
-							<?php echo $participants_date_of_birth->format('d F Y'); ?>
+							<?php echo $place_of_training->name; ?>
 
 						</span>
 
@@ -168,7 +217,10 @@
 								<th class="short-title">Instructor</th>
 								<th class="short-title">Start Date</th>
 								<th class="short-title">End Date</th>
-								<th class="number">Time</th>
+								<th class="short-number">Time</th>
+								<?php if ( current_user_can('manage_options') ) : ?>
+									<th class="short-number">Print</th>
+								<?php endif; ?>
 							</tr>
 						</thead>
 
@@ -197,7 +249,7 @@
 
 									<?php echo get_the_title($course->ID); ?>
 									<?php 
-										if ( $course->ID != 97 ) {
+										if ( $course->ID != 97 && $course->ID != 81 ) {
 											echo ' (' .  $course->abbr . ')';
 										}
 									 ?>
@@ -248,6 +300,13 @@
 								<td class="centered <?php if ( $nightly_course ) { echo 'nightly'; } else { echo 'daily'; } ?>">
 									<?php if( $nightly_course ) { echo "Night"; } else { echo "Day"; } ?>
 								</td>
+								<?php if ( current_user_can( 'manage_options' ) ) : ?>
+									<td class="centered printly">
+										<a href="#0">
+											<i class="fa fa-print"></i>
+										</a>
+									</td>
+								<?php endif; ?>
 							</tr>
 
 						<?php endwhile; ?>

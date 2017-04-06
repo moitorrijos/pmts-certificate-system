@@ -2,6 +2,7 @@
 
 	<div class="main-content">
 
+
 		<div class="buttons">
 
 			<a href="<?php echo home_url('panama-certificates'); ?>" class="back-link">
@@ -77,7 +78,22 @@
 
 		?>
 
+
 		<div class="certificate">
+			
+			<div class="certificate-author not-for-print">
+
+				<p class="small">
+					
+					<i class="fa fa-info-circle" aria-hidden="true"></i>
+
+					<span class="certificate-info">
+						Certificate created by <?php the_author(); ?> on <?php the_date(); ?> &nbsp;
+					</span>
+
+				</p>
+
+			</div>
 
 			<h3 class="certify">Certify that:</h3>
 

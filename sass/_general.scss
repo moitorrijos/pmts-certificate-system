@@ -301,6 +301,16 @@ a.new-certificate-button {
 	}
 }
 
+a.duplicate-certificate-button {
+	@extend %cool-button;
+	background-color: saturate($cool-yellow, 15%);
+	color: $amp-blue;
+
+	&:hover {
+		background-color: $cool-yellow;
+	}
+}
+
 a.new-invoice-button {
 	@extend %cool-button;
 	background-color: $cool-orange;
@@ -342,6 +352,11 @@ a.new-invoice-button {
 a.view-button {
 	@extend .print-button;
 	display: none;
+}
+
+p.small {
+	font-size: 0.75em;
+	letter-spacing: 1px;
 }
 
 .download-xls-button {

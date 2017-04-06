@@ -1,7 +1,7 @@
 <div class="main">
 	
 	<div class="main-content">
-		
+	
 		<div class="buttons">
 			
 			<a href="<?php echo home_url('panama-quotations'); ?>" class="back-link">&laquo; Back to Quotation Table</a>

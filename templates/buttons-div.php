@@ -53,12 +53,12 @@ function pmtscs_button_link() {
 		
 	} elseif ( is_page_template( 'instructors-page.php' ) ) {
 
-		$add_link = '/instructors-list/new-panama-instructor/';
+		$add_link = get_permalink( 345 );
 		return $add_link;
 
 	} elseif ( is_page_template( 'panama-certificate-page.php' ) ) {
 
-		$add_link = '/panama-certificates/new-panama-certificate/';
+		$add_link = get_permalink( 32 );
 		return $add_link;
 
 	} elseif ( is_page_template( 'offices-page.php' ) ) {
@@ -68,22 +68,22 @@ function pmtscs_button_link() {
 
 	} elseif ( is_page_template( 'panama-quotation-page.php' ) ) {
 
-		$add_link = '/panama-quotations/new-panama-quotation/';
+		$add_link = get_permalink( 222 );
 		return $add_link;
 		
 	} elseif ( is_page_template( 'panama-reports-page.php' ) ) {
 
-		$add_link = '/panama-reports/new-panama-reports/';
+		$add_link = get_permalink( 1998 );
 		return $add_link;
 		
 	} elseif ( is_page_template( 'application-form-page.php' ) ) {
 
-		$add_link = '/application-forms/new-application-form/';
+		$add_link = get_permalink( 7190 );
 		return $add_link;
 		
 	} elseif ( is_page_template( 'panama-invoice-page.php' ) ) {
 
-		$add_link = '/panama-quotations/new-panama-quotation/';
+		$add_link = get_permalink( 192 );
 		return $add_link;
 		
 	} 

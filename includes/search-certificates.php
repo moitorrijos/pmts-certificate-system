@@ -27,7 +27,10 @@ function pmtscs_ajax_search_certificates() {
 		foreach ( $certificate_ids as $key => $row ) {
 
 			array_push( $cert_id, $row->post_id );
+			
 		}
+
+		// Search results for passport no.
 
 		$cert_ids_args = array(
 			'post_type' => 'certificates',
@@ -55,8 +58,11 @@ function pmtscs_ajax_search_certificates() {
 
 	} else {
 
+		// Search results for participants name
+
 		$search_certificates_args = array(
 			'post_type' => 'certificates',
+			'posts_per_page' 	=> 55,
 			'meta_key' 	=> 'date_of_issuance',
 			'orderby'	=> 'meta_value_num',
 			'order'		=> 'DESC',

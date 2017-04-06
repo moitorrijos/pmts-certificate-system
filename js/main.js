@@ -10,9 +10,6 @@ var $certForm 		= 	$('.edit-certificate-form'),
 	$printBtn 		= 	$('.print-button'),
 	$navA 			= 	$('.nav').find('li').find('a'),
 	$viewBtn 		= 	$('.view-button'),
-	$searchIdNoBtn 	= 	$('.search-id-no-button'),
-	$searchStdBtn 	= 	$('.search-student-form'),
-	$closeBtn 		= 	$('.close-button'),
 	windowHref 		= 	window.location.href,
 	acfHref 		= 	'acf-form',
 	indexOfAcfHref 	= 	windowHref.lastIndexOf(acfHref),
@@ -67,18 +64,7 @@ $(document).on('click', function(event) {
   }
 });
 
-function searchStudentFormFadeOut() {
-	$searchStdBtn.fadeOut('fast');
-}
-
-function searchStudentFormFadeIn(e) {
-	e.preventDefault();
-	$searchStdBtn.fadeIn('fast');
-}
-
-$closeBtn.on('click', searchStudentFormFadeOut );
-
-$searchIdNoBtn.on('click', searchStudentFormFadeIn);
+$('form.acf-form input:text').first().focus();
 
 function showLoader() {
 	$header.removeClass('show-menu');
