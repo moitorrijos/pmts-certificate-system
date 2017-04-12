@@ -72,6 +72,7 @@ require get_template_directory() . '/includes/add_leading_zeroes.php';
 require get_template_directory() . '/includes/certificate-exists-validation.php';
 require get_template_directory() . '/includes/duplicate-quote-pmtscs.php';
 require get_template_directory() . '/includes/send-application-pmtscs.php';
+require get_template_directory() . '/includes/create-certificate-pmtscs.php';
 require get_template_directory() . '/includes/create-table-with.php';
 require get_template_directory() . '/includes/get_participant_number.php';
 
@@ -83,7 +84,10 @@ require get_template_directory() . '/includes/student_info_complete_table.php';
 require get_template_directory() . '/includes/student_info_short_table.php';
 require get_template_directory() . '/includes/practical_exam_results.php';
 
-
+function wpse27856_set_content_type(){
+    return "text/html";
+}
+add_filter( 'wp_mail_content_type','wpse27856_set_content_type' );
 /**
  * Todo:
  * Save the course price to the database by updating the course

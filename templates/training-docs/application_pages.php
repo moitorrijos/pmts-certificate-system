@@ -38,73 +38,47 @@
 
 	?>
 
-		<div class="application-for-print">
+		<?php if( $instructor ) : ?>
 
-			<div class="application-page">
+			<div class="application-for-print">
 
-				<?php 
+				<div class="application-page">
 
-					echo pmtscs_header_for_print( 'F-SCF-11', '13', $course, $instructor, '1' );
+					<?php 
 
-					echo student_info_complete_table(
-						$participants_name, 
-						$participants_date_of_birth, 
-						$participants_id, 
-						$place_of_training, 
-						$participants_place_of_birth, 
-						$participants_nationality, 
-						$start_date, 
-						$end_date
-					);
-					
-					get_template_part( 'templates/training-docs/days_table' );
+						echo pmtscs_header_for_print( 'F-SCF-11', '13', $course, $instructor, '1' );
 
-					get_template_part( 'templates/training-docs/evaluation-score' );
+						echo student_info_complete_table(
+							$participants_name, 
+							$participants_date_of_birth, 
+							$participants_id, 
+							$place_of_training, 
+							$participants_place_of_birth, 
+							$participants_nationality, 
+							$start_date, 
+							$end_date
+						);
+						
+						get_template_part( 'templates/training-docs/days_table' );
 
-				?>
+						get_template_part( 'templates/training-docs/evaluation-score' );
 
-				<div class="application-signatures">
 
-					<?php get_template_part( 'templates/training-docs/instructor-signature' ); ?>
-					
+					?>
+
+					<div class="application-signatures">
+
+						<?php get_template_part( 'templates/training-docs/instructor-signature' ); ?>
+						
+					</div>
+
 				</div>
 
-			</div>
-
-			<div class="application-page">
-				
-				<?php 
-
-					echo pmtscs_header_for_print( 'ATT', '2', $course, $instructor, '2'); 
-
-					echo student_info_short_table( 
-						$participants_name, 
-						$participants_id, 
-						$place_of_training, 
-						$end_date 
-					);
-
-					get_template_part( 'templates/training-docs/exam_answers' );					
-
-				?>
-
-				<div class="application-signatures">
-
-					<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
-
-					<?php get_template_part( 'templates/training-docs/instructor-signature' ); ?>
-					
-				</div>
-				
-			</div>
-
-			<?php if ( $observation_test ) : ?>
-
-				<div class="application-page ">
+				<div class="application-page">
 					
 					<?php 
 
-						echo pmtscs_header_for_print( 'EXAM', '02', $course, $instructor, '3'); 
+						echo pmtscs_header_for_print( 'ATT', '2', $course, $instructor, '2'); 
 
 						echo student_info_short_table( 
 							$participants_name, 
@@ -113,48 +87,76 @@
 							$end_date 
 						);
 
-						echo practical_exam_results( $course );					
+						get_template_part( 'templates/training-docs/exam_answers' );					
 
 					?>
 
 					<div class="application-signatures">
 
-					<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
+						<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
 
-					<?php get_template_part( 'templates/training-docs/instructor-signature' ); ?>
+						<?php get_template_part( 'templates/training-docs/instructor-signature' ); ?>
+						
+					</div>
 					
 				</div>
+
+				<?php if ( $observation_test ) : ?>
+
+					<div class="application-page ">
+						
+						<?php
+
+							echo pmtscs_header_for_print( 'EXAM', '02', $course, $instructor, '3'); 
+
+							echo student_info_short_table( 
+								$participants_name, 
+								$participants_id, 
+								$place_of_training, 
+								$end_date 
+							);
+
+							echo practical_exam_results( $course );					
+
+						?>
+
+						<div class="application-signatures">
+
+						<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
+
+						<?php get_template_part( 'templates/training-docs/instructor-signature' ); ?>
+						
+					</div>
+						
+					</div>
+
+				<?php endif; ?>
+
+				<div class="application-page">
+					
+					<?php 
+
+						if ( $observation_test ) {
+
+							echo pmtscs_header_for_print( 'F-GC-13', '9', $course, $instructor, '4'); 
+
+						} else {
+
+							echo pmtscs_header_for_print( 'F-GC-13', '9', $course, $instructor, '3'); 
+
+						}
+						
+						echo '<h4 class="short-short">Fecha/Date: <span class="undies">' . $end_date->format('d/m/Y') . '</span></h4>';
+
+						get_template_part( 'templates/training-docs/classroom_instructor_evaluation' );
+
+					?>
 					
 				</div>
 
-			<?php endif; ?>
-
-			<div class="application-page">
-				
-				<?php 
-
-					if ( $observation_test ) {
-
-						echo pmtscs_header_for_print( 'F-GC-13', '9', $course, $instructor, '4'); 
-
-					} else {
-
-						echo pmtscs_header_for_print( 'F-GC-13', '9', $course, $instructor, '3'); 
-
-					}
-
-
-					echo '<h4 class="short-short">Fecha/Date: <span class="undies">' . $end_date->format('d/m/Y') . '</span></h4>';
-
-					get_template_part( 'templates/training-docs/classroom_instructor_evaluation' );
-
-				?>
-				
 			</div>
 
-			
-
-		</div>
+		<?php endif; ?>
 
 	<?php endwhile; endif; wp_reset_query(); ?>
 

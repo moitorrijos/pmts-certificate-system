@@ -25,12 +25,12 @@ function register_my_styles_and_scripts() {
 
 	if ( is_page_template( 'new_panama_certificate.php' ) ) {
 
-		wp_enqueue_script( 'search_passport', THEMEROOT . '/js/search-passport.js', array('jquery'), '20160421', true );
+		// wp_enqueue_script( 'search_passport', THEMEROOT . '/js/search-passport.js', array('jquery'), '20160421', true );
 
-		wp_localize_script( 'search_passport', 'pmtscs_ajax_object', array(
-			'security' => wp_create_nonce( 'pmtscs_passport' ),
-			'ajaxurl' => admin_url( 'admin-ajax.php' ) )
-		);
+		// wp_localize_script( 'search_passport', 'pmtscs_ajax_object', array(
+		// 	'security' => wp_create_nonce( 'pmtscs_passport' ),
+		// 	'ajaxurl' => admin_url( 'admin-ajax.php' ) )
+		// );
 
 		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/min/form-field-magic-min.js', array('jquery'), '20160422', true );
 
@@ -48,7 +48,7 @@ function register_my_styles_and_scripts() {
 
 		wp_localize_script( 'search_certificates', 'certificates_object', array(
 				'security' 	=> wp_create_nonce( 'pmtscs_certificates' ),
-				'ajaxurl'	=> admin_url( 'admin-ajax.php' )
+				'ajaxurl'	=> admin_url( 'admin-ajax.php' ),
 			) 
 		);
 
@@ -86,9 +86,18 @@ function register_my_styles_and_scripts() {
 
 		wp_enqueue_script( 'send_application', THEMEROOT . '/js/send-application.js', array('jquery'), '20170404', true );
 
+		wp_enqueue_script( 'create_certificate', THEMEROOT . '/js/create-certificate.js', array('jquery'), '20170408', true );
+
 		wp_localize_script( 'send_application', 'send_application_obj', array(
 				'security'	=> wp_create_nonce( 'send_application_nonce' ),
 				'ajaxurl'	=> admin_url('admin-ajax.php'),
+			) 
+		);
+
+		wp_localize_script( 'create_certificate', 'create_certificate_obj', array(
+				'security'	=> wp_create_nonce( 'create_certificate_nonce' ),
+				'ajaxurl'	=> admin_url('admin-ajax.php'),
+				'new_certificate_url' => get_permalink( 32 ),
 			) 
 		);
 

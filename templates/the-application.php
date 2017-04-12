@@ -214,11 +214,12 @@
 							<tr>
 								<th class="short-number">No.</th>
 								<th class="title">Course Name</th>
+								<th class="number">Abbr</th>
 								<th class="short-title">Instructor</th>
 								<th class="short-title">Start Date</th>
 								<th class="short-title">End Date</th>
 								<th class="short-number">Time</th>
-								<?php if ( current_user_can('manage_options') ) : ?>
+								<?php if ( current_user_can('moderate_comments') ) : ?>
 									<th class="short-number">Print</th>
 								<?php endif; ?>
 							</tr>
@@ -240,21 +241,16 @@
 								<td class="centered">
 									<?php echo get_row_index(); ?>		
 								</td>
-								<td>
-									<?php if ($course->imo_no) : ?>
-
-										Course IMO No. <?php echo $course->imo_no; ?>
-
-									<?php endif; ?>
-
+								<td class="course-name" data-course_id="<?php echo $course->ID; ?>">
 									<?php echo get_the_title($course->ID); ?>
-									<?php 
-										if ( $course->ID != 97 && $course->ID != 81 ) {
-											echo ' (' .  $course->abbr . ')';
-										}
-									 ?>
 								</td>
-								<td class="centered <?php if( !$instructor ) { echo 'reddy'; } ?>">
+								<td class="centered">
+									<?php echo $course->abbr; ?>
+								</td>
+								<td 
+									class="centered course-instructor <?php if( !$instructor ) echo 'reddy'; ?>"
+									data-instructor_id="<?php if ( $instructor ) echo $instructor->ID; ?>"
+								>
 									<?php 
 
 										if( $instructor ) {
@@ -269,7 +265,10 @@
 
 									?>
 								</td>
-								<td class="centered <?php if( !$start_date ) { echo 'reddy'; } ?>">
+								<td 
+									class="centered course-start-date <?php if( !$start_date ) { echo 'reddy'; } ?>"
+									data-start_date="<?php if ($start_date) echo $start_date->format('Ymd'); ?>"
+								>
 									<?php 
 
 										if( $start_date ) { 
@@ -283,7 +282,10 @@
 										}
 									?>
 								</td>
-								<td class="centered <?php if( !$end_date ) { echo 'reddy'; } ?>">
+								<td 
+									class="centered course-end-date <?php if( !$end_date ) { echo 'reddy'; } ?>"
+									data-end_date="<?php if($end_date) echo $end_date->format('Ymd'); ?>"
+								>
 									<?php 
 
 										if( $end_date ) { 
@@ -300,9 +302,9 @@
 								<td class="centered <?php if ( $nightly_course ) { echo 'nightly'; } else { echo 'daily'; } ?>">
 									<?php if( $nightly_course ) { echo "Night"; } else { echo "Day"; } ?>
 								</td>
-								<?php if ( current_user_can( 'manage_options' ) ) : ?>
+								<?php if ( current_user_can( 'moderate_comments' ) ) : ?>
 									<td class="centered printly">
-										<a href="#0">
+										<a href="#0" class="create-certificate-button">
 											<i class="fa fa-print"></i>
 										</a>
 									</td>

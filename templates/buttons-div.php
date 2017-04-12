@@ -95,7 +95,7 @@ function pmtscs_button_link() {
 
 	<a href="#0" class="download-xls-button not-link"><i class="fa fa-download"></i>&nbsp; Download Table to Excel</a>
 
-	<?php if( current_user_can('edit_pages') || is_page_template( 'panama-quotation-page.php' ) ) : ?>
+	<?php if( current_user_can('edit_pages') || is_page_template( 'panama-quotation-page.php' ) || is_page_template( 'application-form-page.php' ) ) : ?>
 
 	<a href="<?php echo pmtscs_button_link(); ?>" class="new-certificate-button not-link">
 		<i class="fa fa-plus-square"></i>&nbsp; <?php echo pmtscs_button_value(); ?>

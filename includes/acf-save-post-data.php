@@ -66,19 +66,32 @@ function load_session_vars_to_fields( $field ) {
 
       if ($field['name'] == 'office' && isset($_SESSION['office'])){
 
+        if ( is_object($_SESSION['office']) ) {
           $field['value'] = $_SESSION['office']->term_id;
+        } else {
+          $field['value'] = $_SESSION['office'];
+        }
           
       }
 
       if ($field['name'] == 'instructor' && isset($_SESSION['instructor'])){
 
+        if ( is_object($_SESSION['instructor']) ) {
           $field['value'] = $_SESSION['instructor']->ID;
+        } else {
+          $field['value'] = $_SESSION['instructor'];
+        }
+
           
       }
 
       if ($field['name'] == 'course' && isset($_SESSION['course'])){
 
-          $field['value'] = $_SESSION['course']->ID;   
+          if ( is_object($_SESSION['course']) ) {
+            $field['value'] = $_SESSION['course']->ID;
+          } else {
+            $field['value'] = $_SESSION['course'];
+          }
           
       }
 

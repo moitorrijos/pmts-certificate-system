@@ -22,7 +22,6 @@ function sendApplication(){
 			appPostID: $appPostID,
 		},
 		success: function(response){
-			console.log(response);
 			if ( response.success ){
 				$loader.fadeOut('fast');
 				$applicationSentDiv.show();

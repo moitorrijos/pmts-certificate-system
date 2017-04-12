@@ -2,18 +2,21 @@
 
 var $certificateAuthorDiv = $('.certificate-author');
 
-$certificateAuthorDiv.on('mouseenter', function(){
+function animateAuthorDiv(){
 	$(this).addClass('info-display');
+	$certificateAuthorDiv.off('mouseenter');
 	setTimeout(function(){ 
 		$certificateAuthorDiv.find('span').addClass('appear'); 
 	}, 300);
-});
-
-$certificateAuthorDiv.on('mouseleave', function(){
 	setTimeout(function(){
 		$certificateAuthorDiv.removeClass('info-display');
 		$certificateAuthorDiv.find('span').removeClass('appear');
-	}, 600);
-});
+	}, 3000);
+	setTimeout(function(){
+		$certificateAuthorDiv.on('mouseenter', animateAuthorDiv);
+	}, 4000);
+}
+
+$certificateAuthorDiv.on('mouseenter', animateAuthorDiv);
 
 })(jQuery);
