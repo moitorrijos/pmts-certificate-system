@@ -20,7 +20,6 @@
 			'posts_per_page'	=> 30,
 			'paged'				=> $paged,
 
-
 		);
 
 		$application_forms = new WP_Query($application_form_args);

@@ -316,7 +316,7 @@ acf_add_local_field_group(array (
 			'min' => '',
 			'max' => '',
 			'layout' => 'table',
-			'button_label' => 'Add Row',
+			'button_label' => 'Add Service',
 			'sub_fields' => array (
 				array (
 					'key' => 'field_5707d2b30773d',

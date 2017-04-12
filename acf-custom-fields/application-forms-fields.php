@@ -207,7 +207,7 @@ acf_add_local_field_group(array (
 			'min' => '',
 			'max' => '',
 			'layout' => 'table',
-			'button_label' => 'Add Row',
+			'button_label' => 'Add Course',
 			'sub_fields' => array (
 				array (
 					'key' => 'field_58839f02e1165',
