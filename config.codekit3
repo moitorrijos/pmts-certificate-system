@@ -81,6 +81,12 @@
 		"oAP": "\/application-form-page.php",
 		"oF": 0
 		},
+	"\/certificate-system.todo": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/certificate-system.todo",
+		"oF": 0
+		},
 	"\/certificate_tr.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -772,6 +778,12 @@
 		"oAP": "\/includes\/search-certificates.php",
 		"oF": 0
 		},
+	"\/includes\/search-passport-application.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/includes\/search-passport-application.php",
+		"oF": 0
+		},
 	"\/includes\/search-quotations.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -1213,6 +1225,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/min\/search-passport-application-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/min\/search-passport-application-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/min\/search-passport-min.js": {
 		"ft": 64,
 		"mi": 1,
@@ -1281,6 +1302,15 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/min\/search-certificates-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/search-passport-application.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/min\/search-passport-application-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -2526,14 +2556,8 @@
 	"\/js\/form-field-magic.js": [
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/js\/moment.js",
-			"position": 0,
-			"type": 0
-			},
-		{
-			"followForSyntaxChecking": 0,
 			"linkedFileAbbreviatedPath": "\/js\/country-nationality.js",
-			"position": 1,
+			"position": 0,
 			"type": 0
 			}
 		],
@@ -2562,6 +2586,12 @@
 			"followForSyntaxChecking": 0,
 			"linkedFileAbbreviatedPath": "\/js\/keymaster.js",
 			"position": 2,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/js\/moment.js",
+			"position": 3,
 			"type": 0
 			}
 		]

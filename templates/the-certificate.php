@@ -98,9 +98,13 @@
 			<h3 class="certify">Certify that:</h3>
 
 			<h1 class="participant-name"> 
-				<span class="three-stars">***</span>
+				<?php if ( strlen($students_name) <= 37 ) : ?>
+					<span class="three-stars">***</span>
+				<?php endif; ?>
 			 	<?php echo ucwords($students_name); ?>
-			 	<span class="three-stars">***</span>
+			 	<?php if ( strlen($students_name) <= 37 ) : ?>
+					<span class="three-stars">***</span>
+				<?php endif; ?>
 			</h1>
 
 			<p class="attended">Has satisfactorily attended course on:</p>

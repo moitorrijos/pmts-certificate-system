@@ -1,12 +1,12 @@
 <?php
 
-add_action( 'wp_ajax_search_by_id_passport', 'pmtscs_ajax_search_by_id_passport' );
+add_action( 'wp_ajax_search_passport_app', 'pmtscs_ajax_search__passport_app' );
 
-function pmtscs_ajax_search_by_id_passport() {
+function pmtscs_ajax_search__passport_app() {
 
 	global $wpdb;
 
-	if ( !check_ajax_referer( 'pmtscs_passport', 'security' ) ) {
+	if ( !check_ajax_referer( 'pmtscs_passport_app', 'security' ) ) {
 
 		return wp_send_json_error('Invalid security threshold, please try again later.');
 
@@ -57,7 +57,6 @@ function pmtscs_ajax_search_by_id_passport() {
 			'passport_no' => $passport_no,
 			'certificate_id' => $certificate_id,
 			'student_info' => $student_info,
-			'certificate_table' => $certificate_html_list,
 		);
 
 		return wp_send_json_success( $student_array );

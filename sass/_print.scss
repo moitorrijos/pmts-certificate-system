@@ -135,7 +135,8 @@
 
 	.participant-name.participant-name {
 		font-size: 42pt;
-		word-break: break-all;
+		word-break: keep-all;
+		white-space: nowrap;
 		margin: 0.175in 0;
 
 		span.stars {

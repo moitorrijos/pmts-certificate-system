@@ -74,6 +74,7 @@ function ajaxSearchId( event ){
 		},
 
 		success : function( response ) {
+			
 			if ( response.success ) {
 
 				$searchSpinner.hide();
@@ -155,16 +156,17 @@ function searchPassportOnLoad() {
 	$.ajax({
 		url : pmtscs_ajax_object.ajaxurl,
 		type : 'POST',
-		dataType : 'html',
+		dataType : 'json',
 		data : {
-			action : 'load_certificates_by_passport',
+			action : 'search_by_id_passport',
 			security : pmtscs_ajax_object.security,
 			passport_no : $studentPassportNoField.val().toString()
 		},
 
 		success: function( response ){
-			if ( response !== 0 ) {
-				$otherCertificatesTable.append(response);
+			console.log( response );
+			if ( response ) {
+				$otherCertificatesTable.append( response.data.certificate_table );
 				$otherCertificates.show();
 				return;
 			} else {
@@ -172,14 +174,17 @@ function searchPassportOnLoad() {
 			}
 		},
 
-		error: function(){
+		error: function(ts){
+			console.log(ts);
 			return;
 		}
 	});
 }
 
-//Run the searchPassportOnlLoad function here.
-searchPassportOnLoad();
+// Run the searchPassportOnlLoad function here.
+setTimeout(function(){
+	searchPassportOnLoad();
+}, 200);
 
 });
 })(jQuery); 	

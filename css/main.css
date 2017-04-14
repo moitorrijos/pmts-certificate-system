@@ -1816,7 +1816,8 @@ table.student-info {
     font-size: 24pt; }
   .participant-name.participant-name {
     font-size: 42pt;
-    word-break: break-all;
+    word-break: keep-all;
+    white-space: nowrap;
     margin: 0.175in 0; }
     .participant-name.participant-name span.stars {
       font-size: 28pt; }

@@ -25,12 +25,12 @@ function register_my_styles_and_scripts() {
 
 	if ( is_page_template( 'new_panama_certificate.php' ) ) {
 
-		// wp_enqueue_script( 'search_passport', THEMEROOT . '/js/search-passport.js', array('jquery'), '20160421', true );
+		wp_enqueue_script( 'search_passport', THEMEROOT . '/js/search-passport.js', array('jquery'), '20160421', true );
 
-		// wp_localize_script( 'search_passport', 'pmtscs_ajax_object', array(
-		// 	'security' => wp_create_nonce( 'pmtscs_passport' ),
-		// 	'ajaxurl' => admin_url( 'admin-ajax.php' ) )
-		// );
+		wp_localize_script( 'search_passport', 'pmtscs_ajax_object', array(
+			'security' => wp_create_nonce( 'pmtscs_passport' ),
+			'ajaxurl' => admin_url( 'admin-ajax.php' ) )
+		);
 
 		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/min/form-field-magic-min.js', array('jquery'), '20160422', true );
 
@@ -39,6 +39,13 @@ function register_my_styles_and_scripts() {
 	if ( is_page_template( 'new_application_form_page.php' ) ) {
 
 		wp_enqueue_script( 'country-to-nationality', THEMEROOT . '/js/min/country-to-nationality-min.js', array('jquery'), '20160422', true );
+
+		wp_enqueue_script( 'search_passport_app', THEMEROOT . '/js/search-passport-application.js', array('jquery'), '20170412', true );
+
+		wp_localize_script( 'search_passport_app', 'passport_obj_app', array(
+			'security' => wp_create_nonce('pmtscs_passport_app'),
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		) );
 
 	}
 

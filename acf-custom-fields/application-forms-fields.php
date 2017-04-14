@@ -7,9 +7,9 @@ acf_add_local_field_group(array (
 	'title' => 'Application Form',
 	'fields' => array (
 		array (
-			'key' => 'field_58839d5ae115d',
-			'label' => 'Participant\'s Name',
-			'name' => 'participants_name_app',
+			'key' => 'field_58839d6ee115e',
+			'label' => 'Participant\'s Passport/ID',
+			'name' => 'passport_id_app',
 			'type' => 'text',
 			'instructions' => '',
 			'required' => 1,
@@ -28,9 +28,9 @@ acf_add_local_field_group(array (
 			'disabled' => 0,
 		),
 		array (
-			'key' => 'field_58839d6ee115e',
-			'label' => 'Passport/ID',
-			'name' => 'passport_id_app',
+			'key' => 'field_58839d5ae115d',
+			'label' => 'Participant\'s Name',
+			'name' => 'participants_name_app',
 			'type' => 'text',
 			'instructions' => '',
 			'required' => 1,

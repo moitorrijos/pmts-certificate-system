@@ -63,6 +63,7 @@ require get_template_directory() . '/includes/acf-total-certificate-number.php';
 require get_template_directory() . '/includes/acf-save-post-data.php';
 require get_template_directory() . '/includes/acf-remove-post-data.php';
 require get_template_directory() . '/includes/search-by-id-passport.php';
+require get_template_directory() . '/includes/search-passport-application.php';
 require get_template_directory() . '/includes/search-certificates.php';
 require get_template_directory() . '/includes/search-quotations.php';
 require get_template_directory() . '/includes/fill-form-randomly.php';
