@@ -40,12 +40,14 @@
 				data-post_id="<?php echo get_the_ID(); ?>"
 			>
 
+				<i class="fa fa-clone" aria-hidden="true"></i>
 				Duplicate Quotation
 				
 			</a>
 
 			<a href="<?php echo get_permalink( 222 );?>" class="new-certificate-button ">
 
+				<i class="fa fa-plus-square"></i>
 				Create New Quotation
 				
 			</a>
@@ -209,7 +211,9 @@
 								Course IMO No. <?php echo $course->imo_no; ?>
 							<?php endif; ?>
 							<?php echo get_the_title($course->ID); ?>
-							(<?php echo $course->abbr; ?>)
+							<?php if ( $course->ID !== 81 && $course->ID !== 97 ) : ?>
+								(<?php echo $course->abbr; ?>)
+							<?php endif; ?>
 							<?php if ($is_renewal == "yes"): ?>
 								<b>Renewal</b>
 							<?php endif; ?>

@@ -73,6 +73,18 @@ function register_my_styles_and_scripts() {
 
 	}
 
+	if ( is_page_template( 'application-form-page.php' )) {
+
+		wp_enqueue_script( 'search_application', THEMEROOT . '/js/search-application.js', array('jquery'), '20170422', true );
+
+		wp_localize_script( 'search_application', 'application_object', array(
+				'security'	=> wp_create_nonce( 'search_application_nonce' ),
+				'ajaxurl'	=> admin_url( 'admin-ajax.php' ),
+			) 
+		);
+
+	}
+
 	if ( is_singular( 'certificates' ) ) {
 
 		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/min/form-field-magic-min.js', array('jquery'), '20160422', true );

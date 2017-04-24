@@ -1034,6 +1034,13 @@ table.acf-table tr td.acf-field {
 .acf-label.acf-label.acf-label {
   margin-bottom: 0; }
 
+.acf-field.acf-field-text.acf-field-58839d6ee115e.acf-r0 {
+  background: #3690ca; }
+  .acf-field.acf-field-text.acf-field-58839d6ee115e.acf-r0 label {
+    color: white; }
+    .acf-field.acf-field-text.acf-field-58839d6ee115e.acf-r0 label .fa-id-card-o {
+      font-size: 1.2em; }
+
 input.search {
   box-sizing: border-box;
   border-radius: 4px;
@@ -1115,6 +1122,12 @@ table.system {
       display: block;
       color: #284f96;
       font-size: 0.9em; }
+    table.system td.printly p.warningly {
+      color: #C10000;
+      margin: 0; }
+    table.system td > span.print-pending {
+      background-color: #C10000;
+      color: white; }
     table.system td a {
       color: #286a96;
       text-decoration: none;

@@ -38,7 +38,7 @@
 
 	?>
 
-		<?php if( $instructor ) : ?>
+		<?php if( $instructor && $start_date && $end_date ) : ?>
 
 			<div class="application-for-print">
 

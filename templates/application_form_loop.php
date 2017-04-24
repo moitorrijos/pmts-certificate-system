@@ -8,16 +8,34 @@
 
 		<?php endwhile; endif; wp_reset_query(); ?>
 
+		<div class="back-create-buttons">
+			
+			<div class="back-button-link buttons">
+					
+				<a href="<?php echo get_permalink( 7188 ); ?>" class="back-link">
+					&laquo;
+
+					Back to Application List
+
+				</a>
+				
+			</div>
+
+			<?php get_template_part('templates/buttons-div');  ?>
+			
+		</div>
+
+
 		<?php 
 
-		get_template_part('templates/buttons-div');
+		get_template_part('templates/search_application_form');
 
 		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
 		$application_form_args = array(
 
 			'post_type'			=> 'applications',
-			'posts_per_page'	=> 30,
+			'posts_per_page'	=> 75,
 			'paged'				=> $paged,
 
 		);
@@ -25,9 +43,6 @@
 		$application_forms = new WP_Query($application_form_args);
 
 		if ( $application_forms->have_posts() ) :
-
-			
-
 
 	 	?>
 
@@ -51,57 +66,11 @@
 				
 				<?php 
 
-					while ( $application_forms->have_posts() ) : 
+					while ( $application_forms->have_posts() ) : $application_forms->the_post(); 
 
-						$application_forms->the_post(); 
-						
-						$participants_name = get_field('participants_name_app');
+					get_template_part( 'templates/application_form_table' );
 
-						$participants_id = get_field('passport_id_app');
-
-				?>
-
-					<tr>
-						<td>
-							<a href="<?php the_permalink(); ?>">
-								<?php echo $participants_name; ?>
-							</a>
-						</td>
-						<td class="centered">
-							<?php echo $participants_id; ?>
-						</td>
-						<td class="centered">
-							<a href="<?php echo the_permalink(); ?>">
-								<?php echo the_title(); ?>
-							</a>
-						</td>
-						<td class="centered">
-							<?php 
-
-								if ( have_rows('courses_app') ) : 
-
-								while( have_rows('courses_app') ) : the_row(); 
-								
-								$courses = get_sub_field('course_name_app');
-
-								if (get_row_index() != 1) { echo ', '; }
-
-								echo $courses->abbr;
-
-								endwhile; endif;
-							?>
-
-						</td>
-						<?php if ( current_user_can( 'edit_pages' ) ) : ?>
-							<td class="centered edit">
-								<a href="<?php echo the_permalink(); ?>" class="edit-form">
-									<i class="fa fa-pencil-square-o"></i>
-								</a>
-							</td>
-						<?php endif; ?>
-					</tr>
-
-				<?php endwhile; else : ?>
+					endwhile; else : ?>
 
 				<p>No Applications created, please <a href="<?php echo home_url('/application-forms/new-application-form/') ?>">click here to create aplication...</a></p>
 

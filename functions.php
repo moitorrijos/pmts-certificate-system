@@ -62,20 +62,26 @@ require get_template_directory() . '/includes/ajax-login.php';
 require get_template_directory() . '/includes/acf-total-certificate-number.php';
 require get_template_directory() . '/includes/acf-save-post-data.php';
 require get_template_directory() . '/includes/acf-remove-post-data.php';
-require get_template_directory() . '/includes/search-by-id-passport.php';
-require get_template_directory() . '/includes/search-passport-application.php';
-require get_template_directory() . '/includes/search-certificates.php';
-require get_template_directory() . '/includes/search-quotations.php';
 require get_template_directory() . '/includes/fill-form-randomly.php';
 require get_template_directory() . '/includes/fill-deck-courses.php';
 require get_template_directory() . '/includes/my_courses_post_object_results.php';
 require get_template_directory() . '/includes/add_leading_zeroes.php';
 require get_template_directory() . '/includes/certificate-exists-validation.php';
 require get_template_directory() . '/includes/duplicate-quote-pmtscs.php';
-require get_template_directory() . '/includes/send-application-pmtscs.php';
 require get_template_directory() . '/includes/create-certificate-pmtscs.php';
 require get_template_directory() . '/includes/create-table-with.php';
+require get_template_directory() . '/includes/update_certificate_by_app_data.php';
 require get_template_directory() . '/includes/get_participant_number.php';
+
+/**
+ * Ajax Calls
+ */
+require get_template_directory() . '/includes/search-by-id-passport.php';
+require get_template_directory() . '/includes/search-passport-application.php';
+require get_template_directory() . '/includes/search-certificates.php';
+require get_template_directory() . '/includes/search-quotations.php';
+require get_template_directory() . '/includes/send-application-pmtscs.php';
+require get_template_directory() . '/includes/search-application-form.php';
 
 /**
  * Includes for application
@@ -89,8 +95,3 @@ function wpse27856_set_content_type(){
     return "text/html";
 }
 add_filter( 'wp_mail_content_type','wpse27856_set_content_type' );
-/**
- * Todo:
- * Save the course price to the database by updating the course
- * price field, only if the course price field is not set.
- */

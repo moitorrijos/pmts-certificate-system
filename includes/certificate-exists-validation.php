@@ -2,7 +2,6 @@
 
 add_filter('acf/validate_value/key=field_5612fe8fe2a39', 'cert_exists_validate_value', 10, 4);
 
-
 function cert_exists_validate_value( $valid ){
 
 	$page_template = get_page_template();

@@ -8,7 +8,7 @@ acf_add_local_field_group(array (
 	'fields' => array (
 		array (
 			'key' => 'field_58839d6ee115e',
-			'label' => 'Participant\'s Passport/ID',
+			'label' => '<i class="fa fa-id-card-o" aria-hidden="true"></i> Passport No or ID',
 			'name' => 'passport_id_app',
 			'type' => 'text',
 			'instructions' => '',

@@ -14,12 +14,13 @@
 
 			<div class="back-button-link buttons">
 				
-				<a href="<?php echo home_url('panama-quotations'); ?>" class="back-link">
+				<a href="<?php echo get_permalink( 208 ); ?>" class="back-link">
 					&laquo;
 
-					Back to Certificates List
+					Back to Quotation List
 
 				</a>
+
 			</div>
 
 			<?php get_template_part('templates/buttons-div'); ?>

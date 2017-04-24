@@ -122,7 +122,18 @@ table.system {
 				color: $amp-blue;
 				font-size: 0.9em;
 			}
+			
+			p.warningly {
+				color: $logout-red;
+				margin: 0;
+			}
 		}
+
+		& > span.print-pending {
+				background-color: $logout-red;
+				color: white;
+		}
+
 
 		a {
 			color: darken($pmts-blue, 15%);

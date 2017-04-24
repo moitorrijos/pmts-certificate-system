@@ -33,12 +33,12 @@ function pmtscs_ajax_search_certificates() {
 		// Search results for passport no.
 
 		$cert_ids_args = array(
-			'post_type' => 'certificates',
+			'post_type' 		=> 'certificates',
 			'posts_per_page' 	=> -1,
-			'meta_key' 	=> 'date_of_issuance',
-			'orderby'	=> 'meta_value_num',
-			'order'		=> 'DESC',
-			'post__in' => $cert_id
+			'meta_key' 			=> 'date_of_issuance',
+			'orderby'			=> 'meta_value_num',
+			'order'				=> 'DESC',
+			'post__in' 			=> $cert_id,
 		);
 
 		ob_start();
@@ -61,12 +61,12 @@ function pmtscs_ajax_search_certificates() {
 		// Search results for participants name
 
 		$search_certificates_args = array(
-			'post_type' => 'certificates',
+			'post_type' 		=> 'certificates',
 			'posts_per_page' 	=> 55,
-			'meta_key' 	=> 'date_of_issuance',
-			'orderby'	=> 'meta_value_num',
-			'order'		=> 'DESC',
-			's'			=> (string)$passport_no
+			'meta_key' 			=> 'date_of_issuance',
+			'orderby'			=> 'meta_value_num',
+			'order'				=> 'DESC',
+			's'					=> (string)$passport_no,
 		);
 
 		$search_certs = new WP_Query( $search_certificates_args );

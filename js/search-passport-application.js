@@ -26,8 +26,6 @@ function ajaxSearchId(){
 
 			if ( response.success ) {
 
-				console.log(response.data);
-
 				var studentsName, passportId, placeOfBirth, nationality, dateOfBirth;
 
 				response.data.student_info.forEach(function(element){

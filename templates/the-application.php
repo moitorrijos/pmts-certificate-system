@@ -70,6 +70,14 @@
 
 		<div class="application-form not-for-print" data-post_id="<?php echo the_id(); ?>">
 
+			<?php 
+				if ( isset($_SESSION['certificate_ids']) ) {
+					echo '<pre>';
+					print_r($_SESSION['certificates_ids']);
+					echo '</pre>';
+				}
+			?>
+
 			<div class="full application-sent">
 
 				<p>
@@ -220,7 +228,9 @@
 								<th class="short-title">End Date</th>
 								<th class="short-number">Time</th>
 								<?php if ( current_user_can('moderate_comments') ) : ?>
-									<th class="short-number">Print</th>
+									<th class="short-number">
+										Print
+									</th>
 								<?php endif; ?>
 							</tr>
 						</thead>
@@ -304,8 +314,43 @@
 								</td>
 								<?php if ( current_user_can( 'moderate_comments' ) ) : ?>
 									<td class="centered printly">
-										<a href="#0" class="create-certificate-button">
-											<i class="fa fa-print"></i>
+										<?php 
+											$certificate_exists_app = get_posts(array(
+												'post_type' => 'certificates',
+												'meta_query' => array(
+													'relation' => 'AND',
+													array(
+										            'key' => 'passport_id',
+										            'value' => $participants_id,
+										            'compare' => '=',
+											        ),
+											        array(
+											            'key' => 'course',
+											            'value' => (int)$course->ID,
+											            'compare' => '=',
+											        ),
+												),
+											));
+										 ?>
+											<?php if (!$certificate_exists_app) : ?>
+												<?php if ( $instructor && $start_date && $end_date ) : ?>
+													<a href="#0" class="create-certificate-button">
+														<i class="fa fa-print"></i>
+													</a>
+												<?php else : ?>
+													<p href="#0" class="warningly">
+														<i class="fa fa-times" aria-hidden="true"></i>
+													</p>
+												<?php endif; ?>
+											<?php else : ?>
+												<a 
+													class="not-link"
+													href="<?php echo $certificate_exists_app[0]->guid ?>"
+													target="_blank"
+												>
+													<i class="fa fa-external-link"></i>
+												</a>
+											<?php endif; ?>
 										</a>
 									</td>
 								<?php endif; ?>

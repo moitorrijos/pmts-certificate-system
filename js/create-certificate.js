@@ -35,6 +35,7 @@ function createThisCertificate(event){
 			if (response.success) {
 
 		        window.open(create_certificate_obj.new_certificate_url);
+		        setTimeout( function(){ location.reload(); }, 8000 );
 
 			} else {
 				$loader.fadeOut('fast');

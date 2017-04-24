@@ -33,7 +33,8 @@
 			</a>
 
 			<a href="<?php echo home_url('panama-certificates/new-panama-certificate');?>" class="new-certificate-button">
-
+				
+				<i class="fa fa-plus-square"></i>
 				Create New Certificate
 				
 			</a>
@@ -209,15 +210,13 @@
 
 					<p class="resolution-p short">
 						
-						In recreational power boats above 24 meters in length and unlimited distance of navigation. (En embarcaciones de recreo a motor mayores de 24 metros de eslora y navegación sin límite).
+						In recreational power boats above 24 meters in length, up to 500GT and unlimited distance of navigation. (En embarcaciones de recreo a motor mayores de 24 metros de eslora, hasta 500 GT y navegación sin límite).
 
 					</p>
 
 				<?php endif; ?>
 
 			</div>
-
-			<?php if ($office->term_id == 3) : ?>
 
 				<div class="full dates">
 					
@@ -244,8 +243,6 @@
 					</div>
 
 				</div>
-
-			<?php endif; ?>
 			
 			<div class="full">
 				
