@@ -14,43 +14,20 @@ function pmtscs_ajax_search_application() {
 
 	$application_no = $_POST['application_no'];
 
-	$application_ids_by_passport = $wpdb->get_results(
-
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id_app" AND meta_value="' . (string)$application_no . '" ORDER BY post_id DESC', OBJECT)
-
+	$apps_by_passport = $wpdb->get_results(
+		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id_app" AND meta_value="'.$application_no.'"')
 	);
 
-	$application_ids_by_name = $wpdb->get_results(
-
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="participants_name_app" AND meta_value LIKE "%%' . (string)$application_no . '%%" ORDER BY post_id DESC', OBJECT)
-
-	);
-
-	if ( $application_ids_by_passport || $application_ids_by_name ) {
-		
-		$app_id = array();
-
-		foreach ( $application_ids_by_passport as $key => $row ) {
-
-			array_push( $app_id, $row->post_id );
-
-		}
-
-		foreach ( $application_ids_by_name as $key => $row ) {
-
-			array_push( $app_id, $row->post_id );
-
-		}
-
-		$app_id_args = array(
+	if ( $apps_by_passport ) {
+	
+		$app_id_args_by_passport = array(
 			'post_type'	=> 'applications',
 			'posts_per_page' => 55,
-			'post__in'	=> $app_id,
+			'meta_key' => 'passport_id_app',
+			'meta_value' => (string)$application_no,
 		);
 
-		ob_start();
-
-		$app_ids = new WP_Query( $app_id_args );
+		$app_ids = new WP_Query( $app_id_args_by_passport );
 
 		if ( $app_ids->have_posts() ) :
 			while ( $app_ids->have_posts() ) : $app_ids->the_post();
@@ -62,16 +39,32 @@ function pmtscs_ajax_search_application() {
 		$application_html_list = ob_get_clean();
 
 		return wp_send_json_success( $application_html_list );
-		
+
 	} else {
 
-		$app_id_args = array(
-			'post_type'	=> 'applications',
-			'posts_per_page' => 55,
-			's' => (string)$application_no,
+		$application_names = explode(' ', $application_no);
+
+		$application_names_query = array_map(function($name){
+			return array(
+				'key' => 'participants_name_app',
+				'value' => $name,
+				'compare' => 'LIKE',
+			);
+		}, $application_names);
+
+		$meta_query_array = array(
+			'relation' => 'AND',
 		);
 
-		$app_ids = new WP_Query( $app_id_args );
+		array_push($meta_query_array, $application_names_query);
+
+		$app_id_args_by_name = array(
+			'post_type'	=> 'applications',
+			'posts_per_page' => 55,
+			'meta_query' => $meta_query_array,
+		);
+
+		$app_ids = new WP_Query( $app_id_args_by_name );
 
 		if ( $app_ids->have_posts() ) :
 			while ( $app_ids->have_posts() ) : $app_ids->the_post();
