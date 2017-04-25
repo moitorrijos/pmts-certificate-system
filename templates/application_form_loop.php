@@ -36,19 +36,6 @@
 
 			'post_type'			=> 'applications',
 			'posts_per_page'	=> 75,
-			// 'meta_query'		=> array(
-			// 	'relation' => 'AND',
-			// 	array(
-			// 		'key' => 'participants_name_app',
-			// 		'value' => 'Gabriel',
-			// 		'compare' => 'LIKE',
-			// 	),
-			// 	array(
-			// 		'key' => 'participants_name_app',
-			// 		'value' => 'Gonzalez',
-			// 		'compare' => 'LIKE',
-			// 	),
-			// ),
 			'paged'				=> $paged,
 
 		);

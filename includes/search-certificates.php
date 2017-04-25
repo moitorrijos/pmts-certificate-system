@@ -12,33 +12,21 @@ function pmtscs_ajax_search_certificates() {
 
 	}
 
-	$passport_no = $_POST['passport_no'];
+	$certificate_query = $_POST['certificate_query'];
 
 	$certificate_ids = $wpdb->get_results(
 
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value="' . (string)$passport_no . '" ORDER BY post_id DESC', OBJECT)
+		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id" AND meta_value="' . (string)$certificate_query . '" ORDER BY post_id DESC', OBJECT)
 
 	);
 
 	if ( $certificate_ids ) {
 
-		$cert_id = array();
-
-		foreach ( $certificate_ids as $key => $row ) {
-
-			array_push( $cert_id, $row->post_id );
-			
-		}
-
-		// Search results for passport no.
-
 		$cert_ids_args = array(
 			'post_type' 		=> 'certificates',
 			'posts_per_page' 	=> -1,
-			'meta_key' 			=> 'date_of_issuance',
-			'orderby'			=> 'meta_value_num',
-			'order'				=> 'DESC',
-			'post__in' 			=> $cert_id,
+			'meta_key'			=> 'passport_id',
+			'meta_value'		=> (string)$certificate_query,
 		);
 
 		ob_start();
@@ -52,39 +40,49 @@ function pmtscs_ajax_search_certificates() {
 
 		endwhile; endif;
 
-		$certificate_html_list = ob_get_clean();
+		$certificate_html_list_by_passport = ob_get_clean();
 
-		return wp_send_json_success( $certificate_html_list );
+		return wp_send_json_success( $certificate_html_list_by_passport );
 
 	} else {
 
-		// Search results for participants name
+		$certificate_query_by_name = explode(' ', $certificate_query);
+
+		$certificate_names_query = array_map(function($name){
+			return array(
+				'key' => 'students_name',
+				'value' => $name,
+				'compare' => 'LIKE',
+			);
+		}, $certificate_query_by_name);
+
+		$meta_query_array = array(
+		    'relation' => 'AND',
+		);
+
+		array_push($meta_query_array, $certificate_names_query);
 
 		$search_certificates_args = array(
 			'post_type' 		=> 'certificates',
 			'posts_per_page' 	=> 55,
-			'meta_key' 			=> 'date_of_issuance',
-			'orderby'			=> 'meta_value_num',
-			'order'				=> 'DESC',
-			's'					=> (string)$passport_no,
+			'meta_query'		=> $meta_query_array,
 		);
 
 		$search_certs = new WP_Query( $search_certificates_args );
 
 		ob_start();
 
-		if ( $search_certs->have_posts() ) : while ( $search_certs->have_posts() ) : $search_certs->the_post();
+		if ( $search_certs->have_posts() ) : 
+			while ( $search_certs->have_posts() ) : $search_certs->the_post();
 
 		get_template_part( 'templates/certificate_table' );
 
 		endwhile; endif;
 
-		$certificate_html_list = ob_get_clean();
+		$certificate_html_list_by_name = ob_get_clean();
 
-		return wp_send_json_success( $certificate_html_list );
+		return wp_send_json_success( $certificate_html_list_by_name );
 
 	}
-
-return;
 
 }

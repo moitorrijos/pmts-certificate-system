@@ -29,6 +29,8 @@ function pmtscs_ajax_search_application() {
 
 		$app_ids = new WP_Query( $app_id_args_by_passport );
 
+		ob_start();
+
 		if ( $app_ids->have_posts() ) :
 			while ( $app_ids->have_posts() ) : $app_ids->the_post();
 
@@ -65,6 +67,8 @@ function pmtscs_ajax_search_application() {
 		);
 
 		$app_ids = new WP_Query( $app_id_args_by_name );
+
+		ob_start();
 
 		if ( $app_ids->have_posts() ) :
 			while ( $app_ids->have_posts() ) : $app_ids->the_post();

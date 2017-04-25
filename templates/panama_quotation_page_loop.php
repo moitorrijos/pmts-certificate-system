@@ -51,9 +51,10 @@
 			<thead>
 				<tr>
 					<th class="short-title">Participant's Name</th>
-					<th class="short-title">Client's Name</th>
+					<th class="number">Client's Name</th>
 					<th class="short-number">Quotation Number</th>
 					<th class="short-title">Services</th>
+					<!-- <th class="short-number">Amount</th> -->
 					<th class="short-short-number">Created By</th>
 					<th class="short-number">Date</th>
 					<th class="short-short-number">Edit</th>
@@ -112,6 +113,7 @@
 
 						 ?>
 					</td>
+					
 					<td class="centered"><?php echo get_the_author(); ?></td>
 					<td class="centered list-col-4"><?php echo get_the_date('d/m/Y'); ?></td>
 					<td class="centered edit">

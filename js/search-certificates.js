@@ -40,11 +40,9 @@ $searchForm.on('submit', function(event){
 		data 	 : {
 			action 	 	: 'search_certificates',
 			security 	: certificates_object.security,
-			passport_no : $searchByIdInput.val().toString()
+			certificate_query : $searchByIdInput.val().toString()
 		},
 		success: function(response){
-
-			console.log(response);
 
 			if (response.data === '') {
 
