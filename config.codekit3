@@ -2421,12 +2421,6 @@
 		"oAP": "\/templates\/panama_invoice_page_loop.php",
 		"oF": 0
 		},
-	"\/templates\/panama_quotation_page_loop.php": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/templates\/panama_quotation_page_loop.php",
-		"oF": 0
-		},
 	"\/templates\/panama_reports_page_loop.php": {
 		"ft": 8192,
 		"oA": 0,
