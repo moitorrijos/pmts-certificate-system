@@ -21,7 +21,7 @@
 	<ol>
 		<?php 
 			for ($i=0; $i<25; $i++) {
-				echo '<li>&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;&nbsp;e</li>';
+				echo '<li>&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;&nbsp;d</li>';
 			} 
 		?>
 	</ol>
