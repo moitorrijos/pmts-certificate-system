@@ -54,7 +54,7 @@
 					<th class="number">Client's Name</th>
 					<th class="short-number">Quotation Number</th>
 					<th class="short-title">Services</th>
-					<!-- <th class="short-number">Amount</th> -->
+					<th class="short-number">Amount</th>
 					<th class="short-short-number">Created By</th>
 					<th class="short-number">Date</th>
 					<th class="short-short-number">Edit</th>
@@ -114,6 +114,28 @@
 						 ?>
 					</td>
 					
+					<td class="centered">
+						<?php  
+						
+							if( have_rows('courses') ):
+
+								$price_sum = [];
+
+						 	// loop through the rows of data
+						    while ( have_rows('courses') ) : the_row();
+
+								$course_price = get_sub_field('price');
+
+								array_push($price_sum, (float)$course_price);
+
+							endwhile; endif;
+
+							$course_total = array_reduce($price_sum, 'pmtscs_price_sum');
+
+							echo number_format($course_total, 2);
+
+						?>
+					</td>
 					<td class="centered"><?php echo get_the_author(); ?></td>
 					<td class="centered list-col-4"><?php echo get_the_date('d/m/Y'); ?></td>
 					<td class="centered edit">
