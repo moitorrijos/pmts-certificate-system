@@ -228,7 +228,7 @@
 							$<?php echo number_format( ($course_price * $quantity), 2 ); ?>
 						</td>
 					</tr>
-				<?php endwhile; endif; wp_reset_query();
+				<?php endwhile; endif;
 					if ( have_rows('other_services') ) :
 					while( have_rows('other_services') ) : the_row();
 					$service_name = get_sub_field('service_name');
@@ -252,13 +252,15 @@
 				 			$<?php echo number_format( ($service_quantity * $service_price), 2); ?>
 				 		</td>
 				 	</tr>
-				 <?php endwhile; endif; wp_reset_query(); ?>
+				 <?php endwhile; endif; ?>
 
 				</tbody>
 				<tfoot>
 					<tr>
 						<td colspan="4" class="total">Sub Total</td>
-						<td id="subtotal" class="centered subtotal-discount"></td>
+						<td id="subtotal" class="centered subtotal-discount">
+							
+						</td>
 					</tr>
 					<?php if (get_field('discount')) : ?>
 						<tr>

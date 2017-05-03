@@ -17,7 +17,7 @@ function save_application_id_data( $post_id ) {
 
 		if ( $certificate_ids_by_passport ) {
 
-			$_SESSION['certificates_ids'] = array();
+			$_SESSION['certificates_ids'] = [];
 
 			foreach ( $certificate_ids_by_passport as $key => $row ) {
 
@@ -35,7 +35,7 @@ function save_application_id_data( $post_id ) {
 
 			);
 
-			$_SESSION['certificates_ids'] = array();
+			$_SESSION['certificates_ids'] = [];
 
 			foreach ( $certificate_ids_by_name as $key => $row ) {
 

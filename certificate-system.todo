@@ -1,7 +1,7 @@
 Tasks:
   ✔ Create Search for Applications (Participant Name, Passport, App Code, etc.). @done (17-04-22 12:23)
   ✔ Create print pending class for application loop page. @done (17-04-20 08:44)
-  ☐ Remove create new certificate capability.
-  ☐ Create application exists validation.
   ☐ Create edit functionality for certificates from application edit screen. @note this funcitonality is not working properly.
+  ☐ Seperate certificates and application by office.
+  ☐ Total with php in quotation.
   ✔ Make long names appear better (remove asterisks). @done (17-04-14 12:52)

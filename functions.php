@@ -74,7 +74,7 @@ require get_template_directory() . '/includes/update_certificate_by_app_data.php
 require get_template_directory() . '/includes/get_participant_number.php';
 
 /**
- * Ajax Calls
+ * Ajax calls
  */
 require get_template_directory() . '/includes/search-by-id-passport.php';
 require get_template_directory() . '/includes/search-passport-application.php';
@@ -99,4 +99,13 @@ add_filter( 'wp_mail_content_type','wpse27856_set_content_type' );
 function pmtscs_price_sum($carry, $item) {
     $carry += $item;
     return $carry;
+}
+
+function pmtscs_author_details($post_ID)  {
+	$auth = get_post($post_ID); // gets author from post
+	$authid = $auth->post_author; // gets author id for the post
+	$user_firstname = get_the_author_meta('user_firstname',$authid); // retrieve firstname
+	$user_lastname = get_the_author_meta('user_lastname',$authid); // retrieve firstname
+
+	return $user_firstname . ' ' . $user_lastname;
 }

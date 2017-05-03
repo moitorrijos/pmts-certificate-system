@@ -30,7 +30,11 @@ function pmtscs_ajax_send_application(){
 
 	$subject = 'Certificates available for print from ' . $place_of_training->name;
 
-	$message = 'There is a certificate for printing from ' .$place_of_training->name . '<br>Name: ' . $full_name . '<br>click here to print ' . $certificate_permalink;
+	$message = 'There is a certificate for printing from ' .$place_of_training->name;
+
+	$message .= '<br>Name: ' . $full_name . '<br>click here to print ' . $certificate_permalink;
+
+	$message .= '<br>This Application was created by ' . pmtscs_author_details($post_id) . '.';
 
 	if ( wp_mail( $to, $subject, $message, $headers ) ) {
 
