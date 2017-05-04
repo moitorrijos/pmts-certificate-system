@@ -124,7 +124,7 @@ function register_my_styles_and_scripts() {
 
 	if ( is_singular( 'quotation' ) ) {
 
-		// wp_enqueue_script( 'quotation-js', THEMEROOT . '/js/quotation.js', array('jquery'), '20160317', true );
+		wp_enqueue_script( 'quotation-js', THEMEROOT . '/js/quotation.js', array('jquery'), '20160317', true );
 
 		wp_enqueue_script( 'create_invoice', THEMEROOT . '/js/create-invoice.js', array('jquery'), '20161220', true );
 

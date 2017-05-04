@@ -258,9 +258,7 @@
 				<tfoot>
 					<tr>
 						<td colspan="4" class="total">Sub Total</td>
-						<td id="subtotal" class="centered subtotal-discount">
-							
-						</td>
+						<td id="subtotal" class="centered subtotal-discount"></td>
 					</tr>
 					<?php if (get_field('discount')) : ?>
 						<tr>
