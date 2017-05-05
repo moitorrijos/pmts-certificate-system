@@ -114,7 +114,71 @@
 						 ?>
 					</td>
 					<td class="centered">
-						$1,900.20
+						<?php 
+
+							if( have_rows('courses') ) :
+
+							 	// loop through the rows of data
+							    while ( have_rows('courses') ) : the_row();
+
+									$courses_price_sum = array();
+
+									$course_price = get_sub_field('price');
+
+									$course_quantity = get_sub_field('quantity');
+
+									if ($course_price) {
+
+										$course_prices = (float)$course_price * (float)$course_quantity;
+										
+										array_push($courses_price_sum, (float)$course_prices);
+
+									}
+
+								endwhile; 
+
+							endif;
+
+							if ($courses_price_sum) {
+
+								$courses_price_sum = array_reduce($courses_price_sum, 'pmtscs_price_sum');
+								
+							}
+
+							if( have_rows('other_services') ):
+
+							 	// loop through the rows of data
+							    while ( have_rows('other_services') ) : the_row();
+
+									$services_price_sum = array();
+
+								    $service_price = get_sub_field('service_price');
+
+								    $service_quantity = get_sub_field('service_quantity');
+
+								    if ($service_price) {
+
+								    	$service_prices = (float)$service_price * (float)$service_quantity;
+								    	
+								    	array_push($services_price_sum, (int)$service_prices);
+
+								    }
+
+								endwhile;
+
+							endif;
+
+							if ($services_price_sum) {
+
+								$services_price_sum = array_reduce($services_price_sum, 'pmtscs_price_sum');
+								
+							}
+
+							// var_dump($services_price_sum);
+
+							echo '$' . number_format(($courses_price_sum + $services_price_sum), 2);
+
+						 ?>
 					</td>
 					
 					<td class="centered"><?php echo get_the_author(); ?></td>
