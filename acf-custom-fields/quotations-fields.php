@@ -393,7 +393,7 @@ acf_add_local_field_group(array (
 			'name' => 'government_fee',
 			'type' => 'number',
 			'instructions' => '',
-			'required' => 0,
+			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => '',

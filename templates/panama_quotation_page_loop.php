@@ -115,15 +115,28 @@
 					</td>
 					<td class="centered">
 						<?php 
+							
+							$courses_price_sum = array();
 
 							if( have_rows('courses') ) :
 
 							 	// loop through the rows of data
 							    while ( have_rows('courses') ) : the_row();
-
-									$courses_price_sum = array();
-
-									$course_price = get_sub_field('price');
+							    	
+							    	$course = get_sub_field('course_name');
+									$is_panamanian = get_sub_field('panamanian');
+									$is_renewal = get_sub_field('renewal');
+									if ( get_sub_field('price') ) {
+										$course_price = get_sub_field('price');
+									} elseif ( $is_panamanian == "yes" && $is_renewal == "no" ) {
+										$course_price = $course->price_panamanian;
+									} elseif ( $is_panamanian == "no" && $is_renewal =="no" ) {
+										$course_price = $course->price_foreign;
+									} elseif ( $is_panamanian == "yes"  && $is_renewal == "yes" ) {
+										$course_price = $course->price_panamanian_renewal;
+									} elseif ( $is_panamanian == "no" && $is_renewal == "yes" ) {
+										$course_price = $course->price_foreign_rewal;
+									}
 
 									$course_quantity = get_sub_field('quantity');
 
@@ -139,18 +152,14 @@
 
 							endif;
 
-							if ($courses_price_sum) {
+							$count_courses_taken = count($courses_price_sum);
 
-								$courses_price_sum = array_reduce($courses_price_sum, 'pmtscs_price_sum');
+							$services_price_sum = array();
 								
-							}
-
 							if( have_rows('other_services') ):
 
 							 	// loop through the rows of data
 							    while ( have_rows('other_services') ) : the_row();
-
-									$services_price_sum = array();
 
 								    $service_price = get_sub_field('service_price');
 
@@ -160,7 +169,7 @@
 
 								    	$service_prices = (float)$service_price * (float)$service_quantity;
 								    	
-								    	array_push($services_price_sum, (int)$service_prices);
+								    	array_push($services_price_sum, (float)$service_prices);
 
 								    }
 
@@ -168,13 +177,28 @@
 
 							endif;
 
-							if ($services_price_sum) {
+							if ( $courses_price_sum && is_array($courses_price_sum) ) {
+
+								$government_fee = get_field('government_fee');
+
+								$courses_price_sum = array_reduce($courses_price_sum, 'pmtscs_price_sum');
+
+								$courses_price_sum = $courses_price_sum + ($count_courses_taken * $government_fee);
+								
+							} else {
+
+								$courses_price_sum = 0;
+							}
+
+							if ( $services_price_sum && is_array($services_price_sum) ) {
 
 								$services_price_sum = array_reduce($services_price_sum, 'pmtscs_price_sum');
 								
-							}
+							} else {
 
-							// var_dump($services_price_sum);
+								$services_price_sum = 0;
+
+							}
 
 							echo '$' . number_format(($courses_price_sum + $services_price_sum), 2);
 
