@@ -35,8 +35,8 @@
 		$application_form_args = array(
 
 			'post_type'			=> 'applications',
-			'posts_per_page'	=> 75,
-			'paged'				=> $paged,
+			'posts_per_page'	=> 33,
+			'paged' 			=> $paged,
 
 		);
 
@@ -70,13 +70,24 @@
 
 					get_template_part( 'templates/application_form_table' );
 
-					endwhile; else : ?>
-
-				<p>No Applications created, please <a href="<?php echo home_url('/application-forms/new-application-form/') ?>">click here to create aplication...</a></p>
+					endwhile;
+				 
+				 ?>
 
 			</tbody>
 
+
 		</table>
+		<!-- pagination here -->
+	    <?php
+	      if (function_exists('custom_pagination')) {
+	        custom_pagination($application_forms->max_num_pages,"",$paged);
+	      }
+	    ?>
+
+		<?php else : ?>
+
+		<p>No Applications created, please <a href="<?php echo home_url('/application-forms/new-application-form/') ?>">click here to create aplication...</a></p>
 
 		<?php endif; ?>
 

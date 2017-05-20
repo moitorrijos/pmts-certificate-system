@@ -35,7 +35,7 @@ function createThisCertificate(event){
 			if (response.success) {
 
 		        window.open(create_certificate_obj.new_certificate_url);
-		        setTimeout( function(){ location.reload(); }, 8000 );
+		        $loader.show();
 
 			} else {
 				$loader.fadeOut('fast');
@@ -54,6 +54,12 @@ function createThisCertificate(event){
 }
 
 $createCertificateBtn.on('click', createThisCertificate);
+
+function reloadWindow(){
+	location.reload();
+}
+
+$(window).on('focus', reloadWindow);
 
 });
 })(jQuery); 	

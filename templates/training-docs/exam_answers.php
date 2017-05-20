@@ -20,7 +20,7 @@
 	<h3>Resultados de Examen / <small>Exam Results</small></h3>
 	<ol>
 		<?php 
-			for ($i=0; $i<25; $i++) {
+			for ($i=0; $i<20; $i++) {
 				echo '<li>&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;&nbsp;&nbsp;d</li>';
 			} 
 		?>

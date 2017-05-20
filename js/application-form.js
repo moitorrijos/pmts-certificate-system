@@ -27,7 +27,6 @@ function fadeAppDivIn(){
 	$editBtn.css('display', 'inline-block');
 }
 
-
 $editBtn.on('click', fadeAppDivOut);
 
 $viewBtn.on('click', fadeAppDivIn);
