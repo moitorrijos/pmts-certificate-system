@@ -1,5 +1,5 @@
 Tasks:
-  ☐ Verify Application Page Pagination
+  ✔ Verify Application Page Pagination @done (17-05-20 18:43)
   ☐ Create Application exists prompt
   ☐ Create edit functionality for certificates from application edit screen. @note this funcitonality is not working properly.
   ☐ Separate certificates and application by office.
