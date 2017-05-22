@@ -120,7 +120,7 @@ acf_add_local_field_group(array (
 			'required' => 1,
 			'conditional_logic' => '',
 			'wrapper' => array (
-				'width' => 33,
+				'width' => 34,
 				'class' => '',
 				'id' => '',
 			),

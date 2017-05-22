@@ -14,12 +14,27 @@ function pmtscs_ajax_search__passport_app() {
 
 	$passport_no = $_POST['passport_no'];
 
-	$certificate_id = $wpdb->get_var(
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value="' . (string)$passport_no . '" ORDER BY post_id DESC LIMIT 1')
+	$application_id = $wpdb->get_var(
+		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id_app" AND meta_value="'.(string)$passport_no.'"')
 	);
 
-	$all_certs_ids = $wpdb->get_results(
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value="' . (string)$passport_no . '"', OBJECT)
+	if ( $application_id ) {
+
+		$student_info = $wpdb->get_results(
+			$wpdb->prepare('SELECT meta_key, meta_value FROM fytv_postmeta WHERE post_id=' . (string)$application_id , OBJECT)
+		);
+		
+		$app_student_array = array(
+			'passport_no' => $passport_no,
+			'certificate_id' => $certificate_id,
+			'student_info' => $student_info,
+		);
+
+		return wp_send_json_success( $app_student_array );
+	}
+
+	$certificate_id = $wpdb->get_var(
+		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value="' . (string)$passport_no . '" ORDER BY post_id DESC LIMIT 1')
 	);
 
 	if ( $certificate_id ) {
@@ -27,31 +42,6 @@ function pmtscs_ajax_search__passport_app() {
 		$student_info = $wpdb->get_results(
 			$wpdb->prepare('SELECT meta_key, meta_value FROM fytv_postmeta WHERE post_id=' . (string)$certificate_id , OBJECT)
 		);
-
-		$all_ids = array();
-
-		foreach ( $all_certs_ids as $key => $row ) {
-
-			array_push( $all_ids, $row->post_id );
-
-		}
-
-		$certs_ids_args = array(
-			'post_type' => 'certificates',
-			'post__in' => $all_ids
-		);
-
-		ob_start();
-
-		$certs_query = new WP_Query( $certs_ids_args );
-
-		if ( $certs_query->have_posts() ) : while ( $certs_query->have_posts() ) : $certs_query->the_post();
-
-		get_template_part( 'templates/certificate_table' );
-
-		endwhile; endif; wp_reset_query();
-
-		$certificate_html_list = ob_get_clean();
 
 		$student_array = array(
 			'passport_no' => $passport_no,

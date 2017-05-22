@@ -28,25 +28,27 @@ function ajaxSearchId(){
 
 				var studentsName, passportId, placeOfBirth, nationality, dateOfBirth;
 
+				console.table(response.data.student_info);
+
 				response.data.student_info.forEach(function(element){
 
-					if (element.meta_key === 'students_name') {
+					if ( element.meta_key === 'participants_name_app' || element.meta_key === 'students_name' ) {
 
 						studentsName = element.meta_value;
 
-					} else if ( element.meta_key === 'passport_id') {
+					} else if ( element.meta_key === 'passport_id_app' || element.meta_key === 'passport_id' ) {
 
 						passportId = element.meta_value;
 
-					} else if ( element.meta_key  === 'place_of_birth') {
+					} else if ( element.meta_key  === 'place_of_birth_app' || element.meta_key === 'place_of_birth' ) {
 
 						placeOfBirth = element.meta_value;
 
-					} else if ( element.meta_key === 'student_nationality' ) {
+					} else if ( element.meta_key === 'nationality_app' || element.meta_key === 'student_nationality' ) {
 
 						nationality = element.meta_value;
 
-					} else if ( element.meta_key === 'date_of_birth' ) {
+					} else if ( element.meta_key === 'date_of_birth_app' || element.meta_key === 'date_of_birth' ) {
 
 						dateOfBirth = element.meta_value;
 
