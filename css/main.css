@@ -429,7 +429,7 @@ th {
 /**
  * Colors
  */
-.logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, .certificate .certificate-author, .application-form .certificate-author, .report .certificate-author, .application-page .certificate-author, .certificate .certificate-author p.small span.certificate-info, .application-form .certificate-author p.small span.certificate-info, .report .certificate-author p.small span.certificate-info, .application-page .certificate-author p.small span.certificate-info, ul.fill-courses-dropdown li ul, .application-exists, .application-sent, .application-sent-error {
+.logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, ul.fill-courses-dropdown li ul, .application-exists, .application-sent, .application-sent-error {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
@@ -973,7 +973,7 @@ span.acf-spinner.acf-spinner.acf-spinner {
   top: 12px;
   left: 25px;
   width: 175px;
-  background: #49C943 url(../images/create-new-spinner.gif) no-repeat 50% 50%;
+  background: #49C943;
   z-index: 100; }
 
 .acf-fields > .acf-field {
@@ -1229,30 +1229,34 @@ table.system {
   position: relative;
   font-size: 1.2rem;
   padding: 0 36px; }
-  .certificate .certificate-author, .application-form .certificate-author, .report .certificate-author, .application-page .certificate-author {
-    padding: 4px 8px;
+  .certificate .certificate-author-mask, .application-form .certificate-author-mask, .report .certificate-author-mask, .application-page .certificate-author-mask {
     background: #3cbc36;
-    display: inline-block;
     border-radius: 12px;
-    cursor: pointer;
     position: absolute;
     top: 0;
     left: 0;
-    width: 26px; }
+    width: 26px;
+    height: 28px;
+    cursor: pointer; }
+  .certificate .certificate-author, .application-form .certificate-author, .report .certificate-author, .application-page .certificate-author {
+    border-radius: 12px;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 28px; }
     .certificate .certificate-author p.small, .application-form .certificate-author p.small, .report .certificate-author p.small, .application-page .certificate-author p.small {
       margin: 0;
-      color: white; }
+      color: white;
+      position: absolute;
+      top: 4px;
+      left: 8px; }
       .certificate .certificate-author p.small i, .application-form .certificate-author p.small i, .report .certificate-author p.small i, .application-page .certificate-author p.small i {
         margin-right: 4px; }
-      .certificate .certificate-author p.small span.certificate-info, .application-form .certificate-author p.small span.certificate-info, .report .certificate-author p.small span.certificate-info, .application-page .certificate-author p.small span.certificate-info {
-        width: 0;
-        opacity: 0;
-        display: none; }
-        .certificate .certificate-author p.small span.certificate-info.appear, .application-form .certificate-author p.small span.certificate-info.appear, .report .certificate-author p.small span.certificate-info.appear, .application-page .certificate-author p.small span.certificate-info.appear {
-          display: inline;
-          opacity: 1; }
-    .certificate .certificate-author.info-display, .application-form .certificate-author.info-display, .report .certificate-author.info-display, .application-page .certificate-author.info-display {
-      width: 360px; }
+      .certificate .certificate-author p.small span.certificate-info.appear, .application-form .certificate-author p.small span.certificate-info.appear, .report .certificate-author p.small span.certificate-info.appear, .application-page .certificate-author p.small span.certificate-info.appear {
+        display: inline;
+        opacity: 1; }
   @media screen and (min-width: 1200px) {
     .certificate, .application-form, .report, .application-page {
       margin: 0 48px; } }
@@ -1582,10 +1586,12 @@ table.referer-info {
   color: #284f96;
   display: none; }
   .application-exists.application-exists p {
-    font-size: 1.3em;
+    font-size: 1.1em;
     margin: 0; }
     .application-exists.application-exists p a {
-      color: #678fd6; }
+      color: #678fd6;
+      text-decoration: underline;
+      font-style: italic; }
 
 .application-sent.application-sent {
   background-color: #3ab434;

@@ -20,11 +20,13 @@
 	@extend %smooth-animation;
 
 	p {
-		font-size: 1.3em;
+		font-size: 1.1em;
 		margin: 0;
 
 		a {
 			color: lighten($amp-blue, 25%);
+			text-decoration: underline;
+			font-style: italic;
 		}
 	}
 }

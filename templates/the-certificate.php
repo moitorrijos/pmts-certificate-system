@@ -82,6 +82,8 @@
 
 		<div class="certificate">
 			
+			<div class="certificate-author-mask"></div>
+
 			<div class="certificate-author not-for-print">
 
 				<p class="small">

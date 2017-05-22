@@ -48,11 +48,11 @@
 				// 'meta_query'		=> array(
 				// 	array(
 				// 		'key'	=> 'date_of_issuance',
-				// 		'value'	=> array(20170201, 20170228),
+				// 		'value'	=> array(20170401, 20170430),
 				// 		'compare' => 'BETWEEN',
 				// 	),
 				// ),
-				// // 'date_query'	=> array(
+				// 'date_query'	=> array(
 				// 	array(
 				// 		'after' => array(
 				// 			'year'	=> 2017,

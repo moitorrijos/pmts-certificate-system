@@ -1,20 +1,34 @@
 (function($){
 
-var $certificateAuthorDiv = $('.certificate-author');
+var $certificateAuthorDiv = $('.certificate-author-mask');
 
 function animateAuthorDiv(){
-	$(this).addClass('info-display');
+
+	var $this = $(this),
+		pSmallWidth = $this.siblings('.certificate-author').find('p.small').width() + 18,
+		mask = $this.closest('.certificate').find('.certificate-author-mask'),
+		originalMaskWidth = mask.width();
+
+	mask.velocity(
+		{width: pSmallWidth}, 
+		{easing: "easeInOut"},
+		{duration: 200}
+	);
+
 	$certificateAuthorDiv.off('mouseenter');
-	setTimeout(function(){ 
-		$certificateAuthorDiv.find('span').addClass('appear'); 
-	}, 300);
+
 	setTimeout(function(){
-		$certificateAuthorDiv.removeClass('info-display');
-		$certificateAuthorDiv.find('span').removeClass('appear');
+		mask.velocity(
+			{width: originalMaskWidth}, 
+			{easing: "easeInOut"},
+			{duration: 250}
+		);
 	}, 3000);
+
 	setTimeout(function(){
 		$certificateAuthorDiv.on('mouseenter', animateAuthorDiv);
-	}, 4000);
+	}, 3300);
+
 }
 
 $certificateAuthorDiv.on('mouseenter', animateAuthorDiv);
