@@ -4,7 +4,8 @@ jQuery.noConflict();
 (function( $ ) {
 $(function() {
 
-var $passportAppInput = $('input#acf-field_58839d6ee115e'),
+var $appExists = $('.application-exists'),
+	$passportAppInput = $('input#acf-field_58839d6ee115e'),
 	$nameAppInput = $('input#acf-field_58839d5ae115d'),
 	$pobAppInput = $('input#acf-field_58839d88e115f'),
 	$nationalityAppInput = $('input#acf-field_58839da3e1160'),
@@ -27,8 +28,6 @@ function ajaxSearchId(){
 			if ( response.success ) {
 
 				var studentsName, passportId, placeOfBirth, nationality, dateOfBirth;
-
-				console.table(response.data.student_info);
 
 				response.data.student_info.forEach(function(element){
 
@@ -55,6 +54,13 @@ function ajaxSearchId(){
 					} 
 				});
 
+				if ( response.data.app_permalink ) {
+
+					$appExists.append('<p>The Application for <span id="participant-name">'+studentsName+'</span> already exists. <a href="'+response.data.app_permalink+'">Click here to go to the last application</a>, or continue creating a new application bellow.</p>');
+					setTimeout( function(){ $appExists.slideDown('fast'); }, 10 );
+
+				}
+
 				$nameAppInput.val( studentsName );
 
 				$pobAppInput.val( placeOfBirth );
@@ -64,6 +70,7 @@ function ajaxSearchId(){
 				$dobAppInput.val( dateOfBirth );
 
 				$dobAppInput.next('input').val( moment( dateOfBirth ).format('D MMMM YYYY') );
+
 
 			} else {
 

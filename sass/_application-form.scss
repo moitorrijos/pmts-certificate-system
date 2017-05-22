@@ -12,12 +12,27 @@
 	margin-top: 0;
 }
 
-.application-sent.application-sent {
-	background-color: saturate($cool-yellow, 15%);
+.application-exists.application-exists {
+	background-color: saturate($cool-yellow, 20%);
 	padding: 20px 40px;
 	color: $amp-blue;
-	margin-top: -120px;
-	height: 120px;
+	display: none;
+	@extend %smooth-animation;
+
+	p {
+		font-size: 1.3em;
+		margin: 0;
+
+		a {
+			color: lighten($amp-blue, 25%);
+		}
+	}
+}
+
+.application-sent.application-sent {
+	background-color: darken($cool-green, 7%);
+	padding: 20px 40px;
+	color: white;
 	display: none;
 	@extend %smooth-animation;
 	
@@ -32,8 +47,6 @@
 	background-color: lighten($logout-red, 10%);
 	color: white;
 	padding: 20px 40px;
-	margin-top: -120px;
-	height: 120px;
 	display: none;
 	@extend %smooth-animation;
 

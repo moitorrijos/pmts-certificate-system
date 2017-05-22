@@ -429,7 +429,7 @@ th {
 /**
  * Colors
  */
-.logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, .certificate .certificate-author, .application-form .certificate-author, .report .certificate-author, .application-page .certificate-author, .certificate .certificate-author p.small span.certificate-info, .application-form .certificate-author p.small span.certificate-info, .report .certificate-author p.small span.certificate-info, .application-page .certificate-author p.small span.certificate-info, ul.fill-courses-dropdown li ul, .application-sent, .application-sent-error {
+.logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, .certificate .certificate-author, .application-form .certificate-author, .report .certificate-author, .application-page .certificate-author, .certificate .certificate-author p.small span.certificate-info, .application-form .certificate-author p.small span.certificate-info, .report .certificate-author p.small span.certificate-info, .application-page .certificate-author p.small span.certificate-info, ul.fill-courses-dropdown li ul, .application-exists, .application-sent, .application-sent-error {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
@@ -1576,12 +1576,21 @@ table.referer-info {
 .translate-down.translate-down.translate-down {
   margin-top: 0; }
 
-.application-sent.application-sent {
-  background-color: #e5e328;
+.application-exists.application-exists {
+  background-color: #ebe822;
   padding: 20px 40px;
   color: #284f96;
-  margin-top: -120px;
-  height: 120px;
+  display: none; }
+  .application-exists.application-exists p {
+    font-size: 1.3em;
+    margin: 0; }
+    .application-exists.application-exists p a {
+      color: #678fd6; }
+
+.application-sent.application-sent {
+  background-color: #3ab434;
+  padding: 20px 40px;
+  color: white;
   display: none; }
   .application-sent.application-sent p {
     font-size: 1.1em;
@@ -1591,8 +1600,6 @@ table.referer-info {
   background-color: #f40000;
   color: white;
   padding: 20px 40px;
-  margin-top: -120px;
-  height: 120px;
   display: none; }
   .application-sent-error.application-sent-error p {
     margin: 0; }

@@ -70,14 +70,6 @@
 
 		<div class="application-form not-for-print" data-post_id="<?php echo the_id(); ?>">
 
-			<?php 
-				if ( isset($_SESSION['certificate_ids']) ) {
-					echo '<pre>';
-					print_r($_SESSION['certificates_ids']);
-					echo '</pre>';
-				}
-			?>
-
 			<div class="full application-sent">
 
 				<p>

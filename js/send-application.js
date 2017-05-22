@@ -24,12 +24,12 @@ function sendApplication(){
 		success: function(response){
 			if ( response.success ){
 				$loader.fadeOut('fast');
-				$applicationSentDiv.show();
-				setTimeout( function(){ $applicationSentDiv.addClass('translate-down'); }, 100);
+				// $applicationSentDiv.show();
+				setTimeout( function(){ $applicationSentDiv.slideDown('fast'); }, 10);
 			} else {
 				$loader.fadeOut('fast');
-				$applicationSentErrorDiv.show();
-				setTimeout( function(){ $applicationSentErrorDiv.addClass('translate-down'); }, 100);
+				// $applicationSentErrorDiv.show();
+				setTimeout( function(){ $applicationSentErrorDiv.slideDown('fast'); }, 10);
 			}
 		},
 		error: function(){

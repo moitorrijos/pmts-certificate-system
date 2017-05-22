@@ -20,17 +20,21 @@ function pmtscs_ajax_search__passport_app() {
 
 	if ( $application_id ) {
 
+		$application_permalink = get_permalink( $application_id );
+
 		$student_info = $wpdb->get_results(
 			$wpdb->prepare('SELECT meta_key, meta_value FROM fytv_postmeta WHERE post_id=' . (string)$application_id , OBJECT)
 		);
 		
 		$app_student_array = array(
-			'passport_no' => $passport_no,
-			'certificate_id' => $certificate_id,
-			'student_info' => $student_info,
+			'passport_no' 		=> $passport_no,
+			'certificate_id' 	=> $certificate_id,
+			'app_permalink' 	=> $application_permalink,
+			'student_info' 		=> $student_info,
 		);
 
 		return wp_send_json_success( $app_student_array );
+		
 	}
 
 	$certificate_id = $wpdb->get_var(
