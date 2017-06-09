@@ -58,7 +58,11 @@ function ajaxSearchId(){
 
 					$appExists.html('');
 					$appExists.append('<p>The Application for <span id="participant-name">'+studentsName+'</span> already exists. <a href="'+response.data.app_permalink+'">Click here to go to the last application</a>, or continue creating a new application below.</p>');
-					setTimeout( function(){ $appExists.velocity('slideDown', {duration: 100}); }, 10 );
+					setTimeout( function(){ $appExists.velocity(
+						'slideDown',
+						{ easing: 'easeInOut' },
+						{ duration: 100 }
+					); }, 10 );
 
 				}
 

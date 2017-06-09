@@ -24,10 +24,18 @@ function sendApplication(){
 		success: function(response){
 			if ( response.success ){
 				$loader.fadeOut('fast');
-				setTimeout( function(){ $applicationSentDiv.velocity('slideDown', {duration: 100}); }, 10);
+				setTimeout( function(){ $applicationSentDiv.velocity(
+					'slideDown', 
+					{easing: 'easeInOut'}, 
+					{duration: 100}
+				); }, 10);
 			} else {
 				$loader.fadeOut('fast');
-				setTimeout( function(){ $applicationSentErrorDiv.velocity('slideDown', {duration: 100}); }, 10);
+				setTimeout( function(){ $applicationSentErrorDiv.velocity(
+					'slideDown', 
+					{easing: 'easeInOut'}, 
+					{duration: 100}
+				); }, 10);
 			}
 		},
 		error: function(){

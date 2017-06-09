@@ -54,6 +54,7 @@
 					<th class="middle-title">Participant's Name</th>
 					<th class="short-title">Passport/ID No.</th>
 					<th class="middle-title">Application Code</th>
+					<th class="short-title">Created By</th>
 					<th class="title">Courses Taken</th>
 					<?php if ( current_user_can('edit_pages') ) : ?>
 						<th class="number">

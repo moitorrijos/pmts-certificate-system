@@ -4,14 +4,15 @@ function save_application_id_data( $post_id ) {
 
 	global $wpdb;
 
-	// If we are editing an application get the old passport number and save to session
+	// If we are editing an application get the passport number and save to session
+
 	if ( is_singular( 'applications' ) ) {
 
 		$passport_id_app = get_field( 'passport_id_app', $post_id );
 
 		$certificate_ids_by_passport = $wpdb->get_results(
 
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id" AND meta_value="' . (string)$passport_id_app . '" ORDER BY post_id DESC')
+			$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id" AND meta_value="' . (string)$passport_id_app . '" ORDER BY post_id DESC')
 
 		);
 
@@ -49,11 +50,11 @@ function save_application_id_data( $post_id ) {
 
 }
 
-add_action( 'acf/save_post', 'save_application_id_data', 10 );
+add_action( 'acf/save_post', 'save_application_id_data', 9 );
 
 function update_certificate_by_app_data( $post_id ) {
 
-	if ( isset($_SESSION['certificate_ids']) && is_singular( 'applications' )) {
+	if ( is_singular( 'applications' ) ) {
 
 		$certificate_ids = $_SESSION['certificates_ids'];
 
@@ -73,4 +74,4 @@ function update_certificate_by_app_data( $post_id ) {
 	
 }
 
-add_action( 'acf/save_post', 'update_certificate_by_app_data', 20 );
+add_action( 'acf/save_post', 'update_certificate_by_app_data', 22 );

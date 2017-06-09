@@ -973,7 +973,7 @@ span.acf-spinner.acf-spinner.acf-spinner {
   top: 12px;
   left: 25px;
   width: 175px;
-  background: #49C943;
+  background: #49C943 url(../images/create-new-cert-spinner.gif) no-repeat 50% 50%;
   z-index: 100; }
 
 .acf-fields > .acf-field {
@@ -1236,7 +1236,7 @@ table.system {
     top: 0;
     left: 0;
     width: 26px;
-    height: 28px;
+    height: 26px;
     cursor: pointer; }
   .certificate .certificate-author, .application-form .certificate-author, .report .certificate-author, .application-page .certificate-author {
     border-radius: 12px;
@@ -1649,6 +1649,8 @@ table.referer-info {
         -ms-flex-pack: justify;
             justify-content: space-between;
     width: 100%; }
+    .application-page .application-signatures .general-director {
+      background: url(../images/general-director-signature.svg) center top no-repeat; }
     .application-page .application-signatures .applicant-signature, .application-page .application-signatures .general-director {
       width: 40%;
       text-align: center;

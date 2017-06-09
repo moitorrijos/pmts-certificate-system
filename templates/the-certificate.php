@@ -2,7 +2,6 @@
 
 	<div class="main-content">
 
-
 		<div class="buttons">
 
 			<a href="<?php echo home_url('panama-certificates'); ?>" class="back-link">
@@ -82,7 +81,7 @@
 
 		<div class="certificate">
 			
-			<div class="certificate-author-mask"></div>
+			<div class="certificate-author-mask not-for-print"></div>
 
 			<div class="certificate-author not-for-print">
 

@@ -34,8 +34,8 @@ function createThisCertificate(event){
 		success: function(response){
 			if (response.success) {
 
-		        window.open(create_certificate_obj.new_certificate_url);
 		        $loader.show();
+		        setTimeout( function(){ window.open(create_certificate_obj.new_certificate_url); }, 100);
 
 			} else {
 				$loader.fadeOut('fast');
@@ -43,6 +43,18 @@ function createThisCertificate(event){
 				setTimeout( function(){ $applicationSentErrorDiv.addClass('translate-down'); }, 100);
 			}
 		},
+		// success: function(response) {
+		// 	if (response.success) {
+
+		//      $loader.show();
+		// 		setTimeout( function(){ window.open(response.data); }, 100);
+
+		// 	} else {
+		// 		$loader.fadeOut('fast');
+		// 		$applicationSentErrorDiv.show();
+		// 		setTimeout( function(){ $applicationSentErrorDiv.addClass('translate-down'); }, 100);
+		// 	}
+		// },
 		error: function(){
 				$loader.fadeOut('fast');
 				$applicationSentErrorDiv.show();

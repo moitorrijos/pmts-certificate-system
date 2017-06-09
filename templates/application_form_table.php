@@ -20,6 +20,9 @@
 			<?php echo the_title(); ?>
 		</a>
 	</td>
+	<td class="centered">
+		<?php the_author(); ?>
+	</td>
 	<td class="centered ">
 		<?php 
 

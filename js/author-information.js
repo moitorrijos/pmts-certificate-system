@@ -10,18 +10,18 @@ function animateAuthorDiv(){
 		originalMaskWidth = mask.width();
 
 	mask.velocity(
-		{width: pSmallWidth}, 
-		{easing: "easeInOut"},
-		{duration: 200}
+		{ width: pSmallWidth },
+		{ easing: "easeInOut" },
+		{ duration: 200 }
 	);
 
 	$certificateAuthorDiv.off('mouseenter');
 
 	setTimeout(function(){
 		mask.velocity(
-			{width: originalMaskWidth}, 
-			{easing: "easeInOut"},
-			{duration: 250}
+			{ width: originalMaskWidth },
+			{ easing: "easeInOut" },
+			{ duration: 250 }
 		);
 	}, 3000);
 
