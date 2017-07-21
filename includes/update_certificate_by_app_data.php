@@ -4,9 +4,11 @@ function save_application_id_data( $post_id ) {
 
 	global $wpdb;
 
-	// If we are editing an application get the passport number and save to session
+	// If we are editing an application...
 
 	if ( is_singular( 'applications' ) ) {
+
+		// get the passport number...
 
 		$passport_id_app = get_field( 'passport_id_app', $post_id );
 

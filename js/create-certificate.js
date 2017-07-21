@@ -9,6 +9,10 @@ var $createCertificateBtn = $('.create-certificate-button'),
 
 	$loader = $('.loader');
 
+function reloadWindow() {
+	location.reload();
+}
+
 function createThisCertificate(event){
 	event.preventDefault();
 	var $this = $(this),
@@ -34,31 +38,24 @@ function createThisCertificate(event){
 		success: function(response){
 			if (response.success) {
 
-		        $loader.show();
-		        setTimeout( function(){ window.open(create_certificate_obj.new_certificate_url); }, 100);
+		        setTimeout( function(){ 
+		        	window.open(create_certificate_obj.new_certificate_url);
+		        });
+
+		        setTimeout( function(){ 
+		        	$(window).one('focus', reloadWindow);
+		        }, 100);
 
 			} else {
 				$loader.fadeOut('fast');
 				$applicationSentErrorDiv.show();
-				setTimeout( function(){ $applicationSentErrorDiv.addClass('translate-down'); }, 100);
+				setTimeout( function(){ $applicationSentErrorDiv.addClass('translate-down'); });
 			}
 		},
-		// success: function(response) {
-		// 	if (response.success) {
-
-		//      $loader.show();
-		// 		setTimeout( function(){ window.open(response.data); }, 100);
-
-		// 	} else {
-		// 		$loader.fadeOut('fast');
-		// 		$applicationSentErrorDiv.show();
-		// 		setTimeout( function(){ $applicationSentErrorDiv.addClass('translate-down'); }, 100);
-		// 	}
-		// },
 		error: function(){
 				$loader.fadeOut('fast');
 				$applicationSentErrorDiv.show();
-				setTimeout( function(){ $applicationSentErrorDiv.addClass('translate-down'); }, 100);
+				setTimeout( function(){ $applicationSentErrorDiv.addClass('translate-down'); });
 		},
 		timeout: 6000,
 	});
@@ -66,12 +63,6 @@ function createThisCertificate(event){
 }
 
 $createCertificateBtn.on('click', createThisCertificate);
-
-function reloadWindow(){
-	location.reload();
-}
-
-$(window).on('focus', reloadWindow);
 
 });
 })(jQuery); 	

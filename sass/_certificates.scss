@@ -13,6 +13,10 @@
 	margin-top: 8rem;
 	font-family: 'diploma';
 	font-size: 38px;
+
+	&.half-top {
+		margin: 1rem 0;
+	}
 }
 
 .participant-name.participant-name {
@@ -33,6 +37,19 @@
 .course.course {
 	@extend %britanic;
 	@extend %centered;
+}
+
+.brainpoint.brainpoint {
+	@extend %centered;
+	h3 {
+		@extend %britanic;
+		margin: 2px 0;
+		font-size: 1.5rem;
+	}
+	& > p {
+		margin: 2px 0;
+	}
+	margin-top: 8rem;
 }
 
 .certificate {

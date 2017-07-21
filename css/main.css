@@ -430,7 +430,6 @@ th {
  * Colors
  */
 .logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, ul.fill-courses-dropdown li ul, .application-exists, .application-sent, .application-sent-error {
-  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
 .back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .payment-info, .report .amp-logo-text, .application-page .amp-logo-text, .report .report-full, .application-page .report-full, .application-page .application-signatures, .pmts-header {
@@ -1203,10 +1202,10 @@ table.system {
   color: white;
   margin-right: 8px; }
 
-.certify, .participant-name, .attended, .course {
+.certify, .participant-name, .attended, .course, .brainpoint {
   text-align: center; }
 
-.course {
+.course, .brainpoint.brainpoint h3 {
   font-family: "britannic-bold";
   text-transform: uppercase;
   font-style: normal; }
@@ -1215,6 +1214,8 @@ table.system {
   margin-top: 8rem;
   font-family: 'diploma';
   font-size: 38px; }
+  .certify.certify.half-top {
+    margin: 1rem 0; }
 
 .participant-name.participant-name {
   font-family: "coronet";
@@ -1224,6 +1225,14 @@ table.system {
   margin: 32px 0;
   letter-spacing: -1px;
   text-transform: capitalize; }
+
+.brainpoint.brainpoint {
+  margin-top: 8rem; }
+  .brainpoint.brainpoint h3 {
+    margin: 2px 0;
+    font-size: 1.5rem; }
+  .brainpoint.brainpoint > p {
+    margin: 2px 0; }
 
 .certificate, .application-form, .report, .application-page {
   position: relative;
@@ -1623,10 +1632,8 @@ table.referer-info {
       margin-top: 0; }
   .application-page .exam-answers ol {
     -webkit-column-count: 3;
-       -moz-column-count: 3;
             column-count: 3;
     -webkit-column-gap: 155px;
-       -moz-column-gap: 155px;
             column-gap: 155px;
     margin: 0;
     padding-left: 0;
@@ -1657,7 +1664,7 @@ table.referer-info {
       margin-bottom: 16px; }
     .application-page .application-signatures .signature-line {
       border-bottom: 2px solid black;
-      margin-top: 32px; }
+      margin-top: 46px; }
   .application-page table.days, .application-page table.evaluation-score {
     width: 100%; }
     .application-page table.days th, .application-page table.evaluation-score th {

@@ -75,7 +75,13 @@ function showLoader() {
     } , 12000);
 }
 
+function hideLoader() {
+	$loader.fadeOut('fast');
+}
+
 $navA.on('click', showLoader );
+
+$(window).on('dblclick', hideLoader);
 
 $('a')
 .not('.not-link, .acf-button, .select2-search-choice-close, a.acf-icon')

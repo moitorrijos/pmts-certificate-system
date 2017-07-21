@@ -97,7 +97,14 @@
 
 			</div>
 
-			<h3 class="certify">Certify that:</h3>
+			<?php if( $office->term_id === 8 ) : ?>
+				<div class="brainpoint">
+					<h3>BrainPoint Consulting</h3>
+					<p>27 Winder Street, Durban, South Africa</p>
+				</div>
+			<?php endif; ?>
+
+			<h3 class="certify <?php if( $office->term_id === 8 ) { echo "half-top"; } ?>">Certify that:</h3>
 
 			<h1 class="participant-name"> 
 				<?php if ( strlen($students_name) <= 37 ) : ?>
@@ -189,8 +196,18 @@
 						This course fulfills minimum requirements of
 						
 						<span class="unpaddies"><?php echo $course->regulation; ?></span>
+
+						<?php if( $course->ID === 12646 ) : ?>
+
+							and
+
+						<?php else : ?>
+
+							of
+
+						<?php endif; ?>
 						
-						of the IMO International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended.
+						the IMO International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended.
 						
 						<span class="unpaddies">
 							<?php if ($course->imo_no) : ?>
@@ -200,8 +217,6 @@
 							<?php endif; ?>
 
 								Course duration <?php echo $course->duration_hours; ?> hours
-								
-								<!-- Course duration  //echo $course->duration;  days ( echo //$course->duration_hours   hours) -->
 
 						</span>
 

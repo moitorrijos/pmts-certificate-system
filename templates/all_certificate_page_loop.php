@@ -38,17 +38,17 @@
 				// 'orderby'			=> 'meta_value_num',
 				'order'				=> 'DESC',
 				'paged'				=> $cert_paged,
-				'tax_query'			=> array( 
-					array(
-						'taxonomy' 	=> 'office', 
-						'field' 	=> 'name', 
-						'terms' 	=> 'Panama'
-						)
-				),
+				// 'tax_query'			=> array( 
+				// 	array(
+				// 		'taxonomy' 	=> 'office', 
+				// 		'field' 	=> 'name', 
+				// 		'terms' 	=> 'Panama'
+				// 		)
+				// ),
 				// 'meta_query'		=> array(
 				// 	array(
 				// 		'key'	=> 'date_of_issuance',
-				// 		'value'	=> array(20170401, 20170430),
+				// 		'value'	=> array(20170601, 20170630),
 				// 		'compare' => 'BETWEEN',
 				// 	),
 				// ),
