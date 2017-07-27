@@ -219,6 +219,7 @@
 								<th class="short-title">Start Date</th>
 								<th class="short-title">End Date</th>
 								<th class="short-number">Time</th>
+								<th class="short-number">Students</th>
 								<?php if ( current_user_can('moderate_comments') ) : ?>
 									<th class="short-number">
 										Print
@@ -304,9 +305,22 @@
 								<td class="centered <?php if ( $nightly_course ) { echo 'nightly'; } else { echo 'daily'; } ?>">
 									<?php if( $nightly_course ) { echo "Night"; } else { echo "Day"; } ?>
 								</td>
+								<td class="centered">
+									<?php 
+										if ( $instructor && $end_date ) {
+											echo get_participant_number( 
+												(int)$instructor->ID, 
+												(int)$course->ID, 
+												$end_date->format('Ymd') 
+											);
+										} else {
+											echo "";
+										}
+									?>
+								</td>
 								<?php if ( current_user_can( 'moderate_comments' ) ) : ?>
 									<td class="centered printly">
-										<?php 
+										<?php
 											$certificate_exists_app = get_posts(array(
 												'post_type' => 'certificates',
 												'meta_query' => array(

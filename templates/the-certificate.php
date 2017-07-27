@@ -97,10 +97,9 @@
 
 			</div>
 
-			<?php if( $office->term_id === 8 ) : ?>
-				<div class="brainpoint">
-					<h3>BrainPoint Consulting</h3>
-					<p>27 Winder Street, Durban, South Africa</p>
+			<?php if($office->description) : ?>
+				<div class="office-location">
+					<h3><?php echo $office->description; ?></h3>
 				</div>
 			<?php endif; ?>
 

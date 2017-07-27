@@ -47,7 +47,13 @@
 		margin: .125in 0;
 	}
 
-	
+	.office-location.office-location {
+		width: 3in;
+		h3 {
+			font-size: 10pt;
+			line-height: 1.1;
+		}
+	}
 
 	p.attended {
 
@@ -128,7 +134,8 @@
 
 	h3.certify.certify {
 		// margin-top: 2in;
-		margin-top: 1.25in;
+		// margin-top: 1in;
+		margin-top: 0.5in;
 		margin-bottom: 0;
 		font-size: 24pt;
 	}

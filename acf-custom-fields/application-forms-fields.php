@@ -143,9 +143,9 @@ acf_add_local_field_group(array (
 			),
 			'choices' => array (
 				'01' => 'Panama',
-				'02' => 'Peru',
-				'03' => 'Greece',
-				'04' => 'Egypt',
+				'02' => 'Durban, South Africa',
+				'03' => 'PMTS Greece (Motsenigos)',
+				'04' => 'Piraeus, Greece (Hellas)',
 				'05' => 'Guyana',
 				'06' => 'South Africa',
 				'07' => 'India',

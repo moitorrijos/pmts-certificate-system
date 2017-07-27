@@ -1,21 +1,21 @@
 <?php
 
-function get_participant_number( $instructor_report, $course_report, $date_of_course_report) {
+function get_participant_number( $instructor, $course, $date_of_course) {
 	$filter_certs_args_loop = array(
 		'post_type'			=> 'certificates',
 		'posts_per_page'	=> -1,
 		'meta_query'		=> array(
 			array(
 				'key'	=> 'instructor',
-				'value' => (int) $instructor_report,
+				'value' => (int) $instructor,
 			),
 			array(
 				'key'     => 'course',
-				'value'   => (int) $course_report,
+				'value'   => (int) $course,
 			),
 			array(
 				'key'	=> 'date_of_issuance',
-				'value'	=> $date_of_course_report,
+				'value'	=> $date_of_course,
 				'type'	=> 'numeric',
 			)
 		)

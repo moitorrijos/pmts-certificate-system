@@ -39,12 +39,14 @@
 	@extend %centered;
 }
 
-.brainpoint.brainpoint {
+.office-location.office-location {
+	width: 360px;
+	margin: 0 auto;
 	@extend %centered;
 	h3 {
 		@extend %britanic;
 		margin: 2px 0;
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 	}
 	& > p {
 		margin: 2px 0;

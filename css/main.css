@@ -1202,10 +1202,10 @@ table.system {
   color: white;
   margin-right: 8px; }
 
-.certify, .participant-name, .attended, .course, .brainpoint {
+.certify, .participant-name, .attended, .course, .office-location {
   text-align: center; }
 
-.course, .brainpoint.brainpoint h3 {
+.course, .office-location.office-location h3 {
   font-family: "britannic-bold";
   text-transform: uppercase;
   font-style: normal; }
@@ -1226,12 +1226,14 @@ table.system {
   letter-spacing: -1px;
   text-transform: capitalize; }
 
-.brainpoint.brainpoint {
+.office-location.office-location {
+  width: 360px;
+  margin: 0 auto;
   margin-top: 8rem; }
-  .brainpoint.brainpoint h3 {
+  .office-location.office-location h3 {
     margin: 2px 0;
-    font-size: 1.5rem; }
-  .brainpoint.brainpoint > p {
+    font-size: 1.2rem; }
+  .office-location.office-location > p {
     margin: 2px 0; }
 
 .certificate, .application-form, .report, .application-page {
@@ -1797,6 +1799,11 @@ table.student-info {
     font-size: 10pt;
     line-height: 1.5;
     margin: .125in 0; }
+  .office-location.office-location {
+    width: 3in; }
+    .office-location.office-location h3 {
+      font-size: 10pt;
+      line-height: 1.1; }
   p.attended {
     line-height: 1;
     margin: .133in 0; }
@@ -1846,7 +1853,7 @@ table.student-info {
       table td.pass-fail {
         font-size: 11pt; }
   h3.certify.certify {
-    margin-top: 1.25in;
+    margin-top: 0.5in;
     margin-bottom: 0;
     font-size: 24pt; }
   .participant-name.participant-name {
