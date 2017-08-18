@@ -1,8 +1,7 @@
 Tasks:
   ✔ Verify Application Page Pagination @done (17-05-20 18:43)
-  ☐ Create Application exists prompt
-  ☐ Create edit functionality for certificates from application edit screen. @note this funcitonality is not working properly.
-  ☐ Separate certificates and application by office.
+  ✔ Create edit functionality for certificates from application edit screen. @note this funcitonality is not working properly. @done (17-08-15 10:40)
+  ✔ Separate certificates and application by office. @done (17-08-15 10:40)
   ✔ Create Search for Applications (Participant Name, Passport, App Code, etc.). @done (17-04-22 12:23)
   ✔ Create print pending class for application loop page. @done (17-04-20 08:44)
   ✔ Total with php in quotation. @done (17-05-11 14:08)

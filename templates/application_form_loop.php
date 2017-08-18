@@ -82,7 +82,7 @@
 		<!-- pagination here -->
 	    <?php
 	      if (function_exists('custom_pagination')) {
-	        custom_pagination($application_forms->max_num_pages,"",$paged);
+	        custom_pagination( $application_forms->max_num_pages,"",$paged );
 	      }
 	    ?>
 

@@ -12,7 +12,7 @@
 			</a>
 
 			<a href="#0" class="edit-button not-link"><i class="fa fa-pencil"></i>
-					
+
 					Edit Report
 
 			</a>
@@ -47,15 +47,15 @@
 
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
 			
-			setlocale(LC_TIME, 'es_ES');
+			setlocale(LC_ALL, 'es_ES');
 
 			$course = get_field('name_of_the_course');
 			$instructor = get_field('name_of_the_instructor');
+			$date_of_the_course = get_field('date_of_the_course');
 			$course_date_timestamp = strtotime( get_field('date_of_the_course') );
 			$course_month = strftime( '%B', $course_date_timestamp );
 			$course_date = strftime( '%e de %B de %G', $course_date_timestamp );
 			$office = get_field('office_course_taken');
-
 
 		 ?>
 
@@ -206,7 +206,9 @@
 
 					<div class="report-undies">
 						
-						<span class="undies"><?php echo $course->post_title . ' ' . '(' . $course->abbr . ')'; ?></span>
+						<span class="undies">
+							<?php echo $course->post_title . ' ' . '(' . $course->abbr . ')'; ?>
+						</span>
 
 					</div>
 
@@ -269,7 +271,13 @@
 	 					
 	 					<span class="undies">
 		 						
-	 						<?php echo $course_date; ?>
+	 						<?php 
+
+	 							// var_dump($date_of_the_course); die();
+
+	 							echo pmtscs_report_dates($instructor, $course, $date_of_the_course);
+
+	 						?>
 
 	 					</span>
 
@@ -360,6 +368,8 @@
 						$register_code =  get_post_meta(get_the_ID(), 'register_code', true);
 						$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
 						$issue_year = $issue_date->format('y');
+						$start_date = DateTime::createFromFormat( 'Ymd', get_field('start_date') );
+						$end_date = DateTime::createFromFormat( 'Ymd', get_field('end_date') );
 						$the_course = get_field('course');
 
 					?>
