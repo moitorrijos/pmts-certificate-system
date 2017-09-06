@@ -10,6 +10,7 @@ var $certForm 		= 	$('.edit-certificate-form'),
 	$printBtn 		= 	$('.print-button'),
 	$navA 			= 	$('.nav').find('li').find('a'),
 	$viewBtn 		= 	$('.view-button'),
+	$participantName = 	$('h1.participant-name'),
 	windowHref 		= 	window.location.href,
 	acfHref 		= 	'acf-form',
 	indexOfAcfHref 	= 	windowHref.lastIndexOf(acfHref),
@@ -32,6 +33,14 @@ function fadeCertDivIn() {
 	$certForm.hide();
 	$printBtn.css('display', 'inline-block');
 	$editBtn.css('display', 'inline-block');
+}
+
+function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+
+if ($participantName) {
+	console.log($participantName.text());
 }
 
 $editBtn.on('click', fadeCertDivOut);

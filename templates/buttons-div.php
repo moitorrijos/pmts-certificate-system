@@ -1,3 +1,17 @@
+<div class="buttons align-right">
+
+	<a href="#0" class="download-xls-button not-link"><i class="fa fa-download"></i>&nbsp; Download Table to Excel</a>
+
+	<?php if( current_user_can('edit_pages') || is_page_template( 'panama-quotation-page.php' ) || is_page_template( 'application-form-page.php' ) ) : ?>
+
+	<a href="<?php echo pmtscs_button_link(); ?>" class="new-certificate-button not-link">
+		<i class="fa fa-plus-square"></i>&nbsp; <?php echo pmtscs_button_value(); ?>
+	</a>
+
+	<?php endif; ?>
+
+</div>
+
 <?php
 
 function pmtscs_button_value() {
@@ -58,7 +72,8 @@ function pmtscs_button_link() {
 
 	} elseif ( is_page_template( 'panama-certificate-page.php' ) ) {
 
-		$add_link = get_permalink( 32 );
+		// $add_link = get_permalink( 32 );
+		$add_link = '#0';
 		return $add_link;
 
 	} elseif ( is_page_template( 'offices-page.php' ) ) {
@@ -90,17 +105,3 @@ function pmtscs_button_link() {
 }
 
 ?>
-
-<div class="buttons align-right">
-
-	<a href="#0" class="download-xls-button not-link"><i class="fa fa-download"></i>&nbsp; Download Table to Excel</a>
-
-	<?php if( current_user_can('edit_pages') || is_page_template( 'panama-quotation-page.php' ) || is_page_template( 'application-form-page.php' ) ) : ?>
-
-	<a href="<?php echo pmtscs_button_link(); ?>" class="new-certificate-button not-link">
-		<i class="fa fa-plus-square"></i>&nbsp; <?php echo pmtscs_button_value(); ?>
-	</a>
-
-	<?php endif; ?>
-
-</div>

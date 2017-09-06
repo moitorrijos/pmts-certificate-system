@@ -46,7 +46,7 @@
 
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-			$students_name = get_field('students_name');
+			$students_name = ucfirst( strtolower( get_field('students_name') ) );
 
 			$course = get_field('course');
 
@@ -97,13 +97,10 @@
 
 			</div>
 
-			<?php if($office->description) : ?>
-				<div class="office-location">
-					<h3><?php echo $office->description; ?></h3>
-				</div>
-			<?php endif; ?>
+			
+			<div class="office-location"></div>
 
-			<h3 class="certify <?php if( $office->term_id === 8 ) { echo "half-top"; } ?>">Certify that:</h3>
+			<h3 class="certify">Certify that:</h3>
 
 			<h1 class="participant-name"> 
 				<?php if ( strlen($students_name) <= 37 ) : ?>

@@ -30,9 +30,9 @@
 
 			</a>
 
-			<a href="#0" class="duplicate-certificate-button"><i class="fa fa-paper-plane"></i>
+			<a href="#0" class="duplicate-certificate-button" id="duplicate-application"><i class="fa fa-clone"></i>
 				
-				Send Application
+				Duplicate Application
 
 			</a>
 
