@@ -320,25 +320,11 @@
 								</td>
 								<?php if ( current_user_can( 'moderate_comments' ) ) : ?>
 									<td class="centered printly">
-										<?php
-											$certificate_exists_app = get_posts(array(
-												'post_type' => 'certificates',
-												'meta_query' => array(
-													'relation' => 'AND',
-													array(
-										            'key' => 'passport_id',
-										            'value' => $participants_id,
-										            'compare' => '=',
-											        ),
-											        array(
-											            'key' => 'course',
-											            'value' => (int)$course->ID,
-											            'compare' => '=',
-											        ),
-												),
-											));
-										 ?>
-											<?php if (!$certificate_exists_app) : ?>
+
+											<?php
+												$certificate_exists = certificate_exists($participants_id, $course);
+												if (!$certificate_exists) : 
+											?>
 												<?php if ( $instructor && $start_date && $end_date ) : ?>
 													<a href="#0" class="create-certificate-button">
 														<i class="fa fa-print"></i>
@@ -351,7 +337,7 @@
 											<?php else : ?>
 												<a 
 													class="not-link"
-													href="<?php echo $certificate_exists_app[0]->guid ?>"
+													href="<?php echo $certificate_exists[0]->guid ?>"
 													target="_blank"
 												>
 													<i class="fa fa-external-link"></i>
