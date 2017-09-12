@@ -28,7 +28,7 @@
 
 			get_template_part('templates/search_certificate_form');
 
-			$cert_paged = ( get_query_var('page') ) ? intval(get_query_var('page')) : 1;
+			$cert_paged = ( get_query_var('page') ) ? intval( get_query_var('page') ) : 1;
 
 			$all_certs_args = array( 
 				'post_type' 		=> 'certificates',
@@ -38,36 +38,20 @@
 				// 'orderby'			=> 'meta_value_num',
 				'order'				=> 'DESC',
 				'paged'				=> $cert_paged,
-				// 'tax_query'			=> array( 
+				// 'tax_query'			=> array(
 				// 	array(
-				// 		'taxonomy' 	=> 'office', 
-				// 		'field' 	=> 'name', 
-				// 		'terms' 	=> 'Panama'
-				// 		)
+				// 		'taxonomy' 	=> 'office',
+				// 		'field' 	=> 'name',
+				// 		'terms' 	=> 'MV Ocean Dreams/Japan'
+				// 	)
 				// ),
 				// 'meta_query'		=> array(
 				// 	array(
 				// 		'key'	=> 'date_of_issuance',
-				// 		'value'	=> array(20170601, 20170630),
+				// 		'value'	=> array(20170801, 20170831),
 				// 		'compare' => 'BETWEEN',
 				// 	),
 				// ),
-				// 'date_query'	=> array(
-				// 	array(
-				// 		'after' => array(
-				// 			'year'	=> 2017,
-				// 			'month'	=> 1,
-				// 			'day'	=> 4,
-				// 		),
-				// 		'before' => array(
-				// 			'year' => 2017,
-				// 			'month' => 1,
-				// 			'day' => 5,
-				// 		),
-				// 		'inclusive' => true,
-				// 	),
-				// ),
-
 			);
 
 			$certs = new WP_Query($all_certs_args);

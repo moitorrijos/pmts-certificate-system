@@ -25,7 +25,7 @@ function register_my_styles_and_scripts() {
 
 	if ( is_page_template( 'new_panama_certificate.php' ) ) {
 
-		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/min/form-field-magic-min.js', array('jquery'), '20170906', true );
+		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/min/form-field-magic-min.js', array('jquery'), '20170912', true );
 
 	}
 
@@ -84,7 +84,7 @@ function register_my_styles_and_scripts() {
 
 		wp_enqueue_script( 'velocity_js', THEMEROOT . '/js/min/velocity-min.js', 'jquery', '150', true );
 
-		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/min/form-field-magic-min.js', array('jquery'), '20170906', true );
+		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/min/form-field-magic-min.js', array('jquery'), '20170912', true );
 
 		wp_enqueue_script( 'author_information', THEMEROOT . '/js/min/author-information-min.js', array('jquery'), '20160422', true );
 

@@ -95,6 +95,22 @@ function load_session_vars_to_fields( $field ) {
           
       }
 
+      if ($field['name'] == 'resolution' && isset($_SESSION['office'])){
+
+        if ( $_SESSION['office']->slug === 'ob') {
+          $field['value'] = 'DGGM-CFM-037-2017';
+        }
+
+      }
+
+      if ($field['name'] == 'resolution_date' && isset($_SESSION['office'])){
+
+        if ( $_SESSION['office']->slug === 'ob') {
+          $field['value'] = '9 August, 2017';
+        }
+
+      }
+
       if ($field['name'] == 'start_date' && isset($_SESSION['start_date'])){
           
           $start_date = date('Ymd', strtotime($_SESSION['start_date']));

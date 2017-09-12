@@ -32,8 +32,6 @@
 
 			$courses = get_sub_field('course_name_app');
 
-			
-
 			if (get_row_index() != 1) { echo ', '; }
 
 			if ( !certificate_exists($participants_id, $courses) ) { 

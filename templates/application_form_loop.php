@@ -37,6 +37,12 @@
 			'post_type'			=> 'applications',
 			'posts_per_page'	=> 33,
 			'paged' 			=> $paged,
+			// 'meta_query'		=> array(
+			// 	array(
+			// 		'key'	=> 'nationality_app',
+			// 		'value' => 'Japanese',
+			// 	)
+			// ),
 
 		);
 
