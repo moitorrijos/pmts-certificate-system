@@ -52,15 +52,11 @@
 				
 			</a>
 
-			<!--?php //if ( current_user_can( 'edit_pages' ) ) : ?>
+			<a href="#0" class="approve-quotation" data-post_id="<?php echo get_the_id(); ?>"><i class="fa fa-check"></i> 
 
-				<!-- <a href="#0" class="new-invoice-button" data-post_id="<//?//php //echo get_the_id(); ?>"><i class="fa fa-file-text"></i> 
-
-					Create Invoice
-					
-				</a> -->
-
-			<!--?php // endif; ?-->
+				Approve Quotation
+				
+			</a>
 
 		</div>
 

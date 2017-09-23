@@ -8,7 +8,6 @@ var $duplicateQuotationBtn = $('.duplicate-certificate-button');
 $duplicateQuotationBtn.on('click', function(){
 	
 	var $postID = $(this).data('post_id');
-	// console.log($postID);
 	
 	$.ajax({
 	    type: 'POST',

@@ -311,6 +311,16 @@ a.duplicate-certificate-button {
 	}
 }
 
+a.approve-quotation {
+	@extend %cool-button;
+	background-color: $amp-blue;
+	color: white;
+
+	&:hover {
+		background-color: darken($amp-blue, 10%);
+	}
+}
+
 a.new-invoice-button {
 	@extend %cool-button;
 	background-color: $cool-orange;

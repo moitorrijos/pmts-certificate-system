@@ -69,6 +69,7 @@ require get_template_directory() . '/includes/add_leading_zeroes.php';
 require get_template_directory() . '/includes/certificate-exists-validation.php';
 require get_template_directory() . '/includes/duplicate-quote-pmtscs.php';
 require get_template_directory() . '/includes/duplicate-application-pmtscs.php';
+require get_template_directory() . '/includes/approve-quote-pmtscs.php';
 require get_template_directory() . '/includes/create-certificate-pmtscs.php';
 require get_template_directory() . '/includes/create-table-with.php';
 require get_template_directory() . '/includes/update_certificate_by_app_data.php';

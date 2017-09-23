@@ -27,7 +27,7 @@ function pmtscs_button_value() {
 
 	} elseif ( is_page_template( 'panama-certificate-page.php' ) ) {
 
-		$add_value = 'Create New Certificate';
+		$add_value = 'Create New Application';
 		return $add_value;
 
 	} elseif ( is_page_template( 'offices-page.php' ) ) {
@@ -72,8 +72,8 @@ function pmtscs_button_link() {
 
 	} elseif ( is_page_template( 'panama-certificate-page.php' ) ) {
 
-		// $add_link = get_permalink( 32 );
-		$add_link = '#0';
+		$add_link = get_permalink( 7190 );
+		// $add_link = '#0';
 		return $add_link;
 
 	} elseif ( is_page_template( 'offices-page.php' ) ) {

@@ -165,7 +165,8 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0; }
 
 /**
@@ -271,7 +272,8 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -293,6 +295,7 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
+  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -430,6 +433,7 @@ th {
  * Colors
  */
 .logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, ul.fill-courses-dropdown li ul, .application-exists, .application-sent, .application-sent-error {
+  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
 .back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .payment-info, .report .amp-logo-text, .application-page .amp-logo-text, .report .report-full, .application-page .report-full, .application-page .application-signatures, .pmts-header {
@@ -486,7 +490,8 @@ div.login-form .login-loading-animation, div.copyright .login-loading-animation 
   clear: both; }
 
 * {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
 html {
   font-size: 14px; }
@@ -698,7 +703,7 @@ form {
 .align-center, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
   text-align: center; }
 
-a.logout-button, a.new-certificate-button, a.duplicate-certificate-button, a.new-invoice-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .fill-form-randomly, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
+a.logout-button, a.new-certificate-button, a.duplicate-certificate-button, a.approve-quotation, a.new-invoice-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .fill-form-randomly, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
   padding: 4px 22px;
   text-decoration: none;
   color: white;
@@ -726,6 +731,12 @@ a.duplicate-certificate-button {
   color: #284f96; }
   a.duplicate-certificate-button:hover {
     background-color: #D3D13A; }
+
+a.approve-quotation {
+  background-color: #284f96;
+  color: white; }
+  a.approve-quotation:hover {
+    background-color: #1d3a6e; }
 
 a.new-invoice-button {
   background-color: #D37A4F;
@@ -1041,7 +1052,8 @@ table.acf-table tr td.acf-field {
       font-size: 1.2em; }
 
 input.search {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-radius: 4px;
   border: 1px solid #b6c3cd;
   padding: 12px 20px;
@@ -1158,7 +1170,8 @@ table.system {
   padding: 4em;
   background: white;
   border: 1px solid #d4dbe1;
-  box-shadow: 0 0 12px #e3e8ec; }
+  -webkit-box-shadow: 0 0 12px #e3e8ec;
+          box-shadow: 0 0 12px #e3e8ec; }
   .search-student-form form input[type="text"] {
     font-size: 1.1em;
     text-align: center; }
@@ -1368,7 +1381,8 @@ div.close-button {
   background: white;
   width: 80%;
   margin: 15% auto;
-  box-shadow: 0 0 12px #a7b6c2;
+  -webkit-box-shadow: 0 0 12px #a7b6c2;
+          box-shadow: 0 0 12px #a7b6c2;
   padding: 3em; }
 
 .modal-window-outer form {
@@ -1403,7 +1417,8 @@ ul.pagination {
     background: #529fd1;
     border: 1px solid #98aab8;
     margin-right: 12px;
-    box-shadow: 0 1px 2px #C5CFD7; }
+    -webkit-box-shadow: 0 1px 2px #C5CFD7;
+            box-shadow: 0 1px 2px #C5CFD7; }
 
 .other-certificates {
   padding: 10px;
@@ -1787,7 +1802,8 @@ table.student-info {
     background-image: none;
     margin: 0 auto;
     width: 8.5in;
-    box-shadow: none; }
+    -webkit-box-shadow: none;
+            box-shadow: none; }
   h2.course {
     font-size: 17pt;
     margin: 0.30in 0;

@@ -39,7 +39,7 @@ function load_courses_app_field_value( $field ) {
 
 		$field['value'] = $courses_info;
 
-		unset($_SESSION['courses']);
+		unset($_SESSION['courses_app']);
 
 	}
 

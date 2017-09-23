@@ -35,6 +35,8 @@ function register_my_styles_and_scripts() {
 
 		wp_enqueue_script( 'country-to-nationality', THEMEROOT . '/js/min/country-to-nationality-min.js', array('jquery'), '20160422', true );
 
+		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/min/form-field-magic-min.js', array('jquery'), '20170912', true );
+
 		wp_enqueue_script( 'search_passport_app', THEMEROOT . '/js/search-passport-application.js', array('jquery'), '20170412', true );
 
 		wp_localize_script( 'search_passport_app', 'passport_obj_app', array(
@@ -132,7 +134,14 @@ function register_my_styles_and_scripts() {
 
 		wp_enqueue_script( 'quotation-js', THEMEROOT . '/js/quotation.js', array('jquery'), '20160317', true );
 
-		wp_enqueue_script( 'create_invoice', THEMEROOT . '/js/create-invoice.js', array('jquery'), '20161220', true );
+		wp_enqueue_script( 'approve_quotation', THEMEROOT . '/js/approve-quotation.js', array('jquery'), '20170919', true );
+
+		wp_localize_script( 'approve_quotation', 'approve_quote_obj', array(
+				'security' 		=> wp_create_nonce( 'approve_quote_nonce' ),
+				'ajaxurl' 		=> admin_url( 'admin-ajax.php' ),
+				'new_app_url'	=> get_permalink( 7190 ),
+			)
+		);
 
 		wp_enqueue_script( 'duplicate_quotation', THEMEROOT . '/js/duplicate-quotation.js', array('jquery'), '20170321', true );
 
@@ -141,15 +150,8 @@ function register_my_styles_and_scripts() {
 				'ajaxurl'		=> admin_url( 'admin-ajax.php' ),
 				'redirect_url'	=> get_permalink( 222 ),
 			) 
-		);		
-
-		wp_localize_script( 'create_invoice', 'new_invoice_object', array(
-				'security'	=> wp_create_nonce( 'new_invoice_nonce' ),
-				'ajaxurl'	=> admin_url( 'admin-ajax.php' ),
-			) 
 		);
 	}
-
 }
 
 add_action( 'wp_enqueue_scripts', 'register_my_styles_and_scripts' );
