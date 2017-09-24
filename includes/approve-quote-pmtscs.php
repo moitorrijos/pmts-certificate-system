@@ -31,6 +31,8 @@ function load_courses_app_field_values( $field ) {
 
 	if ( isset($_SESSION['quote_courses']) ) {
 
+		$quote_courses = $_SESSION['quote_courses'];
+
 		function courses_info( $course ) {
 
 			return array(
@@ -39,7 +41,7 @@ function load_courses_app_field_values( $field ) {
 
 		}
 
-		$courses = array_map('courses_info', $_SESSION['quote_courses']);
+		$courses = array_map('courses_info', $quote_courses);
 
 		$field['value'] = $courses;
 
@@ -48,6 +50,25 @@ function load_courses_app_field_values( $field ) {
 	}
 
 	return $field;
+
 }
 
 add_filter( 'acf/load_field/key=field_58839ecde1164', 'load_courses_app_field_values' );
+
+function load_name_app_field_value( $field ) {
+
+	if ( isset($_SESSION['student_name']) ) {
+
+		$student_name = $_SESSION['student_name'];
+
+		$field['value'] = $student_name;
+
+		unset($_SESSION['student_name']);
+
+	}
+
+	return $field;
+
+}
+
+add_action ( 'acf/load_field/key=field_58839d5ae115d', 'load_name_app_field_value' );

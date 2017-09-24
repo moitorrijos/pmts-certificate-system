@@ -10,7 +10,7 @@ var $approveQuoteBtn 	= $('.approve-quotation'),
 function approveQuotation() {
 	var quoteID = $(this).data('post_id');
 
-	if (window.confirm('Are you sure you want to Approve this Quotation?')) {
+	if (window.confirm('Are you sure this quotation is approved?')) {
 		$.ajax({
 			type: 'POST',
 			url: approve_quote_obj.ajaxurl,
@@ -31,7 +31,9 @@ function approveQuotation() {
 
 		});
 	} else {
-		$loader.fade('fast');
+		window.setTimeout(function(){
+			$loader.hide();
+		});
 	}
 }
 

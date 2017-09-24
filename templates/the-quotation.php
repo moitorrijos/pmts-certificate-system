@@ -52,8 +52,9 @@
 				
 			</a>
 
-			<a href="#0" class="approve-quotation" data-post_id="<?php echo get_the_id(); ?>"><i class="fa fa-check"></i> 
+			<a href="#0" class="approve-quotation" data-post_id="<?php echo get_the_id(); ?>">
 
+				<i class="fa fa-check"></i> 
 				Approve Quotation
 				
 			</a>
