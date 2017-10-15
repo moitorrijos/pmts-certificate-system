@@ -9,7 +9,17 @@
 
 <body <?php body_class(); ?> >
 
-<div class="loader"></div>
+	<?php if ( is_page_template( 'new_panama_certificate.php' ) ) : ?>
+
+		<div class="certificate-loader">
+			<h2>Creating certificate, please wait...</h2>
+		</div>
+
+	<?php else : ?>
+
+	<div class="loader"></div>
+
+	<?php endif; ?>
 
 <header>
 

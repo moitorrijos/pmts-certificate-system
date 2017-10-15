@@ -23,14 +23,16 @@
 
 			</a>
 
-			<a href="#0" class="print-button not-link"><i class="fa fa-print"></i>
+			<a href="#0" class="print-button not-link">
 
+				<i class="fa fa-print"></i>
 				Print Quote
 
 			</a>
 
-			<a href="#0" class="view-button not-link"><i class="fa fa-eye"></i>
+			<a href="#0" class="view-button not-link">
 
+				<i class="fa fa-eye"></i>
 				View Quote
 
 			</a>
@@ -47,7 +49,7 @@
 
 			<a href="<?php echo get_permalink( 222 );?>" class="new-certificate-button ">
 
-				<i class="fa fa-plus-square"></i>
+				<i class="fa fa-plus-square" aria-hidden="true"></i>
 				Create New Quotation
 				
 			</a>

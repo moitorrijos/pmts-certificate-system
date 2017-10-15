@@ -1,5 +1,8 @@
 <?php
 
+// Send email to invoice yolli@intermaritime.org only if in production.
+
+
 add_action( 'wp_ajax_approve_quotation_pmtscs', 'pmtcscs_approve_quotation', 10, 1 );
 
 function pmtcscs_approve_quotation() {

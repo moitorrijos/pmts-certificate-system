@@ -1223,6 +1223,19 @@ table.system {
   text-transform: uppercase;
   font-style: normal; }
 
+.certificate-loader {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  background: #ffffff url("../images/background-spinner.gif") center 50vh no-repeat;
+  border-top: 8px solid #3e94cc; }
+  .certificate-loader h2 {
+    margin-top: 10%;
+    text-align: center; }
+
 .certify.certify {
   margin-top: 8rem;
   font-family: 'diploma';

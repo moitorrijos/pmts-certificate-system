@@ -16,7 +16,7 @@
 
 	$place_of_training_slug = get_field('place_of_training_app');
 
-	$place_of_training = get_term_by( 'slug', '01', 'office' );
+	$place_of_training = get_term_by( 'slug', $place_of_training_slug, 'office' );
 
 	$delivery_mode = get_field('course_deliver_mode_app');
 

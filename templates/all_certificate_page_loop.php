@@ -32,26 +32,19 @@
 
 			$all_certs_args = array( 
 				'post_type' 		=> 'certificates',
-				// 'posts_per_page' 	=> -1,
-				'posts_per_page' 	=> 55,
-				// 'meta_key' 			=> 'date_of_issuance',
-				// 'orderby'			=> 'meta_value_num',
-				'order'				=> 'DESC',
-				'paged'				=> $cert_paged,
-				// 'tax_query'			=> array(
-				// 	array(
-				// 		'taxonomy' 	=> 'office',
-				// 		'field' 	=> 'name',
-				// 		'terms' 	=> 'MV Ocean Dreams/Japan'
-				// 	)
-				// ),
-				// 'meta_query'		=> array(
-				// 	array(
-				// 		'key'	=> 'date_of_issuance',
-				// 		'value'	=> array(20170801, 20170831),
-				// 		'compare' => 'BETWEEN',
-				// 	),
-				// ),
+				'posts_per_page' 	=> -1,
+				// 'posts_per_page' 	=> 55,
+				'meta_key' 			=> 'date_of_issuance',
+				'orderby'			=> 'meta_value_num',
+				// 'order'				=> 'DESC',
+				// 'paged'				=> $cert_paged,
+				'meta_query'		=> array(
+					array(
+						'key'	=> 'date_of_issuance',
+						'value'	=> array(20170901, 20170930),
+						'compare' => 'BETWEEN',
+					),
+				),
 			);
 
 			$certs = new WP_Query($all_certs_args);

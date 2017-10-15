@@ -7,9 +7,9 @@ acf_add_local_field_group(array (
 	'title' => 'Application Form',
 	'fields' => array (
 		array (
-			'key' => 'field_58839d6ee115e',
-			'label' => '<i class="fa fa-id-card-o" aria-hidden="true"></i> Passport No or ID',
-			'name' => 'passport_id_app',
+			'key' => 'field_58839d5ae115d',
+			'label' => 'Participant\'s Name',
+			'name' => 'participants_name_app',
 			'type' => 'text',
 			'instructions' => '',
 			'required' => 1,
@@ -28,9 +28,9 @@ acf_add_local_field_group(array (
 			'disabled' => 0,
 		),
 		array (
-			'key' => 'field_58839d5ae115d',
-			'label' => 'Participant\'s Name',
-			'name' => 'participants_name_app',
+			'key' => 'field_58839d6ee115e',
+			'label' => '<i class="fa fa-id-card-o" aria-hidden="true"></i> Passport No or ID',
+			'name' => 'passport_id_app',
 			'type' => 'text',
 			'instructions' => '',
 			'required' => 1,
@@ -149,6 +149,7 @@ acf_add_local_field_group(array (
 				'05' => 'Guyana',
 				'06' => 'South Africa',
 				'07' => 'India',
+				'08' => 'Miami',
 				'OB' => 'On Board',
 			),
 			'default_value' => array (

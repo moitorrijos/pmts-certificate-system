@@ -7,7 +7,6 @@ var $endDateField = $('#acf-field_56130098acfc9'),
 	$issueDateField = $('#acf-field_5619b16e70c02'),
 	$placeOfBirthField = $('#acf-field_5612fef2fdc33'),
 	$nationalityField = $('#acf-field_5728ffb5d7616'),
-	$loader 		= 	$('.loader'),
 	$acfForm = $('form.acf-form');
 
 function capitalizeFirstLetter(string) {
@@ -41,8 +40,6 @@ $placeOfBirthField.parent('div').on('change', function(){
 if ($('body').hasClass('page-template-new_panama_certificate')) {
 	setTimeout(function(){
 		$acfForm.trigger('submit');
-		$loader.show();
-		// console.log('new certificate page');
 	});
 }
 	

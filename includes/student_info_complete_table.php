@@ -4,7 +4,7 @@ function student_info_complete_table(
 	$participants_name, 
 	$participants_date_of_birth, 
 	$participants_id, 
-	$place_of_training, 
+	$place_of_training,
 	$participants_place_of_birth, 
 	$participants_nationality, 
 	$start_date, 
@@ -56,7 +56,13 @@ function student_info_complete_table(
 					Place of the Course:
 				</td>
 				<td>
-					<p><?php echo $place_of_training->name; ?></p>
+					<p><?php 
+						if ( is_object($place_of_training) ) {
+							echo $place_of_training->name; 
+						} else {
+							echo $place_of_training;
+						}
+					?></p>
 				</td>
 				<td>
 					<p>Nacionalidad:</p>
