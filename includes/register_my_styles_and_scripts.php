@@ -104,7 +104,7 @@ function register_my_styles_and_scripts() {
 
 		wp_enqueue_script( 'application_form', THEMEROOT . '/js/application-form.js', array('jquery'), '20160720', true );
 
-		wp_enqueue_script( 'create_certificate', THEMEROOT . '/js/create-certificate.js', array('jquery'), '20170408', true );
+		wp_enqueue_script( 'create_certificate', THEMEROOT . '/js/create-certificate.js', array('jquery'), '20171015', true );
 
 		wp_enqueue_script( 'duplicate_application', THEMEROOT . '/js/duplicate-application.js', array( 'jquery' ), '20170509', true );
 

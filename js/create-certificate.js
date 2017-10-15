@@ -6,10 +6,10 @@ $(function() {
 
 var $createCertificateBtn = $('.create-certificate-button'),
 	applicationFormID = $('.application-form').data('post_id'),
-
 	$loader = $('.loader');
 
 function reloadWindow() {
+	$loader.show();
 	location.reload();
 }
 
