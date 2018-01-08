@@ -74,7 +74,8 @@
 
 				<p>
 
-					The certificate has been sent to PMTS Main Office for printing. If you need any changes please contact the main office. The local time in Panama is 
+					The certificate has been sent to PMTS Main Office for printing. 
+					If you need any changes please contact the main office. The local time in Panama is 
 					<?php  
 						date_default_timezone_set("America/Panama");
 						echo date("h:i a");
@@ -88,7 +89,12 @@
 				
 				<p>
 					
-					Sorry, there was a problem, please try again later. If  you need to send this application please send it via email to <a href="mailto:certificates@panamamaritimetraining.com">certificates@panamamaritimetraining.com</a>. Local time in Panama is 
+					Sorry, there was a problem, please try again later. 
+					If  you need to send this application please send it via email to 
+					<a href="mailto:certificates@panamamaritimetraining.com">
+						certificates@panamamaritimetraining.com
+					</a>. 
+					Local time in Panama is 
 					<?php  
 						date_default_timezone_set("America/Panama");
 						echo date("h:i a");

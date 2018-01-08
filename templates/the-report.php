@@ -52,7 +52,7 @@
 			$course = get_field('name_of_the_course');
 			$instructor = get_field('name_of_the_instructor');
 			$date_of_the_course = get_field('date_of_the_course');
-			$course_date_timestamp = strtotime( get_field('date_of_the_course') );
+			$course_date_timestamp = strtotime( $date_of_the_course );
 			$course_month = strftime( '%B', $course_date_timestamp );
 			$course_date = strftime( '%e de %B de %G', $course_date_timestamp );
 			$office = get_field('office_course_taken');

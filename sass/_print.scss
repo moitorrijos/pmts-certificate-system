@@ -48,7 +48,7 @@
 	}
 
 	.office-location.office-location {
-		width: 2in;
+		width: 3in;
 		h3 {
 			font-size: 10pt;
 			line-height: 1.1;
@@ -135,7 +135,7 @@
 	h3.certify.certify {
 		// margin-top: 2in;
 		// margin-top: 1in;
-		margin-top: 0.5in;
+		margin-top: 0;
 		margin-bottom: 0;
 		font-size: 24pt;
 	}
@@ -187,11 +187,30 @@
 		margin-right: 0.100in;
 	}
 
+	.qr-code.qr-code.qr-code {
+		display: block;
+		position: absolute;
+		bottom: 0.3in;
+		left: 0.45in;
+		width: 1in;
+		height: 1in;
+
+		canvas {
+			width: 1in;
+			height: 1in;
+		}
+	}
+
 	.signature.signature {
 		display: block;
 		font-size: 10pt;
 		width: 2.25in;
 		margin-bottom: 0.25in;
+
+		p.short-margin {
+			font-size: 9pt;
+			margin: 0;
+		}
 	}
 
 	.signature-cert-codes {

@@ -16,13 +16,13 @@ function pmtscs_ajax_search_quotations() {
 
 	$quotation_ids_by_participant = $wpdb->get_results(
 
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "%%' . (string)$quotation_no . '%%" AND meta_key="participants_name"')
+		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "%d" AND meta_key="participants_name"', $quotation_no)
 
 	);
 
 	$quotation_ids_by_clients = $wpdb->get_results(
 
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "%%' . (string)$quotation_no . '%%" AND meta_key="clients_name"')
+		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "%d" AND meta_key="clients_name"', $quotation_no)
 
 	);
 

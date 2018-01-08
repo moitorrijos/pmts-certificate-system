@@ -32,19 +32,19 @@
 
 			$all_certs_args = array( 
 				'post_type' 		=> 'certificates',
-				'posts_per_page' 	=> -1,
-				// 'posts_per_page' 	=> 55,
+				// 'posts_per_page' 	=> -1,
+				'posts_per_page' 	=> 15,
 				'meta_key' 			=> 'date_of_issuance',
 				'orderby'			=> 'meta_value_num',
-				// 'order'				=> 'DESC',
-				// 'paged'				=> $cert_paged,
-				'meta_query'		=> array(
-					array(
-						'key'	=> 'date_of_issuance',
-						'value'	=> array(20170901, 20170930),
-						'compare' => 'BETWEEN',
-					),
-				),
+				'order'				=> 'DESC',
+				'paged' => $paged,
+				// 'meta_query'		=> array(
+				// 	array(
+				// 		'key'	=> 'date_of_issuance',
+				// 		'value'	=> array(20171201, 20171231),
+				// 		'compare' => 'BETWEEN',
+				// 	),
+				// ),
 			);
 
 			$certs = new WP_Query($all_certs_args);
@@ -85,9 +85,18 @@
 
 		</table>
 
+		<?php
+	      if (function_exists('custom_pagination')) {
+	        custom_pagination($certs->max_num_pages,"",$paged);
+	      }
+	    ?>
+
 		<?php else: ?>
 			
-			<p>There are no panama office certificates yet. To create a new certificate <a href="<?php echo home_url( 'panama-certificates/new-panama-certificate' ); ?>">click here</a>.</p>
+			<p>
+				There are no panama office certificates yet. To create a new certificate 
+				<a href="<?php echo home_url( 'panama-certificates/new-panama-certificate' ); ?>">click here</a>.
+			</p>
 
 		<?php endif; ?>
 

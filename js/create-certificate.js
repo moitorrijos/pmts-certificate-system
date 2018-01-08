@@ -24,7 +24,6 @@ function createThisCertificate(event){
 	
 	$.ajax({
 		type: 'POST',
-		async: false,
 		url: create_certificate_obj.ajaxurl,
 		data: {
 			action: 'create_certificate_pmtscs',

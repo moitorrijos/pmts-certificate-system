@@ -42,6 +42,6 @@ if ($('body').hasClass('page-template-new_panama_certificate')) {
 		$acfForm.trigger('submit');
 	});
 }
-	
+
 });
 })(jQuery);

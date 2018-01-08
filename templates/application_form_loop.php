@@ -37,13 +37,6 @@
 			'post_type'			=> 'applications',
 			'posts_per_page'	=> 33,
 			'paged' 			=> $paged,
-			// 'meta_query'		=> array(
-			// 	array(
-			// 		'key'	=> 'nationality_app',
-			// 		'value' => 'Japanese',
-			// 	)
-			// ),
-
 		);
 
 		$application_forms = new WP_Query($application_form_args);
@@ -59,6 +52,7 @@
 				<tr>
 					<th class="middle-title">Participant's Name</th>
 					<th class="short-title">Passport/ID No.</th>
+					<th class="short-title">Nationality</th>
 					<th class="middle-title">Application Code</th>
 					<th class="short-title">Created By</th>
 					<th class="title">Courses Taken</th>

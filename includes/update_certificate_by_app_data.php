@@ -14,7 +14,7 @@ function save_application_id_data( $post_id ) {
 
 		$certificate_ids_by_passport = $wpdb->get_results(
 
-			$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id" AND meta_value="' . (string)$passport_id_app . '" ORDER BY post_id DESC')
+			$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id" AND meta_value="%d" ORDER BY post_id DESC', $passport_id_app)
 
 		);
 
@@ -34,7 +34,7 @@ function save_application_id_data( $post_id ) {
 
 			$certificate_ids_by_name = $wpdb->get_results(
 
-				$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="students_name" AND meta_value="' . (string)$participants_name_app . '" ORDER BY post_id DESC')
+				$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="students_name" AND meta_value="%d" ORDER BY post_id DESC', $participants_name_app)
 
 			);
 
@@ -56,6 +56,10 @@ add_action( 'acf/save_post', 'save_application_id_data', 9 );
 
 function update_certificate_by_app_data( $post_id ) {
 
+	$place_of_training_slug = get_field('place_of_training_app', $post_id);
+
+	$office = get_term_by( 'slug', $place_of_training_slug, 'office' );
+
 	if ( is_singular( 'applications' ) ) {
 
 		$certificate_ids = $_SESSION['certificates_ids'];
@@ -67,6 +71,7 @@ function update_certificate_by_app_data( $post_id ) {
 			update_field( 'place_of_birth', get_field('place_of_birth_app', $post_id), (int)$certificate_id);
 			update_field( 'student_nationality', get_field('nationality_app', $post_id), (int)$certificate_id);
 			update_field( 'date_of_birth', get_field('date_of_birth_app', $post_id), (int)$certificate_id);
+			update_field( 'office', $office, (int)$certificate_id);
 
 		}
 

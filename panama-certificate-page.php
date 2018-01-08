@@ -3,16 +3,18 @@
  * Template Name: Panama Certificates Page
  */
 
-get_header();
-
 if( is_user_logged_in() ) {
 
+	get_header();
+
 	get_template_part( 'templates/all_certificate_page_loop' );
-		
+
+	get_footer();
+	
 } else {
-
-	get_template_part('templates/the_message');
-
+	
+	wp_redirect( home_url() );
+	
+	exit;
+	
 }
-
-get_footer();

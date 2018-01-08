@@ -14,7 +14,7 @@
 	right: 0;
 	top: 0;
 	bottom: 0;
-	z-index: 100;
+	z-index: 200;
 	background: #ffffff url('../images/background-spinner.gif') center 50vh no-repeat;
 	border-top: 8px solid $pmts-blue;
 	
@@ -225,7 +225,10 @@
 		letter-spacing: 2px;
 	}
 
-
+	.qr-code {
+		margin: 0;
+		display: none;
+	}
 
 	.signature {
 		@extend .to-right;

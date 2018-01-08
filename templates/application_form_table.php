@@ -4,6 +4,8 @@
 
 	$participants_id = get_field('passport_id_app');
 
+	$participants_nationality = get_field('nationality_app');
+
  ?>
 
 <tr>
@@ -14,6 +16,9 @@
 	</td>
 	<td class="centered">
 		<?php echo $participants_id; ?>
+	</td>
+	<td class="centered">
+		<?php echo $participants_nationality; ?>
 	</td>
 	<td class="centered">
 		<a href="<?php echo the_permalink(); ?>">

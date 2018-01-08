@@ -15,7 +15,7 @@ function pmtscs_ajax_search__passport_app() {
 	$passport_no = $_POST['passport_no'];
 
 	$application_id = $wpdb->get_var(
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id_app" AND meta_value="'.(string)$passport_no.'"ORDER BY post_id DESC LIMIT 1')
+		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id_app" AND meta_value="%d"ORDER BY post_id DESC LIMIT 1', $passport_no)
 	);
 
 	if ( $application_id ) {
@@ -24,7 +24,7 @@ function pmtscs_ajax_search__passport_app() {
 		$application_courses = get_field('courses_app', $application_id);
 
 		$student_info = $wpdb->get_results(
-			$wpdb->prepare('SELECT meta_key, meta_value FROM fytv_postmeta WHERE post_id=' . (string)$application_id , OBJECT)
+			$wpdb->prepare('SELECT meta_key, meta_value FROM fytv_postmeta WHERE post_id=%d', $application_id)
 		);
 		
 		$app_student_array = array(
@@ -39,13 +39,13 @@ function pmtscs_ajax_search__passport_app() {
 	}
 
 	$certificate_id = $wpdb->get_var(
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value="' . (string)$passport_no . '" ORDER BY post_id DESC LIMIT 1')
+		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value="%d" ORDER BY post_id DESC LIMIT 1', $passport_no)
 	);
 
 	if ( $certificate_id ) {
 	
 		$student_info = $wpdb->get_results(
-			$wpdb->prepare('SELECT meta_key, meta_value FROM fytv_postmeta WHERE post_id=' . (string)$certificate_id , OBJECT)
+			$wpdb->prepare('SELECT meta_key, meta_value FROM fytv_postmeta WHERE post_id=%d' , $certificate_id)
 		);
 
 		$student_array = array(

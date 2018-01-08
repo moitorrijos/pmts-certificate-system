@@ -79,7 +79,7 @@
 		?>
 
 
-		<div class="certificate">
+		<div class="certificate" id="the-certificate" data-certificate-id="<?php echo $certificate_ID; ?>">
 			
 			<div class="certificate-author-mask not-for-print"></div>
 
@@ -193,26 +193,33 @@
 						
 						<span class="unpaddies"><?php echo $course->regulation; ?></span>
 
-						<?php if( $course->ID === 12646 ) : ?>
+						<?php 
 
-							and
+							$national_courses = array(12646, 17570, 17572, 17573, 17574, 17575, 17576, 17577);
+
+							if( in_array( (int)$course->ID, $national_courses ) ) :
+							
+						?>
+
+							of the Panama Maritime Authority.
 
 						<?php else : ?>
 
-							of
+							of the IMO International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended.
 
 						<?php endif; ?>
 						
-						the IMO International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended.
+						
 						
 						<span class="unpaddies">
+
 							<?php if ($course->imo_no) : ?>
 
 								IMO Model Course <?php echo $course->imo_no; ?>.
 
 							<?php endif; ?>
 
-								Course duration <?php echo $course->duration_hours; ?> hours
+								Course duration <?php echo $course->duration_hours; ?> hours.
 
 						</span>
 
@@ -326,7 +333,7 @@
 
 							echo 'half';
 
-						} ?>"
+						} ?>
 
 				">
 					
@@ -384,7 +391,7 @@
 
 				<span class="undiesunpaddies">
 
-					 <?php echo $issue_date->format('d F Y'); ?>.
+					 <?php echo $issue_date->format('d F Y'); ?>
 
 				</span>
 
@@ -402,11 +409,14 @@
 
 			</p>
 
+			<div class="qr-code" id="qr-code"></div>
+
 			<div class="signature-cert-codes">
 				
 				<div class="signature">
 
-					<p class="short-margin">General Director</p>
+					<p class="short-margin">Agustin Gonzalez</p>
+					<p class="short-margin">Academic Director</p>
 
 				</div>
 		
@@ -416,25 +426,11 @@
 						
 						<p>
 							
-							<?php if ( $course->revision ) : ?>
-								<span class="boldies"><?php echo $course->revision; ?></span>
-							<?php else : ?>
-								<span class="boldies">(10/15) Rev. 14</span>
-							<?php endif; ?>
-
-						</p>
-
-					</div>
-
-					<div class="half">
-						
-						<p>
-
-							<?php if ( $course->f_ti ) : ?>
-								<span class="boldies to-right">
-									F-TI-<?php echo $course->f_ti;  ?>
-								</span>
-							<?php endif; ?>
+							<?php //if ( $course->revision ) : ?>
+								<span class="boldies"><?php //echo $course->revision; ?></span>
+							<?php //else : ?>
+								<span class="boldies">Rev. (01/18)</span>
+							<?php //endif; ?>
 
 						</p>
 

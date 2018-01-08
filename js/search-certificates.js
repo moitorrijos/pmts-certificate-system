@@ -12,6 +12,7 @@ var $tbody 	= $('tbody'),
 	$errorMessage = $('span.error-message'),
 	$notFoundMessage = $('span.not-found-message'),
 	$backLink = $('a.back-link'),
+	$customPagination = $('.custom-pagination'),
 	$searchSpinner = $('span.search-spinner');
 
 $searchForm.on('submit', function(event){
@@ -60,7 +61,7 @@ $searchForm.on('submit', function(event){
 				$tbodytr.remove();
 				$tbody.html( response.data );
 				$backLink.show();
-
+				$customPagination.hide();
 				$searchByIdInput.css('border', '1px solid #3e94cc');
 				$errorMessage.hide();
 			}

@@ -1229,7 +1229,7 @@ table.system {
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 100;
+  z-index: 200;
   background: #ffffff url("../images/background-spinner.gif") center 50vh no-repeat;
   border-top: 8px solid #3e94cc; }
   .certificate-loader h2 {
@@ -1349,6 +1349,9 @@ table.system {
     float: right; }
   .certificate .three-stars, .application-form .three-stars, .report .three-stars, .application-page .three-stars {
     letter-spacing: 2px; }
+  .certificate .qr-code, .application-form .qr-code, .report .qr-code, .application-page .qr-code {
+    margin: 0;
+    display: none; }
   .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
     margin-bottom: 40px;
     display: none; }
@@ -1829,7 +1832,7 @@ table.student-info {
     line-height: 1.5;
     margin: .125in 0; }
   .office-location.office-location {
-    width: 2in; }
+    width: 3in; }
     .office-location.office-location h3 {
       font-size: 10pt;
       line-height: 1.1; }
@@ -1882,7 +1885,7 @@ table.student-info {
       table td.pass-fail {
         font-size: 11pt; }
   h3.certify.certify {
-    margin-top: 0.5in;
+    margin-top: 0;
     margin-bottom: 0;
     font-size: 24pt; }
   .participant-name.participant-name {
@@ -1912,11 +1915,24 @@ table.student-info {
       margin-left: 0.05in; }
   .spacey.spacey {
     margin-right: 0.100in; }
+  .qr-code.qr-code.qr-code {
+    display: block;
+    position: absolute;
+    bottom: 0.3in;
+    left: 0.45in;
+    width: 1in;
+    height: 1in; }
+    .qr-code.qr-code.qr-code canvas {
+      width: 1in;
+      height: 1in; }
   .signature.signature {
     display: block;
     font-size: 10pt;
     width: 2.25in;
     margin-bottom: 0.25in; }
+    .signature.signature p.short-margin {
+      font-size: 9pt;
+      margin: 0; }
   .signature-cert-codes {
     position: absolute;
     bottom: 0;

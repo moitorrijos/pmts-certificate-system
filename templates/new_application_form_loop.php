@@ -10,10 +10,9 @@
 
 			</a>
 
-			<a href="<?php echo home_url();?>/application-forms/new-application-form/?action=clear_session" class="clear-data-button">
+			<a href="<?php echo get_permalink(); ?>/?action=clear_session" class="clear-data-button">
 				<i class="fa fa-eraser"></i>
 				Clear Certificate Data
-
 			</a>
 
 		</div>

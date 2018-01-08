@@ -2,13 +2,13 @@
 
 function register_my_styles_and_scripts() {
 
-	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '20171015', 'all' );
+	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '20171102', 'all' );
 
 	wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:700', array(), '2015', 'all');
 
 	wp_enqueue_script( 'listmin-js', THEMEROOT . '/js/min/list-min.js', array(), '20151118', true);
 
-	wp_enqueue_script( 'main-js', THEMEROOT . '/js/min/main-min.js', array('jquery'), '20170906', true);
+	wp_enqueue_script( 'main-js', THEMEROOT . '/js/min/main-min.js', array('jquery'), '225', true);
 
 	if ( is_front_page() || is_home() ) {
 
@@ -16,7 +16,7 @@ function register_my_styles_and_scripts() {
 
 		wp_localize_script( 'ajax_login', 'ajax_obj', array(
 			'ajaxurl'		=> admin_url( 'admin-ajax.php' ),
-			'redirecturl' 	=> home_url(),
+			'redirecturl' 	=> get_permalink( 7188 ),
 			'security'		=> wp_create_nonce( 'pmtscs_login' ),
 			'errormessage' 	=> 'Sorry, username and password ane incorrect. Please try again, or contact administrator for password reset.',
 		) );
@@ -89,6 +89,13 @@ function register_my_styles_and_scripts() {
 		wp_enqueue_script( 'form-field-magic', THEMEROOT . '/js/min/form-field-magic-min.js', array('jquery'), '20171015', true );
 
 		wp_enqueue_script( 'author_information', THEMEROOT . '/js/min/author-information-min.js', array('jquery'), '20160422', true );
+
+		wp_enqueue_script( 'qrcode-client', THEMEROOT . '/js/min/qrcode-client-min.js', array('jquery'), '22', true );
+		
+		wp_localize_script( 'qrcode-client', 'qrcode_obj', array(
+				'qr_url' => AUTHENTICCERTIPAGE
+			)
+		);
 
 	}
 

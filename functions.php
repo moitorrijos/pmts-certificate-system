@@ -2,11 +2,14 @@
 
 define ( 'THEMEROOT', get_template_directory_uri() );
 define ( 'IMAGESPATH', THEMEROOT . '/images' );
+define ( 'AUTHENTICCERTIPAGE', get_permalink( 17515 ) );
 
 /**
  * Register Styles and Scripts
  */
 require get_template_directory() . '/includes/register_my_styles_and_scripts.php';
+require get_template_directory() . '/includes/fill-sample-courses.php';
+
 
 /**
  * Post Types
@@ -84,6 +87,7 @@ require get_template_directory() . '/includes/search-certificates.php';
 require get_template_directory() . '/includes/search-quotations.php';
 require get_template_directory() . '/includes/send-application-pmtscs.php';
 require get_template_directory() . '/includes/search-application-form.php';
+
 
 /**
  * Includes for application
