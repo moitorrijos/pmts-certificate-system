@@ -173,7 +173,8 @@
 						<span class="undies">
 							<span>***</span> 
 							<span class="register-code">
-								<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . strtoupper($office->slug) . '-' . add_leading_zeroes($register_code) . $register_code; ?>
+								<?php //echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . strtoupper($office->slug) . '-' . add_leading_zeroes($register_code) . $register_code; ?>
+								PMTS/FRB/15-01-00116
 							</span>
 							<span>***</span> 
 						</span>                 
@@ -369,11 +370,12 @@
 
 				By means of Resolution
 
-				<span class="undiesunpaddies"><?php echo the_field('resolution'); ?></span>
+				<span class="undiesunpaddies"><?php //echo the_field('resolution'); ?>DGGM-CFM-024-2015</span>
+				
 
 				of
 
-				<span class="undiesunpaddies"><?php echo the_field('resolution_date'); ?></span>
+				<span class="undiesunpaddies"><?php //echo the_field('resolution_date'); ?>18 June 2015</span>
 
 			</p>
 
@@ -409,7 +411,7 @@
 
 			</p>
 
-			<div class="qr-code" id="qr-code"></div>
+			<!-- <div class="qr-code" id="qr-code"></div> -->
 
 			<div class="signature-cert-codes">
 				
@@ -426,11 +428,11 @@
 						
 						<p>
 							
-							<?php //if ( $course->revision ) : ?>
-								<span class="boldies"><?php //echo $course->revision; ?></span>
-							<?php //else : ?>
+							<?php if ( $course->revision ) : ?>
+								<span class="boldies"><?php echo $course->revision; ?></span>
+							<?php else : ?>
 								<span class="boldies">Rev. (01/18)</span>
-							<?php //endif; ?>
+							<?php endif; ?>
 
 						</p>
 

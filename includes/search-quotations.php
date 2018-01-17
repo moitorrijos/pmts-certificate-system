@@ -12,41 +12,39 @@ function pmtscs_ajax_search_quotations() {
 
 	}
 
-	$quotation_no = $_POST['quotation_no'];
+	$quotation_query = $_POST['quotation_no'];
 
 	$quotation_ids_by_participant = $wpdb->get_results(
-
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "%d" AND meta_key="participants_name"', $quotation_no)
-
+		'SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "' . $quotation_query . '" AND meta_key="participants_name"'
 	);
 
 	$quotation_ids_by_clients = $wpdb->get_results(
-
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "%d" AND meta_key="clients_name"', $quotation_no)
-
+		'SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "' . $quotation_query . '" AND meta_key="clients_name"'
 	);
 
-	if ($quotation_ids_by_participant || $quotation_ids_by_clients) {
+	if ($quotation_ids_by_participant) {
 
-		$quote_ids = array();
+		$quotation_query_by_name = explode ( ' ', $quotation_query );
 
-		foreach ( $quotation_ids_by_participant as $key => $row ) {
+		$quotation_names_query = array_map(function($name){
+			return array(
+				'key' => 'participants_name',
+				'value' => 'name',
+				'compare' => 'LIKE'
+			);
+		}, $quotation_query_by_name);
 
-			array_push( $quote_ids, $row->post_id );
+		$meta_query_array = array(
+			'relation' => 'AND'
+		);
 
-		}
-
-		foreach ( $quotation_ids_by_clients as $clients_key => $clients_row ) {
-
-			array_push( $quote_ids, $clients_row->post_id);
-
-		}
-		
+		array_push($meta_query_array, $quotation_names_query);
+	
 		$quote_ids_args = array(
 			'post_type' => 'quotation',
-			'post__in' => $quote_ids
+			'posts_per_page' => 55,
+			'meta_query' => $meta_query_array
 		);
-		
 
 		ob_start();
 
@@ -67,7 +65,7 @@ function pmtscs_ajax_search_quotations() {
 
 		$search_quote_args = array(
 			'post_type' => 'quotation', 
-			's'	=> (string)$quotation_no
+			's'	=> (string)$quotation_query
 		);
 
 		$search_quotes = new WP_Query( $search_quote_args );

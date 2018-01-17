@@ -25,7 +25,7 @@ function ajaxSearchId(){
 
 		success : function( response ) {
 
-			if ( response.success ) {
+			if ( response.success && (response.data != '') ) {
 
 				var studentsName, passportId, placeOfBirth, nationality, dateOfBirth;
 
@@ -51,7 +51,7 @@ function ajaxSearchId(){
 
 						dateOfBirth = element.meta_value;
 
-					} 
+					}
 				});
 
 				if ( response.data.app_permalink ) {

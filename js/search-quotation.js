@@ -1,3 +1,5 @@
+var quotation_object;
+
 ; (function( $ ) {
 $(function() {
 
@@ -17,8 +19,9 @@ var $tbody 	= $('tbody'),
 
 		$searchSpinner.show();
 		$loader.fadeIn('fast');
-
-		$searchQuotationInput.removeClass('animated shake');
+		if ($searchQuotationInput.hasClass('animated')) {
+			$searchQuotationInput.removeClass('animated shake');
+		}
 		$errorMessage.hide();
 		$notFoundMessage.hide();
 
@@ -38,7 +41,7 @@ var $tbody 	= $('tbody'),
 			data 		: {
 				action 		 : 'search_quotations',
 				security 	 : quotation_object.security,
-				quotation_no : $searchQuotationInput.val().toString()
+				quotation_no : $searchQuotationInput.val()
 			},
 
 			success: function(response){

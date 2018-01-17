@@ -7,23 +7,17 @@ function pmtscs_ajax_search_certificates() {
 	global $wpdb;
 
 	if ( !check_ajax_referer( 'pmtscs_certificates', 'security' ) ) {
-
 		return wp_send_json_error('Invalid security threshold, please try again later.');
-
 	}
 
 	$certificate_query = $_POST['certificate_query'];
 
 	$certificate_ids = $wpdb->get_results(
-
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id" AND meta_value="' . (string)$certificate_query . '"')
-
+		'SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id" AND meta_value="' . (string)$certificate_query . '"'
 	);
 
 	$certificate_ids_by_register_code = $wpdb->get_results(
-		
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_key="pmtscs_register_code" AND meta_value="' . (string)$certificate_query . '"' )
-
+		'SELECT post_id FROM fytv_postmeta WHERE meta_key="pmtscs_register_code" AND meta_value="' . (string)$certificate_query . '"'
 	);
 
 	if ( $certificate_ids ) {
@@ -50,7 +44,7 @@ function pmtscs_ajax_search_certificates() {
 
 		return wp_send_json_success( $certificate_html_list_by_passport );
 
-	} elseif( $certificate_ids_by_register_code ) {
+	} else if( $certificate_ids_by_register_code ) {
 			
 		$cert_ids_args = array(
 			'post_type' 		=> 'certificates',
@@ -77,7 +71,7 @@ function pmtscs_ajax_search_certificates() {
 	} else {
 
 		$certificate_query_by_name = explode(' ', $certificate_query);
-
+		
 		$certificate_names_query = array_map(function($name){
 			return array(
 				'key' => 'students_name',

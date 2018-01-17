@@ -83,7 +83,7 @@
 					<table class="system quote-info-table">
 						<thead>
 							<tr>
-								<th>Quote Number</th>
+								<th>Invoice Number</th>
 								<th>Date</th>
 							</tr>
 						</thead>
@@ -92,11 +92,11 @@
 								<td><h4 class="quote-number"><?php echo get_the_title(); ?></h4></td>
 								<td><?php echo get_the_date(); ?></td>
 							</tr>
-							<tr>
-								<td class="centered">Quote Valid for 45 days</td>
-								<td class="centered">Prepared by: <?php the_author(); ?></td>
-							</tr>
-						</tbody>	
+							<!-- <tr>
+								<td class="centered">In Valid for 45 days</td>
+								<td class="centered">Prepared by: <?php //the_author(); ?></td>
+							</tr> -->
+						</tbody>
 					</table>
 				</div>
 			</div>
