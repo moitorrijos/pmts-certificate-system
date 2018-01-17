@@ -11,7 +11,7 @@
 
 			<div class="back-button-link buttons">
 				
-				<a href="<?php echo home_url(); ?>" class="back-link">
+				<a href="<?php echo get_permalink( 8 ); ?>" class="back-link">
 					&laquo;
 
 					Back to Certificates List
