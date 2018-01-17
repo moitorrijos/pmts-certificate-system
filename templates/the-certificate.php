@@ -173,8 +173,7 @@
 						<span class="undies">
 							<span>***</span> 
 							<span class="register-code">
-								<?php //echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . strtoupper($office->slug) . '-' . add_leading_zeroes($register_code) . $register_code; ?>
-								PMTS/FRB/15-01-00116
+								<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . strtoupper($office->slug) . '-' . add_leading_zeroes($register_code) . $register_code; ?>
 							</span>
 							<span>***</span> 
 						</span>                 
