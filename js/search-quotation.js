@@ -15,6 +15,7 @@ var $tbody 	= $('tbody'),
 	$searchSpinner = $('span.search-spinner');
 
 	$searchQuotationForm.on('submit', function(event){
+		var $quotationQuery = $.trim($searchQuotationInput.val());
 		event.preventDefault();
 
 		$searchSpinner.show();
@@ -25,7 +26,7 @@ var $tbody 	= $('tbody'),
 		$errorMessage.hide();
 		$notFoundMessage.hide();
 
-		if ( $searchQuotationInput.val() === '' ) {
+		if ( $quotationQuery === '' ) {
 			$searchQuotationInput
 				.css('border', '1px solid #C10000')
 				.addClass('animated shake');
@@ -41,7 +42,7 @@ var $tbody 	= $('tbody'),
 			data 		: {
 				action 		 : 'search_quotations',
 				security 	 : quotation_object.security,
-				quotation_no : $searchQuotationInput.val()
+				quotation_query : $quotationQuery
 			},
 
 			success: function(response){

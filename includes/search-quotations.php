@@ -12,7 +12,7 @@ function pmtscs_ajax_search_quotations() {
 
 	}
 
-	$quotation_query = $_POST['quotation_no'];
+	$quotation_query = $_POST['quotation_query'];
 
 	$quotation_ids_by_participant = $wpdb->get_results(
 		'SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "' . $quotation_query . '" AND meta_key="participants_name"'
@@ -24,7 +24,7 @@ function pmtscs_ajax_search_quotations() {
 
 	if ($quotation_ids_by_participant) {
 
-		$quotation_query_by_name = explode ( ' ', $quotation_query );
+		$quotation_query_by_name = explode ( ' ', $quotation_ids_by_participant );
 
 		$quotation_names_query = array_map(function($name){
 			return array(

@@ -25,7 +25,13 @@ function ajaxSearchId(){
 
 		success : function( response ) {
 
-			if ( response.success && (response.data != '') ) {
+			console.log(response.data);
+
+			if ( response.data.length === 0 ) {
+
+				return; 
+
+			} else if ( response.success ) {
 
 				var studentsName, passportId, placeOfBirth, nationality, dateOfBirth;
 
