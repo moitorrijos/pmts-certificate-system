@@ -90,7 +90,7 @@ function register_my_styles_and_scripts() {
 
 		wp_enqueue_script( 'author_information', THEMEROOT . '/js/min/author-information-min.js', array('jquery'), '20160422', true );
 
-		wp_enqueue_script( 'qrcode-client', THEMEROOT . '/js/min/qrcode-client-min.js', array('jquery'), '22', true );
+		wp_enqueue_script( 'qrcode-client', THEMEROOT . '/js/min/qrcode-client-min.js', array('jquery'), '24', true );
 		
 		wp_localize_script( 'qrcode-client', 'qrcode_obj', array(
 				'qr_url' => AUTHENTICCERTIPAGE

@@ -410,7 +410,7 @@
 
 			</p>
 
-			<!-- <div class="qr-code" id="qr-code"></div> -->
+			<div class="qr-code" id="qr-code"></div>
 
 			<div class="signature-cert-codes">
 				

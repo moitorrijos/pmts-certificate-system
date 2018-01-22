@@ -3,23 +3,20 @@
 add_action( 'wp_ajax_search_quotations', 'pmtscs_ajax_search_quotations' );
 
 function pmtscs_ajax_search_quotations() {
-
 	global $wpdb;
 
 	if ( !check_ajax_referer( 'pmtscs_quotation', 'security' ) ) {
-
 		return wp_send_json_error('Invalid security threshold, please try again later.');
-
 	}
 
 	$quotation_query = $_POST['quotation_query'];
 
 	$quotation_ids_by_participant = $wpdb->get_results(
-		'SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "' . $quotation_query . '" AND meta_key="participants_name"'
+		'SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "%' . $quotation_query . '%" AND meta_key="participants_name"'
 	);
 
 	$quotation_ids_by_clients = $wpdb->get_results(
-		'SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "' . $quotation_query . '" AND meta_key="clients_name"'
+		'SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "%' . $quotation_query . '%" AND meta_key="clients_name"'
 	);
 
 	if ($quotation_ids_by_participant) {
