@@ -11,22 +11,40 @@ function pmtscs_ajax_search_quotations() {
 
 	$quotation_query = $_POST['quotation_query'];
 
-	$quotation_ids_by_participant = $wpdb->get_results(
-		'SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "%' . $quotation_query . '%" AND meta_key="participants_name"'
+	$quotation_by_number = $wpdb->get_results(
+		'SELECT ID, post_title FROM fytv_posts WHERE post_title LIKE "%' . (string)$quotation_query . '" and post_type="quotation"'
 	);
 
-	$quotation_ids_by_clients = $wpdb->get_results(
-		'SELECT post_id FROM fytv_postmeta WHERE meta_value LIKE "%' . $quotation_query . '%" AND meta_key="clients_name"'
-	);
+	if ($quotation_by_number) {
 
-	if ($quotation_ids_by_participant) {
+		$search_quote_args = array(
+			'post_type' => 'quotation', 
+			's'	=> (string)$quotation_query
+		);
 
-		$quotation_query_by_name = explode ( ' ', $quotation_ids_by_participant );
+		$search_quotes = new WP_Query( $search_quote_args );
+
+		ob_start();
+
+		if ( $search_quotes->have_posts() ) : 
+			while ( $search_quotes->have_posts() ) : $search_quotes->the_post();
+
+		get_template_part( 'templates/quotation_table' );
+
+		endwhile; endif; wp_reset_query();
+
+		$quotation_html_list = ob_get_clean();
+
+		return wp_send_json_success( $quotation_html_list );
+
+	} else {
+
+		$quotation_query_by_name = explode ( ' ', $quotation_query );
 
 		$quotation_names_query = array_map(function($name){
 			return array(
 				'key' => 'participants_name',
-				'value' => 'name',
+				'value' => $name,
 				'compare' => 'LIKE'
 			);
 		}, $quotation_query_by_name);
@@ -49,28 +67,6 @@ function pmtscs_ajax_search_quotations() {
 
 		if ( $quote_ids->have_posts() ) : 
 		while ( $quote_ids->have_posts() ) : $quote_ids->the_post();
-
-		get_template_part( 'templates/quotation_table' );
-
-		endwhile; endif; wp_reset_query();
-
-		$quotation_html_list = ob_get_clean();
-
-		return wp_send_json_success( $quotation_html_list );
-
-	} else {
-
-		$search_quote_args = array(
-			'post_type' => 'quotation', 
-			's'	=> (string)$quotation_query
-		);
-
-		$search_quotes = new WP_Query( $search_quote_args );
-
-		ob_start();
-
-		if ( $search_quotes->have_posts() ) : 
-			while ( $search_quotes->have_posts() ) : $search_quotes->the_post();
 
 		get_template_part( 'templates/quotation_table' );
 

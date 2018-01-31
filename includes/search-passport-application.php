@@ -18,6 +18,10 @@ function pmtscs_ajax_search__passport_app() {
 		'SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id_app" AND meta_value="'.$passport_no.'"ORDER BY post_id DESC LIMIT 1'
 	);
 
+	$certificate_id = $wpdb->get_var(
+		'SELECT post_id FROM fytv_postmeta WHERE meta_value="' . $passport_no . '" ORDER BY post_id DESC LIMIT 1'
+	);
+
 	if ( $application_id ) {
 
 		$application_permalink = get_permalink( $application_id );
@@ -35,16 +39,13 @@ function pmtscs_ajax_search__passport_app() {
 		);
 
 		return wp_send_json_success( $app_student_array );
+		
 	}
-
-	$certificate_id = $wpdb->get_var(
-		$wpdb->prepare('SELECT post_id FROM fytv_postmeta WHERE meta_value="%d" ORDER BY post_id DESC LIMIT 1', $passport_no)
-	);
 
 	if ( $certificate_id ) {
 	
 		$student_info = $wpdb->get_results(
-			$wpdb->prepare('SELECT meta_key, meta_value FROM fytv_postmeta WHERE post_id=%d' , $certificate_id)
+			'SELECT meta_key, meta_value FROM fytv_postmeta WHERE post_id=' . $certificate_id
 		);
 
 		$student_array = array(
