@@ -1,5 +1,10 @@
 <div class="main check">
 	<div class="main-content">
+		<?php 
+			if ( have_posts() ) : while ( have_posts() ) : the_post();
+			the_title( '<h1>', '</h1>', true );
+			endwhile; endif; 
+		?>
 		<p>
 			Type the Register Code as it appears in the Certificate to verify the certificate authenticity.
 		</p>
