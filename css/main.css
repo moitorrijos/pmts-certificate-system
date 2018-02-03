@@ -436,7 +436,7 @@ th {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
-.back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .payment-info, .report .amp-logo-text, .application-page .amp-logo-text, .report .report-full, .application-page .report-full, .application-page .application-signatures, .pmts-header {
+.back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .payment-info, .report .amp-logo-text, .application-page .amp-logo-text, .report .report-full, .application-page .report-full, .application-page .application-signatures, .pmts-header, .check-certificate {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1817,14 +1817,31 @@ ul.authentic-certificate {
       font-size: 1.4rem;
       color: #49C943; }
 
-.fc-view-container {
-  background: white; }
+.main.check {
+  width: 100%; }
 
-.fc-center h2 {
-  font-size: 1.6rem; }
+form.check-certificate {
+  margin: 30px 0; }
 
-.fc-day:hover {
-  background: #f3f3f3; }
+.check-certificate {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%; }
+  .check-certificate .input {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+  .check-certificate .submit-btn button {
+    background: #3e94cc;
+    padding: 12px 20px;
+    border: 1px solid #284f96;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: white; }
+    @media screen and (max-width: 700px) {
+      .check-certificate .submit-btn button {
+        border-radius: 0; } }
 
 @media only print and (color) {
   * {

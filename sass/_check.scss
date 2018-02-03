@@ -1,0 +1,29 @@
+.main.check {
+	width: 100%;
+}
+
+form.check-certificate {
+	margin: 30px 0;
+}
+
+.check-certificate {
+	@extend %flexbox-box;
+	justify-content: space-between;
+	width: 100%;
+
+	.input {
+		flex-grow: 1;
+	}
+
+	.submit-btn button{
+		background: $pmts-blue;
+		padding: 12px 20px;
+		border: 1px solid $amp-blue;
+		border-top-right-radius: 8px;
+		border-bottom-right-radius: 8px;
+		@media screen and (max-width: 700px) {
+			border-radius: 0;
+		}
+		color: white;
+	}
+}

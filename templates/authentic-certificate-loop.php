@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main check">
 
 	<div class="main-content">
 
