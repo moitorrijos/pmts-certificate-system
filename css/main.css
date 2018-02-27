@@ -878,6 +878,19 @@ a.deactivated {
           justify-content: space-between; }
   .back-create-buttons .back-button-link a {
     display: none; }
+  .back-create-buttons .filter-by-date {
+    margin: 4px 0 48px; }
+    .back-create-buttons .filter-by-date p {
+      line-height: 1;
+      display: inline-block; }
+    .back-create-buttons .filter-by-date button {
+      background: #284f96;
+      padding: 8px 20px;
+      color: white;
+      border: none; }
+    .back-create-buttons .filter-by-date input[type="text"] {
+      border: none;
+      border-bottom: 1px solid #C5CFD7; }
 
 form.search-by-id-no {
   margin: 0;
@@ -1362,11 +1375,8 @@ table.system {
     margin-bottom: 40px;
     display: none; }
 
-.certificate-codes.certificate-codes .boldies.boldies, .certificate-codes.certificate-codes .certificate .undies, .certificate .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .application-form .undies, .application-form .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .report .undies, .report .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .application-page .undies, .application-page .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .certificate .overies, .certificate .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .application-form .overies, .application-form .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .report .overies, .report .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .application-page .overies, .application-page .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .certificate .signature, .certificate .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .application-form .signature, .application-form .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .report .signature, .report .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .application-page .signature, .application-page .certificate-codes.certificate-codes .signature {
-  font-family: 'britannic-bold'; }
-
-.certificate-codes.certificate-codes p {
-  margin: 0; }
+.certificate-codes.certificate-codes {
+  display: none; }
 
 .edit-certificate-form {
   display: none; }
@@ -1696,14 +1706,15 @@ table.referer-info {
             justify-content: space-between;
     width: 100%; }
     .application-page .application-signatures .general-director {
-      background: url(../images/general-director-signature.svg) center top no-repeat; }
+      background: url(../images/general-director-signature.svg) center center no-repeat;
+      overflow: visible; }
     .application-page .application-signatures .applicant-signature, .application-page .application-signatures .general-director {
       width: 40%;
       text-align: center;
       margin-bottom: 16px; }
     .application-page .application-signatures .signature-line {
       border-bottom: 2px solid black;
-      margin-top: 46px; }
+      margin-top: 75px; }
   .application-page table.days, .application-page table.evaluation-score {
     width: 100%; }
     .application-page table.days th, .application-page table.evaluation-score th {
@@ -1743,7 +1754,7 @@ table.referer-info {
       line-height: 1;
       height: 40px; }
   .application-page table.practical-eval th.description {
-    width: 30%; }
+    width: 47%; }
   .application-page table.practical-eval th {
     width: 10%; }
 
@@ -1782,7 +1793,7 @@ table.student-info {
     table.student-info td:nth-child(odd) {
       width: 199px; }
     table.student-info td p {
-      line-height: 0.75;
+      line-height: 1;
       margin: 4px 0;
       font-weight: bold;
       font-style: italic; }
@@ -1842,6 +1853,52 @@ form.check-certificate {
     @media screen and (max-width: 700px) {
       .check-certificate .submit-btn button {
         border-radius: 0; } }
+
+svg#checkmark {
+  width: 32px;
+  height: 32px;
+  margin-right: 16px; }
+  svg#checkmark, svg#checkmark span {
+    display: inline-block;
+    vertical-align: middle; }
+
+.checkmark.checkmark.checkmark {
+  stroke: green;
+  stroke-dashoffset: 745.74853515625;
+  stroke-dasharray: 745.74853515625;
+  -webkit-animation: dash 2s ease-out forwards infinite;
+          animation: dash 2s ease-out forwards infinite; }
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 745.74853515625; }
+  100% {
+    stroke-dashoffset: 0; } }
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 745.74853515625; }
+  100% {
+    stroke-dashoffset: 0; } }
+
+ul.authentic-certificate {
+  max-width: 600px;
+  margin: 30px auto 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.2rem;
+  border-top: 1px solid #a2a2a2; }
+  ul.authentic-certificate li {
+    padding: 12px;
+    border-bottom: 1px solid #a2a2a2;
+    border-right: 1px solid #a2a2a2;
+    border-left: 1px solid #a2a2a2;
+    font-weight: bold; }
+    ul.authentic-certificate li.authentic {
+      font-size: 1.25rem; }
+    ul.authentic-certificate li small {
+      display: block;
+      font-weight: normal; }
 
 @media only print and (color) {
   * {
@@ -1904,12 +1961,10 @@ form.check-certificate {
     page-break-inside: auto;
     color: black;
     position: relative; }
-    table thead {
-      display: table-header-group; }
-      table thead th {
-        font-size: 8pt;
-        text-transform: uppercase;
-        padding: 0.1in; }
+    table thead th {
+      font-size: 8pt;
+      text-transform: uppercase;
+      padding: 0.1in; }
     table tr {
       page-break-inside: avoid;
       -webkit-region-break-inside: avoid;
@@ -1960,10 +2015,14 @@ form.check-certificate {
   .qr-code.qr-code.qr-code {
     display: block;
     position: absolute;
-    bottom: 0.3in;
-    left: 0.45in;
-    width: 1in;
+    bottom: 0.4in;
+    left: 0.55in;
+    width: 2in;
     height: 1in; }
+    .qr-code.qr-code.qr-code p {
+      font-family: "britannic-bold";
+      font-size: 8pt;
+      line-height: 1.2; }
     .qr-code.qr-code.qr-code canvas {
       width: 1in;
       height: 1in; }
@@ -1981,9 +2040,14 @@ form.check-certificate {
     width: 100%;
     padding-right: 1in; }
   .certificate-codes.certificate-codes {
-    clear: both; }
+    padding-top: 0.5in;
+    display: block; }
+    .certificate-codes.certificate-codes .boldies.boldies, .certificate-codes.certificate-codes .certificate .undies, .certificate .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .application-form .undies, .application-form .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .report .undies, .report .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .application-page .undies, .application-page .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .certificate .overies, .certificate .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .application-form .overies, .application-form .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .report .overies, .report .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .application-page .overies, .application-page .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .certificate .signature, .certificate .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .application-form .signature, .application-form .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .report .signature, .report .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .application-page .signature, .application-page .certificate-codes.certificate-codes .signature {
+      font-family: 'britannic-bold'; }
     .certificate-codes.certificate-codes p {
-      font-size: 10pt;
+      margin: 0;
+      font-size: 8pt;
+      line-height: 1;
       font-weight: normal;
       font-style: normal; }
   table.test-header {

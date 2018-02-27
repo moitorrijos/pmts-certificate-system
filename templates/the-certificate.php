@@ -6,36 +6,26 @@
 
 			<a href="<?php echo home_url('panama-certificates'); ?>" class="back-link">
 				&laquo;
-
 				Back to Certificates List
-
 			</a>
 
 			<?php if ( current_user_can( 'edit_pages' ) ) : ?>
 
 				<a href="#0" class="edit-button not-link"><i class="fa fa-pencil"></i>
-
 					Edit Certificate
-
 				</a>
 
 			<a href="#0" class="print-button not-link"><i class="fa fa-print"></i>
-
 				Print Certificate
-
 			</a>
 
 			<a href="#0" class="view-button not-link"><i class="fa fa-eye"></i>
-
 				View Certificate
-
 			</a>
 
 			<a href="<?php echo home_url('panama-certificates/new-panama-certificate');?>" class="new-certificate-button">
-				
 				<i class="fa fa-plus-square"></i>
 				Create New Certificate
-				
 			</a>
 
 			<?php endif; ?>
@@ -47,33 +37,19 @@
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 			$students_name = ucfirst( strtolower( get_field('students_name') ) );
-
 			$course = get_field('course');
-
 			$instructor = get_field('instructor');
-
 			$place_of_birth = get_field('place_of_birth');
-
 			$office = get_field('office');
-
 			$start_date = DateTime::createFromFormat( 'Ymd', get_field('start_date') );
-
 			$end_date = DateTime::createFromFormat( 'Ymd', get_field('end_date') );
-
 			$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
-
 			$expiry_date_timestamp = strtotime( '+5 years',  strtotime( get_field('date_of_issuance') ) );
-
 			$expiry_date = date( 'd F Y', $expiry_date_timestamp );
-
 			$issue_month = $issue_date->format('m');
-
 			$issue_year = $issue_date->format('y');
-
 			$no_posts = 196;
-
 			$certificate_ID = get_the_id();
-
 			$register_code =  get_post_meta(get_the_ID(), 'register_code', true);
 
 		?>
@@ -410,7 +386,16 @@
 
 			</p>
 
-			<div class="qr-code" id="qr-code"></div>
+			<div class="qr-code">
+				<div id="qr-code"></div>
+				<div class="scan-to-verify">
+					<p>
+						Scan to Verify or Verify Online at http://pmts.com.pa/check
+						<br>
+						Rev. (02/18)
+					</p>
+				</div>
+			</div>
 
 			<div class="signature-cert-codes">
 				
@@ -421,23 +406,7 @@
 
 				</div>
 		
-				<div class="certificate-codes">
-
-					<div class="half">
-						
-						<p>
-							
-							<?php if ( $course->revision ) : ?>
-								<span class="boldies"><?php echo $course->revision; ?></span>
-							<?php else : ?>
-								<span class="boldies">Rev. (01/18)</span>
-							<?php endif; ?>
-
-						</p>
-
-					</div>
-
-				</div>
+				
 
 			</div>
 

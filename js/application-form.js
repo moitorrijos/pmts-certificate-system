@@ -6,10 +6,10 @@ $(function() {
 		$sendApplicationBtn = $('.duplicate-certificate-button'),
 		$appDiv = $('.application-form'),
 		$printBtn = $('.print-button'),
-		$viewBtn = $('.view-button'),
-		$gdSignature = $('.general-director'),
-		signPosition = ['left top', 'center top', 'right top'],
-		any = Math.floor(Math.random() * 3);
+		$viewBtn = $('.view-button');
+		// $gdSignature = $('.general-director'),
+		// signPosition = ['left top', 'center top', 'right top'],
+		// any = Math.floor(Math.random() * 3);
 
 //Edit Quote Functionality
 function fadeAppDivOut(){
@@ -34,7 +34,7 @@ $editBtn.on('click', fadeAppDivOut);
 
 $viewBtn.on('click', fadeAppDivIn);
 
-$gdSignature.css('background-position', signPosition[any]);
+// $gdSignature.css('background-position', signPosition[any]);
 
 });
 })(jQuery);

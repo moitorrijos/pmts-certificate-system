@@ -27,3 +27,56 @@ form.check-certificate {
 		color: white;
 	}
 }
+
+svg#checkmark {
+	&, span {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	width: 32px;
+	height: 32px;
+	margin-right: 16px;
+}
+
+.checkmark.checkmark.checkmark {
+	stroke: green;
+	stroke-dashoffset: 745.74853515625;
+	stroke-dasharray: 745.74853515625;
+	animation: dash 2s ease-out forwards infinite;
+}
+
+@keyframes dash {
+	0% {
+		stroke-dashoffset: 745.74853515625;
+	}
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+ul.authentic-certificate {
+	max-width: 600px;
+	margin: 30px auto 0;
+	padding: 0;
+	list-style: none;
+	font-size: 1.2rem;
+	border-top: 1px solid lighten($dark-gray, 20%);
+
+	li {
+		&.authentic {
+			font-size: 1.25rem;
+		}
+		padding: 12px;
+		border: {
+			bottom: 1px solid lighten($dark-gray, 20%);
+			right: 1px solid lighten($dark-gray, 20%);
+			left: 1px solid lighten($dark-gray, 20%);
+		}
+		font-weight: bold;
+
+		small {
+			display: block;
+			font-weight: normal;
+		}
+	}
+}

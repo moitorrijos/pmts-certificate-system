@@ -86,6 +86,8 @@ require get_template_directory() . '/includes/search-certificates.php';
 require get_template_directory() . '/includes/search-quotations.php';
 require get_template_directory() . '/includes/send-application-pmtscs.php';
 require get_template_directory() . '/includes/search-application-form.php';
+require get_template_directory() . '/includes/check-certificate-authenticity.php';
+require get_template_directory() . '/includes/filter-by-date.php';
 
 
 /**
@@ -95,6 +97,7 @@ require get_template_directory() . '/includes/pmtscs_header_for_print.php';
 require get_template_directory() . '/includes/student_info_complete_table.php';
 require get_template_directory() . '/includes/student_info_short_table.php';
 require get_template_directory() . '/includes/practical_exam_results.php';
+require get_template_directory() . '/includes/instructor_signature.php';
 
 function wpse27856_set_content_type(){
     return "text/html";

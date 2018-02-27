@@ -2,7 +2,7 @@
 
 function register_my_styles_and_scripts() {
 
-	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '38', 'all' );
+	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '52', 'all' );
 
 	wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:700', array(), '2015', 'all');
 
@@ -48,6 +48,18 @@ function register_my_styles_and_scripts() {
 
 	if ( is_page_template( 'panama-certificate-page.php' ) ) {
 
+		wp_enqueue_style( 'jquery-ui-datepicker-css', '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', array(), 'all' );
+
+		wp_enqueue_script( 'jquery-ui-datepicker' );
+
+		wp_enqueue_script( 'filter_by_date', THEMEROOT . '/js/filter-by-date.js', array( 'jquery', 'jquery-ui-datepicker'), '4', true );
+
+		wp_localize_script( 'filter_by_date', 'filter_object', array(
+				'security' 	=> wp_create_nonce( 'pmtscs_filter_nonce' ),
+				'ajaxurl' 	=> admin_url( 'admin-ajax.php'),
+			) 
+		);
+
 		wp_enqueue_script( 'search_certificates', THEMEROOT . '/js/search-certificates.js', array('jquery'), '20160603', true );
 
 		wp_localize_script( 'search_certificates', 'certificates_object', array(
@@ -82,6 +94,19 @@ function register_my_styles_and_scripts() {
 
 	}
 
+	if ( is_page_template( 'pmts-certificate-check-page.php' ) ) {
+
+		wp_enqueue_script( 'certificate_check_page', THEMEROOT. '/js/certificate-check-page.js', array('jquery'), '22', true );
+		
+		wp_localize_script( 'certificate_check_page', 'check_object', array(
+				'security'	=> wp_create_nonce( 'check_certificate_nonce'),
+				'ajaxurl'	=> admin_url( 'admin-ajax.php' ),
+				'check_url' => AUTHENTICCERTIPAGE
+			) 
+		);
+
+	}
+
 	if ( is_singular( 'certificates' ) ) {
 
 		wp_enqueue_script( 'velocity_js', THEMEROOT . '/js/min/velocity-min.js', 'jquery', '150', true );
@@ -109,7 +134,7 @@ function register_my_styles_and_scripts() {
 
 		wp_enqueue_script( 'velocity_js', THEMEROOT . '/js/min/velocity-min.js', 'jquery', '150', true );
 
-		wp_enqueue_script( 'application_form', THEMEROOT . '/js/application-form.js', array('jquery'), '20160720', true );
+		wp_enqueue_script( 'application_form', THEMEROOT . '/js/application-form.js', array('jquery'), '20180204', true );
 
 		wp_enqueue_script( 'create_certificate', THEMEROOT . '/js/create-certificate.js', array('jquery'), '20171015', true );
 

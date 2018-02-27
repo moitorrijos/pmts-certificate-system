@@ -25,15 +25,10 @@
 	<?php
 
 		if ( have_rows('courses_app') ) : while( have_rows('courses_app') ): the_row(); 
-
 		$course = get_sub_field('course_name_app');
-
 		$instructor = get_sub_field('instructor_name_app');
-
 		$start_date = DateTime::createFromFormat( 'Ymd', get_sub_field('start_date_app') );
-
 		$end_date = DateTime::createFromFormat( 'Ymd', get_sub_field('end_date_app') );
-
 		$observation_test =	get_post_meta( $course->ID, 'observation_test' );
 
 	?>
@@ -44,9 +39,9 @@
 
 				<div class="application-page">
 
-					<?php 
+					<?php
 
-						echo pmtscs_header_for_print( 'F-SCF-11', '13', $course, $instructor, '1' );
+						echo pmtscs_header_for_print( 'F-SCF-11', '14', $course, $instructor, '1' );
 
 						echo student_info_complete_table(
 							$participants_name, 
@@ -61,16 +56,26 @@
 						
 						get_template_part( 'templates/training-docs/days_table' );
 
+						//get_template_part( 'templates/training-docs/terms-conditions' );
+
 						get_template_part( 'templates/training-docs/evaluation-score' );
 
 
 					?>
 
-					<div class="application-signatures">
+					<!-- <div class="application-signatures">
 
-						<?php get_template_part( 'templates/training-docs/instructor-signature' ); ?>
+						<?php 
 						
-					</div>
+							//get_template_part( 'templates/training-docs/applicant-signature' );
+
+							//get_template_part( 'templates/training-docs/instructor-signature' );
+
+							//echo instructor_signature( $instructor ); 
+							
+						?>
+						
+					</div> -->
 
 				</div>
 
@@ -95,7 +100,9 @@
 
 						<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
 
-						<?php get_template_part( 'templates/training-docs/instructor-signature' ); ?>
+						<?php //get_template_part( 'templates/training-docs/instructor-signature' ); ?>
+
+						<?php echo instructor_signature( $instructor ); ?>
 						
 					</div>
 					
@@ -124,7 +131,9 @@
 
 						<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
 
-						<?php get_template_part( 'templates/training-docs/instructor-signature' ); ?>
+						<?php //get_template_part( 'templates/training-docs/instructor-signature' ); ?>
+
+						<?php echo instructor_signature( $instructor ); ?>
 						
 					</div>
 						
@@ -138,11 +147,11 @@
 
 						if ( $observation_test ) {
 
-							echo pmtscs_header_for_print( 'F-GC-13', '9', $course, $instructor, '4'); 
+							echo pmtscs_header_for_print( 'F-GC-14', '9', $course, $instructor, '4'); 
 
 						} else {
 
-							echo pmtscs_header_for_print( 'F-GC-13', '9', $course, $instructor, '3'); 
+							echo pmtscs_header_for_print( 'F-GC-14', '9', $course, $instructor, '3'); 
 
 						}
 						

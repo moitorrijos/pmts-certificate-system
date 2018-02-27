@@ -1,7 +1,5 @@
 .application-for-print {
-	display: none;
-
-	
+	display: none;	
 }
 
 .application-form {
@@ -115,9 +113,10 @@
 		justify-content: space-between;
 		
 		width: 100%;
-
+		
 		.general-director {
-			background: url(../images/general-director-signature.svg) center top no-repeat;
+			background: url(../images/general-director-signature.svg) center center no-repeat;
+			overflow: visible;
 		}
 
 		.applicant-signature, .general-director {
@@ -129,7 +128,7 @@
 
 		.signature-line {
 			border-bottom: 2px solid black;
-			margin-top: 46px;
+			margin-top: 75px;
 		}
 	}
 
@@ -199,7 +198,7 @@
 		@extend table.evaluation;
 		
 		th.description {
-			width: 30%;
+			width: 47%;
 		}
 
 		th {
@@ -257,7 +256,7 @@ table.student-info {
 		}
 
 		p {
-			line-height: 0.75;
+			line-height: 1;
 			margin: 4px 0;
 			font-weight: bold;
 			font-style: italic;

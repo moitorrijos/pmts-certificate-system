@@ -545,6 +545,24 @@ a.deactivated {
 			display: none;
 		}
 	}
+
+	.filter-by-date {
+		margin: 4px 0 48px;
+		p {
+			line-height: 1;
+			display: inline-block;
+		}
+		button {
+			background: $amp-blue;
+			padding: 8px 20px;
+			color: white;
+			border: none;
+		}
+		input[type="text"] {
+			border: none;
+			border-bottom: 1px solid $gray;
+		}
+	}
 }
 
 form.search-by-id-no {

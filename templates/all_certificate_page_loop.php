@@ -5,18 +5,20 @@
 	<div class="main-content">
 
 		<h1>Panama Certificates</h1>
-		<p class="centered long">Panama Office</p>
 
 		<div class="back-create-buttons">
 
 			<div class="back-button-link buttons">
-				
 				<a href="<?php echo get_permalink( 8 ); ?>" class="back-link">
 					&laquo;
-
 					Back to Certificates List
-
 				</a>
+			</div>
+
+			<div class="filter-by-date">
+				<p>Start Date: <input class="start-date-filter" type="text" placeholder="dd/mm/yyyy"></p>
+				<p>End Date: <input class="end-date-filter" type="text" placeholder="dd/mm/yyyy"></p>
+				<button id="filter-by-date"><i class="fa fa-filter"></i> &nbsp;Filter by Date</button>
 			</div>
 
 			<?php get_template_part('templates/buttons-div'); ?>
@@ -41,7 +43,7 @@
 				// 'meta_query'		=> array(
 				// 	array(
 				// 		'key'	=> 'date_of_issuance',
-				// 		'value'	=> array(20171201, 20171231),
+				// 		'value'	=> array(20180101, 20180131),
 				// 		'compare' => 'BETWEEN',
 				// 	),
 				// ),

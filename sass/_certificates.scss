@@ -243,13 +243,7 @@
 }
 
 .certificate-codes.certificate-codes {
-	@extend .full;
-
-	.boldies.boldies {
-		font-family: 'britannic-bold';
-	}
-
-	p { margin: 0; }
+	display: none;
 }
 
 .edit-certificate-form {

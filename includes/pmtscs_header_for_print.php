@@ -40,7 +40,7 @@ function pmtscs_header_for_print(
 				Revision: <?php echo $revision_number; ?>
 			</p>
 			<p class="super-short">
-				Date: 01/04/17
+				Date: 04/02/18
 			</p>
 			<p class="super-short">
 				Page <?php echo $page_number; ?> of 
