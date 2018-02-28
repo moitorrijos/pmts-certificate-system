@@ -551,6 +551,16 @@ a.deactivated {
 		p {
 			line-height: 1;
 			display: inline-block;
+			position: relative;
+
+			span.error {
+				padding: 6px 8px;
+				background: $logout-red;
+				color: white;
+				position: absolute;
+				right: 0;
+				top: -150%;
+			}
 		}
 		button {
 			background: $amp-blue;

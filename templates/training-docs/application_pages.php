@@ -56,9 +56,9 @@
 						
 						get_template_part( 'templates/training-docs/days_table' );
 
-						//get_template_part( 'templates/training-docs/terms-conditions' );
+						// get_template_part( 'templates/training-docs/terms-conditions' );
 
-						get_template_part( 'templates/training-docs/evaluation-score' );
+						// get_template_part( 'templates/training-docs/evaluation-score' );
 
 
 					?>
@@ -67,7 +67,7 @@
 
 						<?php 
 						
-							//get_template_part( 'templates/training-docs/applicant-signature' );
+							// get_template_part( 'templates/training-docs/applicant-signature' );
 
 							//get_template_part( 'templates/training-docs/instructor-signature' );
 

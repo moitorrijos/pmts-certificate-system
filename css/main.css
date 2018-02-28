@@ -882,7 +882,15 @@ a.deactivated {
     margin: 4px 0 48px; }
     .back-create-buttons .filter-by-date p {
       line-height: 1;
-      display: inline-block; }
+      display: inline-block;
+      position: relative; }
+      .back-create-buttons .filter-by-date p span.error {
+        padding: 6px 8px;
+        background: #C10000;
+        color: white;
+        position: absolute;
+        right: 0;
+        top: -150%; }
     .back-create-buttons .filter-by-date button {
       background: #284f96;
       padding: 8px 20px;

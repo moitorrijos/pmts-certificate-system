@@ -2,7 +2,7 @@
 
 function register_my_styles_and_scripts() {
 
-	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '52', 'all' );
+	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '54', 'all' );
 
 	wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:700', array(), '2015', 'all');
 
@@ -52,7 +52,7 @@ function register_my_styles_and_scripts() {
 
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 
-		wp_enqueue_script( 'filter_by_date', THEMEROOT . '/js/filter-by-date.js', array( 'jquery', 'jquery-ui-datepicker'), '4', true );
+		wp_enqueue_script( 'filter_by_date', THEMEROOT . '/js/filter-by-date.js', array( 'jquery', 'jquery-ui-datepicker'), '6', true );
 
 		wp_localize_script( 'filter_by_date', 'filter_object', array(
 				'security' 	=> wp_create_nonce( 'pmtscs_filter_nonce' ),

@@ -24,9 +24,13 @@ function filterDates(){
 		endDate = $endDateFilter.val(),
 		startDateRegex = /^(3[01]|[12][0-9]|0?[1-9])\/(1[012]|0?[1-9])\/((?:19|20)\d{2})$/g,
 		endDateRegex = /^(3[01]|[12][0-9]|0?[1-9])\/(1[012]|0?[1-9])\/((?:19|20)\d{2})$/g,
+		newErrorSpan = '<span class="error">Provide valid date.</span>',
+		errorSpan = $('span.error'),
 		validStartDate = startDateRegex.test(startDate),
 		validEndDate = endDateRegex.test(endDate);
 	
+	$startDateFilter.closest('p').find(errorSpan).remove();
+	$endDateFilter.closest('p').find(errorSpan).remove();
 	$startDateFilter.removeAttr('style');
 	$endDateFilter.removeAttr('style');
 
@@ -34,6 +38,7 @@ function filterDates(){
 		$startDateFilter
 			.css('border-bottom', '1px solid #C10000')
 			.addClass('animated shake');
+		$startDateFilter.closest('p').append(newErrorSpan);
 		setTimeout(function(){
 			$startDateFilter.removeClass('animated shake');
 		}, 1000);
@@ -41,6 +46,7 @@ function filterDates(){
 		$endDateFilter
 			.css('border-bottom', '1px solid #C10000')
 			.addClass('animated shake');
+		$endDateFilter.closest('p').append(newErrorSpan);
 		setTimeout(function(){
 			$endDateFilter.removeClass('animated shake');
 		}, 1000);
@@ -62,6 +68,7 @@ function filterDates(){
 					$startDateFilter
 						.css('border-bottom', '1px solid #C10000')
 						.addClass('animated shake');
+					$startDateFilter.closest('p').append('<span class="error">No Certificates Found.</span>');
 					$endDateFilter
 						.css('border-bottom', '1px solid #C10000')
 						.addClass('animated shake');
