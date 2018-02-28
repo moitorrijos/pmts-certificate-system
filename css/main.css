@@ -879,13 +879,14 @@ a.deactivated {
   .back-create-buttons .back-button-link a {
     display: none; }
   .back-create-buttons .filter-by-date {
-    margin: 4px 0 48px; }
+    margin: 16px 0 48px; }
     .back-create-buttons .filter-by-date p {
       line-height: 1;
       display: inline-block;
-      position: relative; }
+      position: relative;
+      margin: 0; }
       .back-create-buttons .filter-by-date p span.error {
-        padding: 6px 8px;
+        padding: 5px 8px;
         background: #C10000;
         color: white;
         position: absolute;
@@ -893,7 +894,7 @@ a.deactivated {
         top: -150%; }
     .back-create-buttons .filter-by-date button {
       background: #284f96;
-      padding: 8px 20px;
+      padding: 4px 20px;
       color: white;
       border: none; }
     .back-create-buttons .filter-by-date input[type="text"] {
