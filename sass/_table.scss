@@ -134,6 +134,14 @@ table.system {
 				color: white;
 		}
 
+		& > span.print-pending-yellow {
+			background-color: saturate($cool-yellow, 15%);
+		}
+		
+		& > span.print-pending-orange {
+			background-color: saturate($cool-orange, 15%);
+			color: white;
+		}
 
 		a {
 			color: darken($pmts-blue, 15%);

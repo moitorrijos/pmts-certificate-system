@@ -76,7 +76,8 @@ require get_template_directory() . '/includes/create-certificate-pmtscs.php';
 require get_template_directory() . '/includes/create-table-with.php';
 require get_template_directory() . '/includes/update_certificate_by_app_data.php';
 require get_template_directory() . '/includes/get_participant_number.php';
-
+require get_template_directory() . '/includes/certificate_exists.php';
+require get_template_directory() . '/includes/pmtscs_report_dates.php';
 /**
  * Ajax calls
  */
@@ -88,7 +89,6 @@ require get_template_directory() . '/includes/send-application-pmtscs.php';
 require get_template_directory() . '/includes/search-application-form.php';
 require get_template_directory() . '/includes/check-certificate-authenticity.php';
 require get_template_directory() . '/includes/filter-by-date.php';
-
 
 /**
  * Includes for application
@@ -118,59 +118,8 @@ function pmtscs_author_details($post_ID)  {
 	return $user_firstname . ' ' . $user_lastname;
 }
 
-function pmtscs_report_dates( $instructor, $course, $course_date) {
-	setlocale(LC_ALL, 'es_ES');
-	$certificates_args = array(
-		'post_type' => 'certificates',
-		'posts_per_page' => 1,
-		'meta_query' => array(
-			array(
-				'key'   => 'instructor',
-				'value' => (int) $instructor->ID,
-			),
-			array(
-				'key'   => 'course',
-				'value' => (int) $course->ID,
-			),
-			array(
-				'key' 	=> 'end_date',
-				'value' => $course_date,
-			)
-		)
-	);
-
-	$certificates = get_posts( $certificates_args );
-
-	$certificate_id = $certificates[0]->ID;
-
-	$course_start_date = strtotime(get_post_meta($certificate_id, 'start_date', true));
-
-	$course_end_date = strtotime(get_post_meta($certificate_id, 'end_date', true));
-
-	return strftime( '%e de %B', $course_start_date ) . ' a ' . strftime( '%e de %B de %G', $course_end_date);
-}
-
-function certificate_exists($participants_id, $course) {
-	$certificate_exists = get_posts(array(
-		'post_type' => 'certificates',
-		'meta_query' => array(
-			'relation' => 'AND',
-			array(
-            'key' => 'passport_id',
-            'value' => $participants_id,
-            'compare' => '=',
-	        ),
-	        array(
-	            'key' => 'course',
-	            'value' => (int)$course->ID,
-	            'compare' => '=',
-	        ),
-		),
-	));
-
-	if ($certificate_exists) {
-		return $certificate_exists;
-	}
-
+function is_next_month( int $the_month ) {
+	$current_month = date('m');
+	if ($the_month > (int)$current_month) return true;
 	return false;
 }

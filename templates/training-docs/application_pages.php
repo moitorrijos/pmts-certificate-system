@@ -30,7 +30,7 @@
 		$start_date = DateTime::createFromFormat( 'Ymd', get_sub_field('start_date_app') );
 		$end_date = DateTime::createFromFormat( 'Ymd', get_sub_field('end_date_app') );
 		$observation_test =	get_post_meta( $course->ID, 'observation_test' );
-
+		$february_2018 = DateTime::createFromFormat('Ymd', '20180228');
 	?>
 
 		<?php if( $instructor && $start_date && $end_date ) : ?>
@@ -53,29 +53,32 @@
 							$start_date, 
 							$end_date
 						);
-						
-						get_template_part( 'templates/training-docs/days_table' );
 
-						// get_template_part( 'templates/training-docs/terms-conditions' );
+						/**
+						 * TODO: Check if end date is february 2018 or earlier 
+						 * then show days table. Else show terms and conditions.
+						 */
 
-						// get_template_part( 'templates/training-docs/evaluation-score' );
-
-
+						 if ( $end_date->getTimestamp() <= $february_2018->getTimestamp() ) {
+							 get_template_part( 'templates/training-docs/days_table' );
+							 get_template_part( 'templates/training-docs/evaluation-score' );
+						 } else {
+							 get_template_part( 'templates/training-docs/terms-conditions' );
+							 get_template_part( 'templates/training-docs/applicant-signature' );
+						 }
 					?>
 
-					<!-- <div class="application-signatures">
+					<div class="application-signatures">
 
 						<?php 
-						
-							// get_template_part( 'templates/training-docs/applicant-signature' );
 
-							//get_template_part( 'templates/training-docs/instructor-signature' );
+							if ( $end_date->getTimestamp() > $february_2018->getTimestamp() ) {
+								get_template_part( 'templates/training-docs/applicant-signature' );
+							}
 
-							//echo instructor_signature( $instructor ); 
-							
 						?>
 						
-					</div> -->
+					</div>
 
 				</div>
 

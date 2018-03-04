@@ -35,7 +35,7 @@
 		$application_form_args = array(
 
 			'post_type'			=> 'applications',
-			'posts_per_page'	=> 33,
+			'posts_per_page'	=> 18,
 			'paged' 			=> $paged,
 		);
 
