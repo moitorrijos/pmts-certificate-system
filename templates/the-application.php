@@ -226,11 +226,11 @@
 								<th class="short-title">End Date</th>
 								<th class="short-number">Time</th>
 								<th class="short-number">Students</th>
-								<?php if ( current_user_can('moderate_comments') ) : ?>
-									<th class="short-number">
+								<?php // if ( current_user_can('moderate_comments') ) : ?>
+								<th class="short-number">
 										Print
 									</th>
-								<?php endif; ?>
+								<?php // endif; ?>
 							</tr>
 						</thead>
 
@@ -324,14 +324,12 @@
 										}
 									?>
 								</td>
-								<?php if ( current_user_can( 'moderate_comments' ) ) : ?>
-									<td class="centered printly">
-
+								<td class="centered printly">
 											<?php
 												$certificate_exists = certificate_exists($participants_id, $course);
 												if (!$certificate_exists) : 
 											?>
-												<?php if ( $instructor && $start_date && $end_date ) : ?>
+												<?php if ( current_user_can( 'moderate_comments' ) && $instructor && $start_date && $end_date ) : ?>
 													<a href="#0" class="create-certificate-button">
 														<i class="fa fa-print"></i>
 													</a>
@@ -343,7 +341,7 @@
 											<?php else : ?>
 												<a 
 													class="not-link"
-													href="<?php echo $certificate_exists[0]->guid ?>"
+													href="<?php echo $certificate_exists[0]->guid; ?>"
 													target="_blank"
 												>
 													<i class="fa fa-external-link"></i>
@@ -351,7 +349,6 @@
 											<?php endif; ?>
 										</a>
 									</td>
-								<?php endif; ?>
 							</tr>
 
 						<?php endwhile; ?>
