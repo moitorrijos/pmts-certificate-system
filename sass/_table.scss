@@ -130,7 +130,7 @@ table.system {
 		}
 
 		& > span.print-pending {
-				background-color: $logout-red;
+				background-color: lighten($logout-red, 8%);
 				color: white;
 		}
 
@@ -139,7 +139,7 @@ table.system {
 		}
 		
 		& > span.print-pending-orange {
-			background-color: saturate($cool-orange, 15%);
+			background-color: lighten($cool-orange, 10%);
 			color: white;
 		}
 

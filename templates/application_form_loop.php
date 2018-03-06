@@ -14,9 +14,7 @@
 					
 				<a href="<?php echo get_permalink( 7188 ); ?>" class="back-link">
 					&laquo;
-
 					Back to Application List
-
 				</a>
 				
 			</div>
@@ -33,9 +31,8 @@
 		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
 		$application_form_args = array(
-
 			'post_type'			=> 'applications',
-			'posts_per_page'	=> 18,
+			'posts_per_page'	=> 12,
 			'paged' 			=> $paged,
 		);
 
@@ -66,13 +63,9 @@
 			<tbody>
 				
 				<?php 
-
 					while ( $application_forms->have_posts() ) : $application_forms->the_post(); 
-
 					get_template_part( 'templates/application_form_table' );
-
 					endwhile;
-				 
 				 ?>
 
 			</tbody>

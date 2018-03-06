@@ -1165,12 +1165,12 @@ table.system {
       color: #C10000;
       margin: 0; }
     table.system td > span.print-pending {
-      background-color: #C10000;
+      background-color: #ea0000;
       color: white; }
     table.system td > span.print-pending-yellow {
       background-color: #e5e328; }
     table.system td > span.print-pending-orange {
-      background-color: #e4743f;
+      background-color: #dd9978;
       color: white; }
     table.system td a {
       color: #286a96;
