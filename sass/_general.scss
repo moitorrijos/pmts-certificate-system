@@ -306,6 +306,15 @@ a.new-certificate-button {
 	}
 }
 
+a.void-certificate-button {
+	@extend %cool-button;
+	background-color: $logout-red;
+
+	&:hover {
+		background-color: darken($logout-red, 5%);
+	}
+}
+
 a.duplicate-certificate-button {
 	@extend %cool-button;
 	background-color: saturate($cool-yellow, 15%);

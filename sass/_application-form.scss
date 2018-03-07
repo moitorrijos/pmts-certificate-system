@@ -155,9 +155,13 @@
 
 	table.evaluation-score {
 		@extend table.days;
+		thead {
+			padding: 8px;
+			line-height: 1.1;
+		}
 		td {
 			width: 18%;
-			height: 70px;
+			height: 50px;
 
 			&:last-child {
 				width: ( 100% - (18% * 3) );

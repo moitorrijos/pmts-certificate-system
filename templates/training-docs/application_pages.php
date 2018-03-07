@@ -62,9 +62,9 @@
 						 if ( $end_date->getTimestamp() <= $february_2018->getTimestamp() ) {
 							 get_template_part( 'templates/training-docs/days_table' );
 							 get_template_part( 'templates/training-docs/evaluation-score' );
-						 } else {
-							 get_template_part( 'templates/training-docs/terms-conditions' );
-							 get_template_part( 'templates/training-docs/applicant-signature' );
+							} else {
+								get_template_part( 'templates/training-docs/terms-conditions' );
+								get_template_part( 'templates/training-docs/evaluation-score' );
 						 }
 					?>
 

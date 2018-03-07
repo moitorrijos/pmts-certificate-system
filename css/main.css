@@ -708,7 +708,7 @@ form {
 .align-center, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
   text-align: center; }
 
-a.logout-button, a.new-certificate-button, a.duplicate-certificate-button, a.approve-quotation, a.new-invoice-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .fill-form-randomly, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
+a.logout-button, a.new-certificate-button, a.void-certificate-button, a.duplicate-certificate-button, a.approve-quotation, a.new-invoice-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .fill-form-randomly, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
   padding: 4px 22px;
   text-decoration: none;
   color: white;
@@ -730,6 +730,11 @@ a.new-certificate-button {
   background-color: #49C943; }
   a.new-certificate-button:hover {
     background-color: #3cbc36; }
+
+a.void-certificate-button {
+  background-color: #C10000; }
+  a.void-certificate-button:hover {
+    background-color: #a80000; }
 
 a.duplicate-certificate-button {
   background-color: #e5e328;
@@ -1744,9 +1749,12 @@ table.referer-info {
       height: 34px; }
       .application-page table.days td:last-child, .application-page table.evaluation-score td:last-child, .application-page table.days td:nth-last-child(2), .application-page table.evaluation-score td:nth-last-child(2) {
         background: #cdcdcd; }
+  .application-page table.evaluation-score thead {
+    padding: 8px;
+    line-height: 1.1; }
   .application-page table.evaluation-score td {
     width: 18%;
-    height: 70px; }
+    height: 50px; }
     .application-page table.evaluation-score td:last-child {
       width: 46%; }
     .application-page table.evaluation-score td:last-child, .application-page table.evaluation-score td:nth-last-child(2) {

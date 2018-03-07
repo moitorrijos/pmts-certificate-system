@@ -25,6 +25,10 @@
 				Duplicate Application
 			</a>
 
+			<!-- <a href="#0" class="void-certificate-button"><i class="fa fa-minus-circle"></i>
+				Void Application
+			</a> -->
+
 			<a href="<?php echo get_permalink(7190);?>" class="new-certificate-button"><i class="fa fa-plus-square"></i>
 				Create New Application
 			</a>
