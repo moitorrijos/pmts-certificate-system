@@ -39,21 +39,29 @@ function pmtscs_ajax_search_quotations() {
 
 	} else {
 
-		$quotation_query_by_name = explode ( ' ', $quotation_query );
+		$quotation_query_by_names = explode ( ' ', $quotation_query );
 
-		$quotation_names_query = array_map(function($name){
+		$quotation_participants_names_query = array_map(function($participants_name){
 			return array(
 				'key' => 'participants_name',
-				'value' => $name,
+				'value' => $participants_name,
 				'compare' => 'LIKE'
 			);
-		}, $quotation_query_by_name);
+		}, $quotation_query_by_names);
+
+		// $quotation_clients_names_query = array(function($clients_names){
+		// 	return array(
+		// 		'key' => 'clients_name',
+		// 		'value' => $clients_names,
+		// 		'compare' => '='
+		// 	);
+		// }, $quotation_query_by_names);
 
 		$meta_query_array = array(
 			'relation' => 'AND'
 		);
 
-		array_push($meta_query_array, $quotation_names_query);
+		array_push($meta_query_array, $quotation_participants_names_query);
 	
 		$quote_ids_args = array(
 			'post_type' => 'quotation',
