@@ -40,13 +40,15 @@ function pmtscs_header_for_print(
 				Revision: <?php echo $revision_number; ?>
 			</p>
 			<p class="super-short">
-				Date: 04/02/18
+				Date: 01/03/18
 			</p>
 			<p class="super-short">
 				Page <?php echo $page_number; ?> of 
 				<?php 
-					if (get_post_meta( $course_obj->ID, 'observation_test')) {
-						echo '4'; 
+					if ($course_obj->ID === 87 || $course_obj->ID === 88 || $course_obj->ID === 90) {
+						echo '6';
+					} else if (get_post_meta( $course_obj->ID, 'observation_test')) {
+						echo '4';
 					} else {
 						echo '3';
 					}

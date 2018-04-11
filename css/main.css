@@ -2037,10 +2037,9 @@ ul.authentic-certificate {
   .qr-code.qr-code.qr-code {
     display: block;
     position: absolute;
-    bottom: 0.4in;
+    bottom: 0;
     left: 0.55in;
-    width: 2in;
-    height: 1in; }
+    width: 2in; }
     .qr-code.qr-code.qr-code p {
       font-family: "britannic-bold";
       font-size: 8pt;
@@ -2050,23 +2049,24 @@ ul.authentic-certificate {
       height: 1in; }
   .signature.signature {
     display: block;
-    font-size: 10pt;
+    font-size: 9pt;
     width: 2.25in;
-    margin-bottom: 0.25in; }
+    margin-bottom: 0.05in; }
     .signature.signature p.short-margin {
-      font-size: 9pt;
+      font-family: "britannic-bold";
+      font-size: 8pt;
+      line-height: 1.2;
       margin: 0; }
   .signature-cert-codes {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    right: 0;
+    width: 30%;
     padding-right: 1in; }
   .certificate-codes.certificate-codes {
-    padding-top: 0.5in;
     display: block; }
-    .certificate-codes.certificate-codes .boldies.boldies, .certificate-codes.certificate-codes .certificate .undies, .certificate .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .application-form .undies, .application-form .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .report .undies, .report .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .application-page .undies, .application-page .certificate-codes.certificate-codes .undies, .certificate-codes.certificate-codes .certificate .overies, .certificate .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .application-form .overies, .application-form .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .report .overies, .report .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .application-page .overies, .application-page .certificate-codes.certificate-codes .overies, .certificate-codes.certificate-codes .certificate .signature, .certificate .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .application-form .signature, .application-form .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .report .signature, .report .certificate-codes.certificate-codes .signature, .certificate-codes.certificate-codes .application-page .signature, .application-page .certificate-codes.certificate-codes .signature {
-      font-family: 'britannic-bold'; }
     .certificate-codes.certificate-codes p {
+      font-family: 'britannic-bold';
       margin: 0;
       font-size: 8pt;
       line-height: 1;

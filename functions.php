@@ -3,6 +3,9 @@
 define ( 'THEMEROOT', get_template_directory_uri() );
 define ( 'IMAGESPATH', THEMEROOT . '/images' );
 define ( 'AUTHENTICCERTIPAGE', get_permalink( 17578 ) );
+define ( 'RESOLUTION', 'DGGM-CFM-024-2015' );
+define ( 'RESOLUTION_DATE', '18 June 2015' );
+define ( 'RES_EXPIRY_DATE', '18 June 2018' );
 
 /**
  * Register Styles and Scripts

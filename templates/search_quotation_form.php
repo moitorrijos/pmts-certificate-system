@@ -1,5 +1,5 @@
 <form action="#0" id="search-quotation-number-form" class="search-by-id-no">
-	<span class="error-message">Sorry there was a problem, pelase try again.</span>
+	<span class="error-message">Sorry there was a problem, please try again.</span>
 	<span class="not-found-message">Quote Not Found.</span>
 	<input class="search search_by_id_passport" type="search" placeholder="Type Quotation Number to Search" id="search-quotation-number"/>
 

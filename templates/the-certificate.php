@@ -179,6 +179,10 @@
 
 							of the Panama Maritime Authority.
 
+						<?php elseif ( (int)$course->ID === 95 || (int)$course->ID === 94 ) : ?>
+
+							the IMO International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended.
+
 						<?php else : ?>
 
 							of the IMO International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended.
@@ -345,12 +349,16 @@
 
 				By means of Resolution
 
-				<span class="undiesunpaddies"><?php //echo the_field('resolution'); ?>DGGM-CFM-024-2015</span>
+				<span class="undiesunpaddies"><?php echo RESOLUTION; ?></span>
 				
 
 				of
 
-				<span class="undiesunpaddies"><?php //echo the_field('resolution_date'); ?>18 June 2015</span>
+				<span class="undiesunpaddies"><?php echo RESOLUTION_DATE; ?></span>
+
+				valid until
+
+				<span class="undiesunpaddies"><?php echo RES_EXPIRY_DATE; ?></span>.
 
 			</p>
 
@@ -392,7 +400,7 @@
 					<p>
 						Scan to Verify or Verify Online at http://pmts.com.pa/check
 						<br>
-						Rev. (02/18)
+						Rev. (03/18)
 					</p>
 				</div>
 			</div>
@@ -400,14 +408,10 @@
 			<div class="signature-cert-codes">
 				
 				<div class="signature">
-
 					<p class="short-margin">Agustin Gonzalez</p>
 					<p class="short-margin">Academic Director</p>
-
+					<p class="short-margin">R-CE1-01</p>
 				</div>
-		
-				
-
 			</div>
 
 		</div>

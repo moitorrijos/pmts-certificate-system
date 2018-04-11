@@ -11,7 +11,7 @@
 		<form id="search-certificate-check-number-form" class="search-by-id-no check-certificate">
 			<div class="check-certificate">
 				<div class="input">
-					<span class="error-message">Sorry there was a problem, pelase try again.</span>
+					<span class="error-message">Sorry there was a problem, please try again.</span>
 					<input class="search search_by_id_passport" type="search" placeholder="Type Register Code Here" id="search-certificate-check-number"/>
 				</div>
 				<div class="submit-btn">

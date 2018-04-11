@@ -1,8 +1,8 @@
 <?php
 
-add_action( 'wp_ajax_filter_by_date', 'phtscs_filter_by_date' );
+add_action( 'wp_ajax_filter_by_date', 'pmtscs_filter_by_date' );
 
-function phtscs_filter_by_date() {
+function pmtscs_filter_by_date() {
 	
 	if ( !check_ajax_referer( 'pmtscs_filter_nonce', 'security' ) ) {
 		return wp_send_json_error('Invalid security.');
