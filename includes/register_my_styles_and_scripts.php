@@ -2,7 +2,7 @@
 
 function register_my_styles_and_scripts() {
 
-	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '66', 'all' );
+	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '68', 'all' );
 
 	wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:700', array(), '2015', 'all');
 
@@ -139,6 +139,8 @@ function register_my_styles_and_scripts() {
 		wp_enqueue_script( 'create_certificate', THEMEROOT . '/js/create-certificate.js', array('jquery'), '20171015', true );
 
 		wp_enqueue_script( 'duplicate_application', THEMEROOT . '/js/duplicate-application.js', array( 'jquery' ), '20170509', true );
+
+		wp_enqueue_script( 'full_class', THEMEROOT . '/js/full-class.js', array('jquery'), '20180518', true );
 
 		wp_localize_script( 'duplicate_application', 'duplicate_application_obj', array(
 				'security' 	=> wp_create_nonce( 'duplicate_application_nonce' )	,

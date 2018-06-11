@@ -34,7 +34,7 @@
 
 			$all_certs_args = array( 
 				'post_type' 		=> 'certificates',
-				'posts_per_page' 	=> 15,
+				'posts_per_page' 	=> 18,
 				'meta_key' 			=> 'date_of_issuance',
 				'orderby'			=> 'meta_value_num',
 				'order'				=> 'DESC',

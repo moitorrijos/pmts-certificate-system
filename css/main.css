@@ -1125,9 +1125,13 @@ table.system {
     table.system th.sort {
       cursor: pointer; }
   table.system tr {
+    position: relative;
     background: white; }
     table.system tr:nth-child(even) {
       background: #f2f4f6; }
+    table.system tr.full-class > td {
+      color: #C10000;
+      text-decoration: line-through; }
   table.system tbody > tr:hover {
     background: #e3e8ec; }
   table.system td {
@@ -1159,6 +1163,9 @@ table.system {
     table.system td.nightly {
       background: #284f96;
       color: white; }
+    table.system td.full-class {
+      color: #C10000;
+      text-decoration: line-through; }
     table.system td.daily {
       background: #e5e328;
       color: #284f96; }
@@ -1166,8 +1173,11 @@ table.system {
       display: block;
       color: #284f96;
       font-size: 0.9em; }
-    table.system td.printly p.warningly {
+    table.system td.printly .warningly {
       color: #C10000;
+      margin: 0; }
+    table.system td.printly .lockedly {
+      color: #ce6b3b;
       margin: 0; }
     table.system td > span.print-pending {
       background-color: #ea0000;
@@ -1193,6 +1203,14 @@ table.system {
   table.system tfoot {
     border-top: 2px solid #556a7b;
     display: table-row-group; }
+
+p.warning-full.warning-full.warning-full {
+  width: 100%;
+  padding: 4px 8px;
+  margin: 0;
+  color: #C10000; }
+  p.warning-full.warning-full.warning-full i.fa {
+    font-size: 1.3rem; }
 
 .paginate a {
   color: white;

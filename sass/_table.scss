@@ -48,11 +48,19 @@ table.system {
 	}
 
 	tr {
+		position: relative;
 		background: white;
 
 		&:nth-child(even) {
 			background: lighten($gray, 15%);
 		}
+
+		&.full-class > td {
+			color: $logout-red;
+			text-decoration: line-through;
+		}
+
+		
 	}
 	
 	tbody > tr:hover {
@@ -111,6 +119,11 @@ table.system {
 			color: white;
 		}
 
+		&.full-class {
+			color: $logout-red;
+			text-decoration: line-through;
+		}
+
 		&.daily {
 			background: saturate($cool-yellow, 15%);
 			color: $amp-blue;
@@ -123,11 +136,18 @@ table.system {
 				font-size: 0.9em;
 			}
 			
-			p.warningly {
+			.warningly {
 				color: $logout-red;
 				margin: 0;
 			}
+
+			.lockedly {
+				color: darken($cool-orange, 5%);
+				margin: 0;
+			}
 		}
+
+
 
 		& > span.print-pending {
 				background-color: lighten($logout-red, 8%);
@@ -169,6 +189,17 @@ table.system {
 	tfoot {
 		border-top: 2px solid $darken-gray;
 		display: table-row-group;
+	}
+}
+
+p.warning-full.warning-full.warning-full {
+	width: 100%;
+	padding: 4px 8px;
+	margin: 0;
+	color: $logout-red;
+
+	i.fa {
+		font-size: 1.3rem;
 	}
 }
 

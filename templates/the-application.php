@@ -181,9 +181,27 @@
 								$end_date = DateTime::createFromFormat('Ymd', get_sub_field('end_date_app'));
 								$nightly_course = get_sub_field('night_app');
 
+								(boolean)$class_full = false;
+								
+								(int)$participant_number = 0;
+
+								(int)$class_limit = 35;
+								
+								if ($end_date) {
+									$end_month = (int)$end_date->format('m');
+									
+									$participant_number = get_participant_number( 
+										(int)$instructor->ID, 
+										(int)$course->ID, 
+										$end_date->format('Ymd') 
+									);
+								}
+								
+								if ( $participant_number >= $class_limit )
+								$class_full = true;
 							?>
 
-							<tr>
+							<tr <?php if ($class_full) { echo 'class ="full-class"'; } ?>>
 								<td class="centered">
 									<?php echo get_row_index(); ?>		
 								</td>
@@ -235,11 +253,7 @@
 								<td class="centered">
 									<?php 
 										if ( $instructor && $end_date ) {
-											echo get_participant_number( 
-												(int)$instructor->ID, 
-												(int)$course->ID, 
-												$end_date->format('Ymd') 
-											);
+											echo $participant_number;
 										} else {
 											echo "";
 										}
@@ -250,14 +264,22 @@
 										$certificate_exists = certificate_exists($participants_id, $course);
 										if (!$certificate_exists) : 
 									?>
-										<?php if ( current_user_can( 'moderate_comments' ) && $instructor && $start_date && $end_date ) : ?>
+										<?php if ( $participant_number > $class_limit ) : ?>
+											<span class="warningly">
+												<i class="fa fa-ban" aria-hidden="true"></i>
+											</span>
+										<?php elseif ( !current_user_can( 'moderate_comments' ) ) : ?>
+											<span class="lockedly">
+												<i class="fa fa-lock" aria-hidden="true"></i>
+											</span>
+										<?php elseif ($instructor && $start_date && $end_date && !is_next_month($end_month)) : ?>
 											<a href="#0" class="create-certificate-button">
 												<i class="fa fa-print"></i>
 											</a>
 										<?php else : ?>
-											<p href="#0" class="warningly">
+											<span class="warningly">
 												<i class="fa fa-times" aria-hidden="true"></i>
-											</p>
+											</span>
 										<?php endif; ?>
 									<?php else : ?>
 										<a 

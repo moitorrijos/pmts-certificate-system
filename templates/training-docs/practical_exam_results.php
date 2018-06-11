@@ -4,7 +4,7 @@
 			El Examen es tomado presencialmente e individualmente./The Exam must be taken in classroom and individually.
 		</li>
 		<li>
-			El participante tiene hasta 120 minutos para terminar esta prueba. Después de 120 minutos el evaluador puede darle 10 minutos extra. La prueba debe realizarse sin ayuda./The participant has up to 55 minutes to finish this test. After 120 minutes the Assessor can give you 10 extra minutes Test must be carried out without assistance.
+			El participante tiene hasta 60 minutos para terminar esta prueba. Después de 60 minutos el evaluador puede darle 10 minutos extra. La prueba debe realizarse sin ayuda./The participant has up to 60 minutes to finish this test. After 60 minutes the Assessor can give you 10 extra minutes Test must be carried out without assistance.
 		</li>
 		<li>
 			Se debe obtener mas de 70% de las respuestas correctas para pasar./Must obtain more than 70% of the answers correctly to pass.

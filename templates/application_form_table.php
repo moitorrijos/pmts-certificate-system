@@ -51,23 +51,23 @@
 
 			if ( !certificate_exists($participants_id, $courses) ) {
 
-				if ( !$end_date ) {
-					echo '<span class="print-pending-orange">' . $courses->abbr . '</span>';
-				} elseif ( is_next_month($end_month) ) {
-					echo '<span class="print-pending-yellow">' . $courses->abbr . '</span>';
-				} else {
+			// 	if ( !$end_date ) {
+			// 		echo '<span class="print-pending-orange">' . $courses->abbr . '</span>';
+			// 	} elseif ( is_next_month($end_month) ) {
+			// 		echo '<span class="print-pending-yellow">' . $courses->abbr . '</span>';
+			// 	} else {
 					echo '<span class="print-pending">' . $courses->abbr . '</span>';
-
-				}
-
+			// 	}
+				
 			} else {
 
 				echo $courses->abbr;
-
+				
 			}
-
-			endwhile; endif;
-
+			
+			// echo $courses->abbr;
+		endwhile; endif;
+		
 		?>
 	</td>
 	<?php if ( current_user_can( 'edit_pages' ) ) : ?>

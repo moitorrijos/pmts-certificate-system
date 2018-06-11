@@ -179,13 +179,13 @@
 
 							of the Panama Maritime Authority.
 
-						<?php elseif ( (int)$course->ID === 95 || (int)$course->ID === 94 ) : ?>
+						<?php elseif( (int)$course->ID === 51) : ?>
 
-							the IMO International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended.
+							.
 
 						<?php else : ?>
 
-							of the IMO International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended.
+							under the provision of the International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended
 
 						<?php endif; ?>
 						
@@ -400,7 +400,7 @@
 					<p>
 						Scan to Verify or Verify Online at http://pmts.com.pa/check
 						<br>
-						Rev. (03/18)
+						Rev. (05/18)
 					</p>
 				</div>
 			</div>

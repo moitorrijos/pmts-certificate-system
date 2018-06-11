@@ -13,7 +13,7 @@ function instructor_signature( $instructor ) {
 		>
 			<div class="signature-line"></div>
 			<p class="super-short">
-				Signature of General Director / Instructor
+				Signature of Academic Director / Instructor
 			</p>
 		</div>
 	<?php

@@ -63,12 +63,12 @@
 
 				</div>
 				
-				<?php if ($course->ID === 87 || $course->ID === 88) {
+				<?php if ($course->ID === 87 || $course->ID === 88 || $course->ID === 74) {
 
-					$exam_date_1 = DateTime::createFromFormat('Ymd', '20180203');
-					$exam_date_2 = DateTime::createFromFormat('Ymd', '20180217');
-					$exam_date_3 = DateTime::createFromFormat('Ymd', '20180303');
-					$exam_date_4 = DateTime::createFromFormat('Ymd', '20180317');
+					$exam_date_1 = DateTime::createFromFormat('Ymd', '20180421');
+					$exam_date_2 = DateTime::createFromFormat('Ymd', '20180512');
+					$exam_date_3 = DateTime::createFromFormat('Ymd', '20180602');
+					$exam_date_4 = DateTime::createFromFormat('Ymd', '20180609');
 
 					echo '<div class="application-page">';
 
@@ -156,10 +156,10 @@
 
 				} else if ($course->ID === 90) { //UPSE
 
-					$exam_date_1 = DateTime::createFromFormat('Ymd', '20180217');
-					$exam_date_2 = DateTime::createFromFormat('Ymd', '20180303');
-					$exam_date_3 = DateTime::createFromFormat('Ymd', '20180324');
-					$exam_date_4 = DateTime::createFromFormat('Ymd', '20180414');
+					$exam_date_1 = DateTime::createFromFormat('Ymd', '20180421');
+					$exam_date_2 = DateTime::createFromFormat('Ymd', '20180512');
+					$exam_date_3 = DateTime::createFromFormat('Ymd', '20180602');
+					$exam_date_4 = DateTime::createFromFormat('Ymd', '20180609');
 					
 					echo '<div class="application-page">';
 

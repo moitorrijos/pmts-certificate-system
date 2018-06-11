@@ -22,11 +22,12 @@
             $certificate = get_post( (int)$certificateId );
             if  ( $certificate ) :
 
-            $student_name = get_field('students_name', $certificateId);
-			$passport_id = get_field('passport_id', $certificateId);
-			$date_of_birth = get_field('date_of_birth', $certificateId);
-			$date_of_issuance = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance', $certificateId) );
-			$participants_nationality = get_field( 'student_nationality', $certificateId );
+				$student_name = get_field('students_name', $certificateId);
+				$course = get_field('course', $certificateId);
+				$passport_id = get_field('passport_id', $certificateId);
+				$date_of_birth = get_field('date_of_birth', $certificateId);
+				$date_of_issuance = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance', $certificateId) );
+				$participants_nationality = get_field( 'student_nationality', $certificateId );
             $pmtscs_register_code = get_post_meta( $certificateId, 'pmtscs_register_code', true );
 
         ?>
@@ -44,6 +45,10 @@
                     <small>Participant's Name:</small>
                     <?php echo $student_name; ?>
                 </li>
+					 <li>
+					 	<small>Course Name</small>
+						<?php echo get_the_title($course->ID); ?>
+					 </li>
                 <li>
                     <small>Participant's Passport/ID:</small>
                     <?php echo $passport_id; ?>

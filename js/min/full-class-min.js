@@ -1,0 +1,1 @@
+jQuery.noConflict(),function($){$(function(){var s=$(".full-class");s&&s.closest("table.system").after('<p class="warning-full"><i class="fa fa-ban"></i> This classroom is full, please edit and select different course dates.</p>')})}(jQuery);
