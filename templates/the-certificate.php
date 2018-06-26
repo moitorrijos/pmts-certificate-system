@@ -221,7 +221,7 @@
 						
 		                <p class="short">Start Course Date:
 
-							<span class="undies bottom start-date"><?php // echo $start_date->format('d F Y'); ?> XX XXXX XXXX</span>
+							<span class="undies bottom start-date"><?php echo $start_date->format('d F Y'); ?></span>
 
 						</p>
 
@@ -233,7 +233,7 @@
 
 							End Course Date:
 
-							<span class="undies bottom end-date"><?php // echo $end_date->format('d F Y'); ?> XX XXXX XXXX</span>
+							<span class="undies bottom end-date"><?php echo $end_date->format('d F Y'); ?></span>
 
 						</p>
 						
@@ -347,16 +347,16 @@
 
 				By means of Resolution
 
-				<span class="undiesunpaddies"><?php // echo RESOLUTION; ?> XXXX-XXX-XXX-XXXX</span>
+				<span class="undiesunpaddies"><?php echo RESOLUTION; ?></span>
 				
 
 				of
 
-				<span class="undiesunpaddies"><?php // echo RESOLUTION_DATE; ?> XX XXXX XXXX</span>
+				<span class="undiesunpaddies"><?php echo RESOLUTION_DATE; ?></span>
 
 				valid until
 
-				<span class="undiesunpaddies"><?php // echo RES_EXPIRY_DATE; ?> XX XXXX XXXX</span>.
+				<span class="undiesunpaddies"><?php echo RES_EXPIRY_DATE; ?></span>.
 
 			</p>
 
@@ -374,7 +374,7 @@
 
 				<span class="undiesunpaddies">
 
-					 <?php // echo $issue_date->format('d F Y'); ?> XX XXXX XXXX
+					 <?php echo $issue_date->format('d F Y'); ?>
 
 				</span>
 
@@ -386,7 +386,7 @@
 
 				<span class="undiesunpaddies">
 					
-					<?php // echo $expiry_date; ?> XX XXXX XXXX
+					<?php  echo $expiry_date; ?>
 
 				</span>
 

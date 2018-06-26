@@ -1520,7 +1520,8 @@ ul.fill-courses-dropdown {
       top: 100%;
       left: 0;
       visibility: hidden;
-      opacity: 0; }
+      opacity: 0;
+      z-index: 100; }
       ul.fill-courses-dropdown li ul li {
         padding: 0; }
       ul.fill-courses-dropdown li ul li a {
@@ -1942,8 +1943,7 @@ ul.authentic-certificate {
 
 @media only print and (color) {
   * {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact; }
+    -webkit-print-color-adjust: exact; }
   body {
     display: block;
     background: white; }

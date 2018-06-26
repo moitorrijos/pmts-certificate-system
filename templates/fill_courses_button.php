@@ -4,7 +4,10 @@
 
 			<li>
 				<a href="<?php echo home_url();?>/panama-quotations/new-panama-quotation/?action=fill_deck_courses" class="not-link">Basic Safety Courses</a>
-				<!-- <a href="#0" class="not-link" id="fill_deck_courses">Basic Safety Courses</a> -->
+			</li>
+
+			<li>
+				<a href="<?php echo home_url();?>/panama-quotations/new-panama-quotation/?action=fill_yacht_courses" class="not-link">Yacht Courses</a>
 			</li>
 
 			<li>

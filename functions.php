@@ -69,6 +69,8 @@ require get_template_directory() . '/includes/acf-save-post-data.php';
 require get_template_directory() . '/includes/acf-remove-post-data.php';
 require get_template_directory() . '/includes/fill-form-randomly.php';
 require get_template_directory() . '/includes/fill-deck-courses.php';
+require get_template_directory() . '/includes/fill-engine-courses.php';
+require get_template_directory() . '/includes/fill-yacht-courses.php';
 require get_template_directory() . '/includes/my_courses_post_object_results.php';
 require get_template_directory() . '/includes/add_leading_zeroes.php';
 require get_template_directory() . '/includes/certificate-exists-validation.php';

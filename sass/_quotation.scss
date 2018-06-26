@@ -16,6 +16,7 @@ ul.fill-courses-dropdown {
 			top: 100%; left: 0;
 			visibility: hidden;
 			opacity: 0;
+			z-index: 100;
 			@extend %smooth-animation;
 
 			li { padding: 0; }
