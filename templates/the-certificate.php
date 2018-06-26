@@ -44,10 +44,12 @@
 			$start_date = DateTime::createFromFormat( 'Ymd', get_field('start_date') );
 			$end_date = DateTime::createFromFormat( 'Ymd', get_field('end_date') );
 			$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
+			$issue_date_timestamp = strtotime( get_field('date_of_issuance') );
 			$expiry_date_timestamp = strtotime( '+5 years',  strtotime( get_field('date_of_issuance') ) );
 			$expiry_date = date( 'd F Y', $expiry_date_timestamp );
 			$issue_month = $issue_date->format('m');
 			$issue_year = $issue_date->format('y');
+			$resolution_date_timestamp = strtotime( RES_EXPIRY_DATE );
 			$no_posts = 196;
 			$certificate_ID = get_the_id();
 			$register_code =  get_post_meta(get_the_ID(), 'register_code', true);
@@ -346,17 +348,32 @@
 				This course has been approved by the Government of <span class="undiesunpaddies">PANAMA</span>
 
 				By means of Resolution
-
-				<span class="undiesunpaddies"><?php echo RESOLUTION; ?></span>
 				
+				<?php if ($issue_date_timestamp > $resolution_date_timestamp) :  ?>
 
-				of
+					<span class="undiesunpaddies"><?php echo NEW_RESOLUTION; ?></span>
 
-				<span class="undiesunpaddies"><?php echo RESOLUTION_DATE; ?></span>
+					of
 
-				valid until
+					<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', NEW_RESOLUTION_DATE)->format('d F Y'); ?></span>
 
-				<span class="undiesunpaddies"><?php echo RES_EXPIRY_DATE; ?></span>.
+					valid until
+
+					<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', NEW_RES_EXPIRY_DATE)->format('d F Y'); ?></span>.
+				
+				<?php else : ?>
+
+					<span class="undiesunpaddies"><?php echo RESOLUTION; ?></span>
+
+					of
+
+					<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', RESOLUTION_DATE)->format('d F Y'); ?></span>
+
+					valid until
+
+					<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', RES_EXPIRY_DATE)->format('d F Y'); ?></span>.
+
+				<?php endif; ?>
 
 			</p>
 
