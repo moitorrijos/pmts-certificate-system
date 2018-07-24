@@ -351,15 +351,11 @@
 				
 				<?php if ($issue_date_timestamp > $resolution_date_timestamp) :  ?>
 
-					<span class="undiesunpaddies"><?php echo NEW_RESOLUTION; ?></span>
+					<span class="undiesunpaddies"><?php echo CMHB_RESOLUTION; ?></span>
 
 					of
 
-					<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', NEW_RESOLUTION_DATE)->format('d F Y'); ?></span>
-
-					valid until
-
-					<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', NEW_RES_EXPIRY_DATE)->format('d F Y'); ?></span>.
+					<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', CMHB_RESOLUTION_DATE)->format('d F Y'); ?></span>
 				
 				<?php else : ?>
 
