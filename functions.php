@@ -10,7 +10,7 @@ define ( 'RESOLUTION_DATE', '20150618' );
 define ( 'NEW_RESOLUTION_DATE', '20180618' );
 define ( 'CMHB_RESOLUTION_DATE', '20180718' );
 define ( 'RES_EXPIRY_DATE', '20180618' );
-define ( 'NEW_RES_EXPIRY_DATE', '20181218' );
+define ( 'NEW_RES_EXPIRY_DATE', '20181222' );
 
 
 /**

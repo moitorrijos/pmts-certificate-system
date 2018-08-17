@@ -185,7 +185,7 @@
 								
 								(int)$participant_number = 0;
 
-								(int)$class_limit = 35;
+								(int)$class_limit = 25;
 								
 								if ($end_date) {
 									$end_month = (int)$end_date->format('m');
