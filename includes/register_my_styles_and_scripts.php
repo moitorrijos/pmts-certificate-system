@@ -2,7 +2,7 @@
 
 function register_my_styles_and_scripts() {
 
-	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '70', 'all' );
+	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '76', 'all' );
 
 	wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:700', array(), '2015', 'all');
 
@@ -92,11 +92,19 @@ function register_my_styles_and_scripts() {
 			) 
 		);
 
+		wp_enqueue_script( 'delete_application', THEMEROOT . '/js/delete-application.js', array('jquery'), '22', true );
+
+		wp_localize_script( 'delete_application', 'delete_app_obj', array(
+				'security'	=> wp_create_nonce( 'delete_app_nonce' ),
+				'ajaxurl'	=> admin_url( 'admin-ajax.php' ),
+			) 
+		);
+
 	}
 
 	if ( is_page_template( 'pmts-certificate-check-page.php' ) ) {
 
-		wp_enqueue_script( 'certificate_check_page', THEMEROOT. '/js/certificate-check-page.js', array('jquery'), '22', true );
+		wp_enqueue_script( 'certificate_check_page', THEMEROOT . '/js/certificate-check-page.js', array('jquery'), '22', true );
 		
 		wp_localize_script( 'certificate_check_page', 'check_object', array(
 				'security'	=> wp_create_nonce( 'check_certificate_nonce'),

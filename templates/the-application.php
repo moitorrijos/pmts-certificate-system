@@ -25,8 +25,8 @@
 				Duplicate Application
 			</a>
 
-			<!-- <a href="#0" class="void-certificate-button"><i class="fa fa-minus-circle"></i>
-				Void Application
+			<!-- <a href="#0" class="void-certificate-button not-link"><i class="fa fa-minus-circle"></i>
+				Delete Application
 			</a> -->
 
 			<a href="<?php echo get_permalink(7190);?>" class="new-certificate-button"><i class="fa fa-plus-square"></i>
@@ -86,7 +86,6 @@
 
 			<div class="full">
 
-
 				<div class="thirds">
 					<p>
 						Full Name: 
@@ -134,7 +133,6 @@
 							<?php echo $participants_nationality; ?>
 						</span>
 					</p>
-
 				</div>
 
 				<div class="thirds">
@@ -186,6 +184,8 @@
 								(int)$participant_number = 0;
 
 								(int)$class_limit = 25;
+
+								(int)$hv_limit = 6;
 								
 								if ($end_date) {
 									$end_month = (int)$end_date->format('m');
@@ -197,8 +197,13 @@
 									);
 								}
 								
-								if ( $participant_number >= $class_limit )
-								$class_full = true;
+								if ( $participant_number >= $class_limit ) {
+									$class_full = true;
+								}
+
+								if ((int)$course->ID === 24068 && $participant_number >= $hv_limit) {
+									$class_full = true;	
+								}
 							?>
 
 							<tr <?php if ($class_full) { echo 'class ="full-class"'; } ?>>
@@ -264,7 +269,11 @@
 										$certificate_exists = certificate_exists($participants_id, $course);
 										if (!$certificate_exists) : 
 									?>
-										<?php if ( $participant_number > $class_limit ) : ?>
+										<?php if ((int)$course->ID === 24068 && $participant_number >= $hv_limit) : ?>
+											<span class="warningly">
+												<i class="fa fa-ban" aria-hidden="true"></i>
+											</span>
+										<?php elseif ( $participant_number > $class_limit ) : ?>
 											<span class="warningly">
 												<i class="fa fa-ban" aria-hidden="true"></i>
 											</span>
@@ -296,6 +305,8 @@
 						<?php endwhile; ?>
 
 					</table>
+
+					<p class="shortly">Application Created by: <?php the_author(); ?></p>
 
 				<?php endif; wp_reset_query(); ?>
 

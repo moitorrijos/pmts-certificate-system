@@ -15,7 +15,7 @@ function pmtscs_ajax_search__passport_app() {
 	$passport_no = $_POST['passport_no'];
 
 	$application_id = $wpdb->get_var(
-		'SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id_app" AND meta_value="'.$passport_no.'"ORDER BY post_id DESC LIMIT 1'
+		'SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id_app" AND meta_value="' . $passport_no . '"ORDER BY post_id DESC LIMIT 1'
 	);
 
 	$certificate_id = $wpdb->get_var(

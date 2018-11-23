@@ -94,6 +94,7 @@ require get_template_directory() . '/includes/pmtscs_report_dates.php';
  */
 require get_template_directory() . '/includes/search-by-id-passport.php';
 require get_template_directory() . '/includes/search-passport-application.php';
+require get_template_directory() . '/includes/delete-application.php';
 require get_template_directory() . '/includes/search-certificates.php';
 require get_template_directory() . '/includes/search-quotations.php';
 require get_template_directory() . '/includes/send-application-pmtscs.php';

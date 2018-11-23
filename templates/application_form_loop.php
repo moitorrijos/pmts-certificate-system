@@ -2,6 +2,16 @@
 	
 	<div class="main-content">
 
+		<?php if ( isset($_SESSION['application_deleted']) ) : ?>
+
+			<div class="modal-box danger">
+
+				<p>The application was deleted successfully.</p>
+
+			</div>
+
+		<?php unset($_SESSION['application_deleted']); endif; ?>
+
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		
 			<h1><?php the_title(); ?></h1>
@@ -36,6 +46,8 @@
 			'paged' 			=> $paged,
 		);
 
+		
+
 		$application_forms = new WP_Query($application_form_args);
 
 		if ( $application_forms->have_posts() ) :
@@ -56,6 +68,9 @@
 					<?php if ( current_user_can('edit_pages') ) : ?>
 						<th class="number">
 							Edit
+						</th>
+						<th class="number">
+							Delete
 						</th>
 					<?php endif; ?>
 				</tr>

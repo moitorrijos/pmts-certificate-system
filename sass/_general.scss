@@ -42,6 +42,12 @@ body {
 	}
 }
 
+.shortly {
+	margin: 2px 0;
+	font-size: 0.9rem;
+	color: $logout-red;
+}
+
 .centered {
 	text-align: center;
 }
@@ -407,6 +413,7 @@ a.back-link {
 .main-content {
 	width: 96%;
 	min-height: 100vh;
+	position: relative;
 
 	@media only screen and (max-width: 1700px) {
 		width: 100%;
@@ -644,4 +651,33 @@ form.search-by-id-no {
 
 .italize {
 	font-style: italic;
+}
+
+.modal-box	{
+	position: absolute;
+	left: 50%;
+	width: 400px;
+	margin-left: -200px;
+	padding: 20px 40px;
+	text-align: center;
+	pointer-events: none;
+	transform: translateY(-20px);
+	opacity: 0;
+	transition: all 0.3s;
+	
+	&.danger {
+		background: lighten($logout-red, 50%);
+		color: darken($logout-red, 10%);
+		border: 2px solid $logout-red;
+	}
+
+	&.animate-me-in {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	&.animate-me-out {
+		transform: translateY(20px);
+		opacity: 0;
+	}
 }

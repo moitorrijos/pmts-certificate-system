@@ -165,8 +165,7 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0; }
 
 /**
@@ -272,8 +271,7 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -295,7 +293,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -433,17 +430,11 @@ th {
  * Colors
  */
 .logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, ul.fill-courses-dropdown li ul, .application-exists, .application-sent, .application-sent-error {
-  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
 .back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .payment-info, .report .amp-logo-text, .application-page .amp-logo-text, .report .report-full, .application-page .report-full, .application-page .application-signatures, .pmts-header, .check-certificate {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap; }
+  flex-flow: row wrap; }
 
 div.login-form .login-loading-animation, div.copyright .login-loading-animation {
   position: absolute;
@@ -490,8 +481,7 @@ div.login-form .login-loading-animation, div.copyright .login-loading-animation 
   clear: both; }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 html {
   font-size: 14px; }
@@ -517,6 +507,11 @@ body {
   @media screen {
     body {
       min-height: 100vh; } }
+
+.shortly {
+  margin: 2px 0;
+  font-size: 0.9rem;
+  color: #C10000; }
 
 .centered {
   text-align: center; }
@@ -547,19 +542,10 @@ header {
   background: white;
   color: #556a7b;
   z-index: 10;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
   height: 100vh;
   background: white;
   float: left; }
@@ -605,12 +591,8 @@ form {
       border: 1px solid #7bb6dc; }
   form .rememberme {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
+    justify-content: space-between; }
     form .rememberme label {
       margin-top: 12px;
       display: block; }
@@ -639,11 +621,8 @@ form {
   color: white;
   padding: 60px 30px 0;
   width: 60%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch; }
+  align-content: stretch; }
   @media only screen and (max-width: 700px) {
     .main {
       display: block;
@@ -662,16 +641,9 @@ form {
   height: 100%;
   width: 100%;
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row; }
+  justify-content: space-between;
+  flex-direction: row; }
   .logged-in header.show-menu {
     left: 0; }
   .logged-in header h3 {
@@ -785,6 +757,7 @@ a.back-link {
 .main-content {
   width: 96%;
   min-height: 100vh;
+  position: relative;
   margin: 0 auto;
   background-image: url("../images/pmts-watermark-logo.png");
   background-color: white;
@@ -816,9 +789,7 @@ ul.nav {
   padding: 0;
   margin: 0;
   position: relative;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   display: table;
   width: 100%; }
   ul.nav li {
@@ -878,9 +849,7 @@ a.deactivated {
     background: #e3e8ec; }
 
 .back-create-buttons {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  justify-content: space-between; }
   .back-create-buttons .back-button-link a {
     display: none; }
   .back-create-buttons .filter-by-date {
@@ -908,10 +877,7 @@ a.deactivated {
 
 form.search-by-id-no {
   margin: 0;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  flex-flow: row nowrap;
   position: relative; }
   form.search-by-id-no span.error-message, form.search-by-id-no span.not-found-message {
     position: absolute;
@@ -948,6 +914,31 @@ form.search-by-id-no {
 
 .italize {
   font-style: italic; }
+
+.modal-box {
+  position: absolute;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  padding: 20px 40px;
+  text-align: center;
+  pointer-events: none;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s; }
+  .modal-box.danger {
+    background: #ffc1c1;
+    color: #8e0000;
+    border: 2px solid #C10000; }
+  .modal-box.animate-me-in {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1; }
+  .modal-box.animate-me-out {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0; }
 
 div.login-form, div.copyright {
   position: relative; }
@@ -1085,8 +1076,7 @@ table.acf-table tr td.acf-field {
       font-size: 1.2em; }
 
 input.search {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border-radius: 4px;
   border: 1px solid #b6c3cd;
   padding: 12px 20px;
@@ -1200,6 +1190,8 @@ table.system {
       height: 100%;
       padding: 8px 18px;
       color: white; }
+    table.system td a.delete-form {
+      color: #C10000; }
   table.system tfoot {
     border-top: 2px solid #556a7b;
     display: table-row-group; }
@@ -1226,8 +1218,7 @@ p.warning-full.warning-full.warning-full {
   padding: 4em;
   background: white;
   border: 1px solid #d4dbe1;
-  -webkit-box-shadow: 0 0 12px #e3e8ec;
-          box-shadow: 0 0 12px #e3e8ec; }
+  box-shadow: 0 0 12px #e3e8ec; }
   .search-student-form form input[type="text"] {
     font-size: 1.1em;
     text-align: center; }
@@ -1398,9 +1389,7 @@ p.warning-full.warning-full.warning-full {
   .certificate .thirds, .application-form .thirds, .report .thirds, .application-page .thirds {
     width: 33%; }
   .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
+    justify-content: space-between; }
   .certificate .to-right, .application-form .to-right, .report .to-right, .application-page .to-right, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
     float: right; }
   .certificate .three-stars, .application-form .three-stars, .report .three-stars, .application-page .three-stars {
@@ -1450,8 +1439,7 @@ div.close-button {
   background: white;
   width: 80%;
   margin: 15% auto;
-  -webkit-box-shadow: 0 0 12px #a7b6c2;
-          box-shadow: 0 0 12px #a7b6c2;
+  box-shadow: 0 0 12px #a7b6c2;
   padding: 3em; }
 
 .modal-window-outer form {
@@ -1464,8 +1452,7 @@ div.close-button {
       text-transform: uppercase;
       letter-spacing: 2px; }
   .modal-window-outer form .filter-inputs {
-    -ms-flex-pack: distribute;
-        justify-content: space-around; }
+    justify-content: space-around; }
     .modal-window-outer form .filter-inputs input {
       width: 33%;
       margin-bottom: 32px;
@@ -1486,8 +1473,7 @@ ul.pagination {
     background: #529fd1;
     border: 1px solid #98aab8;
     margin-right: 12px;
-    -webkit-box-shadow: 0 1px 2px #C5CFD7;
-            box-shadow: 0 1px 2px #C5CFD7; }
+    box-shadow: 0 1px 2px #C5CFD7; }
 
 .other-certificates {
   padding: 10px;
@@ -1535,9 +1521,7 @@ ul.fill-courses-dropdown {
       opacity: 1; }
 
 .quotation-logo-table {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  justify-content: space-between; }
   .quotation-logo-table h4.quote-number {
     display: inline-block;
     float: right;
@@ -1588,20 +1572,14 @@ table.referer-info {
 .report, .application-page {
   font-family: "Times New Roman", serif; }
   .report .amp-logo-text, .application-page .amp-logo-text {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    justify-content: space-between;
+    align-items: center; }
   .report .amp-logo, .application-page .amp-logo {
     width: 75px; }
     .report .amp-logo img, .application-page .amp-logo img {
       width: 100%; }
   .report .amp-text, .application-page .amp-text {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-grow: 1;
     color: #284f96; }
     .report .amp-text h3, .application-page .amp-text h3, .report .amp-text h4, .application-page .amp-text h4 {
       text-align: center;
@@ -1643,13 +1621,9 @@ table.referer-info {
     line-height: 0.9; }
   .report .report-full, .application-page .report-full {
     margin-bottom: 2em;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start; }
+    justify-content: flex-start; }
   .report .report-undies, .application-page .report-undies {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-grow: 1;
     padding-left: 20px; }
   .report .half, .application-page .half {
     width: 50%; }
@@ -1739,9 +1713,7 @@ table.referer-info {
     position: absolute;
     bottom: 0;
     left: 0;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     width: 100%; }
     .application-page .application-signatures .general-director {
       background: url(../images/general-director-signature.svg) center center no-repeat;
@@ -1800,9 +1772,7 @@ table.referer-info {
     width: 10%; }
 
 .pmts-header {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  justify-content: space-between; }
   .pmts-header .logo {
     width: 120px;
     margin: 12px 0; }
@@ -1876,14 +1846,10 @@ form.check-certificate {
   margin: 30px 0; }
 
 .check-certificate {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   width: 100%; }
   .check-certificate .input {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1; }
+    flex-grow: 1; }
   .check-certificate .submit-btn button {
     background: #3e94cc;
     padding: 12px 20px;
@@ -1957,8 +1923,7 @@ ul.authentic-certificate {
     background-image: none;
     margin: 0 auto;
     width: 8.5in;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    box-shadow: none; }
   h2.course {
     font-size: 17pt;
     margin: 0.30in 0;

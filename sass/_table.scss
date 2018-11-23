@@ -184,6 +184,10 @@ table.system {
 			padding: 8px 18px;
 			color: white;
 		}
+
+		a.delete-form {
+			color: $logout-red;
+		}
 	}
 
 	tfoot {
