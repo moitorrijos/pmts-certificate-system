@@ -57,7 +57,7 @@
 		?>
 
 
-		<div class="certificate" id="the-certificate" data-certificate-id="<?php echo $certificate_ID; ?>">
+		<div class="certificate view-section" id="the-certificate" data-certificate-id="<?php echo $certificate_ID; ?>">
 			
 			<div class="certificate-author-mask not-for-print"></div>
 
@@ -434,7 +434,7 @@
 
 		<?php if (current_user_can( 'edit_pages' ) ) : ?>
 
-			<div class="edit-certificate-form">
+			<div class="edit-certificate-form edit-section">
 
 				<?php 
 					$certificate_options = array(

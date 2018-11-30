@@ -4,10 +4,10 @@
 		
 		<div class="buttons">
 			
-			<a href="<?php echo home_url('panama-reports'); ?>">
+			<a href="<?php echo home_url('/panama-reports/end-of-classes-report/'); ?>">
 				&laquo;
 
-				Back to Rerpots List
+				Back to End of Classes Reports List
 
 			</a>
 

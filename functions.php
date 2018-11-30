@@ -30,8 +30,9 @@ require get_template_directory() . '/post-types/quotations.php';
 require get_template_directory() . '/post-types/invoices.php';
 require get_template_directory() . '/post-types/application-forms.php';
 require get_template_directory() . '/post-types/reports.php';
-require get_template_directory() . '/post-types/quotation-code-title.php';
+require get_template_directory() . '/post-types/initial-reports.php';
 require get_template_directory() . '/post-types/reports-code-title.php';
+require get_template_directory() . '/post-types/quotation-code-title.php';
 require get_template_directory() . '/post-types/application-form-code-title.php';
 require get_template_directory() . '/post-types/certificates-post-title.php';
 require get_template_directory() . '/post-types/admin-columns/custom-admin-columns-courses.php';
@@ -48,6 +49,7 @@ require get_template_directory() . '/acf-custom-fields/invoices-fields.php';
 require get_template_directory() . '/acf-custom-fields/application-forms-fields.php';
 require get_template_directory() . '/acf-custom-fields/resolutions-fields.php';
 require get_template_directory() . '/acf-custom-fields/reports-fields.php';
+require get_template_directory() . '/acf-custom-fields/initial-reports-fields.php';
 require get_template_directory() . '/acf-custom-fields/instructors-fields.php';
 
 /**

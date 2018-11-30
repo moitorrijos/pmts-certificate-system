@@ -432,7 +432,7 @@ th {
 .logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, ul.fill-courses-dropdown li ul, .application-exists, .application-sent, .application-sent-error {
   transition: all 0.25s ease-in-out; }
 
-.back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .payment-info, .report .amp-logo-text, .application-page .amp-logo-text, .report .report-full, .application-page .report-full, .application-page .application-signatures, .pmts-header, .check-certificate {
+.back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .quotation-logo-table .quotation-logo, .participant-client-tables, .payment-info, .report .amp-logo-text, .application-page .amp-logo-text, .report .report-full, .application-page .report-full, .application-page .application-signatures, .pmts-header, .check-certificate {
   display: flex;
   flex-flow: row wrap; }
 
@@ -939,6 +939,34 @@ form.search-by-id-no {
     -webkit-transform: translateY(20px);
             transform: translateY(20px);
     opacity: 0; }
+
+.panama-reports-buttons {
+  margin-top: 40px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  border-right: 1px solid white;
+  border-left: 1px solid white; }
+  .panama-reports-buttons a.report-button {
+    padding: 12px 18px;
+    color: white;
+    background: #7fb5d8;
+    text-align: center;
+    display: inline-block;
+    width: 49%;
+    font-weight: bold;
+    border-radius: 16px 16px 0 0;
+    transition: all 0.25s ease-out; }
+    .panama-reports-buttons a.report-button.current-reports-page {
+      background: #3e94cc; }
+    .panama-reports-buttons a.report-button:hover {
+      background: #3287be; }
+
+.view-section {
+  display: block; }
+
+.edit-section {
+  display: none; }
 
 div.login-form, div.copyright {
   position: relative; }
@@ -1523,17 +1551,15 @@ ul.fill-courses-dropdown {
 .quotation-logo-table {
   justify-content: space-between; }
   .quotation-logo-table h4.quote-number {
-    display: inline-block;
-    float: right;
     margin: 0;
     color: #C10000; }
+  .quotation-logo-table .quotation-logo {
+    justify-content: space-between; }
   .quotation-logo-table .logo {
     width: 140px;
-    margin: 0 40px 32px 0;
-    float: left; }
+    margin: 0 40px 32px 0; }
   .quotation-logo-table .company-info {
     width: 600px;
-    float: left;
     font-size: 0.8rem; }
     .quotation-logo-table .company-info h4 {
       font-size: 1.4rem;
@@ -1554,14 +1580,11 @@ table.quote-info-table tr {
   table.quote-info-table tr td {
     border: 1px solid #C5CFD7; }
 
+.participant-client-tables {
+  justify-content: space-between; }
+
 table.participant-info, table.referer-info {
   width: 45%; }
-
-table.participant-info {
-  float: left; }
-
-table.referer-info {
-  float: right; }
 
 .edit-quote-form {
   display: none; }

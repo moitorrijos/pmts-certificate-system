@@ -681,3 +681,40 @@ form.search-by-id-no {
 		opacity: 0;
 	}
 }
+
+.panama-reports-buttons {
+	margin-top: 40px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	border-right: 1px solid white;
+	border-left: 1px solid white;
+
+	a.report-button {
+		padding: 12px 18px;
+		color: white;
+		background: desaturate(lighten($pmts-blue, 15%), 5%);
+		text-align: center;
+		display: inline-block;
+		width: 49%;
+		font-weight: bold;
+		border-radius: 16px 16px 0 0;
+		transition: all 0.25s ease-out;
+
+		&.current-reports-page {
+			background: $pmts-blue;
+		}
+
+		&:hover {
+			background: darken($pmts-blue, 5%);
+		}
+	}
+}
+
+.view-section {
+	display: block;
+}
+
+.edit-section {
+	display: none;
+}

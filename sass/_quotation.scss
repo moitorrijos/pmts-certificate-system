@@ -45,21 +45,22 @@ ul.fill-courses-dropdown {
 	justify-content: space-between;
 
 	h4.quote-number {
-		display: inline-block;
-		float: right;
 		margin: 0;
 		color: $logout-red;
+	}
+
+	.quotation-logo {
+		@extend %flexbox-box;
+		justify-content: space-between;
 	}
 
 	.logo {
 		width: 140px;
 		margin: 0 40px 32px 0;
-		float: left;
 	}
 
 	.company-info {
 		width: 600px;
-		float: left;
 		font-size: 0.8rem;
 
 		h4 {
@@ -95,16 +96,13 @@ table.quote-info-table {
 	}
 }
 
+.participant-client-tables {
+	@extend %flexbox-box;
+	justify-content: space-between;
+}
+
 table.participant-info, table.referer-info {
 	width: 45%;
-}
-
-table.participant-info {
-	float: left;
-}
-
-table.referer-info {
-	float: right;
 }
 
 .edit-quote-button {

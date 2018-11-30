@@ -83,7 +83,7 @@
 					<table class="system quote-info-table">
 						<thead>
 							<tr>
-								<th>Invoice Number</th>
+								<th>Quotation Number</th>
 								<th>Date</th>
 							</tr>
 						</thead>
@@ -92,81 +92,78 @@
 								<td><h4 class="quote-number"><?php echo get_the_title(); ?></h4></td>
 								<td><?php echo get_the_date(); ?></td>
 							</tr>
-							<!-- <tr>
-								<td class="centered">In Valid for 45 days</td>
-								<td class="centered">Prepared by: <?php //the_author(); ?></td>
-							</tr> -->
+							<tr>
+								<td class="centered">Valid for 45 days</td>
+								<td class="centered">Prepared by: <?php the_author(); ?></td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
 
-			<div class="clearfix"></div>
-			
-			<table class="system participant-info">
-				<thead>
-					<tr>
-						<th>Participant's Information</th>
-						<?php if ( get_field('participants_email') ) : ?>
-						<th>Email:</th>
-						<?php endif; ?>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Name: <?php the_field('participants_name'); ?></td>
-						<?php if ( get_field('participants_email') ) : ?>
-						<td>
-							<?php the_field('participants_email'); ?>
-						</td>
-						<?php endif; ?>
-					</tr>
-					<?php if ( get_field('participants_nationality') ) : ?>
+			<div class="participant-client-tables">
+				<table class="system participant-info">
+					<thead>
 						<tr>
-							<td colspan="2" >Nationality: <?php the_field('participants_nationality'); ?></td>
+							<th>Participant's Information</th>
+							<?php if ( get_field('participants_email') ) : ?>
+							<th>Email:</th>
+							<?php endif; ?>
 						</tr>
-					<?php endif; ?>
-					<?php if ( get_field('participants_phone_number') ) : ?>
+					</thead>
+					<tbody>
 						<tr>
-							<td colspan="2">Phone: <?php the_field('participants_phone_number'); ?></td>
-						</tr>
-					<?php endif; ?>
-					<?php if ( get_field('type_of_service') ): ?>
-						<tr>
-							<td colspan="2">
-								Service: <?php the_field('type_of_service') ?>
+							<td>Name: <?php the_field('participants_name'); ?></td>
+							<?php if ( get_field('participants_email') ) : ?>
+							<td>
+								<?php the_field('participants_email'); ?>
 							</td>
+							<?php endif; ?>
 						</tr>
-					<?php endif; ?>
-				</tbody>
-			</table>
-
-			<?php if ( get_field('clients_name') ) : ?>
-
-			<table class="system referer-info">
-
-				<thead>
-					<tr>
-						<th>Referer's Name</th>
-						<?php if ( get_field('clients_email') ) : ?>
-						<th>Referer's Email</th>
+						<?php if ( get_field('participants_nationality') ) : ?>
+							<tr>
+								<td colspan="2" >Nationality: <?php the_field('participants_nationality'); ?></td>
+							</tr>
 						<?php endif; ?>
-					</tr>
-				</thead>
-				
-				<tbody>
-					<tr>
-						<td><?php (the_field('clients_name')); ?></td>
-						<?php if (get_field('clients_email')) : ?>
-						<td><?php (the_field('clients_email')); ?></td>
+						<?php if ( get_field('participants_phone_number') ) : ?>
+							<tr>
+								<td colspan="2">Phone: <?php the_field('participants_phone_number'); ?></td>
+							</tr>
 						<?php endif; ?>
-					</tr>
-				</tbody>
-			</table>
+						<?php if ( get_field('type_of_service') ): ?>
+							<tr>
+								<td colspan="2">
+									Service: <?php the_field('type_of_service') ?>
+								</td>
+							</tr>
+						<?php endif; ?>
+					</tbody>
+				</table>
 
-			<div class="clearfix"></div>
+				<?php if ( get_field('clients_name') ) : ?>
 
-			<?php endif; ?>
+				<table class="system referer-info">
+
+					<thead>
+						<tr>
+							<th>Referer's Name</th>
+							<?php if ( get_field('clients_email') ) : ?>
+							<th>Referer's Email</th>
+							<?php endif; ?>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr>
+							<td><?php (the_field('clients_name')); ?></td>
+							<?php if (get_field('clients_email')) : ?>
+							<td><?php (the_field('clients_email')); ?></td>
+							<?php endif; ?>
+						</tr>
+					</tbody>
+				</table>
+				<?php endif; ?>
+			</div>
 			
 			<table class="system">
 				

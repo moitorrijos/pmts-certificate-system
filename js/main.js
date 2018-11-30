@@ -1,15 +1,17 @@
 ; (function( $ ) {
 $(function() {
 
-var $certForm 		= 	$('.edit-certificate-form'),
+var $certForm 		= 	$('.edit-section'),
 	$certDiv 		= 	$('.certificate'),
+	$viewBtn 		= 	$('.view-button'),
+	$viewSection	= 	$('.view-section'),
+	$editSection 	= 	$('.edit-section'),
 	$editBtn 		= 	$('.edit-button'),
 	$toggleBtn		=	$('a.toggle-menu'),
 	$header 		= 	$('header'),
 	$loader 		= 	$('.loader'),
 	$printBtn 		= 	$('.print-button'),
 	$navA 			= 	$('.nav').find('li').find('a'),
-	$viewBtn 		= 	$('.view-button'),
 	$participantName = 	$('h1.participant-name'),
 	windowHref 		= 	window.location.href,
 	acfHref 		= 	'acf-form',
@@ -19,33 +21,25 @@ var $certForm 		= 	$('.edit-certificate-form'),
 		valueNames : ['list-col-1', 'list-col-2', 'list-col-3', 'list-col-4'],
 	};
 
-function fadeCertDivOut() {
-	$certDiv.hide();
+function fadeViewSectionOut() {
+	$viewSection.hide();
 	$printBtn.hide();
 	$editBtn.hide();
-	$certForm.fadeIn('fast');
+	$editSection.fadeIn('fast');
 	$viewBtn.css('display', 'inline-block');
 }
 
-function fadeCertDivIn() {
+function fadeViewSectionIn() {
 	$viewBtn.hide();
-	$certDiv.fadeIn('fast');
-	$certForm.hide();
+	$viewSection.fadeIn('fast');
+	$editSection.hide();
 	$printBtn.css('display', 'inline-block');
 	$editBtn.css('display', 'inline-block');
 }
 
-function toTitleCase(str) {
-    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-}
+$editBtn.on('click', fadeViewSectionOut);
 
-if ($participantName) {
-	console.log($participantName.text());
-}
-
-$editBtn.on('click', fadeCertDivOut);
-
-$viewBtn.on('click', fadeCertDivIn);
+$viewBtn.on('click', fadeViewSectionIn);
 
 $printBtn.on('click', function(){
 	window.print();
