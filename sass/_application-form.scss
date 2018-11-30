@@ -106,31 +106,7 @@
 		}
 	}
 
-	.application-signatures {
-		position: absolute;
-		bottom: 0; left: 0;
-		@extend %flexbox-box;
-		justify-content: space-between;
-		
-		width: 100%;
-		
-		.general-director {
-			background: url(../images/general-director-signature.svg) center center no-repeat;
-			overflow: visible;
-		}
 
-		.applicant-signature, .general-director {
-			width: 40%;
-
-			text-align: center;
-			margin-bottom: 16px;
-		}
-
-		.signature-line {
-			border-bottom: 2px solid black;
-			margin-top: 75px;
-		}
-	}
 
 	table.days {
 		width: 100%;
@@ -211,6 +187,32 @@
 	}
 }
 
+.application-signatures {
+	position: absolute;
+	bottom: 0; left: 0;
+	@extend %flexbox-box;
+	justify-content: space-between;
+	
+	width: 100%;
+	
+}
+
+.general-director {
+	background: url(../images/general-director-signature.svg) center center no-repeat;
+	overflow: visible;
+}
+
+.applicant-signature, .general-director {
+	width: 40%;
+
+	text-align: center;
+	margin-bottom: 16px;
+}
+
+.signature-line {
+	border-bottom: 2px solid black;
+	margin-top: 75px;
+}
 
 .pmts-header {
 

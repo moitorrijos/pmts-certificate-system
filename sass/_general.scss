@@ -42,6 +42,14 @@ body {
 	}
 }
 
+.error-message {
+	border: 1px solid $logout-red;
+	background: lighten($logout-red, 25%);
+	padding: 20px 40px;
+	font-weight: bold;
+	color: white;
+}
+
 .shortly {
 	margin: 2px 0;
 	font-size: 0.9rem;

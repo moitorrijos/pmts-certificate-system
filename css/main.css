@@ -432,7 +432,7 @@ th {
 .logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, ul.fill-courses-dropdown li ul, .application-exists, .application-sent, .application-sent-error {
   transition: all 0.25s ease-in-out; }
 
-.back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .quotation-logo-table .quotation-logo, .participant-client-tables, .payment-info, .report .amp-logo-text, .application-page .amp-logo-text, .report .report-full, .application-page .report-full, .application-page .application-signatures, .pmts-header, .check-certificate {
+.back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .quotation-logo-table .quotation-logo, .participant-client-tables, .payment-info, .report .amp-logo-text, .application-page .amp-logo-text, .report .report-full, .application-page .report-full, .application-signatures, .pmts-header, .check-certificate {
   display: flex;
   flex-flow: row wrap; }
 
@@ -507,6 +507,13 @@ body {
   @media screen {
     body {
       min-height: 100vh; } }
+
+.error-message {
+  border: 1px solid #C10000;
+  background: #ff4242;
+  padding: 20px 40px;
+  font-weight: bold;
+  color: white; }
 
 .shortly {
   margin: 2px 0;
@@ -1592,8 +1599,35 @@ table.participant-info, table.referer-info {
 .bank-info {
   margin: 40px; }
 
-body {
-  background: pink; }
+.report-company-logo {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center; }
+  .report-company-logo .logo {
+    width: 120px;
+    height: 120px;
+    margin: 0; }
+
+table.report-table {
+  margin: 0; }
+  table.report-table thead tr {
+    background: #98aab8; }
+  table.report-table tbody tr td {
+    padding: 4px 14px;
+    border: 1px solid #a7b6c2; }
+    table.report-table tbody tr td:first-child {
+      background: #C5CFD7;
+      width: 35%; }
+
+.report-company-info {
+  text-align: center;
+  flex-grow: 1; }
+  .report-company-info h2 {
+    margin: 8px 0; }
+  .report-company-info p {
+    line-height: 1.2;
+    margin: 6px 0; }
 
 .report, .application-page {
   font-family: "Times New Roman", serif; }
@@ -1735,22 +1769,6 @@ body {
     .application-page ul li, .application-page ol li {
       font-family: "Times New Roman", serif;
       color: black; }
-  .application-page .application-signatures {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    justify-content: space-between;
-    width: 100%; }
-    .application-page .application-signatures .general-director {
-      background: url(../images/general-director-signature.svg) center center no-repeat;
-      overflow: visible; }
-    .application-page .application-signatures .applicant-signature, .application-page .application-signatures .general-director {
-      width: 40%;
-      text-align: center;
-      margin-bottom: 16px; }
-    .application-page .application-signatures .signature-line {
-      border-bottom: 2px solid black;
-      margin-top: 75px; }
   .application-page table.days, .application-page table.evaluation-score {
     width: 100%; }
     .application-page table.days th, .application-page table.evaluation-score th {
@@ -1796,6 +1814,26 @@ body {
     width: 47%; }
   .application-page table.practical-eval th {
     width: 10%; }
+
+.application-signatures {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  justify-content: space-between;
+  width: 100%; }
+
+.general-director {
+  background: url(../images/general-director-signature.svg) center center no-repeat;
+  overflow: visible; }
+
+.applicant-signature, .general-director {
+  width: 40%;
+  text-align: center;
+  margin-bottom: 16px; }
+
+.signature-line {
+  border-bottom: 2px solid black;
+  margin-top: 75px; }
 
 .pmts-header {
   justify-content: space-between; }

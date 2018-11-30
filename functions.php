@@ -32,6 +32,7 @@ require get_template_directory() . '/post-types/application-forms.php';
 require get_template_directory() . '/post-types/reports.php';
 require get_template_directory() . '/post-types/initial-reports.php';
 require get_template_directory() . '/post-types/reports-code-title.php';
+require get_template_directory() . '/post-types/initial-reports-code-title.php';
 require get_template_directory() . '/post-types/quotation-code-title.php';
 require get_template_directory() . '/post-types/application-form-code-title.php';
 require get_template_directory() . '/post-types/certificates-post-title.php';
