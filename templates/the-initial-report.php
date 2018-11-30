@@ -70,7 +70,17 @@
 		?>
 			<ul>
 				<?php foreach ($application_ids as $application_id ) : ?>
-				<li></li>
+				<?php 
+					$participants_name = get_field('participants_name_app', $application_id[0]);
+					$participants_nationality = get_field('nationality_app', $application_id[0]);
+					$participants_id = get_field('passport_id_app', $application_id[0]);
+				?>
+				<li><?php echo $participants_name 
+						. ' ' . 
+						$participants_nationality 
+						. ' ' .
+						$participants_id; ?>
+				</li>
 				<?php endforeach; ?>
 			</ul>
 		<?php else : ?>

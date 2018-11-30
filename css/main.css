@@ -1592,6 +1592,9 @@ table.participant-info, table.referer-info {
 .bank-info {
   margin: 40px; }
 
+body {
+  background: pink; }
+
 .report, .application-page {
   font-family: "Times New Roman", serif; }
   .report .amp-logo-text, .application-page .amp-logo-text {
