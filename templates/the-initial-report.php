@@ -44,15 +44,19 @@
 					<table class="report-table">
 						<tbody>
 							<tr>
-								<td>Code:</td>
+								<td class="title">Internal ID:</td>
+								<td><?php the_title(); ?></td>
+							</tr>
+							<tr>
+								<td class="title">Code:</td>
 								<td>R-FO1-11</td>
 							</tr>
 							<tr>
-								<td>Review:</td>
-								<td>0</td>
+								<td class="title">Revision:</td>
+								<td>1</td>
 							</tr>
 							<tr>
-								<td>Date:</td>
+								<td class="title">Date:</td>
 								<td contenteditable="true"><?php echo date('d/m/Y'); ?></td>
 							</tr>
 						</tbody>
@@ -63,19 +67,19 @@
 				<table class="system report-table">
 					<tbody>
 						<tr>
-							<td>Name of the Course:</td>
+							<td class="title">Name of the Course:</td>
 							<td><?php echo $course_initial->post_title; ?></td>
 						</tr>
 						<tr>
-							<td>Start Date:</td>
+							<td class="title">Start Date:</td>
 							<td><?php echo $start_date; ?></td>
 						</tr>
 						<tr>
-							<td>End Date:</td>
+							<td class="title">End Date:</td>
 							<td><?php echo $end_date; ?></td>
 						</tr>
 						<tr>
-							<td>Name of Trainer:</td>
+							<td class="title">Name of Trainer:</td>
 							<td><?php echo $instructor_initial->post_title; ?></td>
 						</tr>
 					</tbody>
@@ -84,8 +88,8 @@
 				<table class="system report-table">
 					<tbody>
 						<tr>
-							<td>Number of Planned Hours of the Course</td>
-							<td contenteditable="true"><?php echo $course_initial->duration_hours; ?></td>
+							<td class="title">Number of Planned Hours of the Course</td>
+							<td contenteditable="true"><?php echo ((int)$course_initial->duration_hours - (int)$course_initial->practice_duration_hours); ?></td>
 						</tr>
 					</tbody>
 				</table>
@@ -93,13 +97,13 @@
 				<table class="system report-table">
 					<tbody>
 						<tr>
-							<td>Number of planned practice hours:</td>
+							<td class="title">Number of planned practice hours:</td>
 							<td contenteditable="true">
 								<?php echo $course_initial->practice_duration_hours; ?>
 							</td>
 						</tr>
 						<tr>
-							<td>Place of practice:</td>
+							<td class="title">Place of practice:</td>
 							<td contenteditable="true">
 								<?php if ($course_initial->ID == 91) { 
 									echo 'IJA Pool'; 
@@ -112,17 +116,16 @@
 							</td>
 						</tr>
 						<tr>
-							<td>Date of practice:</td>
+							<td class="title">Date of practice:</td>
 							<td contenteditable="true">
 								<?php echo $end_date; ?>
 							</td>
 						</tr>
 					</tbody>
 				</table>
-			</div>
-		<?php endwhile; endif; wp_reset_query(); ?>
-		<h3>4. List of Participants</h3>
-		<?php
+				<?php endwhile; endif; wp_reset_query(); ?>
+				<h3>4. List of Participants</h3>
+				<?php
 			global $wpdb;
 			$application_ids = $wpdb->get_results("
 				select post_id 
@@ -150,7 +153,7 @@
 			", ARRAY_N);
 			if ($application_ids) :
 		?>
-			<table class="system ">
+			<table class="system report-table">
 				<thead>
 					<tr>
 						<th class="short-number">No.</th>
@@ -178,14 +181,15 @@
 		<?php else : ?>
 				<p class="error-message">There are no participants for this course, please check dates and instructor!</p>
 		<?php endif; ?>
-		<div class="general-director" style="background: url('<?php echo IMAGESPATH; ?>/general-director-signature.svg') no-repeat; background-size: 240px 120px; background-position: center bottom; overflow:visible; padding-top: 5px;" >
+		<div class="general-director" style="background: url(<?php echo get_field('instructor_digital_signature', 183); ?>) no-repeat; background-size: 240px 120px; background-position: center bottom; overflow:visible; padding-top: 5px;" >
 			<div class="signature-line"></div>
 			<p class="super-short">
 				Agustin Gonzalez <br>
 				Academic Director
 			</p>
 		</div>
-
+			</div>
+		
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<div class="edit-initial-report-form edit-section">
 				<?php

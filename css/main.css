@@ -1599,15 +1599,32 @@ table.participant-info, table.referer-info {
 .bank-info {
   margin: 40px; }
 
+.initial-report h1, .initial-report h2, .initial-report h3, .initial-report h4 {
+  font-weight: 300; }
+
 .report-company-logo {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center; }
   .report-company-logo .logo {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     margin: 0; }
+  .report-company-logo table.report-table {
+    font-size: 0.9rem; }
+    .report-company-logo table.report-table tbody tr td {
+      padding: 4px 8px;
+      line-height: 1.1; }
+
+.report-company-info h2 {
+  font-size: 1.2rem;
+  line-height: 1.1; }
+
+.report-company-info p {
+  font-size: 0.8rem;
+  line-height: 1;
+  margin: 2px; }
 
 table.report-table {
   margin: 0; }
@@ -1616,9 +1633,11 @@ table.report-table {
   table.report-table tbody tr td {
     padding: 4px 14px;
     border: 1px solid #a7b6c2; }
-    table.report-table tbody tr td:first-child {
+    table.report-table tbody tr td.title {
       background: #C5CFD7;
-      width: 35%; }
+      width: 40%; }
+    table.report-table tbody tr td.darken-bg {
+      background: #C5CFD7; }
 
 .report-company-info {
   text-align: center;

@@ -1,3 +1,9 @@
+.initial-report {
+	h1, h2, h3, h4 {
+		font-weight: 300;
+	}
+}
+
 .report-company-logo {
 	display: flex;
 	flex-flow: row nowrap;
@@ -5,9 +11,29 @@
 	align-items: center;
 
 	.logo {
-		width: 120px;
-		height: 120px;
+		width: 110px;
+		height: 110px;
 		margin: 0;
+	}
+
+	table.report-table {
+		font-size: 0.9rem;
+		tbody tr td {
+			padding: 4px 8px;
+			line-height: 1.1;
+		}
+	}
+}
+
+.report-company-info {
+	h2 {
+		font-size: 1.2rem;
+		line-height: 1.1;
+	}
+	p {
+		font-size: 0.8rem;
+		line-height: 1;
+		margin: 2px;
 	}
 }
 
@@ -16,18 +42,24 @@ table.report-table {
 
 	thead tr {
 		background: darken($gray, 15%);
+
 	}
 
 	tbody tr td {
 		padding: 4px 14px;
 		border: 1px solid darken($gray, 10%);
 
-		&:first-child {
+		&.title {
 			background: $gray;
-			width: 35%;
+			width: 40%;
+		}
+
+		&.darken-bg {
+			background: $gray;
 		}
 	}
 }
+
 .report-company-info {
 	text-align: center;
 	flex-grow: 1;

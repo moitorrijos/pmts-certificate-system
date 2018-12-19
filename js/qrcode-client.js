@@ -8,8 +8,8 @@ var certificate = document.getElementById('the-certificate'),
 
 new QRCode( qr_element, {
     text: qrcode_obj.qr_url + '?certificateId=' + certificateID,
-    width: 97,
-    height: 97,
+    width: 110,
+    height: 110,
     colorDark : "#000000",
     colorLight : "#ffffff",
     correctLevel : QRCode.CorrectLevel.H

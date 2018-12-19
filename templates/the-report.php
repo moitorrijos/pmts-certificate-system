@@ -83,13 +83,15 @@
 				
 			 	<h1 class="report-title">
 			 		
-			 		Informe Mensual de Certificados Emitidos
+					 <!-- Informe Mensual de Certificados Emitidos -->
+					 Informe de Finalización de Curso
 
 			 	</h1>
 
 			 	<h2 class="report-sub-title">
 			 		
-					Monthly Report of Issued Certificates
+					<!-- Monthly Report of Issued Certificates -->
+					End of Classes Report
 
 			 	</h2>
 				

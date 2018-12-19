@@ -179,7 +179,7 @@
 								
 								(int)$participant_number = 0;
 
-								(int)$class_limit = 25;
+								(int)$class_limit = 30;
 
 								(int)$hv_limit = 6;
 								
@@ -289,6 +289,7 @@
 									<?php else : ?>
 										<a 
 											class="not-link"
+											data-certificate_id="<?php echo $certificate_exists[0]->ID;?>"
 											href="<?php echo $certificate_exists[0]->guid; ?>"
 											target="_blank"
 										>

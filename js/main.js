@@ -73,9 +73,6 @@ function showLoader() {
 	$header.removeClass('show-menu');
     $toggleBtn.removeClass('hide-button');
     $loader.fadeIn('fast');
-    setTimeout( function(){
-    	$loader.fadeOut('fast');
-    } , 12000);
 }
 
 function hideLoader() {
