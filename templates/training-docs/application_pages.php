@@ -65,10 +65,10 @@
 				
 				<?php if ($course->ID === 87 || $course->ID === 88 || $course->ID === 74) { //UPCM, UCM, OOWD
 
-					$exam_date_1 = DateTime::createFromFormat('Ymd', '20180901');
-					$exam_date_2 = DateTime::createFromFormat('Ymd', '20180922');
-					$exam_date_3 = DateTime::createFromFormat('Ymd', '20181006');
-					$exam_date_4 = DateTime::createFromFormat('Ymd', '20181020');
+					$exam_date_1 = DateTime::createFromFormat('Ymd', '20181109');
+					$exam_date_2 = DateTime::createFromFormat('Ymd', '20181130');
+					$exam_date_3 = DateTime::createFromFormat('Ymd', '20181215');
+					$exam_date_4 = DateTime::createFromFormat('Ymd', '20181229');
 
 					echo '<div class="application-page">';
 
