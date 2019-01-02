@@ -277,7 +277,7 @@
 											<span class="lockedly">
 												<i class="fa fa-lock" aria-hidden="true"></i>
 											</span>
-										<?php elseif ($instructor && $start_date && $end_date && !is_next_month($end_month)) : ?>
+										<?php elseif ($instructor && $start_date && $end_date ) : ?>
 											<a href="#0" class="create-certificate-button">
 												<i class="fa fa-print"></i>
 											</a>
