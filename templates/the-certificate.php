@@ -348,32 +348,16 @@
 				This course has been approved by the Government of <span class="undiesunpaddies">PANAMA</span>
 
 				By means of Resolution
-				
-				<?php if ($issue_date_timestamp > $resolution_date_timestamp) :  ?>
 
-					<span class="undiesunpaddies"><?php echo CMHB_RESOLUTION; ?></span>
+				<span class="undiesunpaddies"><?php echo RESOLUTION; ?></span>
 
-					of
+				of
 
-					<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', CMHB_RESOLUTION_DATE)->format('d F Y'); ?></span>
+				<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', RESOLUTION_DATE)->format('d F Y'); ?></span>
 
-					valid until
+				valid until
 
-					<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', NEW_RES_EXPIRY_DATE)->format('d F Y'); ?></span>.
-				
-				<?php else : ?>
-
-					<span class="undiesunpaddies"><?php echo RESOLUTION; ?></span>
-
-					of
-
-					<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', RESOLUTION_DATE)->format('d F Y'); ?></span>
-
-					valid until
-
-					<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', RES_EXPIRY_DATE)->format('d F Y'); ?></span>.
-
-				<?php endif; ?>
+				<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', RES_EXPIRY_DATE)->format('d F Y'); ?></span>.
 
 			</p>
 

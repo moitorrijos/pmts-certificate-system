@@ -3,14 +3,9 @@
 define ( 'THEMEROOT', get_template_directory_uri() );
 define ( 'IMAGESPATH', THEMEROOT . '/images' );
 define ( 'AUTHENTICCERTIPAGE', get_permalink( 17578 ) );
-define ( 'RESOLUTION', 'DGGM-CFM-024-2015' );
-define ( 'NEW_RESOLUTION', 'DGGM-CFM-022-2018' );
-define ( 'CMHB_RESOLUTION', 'DGGM-CFM-032-2018' );
-define ( 'RESOLUTION_DATE', '20150618' );
-define ( 'NEW_RESOLUTION_DATE', '20180618' );
-define ( 'CMHB_RESOLUTION_DATE', '20180718' );
-define ( 'RES_EXPIRY_DATE', '20180618' );
-define ( 'NEW_RES_EXPIRY_DATE', '20181222' );
+define ( 'RESOLUTION', 'DGGM-CFM-058-2018' );
+define ( 'RESOLUTION_DATE', '20182712' );
+define ( 'RES_EXPIRY_DATE', '20192705' );
 
 
 /**
