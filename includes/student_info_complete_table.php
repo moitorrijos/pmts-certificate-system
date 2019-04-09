@@ -53,7 +53,7 @@ function student_info_complete_table(
 			<tr>
 				<td>
 					<p>Lugar del Curso:</p>
-					Place of the Course:
+					Place of Training:
 				</td>
 				<td>
 					<p><?php 

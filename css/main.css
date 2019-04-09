@@ -430,11 +430,17 @@ th {
  * Colors
  */
 .logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, ul.fill-courses-dropdown li ul, .application-exists, .application-sent, .application-sent-error {
+  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out; }
 
 .back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .quotation-logo-table .quotation-logo, .participant-client-tables, .payment-info, .report .amp-logo-text, .application-page .amp-logo-text, .report .report-full, .application-page .report-full, .application-signatures, .pmts-header, .check-certificate {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
-  flex-flow: row wrap; }
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap; }
 
 div.login-form .login-loading-animation, div.copyright .login-loading-animation {
   position: absolute;
@@ -549,10 +555,19 @@ header {
   background: white;
   color: #556a7b;
   z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+          align-items: stretch;
   height: 100vh;
   background: white;
   float: left; }
@@ -598,8 +613,12 @@ form {
       border: 1px solid #7bb6dc; }
   form .rememberme {
     position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
-    justify-content: space-between; }
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+            justify-content: space-between; }
     form .rememberme label {
       margin-top: 12px;
       display: block; }
@@ -628,8 +647,11 @@ form {
   color: white;
   padding: 60px 30px 0;
   width: 60%;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
-  align-content: stretch; }
+  -webkit-align-content: stretch;
+          align-content: stretch; }
   @media only screen and (max-width: 700px) {
     .main {
       display: block;
@@ -648,9 +670,16 @@ form {
   height: 100%;
   width: 100%;
   padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
-  justify-content: space-between;
-  flex-direction: row; }
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row; }
   .logged-in header.show-menu {
     left: 0; }
   .logged-in header h3 {
@@ -796,7 +825,9 @@ ul.nav {
   padding: 0;
   margin: 0;
   position: relative;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
   display: table;
   width: 100%; }
   ul.nav li {
@@ -856,7 +887,9 @@ a.deactivated {
     background: #e3e8ec; }
 
 .back-create-buttons {
-  justify-content: space-between; }
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between; }
   .back-create-buttons .back-button-link a {
     display: none; }
   .back-create-buttons .filter-by-date {
@@ -884,7 +917,10 @@ a.deactivated {
 
 form.search-by-id-no {
   margin: 0;
-  flex-flow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   position: relative; }
   form.search-by-id-no span.error-message, form.search-by-id-no span.not-found-message {
     position: absolute;
@@ -933,6 +969,7 @@ form.search-by-id-no {
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
   opacity: 0;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s; }
   .modal-box.danger {
     background: #ffc1c1;
@@ -949,9 +986,16 @@ form.search-by-id-no {
 
 .panama-reports-buttons {
   margin-top: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
   border-right: 1px solid white;
   border-left: 1px solid white; }
   .panama-reports-buttons a.report-button {
@@ -963,6 +1007,7 @@ form.search-by-id-no {
     width: 49%;
     font-weight: bold;
     border-radius: 16px 16px 0 0;
+    -webkit-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out; }
     .panama-reports-buttons a.report-button.current-reports-page {
       background: #3e94cc; }
@@ -974,6 +1019,29 @@ form.search-by-id-no {
 
 .edit-section {
   display: none; }
+
+a.admin {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-content: center;
+          align-content: center;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  box-shadow: 0 2px 4px #a7b6c2; }
+  a.admin i {
+    margin-top: 10px;
+    color: #3e94cc;
+    display: block; }
 
 div.login-form, div.copyright {
   position: relative; }
@@ -1424,7 +1492,9 @@ p.warning-full.warning-full.warning-full {
   .certificate .thirds, .application-form .thirds, .report .thirds, .application-page .thirds {
     width: 33%; }
   .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes {
-    justify-content: space-between; }
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+            justify-content: space-between; }
   .certificate .to-right, .application-form .to-right, .report .to-right, .application-page .to-right, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
     float: right; }
   .certificate .three-stars, .application-form .three-stars, .report .three-stars, .application-page .three-stars {
@@ -1487,7 +1557,8 @@ div.close-button {
       text-transform: uppercase;
       letter-spacing: 2px; }
   .modal-window-outer form .filter-inputs {
-    justify-content: space-around; }
+    -webkit-justify-content: space-around;
+            justify-content: space-around; }
     .modal-window-outer form .filter-inputs input {
       width: 33%;
       margin-bottom: 32px;
@@ -1556,12 +1627,16 @@ ul.fill-courses-dropdown {
       opacity: 1; }
 
 .quotation-logo-table {
-  justify-content: space-between; }
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between; }
   .quotation-logo-table h4.quote-number {
     margin: 0;
     color: #C10000; }
   .quotation-logo-table .quotation-logo {
-    justify-content: space-between; }
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+            justify-content: space-between; }
   .quotation-logo-table .logo {
     width: 140px;
     margin: 0 40px 32px 0; }
@@ -1588,7 +1663,9 @@ table.quote-info-table tr {
     border: 1px solid #C5CFD7; }
 
 .participant-client-tables {
-  justify-content: space-between; }
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between; }
 
 table.participant-info, table.referer-info {
   width: 45%; }
@@ -1603,10 +1680,18 @@ table.participant-info, table.referer-info {
   font-weight: 300; }
 
 .report-company-logo {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: center; }
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center; }
   .report-company-logo .logo {
     width: 110px;
     height: 110px;
@@ -1641,7 +1726,9 @@ table.report-table {
 
 .report-company-info {
   text-align: center;
-  flex-grow: 1; }
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+          flex-grow: 1; }
   .report-company-info h2 {
     margin: 8px 0; }
   .report-company-info p {
@@ -1651,14 +1738,20 @@ table.report-table {
 .report, .application-page {
   font-family: "Times New Roman", serif; }
   .report .amp-logo-text, .application-page .amp-logo-text {
-    justify-content: space-between;
-    align-items: center; }
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center; }
   .report .amp-logo, .application-page .amp-logo {
     width: 75px; }
     .report .amp-logo img, .application-page .amp-logo img {
       width: 100%; }
   .report .amp-text, .application-page .amp-text {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
     color: #284f96; }
     .report .amp-text h3, .application-page .amp-text h3, .report .amp-text h4, .application-page .amp-text h4 {
       text-align: center;
@@ -1700,9 +1793,13 @@ table.report-table {
     line-height: 0.9; }
   .report .report-full, .application-page .report-full {
     margin-bottom: 2em;
-    justify-content: flex-start; }
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+            justify-content: flex-start; }
   .report .report-undies, .application-page .report-undies {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
     padding-left: 20px; }
   .report .half, .application-page .half {
     width: 50%; }
@@ -1838,7 +1935,9 @@ table.report-table {
   position: absolute;
   bottom: 0;
   left: 0;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
   width: 100%; }
 
 .general-director {
@@ -1855,7 +1954,9 @@ table.report-table {
   margin-top: 75px; }
 
 .pmts-header {
-  justify-content: space-between; }
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between; }
   .pmts-header .logo {
     width: 120px;
     margin: 12px 0; }
@@ -1929,10 +2030,14 @@ form.check-certificate {
   margin: 30px 0; }
 
 .check-certificate {
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
   width: 100%; }
   .check-certificate .input {
-    flex-grow: 1; }
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+            flex-grow: 1; }
   .check-certificate .submit-btn button {
     background: #3e94cc;
     padding: 12px 20px;

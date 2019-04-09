@@ -21,6 +21,12 @@
 
 	<?php endif; ?>
 
+	<?php if ( current_user_can('administrator') ) : ?>
+
+		<a class="admin" href="<?php echo admin_url(); ?>"><i class="_mi _before dashicons dashicons-dashboard"></i></a>
+
+	<?php endif; ?>
+
 <header>
 
 		<?php if ( is_user_logged_in() ) {

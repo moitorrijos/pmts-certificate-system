@@ -303,7 +303,17 @@
 
 					</table>
 
-					<p class="shortly">Application Created by: <?php the_author(); ?></p>
+					<p class="shortly super-short">Application Created by: <?php the_author(); ?> on <?php echo the_date('d/m/Y'); ?></p>
+					
+					<?php 
+						$revisions = wp_get_post_revisions();
+						if ($revisions) : 
+							foreach($revisions as $revision) :
+					?>
+						<p class="shortly super-short">
+							Updated by: <?php echo get_user_by( 'ID', $revision->post_author )->display_name; ?> 
+							on <?php echo DateTime::createFromFormat('Y-m-d H:i:s', $revision->post_date)->format('d/m/Y'); ?></p>
+					<?php endforeach; endif; ?>
 
 				<?php endif; wp_reset_query(); ?>
 
