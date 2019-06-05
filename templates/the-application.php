@@ -179,7 +179,7 @@
 								
 								(int)$participant_number = 0;
 
-								(int)$class_limit = 30;
+								(int)$class_limit = 35;
 
 								(int)$hv_limit = 6;
 								

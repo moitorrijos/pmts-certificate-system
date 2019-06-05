@@ -131,28 +131,39 @@
 			global $wpdb;
 
 			$application_ids = $wpdb->get_results("
-			select post_id
-			from {$wpdb->prefix}postmeta
-			where meta_value=" . $end_date_ymd . "
-			and post_id in
-				(select post_id
-				from {$wpdb->prefix}postmeta
-				where meta_value=" . $start_date_ymd . "
-				and post_id in
-					(select post_id
-					from {$wpdb->prefix}postmeta
-					where meta_value=" . (int)$instructor_initial->ID . "
-					and post_id in
-						(select post_id from {$wpdb->prefix}postmeta
-						where meta_value=" . (int)$course_initial->ID . ")));
+				select distinct post_id 
+				from {$wpdb->prefix}postmeta 
+				where meta_key 
+				like 'courses_app_%_course_name_app' 
+				and meta_value=" . (int)$course_initial->ID . " 
+				and post_id in 
+					(select distinct post_id 
+					from {$wpdb->prefix}postmeta 
+					where meta_key 
+					like 'courses_app_%_instructor_name_app' 
+					and meta_value=" . (int)$instructor_initial->ID . " 
+					and post_id in 
+						(select distinct post_id 
+						from {$wpdb->prefix}postmeta 
+						where meta_key like 'courses_app_%_start_date_app' 
+						and meta_value=" . $start_date_ymd . " 
+						and post_id in 
+							(select distinct post_id 
+							from {$wpdb->prefix}postmeta 
+							where meta_key 
+							like 'courses_app_%_end_date_app' 
+							and meta_value=" . $end_date_ymd . ")))
+				limit 0, 200;
 			", ARRAY_N);
-			function flatten_array ($array_to_flatten){
-				return (int)$array_to_flatten[0];
-			}
+			// $application_ids = initial_reports($end_date_ymd, $start_date_ymd, $instructor_initial, $course_initial);
+
 			$application_ids_nums = array_map('flatten_array', $application_ids);
 			// var_dump($application_ids_nums); die;
+
 			$applications_args = array(
 				'post_type' => 'applications',
+				'order' => 'DESC',
+				'posts_per_page' => 50,
 				'post__in' => $application_ids_nums,
 			);
 			$applications = new WP_Query( $applications_args );

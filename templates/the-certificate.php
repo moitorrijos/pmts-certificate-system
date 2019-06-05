@@ -49,10 +49,26 @@
 			$expiry_date = date( 'd F Y', $expiry_date_timestamp );
 			$issue_month = $issue_date->format('m');
 			$issue_year = $issue_date->format('y');
-			$resolution_date_timestamp = strtotime( RES_EXPIRY_DATE );
+			$resolution_date_timestamp = strtotime( RESOLUTION_DATE );
+			$new_resoultion_date_timestamp = strtotime( NEW_RESOLUTION_DATE );
 			$no_posts = 196;
 			$certificate_ID = get_the_id();
 			$register_code =  get_post_meta(get_the_ID(), 'register_code', true);
+
+			if ($issue_date_timestamp >= $new_resoultion_date_timestamp) {
+				$resolution = NEW_RESOLUTION;
+				$resolution_date = NEW_RESOLUTION_DATE;
+				$resolution_expiry_date = NEW_RES_EXPIRY_DATE;
+			}
+			else if ($issue_date_timestamp >= $resolution_date_timestamp && $issue_date_timestamp <= $new_resoultion_date_timestamp) {
+				$resolution = RESOLUTION;
+				$resolution_date = RESOLUTION_DATE;
+				$resolution_expiry_date = RES_EXPIRY_DATE;
+			} else {
+				$resolution = OLD_RESOLUTION;
+				$resolution_date = OLD_RESOLUTION_DATE;
+				$resolution_expiry_date = OLD_RES_EXPIRY_DATE;
+			}
 
 		?>
 
@@ -349,15 +365,17 @@
 
 				By means of Resolution
 
-				<span class="undiesunpaddies"><?php echo RESOLUTION; ?></span>
+				<span class="undiesunpaddies"><?php echo $resolution; ?></span>
 
 				of
 
-				<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', RESOLUTION_DATE)->format('d F Y'); ?></span>
+				<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', $resolution_date)->format('d F Y'); ?></span>
 
 				valid until
 
-				<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', RES_EXPIRY_DATE)->format('d F Y'); ?></span>.
+				<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', $resolution_expiry_date)->format('d F Y'); ?></span>.
+
+
 
 			</p>
 

@@ -3,9 +3,15 @@
 define ( 'THEMEROOT', get_template_directory_uri() );
 define ( 'IMAGESPATH', THEMEROOT . '/images' );
 define ( 'AUTHENTICCERTIPAGE', get_permalink( 17578 ) );
+define ( 'NEW_RESOLUTION', 'DGGM-CFM-028-2019' );
+define ( 'NEW_RESOLUTION_DATE', '20190430' );
+define ( 'NEW_RES_EXPIRY_DATE', '20210525' );
 define ( 'RESOLUTION', 'DGGM-CFM-058-2018' );
-define ( 'RESOLUTION_DATE', '20182712' );
-define ( 'RES_EXPIRY_DATE', '20192705' );
+define ( 'RESOLUTION_DATE', '20181227' );
+define ( 'RES_EXPIRY_DATE', '20190627' );
+define ( 'OLD_RESOLUTION', 'DGGM-CFM-024-2015' );
+define ( 'OLD_RESOLUTION_DATE', '20150618' );
+define ( 'OLD_RES_EXPIRY_DATE', '20180618' );
 
 
 /**
@@ -132,4 +138,39 @@ function is_next_month( int $the_month ) {
 	$current_month = date('m');
 	if ($the_month > (int)$current_month) return true;
 	return false;
+}
+
+
+function flatten_array ($array_to_flatten){
+	return (int)$array_to_flatten[0];
+}
+
+function initial_reports($end_date, $start_date, $instructor, $course) {
+	global $wpdb;
+	$end_date_app_ids = $wpdb->get_results("select distinct post_id 
+		from {$wpdb->prefix}postmeta 
+		where meta_key like 'courses_app_%_end_date_app' 
+		and meta_value=" . $end_date . "", ARRAY_N);
+	if ($end_date_app_ids) { $end_date_app_ids = array_map('flatten_array', $end_date_app_ids); }
+	$start_date_app_ids = $wpdb->get_results("select distinct post_id 
+		from {$wpdb->prefix}postmeta 
+		where meta_key like 'courses_app_%_start_date_app' 
+		and meta_value=" . $start_date . " 
+		and post_id in (" . implode(",", $end_date_app_ids) . ")", ARRAY_N);
+	if ($start_date_app_ids) { $start_date_app_ids = array_map('flatten_array', $start_date_app_ids); }
+	$instructor_app_ids = $wpdb->get_results("select distinct post_id 
+		from {$wpdb->prefix}postmeta 
+		where meta_key 
+		like 'courses_app_%_instructor_name_app' 
+		and meta_value=" . $instructor->ID . " 
+		and post_id in (" . implode(",", $start_date_app_ids) . ")", ARRAY_N);
+	if ($instructor_app_ids) { $instructor_app_ids = array_map('flatten_array', $instructor_app_ids); }
+	$courses_app_ids = $wpdb->get_results("select distinct post_id 
+		from {$wpdb->prefix}postmeta 
+		where meta_key 
+		like 'courses_app_%_course_name_app' 
+		and meta_value=" . (int)$course->ID . " 
+		and post_id in (" . implode(",", $instructor_app_ids) . ")", ARRAY_N);
+	if ($courses_app_ids) { $courses_app_ids = array_map('flatten_array', $courses_app_ids); }
+	return $courses_app_ids;
 }
