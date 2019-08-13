@@ -63,17 +63,29 @@
 				<tr>
 					<td>
 						<a href="<?php echo the_permalink(); ?>">
-							<?php echo $course->post_title . ' (' . $course->abbr . ')'; ?>
+							<?php 
+								if($course)
+									echo $course->post_title . ' (' . $course->abbr . ')'; 
+							?>
 						</a>
 					</td>
 					<td class="centered">
-						<?php echo $instructor->post_title ?>
+						<?php 
+							if($instructor)
+								echo $instructor->post_title;
+						?>
 					</td>
 					<td class="centered">
-						<?php echo $date_of_course->format('j F, Y'); ?>
+						<?php 
+							if ($date_of_course)
+								echo $date_of_course->format('j F, Y'); 
+						?>
 					</td>
 					<td class="centered">
-						<?php echo $end_date_of_course->format('j F, Y'); ?>
+						<?php 
+							if ($end_date_of_course)
+								echo $end_date_of_course->format('j F, Y'); 
+						?>
 					</td>
 					<?php if ( current_user_can('edit_pages') ) : ?>
 					<td class="centered edit">
