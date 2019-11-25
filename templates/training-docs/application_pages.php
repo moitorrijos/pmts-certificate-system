@@ -156,10 +156,10 @@
 
 				} else if ($course->ID === 90) { //UPSE
 
-					$exam_date_1 = DateTime::createFromFormat('Ymd', '20190531');
-					$exam_date_2 = DateTime::createFromFormat('Ymd', '20190615');
-					$exam_date_3 = DateTime::createFromFormat('Ymd', '20190629');
-					$exam_date_4 = DateTime::createFromFormat('Ymd', '20190710');
+					$exam_date_1 = DateTime::createFromFormat('Ymd', '20190928');
+					$exam_date_2 = DateTime::createFromFormat('Ymd', '20191012');
+					$exam_date_3 = DateTime::createFromFormat('Ymd', '20191102');
+					$exam_date_4 = DateTime::createFromFormat('Ymd', '20191123');
 					
 					echo '<div class="application-page">';
 
