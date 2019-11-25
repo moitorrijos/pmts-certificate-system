@@ -56,9 +56,16 @@
 
 			<a href="#0" class="approve-quotation" data-post_id="<?php echo get_the_id(); ?>">
 
-				<i class="fa fa-check"></i> 
+				<i class="fa fa-check"></i>
 				Approve Quotation
 				
+			</a>
+
+			<a href="#0" class="toggle-currency not-link">
+
+				<i class="fa fa-eur"></i>
+				Change to <span class="currency-setting">Euro</span>
+
 			</a>
 
 		</div>
@@ -218,10 +225,16 @@
 							<?php echo $quantity ?>
 						</td>
 						<td class="centered">
-							$<?php echo number_format( floatval($course_price), 2); ?>
+							<span class="currency">$</span>
+							<span class="course-unit-price">
+								<?php echo number_format( floatval($course_price), 2); ?>
+							</span>
 						</td>
-						<td class="centered course-price service-price-total" >
-							$<?php echo number_format( ($course_price * $quantity), 2 ); ?>
+						<td class="centered course-price" >
+							<span class="currency">$</span>
+							<span class="service-price-total">
+								<?php echo number_format( ($course_price * $quantity), 2 ); ?>
+							</span>
 						</td>
 					</tr>
 				<?php endwhile; endif;
@@ -241,11 +254,17 @@
 				 		<td class="centered service-quantity" id="service-quantity">
 				 			<?php echo $service_quantity; ?>
 				 		</td>
-				 		<td class="centered service-price">
-				 			$<?php echo number_format($service_price, 2); ?>
+				 		<td class="centered">
+						 	<span class="currency">$</span>
+							<span class="service-price">
+				 				<?php echo number_format($service_price, 2); ?>
+							</span>
 				 		</td>
-				 		<td class="centered service-price-total">
-				 			$<?php echo number_format( ($service_quantity * $service_price), 2); ?>
+				 		<td class="centered">
+							<span class="currency">$</span>
+							<span class="service-price-total">
+				 				<?php echo number_format( ($service_quantity * $service_price), 2); ?>
+							</span>
 				 		</td>
 				 	</tr>
 				 <?php endwhile; endif; ?>
@@ -254,7 +273,10 @@
 				<tfoot>
 					<tr>
 						<td colspan="4" class="total">Sub Total</td>
-						<td id="subtotal" class="centered subtotal-discount"></td>
+						<td class="centered subtotal-discount">
+							<span class="currency">$</span>
+							<span id="subtotal"></span>
+						</td>
 					</tr>
 					<?php if (get_field('discount')) : ?>
 						<tr>
@@ -271,12 +293,18 @@
 						<td colspan="4" class="total quote-footer" data-govfee="<?php the_field('government_fee'); ?>">
 							Certificate Government Fee
 						</td>
-						<td id="government-fee" class="centered government-fee"></td>
+						<td class="centered government-fee">
+							<span class="currency">$</span>
+							<span id="government-fee"></span>
+						</td>
 					</tr>
 					<?php endif; ?>
 					<tr>
 						<td colspan="4" class="total">Grand Total</td>
-						<td id="total-price" class="centered total-price"></td>
+						<td class="centered total-price">
+							<span class="currency">$</span>
+							<span id="total-price"></span>
+						</td>
 					</tr>
 				</tfoot>
 			</table>

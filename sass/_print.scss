@@ -229,7 +229,7 @@
 
 	.certificate-codes.certificate-codes {
 		display: block;
-		@extend .full;
+		// @extend .full !optional;
 		
 		p { 
 			font-family: 'britannic-bold';

@@ -177,6 +177,8 @@ function register_my_styles_and_scripts() {
 		wp_enqueue_script( 'quotation-js', THEMEROOT . '/js/quotation.js', array('jquery'), '20160317', true );
 
 		wp_enqueue_script( 'approve_quotation', THEMEROOT . '/js/approve-quotation.js', array('jquery'), '20170919', true );
+		
+		wp_enqueue_script( 'change_to_euro', THEMEROOT . '/js/change-to-euro.js', array('jquery'), '20191023', true );
 
 		wp_localize_script( 'approve_quotation', 'approve_quote_obj', array(
 				'security' 		=> wp_create_nonce( 'approve_quote_nonce' ),

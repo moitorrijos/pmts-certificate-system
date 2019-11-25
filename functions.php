@@ -115,6 +115,11 @@ require get_template_directory() . '/includes/student_info_short_table.php';
 require get_template_directory() . '/includes/practical_exam_results.php';
 require get_template_directory() . '/includes/instructor_signature.php';
 
+/**
+ * Meta Boxes
+ */
+require get_template_directory() . '/meta-boxes/pmtscs-register-meta-boxes.php';
+
 function wpse27856_set_content_type(){
     return "text/html";
 }

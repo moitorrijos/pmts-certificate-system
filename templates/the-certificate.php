@@ -167,7 +167,7 @@
 						<span class="undies">
 							<span>***</span> 
 							<span class="register-code">
-								<?php echo 'PMTS/' . $course->abbr . '/' . $issue_year . '-' . strtoupper($office->slug) . '-' . add_leading_zeroes($register_code) . $register_code; ?>
+								<?php echo get_post_meta( $post->ID, "pmtscs_register_code", true ); ?>
 							</span>
 							<span>***</span> 
 						</span>                 

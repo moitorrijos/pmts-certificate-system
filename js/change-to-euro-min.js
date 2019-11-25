@@ -1,0 +1,1 @@
+!function(n){n((function(){var c=n("a.toggle-currency"),t=n("span.currency");c.on("click",(function(){t.each((function(){n(this).html("€")}))}))}))}(jQuery);
