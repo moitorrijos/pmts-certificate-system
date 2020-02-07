@@ -72,7 +72,7 @@ function register_my_styles_and_scripts() {
 
 	if ( is_page_template( 'panama-quotation-page.php' ) ) {
 
-		wp_enqueue_script( 'search_quotation', THEMEROOT . '/js/search-quotation.js', array('jquery'), '22', true );
+		wp_enqueue_script( 'search_quotation', THEMEROOT . '/js/search-quotation.js', array('jquery'), '23', true );
 
 		wp_localize_script( 'search_quotation', 'quotation_object', array(
 				'security' 	=> wp_create_nonce( 'pmtscs_quotation' ),
