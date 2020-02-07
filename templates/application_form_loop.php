@@ -14,7 +14,7 @@
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		
-			<h1 style="font-size:3rem; color:red;"><?php the_title(); ?></h1>
+			<h1><?php the_title(); ?></h1>
 
 		<?php endwhile; endif; wp_reset_query(); ?>
 
