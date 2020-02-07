@@ -40,7 +40,7 @@ var $tbody 	= $('tbody'),
 			data 		: {
 				action 		 : 'search_application',
 				security 	 : application_object.security,
-				application_no  : $searchApplicationInput.val().toString()
+				application_no  : $searchApplicationInput.val().toString().trim()
 			},
 
 			success: function(response){

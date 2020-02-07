@@ -47,7 +47,6 @@ $searchStudentForm.on('click', searchStudentFormFadeOut);
 
 $searchIdNoBtn.on('click', searchStudentFormFadeIn);
 
-
 function ajaxSearchId( event ){
 
 	event.preventDefault();
@@ -160,7 +159,7 @@ function searchPassportOnLoad() {
 		data : {
 			action : 'search_by_id_passport',
 			security : pmtscs_ajax_object.security,
-			passport_no : $studentPassportNoField.val().toString()
+			passport_no : $studentPassportNoField.val().trim().toString()
 		},
 
 		success: function( response ){

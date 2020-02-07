@@ -15,7 +15,7 @@ function pmtscs_ajax_search_application() {
 	$application_no = $_POST['application_no'];
 
 	$apps_by_passport = $wpdb->get_results(
-		'SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id_app" AND meta_value="' . $application_no . '"'
+		'SELECT post_id FROM '.$wpdb->prefix.'postmeta WHERE meta_key="passport_id_app" AND meta_value="' . $application_no . '"'
 	);
 
 	if ( $apps_by_passport ) {

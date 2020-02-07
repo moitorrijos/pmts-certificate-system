@@ -13,9 +13,7 @@ function save_application_id_data( $post_id ) {
 		$passport_id_app = get_field( 'passport_id_app', $post_id );
 
 		$certificate_ids_by_passport = $wpdb->get_results(
-
-			'SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id" AND meta_value="'.$passport_id_app.'" ORDER BY post_id DESC'
-
+			'SELECT post_id FROM '.$wpdb->prefix.'postmeta WHERE meta_key="passport_id" AND meta_value="'.$passport_id_app.'" ORDER BY post_id DESC'
 		);
 
 		if ( $certificate_ids_by_passport ) {
@@ -34,7 +32,7 @@ function save_application_id_data( $post_id ) {
 
 			$certificate_ids_by_name = $wpdb->get_results(
 
-				'SELECT post_id FROM fytv_postmeta WHERE meta_key="students_name" AND meta_value="'.$participants_name_app.'" ORDER BY post_id DESC'
+				'SELECT post_id FROM '.$wpdb->prefix.'postmeta WHERE meta_key="students_name" AND meta_value="'.$participants_name_app.'" ORDER BY post_id DESC'
 
 			);
 

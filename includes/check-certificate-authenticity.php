@@ -15,7 +15,7 @@ function pmtscs_ajax_check_certificate() {
 
 	$check_value = $_POST['checkValue'];
 
-	$certificate_id = $wpdb->get_var('SELECT post_id FROM fytv_postmeta WHERE meta_key="pmtscs_register_code" AND meta_value="' . $check_value . '"');
+	$certificate_id = $wpdb->get_var('SELECT post_id FROM '.$wpdb->prefix.'postmeta WHERE meta_key="pmtscs_register_code" AND meta_value="' . $check_value . '"');
 
 	if ($certificate_id) {
 

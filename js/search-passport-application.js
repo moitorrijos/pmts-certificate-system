@@ -20,7 +20,7 @@ function ajaxSearchId(){
 		data : {
 			action : 'search_passport_app',
 			security : passport_obj_app.security,
-			passport_no : $passportAppInput.val().toString()
+			passport_no : $passportAppInput.val().trim().toString()
 		},
 
 		success : function( response ) {

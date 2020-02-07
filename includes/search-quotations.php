@@ -12,7 +12,7 @@ function pmtscs_ajax_search_quotations() {
 	$quotation_query = $_POST['quotation_query'];
 
 	$quotation_by_number = $wpdb->get_results(
-		'SELECT ID, post_title FROM fytv_posts WHERE post_title LIKE "%' . (string)$quotation_query . '" and post_type="quotation"'
+		'SELECT ID, post_title FROM '.$wpdb->prefix.'posts WHERE post_title LIKE "%' . (string)$quotation_query . '" and post_type="quotation"'
 	);
 
 	if ($quotation_by_number) {

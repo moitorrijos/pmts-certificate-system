@@ -15,11 +15,11 @@ function pmtscs_ajax_search_by_id_passport() {
 	$passport_no = $_POST['passport_no'];
 
 	$certificate_id = $wpdb->get_var(
-		'SELECT post_id FROM fytv_postmeta WHERE meta_value="' . $passport_no . '" ORDER BY post_id DESC LIMIT 1'
+		'SELECT post_id FROM '.$wpdb->prefix.'postmeta WHERE meta_value="' . $passport_no . '" ORDER BY post_id DESC LIMIT 1'
 	);
 
 	$all_certs_ids = $wpdb->get_results(
-		'SELECT post_id FROM fytv_postmeta WHERE meta_value="' . $passport_no . '"'
+		'SELECT post_id FROM '.$wpdb->prefix.'postmeta WHERE meta_value="' . $passport_no . '"'
 	);
 
 	return wp_send_json_success( $certificate_id );
@@ -27,7 +27,7 @@ function pmtscs_ajax_search_by_id_passport() {
 	if ( $certificate_id ) {
 	
 		$student_info = $wpdb->get_results(
-			'SELECT meta_key, meta_value FROM fytv_postmeta WHERE post_id="' . $certificate_id . '"'
+			'SELECT meta_key, meta_value FROM '.$wpdb->prefix.'postmeta WHERE post_id="' . $certificate_id . '"'
 		);
 
 		$all_ids = array();

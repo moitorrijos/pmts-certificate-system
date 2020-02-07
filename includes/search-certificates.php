@@ -13,11 +13,11 @@ function pmtscs_ajax_search_certificates() {
 	$certificate_query = $_POST['certificate_query'];
 
 	$certificate_ids = $wpdb->get_results(
-		'SELECT post_id FROM fytv_postmeta WHERE meta_key="passport_id" AND meta_value="' . (string)$certificate_query . '"'
+		'SELECT post_id FROM '.$wpdb->prefix.'postmeta WHERE meta_key="passport_id" AND meta_value="' . (string)$certificate_query . '"'
 	);
 
 	$certificate_ids_by_register_code = $wpdb->get_results(
-		'SELECT post_id FROM fytv_postmeta WHERE meta_key="pmtscs_register_code" AND meta_value="' . (string)$certificate_query . '"'
+		'SELECT post_id FROM '.$wpdb->prefix.'postmeta WHERE meta_key="pmtscs_register_code" AND meta_value="' . (string)$certificate_query . '"'
 	);
 
 	if ( $certificate_ids ) {
