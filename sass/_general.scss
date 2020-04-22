@@ -24,8 +24,8 @@ body {
 	}
 
 	background: {
-		color: darken($logout-red, 5%);
-		image: url(../images/certificate-background.jpg);
+		color: $pmts-blue;
+		image: url("../images/certificate-background.jpg");
 		size: cover;
 		position: top right;
 		repeat: no-repeat;

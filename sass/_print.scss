@@ -19,15 +19,19 @@
 	}
 
 	.main-content {
-
 		display: block;
 		background-image: none;
-
 		margin: 0 auto;
 		width: 8.5in;
-
+		height: 11in;
 		box-shadow: none;
 	}
+
+  .single-certificates.single-certificates.single-certificates .main-content.main-content.main-content {
+    background-image: url('../images/pmts-letterhead-membrete.png');
+    background-repeat: no-repeat;
+    background-size: 8.5in 11in;
+  }
 
 	h2.course {
 		font-size: 17pt;
@@ -149,12 +153,8 @@
 	.certificate {
 		padding: 0 0.5in;
 		width: 8in;
-		height: 10.5in;
+		height: 9.2in;
 		margin: 0 auto;
-		background-image: url('../images/pmts-letterhead-membrete.png');
-		background-repeat: no-repeat;
-		background-size: cover;
-		overflow: hidden;
 		position: relative;
 
 		p {
