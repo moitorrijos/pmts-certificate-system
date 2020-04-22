@@ -341,7 +341,7 @@ optgroup {
 /**
  * Remove most spacing between table cells.
  */
-table {
+table, .application-page table.practical-eval, .application-page table.evaluation-score {
   border-collapse: collapse;
   border-spacing: 0; }
 
@@ -429,18 +429,12 @@ th {
 /**
  * Colors
  */
-.logged-in header, form.search-by-id-no .submit-btn input.search-by-id-submit, ul.fill-courses-dropdown li ul, .application-exists, .application-sent, .application-sent-error {
-  -webkit-transition: all 0.25s ease-in-out;
+.application-sent-error.application-sent-error, .application-sent.application-sent, .application-exists.application-exists, ul.fill-courses-dropdown li ul, form.search-by-id-no .submit-btn input.search-by-id-submit.search-by-id-submit.search-by-id-submit, .logged-in header {
   transition: all 0.25s ease-in-out; }
 
-.back-create-buttons, form.search-by-id-no, form.filter-form, .custom-pagination, .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes, .modal-window-outer form .filter-inputs, .paginate, ul.pagination, .quotation-logo-table, .quotation-logo-table .quotation-logo, .participant-client-tables, .payment-info, .report .amp-logo-text, .application-page .amp-logo-text, .report .report-full, .application-page .report-full, .application-signatures, .pmts-header, .check-certificate {
-  display: -webkit-box;
-  display: -webkit-flex;
+.check-certificate, .pmts-header, .application-signatures, .report .report-full, .application-page .report-full, .report .amp-logo-text, .application-page .amp-logo-text, .payment-info, .participant-client-tables, .quotation-logo-table .quotation-logo, .quotation-logo-table, ul.pagination, .paginate, .modal-window-outer form .filter-inputs, .certificate .full, .report .full, .application-page .full, .application-form .full, .custom-pagination, form.filter-form, form.search-by-id-no, .back-create-buttons {
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: row wrap;
-          flex-flow: row wrap; }
+  flex-flow: row wrap; }
 
 div.login-form .login-loading-animation, div.copyright .login-loading-animation {
   position: absolute;
@@ -459,25 +453,19 @@ div.login-form .login-loading-animation, div.copyright .login-loading-animation 
 
 @-webkit-keyframes shake {
   from, to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); }
+    transform: translate3d(0, 0, 0); }
   10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: translate3d(-7px, 0, 0);
-            transform: translate3d(-7px, 0, 0); }
+    transform: translate3d(-7px, 0, 0); }
   20%, 40%, 60%, 80% {
-    -webkit-transform: translate3d(7px, 0, 0);
-            transform: translate3d(7px, 0, 0); } }
+    transform: translate3d(7px, 0, 0); } }
 
 @keyframes shake {
   from, to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); }
+    transform: translate3d(0, 0, 0); }
   10%, 30%, 50%, 70%, 90% {
-    -webkit-transform: translate3d(-7px, 0, 0);
-            transform: translate3d(-7px, 0, 0); }
+    transform: translate3d(-7px, 0, 0); }
   20%, 40%, 60%, 80% {
-    -webkit-transform: translate3d(7px, 0, 0);
-            transform: translate3d(7px, 0, 0); } }
+    transform: translate3d(7px, 0, 0); } }
 
 .shake {
   -webkit-animation-name: shake;
@@ -494,12 +482,11 @@ html {
   @media only screen and (max-width: 1700px) {
     html {
       font-size: 12px; } }
-
 body {
   font-family: Verdana, sans-serif;
   line-height: 1.6;
   position: relative;
-  background-color: #3287be;
+  background-color: #a80000;
   background-image: url(../images/certificate-background.jpg);
   background-size: cover;
   background-position: top right;
@@ -513,8 +500,7 @@ body {
   @media screen {
     body {
       min-height: 100vh; } }
-
-.error-message {
+.error-message, form.search-by-id-no span.not-found-message {
   border: 1px solid #C10000;
   background: #ff4242;
   padding: 20px 40px;
@@ -555,19 +541,10 @@ header {
   background: white;
   color: #556a7b;
   z-index: 10;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-          align-items: stretch;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
   height: 100vh;
   background: white;
   float: left; }
@@ -613,12 +590,8 @@ form {
       border: 1px solid #7bb6dc; }
   form .rememberme {
     position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
     display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-            justify-content: space-between; }
+    justify-content: space-between; }
     form .rememberme label {
       margin-top: 12px;
       display: block; }
@@ -647,11 +620,8 @@ form {
   color: white;
   padding: 60px 30px 0;
   width: 60%;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-align-content: stretch;
-          align-content: stretch; }
+  align-content: stretch; }
   @media only screen and (max-width: 700px) {
     .main {
       display: block;
@@ -670,16 +640,9 @@ form {
   height: 100%;
   width: 100%;
   padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-          flex-direction: row; }
+  justify-content: space-between;
+  flex-direction: row; }
   .logged-in header.show-menu {
     left: 0; }
   .logged-in header h3 {
@@ -694,7 +657,6 @@ form {
   @media only screen and (max-width: 980px) {
     .navigation {
       width: 100%; } }
-
 .click-logout {
   display: block; }
 
@@ -713,10 +675,10 @@ form {
 .align-right {
   text-align: right; }
 
-.align-center, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
+.align-center, .certificate .signature, .report .signature, .application-page .signature, .application-form .signature {
   text-align: center; }
 
-a.logout-button, a.new-certificate-button, a.void-certificate-button, a.duplicate-certificate-button, a.approve-quotation, a.new-invoice-button, .print-button, .search-id-no-button, .change-office-button, a.view-button, .fill-form-randomly, .download-xls-button, .clear-data-button, .edit-button, .edit-quote-button, .acf-form-submit.acf-form-submit input[type="submit"], .acf-button {
+.acf-button, .acf-form-submit.acf-form-submit input[type="submit"], .download-xls-button, .edit-button, .edit-quote-button, .clear-data-button, .fill-form-randomly, .print-button, a.view-button, .change-office-button, .search-id-no-button, .toggle-currency, a.new-invoice-button, a.approve-quotation, a.duplicate-certificate-button, a.void-certificate-button, a.new-certificate-button, a.logout-button {
   padding: 4px 22px;
   text-decoration: none;
   color: white;
@@ -762,9 +724,9 @@ a.new-invoice-button {
   a.new-invoice-button:hover {
     background-color: #ce6b3b; }
 
-.print-button, .search-id-no-button, .change-office-button, a.view-button {
+.print-button, a.view-button, .change-office-button, .search-id-no-button, .toggle-currency {
   background-color: #3e94cc; }
-  .print-button:hover, .search-id-no-button:hover, .change-office-button:hover, a.view-button:hover {
+  .print-button:hover, a.view-button:hover, .change-office-button:hover, .search-id-no-button:hover, .toggle-currency:hover {
     background-color: #3287be; }
 
 .fill-form-randomly {
@@ -782,9 +744,9 @@ p.small {
   font-size: 0.75em;
   letter-spacing: 1px; }
 
-.download-xls-button, .clear-data-button, .edit-button, .edit-quote-button {
+.download-xls-button, .edit-button, .edit-quote-button, .clear-data-button {
   background-color: #D37A4F; }
-  .download-xls-button:hover, .clear-data-button:hover, .edit-button:hover, .edit-quote-button:hover {
+  .download-xls-button:hover, .edit-button:hover, .edit-quote-button:hover, .clear-data-button:hover {
     background-color: #ce6b3b; }
 
 a.back-link {
@@ -825,9 +787,7 @@ ul.nav {
   padding: 0;
   margin: 0;
   position: relative;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   display: table;
   width: 100%; }
   ul.nav li {
@@ -887,9 +847,7 @@ a.deactivated {
     background: #e3e8ec; }
 
 .back-create-buttons {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between; }
+  justify-content: space-between; }
   .back-create-buttons .back-button-link a {
     display: none; }
   .back-create-buttons .filter-by-date {
@@ -917,10 +875,7 @@ a.deactivated {
 
 form.search-by-id-no {
   margin: 0;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  flex-flow: row nowrap;
   position: relative; }
   form.search-by-id-no span.error-message, form.search-by-id-no span.not-found-message {
     position: absolute;
@@ -943,7 +898,7 @@ form.search-by-id-no {
       padding: 0 20%; }
       form.search-by-id-no .submit-btn input.search-by-id-submit.search-by-id-submit.search-by-id-submit:hover {
         background: #3287be; }
-    form.search-by-id-no .submit-btn span.search-spinner {
+    form.search-by-id-no .submit-btn span.search-spinner, form.search-by-id-no .submit-btn span.search-spinner.not-found-message {
       display: none;
       position: absolute;
       left: 0;
@@ -966,36 +921,25 @@ form.search-by-id-no {
   padding: 20px 40px;
   text-align: center;
   pointer-events: none;
-  -webkit-transform: translateY(-20px);
-          transform: translateY(-20px);
+  transform: translateY(-20px);
   opacity: 0;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s; }
   .modal-box.danger {
     background: #ffc1c1;
     color: #8e0000;
     border: 2px solid #C10000; }
   .modal-box.animate-me-in {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1; }
   .modal-box.animate-me-out {
-    -webkit-transform: translateY(20px);
-            transform: translateY(20px);
+    transform: translateY(20px);
     opacity: 0; }
 
 .panama-reports-buttons {
   margin-top: 40px;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
+  flex-flow: row wrap;
+  justify-content: space-between;
   border-right: 1px solid white;
   border-left: 1px solid white; }
   .panama-reports-buttons a.report-button {
@@ -1007,7 +951,6 @@ form.search-by-id-no {
     width: 49%;
     font-weight: bold;
     border-radius: 16px 16px 0 0;
-    -webkit-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out; }
     .panama-reports-buttons a.report-button.current-reports-page {
       background: #3e94cc; }
@@ -1027,14 +970,9 @@ a.admin {
   width: 50px;
   height: 50px;
   background: white;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-content: center;
-          align-content: center;
+  justify-content: center;
+  align-content: center;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
   box-shadow: 0 2px 4px #a7b6c2; }
@@ -1149,7 +1087,7 @@ ul.acf-radio-list li, ul.acf-checkbox-list li {
 .acf-button {
   background: #49C943; }
 
-table.acf-table thead tr th {
+table.acf-table thead tr th, .application-page table.acf-table.practical-eval thead tr th, .application-page table.acf-table.evaluation-score thead tr th {
   color: white;
   background: #3e94cc;
   font-weight: bold;
@@ -1189,15 +1127,15 @@ input.search {
 form.filter-form .filter-input-text {
   width: 20%; }
 
-table.system {
+table.system, .application-page table.system.practical-eval, .application-page table.system.evaluation-score {
   font-size: 0.9rem;
   width: 100%;
   margin-bottom: 32px; }
-  table.system thead {
+  table.system thead, .application-page table.system.practical-eval thead, .application-page table.system.evaluation-score thead {
     display: table-header-group; }
-  table.system thead > tr {
+  table.system thead > tr, .application-page table.system.practical-eval thead > tr, .application-page table.system.evaluation-score thead > tr {
     background-color: #3e94cc; }
-  table.system th {
+  table.system th, .application-page table.system.practical-eval th, .application-page table.system.evaluation-score th {
     font-weight: normal;
     color: white;
     text-align: center;
@@ -1217,7 +1155,7 @@ table.system {
       width: 33%; }
     table.system th.sort {
       cursor: pointer; }
-  table.system tr {
+  table.system tr, .application-page table.system.practical-eval tr, .application-page table.system.evaluation-score tr {
     position: relative;
     background: white; }
     table.system tr:nth-child(even) {
@@ -1227,7 +1165,7 @@ table.system {
       text-decoration: line-through; }
   table.system tbody > tr:hover {
     background: #e3e8ec; }
-  table.system td {
+  table.system td, .application-page table.system.practical-eval td, .application-page table.system.evaluation-score td {
     border: 1px solid #98aab8;
     padding: 8px; }
     table.system td.centered {
@@ -1272,15 +1210,15 @@ table.system {
     table.system td.printly .lockedly {
       color: #ce6b3b;
       margin: 0; }
-    table.system td > span.print-pending {
+    table.system td > span.print-pending, table.system form.search-by-id-no td > span.print-pending.not-found-message {
       background-color: #ea0000;
       color: white; }
-    table.system td > span.print-pending-yellow {
+    table.system td > span.print-pending-yellow, table.system form.search-by-id-no td > span.print-pending-yellow.not-found-message {
       background-color: #e5e328; }
-    table.system td > span.print-pending-orange {
+    table.system td > span.print-pending-orange, table.system form.search-by-id-no td > span.print-pending-orange.not-found-message {
       background-color: #dd9978;
       color: white; }
-    table.system td a {
+    table.system td a, .application-page table.system.practical-eval td a, .application-page table.system.evaluation-score td a {
       color: #286a96;
       text-decoration: none;
       display: block; }
@@ -1295,7 +1233,7 @@ table.system {
       color: white; }
     table.system td a.delete-form {
       color: #C10000; }
-  table.system tfoot {
+  table.system tfoot, .application-page table.system.practical-eval tfoot, .application-page table.system.evaluation-score tfoot {
     border-top: 2px solid #556a7b;
     display: table-row-group; }
 
@@ -1344,7 +1282,7 @@ p.warning-full.warning-full.warning-full {
       background: #3e94cc url("../images/search-spinner.gif") no-repeat top center;
       left: 35%; }
 
-.search-student-form .error-message {
+.search-student-form .error-message, .search-student-form form.search-by-id-no span.not-found-message, form.search-by-id-no .search-student-form span.not-found-message {
   display: none;
   background: #f15050;
   border: 1px solid #C10000;
@@ -1365,10 +1303,10 @@ p.warning-full.warning-full.warning-full {
   color: white;
   margin-right: 8px; }
 
-.certify, .participant-name, .attended, .course, .office-location {
+.office-location.office-location, .course.course, .attended, .participant-name.participant-name, .certify.certify {
   text-align: center; }
 
-.course, .office-location.office-location h3 {
+.office-location.office-location h3, .course.course {
   font-family: "britannic-bold";
   text-transform: uppercase;
   font-style: normal; }
@@ -1412,11 +1350,12 @@ p.warning-full.warning-full.warning-full {
   .office-location.office-location > p {
     margin: 2px 0; }
 
-.certificate, .application-form, .report, .application-page {
+.certificate, .report, .application-page, .application-form {
   position: relative;
   font-size: 1.2rem;
-  padding: 0 36px; }
-  .certificate .certificate-author-mask, .application-form .certificate-author-mask, .report .certificate-author-mask, .application-page .certificate-author-mask {
+  padding: 0 36px;
+  background-color: transparent; }
+  .certificate .certificate-author-mask, .report .certificate-author-mask, .application-page .certificate-author-mask, .application-form .certificate-author-mask {
     background: #3cbc36;
     border-radius: 12px;
     position: absolute;
@@ -1425,7 +1364,7 @@ p.warning-full.warning-full.warning-full {
     width: 26px;
     height: 26px;
     cursor: pointer; }
-  .certificate .certificate-author, .application-form .certificate-author, .report .certificate-author, .application-page .certificate-author {
+  .certificate .certificate-author, .report .certificate-author, .application-page .certificate-author, .application-form .certificate-author {
     border-radius: 12px;
     pointer-events: none;
     position: absolute;
@@ -1433,76 +1372,74 @@ p.warning-full.warning-full.warning-full {
     left: 0;
     width: 100%;
     height: 28px; }
-    .certificate .certificate-author p.small, .application-form .certificate-author p.small, .report .certificate-author p.small, .application-page .certificate-author p.small {
+    .certificate .certificate-author p.small, .report .certificate-author p.small, .application-page .certificate-author p.small, .application-form .certificate-author p.small {
       margin: 0;
       color: white;
       position: absolute;
       top: 4px;
       left: 8px; }
-      .certificate .certificate-author p.small i, .application-form .certificate-author p.small i, .report .certificate-author p.small i, .application-page .certificate-author p.small i {
+      .certificate .certificate-author p.small i, .report .certificate-author p.small i, .application-page .certificate-author p.small i, .application-form .certificate-author p.small i {
         margin-right: 4px; }
-      .certificate .certificate-author p.small span.certificate-info.appear, .application-form .certificate-author p.small span.certificate-info.appear, .report .certificate-author p.small span.certificate-info.appear, .application-page .certificate-author p.small span.certificate-info.appear {
+      .certificate .certificate-author p.small span.certificate-info.appear, .report .certificate-author p.small span.certificate-info.appear, .application-page .certificate-author p.small span.certificate-info.appear, .application-form .certificate-author p.small span.certificate-info.appear {
         display: inline;
         opacity: 1; }
   @media screen and (min-width: 1200px) {
-    .certificate, .application-form, .report, .application-page {
+    .certificate, .report, .application-page, .application-form {
       margin: 0 48px; } }
-  .certificate p, .application-form p, .report p, .application-page p, .certificate ul, .application-form ul, .report ul, .application-page ul, .certificate ol, .application-form ol, .report ol, .application-page ol {
+  .certificate p, .report p, .application-page p, .application-form p, .certificate ul, .report ul, .application-page ul, .application-form ul, .certificate ol, .report ol, .application-page ol, .application-form ol {
     font-family: "texgyreadventoritalic";
     margin: 40px 0 32px; }
-  .certificate .short.short, .application-form .short.short, .report .short.short, .application-page .short.short {
+  .certificate .short.short, .report .short.short, .application-page .short.short, .application-form .short.short {
     margin-top: 0; }
-  .certificate .boldies, .application-form .boldies, .report .boldies, .application-page .boldies, .certificate .undies, .application-form .undies, .report .undies, .application-page .undies, .certificate .overies, .application-form .overies, .report .overies, .application-page .overies, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
+  .certificate .boldies, .report .boldies, .application-page .boldies, .application-form .boldies, .certificate .overies, .report .overies, .application-page .overies, .application-form .overies, .certificate .signature, .report .signature, .application-page .signature, .application-form .signature, .certificate .undies, .report .undies, .application-page .undies, .application-form .undies {
     font-family: "texgyreadventorbold_italic"; }
-  .certificate .paddies, .application-form .paddies, .report .paddies, .application-page .paddies {
+  .certificate .paddies, .report .paddies, .application-page .paddies, .application-form .paddies {
     margin-right: 12px; }
-  .certificate .unpaddies, .application-form .unpaddies, .report .unpaddies, .application-page .unpaddies {
+  .certificate .unpaddies, .report .unpaddies, .application-page .unpaddies, .application-form .unpaddies {
     font-family: "texgyreadventorbold_italic"; }
-  .certificate .undiesunpaddies, .application-form .undiesunpaddies, .report .undiesunpaddies, .application-page .undiesunpaddies {
+  .certificate .undiesunpaddies, .report .undiesunpaddies, .application-page .undiesunpaddies, .application-form .undiesunpaddies {
     font-family: "texgyreadventorbold_italic";
     border-bottom: 1px solid #556a7b; }
-  .certificate .undies, .application-form .undies, .report .undies, .application-page .undies {
+  .certificate .undies, .report .undies, .application-page .undies, .application-form .undies {
     border-bottom: 1px solid #556a7b;
     display: inline-block;
     text-align: center;
     margin-left: 14px;
     padding: 0 20px 2px; }
-    .certificate .undies.bottom, .application-form .undies.bottom, .report .undies.bottom, .application-page .undies.bottom {
+    .certificate .undies.bottom, .report .undies.bottom, .application-page .undies.bottom, .application-form .undies.bottom {
       width: 175px; }
-    .certificate .undies.start-date, .application-form .undies.start-date, .report .undies.start-date, .application-page .undies.start-date {
+    .certificate .undies.start-date, .report .undies.start-date, .application-page .undies.start-date, .application-form .undies.start-date {
       margin-left: 45px; }
-    .certificate .undies .register-code, .application-form .undies .register-code, .report .undies .register-code, .application-page .undies .register-code {
+    .certificate .undies .register-code, .report .undies .register-code, .application-page .undies .register-code, .application-form .undies .register-code {
       text-transform: uppercase; }
-  .certificate .passies, .application-form .passies, .report .passies, .application-page .passies {
+  .certificate .passies, .report .passies, .application-page .passies, .application-form .passies {
     text-transform: uppercase; }
-  .certificate .uppers, .application-form .uppers, .report .uppers, .application-page .uppers {
+  .certificate .uppers, .report .uppers, .application-page .uppers, .application-form .uppers {
     text-transform: uppercase; }
-  .certificate .resolution-p, .application-form .resolution-p, .report .resolution-p, .application-page .resolution-p {
+  .certificate .resolution-p, .report .resolution-p, .application-page .resolution-p, .application-form .resolution-p {
     text-align: justify; }
-  .certificate .overies, .application-form .overies, .report .overies, .application-page .overies, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
+  .certificate .overies, .report .overies, .application-page .overies, .application-form .overies, .certificate .signature, .report .signature, .application-page .signature, .application-form .signature {
     border-top: 1px solid #556a7b; }
-  .certificate .half, .application-form .half, .report .half, .application-page .half {
+  .certificate .half, .report .half, .application-page .half, .application-form .half {
     width: 50%; }
-  .certificate .short-half, .application-form .short-half, .report .short-half, .application-page .short-half {
+  .certificate .short-half, .report .short-half, .application-page .short-half, .application-form .short-half {
     width: 40%; }
-  .certificate .long-half, .application-form .long-half, .report .long-half, .application-page .long-half {
+  .certificate .long-half, .report .long-half, .application-page .long-half, .application-form .long-half {
     width: 60%; }
-  .certificate .quarter, .application-form .quarter, .report .quarter, .application-page .quarter, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
+  .certificate .quarter, .report .quarter, .application-page .quarter, .application-form .quarter, .certificate .signature, .report .signature, .application-page .signature, .application-form .signature {
     width: 25%; }
-  .certificate .thirds, .application-form .thirds, .report .thirds, .application-page .thirds {
+  .certificate .thirds, .report .thirds, .application-page .thirds, .application-form .thirds {
     width: 33%; }
-  .certificate .full, .application-form .full, .report .full, .application-page .full, .certificate .certificate-codes, .application-form .certificate-codes, .report .certificate-codes, .application-page .certificate-codes {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-            justify-content: space-between; }
-  .certificate .to-right, .application-form .to-right, .report .to-right, .application-page .to-right, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
+  .certificate .full, .report .full, .application-page .full, .application-form .full {
+    justify-content: space-between; }
+  .certificate .to-right, .report .to-right, .application-page .to-right, .application-form .to-right, .certificate .signature, .report .signature, .application-page .signature, .application-form .signature {
     float: right; }
-  .certificate .three-stars, .application-form .three-stars, .report .three-stars, .application-page .three-stars {
+  .certificate .three-stars, .report .three-stars, .application-page .three-stars, .application-form .three-stars {
     letter-spacing: 2px; }
-  .certificate .qr-code, .application-form .qr-code, .report .qr-code, .application-page .qr-code {
+  .certificate .qr-code, .report .qr-code, .application-page .qr-code, .application-form .qr-code {
     margin: 0;
     display: none; }
-  .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
+  .certificate .signature, .report .signature, .application-page .signature, .application-form .signature {
     margin-bottom: 40px;
     display: none; }
 
@@ -1512,7 +1449,7 @@ p.warning-full.warning-full.warning-full {
 .edit-certificate-form {
   display: none; }
 
-.search-student-form, .modal-window-outer {
+.modal-window-outer, .search-student-form {
   display: none;
   position: absolute;
   height: 100%;
@@ -1557,8 +1494,7 @@ div.close-button {
       text-transform: uppercase;
       letter-spacing: 2px; }
   .modal-window-outer form .filter-inputs {
-    -webkit-justify-content: space-around;
-            justify-content: space-around; }
+    justify-content: space-around; }
     .modal-window-outer form .filter-inputs input {
       width: 33%;
       margin-bottom: 32px;
@@ -1627,16 +1563,12 @@ ul.fill-courses-dropdown {
       opacity: 1; }
 
 .quotation-logo-table {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between; }
+  justify-content: space-between; }
   .quotation-logo-table h4.quote-number {
     margin: 0;
     color: #C10000; }
   .quotation-logo-table .quotation-logo {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-            justify-content: space-between; }
+    justify-content: space-between; }
   .quotation-logo-table .logo {
     width: 140px;
     margin: 0 40px 32px 0; }
@@ -1650,24 +1582,22 @@ ul.fill-courses-dropdown {
       margin: 4px 0;
       line-height: 1.2; }
 
-table.quote-info-table thead > tr {
+table.quote-info-table thead > tr, .application-page table.quote-info-table.practical-eval thead > tr, .application-page table.quote-info-table.evaluation-score thead > tr {
   background: #f2f4f6; }
 
-table.quote-info-table tr {
+table.quote-info-table tr, .application-page table.quote-info-table.practical-eval tr, .application-page table.quote-info-table.evaluation-score tr {
   background: white;
   font-size: 0.8rem; }
-  table.quote-info-table tr th {
+  table.quote-info-table tr th, .application-page table.quote-info-table.practical-eval tr th, .application-page table.quote-info-table.evaluation-score tr th {
     color: #556a7b;
     border: 1px solid #C5CFD7; }
-  table.quote-info-table tr td {
+  table.quote-info-table tr td, .application-page table.quote-info-table.practical-eval tr td, .application-page table.quote-info-table.evaluation-score tr td {
     border: 1px solid #C5CFD7; }
 
 .participant-client-tables {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between; }
+  justify-content: space-between; }
 
-table.participant-info, table.referer-info {
+table.participant-info, .application-page table.participant-info.practical-eval, .application-page table.participant-info.evaluation-score, table.referer-info, .application-page table.referer-info.practical-eval, .application-page table.referer-info.evaluation-score {
   width: 45%; }
 
 .edit-quote-form {
@@ -1680,18 +1610,10 @@ table.participant-info, table.referer-info {
   font-weight: 300; }
 
 .report-company-logo {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-justify-content: space-around;
-          justify-content: space-around;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center; }
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center; }
   .report-company-logo .logo {
     width: 110px;
     height: 110px;
@@ -1711,11 +1633,11 @@ table.participant-info, table.referer-info {
   line-height: 1;
   margin: 2px; }
 
-table.report-table {
+table.report-table, .application-page table.report-table.practical-eval, .application-page table.report-table.evaluation-score {
   margin: 0; }
-  table.report-table thead tr {
+  table.report-table thead tr, .application-page table.report-table.practical-eval thead tr, .application-page table.report-table.evaluation-score thead tr {
     background: #98aab8; }
-  table.report-table tbody tr td {
+  table.report-table tbody tr td, .application-page table.report-table.practical-eval tbody tr td, .application-page table.report-table.evaluation-score tbody tr td {
     padding: 4px 14px;
     border: 1px solid #a7b6c2; }
     table.report-table tbody tr td.title {
@@ -1726,9 +1648,7 @@ table.report-table {
 
 .report-company-info {
   text-align: center;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-          flex-grow: 1; }
+  flex-grow: 1; }
   .report-company-info h2 {
     margin: 8px 0; }
   .report-company-info p {
@@ -1738,20 +1658,14 @@ table.report-table {
 .report, .application-page {
   font-family: "Times New Roman", serif; }
   .report .amp-logo-text, .application-page .amp-logo-text {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-            justify-content: space-between;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-            align-items: center; }
+    justify-content: space-between;
+    align-items: center; }
   .report .amp-logo, .application-page .amp-logo {
     width: 75px; }
     .report .amp-logo img, .application-page .amp-logo img {
       width: 100%; }
   .report .amp-text, .application-page .amp-text {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-            flex-grow: 1;
+    flex-grow: 1;
     color: #284f96; }
     .report .amp-text h3, .application-page .amp-text h3, .report .amp-text h4, .application-page .amp-text h4 {
       text-align: center;
@@ -1793,25 +1707,21 @@ table.report-table {
     line-height: 0.9; }
   .report .report-full, .application-page .report-full {
     margin-bottom: 2em;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-            justify-content: flex-start; }
+    justify-content: flex-start; }
   .report .report-undies, .application-page .report-undies {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-            flex-grow: 1;
+    flex-grow: 1;
     padding-left: 20px; }
   .report .half, .application-page .half {
     width: 50%; }
-  .report span.undies, .application-page span.undies {
+  .report span.undies, .application-page span.undies, .report form.search-by-id-no span.undies.not-found-message, .application-page form.search-by-id-no span.undies.not-found-message, form.search-by-id-no .report span.undies.not-found-message, form.search-by-id-no .application-page span.undies.not-found-message {
     font-family: "Times New Roman", serif;
     margin: 0;
     font-weight: bold; }
-  .report table th, .application-page table th {
+  .report table th, .application-page table th, .application-page table.practical-eval th, .application-page table.evaluation-score th {
     text-transform: none;
     background-color: #284f96;
     font-size: 1.2em; }
-  .report table td, .application-page table td {
+  .report table td, .application-page table td, .application-page table.practical-eval td, .application-page table.evaluation-score td {
     font-size: 1.1em; }
 
 .edit-report-form {
@@ -1868,10 +1778,10 @@ table.report-table {
     .application-page h1.top-short, .application-page h2.top-short, .application-page h3.top-short, .application-page h4.top-short {
       margin-top: 0; }
   .application-page .exam-answers ol {
-    -webkit-column-count: 3;
-            column-count: 3;
-    -webkit-column-gap: 155px;
-            column-gap: 155px;
+    -moz-column-count: 3;
+         column-count: 3;
+    -moz-column-gap: 155px;
+         column-gap: 155px;
     margin: 0;
     padding-left: 0;
     list-style-position: inside; }
@@ -1935,9 +1845,7 @@ table.report-table {
   position: absolute;
   bottom: 0;
   left: 0;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
+  justify-content: space-between;
   width: 100%; }
 
 .general-director {
@@ -1954,9 +1862,7 @@ table.report-table {
   margin-top: 75px; }
 
 .pmts-header {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between; }
+  justify-content: space-between; }
   .pmts-header .logo {
     width: 120px;
     margin: 12px 0; }
@@ -1975,11 +1881,11 @@ p.short-short {
 p.super-short.super-short {
   margin: 2px 0; }
 
-table.student-info {
+table.student-info, .application-page table.student-info.evaluation-score, .application-page table.student-info.practical-eval {
   width: 668px;
   border: 4px groove #626262;
   margin-bottom: 16px; }
-  table.student-info td {
+  table.student-info td, .application-page table.student-info.evaluation-score td, .application-page table.student-info.practical-eval td {
     border: 1px solid #6F6F6F;
     border-right: 2px medium solid #6F6F6F;
     border-bottom: 2px solid #6F6F6F;
@@ -1987,7 +1893,7 @@ table.student-info {
     vertical-align: top; }
     table.student-info td:nth-child(odd) {
       width: 199px; }
-    table.student-info td p {
+    table.student-info td p, .application-page table.student-info.evaluation-score td p, .application-page table.student-info.practical-eval td p {
       line-height: 1;
       margin: 4px 0;
       font-weight: bold;
@@ -2030,14 +1936,10 @@ form.check-certificate {
   margin: 30px 0; }
 
 .check-certificate {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
+  justify-content: space-between;
   width: 100%; }
   .check-certificate .input {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-            flex-grow: 1; }
+    flex-grow: 1; }
   .check-certificate .submit-btn button {
     background: #3e94cc;
     padding: 12px 20px;
@@ -2048,7 +1950,6 @@ form.check-certificate {
     @media screen and (max-width: 700px) {
       .check-certificate .submit-btn button {
         border-radius: 0; } }
-
 svg#checkmark {
   width: 32px;
   height: 32px;
@@ -2111,15 +2012,7 @@ ul.authentic-certificate {
     background-image: none;
     margin: 0 auto;
     width: 8.5in;
-    height: 11in;
-    box-shadow: none;
-  }
-  .single-certificates.single-certificates.single-certificates .main-content.main-content.main-content {
-    background-image: url('../images/pmts-letterhead-membrete.png');
-    background-repeat: no-repeat;
-    background-size: 105% 105%;
-    background-position: -0.5in -0.25in;
-  }
+    box-shadow: none; }
   h2.course {
     font-size: 17pt;
     margin: 0.30in 0;
@@ -2158,29 +2051,29 @@ ul.authentic-certificate {
     display: none; }
   .edit-certificate-form {
     display: none; }
-  table {
+  table, .application-page table.evaluation-score, .application-page table.practical-eval {
     page-break-inside: auto;
     color: black;
     position: relative; }
-    table thead th {
+    table thead th, .application-page table.evaluation-score thead th, .application-page table.practical-eval thead th {
       font-size: 8pt;
       text-transform: uppercase;
       padding: 0.1in; }
-    table tr {
+    table tr, .application-page table.evaluation-score tr, .application-page table.practical-eval tr {
       page-break-inside: avoid;
       -webkit-region-break-inside: avoid;
       page-break-after: always; }
-    table td {
+    table td, .application-page table.evaluation-score td, .application-page table.practical-eval td {
       color: black;
       font-size: 8pt;
       padding: 0.055in; }
-      table td h2 {
+      table td h2, .application-page table.evaluation-score td h2, .application-page table.practical-eval td h2 {
         font-size: 12pt; }
-      table td p {
+      table td p, .application-page table.evaluation-score td p, .application-page table.practical-eval td p {
         font-size: 10pt; }
-      table td ul {
+      table td ul, .application-page table.evaluation-score td ul, .application-page table.practical-eval td ul {
         font-size: 10pt; }
-      table td.pass-fail {
+      table td.pass-fail, .application-page table.evaluation-score td.pass-fail, .application-page table.practical-eval td.pass-fail {
         font-size: 11pt; }
   h3.certify.certify {
     margin-top: 0;
@@ -2193,15 +2086,14 @@ ul.authentic-certificate {
     margin: 0.175in 0; }
     .participant-name.participant-name span.stars {
       font-size: 28pt; }
-  .certificate {
-    overflow: visible;
-    position: relative;
-  }
   .certificate, .application-form, .report, .application-page {
     padding: 0 0.5in;
     width: 8in;
     height: 10.5in;
     margin: 0 auto;
+    background-image: url("../images/pmts-letterhead-membrete.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden;
     position: relative; }
     .certificate p, .application-form p, .report p, .application-page p {
@@ -2255,7 +2147,7 @@ ul.authentic-certificate {
       line-height: 1;
       font-weight: normal;
       font-style: normal; }
-  table.test-header {
+  table.test-header, .application-page table.test-header.evaluation-score, .application-page table.test-header.practical-eval {
     page-break-before: always; }
   hr.separator {
     display: none; }
@@ -2308,12 +2200,12 @@ ul.authentic-certificate {
       font-size: 14pt; }
     .report p, .application-page p {
       font-size: 9pt; }
-    .report span.undies, .application-page span.undies {
+    .report span.undies, .application-page span.undies, .report form.search-by-id-no span.undies.not-found-message, form.search-by-id-no .report span.undies.not-found-message, .application-page form.search-by-id-no span.undies.not-found-message, form.search-by-id-no .application-page span.undies.not-found-message {
       font-size: 9pt;
       min-width: 1.5in; }
-    .report table th, .application-page table th {
+    .report table th, .application-page table th, .application-page table.evaluation-score th, .application-page table.practical-eval th {
       font-size: 9pt; }
-    .report table td, .application-page table td {
+    .report table td, .application-page table td, .application-page table.evaluation-score td, .application-page table.practical-eval td {
       font-size: 9pt; }
   .report.report.report h1, .application-page h1, .report.report.report h2, .application-page h2 {
     color: white; }
@@ -2331,7 +2223,7 @@ ul.authentic-certificate {
     font-size: 10pt; }
   .report.report.report .report-undies, .application-page .report-undies {
     padding-left: 0.125in; }
-  .report.report.report span.undies, .application-page span.undies {
+  .report.report.report span.undies, .application-page span.undies, .application-page form.search-by-id-no span.undies.not-found-message, form.search-by-id-no .application-page span.undies.not-found-message {
     min-width: 0.5in;
     padding: 0 0.25in;
     color: black; }

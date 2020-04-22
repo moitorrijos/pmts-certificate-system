@@ -89,12 +89,9 @@
 		display: none;
 	}
 
-
-
 	.edit-certificate-form {
 		display: none;
 	}
-
 
 	table {
 		page-break-inside:auto;
@@ -110,7 +107,6 @@
 				padding: 0.1in;
 			}
 		}
-
 
 		tr    { 
 			page-break-inside:avoid; 
@@ -152,17 +148,17 @@
 
 	.certificate {
 		padding: 0 0.5in;
-		
 		width: 8in;
 		height: 10.5in;
 		margin: 0 auto;
-
+		background-image: url('../images/pmts-letterhead-membrete.png');
+		background-repeat: no-repeat;
+		background-size: cover;
 		overflow: hidden;
 		position: relative;
-		
+
 		p {
 			margin: 0.05in 0;
-
 		}
 	}
 
