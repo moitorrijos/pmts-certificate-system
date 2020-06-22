@@ -158,6 +158,7 @@ acf_add_local_field_group(array (
 			'choices' => array (
 				'In Classroom' => 'In Classroom',
 				'On Board' => 'On Board',
+				'Virtual Training' => 'Virual Training',
 			),
 			'default_value' => array (
 				0 => 'In Classroom',

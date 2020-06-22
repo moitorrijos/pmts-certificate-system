@@ -69,6 +69,7 @@ function update_certificate_by_app_data( $post_id ) {
 			update_field( 'place_of_birth', get_field('place_of_birth_app', $post_id), (int)$certificate_id );
 			update_field( 'student_nationality', get_field('nationality_app', $post_id), (int)$certificate_id );
 			update_field( 'date_of_birth', get_field('date_of_birth_app', $post_id), (int)$certificate_id );
+			update_field( 'delivery_mode', get_field('course_delivery_mode_app', $post_id), (int)$certificate_id );
 			update_field( 'office', $office, (int)$certificate_id );
 
 		}

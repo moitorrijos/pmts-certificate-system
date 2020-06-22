@@ -17,7 +17,7 @@ function pmtscs_ajax_create_certificate(){
 	$startDate = $_POST['startDate'];
 
 	$endDate = $_POST['endDate'];
-
+	
 	$_SESSION['students_name'] = get_field( 'participants_name_app', $appID );
 
 	$_SESSION['passport_id'] = get_field( 'passport_id_app', $appID );
@@ -31,6 +31,8 @@ function pmtscs_ajax_create_certificate(){
 	$place_of_training_slug = get_field( 'place_of_training_app', $appID );
 
 	$_SESSION['office'] = get_term_by( 'slug', $place_of_training_slug, 'office' );
+	
+	$_SESSION['delivery_mode'] = get_field('course_delivery_mode_app', $appID);
 
 	$_SESSION['instructor'] = $instructorID;
 

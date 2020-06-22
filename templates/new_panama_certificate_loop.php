@@ -1,9 +1,8 @@
 <div class="main">
 	
 	<div class="main-content">
-
 		<?php 
-		
+
 			$options = array(
 				'id' 		=> '',
 				'post_id' 	=> 'new_post',

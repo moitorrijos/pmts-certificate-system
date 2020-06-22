@@ -63,34 +63,7 @@ acf_add_local_field_group(array (
 			),
 			'default_value' => '',
 			'placeholder' => '',
-			'prepend' => '',		array (
-			'key' => 'field_585c3c00e273a',
-			'label' => 'Course Delivery Mode',
-			'name' => 'delivery_mode',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 1,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => 33,
-				'class' => '',
-				'id' => '',
-			),
-			'choices' => array (
-				'in-classroom: In Classroom' => 'in-classroom: In Classroom',
-				'on-board: On Board' => 'on-board: On Board',
-			),
-			'default_value' => array (
-				0 => 'in-classroom',
-			),
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
-			'ajax' => 0,
-			'placeholder' => '',
-			'disabled' => 0,
-			'readonly' => 0,
-		),
+			'prepend' => '',
 			'append' => '',
 			'maxlength' => '',
 			'readonly' => 0,
@@ -195,6 +168,7 @@ acf_add_local_field_group(array (
 			'choices' => array (
 				'In Classroom' => 'In Classroom',
 				'On Board' => 'On Board',
+				'Virtual Training' => 'Virtual Training',
 			),
 			'default_value' => array (
 				0 => 'In Classroom',

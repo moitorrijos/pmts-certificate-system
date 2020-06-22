@@ -14,6 +14,8 @@ function save_post_to_session_vars( $post_id ) {
 
     $_SESSION['office'] = get_field('office', $post_id);
 
+    $_SESSION['delivery_mode'] = get_field('course_delivery_mode_app', $post_id);
+
     $_SESSION['instructor'] = get_field('instructor', $post_id);
 
     $_SESSION['course'] = get_field('course', $post_id);
@@ -72,6 +74,10 @@ function load_session_vars_to_fields( $field ) {
           $field['value'] = $_SESSION['office'];
         }
           
+      }
+
+      if ($field['name'] == 'delivery_mode' && isset($_SESSION['delivery_mode'])) {
+        $field['value'] = $_SESSION['delivery_mode'];
       }
 
       if ($field['name'] == 'instructor' && isset($_SESSION['instructor'])){

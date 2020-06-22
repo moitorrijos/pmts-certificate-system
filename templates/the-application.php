@@ -43,7 +43,7 @@
 			$participants_date_of_birth = DateTime::createFromFormat( 'Ymd', get_field('date_of_birth_app') );
 			$place_of_training_slug = get_field('place_of_training_app');
 			$place_of_training = get_term_by( 'slug', $place_of_training_slug, 'office' );
-			$delivery_mode = get_field('course_deliver_mode_app');
+			$delivery_mode = get_field('course_delivery_mode_app');
 
 		?>
 
@@ -113,7 +113,7 @@
 			</div>
 
 			<div class="full">
-				<div class="thirds">
+				<div class="quarter">
 					<p>
 						Place of Birth:
 						<span class="undies">
@@ -122,7 +122,7 @@
 					</p>
 				</div>
 
-				<div class="thirds">
+				<div class="quarter">
 					<p>
 						Nationality:
 						<span class="undies">
@@ -131,14 +131,22 @@
 					</p>
 				</div>
 
-				<div class="thirds">
+				<div class="quarter">
 					<p>
 						Place of Training
 						<span class="undies">
 							<?php echo $place_of_training->name; ?>
 						</span>
 					</p>
+				</div>
 
+				<div class="quarter">
+					<p>
+						Course Delivery Mode
+						<span class="undies">
+							<?php echo $delivery_mode; ?>
+						</span>
+					</p>
 				</div>
 
 			</div>

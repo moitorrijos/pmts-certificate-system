@@ -41,6 +41,7 @@
 			$instructor = get_field('instructor');
 			$place_of_birth = get_field('place_of_birth');
 			$office = get_field('office');
+			$delivery_mode = get_field('delivery_mode');
 			$start_date = DateTime::createFromFormat( 'Ymd', get_field('start_date') );
 			$end_date = DateTime::createFromFormat( 'Ymd', get_field('end_date') );
 			$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
@@ -294,13 +295,13 @@
 
 							} ?>
 
-						">
+						">	
 							
 							<?php 
 
-								if ( get_field('delivery_mode') ) {
+								if ( $delivery_mode ) {
 
-									the_field('delivery_mode'); 
+									echo $delivery_mode;
 
 								} else {
 
