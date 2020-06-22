@@ -23,7 +23,7 @@
 
 	<?php if ( current_user_can('administrator') ) : ?>
 
-		<a class="admin" href="<?php echo admin_url(); ?>"><i class="_mi _before dashicons dashicons-dashboard"></i></a>
+		<a class="admin not-for-print" href="<?php echo admin_url(); ?>"><i class="_mi _before dashicons dashicons-dashboard"></i></a>
 
 	<?php endif; ?>
 

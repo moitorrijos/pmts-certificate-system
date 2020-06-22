@@ -851,7 +851,8 @@ a.deactivated {
   .back-create-buttons .back-button-link a {
     display: none; }
   .back-create-buttons .filter-by-date {
-    margin: 16px 0 48px; }
+    display: flex;
+    align-items: center; }
     .back-create-buttons .filter-by-date p {
       line-height: 1;
       display: inline-block;
@@ -964,18 +965,21 @@ form.search-by-id-no {
   display: none; }
 
 a.admin {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 20px;
   width: 50px;
-  height: 50px;
+  height: 40px;
   background: white;
   display: flex;
   justify-content: center;
   align-content: center;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
-  box-shadow: 0 2px 4px #a7b6c2; }
+  box-shadow: 0 2px 4px #a7b6c2;
+  transition: height 0.3s ease-in-out; }
+  a.admin:hover {
+    height: 50px; }
   a.admin i {
     margin-top: 10px;
     color: #3e94cc;
@@ -2015,7 +2019,6 @@ ul.authentic-certificate {
     height: 11in;
     box-shadow: none; }
   .single-certificates.single-certificates.single-certificates .main-content.main-content.main-content {
-    background-image: url("../images/pmts-letterhead-membrete.png");
     background-repeat: no-repeat;
     background-size: 8.5in 11in; }
   h2.course {
