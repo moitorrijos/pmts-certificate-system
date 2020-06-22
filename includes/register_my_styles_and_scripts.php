@@ -2,7 +2,7 @@
 
 function register_my_styles_and_scripts() {
 
-	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '90', 'all' );
+	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '91', 'all' );
 
 	wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:700', array(), '2015', 'all');
 
