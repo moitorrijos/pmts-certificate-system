@@ -4,7 +4,11 @@
   "description": "PMTS Certificate System",
   "main": "index.php",
   "scripts": {
-    "test": "test"
+    "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+    "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "compile:rtl": "rtlcss style.css style-rtl.css",
+    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
+    "lint:js": "wp-scripts lint-js 'js/*.js'"
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,9 @@
   ],
   "author": "Moi Torrijos",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/juanmtorrijos/pmts-certificate-system#readme"
+  "homepage": "https://bitbucket.org/juanmtorrijos/pmts-certificate-system#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^10.0.0",
+    "node-sass": "^4.14.1"
+  }
 }

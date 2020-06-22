@@ -575,7 +575,8 @@ a.deactivated {
 	}
 
 	.filter-by-date {
-		margin: 16px 0 48px;
+		display: flex;
+		align-items: center;
 		p {
 			line-height: 1;
 			display: inline-block;
@@ -732,11 +733,11 @@ form.search-by-id-no {
 }
 
 a.admin {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	right: 20px;
 	width: 50px;
-	height: 50px;
+	height: 40px;
 	background: white;
 	display: flex;
 	justify-content: center;
@@ -744,6 +745,11 @@ a.admin {
 	border-top-right-radius: 8px;
 	border-top-left-radius: 8px;
 	box-shadow: 0 2px 4px darken($gray, 10%);
+	transition: height 0.3s ease-in-out;
+
+	&:hover {
+		height: 50px;
+	}
 
 	i {
 		margin-top: 10px;
