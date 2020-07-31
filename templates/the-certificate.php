@@ -47,7 +47,9 @@
 			$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
 			$issue_date_timestamp = strtotime( get_field('date_of_issuance') );
 			$expiry_date_timestamp = strtotime( '+5 years',  strtotime( get_field('date_of_issuance') ) );
+			$expiry_date_3_years_timestamp = strtotime( '+3 years',  strtotime( get_field('date_of_issuance') ) );
 			$expiry_date = date( 'd F Y', $expiry_date_timestamp );
+			$expiry_date_3_years = date( 'd F Y', $expiry_date_3_years_timestamp );
 			$issue_month = $issue_date->format('m');
 			$issue_year = $issue_date->format('y');
 			$resolution_date_timestamp = strtotime( RESOLUTION_DATE );
@@ -72,7 +74,6 @@
 			}
 
 		?>
-
 
 		<div class="certificate view-section" id="the-certificate" data-certificate-id="<?php echo $certificate_ID; ?>">
 			
@@ -376,8 +377,6 @@
 
 				<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', $resolution_expiry_date)->format('d F Y'); ?></span>.
 
-
-
 			</p>
 
 			<p class="short">
@@ -406,7 +405,14 @@
 
 				<span class="undiesunpaddies">
 					
-					<?php  echo $expiry_date; ?>
+					<?php  
+
+						if ( get_the_ID() === 46398 ) {
+							echo $expiry_date_3_years;
+						} else {
+							echo $expiry_date;
+						}
+					?>
 
 				</span>
 
