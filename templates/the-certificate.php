@@ -406,8 +406,7 @@
 				<span class="undiesunpaddies">
 					
 					<?php  
-
-						if ( get_the_ID() === 46398 ) {
+						if ( $course->ID === 17570 ) {
 							echo $expiry_date_3_years;
 						} else {
 							echo $expiry_date;
