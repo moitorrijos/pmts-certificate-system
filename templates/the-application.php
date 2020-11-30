@@ -165,6 +165,7 @@
 								<th class="short-title">Instructor</th>
 								<th class="short-title">Start Date</th>
 								<th class="short-title">End Date</th>
+								<th class="short-title">Issue Date</th>
 								<th class="short-number">Time</th>
 								<th class="short-number">Students</th>
 								<th class="short-number">
@@ -181,6 +182,7 @@
 								$instructor = get_sub_field('instructor_name_app');
 								$start_date = DateTime::createFromFormat('Ymd', get_sub_field('start_date_app'));
 								$end_date = DateTime::createFromFormat('Ymd', get_sub_field('end_date_app'));
+								$issue_date = DateTime::createFromFormat('Ymd', get_sub_field('issue_date_app'));
 								$nightly_course = get_sub_field('night_app');
 
 								(boolean)$class_full = false;
@@ -238,7 +240,7 @@
 								>
 									<?php 
 										if( $start_date ) { 
-											echo $start_date->format('d F Y');
+											echo $start_date->format('d/M/Y');
 										} else {
 											echo '<span class="blackies">TBA</span>' ;
 										}
@@ -250,11 +252,22 @@
 								>
 									<?php 
 										if( $end_date ) { 
-											echo $end_date->format('d F Y');
+											echo $end_date->format('d/M/Y');
 										} else {
 											echo '<span class="blackies">TBA</span>' ;
 										}
 									?>
+								</td>
+								<td class="centered course-issue-date" data-issue_date="<?php if($issue_date) echo $issue_date->format('Ymd'); ?>">
+										<?php
+											if ( $issue_date ) {
+												echo $issue_date->format('d/M/Y');
+											} else if ( $end_date ) {
+												echo $end_date->format('d/m/Y');
+											} else {
+												echo '<span class="blackies">TBA</span>';
+											}
+										?>
 								</td>
 								<td class="centered <?php if ( $nightly_course ) { echo 'nightly'; } else { echo 'daily'; } ?>">
 									<?php if( $nightly_course ) { echo "Night"; } else { echo "Day"; } ?>

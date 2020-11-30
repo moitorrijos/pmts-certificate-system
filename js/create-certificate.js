@@ -20,6 +20,7 @@ function createThisCertificate(event){
 		instructorID = $this.closest('tr').find('td.course-instructor').data('instructor_id'),
 		startDate = $this.closest('tr').find('td.course-start-date').data('start_date'),
 		endDate = $this.closest('tr').find('td.course-end-date').data('end_date'),
+		issueDate = $this.closest('tr').find('td.course-issue-date').data('issue_date'),
 		$applicationSentErrorDiv = $('.application-sent-error');
 	
 	$.ajax({
@@ -33,6 +34,7 @@ function createThisCertificate(event){
 			instructorID: instructorID,
 			startDate: startDate,
 			endDate: endDate,
+			issueDate: issueDate
 		},
 		success: function(response){
 			if (response.success) {
