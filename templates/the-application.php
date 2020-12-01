@@ -258,7 +258,10 @@
 										}
 									?>
 								</td>
-								<td class="centered course-issue-date" data-issue_date="<?php if($issue_date) echo $issue_date->format('Ymd'); ?>">
+								<td
+									class="centered course-issue-date <?php if( !$end_date ) { echo 'reddy'; } ?>"
+									data-issue_date="<?php if($issue_date) echo $issue_date->format('Ymd'); ?>"
+								>
 										<?php
 											if ( $issue_date ) {
 												echo $issue_date->format('d/M/Y');
