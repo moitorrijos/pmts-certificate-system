@@ -421,7 +421,7 @@
 				<div id="qr-code"></div>
 				<div class="scan-to-verify">
 					<p>
-						Scan to Verify or Verify Online at http://certs.pmts.com.pa/check
+						Scan to Verify or Verify Online at http://pmts.com.pa/check
 						<br>
 						Rev. (05/18)
 					</p>

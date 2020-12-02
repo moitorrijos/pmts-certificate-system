@@ -259,14 +259,12 @@
 									?>
 								</td>
 								<td
-									class="centered course-issue-date <?php if( !$end_date ) { echo 'reddy'; } ?>"
+									class="centered course-issue-date <?php if( !$issue_date ) { echo 'reddy'; } ?>"
 									data-issue_date="<?php if($issue_date) echo $issue_date->format('Ymd'); ?>"
 								>
 										<?php
 											if ( $issue_date ) {
-												echo $issue_date->format('d/M/Y');
-											} else if ( $end_date ) {
-												echo $end_date->format('d/m/Y');
+												echo $issue_date->format('d/m/Y');
 											} else {
 												echo '<span class="blackies">TBA</span>';
 											}
@@ -301,7 +299,7 @@
 											<span class="lockedly">
 												<i class="fa fa-lock" aria-hidden="true"></i>
 											</span>
-										<?php elseif ($instructor && $start_date && $end_date ) : ?>
+										<?php elseif ($instructor && $start_date && $end_date && $issue_date ) : ?>
 											<a href="#0" class="create-certificate-button">
 												<i class="fa fa-print"></i>
 											</a>
