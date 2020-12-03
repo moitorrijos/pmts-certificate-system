@@ -46,8 +46,8 @@
 			$end_date = DateTime::createFromFormat( 'Ymd', get_field('end_date') );
 			$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
 			$issue_date_timestamp = strtotime( get_field('date_of_issuance') );
-			$expiry_date_timestamp = strtotime( '+5 years',  strtotime( get_field('date_of_issuance') ) );
-			$expiry_date_3_years_timestamp = strtotime( '+3 years',  strtotime( get_field('date_of_issuance') ) );
+			$expiry_date_timestamp = strtotime( '+5 years',  strtotime( get_field('end_date') ) );
+			$expiry_date_3_years_timestamp = strtotime( '+3 years',  strtotime( get_field('end_date') ) );
 			$expiry_date = date( 'd F Y', $expiry_date_timestamp );
 			$expiry_date_3_years = date( 'd F Y', $expiry_date_3_years_timestamp );
 			$issue_month = $issue_date->format('m');
