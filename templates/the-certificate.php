@@ -431,6 +431,7 @@
 			<div class="signature-cert-codes">
 				
 				<div class="signature">
+					<hr>
 					<p class="short-margin">Agustin Gonzalez</p>
 					<p class="short-margin">Academic Director</p>
 					<p class="short-margin">R-CE1-01</p>

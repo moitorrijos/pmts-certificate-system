@@ -28,7 +28,7 @@
 	}
 
   .single-certificates.single-certificates.single-certificates .main-content.main-content.main-content {
-    background-image: url('../images/pmts-letterhead-membrete.png');
+    // background-image: url('../images/pmts-letterhead-membrete.png');
     background-repeat: no-repeat;
     background-size: 8.5in 11in;
   }
@@ -202,6 +202,10 @@
 	}
 
 	.signature.signature {
+		background-image: url(../images/firma-agustin-gonzalez66.svg);
+		background-repeat: no-repeat;
+		background-position: center top;
+		padding-top: 36px;
 		display: block;
 		font-size: 9pt;
 		width: 2.25in;

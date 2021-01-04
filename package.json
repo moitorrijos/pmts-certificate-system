@@ -4,7 +4,7 @@
   "description": "PMTS Certificate System",
   "main": "index.php",
   "scripts": {
-    "sass": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+    "sass": "node-sass sass/ -o ./css --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
     "browsersync": "browser-sync start --proxy 'panama-certificate-system.test' --files '**/*' --no-open",
     "watch": "npm run sass & npm run browsersync",
     "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
