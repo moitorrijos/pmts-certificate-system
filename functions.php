@@ -13,7 +13,6 @@ define ( 'OLD_RESOLUTION', 'DGGM-CFM-024-2015' );
 define ( 'OLD_RESOLUTION_DATE', '20150618' );
 define ( 'OLD_RES_EXPIRY_DATE', '20180618' );
 
-
 /**
  * Register Styles and Scripts
  */
