@@ -3,15 +3,18 @@
 define ( 'THEMEROOT', get_template_directory_uri() );
 define ( 'IMAGESPATH', THEMEROOT . '/images' );
 define ( 'AUTHENTICCERTIPAGE', get_permalink( 17578 ) );
-define ( 'NEW_RESOLUTION', 'DGGM-CFM-028-2019' );
-define ( 'NEW_RESOLUTION_DATE', '20190430' );
-define ( 'NEW_RES_EXPIRY_DATE', '20210525' );
-define ( 'RESOLUTION', 'DGGM-CFM-058-2018' );
-define ( 'RESOLUTION_DATE', '20181227' );
-define ( 'RES_EXPIRY_DATE', '20190627' );
-define ( 'OLD_RESOLUTION', 'DGGM-CFM-024-2015' );
-define ( 'OLD_RESOLUTION_DATE', '20150618' );
-define ( 'OLD_RES_EXPIRY_DATE', '20180618' );
+
+define ( 'NEW_RESOLUTION', 'DGGM-CFM-017-2021' );
+define ( 'NEW_RESOLUTION_DATE', '20210426' );
+define ( 'NEW_RES_EXPIRY_DATE', '20211030' );
+
+define ( 'RESOLUTION', 'DGGM-CFM-028-2019' );
+define ( 'RESOLUTION_DATE', '20190430' );
+define ( 'RES_EXPIRY_DATE', '20210525' );
+
+define ( 'OLD_RESOLUTION', 'DGGM-CFM-058-2018' );
+define ( 'OLD_RESOLUTION_DATE', '20181227' );
+define ( 'OLD_RES_EXPIRY_DATE', '20190627' );
 
 /**
  * Register Styles and Scripts
