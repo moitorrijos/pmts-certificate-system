@@ -23,6 +23,8 @@ function pmtscs_report_dates( $instructor, $course, $course_date) {
 
 	$certificates = get_posts( $certificates_args );
 
+	// var_dump($certificates);
+	
 	$certificate_id = $certificates[0]->ID;
 
 	$course_start_date = strtotime(get_post_meta($certificate_id, 'start_date', true));

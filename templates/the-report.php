@@ -148,7 +148,7 @@
 						<span class="undies" id="issued-certificates-amount">
 							
 							<?php 
-								echo get_participant_number($instructor->ID, $course->ID, get_field('date_of_the_course'));
+								echo get_participant_number($instructor->ID, $course->ID, $date_of_the_course);
 							?>
 
 						</span>
@@ -275,7 +275,7 @@
 		 						
 	 						<?php 
 
-	 							// var_dump($date_of_the_course); die();
+	 							// var_dump($date_of_the_course);
 
 	 							echo pmtscs_report_dates($instructor, $course, $date_of_the_course);
 
@@ -340,8 +340,8 @@
 							'value'   => (int) $course->ID,
 						),
 						array(
-							'key'	=> 'date_of_issuance',
-							'value'	=> get_field('date_of_the_course'),
+							'key'		=> 'end_date',
+							'value'	=> $date_of_the_course,
 							'type'	=> 'numeric',
 						)
 					)

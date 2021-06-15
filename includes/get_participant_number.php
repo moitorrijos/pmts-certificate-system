@@ -14,7 +14,7 @@ function get_participant_number( $instructor, $course, $date_of_course) {
 				'value'   => (int) $course,
 			),
 			array(
-				'key'		=> 'date_of_issuance',
+				'key'		=> 'end_date',
 				'value'	=> $date_of_course,
 				'type'	=> 'numeric',
 			)

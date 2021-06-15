@@ -118,6 +118,16 @@ require get_template_directory() . '/includes/practical_exam_results.php';
 require get_template_directory() . '/includes/instructor_signature.php';
 
 /**
+ * Remove Posts and Comments from admin menu
+ */
+function pmtscs_remove_admin_menu() {
+	remove_menu_page('edit.php');
+	remove_menu_page('edit-comments.php');
+}
+
+add_filter('admin_menu', 'pmtscs_remove_admin_menu');
+
+/**
  * Meta Boxes
  */
 require get_template_directory() . '/meta-boxes/pmtscs-register-meta-boxes.php';
