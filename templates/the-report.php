@@ -148,7 +148,11 @@
 						<span class="undies" id="issued-certificates-amount">
 							
 							<?php 
-								echo get_participant_number($instructor->ID, $course->ID, $date_of_the_course);
+								echo get_participant_number(
+									$instructor->ID,
+									$course->ID,
+									$date_of_the_course
+								);
 							?>
 
 						</span>
