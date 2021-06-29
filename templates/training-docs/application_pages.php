@@ -16,8 +16,13 @@
 		$instructor = get_sub_field('instructor_name_app');
 		$start_date = DateTime::createFromFormat( 'Ymd', get_sub_field('start_date_app') );
 		$end_date = DateTime::createFromFormat( 'Ymd', get_sub_field('end_date_app') );
-		$observation_test =	get_post_meta( $course->ID, 'observation_test' );
+		$observation_test =	get_field( 'observation_test' );
 		$february_2018 = DateTime::createFromFormat('Ymd', '20180228');
+		if ( $observation_test ) {
+			$total_page_number = '4';
+		} else {
+			$total_page_number = '3';
+		}
 		
 		if ( $instructor && $start_date && $end_date ) : ?>
 
@@ -27,7 +32,7 @@
 
 					<?php
 
-						echo pmtscs_header_for_print( 'R-FO1-07', '0', $course, $instructor, '1' );
+						echo pmtscs_header_for_print( 'R-FO1-07', '0', $course, $instructor, '1', $total_page_number );
 
 						echo student_info_complete_table(
 							$participants_name, 
@@ -72,7 +77,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '2');
+					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '2', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -93,7 +98,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '3');
+					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '3', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -114,7 +119,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '4');
+					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '4', $total_page_number );
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -135,7 +140,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '5');
+					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '5', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -163,7 +168,7 @@
 					
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '2');
+					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '2', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -184,7 +189,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '3');
+					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '3', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -205,7 +210,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '4');
+					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '4', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -226,7 +231,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '5');
+					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '5', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -251,7 +256,7 @@
 						
 						<?php 
 
-							echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '2'); 
+							echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '2', $total_page_number); 
 
 							echo student_info_short_table( 
 								$participants_name, 
@@ -280,7 +285,7 @@
 						
 						<?php
 
-							echo pmtscs_header_for_print( 'R-FO1-04', '0', $course, $instructor, '3'); 
+							echo pmtscs_header_for_print( 'R-FO1-04', '0', $course, $instructor, '3', $total_page_number); 
 
 							echo student_info_short_table( 
 								$participants_name, 
@@ -311,15 +316,15 @@
 
 						if ($course->ID === 87 || $course->ID === 88) {
 
-							echo pmtscs_header_for_print( 'R-DE2-01', '0', $course, $instructor, '7'); 
+							echo pmtscs_header_for_print( 'R-DE2-01', '0', $course, $instructor, '7', $total_page_number); 
 
 						} else if ( $observation_test ) {
 							
-							echo pmtscs_header_for_print( 'R-DE2-01', '0', $course, $instructor, '4'); 
+							echo pmtscs_header_for_print( 'R-DE2-01', '0', $course, $instructor, '4', $total_page_number); 
 
 						} else {
 
-							echo pmtscs_header_for_print( 'R-DE2-01', '0', $course, $instructor, '3'); 
+							echo pmtscs_header_for_print( 'R-DE2-01', '0', $course, $instructor, '3', $total_page_number); 
 
 						}
 						

@@ -8,7 +8,7 @@ $course = get_sub_field('course_name_app');
 $instructor = get_sub_field('instructor_name_app');
 $exam_date = DateTime::createFromFormat('Ymd', '20180203');
 
-echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '4');
+echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '4', '6');
 
 echo student_info_short_table(
 	$participants_name, 
