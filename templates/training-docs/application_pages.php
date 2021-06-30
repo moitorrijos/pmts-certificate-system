@@ -16,14 +16,14 @@
 		$instructor = get_sub_field('instructor_name_app');
 		$start_date = DateTime::createFromFormat( 'Ymd', get_sub_field('start_date_app') );
 		$end_date = DateTime::createFromFormat( 'Ymd', get_sub_field('end_date_app') );
-		$observation_test =	get_field( 'observation_test' );
+		$observation_test =	get_field( 'observation_test', $course->ID );
 		$february_2018 = DateTime::createFromFormat('Ymd', '20180228');
+
 		if ( $observation_test ) {
 			$total_page_number = '4';
 		} else {
 			$total_page_number = '3';
 		}
-		
 		if ( $instructor && $start_date && $end_date ) : ?>
 
 			<div class="application-for-print">
