@@ -185,9 +185,14 @@
 				<?php if ($course->f_ti != '54') : ?>
 
 					<p class="resolution-p short">
+
 						This course fulfills minimum requirements of
+
+						<?php if ( (int)$course->ID !== 81 ) : ?>
 						
-						<span class="unpaddies"><?php echo $course->regulation; ?></span>
+							<span class="unpaddies"><?php echo $course->regulation; ?></span>
+
+						<?php endif; ?>
 
 						<?php 
 
@@ -203,13 +208,15 @@
 
 							.
 
+						<?php elseif( (int)$course->ID === 81 ) : ?>
+
+							the provisions in the <span class="unpaddies">Chapter VII and IX</span> of the International Telecommunication Union Radio Regulations (ITU) adopted by <span class="unpaddies">Resolution ADM No. 181-2020</span> of November 25th, 2020. Regulated by the Regulation IV/2 and Table A-IV/2 of the International Convention on Standards of  Training, Certification and Watchkeeping for Seafarers 1978, as amended.
+
 						<?php else : ?>
 
 							under the provision of the International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended
 
 						<?php endif; ?>
-						
-						
 						
 						<span class="unpaddies">
 
