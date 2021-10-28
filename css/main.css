@@ -1443,6 +1443,7 @@ table.system {
 	font-size: 0.9rem;
 	width: 100%;
 	margin-bottom: 32px;
+	border-collapse: separate;
 }
 
 table.system thead {
@@ -1508,7 +1509,7 @@ table.system tbody > tr:hover {
 }
 
 table.system td {
-	border: 1px solid #98aab8;
+	border: 1px solid #cbe2f1;
 	padding: 8px;
 }
 
@@ -2793,9 +2794,12 @@ ul.authentic-certificate li small {
 		display: none;
 	}
 	table {
-		page-break-inside: auto;
+		page-break-inside: avoid;
 		color: black;
 		position: relative;
+	}
+	table thead {
+		display: table-header-group;
 	}
 	table thead th {
 		font-size: 8pt;
@@ -2805,7 +2809,7 @@ ul.authentic-certificate li small {
 	table tr {
 		page-break-inside: avoid;
 		-webkit-region-break-inside: avoid;
-		page-break-after: always;
+		page-break-after: avoid;
 	}
 	table td {
 		color: black;
