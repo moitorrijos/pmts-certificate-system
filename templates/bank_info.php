@@ -20,6 +20,22 @@
 	<div class="bank-info">
 		<h4>PAYMENT INFO. ABROAD</h4>
 		<p>
+			Beneficiary Account:<br>
+			PANAMA MARITIME TRAINING SERVICES, INC.<br>
+			BANK ACCOUNT NUMBER:  03-29-01-025184-0<br>
+			PH: +(507)322-0013<br>
+			Address: 77th Street Bldg. 26<br>
+			Panama City, Republic of Panama
+		</p>
+		<p>
+			Beneficiary Bank:<br>
+			<strong>BANCO GENERAL, S.A. - PANAMA</strong><br>
+			Swift Code: BAGEPAPA<br>
+			Address: Aquilino de la Guardia Street and Ave. 5 B Sur<br>
+			Panama City, Republic of Panama<br>
+			Account No.: 10951934<br>
+		</p>
+		<p>
 			<strong>CITIBANK NEW YORK, N.Y.</strong><br>
 			SWIFT Code: CITIUS33<br>
 			ABA # 021000089<br>
@@ -28,17 +44,7 @@
 			New York, NY 10043<br>
 			Phone: +1 917-746-1193
 		</p>
-		<p>
-			Credit to:<br>
-			<strong>BANCO GENERAL, S.A. - PANAMA</strong><br>
-			Swift Code: BAGEPAPA<br>
-			Account No.: 10951934<br>
-		</p>
-		<p>
-			Further credit to:<br>
-			PANAMA MARITIME TRAINING SERVICES, INC.<br>
-			BANK ACCOUNT NUMBER:  03-29-01-025184-0<br>
-		</p>
+		
 	</div>
 
 </div>
