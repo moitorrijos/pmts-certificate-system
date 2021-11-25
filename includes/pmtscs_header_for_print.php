@@ -1,10 +1,12 @@
 <?php
 
-function pmtscs_header_for_print( 
+function pmtscs_header_for_print (
 	$doc_code, 
 	$course_obj, 
 	$instructor_app, 
-	$page_number ){
+	$page_number,
+	$total_page_number
+	) {
 
 	?>
 
@@ -40,15 +42,7 @@ function pmtscs_header_for_print(
 			</p>
 			<p class="super-short">
 				Page <?php echo $page_number; ?> of 
-				<?php 
-					if ($course_obj->ID === 87 || $course_obj->ID === 88 || $course_obj->ID === 90) {
-						echo '6';
-					} else if (get_post_meta( $course_obj->ID, 'observation_test')) {
-						echo '4';
-					} else {
-						echo '3';
-					}
-				?>
+				<?php echo $total_page_number; ?>
 			</p>
 			
 		</div>

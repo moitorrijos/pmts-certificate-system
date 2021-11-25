@@ -2,11 +2,11 @@
 
 function get_participant_number( $instructor, $course, $date_of_course) {
 	$filter_certs_args_loop = array(
-		'post_type'			=> 'certificates',
+		'post_type'				=> 'certificates',
 		'posts_per_page'	=> -1,
-		'meta_query'		=> array(
+		'meta_query'			=> array(
 			array(
-				'key'	=> 'instructor',
+				'key'		=> 'instructor',
 				'value' => (int) $instructor,
 			),
 			array(
@@ -14,7 +14,7 @@ function get_participant_number( $instructor, $course, $date_of_course) {
 				'value'   => (int) $course,
 			),
 			array(
-				'key'	=> 'date_of_issuance',
+				'key'		=> 'end_date',
 				'value'	=> $date_of_course,
 				'type'	=> 'numeric',
 			)

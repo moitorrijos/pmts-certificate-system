@@ -2,7 +2,7 @@
 
 function register_my_styles_and_scripts() {
 
-	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '92', 'all' );
+	wp_enqueue_style( 'main_style', THEMEROOT . '/css/main.css', array(), '96', 'all' );
 
 	wp_enqueue_style( 'google_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:700', array(), '2015', 'all');
 
@@ -56,6 +56,7 @@ function register_my_styles_and_scripts() {
 
 		wp_localize_script( 'filter_by_date', 'filter_object', array(
 				'security' 	=> wp_create_nonce( 'pmtscs_filter_nonce' ),
+				'ajax_action'		=> 'filter_by_date',
 				'ajaxurl' 	=> admin_url( 'admin-ajax.php'),
 			) 
 		);
@@ -78,6 +79,17 @@ function register_my_styles_and_scripts() {
 				'security' 	=> wp_create_nonce( 'pmtscs_quotation' ),
 				'ajaxurl'	=> admin_url( 'admin-ajax.php' )
 			)
+		);
+
+		wp_enqueue_style( 'jquery-ui-datepicker-css', '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', array(), 'all' );
+
+		wp_enqueue_script( 'filter_by_date', THEMEROOT . '/js/filter-by-date.js', array( 'jquery', 'jquery-ui-datepicker'), '6', true );
+
+		wp_localize_script( 'filter_by_date', 'filter_object', array(
+				'security' 	=> wp_create_nonce( 'pmtscs_filter_nonce' ),
+				'ajax_action'		=> 'filter_quotation_by_date',
+				'ajaxurl' 	=> admin_url( 'admin-ajax.php'),
+			) 
 		);
 
 	}
@@ -144,7 +156,7 @@ function register_my_styles_and_scripts() {
 
 		wp_enqueue_script( 'application_form', THEMEROOT . '/js/application-form.js', array('jquery'), '20180204', true );
 
-		wp_enqueue_script( 'create_certificate', THEMEROOT . '/js/create-certificate.js', array('jquery'), '20171015', true );
+		wp_enqueue_script( 'create_certificate', THEMEROOT . '/js/create-certificate.js', array('jquery'), '20201130', true );
 
 		wp_enqueue_script( 'duplicate_application', THEMEROOT . '/js/duplicate-application.js', array( 'jquery' ), '20170509', true );
 

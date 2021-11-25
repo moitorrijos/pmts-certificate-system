@@ -98,12 +98,12 @@
 	}
 
 	table {
-		page-break-inside:auto;
+		page-break-inside:avoid;
 		color: black;
 		position: relative;
 		
 		thead { 
-			// display: table-header-group;
+			display: table-header-group;
 			
 			th {
 				font-size: 8pt;
@@ -115,7 +115,7 @@
 		tr    { 
 			page-break-inside:avoid; 
 			-webkit-region-break-inside: avoid;
-			page-break-after:always;
+			page-break-after:avoid;
 		}
 
 		td {
@@ -202,6 +202,10 @@
 	}
 
 	.signature.signature {
+		background-image: url(../images/firma-agustin-gonzalez66.svg);
+		background-repeat: no-repeat;
+		background-position: center top;
+		padding-top: 36px;
 		display: block;
 		font-size: 9pt;
 		width: 2.25in;
@@ -219,8 +223,15 @@
 		position: absolute;
 		bottom: 0;
 		right: 0;
-		width: 30%;
+		width: 100%;
 		padding-right: 1in;
+
+		background: {
+			image: url(../images/pmts-blue-seal.png);
+			repeat: no-repeat;
+			position: 370px center;
+			size: 1in;
+		}
 	}
 
 	.certificate-codes.certificate-codes {

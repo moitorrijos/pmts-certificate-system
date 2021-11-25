@@ -57,7 +57,7 @@ function filterDates(){
 			type	 : 'POST',
 			dataType : 'json' ,
 			data 	 : {
-				action 			 : 'filter_by_date',
+				action 			 : filter_object.ajax_action,
 				security 		 : filter_object.security,
 				valid_start_date : startDate,
 				valid_end_date 	 : endDate,

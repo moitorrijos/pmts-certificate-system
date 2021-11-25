@@ -271,6 +271,23 @@ acf_add_local_field_group(array (
 					'first_day' => 1,
 				),
 				array (
+					'key' => 'field_984762949321',
+					'label' => 'Issue Date',
+					'name' => 'issue_date_app',
+					'type' => 'date_picker',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => 10,
+						'class' => '',
+						'id' => '',
+					),
+					'display_format' => 'j/m/y',
+					'return_format' => 'Ymd',
+					'first_day' => 1,
+				),
+				array (
 					'key' => 'field_58892d735a1b5',
 					'label' => 'Night',
 					'name' => 'night_app',

@@ -16,7 +16,7 @@
 		$instructor = get_sub_field('instructor_name_app');
 		$start_date = DateTime::createFromFormat( 'Ymd', get_sub_field('start_date_app') );
 		$end_date = DateTime::createFromFormat( 'Ymd', get_sub_field('end_date_app') );
-		$observation_test =	get_post_meta( $course->ID, 'observation_test' );
+		$observation_test =	get_field( 'observation_test', $course->ID );
 		$february_2018 = DateTime::createFromFormat('Ymd', '20180228');
 
 		if ( $observation_test ) {
@@ -47,11 +47,10 @@
 
 						 if ( $end_date->getTimestamp() <= $february_2018->getTimestamp() ) {
 							 get_template_part( 'templates/training-docs/days_table' );
-							 get_template_part( 'templates/training-docs/evaluation-score' );
 							} else {
 								get_template_part( 'templates/training-docs/terms-conditions' );
-								get_template_part( 'templates/training-docs/evaluation-score' );
-						 }
+							}
+							get_template_part( 'templates/training-docs/evaluation-score', '', array( 'observation_test' => $observation_test ) );
 					?>
 
 					<div class="application-signatures">

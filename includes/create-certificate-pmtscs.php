@@ -18,6 +18,8 @@ function pmtscs_ajax_create_certificate(){
 
 	$endDate = $_POST['endDate'];
 	
+	$issueDate = $_POST['issueDate'];
+	
 	$_SESSION['students_name'] = get_field( 'participants_name_app', $appID );
 
 	$_SESSION['passport_id'] = get_field( 'passport_id_app', $appID );
@@ -42,7 +44,7 @@ function pmtscs_ajax_create_certificate(){
 
 	$_SESSION['end_date'] = $endDate;
 
-	$_SESSION['date_of_issuance'] = $endDate;
+	$_SESSION['date_of_issuance'] = $issueDate;
 
 	return wp_send_json_success();
 

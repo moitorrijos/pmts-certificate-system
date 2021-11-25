@@ -11,16 +11,17 @@
 		?>
 
 		<div class="back-create-buttons">
-
 			<div class="back-button-link buttons">
-				
 				<a href="<?php echo get_permalink( 208 ); ?>" class="back-link">
 					&laquo;
-
 					Back to Quotation List
-
 				</a>
+			</div>
 
+			<div class="filter-by-date">
+				<p>Start Date: <input class="start-date-filter" type="text" placeholder="dd/mm/yyyy"></p>
+				<p>End Date: <input class="end-date-filter" type="text" placeholder="dd/mm/yyyy"></p>
+				<button id="filter-by-date"><i class="fa fa-filter"></i> &nbsp;Filter by Date</button>
 			</div>
 
 			<?php get_template_part('templates/buttons-div'); ?>

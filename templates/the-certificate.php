@@ -46,33 +46,17 @@
 			$end_date = DateTime::createFromFormat( 'Ymd', get_field('end_date') );
 			$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
 			$issue_date_timestamp = strtotime( get_field('date_of_issuance') );
-			$expiry_date_timestamp = strtotime( '+5 years',  strtotime( get_field('date_of_issuance') ) );
+			$expiry_date_timestamp = strtotime( '+5 years',  strtotime( get_field('end_date') ) );
+			$expiry_date_3_years_timestamp = strtotime( '+3 years',  strtotime( get_field('end_date') ) );
 			$expiry_date = date( 'd F Y', $expiry_date_timestamp );
+			$expiry_date_3_years = date( 'd F Y', $expiry_date_3_years_timestamp );
 			$issue_month = $issue_date->format('m');
 			$issue_year = $issue_date->format('y');
-			$resolution_date_timestamp = strtotime( RESOLUTION_DATE );
-			$new_resoultion_date_timestamp = strtotime( NEW_RESOLUTION_DATE );
 			$no_posts = 196;
 			$certificate_ID = get_the_id();
 			$register_code =  get_post_meta(get_the_ID(), 'register_code', true);
 
-			if ($issue_date_timestamp >= $new_resoultion_date_timestamp) {
-				$resolution = NEW_RESOLUTION;
-				$resolution_date = NEW_RESOLUTION_DATE;
-				$resolution_expiry_date = NEW_RES_EXPIRY_DATE;
-			}
-			else if ($issue_date_timestamp >= $resolution_date_timestamp && $issue_date_timestamp <= $new_resoultion_date_timestamp) {
-				$resolution = RESOLUTION;
-				$resolution_date = RESOLUTION_DATE;
-				$resolution_expiry_date = RES_EXPIRY_DATE;
-			} else {
-				$resolution = OLD_RESOLUTION;
-				$resolution_date = OLD_RESOLUTION_DATE;
-				$resolution_expiry_date = OLD_RES_EXPIRY_DATE;
-			}
-
 		?>
-
 
 		<div class="certificate view-section" id="the-certificate" data-certificate-id="<?php echo $certificate_ID; ?>">
 			
@@ -184,9 +168,14 @@
 				<?php if ($course->f_ti != '54') : ?>
 
 					<p class="resolution-p short">
+
 						This course fulfills minimum requirements of
+
+						<?php if ( (int)$course->ID !== 81 ) : ?>
 						
-						<span class="unpaddies"><?php echo $course->regulation; ?></span>
+							<span class="unpaddies"><?php echo $course->regulation; ?></span>
+
+						<?php endif; ?>
 
 						<?php 
 
@@ -202,13 +191,15 @@
 
 							.
 
+						<?php elseif( (int)$course->ID === 81 ) : ?>
+
+							the provisions in the <span class="unpaddies">Chapter VII and IX</span> of the International Telecommunication Union Radio Regulations (ITU) adopted by <span class="unpaddies">Resolution ADM No. 181-2020</span> of November 25th, 2020. Regulated by the Regulation IV/2 and Table A-IV/2 of the International Convention on Standards of  Training, Certification and Watchkeeping for Seafarers 1978, as amended.
+
 						<?php else : ?>
 
 							under the provision of the International Convention on Standards of Training, Certification and Watchkeeping for Seafarers, 1978, as amended
 
 						<?php endif; ?>
-						
-						
 						
 						<span class="unpaddies">
 
@@ -366,17 +357,69 @@
 
 				By means of Resolution
 
-				<span class="undiesunpaddies"><?php echo $resolution; ?></span>
+				<?php
+
+					$resolutions = array();
+
+					$the_resolutions = new WP_Query(array(
+						'post_type' => 'resolutions',
+						'posts_per_page' => -1,
+						'order'	=> 'ASC',
+					));
+
+					if ( $the_resolutions->have_posts() ) :
+
+						while ( $the_resolutions->have_posts() ) :
+
+							$the_resolutions->the_post();
+
+							array_push(
+								$resolutions,
+								array(
+									'resolution_id' => get_the_ID(),
+									'resolution_name' => get_the_title(),
+									'resolution_issue_date' => strtotime( get_field('resolution_issue_date') ),
+									'resolution_expiry_date' => strtotime( get_field('resolution_expiry_date') )
+									)
+							);
+
+						endwhile; endif; wp_reset_postdata();
+
+						$resolution = '';
+						$resolution_date = 1;
+						$resolution_expiry_date = 1;
+						
+						foreach ($resolutions as $res) {
+							
+							$resolution = $res['resolution_name'];
+							$resolution_date = $res['resolution_issue_date'];
+							$resolution_expiry_date = $res['resolution_expiry_date'];
+							
+							if ( 
+								$issue_date_timestamp > $res['resolution_issue_date']
+								&& $issue_date_timestamp < $res['resolution_expiry_date']
+							) {
+								break;
+							}
+
+						}
+
+				?>
+
+<span class="undiesunpaddies">
+					<?php echo $resolution; ?>		
+				</span>
 
 				of
 
-				<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', $resolution_date)->format('d F Y'); ?></span>
+				<span class="undiesunpaddies">
+					<?php echo date('j F Y', $resolution_date); ?>
+				</span>,
 
 				valid until
-
-				<span class="undiesunpaddies"><?php echo DateTime::createFromFormat('Ymd', $resolution_expiry_date)->format('d F Y'); ?></span>.
-
-
+				<span class="undiesunpaddies">
+					<?php echo date('j F Y', $resolution_expiry_date); ?>
+				</span>.
 
 			</p>
 
@@ -406,7 +449,13 @@
 
 				<span class="undiesunpaddies">
 					
-					<?php  echo $expiry_date; ?>
+					<?php  
+						if ( $course->ID === 17570 ) {
+							echo $expiry_date_3_years;
+						} else {
+							echo $expiry_date;
+						}
+					?>
 
 				</span>
 
@@ -426,6 +475,7 @@
 			<div class="signature-cert-codes">
 				
 				<div class="signature">
+					<hr>
 					<p class="short-margin">Agustin Gonzalez</p>
 					<p class="short-margin">Academic Director</p>
 					<p class="short-margin">R-CE1-01</p>

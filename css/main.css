@@ -1451,6 +1451,7 @@ table.system {
 	font-size: 0.9rem;
 	width: 100%;
 	margin-bottom: 32px;
+	border-collapse: separate;
 }
 
 table.system thead {
@@ -1516,7 +1517,7 @@ table.system tbody > tr:hover {
 }
 
 table.system td {
-	border: 1px solid #98aab8;
+	border: 1px solid #cbe2f1;
 	padding: 8px;
 }
 
@@ -1841,7 +1842,7 @@ p.warning-full.warning-full.warning-full i.fa {
 	margin-top: 0;
 }
 
-.certificate .boldies, .application-form .boldies, .report .boldies, .application-page .boldies, .certificate .undies, .application-form .undies, .report .undies, .application-page .undies, .certificate .overies, .application-form .overies, .report .overies, .application-page .overies, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
+.certificate .boldies, .application-form .boldies, .report .boldies, .application-page .boldies, .certificate .undies, .application-form .undies, .report .undies, .application-page .undies, .certificate .overies, .application-form .overies, .report .overies, .application-page .overies {
 	font-family: "texgyreadventorbold_italic";
 }
 
@@ -1890,7 +1891,7 @@ p.warning-full.warning-full.warning-full i.fa {
 	text-align: justify;
 }
 
-.certificate .overies, .application-form .overies, .report .overies, .application-page .overies, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
+.certificate .overies, .application-form .overies, .report .overies, .application-page .overies {
 	border-top: 1px solid #556a7b;
 }
 
@@ -2598,7 +2599,7 @@ table.student-info td:nth-child(odd) {
 
 table.student-info td p {
 	line-height: 1;
-	margin: 4px 0;
+	margin: 0;
 	font-weight: bold;
 	font-style: italic;
 }
@@ -2809,9 +2810,12 @@ ul.authentic-certificate li small {
 		display: none;
 	}
 	table {
-		page-break-inside: auto;
+		page-break-inside: avoid;
 		color: black;
 		position: relative;
+	}
+	table thead {
+		display: table-header-group;
 	}
 	table thead th {
 		font-size: 8pt;
@@ -2821,7 +2825,7 @@ ul.authentic-certificate li small {
 	table tr {
 		page-break-inside: avoid;
 		-webkit-region-break-inside: avoid;
-		page-break-after: always;
+		page-break-after: avoid;
 	}
 	table td {
 		color: black;
@@ -2896,6 +2900,10 @@ ul.authentic-certificate li small {
 		height: 1in;
 	}
 	.signature.signature {
+		background-image: url(../images/firma-agustin-gonzalez66.svg);
+		background-repeat: no-repeat;
+		background-position: center top;
+		padding-top: 36px;
 		display: block;
 		font-size: 9pt;
 		width: 2.25in;
@@ -2911,8 +2919,12 @@ ul.authentic-certificate li small {
 		position: absolute;
 		bottom: 0;
 		right: 0;
-		width: 30%;
+		width: 100%;
 		padding-right: 1in;
+		background-image: url(../images/pmts-blue-seal.png);
+		background-repeat: no-repeat;
+		background-position: 370px center;
+		background-size: 1in;
 	}
 	.certificate-codes.certificate-codes {
 		display: block;

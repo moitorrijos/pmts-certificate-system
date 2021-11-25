@@ -2,6 +2,7 @@ table.system {
 	font-size: 0.9rem;
 	width: 100%;
 	margin-bottom: 32px;
+	border-collapse: separate;
 
 	thead {
 		display: table-header-group;
@@ -59,8 +60,6 @@ table.system {
 			color: $logout-red;
 			text-decoration: line-through;
 		}
-
-		
 	}
 	
 	tbody > tr:hover {
@@ -68,7 +67,7 @@ table.system {
 	}
 
 	td {
-		border: 1px solid darken($gray, 15%);
+		border: 1px solid lighten($pmts-blue, 35%);
 		padding: 8px;
 		
 		&.centered {
