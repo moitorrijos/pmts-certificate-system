@@ -4,6 +4,6 @@
 		Firma de Participante
 	</p>
 	<p class="super-short">
-		Signature of Participant
+		Participant's Signature
 	</p>
 </div>

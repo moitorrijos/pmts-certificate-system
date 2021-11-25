@@ -646,6 +646,14 @@ header .toggle-menu {
 	display: none;
 }
 
+.right-align {
+	text-align: right;
+}
+
+.center-align {
+	text-align: center;
+}
+
 .fa.fa {
 	font-size: 0.9rem;
 }
@@ -2503,12 +2511,20 @@ table.report-table tbody tr td.darken-bg {
 	height: 40px;
 }
 
-.application-page table.practical-eval th.description {
-	width: 47%;
+.application-page table.practical-eval th.no {
+	width: 5%;
 }
 
-.application-page table.practical-eval th {
+.application-page table.practical-eval th.description {
+	width: 30%;
+}
+
+.application-page table.practical-eval th.done {
 	width: 10%;
+}
+
+.application-page .passed-failed th {
+	width: 50%;
 }
 
 .application-signatures {

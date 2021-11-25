@@ -5,7 +5,7 @@ function practical_exam_results( $course_obj ){
 	?>
 
 	<div class="required-documents">
-		<ul>
+		<!-- <ul>
 			<li>
 				El Examen es tomado presencialmente e individualmente./The Exam must be taken in classroom and individually.
 			</li>
@@ -15,39 +15,50 @@ function practical_exam_results( $course_obj ){
 			<li>
 				Se debe obtener mas de 70% de las respuestas correctas para pasar./Must obtain more than 70% of the answers correctly to pass.
 			</li>
-		</ul>
+		</ul> -->
+		<h4>Practical Exam is based on the Criteria for Evaluating Competence (Column 4) of the STCW Code as amended.</h4>
 	</div>
 
 	<div class="exam-answers">
 		<h3 class="short-short">Resultados de Examen Práctico/ <small>Practical Exam Results</small></h3>
 	</div>
-
 	<table class="practical-eval">
 		<thead>
 			<tr>
-				<th class="description">
-					Descripción/ Description
-				</th>
-				<th>
-					Yes<br>&#10003;
-				</th>
-				<th>
-					No<br>X
+				<th class="no">
+					No.
 				</th>
 				<th class="description">
-					Observaciones/ Remarks
+					Performance Standard
+				</th>
+				<th class="description">
+					Performance Criteria
+				</th>
+				<th class="done">
+					Done<br>&#10003;
+				</th>
+				<th class="done">
+					Not Done<br>X
 				</th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php 
-				for ($i=0; $i<10; $i++) :
+				$observation_test_questions = get_post_meta( $course_obj->ID, 'observation_test', true);
+				for ($i=0; $i < $observation_test_questions; $i++) :
 			?>
 				<tr>
+					<td><?php echo $i+1; ?></td>
 					<td><?php echo get_post_meta($course_obj->ID, 'observation_test_' . $i . '_practical_exam_question', true); ?></td>
 					<td></td><td></td><td></td>
 				</tr>
 			<?php endfor; ?>
+				<tr>
+					<td colspan="3" class="right-align">
+						<strong>Total Score</strong>
+					</td>
+					<td colspan="2"></td>
+				</tr>
 		</tbody>
 	</table>
 

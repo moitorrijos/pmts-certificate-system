@@ -18,7 +18,12 @@
 		$end_date = DateTime::createFromFormat( 'Ymd', get_sub_field('end_date_app') );
 		$observation_test =	get_post_meta( $course->ID, 'observation_test' );
 		$february_2018 = DateTime::createFromFormat('Ymd', '20180228');
-		
+
+		if ( $observation_test ) {
+			$total_page_number = '5';
+		} else {
+			$total_page_number = '3';
+		}
 		if ( $instructor && $start_date && $end_date ) : ?>
 
 			<div class="application-for-print">
@@ -27,7 +32,7 @@
 
 					<?php
 
-						echo pmtscs_header_for_print( 'R-FO1-07', '0', $course, $instructor, '1' );
+						echo pmtscs_header_for_print( 'R-FO1-07', $course, $instructor, '1', $total_page_number );
 
 						echo student_info_complete_table(
 							$participants_name, 
@@ -72,7 +77,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '2');
+					echo pmtscs_header_for_print( 'R-FO1-06', $course, $instructor, '2', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -93,7 +98,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '3');
+					echo pmtscs_header_for_print( 'R-FO1-06', $course, $instructor, '3', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -114,7 +119,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '4');
+					echo pmtscs_header_for_print( 'R-FO1-06', $course, $instructor, '4', $total_page_number );
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -135,7 +140,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '5');
+					echo pmtscs_header_for_print( 'R-FO1-06', $course, $instructor, '5', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -163,7 +168,7 @@
 					
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '2');
+					echo pmtscs_header_for_print( 'R-FO1-06', $course, $instructor, '2', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -184,7 +189,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '3');
+					echo pmtscs_header_for_print( 'R-FO1-06', $course, $instructor, '3', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -205,7 +210,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '4');
+					echo pmtscs_header_for_print( 'R-FO1-06', $course, $instructor, '4', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -226,7 +231,7 @@
 
 					echo '<div class="application-page">';
 
-					echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '5');
+					echo pmtscs_header_for_print( 'R-FO1-06', $course, $instructor, '5', $total_page_number);
 
 					echo student_info_short_table(
 						$participants_name, 
@@ -251,7 +256,7 @@
 						
 						<?php 
 
-							echo pmtscs_header_for_print( 'R-FO1-06', '0', $course, $instructor, '2'); 
+							echo pmtscs_header_for_print( 'R-FO1-06', $course, $instructor, '2', $total_page_number); 
 
 							echo student_info_short_table( 
 								$participants_name, 
@@ -276,11 +281,11 @@
 
 				<?php if ( $observation_test ) : ?>
 
-					<div class="application-page ">
+					<div class="application-page">
 						
 						<?php
 
-							echo pmtscs_header_for_print( 'R-FO1-04', '0', $course, $instructor, '3'); 
+							echo pmtscs_header_for_print( 'R-FO1-04', $course, $instructor, '3', $total_page_number); 
 
 							echo student_info_short_table( 
 								$participants_name, 
@@ -289,18 +294,45 @@
 								$end_date 
 							);
 
-							echo practical_exam_results( $course );					
+							echo practical_exam_results( $course );
 
 						?>
 
 						<div class="application-signatures">
 
-						<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
+							<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
 
-						<?php echo instructor_signature( $instructor ); ?>
+							<?php echo instructor_signature( $instructor ); ?>
+
+						</div>
 						
 					</div>
-						
+
+					<div class="application-page">
+
+						<?php
+
+							echo pmtscs_header_for_print( 'R-FO1-04', $course, $instructor, '4', $total_page_number);
+
+							echo student_info_short_table( 
+								$participants_name, 
+								$participants_id, 
+								$place_of_training, 
+								$end_date 
+							);
+							
+							get_template_part( 'templates/training-docs/qualification_criteria' );
+
+						?>
+
+						<div class="application-signatures">
+
+							<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
+
+							<?php echo instructor_signature( $instructor ); ?>
+
+						</div>
+
 					</div>
 
 				<?php endif; ?>
@@ -311,15 +343,15 @@
 
 						if ($course->ID === 87 || $course->ID === 88) {
 
-							echo pmtscs_header_for_print( 'R-DE2-01', '0', $course, $instructor, '7'); 
+							echo pmtscs_header_for_print( 'R-DE2-01', $course, $instructor, '7', $total_page_number); 
 
 						} else if ( $observation_test ) {
 							
-							echo pmtscs_header_for_print( 'R-DE2-01', '0', $course, $instructor, '4'); 
+							echo pmtscs_header_for_print( 'R-DE2-01', $course, $instructor, '5', $total_page_number); 
 
 						} else {
 
-							echo pmtscs_header_for_print( 'R-DE2-01', '0', $course, $instructor, '3'); 
+							echo pmtscs_header_for_print( 'R-DE2-01', $course, $instructor, '3', $total_page_number); 
 
 						}
 						

@@ -2,7 +2,6 @@
 
 function pmtscs_header_for_print( 
 	$doc_code, 
-	$revision_number,
 	$course_obj, 
 	$instructor_app, 
 	$page_number ){
@@ -37,10 +36,7 @@ function pmtscs_header_for_print(
 				Code: <?php echo $doc_code; ?>
 			</p>
 			<p class="super-short">
-				Revision: <?php echo $revision_number; ?>
-			</p>
-			<p class="super-short">
-				Date: 01/03/18
+				Date: 09/2021
 			</p>
 			<p class="super-short">
 				Page <?php echo $page_number; ?> of 

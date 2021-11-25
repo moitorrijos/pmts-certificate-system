@@ -176,13 +176,21 @@
 
 	table.practical-eval {
 		@extend table.evaluation;
+		th.no {
+			width: 5%;
+		}
 		
 		th.description {
-			width: 47%;
+			width: 30%;
 		}
 
-		th {
+		th.done {
 			width: 10%;
+		}
+	}
+	& .passed-failed {
+		th {
+			width: 50%;
 		}
 	}
 }
