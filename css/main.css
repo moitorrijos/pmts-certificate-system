@@ -2583,7 +2583,7 @@ table.student-info td:nth-child(odd) {
 
 table.student-info td p {
 	line-height: 1;
-	margin: 4px 0;
+	margin: 0;
 	font-weight: bold;
 	font-style: italic;
 }
