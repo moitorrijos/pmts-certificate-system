@@ -98,7 +98,7 @@
 	}
 
 	table {
-		page-break-inside:avoid;
+		page-break-before:avoid;
 		color: black;
 		position: relative;
 		
@@ -410,6 +410,10 @@
 			
 			width: 8in;
 			height: 10.5in;
+
+			&.span-2-pages {
+				height: calc(10.5in * 2);
+			}
 
 			&.gmdss-evaluation {
 				height: 13.5in;

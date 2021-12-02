@@ -66,3 +66,6 @@ config.codekit
 config.codekit3
 /min
 /sass/.sass-cache
+
+## Ignore css
+css

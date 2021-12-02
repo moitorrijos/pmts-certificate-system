@@ -2512,6 +2512,10 @@ table.report-table tbody tr td.darken-bg {
 	height: 40px;
 }
 
+.application-page table.practical-eval td {
+	vertical-align: top;
+}
+
 .application-page table.practical-eval th.no {
 	width: 5%;
 }
@@ -2521,7 +2525,7 @@ table.report-table tbody tr td.darken-bg {
 }
 
 .application-page table.practical-eval th.done {
-	width: 10%;
+	width: 7%;
 }
 
 .application-page .passed-failed th {
@@ -2810,7 +2814,7 @@ ul.authentic-certificate li small {
 		display: none;
 	}
 	table {
-		page-break-inside: avoid;
+		page-break-before: avoid;
 		color: black;
 		position: relative;
 	}
@@ -3058,6 +3062,9 @@ ul.authentic-certificate li small {
 		height: 10.5in;
 		margin: 0 auto;
 		page-break-before: always;
+	}
+	.application-for-print .application-page.span-2-pages {
+		height: calc(10.5in * 2);
 	}
 	.application-for-print .application-page.gmdss-evaluation {
 		height: 13.5in;

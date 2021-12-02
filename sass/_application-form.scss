@@ -106,8 +106,6 @@
 		}
 	}
 
-
-
 	table.days {
 		width: 100%;
 		th {
@@ -176,16 +174,17 @@
 
 	table.practical-eval {
 		@extend table.evaluation;
+		td {
+			vertical-align: top;
+		}
 		th.no {
 			width: 5%;
 		}
-		
 		th.description {
 			width: 30%;
 		}
-
 		th.done {
-			width: 10%;
+			width: 7%;
 		}
 	}
 	& .passed-failed {

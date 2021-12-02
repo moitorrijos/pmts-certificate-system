@@ -280,7 +280,7 @@
 
 				<?php if ( $observation_test ) : ?>
 
-					<div class="application-page">
+					<div class="application-page span-2-pages">
 						
 						<?php
 
@@ -296,14 +296,6 @@
 							echo practical_exam_results( $course );
 
 						?>
-
-						<div class="application-signatures">
-
-							<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
-
-							<?php echo instructor_signature( $instructor ); ?>
-
-						</div>
 						
 					</div>
 
