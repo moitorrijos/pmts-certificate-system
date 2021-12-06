@@ -17,10 +17,14 @@
 		$start_date = DateTime::createFromFormat( 'Ymd', get_sub_field('start_date_app') );
 		$end_date = DateTime::createFromFormat( 'Ymd', get_sub_field('end_date_app') );
 		$observation_test =	get_field( 'observation_test', $course->ID );
+		$practical_exam_results = get_field('practical_exam_results', $course->ID);
+
 		$february_2018 = DateTime::createFromFormat('Ymd', '20180228');
 
-		if ( $observation_test ) {
+		if ( $practical_exam_results ) {
 			$total_page_number = '5';
+		} else if ($observation_test) {
+			$total_page_number = '4';
 		} else {
 			$total_page_number = '3';
 		}
@@ -280,7 +284,7 @@
 
 				<?php if ( $observation_test ) : ?>
 
-					<div class="application-page span-2-pages">
+					<div class="application-page <?php if ($practical_exam_results) { echo 'span-2-pages'; } ?>">
 						
 						<?php
 
@@ -296,35 +300,51 @@
 							echo practical_exam_results( $course );
 
 						?>
+
+						<?php if (!$practical_exam_results) : ?>
+
+							<div class="application-signatures">
+
+								<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
+
+								<?php echo instructor_signature( $instructor ); ?>
+
+							</div>
+
+						<?php endif; ?>
 						
 					</div>
 
-					<div class="application-page">
+					<?php if ($practical_exam_results) : ?>
 
-						<?php
+						<div class="application-page">
 
-							echo pmtscs_header_for_print( 'R-FO1-04', $course, $instructor, '4', $total_page_number);
+							<?php
 
-							echo student_info_short_table( 
-								$participants_name, 
-								$participants_id, 
-								$place_of_training, 
-								$end_date 
-							);
-							
-							get_template_part( 'templates/training-docs/qualification_criteria' );
+								echo pmtscs_header_for_print( 'R-FO1-04', $course, $instructor, '4', $total_page_number);
 
-						?>
+								echo student_info_short_table( 
+									$participants_name, 
+									$participants_id, 
+									$place_of_training, 
+									$end_date 
+								);
+								
+								get_template_part( 'templates/training-docs/qualification_criteria' );
 
-						<div class="application-signatures">
+							?>
 
-							<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
+							<div class="application-signatures">
 
-							<?php echo instructor_signature( $instructor ); ?>
+								<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
+
+								<?php echo instructor_signature( $instructor ); ?>
+
+							</div>
 
 						</div>
 
-					</div>
+					<?php endif; ?>
 
 				<?php endif; ?>
 
@@ -338,7 +358,7 @@
 
 						} else if ( $observation_test ) {
 							
-							echo pmtscs_header_for_print( 'R-DE2-01', $course, $instructor, '5', $total_page_number); 
+							echo pmtscs_header_for_print( 'R-DE2-01', $course, $instructor, $total_page_number, $total_page_number); 
 
 						} else {
 

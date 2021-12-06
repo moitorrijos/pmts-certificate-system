@@ -12,43 +12,70 @@ function practical_exam_results( $course_obj ){
 		<h3 class="short-short">Resultados de Examen Práctico/ <small>Practical Exam Results</small></h3>
 	</div>
 	<table class="practical-eval">
+		<?php
+			$observation_test_questions = get_post_meta( $course_obj->ID, 'observation_test', true);
+			$practical_exam_results = get_post_meta($course_obj->ID, 'practical_exam_results', true);
+		?>
 		<thead>
-			<tr>
-				<th class="no">
-					No.
-				</th>
-				<th class="description">
-					Performance Standard
-				</th>
-				<th class="description">
-					Performance Criteria
-				</th>
-				<th class="done">
-					Done<br>&#10003;
-				</th>
-				<th class="done">
-					Not Done<br>X
-				</th>
-			</tr>
+			<?php if (!$practical_exam_results) : ?>
+				<tr>
+					<th class="description">
+						Descripción/ Description
+					</th>
+					<th>
+						Yes<br>✓
+					</th>
+					<th>
+						No<br>X
+					</th>
+					<th class="description">
+						Observaciones/ Remarks
+					</th>
+				</tr>
+			<?php else : ?>
+				<tr>
+					<th class="no">
+						No.
+					</th>
+					<th class="description">
+						Performance Standard
+					</th>
+					<th class="description">
+						Performance Criteria
+					</th>
+					<th class="done">
+						Done<br>&#10003;
+					</th>
+					<th class="done">
+						Not Done<br>X
+					</th>
+				</tr>
+			<?php endif; ?>
 		</thead>
 		<tbody>
-			<?php
-				$practical_exam_results = get_post_meta($course_obj->ID, 'practical_exam_results', true);
-				for ($i=0; $i < $practical_exam_results; $i++) :
-			?>
-				<tr>
-					<td><?php echo $i+1; ?></td>
-					<td><?php echo get_post_meta($course_obj->ID, 'practical_exam_results_' . $i . '_performance_standard', true); ?></td>
-					<td><?php echo get_post_meta($course_obj->ID, 'practical_exam_results_' . $i . '_performance_criteria', true); ?></td>
-					<td></td><td></td>
-				</tr>
-			<?php endfor; ?>
+			<?php if (!$practical_exam_results): ?>
+				<?php for ($i = 0; $i < $observation_test_questions; $i++) : ?>
+					<tr>
+						<td><?php echo get_post_meta($course_obj->ID, 'observation_test_' . $i . '_practical_exam_question', true); ?></td>
+						<td></td><td></td><td></td>
+					</tr>
+				<?php endfor; ?>
+			<?php else : ?>
+				<?php for ($i=0; $i < $practical_exam_results; $i++) : ?>
+					<tr>
+						<td><?php echo $i+1; ?></td>
+						<td><?php echo get_post_meta($course_obj->ID, 'practical_exam_results_' . $i . '_performance_standard', true); ?></td>
+						<td><?php echo get_post_meta($course_obj->ID, 'practical_exam_results_' . $i . '_performance_criteria', true); ?></td>
+						<td></td><td></td>
+					</tr>
+				<?php endfor; ?>
 				<tr>
 					<td colspan="3" class="right-align">
 						<strong>Total Score</strong>
 					</td>
 					<td colspan="2"></td>
 				</tr>
+			<?php endif; ?>
 		</tbody>
 	</table>
 
