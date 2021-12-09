@@ -2440,6 +2440,8 @@ table.report-table tbody tr td.darken-bg {
 .application-page ul, .application-page ol {
 	margin: 4px 0;
 	padding-left: 16px;
+	font-size: inherit;
+	line-height: inherit;
 }
 
 .application-page ul li, .application-page ol li {

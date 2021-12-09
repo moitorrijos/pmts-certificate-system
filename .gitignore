@@ -69,3 +69,5 @@ config.codekit3
 
 ## Ignore css
 css
+css/main.css
+css/main.css.map

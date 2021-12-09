@@ -99,6 +99,8 @@
 	ul, ol {
 		margin: 4px 0;
 		padding-left: 16px;
+		font-size: inherit;
+		line-height: inherit;
 		
 		li {
 			font-family: $report-font-family;
