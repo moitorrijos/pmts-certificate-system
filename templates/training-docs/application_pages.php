@@ -20,8 +20,9 @@
 		$practical_exam_results = get_field('practical_exam_results', $course->ID);
 
 		$february_2018 = DateTime::createFromFormat('Ymd', '20180228');
+		$january_2022 = DateTime::createFromFormat('Ymd', '20220101');
 
-		if ( $practical_exam_results ) {
+		if ( $practical_exam_results && ($start_date->getTimestamp() > $january_2022->getTimestamp()) ) {
 			$total_page_number = '5';
 		} else if ($observation_test) {
 			$total_page_number = '4';
@@ -54,7 +55,15 @@
 							} else {
 								get_template_part( 'templates/training-docs/terms-conditions' );
 							}
-							get_template_part( 'templates/training-docs/evaluation-score', '', array( 'observation_test' => $observation_test ) );
+							get_template_part( 
+								'templates/training-docs/evaluation-score',
+								'',
+								array(
+									'practical_exam_results' => $practical_exam_results,
+									'start_date' => $start_date,
+									'january_2022' => $january_2022
+								)
+							);
 					?>
 
 					<div class="application-signatures">
@@ -89,7 +98,7 @@
 						$exam_date_1
 					);
 
-					get_template_part( 'templates/training-docs/exam_answers' );
+					get_template_part( 'templates/training-docs/exam_answers', '', array('start_date' => $start_date, 'january_2022' => $january_2022) );
 
 					echo '<div class="application-signatures">';
 
@@ -110,7 +119,7 @@
 						$exam_date_2
 					);
 
-					get_template_part( 'templates/training-docs/exam_answers' );
+					get_template_part( 'templates/training-docs/exam_answers', '', array('start_date' => $start_date, 'january_2022' => $january_2022) );
 
 					echo '<div class="application-signatures">';
 
@@ -131,7 +140,7 @@
 						$exam_date_3
 					);
 
-					get_template_part( 'templates/training-docs/exam_answers' );
+					get_template_part( 'templates/training-docs/exam_answers', '', array('start_date' => $start_date, 'january_2022' => $january_2022) );
 
 					echo '<div class="application-signatures">';
 
@@ -152,7 +161,7 @@
 						$exam_date_4
 					);
 
-					get_template_part( 'templates/training-docs/exam_answers' );
+					get_template_part( 'templates/training-docs/exam_answers', '', array('start_date' => $start_date, 'january_2022' => $january_2022) );
 
 					echo '<div class="application-signatures">';
 
@@ -180,7 +189,7 @@
 						$exam_date_1
 					);
 
-					get_template_part( 'templates/training-docs/exam_answers' );
+					get_template_part( 'templates/training-docs/exam_answers', '', array('start_date' => $start_date, 'january_2022' => $january_2022) );
 
 					echo '<div class="application-signatures">';
 
@@ -201,7 +210,7 @@
 						$exam_date_2
 					);
 
-					get_template_part( 'templates/training-docs/exam_answers' );
+					get_template_part( 'templates/training-docs/exam_answers', '', array('start_date' => $start_date, 'january_2022' => $january_2022) );
 
 					echo '<div class="application-signatures">';
 
@@ -222,7 +231,7 @@
 						$exam_date_3
 					);
 
-					get_template_part( 'templates/training-docs/exam_answers' );
+					get_template_part( 'templates/training-docs/exam_answers', '', array('start_date' => $start_date, 'january_2022' => $january_2022) );
 
 					echo '<div class="application-signatures">';
 
@@ -243,7 +252,7 @@
 						$exam_date_4
 					);
 
-					get_template_part( 'templates/training-docs/exam_answers' );
+					get_template_part( 'templates/training-docs/exam_answers', '', array('start_date' => $start_date, 'january_2022' => $january_2022) );
 
 					echo '<div class="application-signatures">';
 
@@ -268,7 +277,7 @@
 								$end_date 
 							);
 
-							get_template_part( 'templates/training-docs/exam_answers' );					
+							get_template_part( 'templates/training-docs/exam_answers', '', array('start_date' => $start_date, 'january_2022' => $january_2022) );					
 
 						?>
 
@@ -284,7 +293,9 @@
 
 				<?php if ( $observation_test ) : ?>
 
-					<div class="application-page <?php if ($practical_exam_results) { echo 'span-2-pages'; } ?>">
+					<div class="application-page
+						<?php if ($practical_exam_results && ($start_date->getTimestamp() > $january_2022->getTimestamp())) { echo 'span-2-pages'; } ?>"
+					>
 						
 						<?php
 
@@ -297,7 +308,7 @@
 								$end_date 
 							);
 
-							echo practical_exam_results( $course );
+							echo practical_exam_results( $course, $start_date, $january_2022 );
 
 						?>
 
@@ -315,7 +326,7 @@
 						
 					</div>
 
-					<?php if ($practical_exam_results) : ?>
+					<?php if (($start_date->getTimestamp() > $january_2022->getTimestamp()) && $practical_exam_results) : ?>
 
 						<div class="application-page">
 

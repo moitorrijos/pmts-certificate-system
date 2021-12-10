@@ -2,7 +2,7 @@
 
   <h3>QUALIFICATION CRITERIA</h3>
 
-  <ol>
+  <ul>
     <li>The <strong>minimum percentage</strong> of approval for the Practical Test is <strong>71%</strong></li>
     <li>For the case of Theoretical and Practical Course, the Rating Weight Percentage to evaluate is: <strong>Theoretical 40% and Practical 60%</strong>. </li>
     <li>Performance Standard shall be graded <strong>DONE</strong> or <strong>NOT DONE</strong>, for each criteria.</li>
@@ -11,7 +11,7 @@
     <li>A candidate who fails in the same task (3) times, shall not be allowed to re-take the exam, until the complete again the training course.</li>
     <li>In the case the candidate obtain less than 71pts, should complete again the training course and repeat the practical exam, to comply with the performance criteria</li>
     <li>Assessment Final Criteria shall be graded <strong>COMPETENT</strong> or <strong>NOT COMPETENT</strong></li>
-  </ol>
+  </ul>
 
 </div>
 

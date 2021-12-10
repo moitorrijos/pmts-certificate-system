@@ -3091,6 +3091,7 @@ ul.authentic-certificate li small {
 	}
 	.application-for-print .application-page .exam-answers ol {
 		margin-bottom: 0.225in;
+		font-size: 10pt;
 	}
 	.application-for-print .application-page .exam-answers ol li {
 		margin: 0 0 0.125in;

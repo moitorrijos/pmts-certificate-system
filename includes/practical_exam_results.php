@@ -1,11 +1,25 @@
 <?php
 
-function practical_exam_results( $course_obj ){
+function practical_exam_results( $course_obj, $start_date, $january_2022 ){
 
 	?>
 
 	<div class="required-documents">
-		<h4>Practical Exam is based on the Criteria for Evaluating Competence (Column 4) of the STCW Code as amended.</h4>
+		<?php if ($practical_exam_results && ($start_date->getTimestamp() > $january_2022->getTimestamp())) : ?>
+			<h4>Practical Exam is based on the Criteria for Evaluating Competence (Column 4) of the STCW Code as amended.</h4>
+		<?php else : ?>
+			<ul>
+				<li>
+				<strong>The Exam must be taken in classroom and individually.</strong> / El Examen es tomado presencialmente e individualmente.
+				</li>
+				<li>
+					<strong>The participant has up to 60 minutes to finish this test. After 60 minutes the Assessor can give you 10 extra minutes. Test must be carried out without assistance.</strong> El participante tiene hasta 60 minutos para terminar esta prueba. Después de 60 minutos el evaluador puede darle 10 minutos extra. La prueba debe realizarse sin ayuda.
+				</li>
+				<li>
+				<strong>Must obtain more than 70% of the answers correctly to pass.</strong> Se debe obtener mas de 70% de las respuestas correctas para pasar.
+				</li>
+			</ul>
+		<?php endif; ?>
 	</div>
 
 	<div class="exam-answers">
@@ -17,22 +31,7 @@ function practical_exam_results( $course_obj ){
 			$practical_exam_results = get_post_meta($course_obj->ID, 'practical_exam_results', true);
 		?>
 		<thead>
-			<?php if (!$practical_exam_results) : ?>
-				<tr>
-					<th class="description">
-						Descripción/ Description
-					</th>
-					<th>
-						Yes<br>✓
-					</th>
-					<th>
-						No<br>X
-					</th>
-					<th class="description">
-						Observaciones/ Remarks
-					</th>
-				</tr>
-			<?php else : ?>
+			<?php if ($practical_exam_results && ($start_date->getTimestamp() > $january_2022->getTimestamp())) : ?>
 				<tr>
 					<th class="no">
 						No.
@@ -50,23 +49,38 @@ function practical_exam_results( $course_obj ){
 						Not Done<br>X
 					</th>
 				</tr>
+			<?php else : ?>
+				<tr>
+					<th class="description">
+						Descripción/ Description
+					</th>
+					<th>
+						Yes<br>✓
+					</th>
+					<th>
+						No<br>X
+					</th>
+					<th class="description">
+						Observaciones/ Remarks
+					</th>
+				</tr>
 			<?php endif; ?>
 		</thead>
 		<tbody>
-			<?php if (!$practical_exam_results): ?>
-				<?php for ($i = 0; $i < $observation_test_questions; $i++) : ?>
-					<tr>
-						<td><?php echo get_post_meta($course_obj->ID, 'observation_test_' . $i . '_practical_exam_question', true); ?></td>
-						<td></td><td></td><td></td>
-					</tr>
-				<?php endfor; ?>
-			<?php else : ?>
-				<?php for ($i=0; $i < $practical_exam_results; $i++) : ?>
+			<?php if ($practical_exam_results && ($start_date->getTimestamp() > $january_2022->getTimestamp())): ?>
+				<?php for ($i = 0; $i < $practical_exam_results; $i++) : ?>
 					<tr>
 						<td><?php echo $i+1; ?></td>
 						<td><?php echo get_post_meta($course_obj->ID, 'practical_exam_results_' . $i . '_performance_standard', true); ?></td>
 						<td><?php echo get_post_meta($course_obj->ID, 'practical_exam_results_' . $i . '_performance_criteria', true); ?></td>
 						<td></td><td></td>
+					</tr>
+				<?php endfor; ?>
+			<?php else : ?>
+				<?php for ($i=0; $i < $observation_test_questions; $i++) : ?>
+					<tr>
+						<td><?php echo get_post_meta($course_obj->ID, 'observation_test_' . $i . '_practical_exam_question', true); ?></td>
+						<td></td><td></td><td></td>
 					</tr>
 				<?php endfor; ?>
 				<tr>
