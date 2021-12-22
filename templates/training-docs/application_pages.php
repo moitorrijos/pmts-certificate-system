@@ -59,7 +59,7 @@
 								'templates/training-docs/evaluation-score',
 								'',
 								array(
-									'practical_exam_results' => $practical_exam_results,
+									'observation_test' => $observation_test,
 									'start_date' => $start_date,
 									'january_2022' => $january_2022
 								)

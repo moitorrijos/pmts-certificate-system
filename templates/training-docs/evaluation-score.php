@@ -4,7 +4,7 @@
 </div>
 
 <?php 
-	$practical_exam_results = $args['practical_exam_results'];
+	$observation_test = $args['observation_test'];
 	$start_date = $args['start_date'];
 	$january_2022 = $args['january_2022'];
 ?>
@@ -14,10 +14,10 @@
 		<tr>
 			<th>Theoretical <br>Evaluation<br>
 				<?php if ($start_date->getTimestamp() > $january_2022->getTimestamp()) : ?>
-					<?php if ($practical_exam_results) echo '(40%)'; else echo '(100%)'; ?>
+					<?php if ($observation_test) echo '(40%)'; else echo '(100%)'; ?>
 				<?php endif; ?>
 			</th>
-			<?php if ($practical_exam_results) : ?>
+			<?php if ($observation_test) : ?>
 				<th>Practical <br>Evaluation <br>
 					<?php if ($start_date->getTimestamp() > $january_2022->getTimestamp()) echo '(60%)'; ?>
 				</th>
@@ -29,7 +29,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php if ($practical_exam_results)  { 
+		<?php if ($observation_test)  { 
 			echo create_table_with(4, 1); }
 			else { echo create_table_with(3, 1); }
 		?>
