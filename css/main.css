@@ -2588,7 +2588,7 @@ p.super-short.super-short {
 table.student-info {
 	width: 668px;
 	border: 4px groove #626262;
-	margin-bottom: 16px;
+	margin-bottom: 8px;
 }
 
 table.student-info td {
@@ -3061,7 +3061,7 @@ ul.authentic-certificate li small {
 	}
 	.application-for-print .application-page {
 		width: 8in;
-		height: 10.5in;
+		height: 11in;
 		margin: 0 auto;
 		page-break-before: always;
 	}
