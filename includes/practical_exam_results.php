@@ -60,7 +60,7 @@ function practical_exam_results( $course_obj, $start_date, $january_2022 ){
 					<th>
 						No<br>X
 					</th>
-					<th class="description">
+					<th class="remarks">
 						Observaciones/ Remarks
 					</th>
 				</tr>

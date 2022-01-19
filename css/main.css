@@ -2522,7 +2522,11 @@ table.report-table tbody tr td.darken-bg {
 }
 
 .application-page table.practical-eval th.description {
-	width: 30%;
+	width: 45%;
+}
+
+.application-page table.practical-eval th.remarks {
+	width: 25%;
 }
 
 .application-page table.practical-eval th.done {
