@@ -56,6 +56,7 @@ require get_template_directory() . '/acf-custom-fields/resolutions-fields.php';
 require get_template_directory() . '/acf-custom-fields/reports-fields.php';
 require get_template_directory() . '/acf-custom-fields/initial-reports-fields.php';
 require get_template_directory() . '/acf-custom-fields/instructors-fields.php';
+require get_template_directory() . '/acf-custom-fields/prepare-total-courses-fields.php';
 
 /**
  * Custom Taxonomies
