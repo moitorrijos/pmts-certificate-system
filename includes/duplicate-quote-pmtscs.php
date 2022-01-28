@@ -10,15 +10,17 @@ function pmtscs_ajax_duplicate_quote() {
 		$courses_fields = get_field('courses', $post_id);
 		$other_services_fields = get_field('other_services', $post_id);
 
-		if ( $courses_fields ) :
-
+		if ( $courses_fields ) {
+			
 			$_SESSION['courses'] = $courses_fields;
 
-		elseif ( $other_services_fields ) :
+		}
+
+		if ( $other_services_fields ) {
 
 			$_SESSION['other_services'] = $other_services_fields;
 
-		endif;
+		}
 
 		return wp_send_json_success();
 
