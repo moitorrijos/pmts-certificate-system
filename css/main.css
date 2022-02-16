@@ -3071,6 +3071,9 @@ ul.authentic-certificate li small {
 	.application-for-print .application-page.span-2-pages {
 		height: calc(10.5in * 2);
 	}
+	.application-for-print .application-page.span-3-pages {
+		height: calc(10.5in * 3);
+	}
 	.application-for-print .application-page.gmdss-evaluation {
 		height: 13.5in;
 	}

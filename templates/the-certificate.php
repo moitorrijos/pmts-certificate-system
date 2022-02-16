@@ -406,7 +406,7 @@
 
 				?>
 
-<span class="undiesunpaddies">
+				<span class="undiesunpaddies">
 					<?php echo $resolution; ?>		
 				</span>
 

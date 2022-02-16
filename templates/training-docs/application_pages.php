@@ -294,7 +294,13 @@
 				<?php if ( $observation_test ) : ?>
 
 					<div class="application-page
-						<?php if ($practical_exam_results && ($start_date->getTimestamp() > $january_2022->getTimestamp())) { echo 'span-2-pages'; } ?>"
+						<?php if ($practical_exam_results && ($start_date->getTimestamp() > $january_2022->getTimestamp())) {
+							if ($course->ID === 96) {
+								echo 'span-3-pages';
+							} else {
+								echo 'span-2-pages';
+							}
+						} ?>"
 					>
 						
 						<?php
@@ -326,7 +332,7 @@
 						
 					</div>
 
-					<?php if (($start_date->getTimestamp() > $january_2022->getTimestamp()) && $practical_exam_results) : ?>
+					<?php if ($practical_exam_results && ($start_date->getTimestamp() > $january_2022->getTimestamp())) : ?>
 
 						<div class="application-page">
 
