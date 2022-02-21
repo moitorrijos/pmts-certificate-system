@@ -437,13 +437,17 @@
 
 				<span class="undiesunpaddies">
 
-					 <?php echo $issue_date->format('d F Y'); ?>
+					 <?php echo $issue_date->format('d F Y'); ?>.
 
 				</span>
+
+			<?php if ($course->ID !== 81) : ?>
 
 			</p>
 
 			<p class="short">
+
+			<?php endif; ?>
 
 				This certificate is valid until
 
