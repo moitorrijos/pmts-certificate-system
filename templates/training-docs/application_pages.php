@@ -22,8 +22,10 @@
 		$february_2018 = DateTime::createFromFormat('Ymd', '20180228');
 		$january_2022 = DateTime::createFromFormat('Ymd', '20220101');
 
-		if ( $practical_exam_results && ($start_date->getTimestamp() > $january_2022->getTimestamp()) ) {
-			$total_page_number = '5';
+		if ( $practical_exam_results && $start_date ) {
+			if ($start_date->getTimestamp() > $january_2022->getTimestamp()) {
+				$total_page_number = '5';
+			}
 		} else if ($observation_test) {
 			$total_page_number = '4';
 		} else {
@@ -294,7 +296,7 @@
 				<?php if ( $observation_test ) : ?>
 
 					<div class="application-page
-						<?php if ($practical_exam_results && ($start_date->getTimestamp() > $january_2022->getTimestamp())) {
+						<?php if ($start_date->getTimestamp() > $january_2022->getTimestamp() && $start_date) {
 							if ($course->ID === 96) {
 								echo 'span-3-pages';
 							} else {
