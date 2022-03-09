@@ -296,7 +296,7 @@
 				<?php if ( $observation_test ) : ?>
 
 					<div class="application-page
-						<?php if ($start_date->getTimestamp() > $january_2022->getTimestamp() && $start_date) {
+						<?php if ($start_date->getTimestamp() > $january_2022->getTimestamp() && $start_date && $practical_exam_results) {
 							if ($course->ID === 96) {
 								echo 'span-3-pages';
 							} else {
