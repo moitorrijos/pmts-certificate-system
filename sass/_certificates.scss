@@ -371,3 +371,7 @@ ul.pagination {
 	background-color: lighten($logout-red, 25%);
 	color: white;
 }
+
+.warningly {
+	color: $logout-red;
+}

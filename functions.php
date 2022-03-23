@@ -193,3 +193,19 @@ function initial_reports($end_date, $start_date, $instructor, $course) {
 	if ($courses_app_ids) { $courses_app_ids = array_map('flatten_array', $courses_app_ids); }
 	return $courses_app_ids;
 }
+
+function get_latest_resolution_expiry_date() {
+	$the_latest_resolution = new WP_Query(
+		array(
+			'post_type'			=> 'resolutions',
+			'posts_per_page'	=> 1,
+			'orderby'			=> 'date',
+			'order'				=> 'DESC',
+		)
+	);
+	$the_latest_resolution = $the_latest_resolution->posts;
+	$the_latest_resolution = $the_latest_resolution[0];
+	$the_latest_resolution_expiry_date = get_field('resolution_expiry_date', $the_latest_resolution->ID);
+	wp_reset_postdata();
+	return strtotime($the_latest_resolution_expiry_date);
+}

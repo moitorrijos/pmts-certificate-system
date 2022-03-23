@@ -33,6 +33,8 @@
 
 		<?php 
 
+			$latest_resolution_expiry_date = get_latest_resolution_expiry_date();
+
 			if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 
 			$participants_name = get_field('participants_name_app');
@@ -183,6 +185,7 @@
 								$start_date = DateTime::createFromFormat('Ymd', get_sub_field('start_date_app'));
 								$end_date = DateTime::createFromFormat('Ymd', get_sub_field('end_date_app'));
 								$issue_date = DateTime::createFromFormat('Ymd', get_sub_field('issue_date_app'));
+								$issue_date_timestamp = strtotime(get_sub_field('issue_date_app'));
 								$nightly_course = get_sub_field('night_app');
 
 								(boolean)$class_full = false;
@@ -259,7 +262,13 @@
 									?>
 								</td>
 								<td
-									class="centered course-issue-date <?php if( !$issue_date ) { echo 'reddy'; } ?>"
+									class="centered course-issue-date <?php 
+										if( !$issue_date ) { 
+											echo 'reddy'; 
+										} elseif ( $issue_date_timestamp > $latest_resolution_expiry_date) {
+											echo 'warningly';
+										}
+									?>"
 									data-issue_date="<?php if($issue_date) echo $issue_date->format('Ymd'); ?>"
 								>
 										<?php
@@ -292,6 +301,10 @@
 												<i class="fa fa-ban" aria-hidden="true"></i>
 											</span>
 										<?php elseif ( $participant_number > $class_limit ) : ?>
+											<span class="warningly">
+												<i class="fa fa-ban" aria-hidden="true"></i>
+											</span>
+										<?php elseif ( $issue_date_timestamp > $latest_resolution_expiry_date ) : ?>
 											<span class="warningly">
 												<i class="fa fa-ban" aria-hidden="true"></i>
 											</span>

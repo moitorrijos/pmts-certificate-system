@@ -2050,6 +2050,10 @@ ul.pagination li a {
 	color: white;
 }
 
+.warningly {
+	color: #C10000;
+}
+
 ul.fill-courses-dropdown {
 	list-style: none;
 	display: inline-block;
