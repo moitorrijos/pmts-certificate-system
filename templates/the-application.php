@@ -304,7 +304,7 @@
 											<span class="warningly">
 												<i class="fa fa-ban" aria-hidden="true"></i>
 											</span>
-										<?php elseif ( $issue_date_timestamp > $latest_resolution_expiry_date ) : ?>
+										<?php elseif ( $issue_date_timestamp >= $latest_resolution_expiry_date ) : ?>
 											<span class="warningly">
 												<i class="fa fa-ban" aria-hidden="true"></i>
 											</span>
