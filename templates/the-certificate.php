@@ -397,7 +397,7 @@
 							
 							if ( 
 								$issue_date_timestamp > $res['resolution_issue_date']
-								&& $issue_date_timestamp < $res['resolution_expiry_date']
+								&& $issue_date_timestamp <= $res['resolution_expiry_date']
 							) {
 								break;
 							}
