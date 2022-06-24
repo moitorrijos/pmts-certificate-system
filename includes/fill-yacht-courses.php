@@ -7,6 +7,7 @@ if( isset($_GET['action']) && $_GET['action'] == 'fill_yacht_courses') {
 	if ( $field['key'] == 'field_56e04a740c977' ){
 
 		$field['value'] = array(
+			array( 'field_56e04a980c978' => 93 ),
 			array( 'field_56e04a980c978' => 92 ),
 			array( 'field_56e04a980c978' => 91 ),
 			array( 'field_56e04a980c978' => 96 ),
