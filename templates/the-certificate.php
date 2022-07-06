@@ -223,6 +223,18 @@
 
 				<?php endif; ?>
 
+				<?php if ( $course->f_ti === 'REF' ) : ?>
+
+					<p class="short">
+
+						Scope:
+
+						<span class="undies bottom end-date">Refresher</span>
+
+					</p>
+
+				<?php endif; ?>
+
 			</div>
 
 				<div class="full dates">
