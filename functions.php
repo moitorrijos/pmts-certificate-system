@@ -97,6 +97,7 @@ require get_template_directory() . '/includes/update_certificate_by_app_data.php
 require get_template_directory() . '/includes/get_participant_number.php';
 require get_template_directory() . '/includes/certificate_exists.php';
 require get_template_directory() . '/includes/pmtscs_report_dates.php';
+
 /**
  * Ajax calls
  */
