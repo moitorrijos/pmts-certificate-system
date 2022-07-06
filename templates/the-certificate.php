@@ -230,9 +230,9 @@
 						Scope:
 
 					<span class="undies bottom">
-						<span class="three-stars">***</span>
+						<span>***</span>
 						Refresher
-						<span class="three-stars">***</span> 
+						<span>***</span> 
 					</span>
 
 					</p>
