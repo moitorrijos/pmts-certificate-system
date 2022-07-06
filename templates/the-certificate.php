@@ -453,7 +453,11 @@
 
 				</span>
 
-			<?php if ($course->ID !== 81) : ?>
+			<?php if ($course->ID !== 81 || $course->f_ti === 'REF') : ?>
+
+			</p>
+
+			<p class="short">
 
 			<?php endif; ?>
 
