@@ -229,7 +229,11 @@
 
 						Scope:
 
-						<span class="undies bottom end-date">Refresher</span>
+					<span class="undies bottom">
+						<span class="three-stars">***</span>
+						Refresher
+						<span class="three-stars">***</span> 
+					</span>
 
 					</p>
 

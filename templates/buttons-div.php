@@ -62,7 +62,7 @@ function pmtscs_button_value() {
 function pmtscs_button_link() {
 	if ( is_page_template( 'courses-page.php' ) ) {
 
-		$add_link = '#0';
+		$add_link = get_permalink( 64325 );
 		return $add_link;
 		
 	} elseif ( is_page_template( 'instructors-page.php' ) ) {

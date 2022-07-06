@@ -1359,6 +1359,10 @@ span.acf-spinner.acf-spinner.acf-spinner {
 	min-height: 110px;
 }
 
+.acf-field.acf-field.hidden {
+	display: none;
+}
+
 .updated {
 	padding: 10px 20px;
 	background: #bcebba;

@@ -12,8 +12,6 @@
 
 		<?php
 
-		// 	TODO: Add a button to add a new course.
-
 			get_template_part('templates/buttons-div');
 			get_template_part('templates/search-bar' );
 

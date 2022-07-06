@@ -148,7 +148,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => '',
+				'class' => 'hidden',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -171,7 +171,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => '',
+				'class' => 'hidden',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -194,7 +194,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => '',
+				'class' => 'hidden',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -217,7 +217,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => '',
+				'class' => 'hidden',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -240,7 +240,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => '',
+				'class' => 'hidden',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -263,7 +263,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => '',
+				'class' => 'hidden',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -286,7 +286,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => '',
+				'class' => 'hidden',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -309,7 +309,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => '',
+				'class' => 'hidden',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -322,6 +322,25 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
+		array(
+			'key' => 'field_62c60aae5af0e',
+			'label' => 'Is Refresher',
+			'name' => 'ref',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => 20,
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'ui' => 1,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+		),
 		array (
 			'key' => 'field_571a5f405bb83',
 			'label' => 'F-TI',
@@ -331,7 +350,7 @@ acf_add_local_field_group(array (
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => 50,
+				'width' => 40,
 				'class' => '',
 				'id' => '',
 			),
@@ -352,7 +371,7 @@ acf_add_local_field_group(array (
 			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array (
-				'width' => 50,
+				'width' => 40,
 				'class' => '',
 				'id' => '',
 			),
