@@ -453,7 +453,7 @@
 
 				</span>
 
-			<?php if ($course->ID !== 81 || $course->f_ti !== 'REF') : ?>
+			<?php if ($course->ID !== 81 && $course->f_ti !== 'REF') : ?>
 
 			</p>
 
