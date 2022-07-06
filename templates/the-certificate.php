@@ -455,10 +455,6 @@
 
 			<?php if ($course->ID !== 81) : ?>
 
-			</p>
-
-			<p class="short">
-
 			<?php endif; ?>
 
 				This certificate is valid until
