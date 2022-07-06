@@ -223,7 +223,7 @@
 
 				<?php endif; ?>
 
-				<?php if ( $course->f_ti === 'REF' ) : ?>
+				<?php if ( $course->ref ) : ?>
 
 					<p class="short">
 
@@ -457,7 +457,7 @@
 
 				</span>
 
-			<?php if ($course->ID !== 81 && $course->f_ti !== 'REF') : ?>
+			<?php if ($course->ID !== 81 && !$course->ref ) : ?>
 
 			</p>
 
