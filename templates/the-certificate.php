@@ -193,7 +193,12 @@
 
 						<?php elseif( (int)$course->ID === 81 ) : ?>
 
-							the provisions in the <span class="unpaddies">Chapter VII and IX</span> of the International Telecommunication Union Radio Regulations (ITU) adopted by <span class="unpaddies">Resolution ADM No. 181-2020</span> of November 25th, 2020. Regulated by the Regulation IV/2 and Table A-IV/2 of the International Convention on Standards of  Training, Certification and Watchkeeping for Seafarers 1978, as amended.
+							the provisions in the 
+							<span class="unpaddies">Chapter VII and IX</span> 
+							of the International Telecommunication Union Radio Regulations (ITU) adopted by 
+							<span class="unpaddies">Resolution ADM No. 181-2020</span> 
+							of November 25th, 2020. Regulated by the Regulation IV/2 and Table A-IV/2 of the International Convention on Standards of  Training, 
+							Certification and Watchkeeping for Seafarers 1978, as amended.
 
 						<?php else : ?>
 
@@ -374,6 +379,30 @@
 				By means of Resolution
 
 				<?php
+					
+					if ( $course->ref ) :
+
+				?>
+
+					<span class="undiesunpaddies">
+						No. DGGM-RPS-005-2022	
+					</span>
+
+					of
+
+					<span class="undiesunpaddies">
+						01 June 2022
+					</span>,
+
+					valid until
+					
+					<span class="undiesunpaddies">
+						01 December 2022
+					</span>.
+
+				<?php
+
+					else :
 
 					$resolutions = array();
 
@@ -438,6 +467,8 @@
 				</span>.
 
 			</p>
+
+			<?php endif; ?>
 
 			<p class="short">
 
