@@ -148,7 +148,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => 'hidden',
+				'class' => 'hidden-in-front',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -171,7 +171,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => 'hidden',
+				'class' => 'hidden-in-front',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -194,7 +194,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => 'hidden',
+				'class' => 'hidden-in-front',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -217,7 +217,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => 'hidden',
+				'class' => 'hidden-in-front',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -240,7 +240,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => 'hidden',
+				'class' => 'hidden-in-front',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -263,7 +263,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => 'hidden',
+				'class' => 'hidden-in-front',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -286,7 +286,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => 'hidden',
+				'class' => 'hidden-in-front',
 				'id' => '',
 			),
 			'default_value' => 0,
@@ -309,7 +309,7 @@ acf_add_local_field_group(array (
 			'conditional_logic' => 0,
 			'wrapper' => array (
 				'width' => 25,
-				'class' => 'hidden',
+				'class' => 'hidden-in-front',
 				'id' => '',
 			),
 			'default_value' => 0,

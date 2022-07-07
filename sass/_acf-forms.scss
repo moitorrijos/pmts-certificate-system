@@ -80,7 +80,7 @@ span.acf-spinner.acf-spinner.acf-spinner {
 }
 
 .acf-field.acf-field {
-	&.hidden {
+	&.hidden-in-front {
 		display: none;
 	}
 	border-bottom: 1px solid lighten($gray, 10%);
