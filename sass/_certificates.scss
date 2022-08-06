@@ -226,23 +226,9 @@
 		letter-spacing: 2px;
 	}
 
-	.qr-code {
-		margin: 0;
-		display: none;
-	}
-
-	.signature {
-		@extend .to-right;
-		@extend .quarter;
-		@extend .align-center;
-
-		margin-bottom: 40px;
-		display: none;
-	}
-
 }
 
-.certificate-codes.certificate-codes {
+.signature-cert-codes {
 	display: none;
 }
 

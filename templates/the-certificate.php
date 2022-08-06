@@ -516,20 +516,27 @@
 
 			</p>
 
-			<div class="qr-code">
-				<div id="qr-code"></div>
-				<div class="scan-to-verify">
-					<p>
-						Scan to Verify or Verify Online at http://pmts.com.pa/check
-						<br>
-						Rev. (05/18)
-					</p>
-				</div>
-			</div>
-
+			
 			<div class="signature-cert-codes">
+				<div class="qr-code">
+					<div id="qr-code"></div>
+					<div class="scan-to-verify">
+						<p>
+							Scan to Verify or Verify Online at http://pmts.com.pa/check
+							<br>
+							Rev. (05/18)
+						</p>
+					</div>
+				</div>
+
+				<div class="pmts-blue-seal">
+					<img src="<?php echo IMAGESPATH; ?>/pmts-blue-seal.png" alt="PMTS Blue Seal">
+				</div>
 				
 				<div class="signature">
+					<picture>
+						<img src="<?php echo IMAGESPATH; ?>/firma-agustin-gonzalez66.svg" alt="Firma Director Académico">
+					</picture>
 					<hr>
 					<p class="short-margin">Agustin Gonzalez</p>
 					<p class="short-margin">Academic Director</p>

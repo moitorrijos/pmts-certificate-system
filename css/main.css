@@ -818,7 +818,7 @@ form input[type="checkbox"] {
 	text-align: right;
 }
 
-.align-center, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
+.align-center {
 	text-align: center;
 }
 
@@ -1911,7 +1911,7 @@ p.warning-full.warning-full.warning-full i.fa {
 	width: 60%;
 }
 
-.certificate .quarter, .application-form .quarter, .report .quarter, .application-page .quarter, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
+.certificate .quarter, .application-form .quarter, .report .quarter, .application-page .quarter {
 	width: 25%;
 }
 
@@ -1923,7 +1923,7 @@ p.warning-full.warning-full.warning-full i.fa {
 	justify-content: space-between;
 }
 
-.certificate .to-right, .application-form .to-right, .report .to-right, .application-page .to-right, .certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
+.certificate .to-right, .application-form .to-right, .report .to-right, .application-page .to-right {
 	float: right;
 }
 
@@ -1931,17 +1931,7 @@ p.warning-full.warning-full.warning-full i.fa {
 	letter-spacing: 2px;
 }
 
-.certificate .qr-code, .application-form .qr-code, .report .qr-code, .application-page .qr-code {
-	margin: 0;
-	display: none;
-}
-
-.certificate .signature, .application-form .signature, .report .signature, .application-page .signature {
-	margin-bottom: 40px;
-	display: none;
-}
-
-.certificate-codes.certificate-codes {
+.signature-cert-codes {
 	display: none;
 }
 
@@ -2902,10 +2892,7 @@ ul.authentic-certificate li small {
 	}
 	.qr-code.qr-code.qr-code {
 		display: block;
-		position: absolute;
-		bottom: 0;
-		left: 0.55in;
-		width: 2in;
+		width: 1.75in;
 	}
 	.qr-code.qr-code.qr-code p {
 		font-family: "britannic-bold";
@@ -2917,14 +2904,17 @@ ul.authentic-certificate li small {
 		height: 1in;
 	}
 	.signature.signature {
-		background-image: url(../images/firma-agustin-gonzalez66.svg);
-		background-repeat: no-repeat;
-		background-position: center top;
 		padding-top: 36px;
 		display: block;
 		font-size: 9pt;
 		width: 2.25in;
 		margin-bottom: 0.05in;
+	}
+	.signature.signature picture {
+		width: 100%;
+		height: auto;
+		position: relative;
+		top: 0.125in;
 	}
 	.signature.signature p.short-margin {
 		font-family: "britannic-bold";
@@ -2933,15 +2923,28 @@ ul.authentic-certificate li small {
 		margin: 0;
 	}
 	.signature-cert-codes {
+		display: block;
 		position: absolute;
 		bottom: 0;
+		left: 0;
 		right: 0;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		padding-left: 0.5in;
+		padding-right: 0.5in;
+	}
+	.signature-cert-codes .pmts-blue-seal {
+		width: 1in;
+		height: 1in;
+		position: relative;
+		right: -1.25in;
+	}
+	.signature-cert-codes .pmts-blue-seal img {
 		width: 100%;
-		padding-right: 1in;
-		background-image: url(../images/pmts-blue-seal.png);
-		background-repeat: no-repeat;
-		background-position: 370px center;
-		background-size: 1in;
+		height: auto;
+		object-fit: cover;
 	}
 	.certificate-codes.certificate-codes {
 		display: block;
