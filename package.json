@@ -9,7 +9,8 @@
     "watch": "npm run sass & npm run browsersync",
     "compile:css": "node-sass sass/ -o ./css --source-map true --output-style expanded --indent-type tab --indent-width 1",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
-    "lint:js": "wp-scripts lint-js 'js/*.js'"
+    "lint:js": "wp-scripts lint-js 'js/*.js'",
+    "bundle": "dir-archiver --src . --dest ../pmts-certificate-system-2.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   "homepage": "https://bitbucket.org/juanmtorrijos/pmts-certificate-system#readme",
   "devDependencies": {
     "@wordpress/scripts": "^10.0.0",
+    "dir-archiver": "^2.1.0",
     "node-sass": "^4.14.1"
   }
 }
