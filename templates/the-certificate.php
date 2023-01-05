@@ -250,7 +250,7 @@
 					
 					<div class="half">
 						
-		                <p class="short">Start Course Date:
+							<p class="short">Start Course Date:
 
 							<span class="undies bottom start-date"><?php echo $start_date->format('d F Y'); ?></span>
 
@@ -382,22 +382,67 @@
 					
 					if ( $course->ref ) :
 
+					$ref_resolutions = array();
+
+					$the_ref_resolutions = new WP_Query(array(
+						'post_type' => 'ref_resolutions',
+						'posts_per_page' => -1,
+						'order'	=> 'ASC',
+					));
+
+					if ( $the_ref_resolutions->have_posts() ) :
+
+						while ( $the_ref_resolutions->have_posts() ) :
+
+							$the_ref_resolutions->the_post();
+
+							array_push(
+								$ref_resolutions,
+								array(
+									'ref_resolution_id' => get_the_ID(),
+									'ref_resolution_name' => get_the_title(),
+									'ref_resolution_issue_date' => strtotime( get_field('ref_resolution_issue_date') ),
+									'ref_resolution_expiry_date' => strtotime( get_field('ref_resolution_expiry_date') )
+									)
+							);
+
+						endwhile; endif; wp_reset_postdata();
+
+						$ref_resolution = '';
+						$ref_resolution_date = 1;
+						$ref_resolution_expiry_date = 1;
+						
+						foreach ($ref_resolutions as $ref_res) {
+							
+							$ref_resolution = $ref_res['ref_resolution_name'];
+							$ref_resolution_date = $ref_res['ref_resolution_issue_date'];
+							$ref_resolution_expiry_date = $ref_res['ref_resolution_expiry_date'];
+							
+							if ( 
+								$ref_issue_date_timestamp > $ref_res['resolution_issue_date']
+								&& $ref_issue_date_timestamp <= $ref_res['resolution_expiry_date']
+							) {
+								break;
+							}
+
+						}
+
 				?>
 
 					<span class="undiesunpaddies">
-						No. DGGM-RPS-005-2022	
+						<?php echo $ref_resolution; ?>
 					</span>
 
 					of
 
 					<span class="undiesunpaddies">
-						01 June 2022
+						<?php echo date('j F Y', $ref_resolution_date); ?>
 					</span>,
 
 					valid until
 					
 					<span class="undiesunpaddies">
-						01 December 2022
+						<?php echo date('j F Y', $ref_resolution_expiry_date); ?>
 					</span>.
 
 				<?php

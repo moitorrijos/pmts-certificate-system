@@ -3,11 +3,11 @@
 if( function_exists('acf_add_local_field_group') ):
 
 	acf_add_local_field_group(array(
-		'key' => 'group_60e33c377c1b5',
-		'title' => 'Resolutions',
+		'key' => 'group_60e33c377c1b5asdfh',
+		'title' => 'Refresher Resolutions',
 		'fields' => array(
 			array(
-				'key' => 'field_60e33c553ad6e',
+				'key' => 'field_60e33c553ad6easdfh',
 				'label' => 'Date of issuance',
 				'name' => 'ref_resolution_issue_date',
 				'type' => 'date_picker',
@@ -24,7 +24,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'first_day' => 1,
 			),
 			array(
-				'key' => 'field_60e33c7f3ad6f',
+				'key' => 'field_60e33c7f3ad6fasdfh',
 				'label' => 'Expiry date',
 				'name' => 'ref_resolution_expiry_date',
 				'type' => 'date_picker',
@@ -46,7 +46,7 @@ if( function_exists('acf_add_local_field_group') ):
 				array(
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => 'resolutions',
+					'value' => 'ref_resolutions',
 				),
 			),
 		),
