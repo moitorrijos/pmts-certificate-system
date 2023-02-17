@@ -575,13 +575,9 @@
 				</div>
 
 				<div class="pmts-blue-seal">
-					<img src="<?php echo IMAGESPATH; ?>/pmts-blue-seal.png" alt="PMTS Blue Seal">
 				</div>
 				
 				<div class="signature">
-					<picture>
-						<img src="<?php echo IMAGESPATH; ?>/firma-agustin-gonzalez66.svg" alt="Firma Director Académico">
-					</picture>
 					<hr>
 					<p class="short-margin">Agustin Gonzalez</p>
 					<p class="short-margin">Academic Director</p>

@@ -199,18 +199,15 @@
 	}
 
 	.signature.signature {
+		background: {
+			image: url('../images/firma-agustin-gonzalez66.svg');
+			repeat: no-repeat;
+		}
 		padding-top: 36px;
 		display: block;
 		font-size: 9pt;
 		width: 2.25in;
 		margin-bottom: 0.05in;
-
-		picture {
-			width: 100%;
-			height: auto;
-			position: relative;
-			top: 0.125in;
-		}
 
 		p.short-margin {
 			font-family: $certificate-name;
@@ -234,10 +231,16 @@
 		padding-right: 0.5in;
 
 		.pmts-blue-seal {
+			background: {
+				image: url('../images/pmts-blue-seal.png');
+				repeat: no-repeat;
+				size: cover;
+				position: center;
+			}
 			width: 1in;
 			height: 1in;
 			position: relative;
-			right: -1.25in;
+			right: -1in;
 
 			img {
 				width: 100%;
