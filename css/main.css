@@ -3076,6 +3076,7 @@ ul.authentic-certificate li small {
 	.application-for-print .application-page {
 		width: 8in;
 		height: 11in;
+		overflow: hidden;
 		margin: 0 auto;
 		page-break-before: always;
 	}

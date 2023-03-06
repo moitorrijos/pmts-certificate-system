@@ -425,6 +425,7 @@
 			
 			width: 8in;
 			height: 11in;
+			overflow: hidden;
 
 			&.span-2-pages {
 				height: calc(10.5in * 2);
