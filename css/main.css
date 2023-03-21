@@ -2817,7 +2817,6 @@ ul.authentic-certificate li small {
 		display: none;
 	}
 	table {
-		page-break-before: avoid;
 		color: black;
 		position: relative;
 	}
@@ -2830,9 +2829,7 @@ ul.authentic-certificate li small {
 		padding: 0.1in;
 	}
 	table tr {
-		page-break-inside: avoid;
 		-webkit-region-break-inside: avoid;
-		page-break-after: avoid;
 	}
 	table td {
 		color: black;
@@ -3081,10 +3078,10 @@ ul.authentic-certificate li small {
 		page-break-before: always;
 	}
 	.application-for-print .application-page.span-2-pages {
-		height: calc(10.5in * 2);
+		height: auto;
 	}
 	.application-for-print .application-page.span-3-pages {
-		height: calc(10.5in * 3);
+		height: auto;
 	}
 	.application-for-print .application-page.gmdss-evaluation {
 		height: 13.5in;

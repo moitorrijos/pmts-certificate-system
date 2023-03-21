@@ -98,7 +98,6 @@
 	}
 
 	table {
-		page-break-before:avoid;
 		color: black;
 		position: relative;
 		
@@ -113,9 +112,7 @@
 		}
 
 		tr    { 
-			page-break-inside:avoid; 
 			-webkit-region-break-inside: avoid;
-			page-break-after:avoid;
 		}
 
 		td {
@@ -428,11 +425,11 @@
 			overflow: hidden;
 
 			&.span-2-pages {
-				height: calc(10.5in * 2);
+				height: auto;
 			}
 
 			&.span-3-pages {
-				height: calc(10.5in * 3);
+				height: auto;
 			}
 
 			&.gmdss-evaluation {
