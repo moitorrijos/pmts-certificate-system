@@ -2741,6 +2741,7 @@ ul.authentic-certificate li small {
 @media only print and (color) {
 	* {
 		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
 	}
 	body {
 		display: block;
@@ -2755,14 +2756,13 @@ ul.authentic-certificate li small {
 	}
 	.main-content {
 		display: block;
-		background-image: url(../images/pmts-letterhead-membrete.jpg);
-		background-size: 8.5in 11in;
 		margin: 0 auto;
 		width: 8.5in;
 		height: 11in;
 		box-shadow: none;
 	}
 	.single-certificates.single-certificates.single-certificates .main-content.main-content.main-content {
+		background-image: none;
 		background-repeat: no-repeat;
 		background-size: 8.5in 11in;
 	}
