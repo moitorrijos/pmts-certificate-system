@@ -20,16 +20,14 @@
 
 	.main-content {
 		display: block;
-		background-image: url(../images/pmts-letterhead-membrete.jpg);
-		background-size: 8.5in 11in;
 		margin: 0 auto;
 		width: 8.5in;
 		height: 11in;
 		box-shadow: none;
 	}
-
+	
   .single-certificates.single-certificates.single-certificates .main-content.main-content.main-content {
-    // background-image: url('../images/pmts-letterhead-membrete.png');
+		// background-image: url(../images/pmts-letterhead-membrete.jpg);
     background-repeat: no-repeat;
     background-size: 8.5in 11in;
   }
