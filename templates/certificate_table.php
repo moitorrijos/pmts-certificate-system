@@ -11,6 +11,7 @@
 	$issue_year = $issue_date->format('y');
 	$post_date = get_the_date( date('d/m/y'), get_the_ID() );
 	$register_code =  get_post_meta(get_the_ID(), 'register_code', true);
+	$author = get_the_author();
 
 ?>
 
@@ -48,6 +49,10 @@
 		</td>
 		<td class="centered list-col-4">
 			<?php echo $office->name; ?>
+		</td>
+
+		<td class="centered">
+			<?php echo $author; ?>
 		</td>
 
 		<?php if ( current_user_can('edit_pages') ) : ?>

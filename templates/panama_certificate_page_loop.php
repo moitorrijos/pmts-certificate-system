@@ -52,6 +52,7 @@
 							<th class="short-title">Instructor</th>
 							<th class="number">Issue Date</th>
 							<th class="middle-title">Register Code</th>
+							<th class="short-title">Created by</th>
 							<?php if ( current_user_can('edit_pages') ) : ?>
 								<th class="number">Edit</th>
 							<?php endif; ?>

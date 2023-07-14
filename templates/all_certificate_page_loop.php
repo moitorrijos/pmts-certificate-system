@@ -59,6 +59,7 @@
 							</th>
 							<th class="number">Issue Date</th>
 							<th class="short-title">Office</th>
+							<th class="short-title">Created by</th>
 							<?php if ( current_user_can('edit_pages') ) : ?>
 								<th class="number">Edit</th>
 							<?php endif; ?>
