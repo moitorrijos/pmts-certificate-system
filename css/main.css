@@ -2739,10 +2739,6 @@ ul.authentic-certificate li small {
 }
 
 @media only print and (color) {
-	* {
-		-webkit-print-color-adjust: exact;
-		print-color-adjust: exact;
-	}
 	body {
 		display: block;
 		background: white;
@@ -2763,6 +2759,7 @@ ul.authentic-certificate li small {
 	}
 	.single-certificates.single-certificates.single-certificates .main-content.main-content.main-content {
 		background-image: none;
+		background-image: url(../images/pmts-letterhead-membrete.jpg);
 		background-repeat: no-repeat;
 		background-size: 8.5in 11in;
 	}
@@ -2819,7 +2816,6 @@ ul.authentic-certificate li small {
 	}
 	table {
 		color: black;
-		position: relative;
 	}
 	table thead {
 		display: table-header-group;
@@ -2868,7 +2864,6 @@ ul.authentic-certificate li small {
 		width: 8in;
 		height: 9.2in;
 		margin: 0 auto;
-		position: relative;
 	}
 	.certificate p, .application-form p, .report p, .application-page p {
 		margin: 0.05in 0;
@@ -2918,7 +2913,7 @@ ul.authentic-certificate li small {
 	}
 	.signature-cert-codes {
 		display: block;
-		position: absolute;
+		position: static;
 		bottom: 0;
 		left: 0;
 		right: 0;
@@ -2936,12 +2931,11 @@ ul.authentic-certificate li small {
 		background-position: center;
 		width: 1in;
 		height: 1in;
-		position: relative;
 		right: -1in;
 	}
 	.signature-cert-codes .pmts-blue-seal img {
-		width: 100%;
-		height: auto;
+		width: 1in;
+		height: 1in;
 		object-fit: cover;
 	}
 	.certificate-codes.certificate-codes {
@@ -3003,6 +2997,10 @@ ul.authentic-certificate li small {
 	.quotation .quotation-logo .logo {
 		width: 1.25in;
 	}
+	.quotation .quotation-logo .logo img {
+		width: 1.25in;
+		height: 1.25in;
+	}
 	.quotation .quotation-logo .company-info {
 		width: 3in;
 	}
@@ -3021,8 +3019,7 @@ ul.authentic-certificate li small {
 		padding: 0.05in 0.1in;
 	}
 	.report, .application-page {
-		height: 100%;
-		position: relative;
+		height: 14pt;
 	}
 	.report h1, .application-page h1 {
 		font-size: 14pt;
@@ -3074,7 +3071,6 @@ ul.authentic-certificate li small {
 	.application-for-print .application-page {
 		width: 8in;
 		height: 11in;
-		overflow: hidden;
 		margin: 0 auto;
 		page-break-before: always;
 	}
