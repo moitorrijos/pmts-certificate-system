@@ -1900,7 +1900,7 @@ p.warning-full.warning-full.warning-full i.fa {
 }
 
 .certificate .half, .application-form .half, .report .half, .application-page .half {
-	width: 50%;
+	width: auto;
 }
 
 .certificate .short-half, .application-form .short-half, .report .short-half, .application-page .short-half {
@@ -2759,7 +2759,6 @@ ul.authentic-certificate li small {
 	}
 	.single-certificates.single-certificates.single-certificates .main-content.main-content.main-content {
 		background-image: none;
-		background-image: url(../images/pmts-letterhead-membrete.jpg);
 		background-repeat: no-repeat;
 		background-size: 8.5in 11in;
 	}
