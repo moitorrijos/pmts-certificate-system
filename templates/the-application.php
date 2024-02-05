@@ -194,7 +194,7 @@
 
 								(int)$class_limit = 35;
 
-								(int)$hv_limit = 6;
+								(int)$hv_limit = 10;
 								
 								if ($end_date) {
 									$end_month = (int)$end_date->format('m');
