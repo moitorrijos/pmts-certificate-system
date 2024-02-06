@@ -309,7 +309,20 @@
 				</tfoot>
 			</table>
 			
-			<?php get_template_part( 'templates/bank_info' ); ?>
+			<?php 
+				$select_client = get_field('select_client');
+				if ($select_client) {
+					$select_client_name = get_field('client_name', $select_client->ID);
+					$select_client_bank_info = get_field('bank', $select_client->ID);
+					$args = array(
+						'select_client_name' => $select_client_name,
+						'select_client_bank_info' => $select_client_bank_info
+					);
+					get_template_part( 'templates/bank_info', null, $args);
+				} else {
+					get_template_part( 'templates/bank_info' ); 
+				}
+			?>
 
 		</div>
 

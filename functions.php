@@ -28,6 +28,7 @@ require get_template_directory() . '/includes/fill-sample-courses.php';
 require get_template_directory() . '/post-types/certificates.php';
 require get_template_directory() . '/post-types/courses.php';
 require get_template_directory() . '/post-types/instructors.php';
+require get_template_directory() . '/post-types/clients.php';
 require get_template_directory() . '/post-types/resolutions.php';
 require get_template_directory() . '/post-types/ref-resolutions.php';
 require get_template_directory() . '/post-types/quotations.php';
@@ -59,6 +60,7 @@ require get_template_directory() . '/acf-custom-fields/ref-resolutions-fields.ph
 require get_template_directory() . '/acf-custom-fields/reports-fields.php';
 require get_template_directory() . '/acf-custom-fields/initial-reports-fields.php';
 require get_template_directory() . '/acf-custom-fields/instructors-fields.php';
+require get_template_directory() . '/acf-custom-fields/clients-fields.php';
 
 /**
  * Custom Taxonomies

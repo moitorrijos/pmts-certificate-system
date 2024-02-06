@@ -1,0 +1,151 @@
+<?php
+
+add_action( 'acf/include_fields', function() {
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+		return;
+	}
+
+	acf_add_local_field_group( array(
+	'key' => 'group_65c29133a1a82',
+	'title' => 'Clients',
+	'fields' => array(
+		array(
+			'key' => 'field_65c29134ab192',
+			'label' => 'Client Name',
+			'name' => 'client_name',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
+			'key' => 'field_65c29148ab193',
+			'label' => 'Bank Info',
+			'name' => 'bank',
+			'aria-label' => '',
+			'type' => 'textarea',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'rows' => '',
+			'placeholder' => '',
+			'new_lines' => '',
+		),
+		array(
+			'key' => 'field_65c29187ab194',
+			'label' => 'Tariff',
+			'name' => 'tariff',
+			'aria-label' => '',
+			'type' => 'repeater',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'layout' => 'table',
+			'pagination' => 0,
+			'min' => 0,
+			'max' => 0,
+			'collapsed' => '',
+			'button_label' => 'Add Row',
+			'rows_per_page' => 20,
+			'sub_fields' => array(
+				array(
+					'key' => 'field_65c2919cab195',
+					'label' => 'Course',
+					'name' => 'course',
+					'aria-label' => '',
+					'type' => 'post_object',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'post_type' => array(
+						0 => 'courses',
+					),
+					'post_status' => '',
+					'taxonomy' => '',
+					'return_format' => 'object',
+					'multiple' => 0,
+					'allow_null' => 0,
+					'bidirectional' => 0,
+					'ui' => 1,
+					'bidirectional_target' => array(
+					),
+					'parent_repeater' => 'field_65c29187ab194',
+				),
+				array(
+					'key' => 'field_65c291d5ab196',
+					'label' => 'Price',
+					'name' => 'price',
+					'aria-label' => '',
+					'type' => 'number',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'min' => '',
+					'max' => '',
+					'placeholder' => '',
+					'step' => '',
+					'prepend' => '',
+					'append' => '',
+					'parent_repeater' => 'field_65c29187ab194',
+				),
+			),
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'clients',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => array (
+		0 => 'permalink',
+		1 => 'the_content',
+	),
+	'active' => true,
+	'description' => '',
+	'show_in_rest' => 0,
+) );
+} );
+
