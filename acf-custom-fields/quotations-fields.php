@@ -127,7 +127,7 @@ acf_add_local_field_group(array (
 			'disabled' => 0,
 		),
 		array(
-			'key' => 'field_56e04a1e0dfdc',
+			'key' => 'field_56e0ghref4a1e0dfdc',
 			'label' => 'Select Client',
 			'name' => 'select_client',
 			'aria-label' => '',
@@ -136,7 +136,7 @@ acf_add_local_field_group(array (
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '49',
+				'width' => 33,
 				'class' => '',
 				'id' => '',
 			),
