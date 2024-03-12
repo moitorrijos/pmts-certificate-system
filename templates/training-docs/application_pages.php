@@ -10,6 +10,7 @@
 	$place_of_training_slug = get_field('place_of_training_app');
 	$place_of_training = get_term_by( 'slug', $place_of_training_slug, 'office' );
 	$delivery_mode = get_field('course_deliver_mode_app');
+	$student_digital_signature = get_field('student_digital_signature');
 
 	if ( have_rows('courses_app') ) : while( have_rows('courses_app') ): the_row(); 
 		$course = get_sub_field('course_name_app');
@@ -73,7 +74,7 @@
 						<?php 
 
 							if ( $end_date->getTimestamp() > $february_2018->getTimestamp() ) {
-								get_template_part( 'templates/training-docs/applicant-signature' );
+								get_template_part( 'templates/training-docs/applicant-signature', null, array('student_digital_signature' => $student_digital_signature) );
 							}
 
 						?>
@@ -104,7 +105,7 @@
 
 					echo '<div class="application-signatures">';
 
-					get_template_part( 'templates/training-docs/applicant-signature' );
+					get_template_part( 'templates/training-docs/applicant-signature', null, array('student_digital_signature' => $student_digital_signature) );
 
 					echo instructor_signature( $instructor );
 
@@ -125,7 +126,7 @@
 
 					echo '<div class="application-signatures">';
 
-					get_template_part( 'templates/training-docs/applicant-signature' );
+					get_template_part( 'templates/training-docs/applicant-signature', null, array('student_digital_signature' => $student_digital_signature) );
 
 					echo instructor_signature( $instructor );
 
@@ -146,7 +147,7 @@
 
 					echo '<div class="application-signatures">';
 
-					get_template_part( 'templates/training-docs/applicant-signature' );
+					get_template_part( 'templates/training-docs/applicant-signature', null, array('student_digital_signature' => $student_digital_signature) );
 
 					echo instructor_signature( $instructor );
 
@@ -167,7 +168,7 @@
 
 					echo '<div class="application-signatures">';
 
-					get_template_part( 'templates/training-docs/applicant-signature' );
+					get_template_part( 'templates/training-docs/applicant-signature', null, array('student_digital_signature' => $student_digital_signature) );
 
 					echo instructor_signature( $instructor );
 
@@ -195,7 +196,7 @@
 
 					echo '<div class="application-signatures">';
 
-					get_template_part( 'templates/training-docs/applicant-signature' );
+					get_template_part( 'templates/training-docs/applicant-signature', null, array('student_digital_signature' => $student_digital_signature) );
 
 					echo instructor_signature( $instructor );
 
@@ -216,7 +217,7 @@
 
 					echo '<div class="application-signatures">';
 
-					get_template_part( 'templates/training-docs/applicant-signature' );
+					get_template_part( 'templates/training-docs/applicant-signature', null, array('student_digital_signature' => $student_digital_signature) );
 
 					echo instructor_signature( $instructor );
 
@@ -237,7 +238,7 @@
 
 					echo '<div class="application-signatures">';
 
-					get_template_part( 'templates/training-docs/applicant-signature' );
+					get_template_part( 'templates/training-docs/applicant-signature', null, array('student_digital_signature' => $student_digital_signature) );
 
 					echo instructor_signature( $instructor );
 
@@ -258,7 +259,7 @@
 
 					echo '<div class="application-signatures">';
 
-					get_template_part( 'templates/training-docs/applicant-signature' );
+					get_template_part( 'templates/training-docs/applicant-signature', null, array('student_digital_signature' => $student_digital_signature) );
 
 					echo instructor_signature( $instructor );
 
@@ -285,7 +286,7 @@
 
 						<div class="application-signatures">
 
-							<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
+							<?php get_template_part( 'templates/training-docs/applicant-signature', null, array('student_digital_signature' => $student_digital_signature) ); ?>
 
 							<?php echo instructor_signature( $instructor ); ?>
 							
@@ -324,7 +325,7 @@
 
 							<div class="application-signatures">
 
-								<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
+								<?php get_template_part( 'templates/training-docs/applicant-signature', null, array('student_digital_signature' => $student_digital_signature) ); ?>
 
 								<?php echo instructor_signature( $instructor ); ?>
 
@@ -355,7 +356,7 @@
 
 							<div class="application-signatures">
 
-								<?php get_template_part( 'templates/training-docs/applicant-signature' ); ?>
+								<?php get_template_part( 'templates/training-docs/applicant-signature', null, array('student_digital_signature' => $student_digital_signature) ); ?>
 
 								<?php echo instructor_signature( $instructor ); ?>
 

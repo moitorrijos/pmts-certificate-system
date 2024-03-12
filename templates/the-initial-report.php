@@ -25,185 +25,164 @@
 
 				$instructor_initial = get_field('name_of_the_instructor_initial');
 				$course_initial = get_field('name_of_the_course_initial');
+				$course_days = $course_initial ? intval(get_field('duration', $course_initial->ID)) : '';
 				$start_date_ymd = get_field('start_date_of_the_course_initial');
 				$end_date_ymd = get_field('end_date_of_the_course_initial');
-				$start_date = DateTime::createFromFormat('Ymd', $start_date_ymd)->format('d/m/Y');
-				$end_date = DateTime::createFromFormat('Ymd', $end_date_ymd)->format('d/m/Y');
+				$start_date = $start_date_ymd ? DateTime::createFromFormat('Ymd', $start_date_ymd)->format('d/m/Y') : '';
+				$end_date = $end_date_ymd ? DateTime::createFromFormat('Ymd', $end_date_ymd)->format('d/m/Y') : '';
 				$end_date_timestamp = strtotime($end_date);
 				?>
 				<div class="initial-report view-section">
-					<div class="report-company-logo">
-						<?php get_template_part('templates/logo_image'); ?>
-						<div class="report-company-info">
-							<h2>Panama Maritime Training Services, Inc.</h2>
-							<p>77th Street, San Francisco InterMaritime Building</p>
-							<p>Local Phone: +(507) 395-2801 / +(507) 322-0013</p>
-							<p>E-Mail: info@panamamaritimetraining.com</p>
-							<p>Web: www.panamamaritimetraining.com</p>
-						</div>
-						<table class="report-table">
-							<tbody>
-								<tr>
-									<td class="title">Internal ID:</td>
-									<td><?php the_title(); ?></td>
-								</tr>
-								<tr>
-									<td class="title">Code:</td>
-									<td>R-FO1-11</td>
-								</tr>
-								<tr>
-									<td class="title">Revision:</td>
-									<td>1</td>
-								</tr>
-								<tr>
-									<td class="title">Date:</td>
-									<td contenteditable="true"><?php echo date('d/m/Y'); ?></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<h2 class="centered">Start of Classes Announcement Report</h2>
-					<h3>I. General Information</h3>
-					<table class="system report-table">
-						<tbody>
-							<tr>
-								<td class="title">Name of the Course:</td>
-								<td><?php echo $course_initial->post_title; ?></td>
-							</tr>
-							<tr>
-								<td class="title">Start Date:</td>
-								<td><?php echo $start_date; ?></td>
-							</tr>
-							<tr>
-								<td class="title">End Date:</td>
-								<td><?php echo $end_date; ?></td>
-							</tr>
-							<tr>
-								<td class="title">Name of Trainer:</td>
-								<td><?php echo $instructor_initial->post_title; ?></td>
-							</tr>
-						</tbody>
-					</table>
-					<h3>2. Theoretical Section</h3>
-					<table class="system report-table">
-						<tbody>
-							<tr>
-								<td class="title">Number of Planned Hours of the Course</td>
-								<td contenteditable="true"><?php echo ((int)$course_initial->duration_hours - (int)$course_initial->practice_duration_hours); ?></td>
-							</tr>
-						</tbody>
-					</table>
-					<h3>3. Practice Section</h3>
-					<table class="system report-table">
-						<tbody>
-							<tr>
-								<td class="title">Number of planned practice hours:</td>
-								<td contenteditable="true">
-									<?php echo $course_initial->practice_duration_hours; ?>
-								</td>
-							</tr>
-							<tr>
-								<td class="title">Place of practice:</td>
-								<td contenteditable="true">
-									<?php if ($course_initial->ID == 91) {
-										echo 'IJA Pool';
-									} elseif ($course_initial->ID == 96 || $course_initial->ID == 49) {
-										echo 'PMTIC Building';
-									} else {
-										echo 'PMTS Building';
-									}
-									?>
-								</td>
-							</tr>
-							<tr>
-								<td class="title">Date of practice:</td>
-								<td contenteditable="true">
-									<?php echo $end_date; ?>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				<?php endwhile;
-		endif;
-		wp_reset_query(); ?>
-			<h3>4. List of Participants</h3>
-			<?php
-			global $wpdb;
-
-			$application_ids = $wpdb->get_results("
-				select distinct post_id 
-				from {$wpdb->prefix}postmeta 
-				where meta_key 
-				like 'courses_app_%_course_name_app' 
-				and meta_value=" . (int)$course_initial->ID . " 
-				and post_id in 
-					(select distinct post_id 
-					from {$wpdb->prefix}postmeta 
-					where meta_key 
-					like 'courses_app_%_instructor_name_app' 
-					and meta_value=" . (int)$instructor_initial->ID . " 
-					and post_id in 
-						(select distinct post_id 
-						from {$wpdb->prefix}postmeta 
-						where meta_key like 'courses_app_%_start_date_app' 
-						and meta_value=" . $start_date_ymd . " 
-						and post_id in 
-							(select distinct post_id 
-							from {$wpdb->prefix}postmeta 
-							where meta_key 
-							like 'courses_app_%_end_date_app' 
-							and meta_value=" . $end_date_ymd . ")))
-				limit 0, 200;
-			", ARRAY_N);
-			// $application_ids = initial_reports($end_date_ymd, $start_date_ymd, $instructor_initial, $course_initial);
-
-			$application_ids_nums = array_map('flatten_array', $application_ids);
-			// var_dump($application_ids_nums); die;
-
-			$applications_args = array(
-				'post_type' => 'applications',
-				'order' => 'DESC',
-				'posts_per_page' => 50,
-				'post__in' => $application_ids_nums,
-			);
-			$applications = new WP_Query( $applications_args );
-			if ($applications->have_posts()) :
-				?>
-				<table class="system report-table">
+				<table class="report-table">
 					<thead>
 						<tr>
+							<th colspan="9">
+								<div class="report-company-logo">
+									<?php get_template_part('templates/logo_image'); ?>
+									<div class="report-company-info">
+										<h2>Panama Maritime Training Services, Inc.</h2>
+										<h4>Control List of Theoretical Training Courses</h4>
+										<p>Daily / Weekly Assistance for Training Courses</p>
+										<p><strong>Course Name:</strong> <?php echo get_the_title($course_initial->ID); ?></p>
+										<p><strong>Instructor:</strong> <?php echo get_the_title($instructor_initial->ID); ?></p>
+										<p><strong>From:</strong> <?php echo $start_date; ?> <strong>To:</strong> <?php echo $end_date; ?></p>
+									</div>
+									<table class="system small">
+										<tbody>
+											<tr>
+												<td class="title">Code:</td>
+												<td>R-FO1-11</td>
+											</tr>
+											<tr>
+												<td class="title">Revision:</td>
+												<td>2</td>
+											</tr>
+											<tr>
+												<td class="title">Date:</td>
+												<td contenteditable="true"><?php echo $end_date; ?></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</th>
+						</tr>
+						<tr>
 							<th class="short-number">No.</th>
-							<th class="title">Name of Participant</th>
-							<th class="title">Id No./Passport No.</th>
-							<th class="title">Nationality</th>
+							<th class="middle-title">Name</th>
+							<th class="short-title">Id or Passport</th>
+							<th class="number">Day 1</th>
+							<th class="number">Day 2</th>
+							<th class="number">Day 3</th>
+							<th class="number">Day 4</th>
+							<th class="number">Day 5</th>
+							<th class="number">Day 6</th>
 						</tr>
 					</thead>
+					<?php
+				 		endwhile;
+						endif;
+						wp_reset_query();
+						global $wpdb;
+
+						$application_ids = $wpdb->get_results("
+							select distinct post_id 
+							from {$wpdb->prefix}postmeta 
+							where meta_key 
+							like 'courses_app_%_course_name_app' 
+							and meta_value=" . (int)$course_initial->ID . " 
+							and post_id in 
+								(select distinct post_id 
+								from {$wpdb->prefix}postmeta 
+								where meta_key 
+								like 'courses_app_%_instructor_name_app' 
+								and meta_value=" . (int)$instructor_initial->ID . " 
+								and post_id in 
+									(select distinct post_id 
+									from {$wpdb->prefix}postmeta 
+									where meta_key like 'courses_app_%_start_date_app' 
+									and meta_value=" . $start_date_ymd . " 
+									and post_id in 
+										(select distinct post_id 
+										from {$wpdb->prefix}postmeta 
+										where meta_key 
+										like 'courses_app_%_end_date_app' 
+										and meta_value=" . $end_date_ymd . ")))
+							limit 0, 200;
+						", ARRAY_N);
+						// $application_ids = initial_reports($end_date_ymd, $start_date_ymd, $instructor_initial, $course_initial);
+
+						$application_ids_nums = array_map('flatten_array', $application_ids);
+						// var_dump($application_ids_nums); die;
+
+						$applications_args = array(
+							'post_type' => 'applications',
+							'order' => 'DESC',
+							'posts_per_page' => 50,
+							'post__in' => $application_ids_nums,
+						);
+						$applications = new WP_Query( $applications_args );
+						if ($applications->have_posts()) :
+					?>
 					<tbody>
 						<?php 
 							while($applications->have_posts()) : $applications->the_post();
 							$participants_name = get_field('participants_name_app');
 							$participants_nationality = get_field('nationality_app');
 							$participants_id = get_field('passport_id_app');
-							?>
+							$student_digital_signature = get_field('student_digital_signature');
+						?>
 							<tr>
 								<td class="centered"><?php echo (int)$applications->current_post + 1; ?></td>
-								<td><?php echo $participants_name; ?></td>
+								<td><a href="<?php echo get_permalink(); ?>"><?php echo $participants_name; ?></a></td>
 								<td class="centered"><?php echo $participants_id; ?></td>
-								<td class="centered"><?php echo $participants_nationality; ?></td>
+								<?php
+									for ($i = 1; $i <= $course_days; $i++) :
+										if ($i > 6) break;
+								?>
+									<td>
+										<img
+											style="
+												width: <?php echo rand(90, 120); ?>%; 
+												bottom: <?php echo rand(-25, -15);?>px; 
+												left: <?php echo rand(-20, -10); ?>px; 
+												transform: rotate(<?php echo rand(-15, 0);?>deg);" 
+											src="<?php echo $student_digital_signature; ?>" 
+											alt="">
+										</td>
+									<?php endfor; ?>
+									<?php for ($i = $course_days; $i < 6; $i++) : ?>
+										<td></td>
+									<?php endfor; ?>
 							</tr>
 						<?php endwhile; ?>
 					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="9">
+								<div class="instructor-signatures">
+									<div class="instructor-signature" style="background: url(<?php echo get_field('instructor_digital_signature', $instructor_initial->ID); ?>) no-repeat; background-size: 240px 120px; background-position: center top; overflow:visible; padding-top: 5px;">
+										<div class="signature-line"></div>
+										<p class="super-short" style="text-align: center;">
+											<?php echo get_the_title($instructor_initial->ID); ?> <br>
+											Instructor
+										</p>
+									</div>
+									<div class="general-director" style="background: url(<?php echo get_field('instructor_digital_signature', 183); ?>) no-repeat; background-size: 240px 120px; background-position: center bottom; overflow:visible; padding-top: 5px;">
+										<div class="signature-line"></div>
+										<p class="super-short">
+											Agustin Gonzalez <br>
+											Academic Director
+										</p>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tfoot>
 				</table>
 			<?php else : ?>
 				<p class="error-message">There are no participants for this course, please check dates and instructor!</p>
 			<?php endif; ?>
-			<div class="general-director" style="background: url(<?php echo get_field('instructor_digital_signature', 183); ?>) no-repeat; background-size: 240px 120px; background-position: center bottom; overflow:visible; padding-top: 5px;">
-				<div class="signature-line"></div>
-				<p class="super-short">
-					Agustin Gonzalez <br>
-					Academic Director
-				</p>
-			</div>
+			
 		</div>
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
