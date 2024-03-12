@@ -5,7 +5,7 @@ function practical_exam_results( $course_obj, $start_date, $january_2022 ){
 	?>
 
 	<div class="required-documents">
-		<?php if ($practical_exam_results && ($start_date->getTimestamp() > $january_2022->getTimestamp())) : ?>
+		<?php if ($start_date->getTimestamp() > $january_2022->getTimestamp()) : ?>
 			<h4>Practical Exam is based on the Criteria for Evaluating Competence (Column 4) of the STCW Code as amended.</h4>
 		<?php else : ?>
 			<ul>
