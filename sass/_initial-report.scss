@@ -1,6 +1,6 @@
 .initial-report {
 	h1, h2, h3, h4 {
-		font-weight: 300;
+		margin: 0;
 	}
 }
 
@@ -14,14 +14,6 @@
 		width: 110px;
 		height: 110px;
 		margin: 0;
-	}
-
-	table.report-table {
-		font-size: 0.9rem;
-		tbody tr td {
-			padding: 4px 8px;
-			line-height: 1.1;
-		}
 	}
 }
 
@@ -38,16 +30,63 @@
 }
 
 table.report-table {
+	width: 100%;
+	font-size: 0.9rem;
 	margin: 0;
 
 	thead tr {
-		background: darken($gray, 15%);
+		background: transparent;
+		color: $dark-gray;
+
+		th {
+			padding: 12px 4px;
+			&.short-short-number {
+				width: 1%;
+			}
+	
+			&.short-number {
+				width: 2%;
+			}
+	
+			&.number {
+				width: 5%;
+			}
+	
+			&.short-title {
+				width: 10%;
+			}
+	
+			&.middle-title {
+				width: 15%;
+			}
+	
+			&.title {
+				width: 33%;
+			}
+		}
+
+		& * {
+			color: $dark-gray;
+		}
+
+		&:nth-child(even) {
+			background: $gray;
+			border: darken($dark-gray, 15%);
+			padding: 18px 4px;
+		}
 
 	}
 
 	tbody tr td {
-		padding: 4px 14px;
+		padding: 12px 4px;
+		line-height: 1.1;
+		position: relative;
 		border: 1px solid darken($gray, 10%);
+		img {
+			position: absolute;
+			height: auto;
+			mix-blend-mode: multiply;
+		}
 
 		&.title {
 			background: $gray;

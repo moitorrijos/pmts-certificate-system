@@ -15,11 +15,17 @@
 	}
 
 	.main-content {
+		background-image: none;
 		display: block;
 		margin: 0 auto;
 		width: 8.5in;
 		height: 11in;
 		box-shadow: none;
+
+		&:has(.initial-report)  {
+			width: 11in;
+			height: 8.5in;
+		}
 	}
 	
   .single-certificates.single-certificates.single-certificates .main-content.main-content.main-content {
@@ -93,12 +99,12 @@
 		display: none;
 	}
 
-	table {
-		color: black;
-		// position: relative;
+	table.report-table, table.system {
 		
-		thead { 
+		thead {
 			display: table-header-group;
+			color: darken($dark-gray, 15%);
+			background-color: transparent;
 			
 			th {
 				font-size: 8pt;
@@ -111,10 +117,14 @@
 			-webkit-region-break-inside: avoid;
 		}
 
-		td {
-			color: black;
+		tbody tr td {
+			color: darken($dark-gray, 15%);
 			font-size: 8pt;
 			padding: 0.055in;
+
+			a {
+				color: darken($dark-gray, 15%);
+			}
 
 			h2 { font-size: 12pt; }
 			p { font-size: 10pt; }
@@ -124,9 +134,11 @@
 		}
 	}
 
+	table.report-table tbody tr td {
+		padding: 0.125in 0.1in;
+	}
+
 	h3.certify.certify {
-		// margin-top: 2in;
-		// margin-top: 1in;
 		margin-top: 0;
 		margin-bottom: 0;
 		font-size: 24pt;
@@ -193,7 +205,7 @@
 
 	.signature.signature {
 		background: {
-			image: url('../images/firma-agustin-gonzalez66.svg');
+			// image: url('../images/firma-agustin-gonzalez66.svg');
 			repeat: no-repeat;
 		}
 		padding-top: 36px;
@@ -352,6 +364,7 @@
 		}
 	}
 	
+	
 	.report {
 		height: 14pt;
 
@@ -413,6 +426,15 @@
 			padding: 0 0.25in;
 			color: black;
 		}
+	}
+	.applicant-signature {
+		position: relative;
+	}	
+
+	img.digital_signature {
+		position: absolute;
+		mix-blend-mode: multiply;
+		height: auto;
 	}
 
 	.application-for-print {

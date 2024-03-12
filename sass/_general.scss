@@ -158,7 +158,6 @@ form {
 		}
 	}
 
-
 	.rememberme {
 		position: relative;
 		display: flex;
@@ -763,5 +762,24 @@ a.admin {
 		margin-top: 10px;
 		color: $pmts-blue;
 		display: block;
+	}
+}
+
+.flex.flex.flex {
+	display: flex;
+	justify-content: space-between;
+
+	& > div {
+		width: 33%;
+	}
+}
+
+.initial-report .instructor-signatures {
+	display: flex;
+	justify-content: space-between;
+	margin-top: auto; 
+	
+	& > div {
+		width: 30%;
 	}
 }

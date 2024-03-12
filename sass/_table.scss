@@ -4,6 +4,9 @@ table.system {
 	margin-bottom: 32px;
 	border-collapse: separate;
 
+	&.small {
+		width: initial;
+	}
 	thead {
 		display: table-header-group;
 	}
