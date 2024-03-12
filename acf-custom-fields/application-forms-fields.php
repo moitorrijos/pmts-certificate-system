@@ -155,6 +155,7 @@ acf_add_local_field_group(array (
 				'class' => '',
 				'id' => '',
 			),
+			
 			'choices' => array (
 				'In Classroom' => 'In Classroom',
 				'On Board' => 'On Board',
@@ -170,6 +171,31 @@ acf_add_local_field_group(array (
 			'placeholder' => '',
 			'disabled' => 0,
 			'readonly' => 0,
+		),
+
+		array(
+			'key' => 'field_588asdfasdf39e9ae1163',
+			'label' => 'Student Digital Signature',
+			'name' => 'student_digital_signature',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'preview_size' => 'medium_large',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => 'jpg, jpeg, png, svg',
 		),
 		array (
 			'key' => 'field_58839ecde1164',
