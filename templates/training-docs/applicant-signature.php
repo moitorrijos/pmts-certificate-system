@@ -3,7 +3,7 @@
 ?>
 <div class="applicant-signature">
 	<?php if ($student_digital_signature) : ?>
-		<img class="digital_signature" style="left: <?php echo rand(-10, 10); ?>px; bottom: <?php echo rand(10, 20);?>px; width: <?php echo rand(150, 200); ?>px" src="<?php echo $student_digital_signature; ?>" alt="signature">
+		<img class="digital_signature" style="left: <?php echo rand(-10, 10); ?>px; bottom: <?php echo rand(10, 20);?>px; width: <?php echo rand(80, 100); ?>%" src="<?php echo $student_digital_signature; ?>" alt="signature">
 	<?php endif; ?>
 	<div class="signature-line"></div>
 	<p class="super-short">
