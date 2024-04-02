@@ -1481,6 +1481,10 @@ table.system.small {
 	width: initial;
 }
 
+table.system thead {
+	display: table-header-group;
+}
+
 table.system thead > tr {
 	background-color: #3e94cc;
 }
@@ -1659,6 +1663,7 @@ table.system td a.delete-form {
 
 table.system tfoot {
 	border-top: 2px solid #556a7b;
+	display: table-row-group;
 }
 
 p.warning-full.warning-full.warning-full {
@@ -2885,36 +2890,37 @@ ul.authentic-certificate li small {
 	.edit-certificate-form {
 		display: none;
 	}
-	table.report-table thead, table.system thead {
-		color: #494949;
-		background-color: transparent;
+	table {
+		color: black;
 	}
-	table.report-table thead th, table.system thead th {
-		font-size: 8pt;
+	table thead {
+		display: table-header-group;
+	}
+	table thead th {
 		text-transform: uppercase;
 		padding: 0.1in;
 	}
-	table.report-table tr, table.system tr {
+	table tr {
 		-webkit-region-break-inside: avoid;
 	}
-	table.report-table tbody tr td, table.system tbody tr td {
+	table tbody tr td {
 		color: #494949;
 		font-size: 8pt;
 		padding: 0.055in;
 	}
-	table.report-table tbody tr td a, table.system tbody tr td a {
+	table tbody tr td a {
 		color: #494949;
 	}
-	table.report-table tbody tr td h2, table.system tbody tr td h2 {
+	table tbody tr td h2 {
 		font-size: 12pt;
 	}
-	table.report-table tbody tr td p, table.system tbody tr td p {
+	table tbody tr td p {
 		font-size: 10pt;
 	}
-	table.report-table tbody tr td ul, table.system tbody tr td ul {
+	table tbody tr td ul {
 		font-size: 10pt;
 	}
-	table.report-table tbody tr td.pass-fail, table.system tbody tr td.pass-fail {
+	table tbody tr td.pass-fail {
 		font-size: 11pt;
 	}
 	table.report-table tbody tr td {
