@@ -46,6 +46,8 @@
 			$end_date = DateTime::createFromFormat( 'Ymd', get_field('end_date') );
 			$issue_date = DateTime::createFromFormat( 'Ymd', get_field('date_of_issuance') );
 			$issue_date_timestamp = strtotime( get_field('date_of_issuance') );
+			$has_no_expiration_date = get_post_meta($course->ID, 'no_expiration_date');
+			$has_no_expiration_date = empty($has_no_expiration_date) ? $has_no_expiration_date : $has_no_expiration_date[0];
 			$expiry_date_timestamp = strtotime( '+5 years',  strtotime( get_field('end_date') ) );
 			$expiry_date_3_years_timestamp = strtotime( '+3 years',  strtotime( get_field('end_date') ) );
 			$expiry_date = date( 'd F Y', $expiry_date_timestamp );
@@ -543,22 +545,22 @@
 
 			<?php endif; ?>
 
-				This certificate is valid until
+				This certificate 
 
-				<span class="undiesunpaddies">
-					
-					<?php  
-						if ( $course->ID === 17570 ) {
-							echo $expiry_date_3_years;
-						} else {
-							echo $expiry_date;
-						}
-					?>
-
-				</span>
-
-				.
-
+					<?php  if ($has_no_expiration_date) :	?>
+						has no expiration date.
+					<?php else : ?>
+						is valid until
+						<span class="undiesunpaddies">
+							<?php
+								if ($course->ID === 17570) {
+									echo $expiry_date_3_years;
+								} else {
+									echo $expiry_date;
+								}		
+							?>
+						</span>.
+					<?php endif; ?>
 			</p>
 
 			
