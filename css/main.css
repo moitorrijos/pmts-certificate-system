@@ -1257,6 +1257,25 @@ a.admin i {
 	display: block;
 }
 
+.flex.flex.flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex.flex.flex > div {
+	width: 33%;
+}
+
+.initial-report .instructor-signatures {
+	display: flex;
+	justify-content: space-between;
+	margin-top: auto;
+}
+
+.initial-report .instructor-signatures > div {
+	width: 30%;
+}
+
 div.login-form, div.copyright {
 	position: relative;
 }
@@ -1458,8 +1477,8 @@ table.system {
 	border-collapse: separate;
 }
 
-table.system thead {
-	display: table-header-group;
+table.system.small {
+	width: initial;
 }
 
 table.system thead > tr {
@@ -1640,7 +1659,6 @@ table.system td a.delete-form {
 
 table.system tfoot {
 	border-top: 2px solid #556a7b;
-	display: table-row-group;
 }
 
 p.warning-full.warning-full.warning-full {
@@ -1923,6 +1941,10 @@ p.warning-full.warning-full.warning-full i.fa {
 	justify-content: space-between;
 }
 
+.certificate .full-width, .application-form .full-width, .report .full-width, .application-page .full-width {
+	width: 100%;
+}
+
 .certificate .to-right, .application-form .to-right, .report .to-right, .application-page .to-right {
 	float: right;
 }
@@ -2159,7 +2181,7 @@ table.participant-info, table.referer-info {
 }
 
 .initial-report h1, .initial-report h2, .initial-report h3, .initial-report h4 {
-	font-weight: 300;
+	margin: 0;
 }
 
 .report-company-logo {
@@ -2175,15 +2197,6 @@ table.participant-info, table.referer-info {
 	margin: 0;
 }
 
-.report-company-logo table.report-table {
-	font-size: 0.9rem;
-}
-
-.report-company-logo table.report-table tbody tr td {
-	padding: 4px 8px;
-	line-height: 1.1;
-}
-
 .report-company-info h2 {
 	font-size: 1.2rem;
 	line-height: 1.1;
@@ -2196,16 +2209,70 @@ table.participant-info, table.referer-info {
 }
 
 table.report-table {
-	margin: 0;
+	width: 100%;
+	max-width: 900px;
+	font-size: 0.9rem;
+	margin: 0 auto;
+}
+
+table.report-table thead {
+	display: table-header-group;
 }
 
 table.report-table thead tr {
-	background: #98aab8;
+	background: transparent;
+	color: #6F6F6F;
+}
+
+table.report-table thead tr th {
+	padding: 12px 4px;
+}
+
+table.report-table thead tr th.short-short-number {
+	width: 1%;
+}
+
+table.report-table thead tr th.short-number {
+	width: 2%;
+}
+
+table.report-table thead tr th.number {
+	width: 5%;
+}
+
+table.report-table thead tr th.short-title {
+	width: 10%;
+}
+
+table.report-table thead tr th.middle-title {
+	width: 15%;
+}
+
+table.report-table thead tr th.title {
+	width: 33%;
+}
+
+table.report-table thead tr * {
+	color: #6F6F6F;
+}
+
+table.report-table thead tr:nth-child(even) {
+	background: #C5CFD7;
+	border: #494949;
+	padding: 18px 4px;
 }
 
 table.report-table tbody tr td {
-	padding: 4px 14px;
+	padding: 12px 4px;
+	line-height: 1.1;
+	position: relative;
 	border: 1px solid #a7b6c2;
+}
+
+table.report-table tbody tr td img {
+	position: absolute;
+	height: auto;
+	mix-blend-mode: multiply;
 }
 
 table.report-table tbody tr td.title {
@@ -2544,8 +2611,8 @@ table.report-table tbody tr td.darken-bg {
 }
 
 .general-director {
-	background: url(../images/general-director-signature.svg) center center no-repeat;
 	overflow: visible;
+	position: relative;
 }
 
 .applicant-signature, .general-director {
@@ -2751,11 +2818,16 @@ ul.authentic-certificate li small {
 		display: none;
 	}
 	.main-content {
+		background-image: none;
 		display: block;
 		margin: 0 auto;
 		width: 8.5in;
 		height: 11in;
 		box-shadow: none;
+	}
+	.main-content:has(.initial-report) {
+		width: 11in;
+		height: 8.5in;
 	}
 	.single-certificates.single-certificates.single-certificates .main-content.main-content.main-content {
 		background-image: none;
@@ -2813,36 +2885,40 @@ ul.authentic-certificate li small {
 	.edit-certificate-form {
 		display: none;
 	}
-	table {
-		color: black;
+	table.report-table thead, table.system thead {
+		color: #494949;
+		background-color: transparent;
 	}
-	table thead {
-		display: table-header-group;
-	}
-	table thead th {
+	table.report-table thead th, table.system thead th {
 		font-size: 8pt;
 		text-transform: uppercase;
 		padding: 0.1in;
 	}
-	table tr {
+	table.report-table tr, table.system tr {
 		-webkit-region-break-inside: avoid;
 	}
-	table td {
-		color: black;
+	table.report-table tbody tr td, table.system tbody tr td {
+		color: #494949;
 		font-size: 8pt;
 		padding: 0.055in;
 	}
-	table td h2 {
+	table.report-table tbody tr td a, table.system tbody tr td a {
+		color: #494949;
+	}
+	table.report-table tbody tr td h2, table.system tbody tr td h2 {
 		font-size: 12pt;
 	}
-	table td p {
+	table.report-table tbody tr td p, table.system tbody tr td p {
 		font-size: 10pt;
 	}
-	table td ul {
+	table.report-table tbody tr td ul, table.system tbody tr td ul {
 		font-size: 10pt;
 	}
-	table td.pass-fail {
+	table.report-table tbody tr td.pass-fail, table.system tbody tr td.pass-fail {
 		font-size: 11pt;
+	}
+	table.report-table tbody tr td {
+		padding: 0.125in 0.1in;
 	}
 	h3.certify.certify {
 		margin-top: 0;
@@ -2896,7 +2972,6 @@ ul.authentic-certificate li small {
 		height: 1in;
 	}
 	.signature.signature {
-		background-image: url("../images/firma-agustin-gonzalez66.svg");
 		background-repeat: no-repeat;
 		padding-top: 36px;
 		display: block;
@@ -3063,6 +3138,14 @@ ul.authentic-certificate li small {
 		min-width: 0.5in;
 		padding: 0 0.25in;
 		color: black;
+	}
+	.applicant-signature {
+		position: relative;
+	}
+	img.digital_signature {
+		position: absolute;
+		mix-blend-mode: multiply;
+		height: auto;
 	}
 	.application-for-print {
 		display: block;
