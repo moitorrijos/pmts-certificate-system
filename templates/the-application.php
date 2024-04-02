@@ -338,6 +338,16 @@
 
 					</table>
 
+					<?php if (get_field('student_digital_signature')) : ?>
+
+						
+						<div class="full-width">
+							<img src="<?php echo get_field('student_digital_signature'); ?>" alt="Student's Digital Signature">
+							<h3>Student's Digital Signature</h3>
+						</div>
+
+					<?php endif; ?>
+
 					<p class="shortly super-short">Application Created by: <?php the_author(); ?> on <?php echo the_date('d/m/Y'); ?></p>
 					
 					<?php 
