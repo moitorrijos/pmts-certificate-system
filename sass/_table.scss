@@ -7,7 +7,9 @@ table.system {
 	&.small {
 		width: initial;
 	}
-
+	thead {
+		display: table-header-group;
+	}
 
 	thead > tr {
 		background-color: $pmts-blue;
@@ -192,6 +194,7 @@ table.system {
 
 	tfoot {
 		border-top: 2px solid $darken-gray;
+		display: table-row-group;
 	}
 }
 
