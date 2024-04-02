@@ -99,15 +99,13 @@
 		display: none;
 	}
 
-	table.report-table, table.system {
+	table {
+		color: black;
 		
 		thead {
 			display: table-header-group;
-			color: darken($dark-gray, 15%);
-			background-color: transparent;
 			
 			th {
-				font-size: 8pt;
 				text-transform: uppercase;
 				padding: 0.1in;
 			}
