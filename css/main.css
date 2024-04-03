@@ -2978,6 +2978,7 @@ ul.authentic-certificate li small {
 		height: 1in;
 	}
 	.signature.signature {
+		background-image: url("../images/firma-agustin-gonzalez66.svg");
 		background-repeat: no-repeat;
 		padding-top: 36px;
 		display: block;
@@ -3001,8 +3002,6 @@ ul.authentic-certificate li small {
 		flex-flow: row nowrap;
 		justify-content: space-between;
 		align-items: center;
-		padding-left: 0.5in;
-		padding-right: 0.5in;
 	}
 	.signature-cert-codes .pmts-blue-seal {
 		background-image: url("../images/pmts-blue-seal.png");

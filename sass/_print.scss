@@ -203,7 +203,7 @@
 
 	.signature.signature {
 		background: {
-			// image: url('../images/firma-agustin-gonzalez66.svg');
+			image: url('../images/firma-agustin-gonzalez66.svg');
 			repeat: no-repeat;
 		}
 		padding-top: 36px;
@@ -230,8 +230,6 @@
 		flex-flow: row nowrap;
 		justify-content: space-between;
 		align-items: center;
-		padding-left: 0.5in;
-		padding-right: 0.5in;
 
 		.pmts-blue-seal {
 			background: {

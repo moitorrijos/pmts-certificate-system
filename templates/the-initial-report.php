@@ -133,7 +133,7 @@
 						?>
 							<tr>
 								<td class="centered"><?php echo (int)$applications->current_post + 1; ?></td>
-								<td><a href="<?php echo get_permalink(); ?>"><?php echo $participants_name; ?></a></td>
+								<td><a target="_blank" href="<?php echo get_permalink(); ?>"><?php echo $participants_name; ?></a></td>
 								<td class="centered"><?php echo $participants_id; ?></td>
 								<?php
 									for ($i = 1; $i <= $course_days; $i++) :
@@ -142,9 +142,9 @@
 									<td>
 										<img
 											style="
-												width: <?php echo rand(90, 120); ?>%; 
-												bottom: <?php echo rand(-25, -15);?>px; 
-												left: <?php echo rand(-20, -10); ?>px; 
+												width: <?php echo rand(90, 110); ?>%; 
+												bottom: <?php echo rand(-10, -5);?>px; 
+												left: <?php echo rand(-10, 0); ?>px; 
 												transform: rotate(<?php echo rand(-15, 0);?>deg);" 
 											src="<?php echo $student_digital_signature; ?>" 
 											alt="">
