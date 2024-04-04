@@ -178,9 +178,9 @@
 					<tr>
 						<th class="short-number">No.</th>
 						<th class="title">Service Details</th>
-						<th class="short-number">Quantity</th>
-						<th class="short-number">Unit Price</th>
-						<th class="short-number">Price</th>
+						<th class="number">Qt</th>
+						<th class="number">Unit Price</th>
+						<th class="number">Price</th>
 					</tr>
 				</thead>
 				<tbody>
