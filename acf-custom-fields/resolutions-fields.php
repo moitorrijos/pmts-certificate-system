@@ -9,7 +9,7 @@ if( function_exists('acf_add_local_field_group') ):
 			array(
 				'key' => 'field_60e33c553ad6e',
 				'label' => 'Date of issuance',
-				'name' => 'ref_resolution_issue_date',
+				'name' => 'resolution_issue_date',
 				'type' => 'date_picker',
 				'instructions' => '',
 				'required' => 0,
@@ -26,7 +26,7 @@ if( function_exists('acf_add_local_field_group') ):
 			array(
 				'key' => 'field_60e33c7f3ad6f',
 				'label' => 'Expiry date',
-				'name' => 'ref_resolution_expiry_date',
+				'name' => 'resolution_expiry_date',
 				'type' => 'date_picker',
 				'instructions' => '',
 				'required' => 0,
