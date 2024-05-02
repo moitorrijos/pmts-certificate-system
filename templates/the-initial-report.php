@@ -38,7 +38,7 @@
 				<table class="report-table">
 					<thead>
 						<tr>
-							<th colspan="9">
+							<th colspan="<?php echo ((int)$course_days + 3 + (int)$has_observation_test); ?>">
 								<div class="report-company-logo">
 									<?php get_template_part('templates/logo_image'); ?>
 									<div class="report-company-info">
@@ -73,7 +73,7 @@
 							<th class="middle-title">Name</th>
 							<th class="short-title">Id or Passport</th>
 							<?php for ($i = 1; $i <= $course_days; $i++) : ?>
-								<th class="short-title">Day <?php echo $i; ?></th>	
+								<th class="<?php if ($course_days < 6)  { echo 'short-title'; } else { echo ''; }; ?>">Day <?php echo $i; ?></th>	
 							<?php endfor; ?>
 							<?php if ($has_observation_test) : ?>
 								<th class="short-title">Practical</th>
@@ -168,7 +168,7 @@
 					</tbody>
 					<tfoot>
 						<tr>
-							<td colspan="9">
+							<td colspan="<?php echo ((int)$course_days + 3 + (int)$has_observation_test); ?>">
 								<div class="instructor-signatures">
 									<div class="instructor-signature" style="background: url(<?php echo get_field('instructor_digital_signature', $instructor_initial->ID); ?>) no-repeat; background-size: 240px 120px; background-position: center top; overflow:visible; padding-top: 5px;">
 										<div class="signature-line"></div>
