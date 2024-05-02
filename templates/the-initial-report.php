@@ -31,6 +31,8 @@
 				$start_date = $start_date_ymd ? DateTime::createFromFormat('Ymd', $start_date_ymd)->format('d/m/Y') : '';
 				$end_date = $end_date_ymd ? DateTime::createFromFormat('Ymd', $end_date_ymd)->format('d/m/Y') : '';
 				$end_date_timestamp = strtotime($end_date);
+				$observation_test = get_field('observation_test', $course_initial->ID);
+				$has_observation_test = is_array($observation_test) && !empty($observation_test);
 				?>
 				<div class="initial-report view-section">
 				<table class="report-table">
@@ -70,12 +72,12 @@
 							<th class="short-number">No.</th>
 							<th class="middle-title">Name</th>
 							<th class="short-title">Id or Passport</th>
-							<th class="number">Day 1</th>
-							<th class="number">Day 2</th>
-							<th class="number">Day 3</th>
-							<th class="number">Day 4</th>
-							<th class="number">Day 5</th>
-							<th class="number">Day 6</th>
+							<?php for ($i = 1; $i <= $course_days; $i++) : ?>
+								<th class="short-title">Day <?php echo $i; ?></th>	
+							<?php endfor; ?>
+							<?php if ($has_observation_test) : ?>
+								<th class="middle-title">Practical</th>
+							<?php endif; ?>
 						</tr>
 					</thead>
 					<?php
@@ -137,7 +139,6 @@
 								<td class="centered"><?php echo $participants_id; ?></td>
 								<?php
 									for ($i = 1; $i <= $course_days; $i++) :
-										if ($i > 6) break;
 								?>
 									<td>
 										<img
@@ -150,9 +151,18 @@
 											alt="">
 										</td>
 									<?php endfor; ?>
-									<?php for ($i = $course_days; $i < 6; $i++) : ?>
-										<td></td>
-									<?php endfor; ?>
+									<?php if ($has_observation_test) : ?>
+										<td>
+											<img
+												style="
+													width: <?php echo rand(90, 110); ?>%; 
+													bottom: <?php echo rand(-10, -5);?>px; 
+													left: <?php echo rand(-10, 0); ?>px; 
+													transform: rotate(<?php echo rand(-15, 0);?>deg);" 
+												src="<?php echo $student_digital_signature; ?>" 
+												alt="">
+										</td>
+									<?php endif; ?>
 							</tr>
 						<?php endwhile; ?>
 					</tbody>
