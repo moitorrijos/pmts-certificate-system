@@ -76,7 +76,7 @@
 								<th class="short-title">Day <?php echo $i; ?></th>	
 							<?php endfor; ?>
 							<?php if ($has_observation_test) : ?>
-								<th class="middle-title">Practical</th>
+								<th class="short-title">Practical</th>
 							<?php endif; ?>
 						</tr>
 					</thead>
@@ -146,7 +146,7 @@
 												width: <?php echo rand(90, 110); ?>%; 
 												bottom: <?php echo rand(-10, -5);?>px; 
 												left: <?php echo rand(-10, 0); ?>px; 
-												transform: rotate(<?php echo rand(-15, 0);?>deg);" 
+												transform: rotate(<?php echo rand(-5, 0);?>deg);" 
 											src="<?php echo $student_digital_signature; ?>" 
 											alt="">
 										</td>
@@ -158,7 +158,7 @@
 													width: <?php echo rand(90, 110); ?>%; 
 													bottom: <?php echo rand(-10, -5);?>px; 
 													left: <?php echo rand(-10, 0); ?>px; 
-													transform: rotate(<?php echo rand(-15, 0);?>deg);" 
+												"
 												src="<?php echo $student_digital_signature; ?>" 
 												alt="">
 										</td>
