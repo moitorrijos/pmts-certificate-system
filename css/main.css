@@ -2215,7 +2215,7 @@ table.participant-info, table.referer-info {
 
 table.report-table {
 	width: 100%;
-	max-width: 900px;
+	max-width: 1200px;
 	font-size: 0.9rem;
 	margin: 0 auto;
 }
