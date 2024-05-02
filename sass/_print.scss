@@ -23,7 +23,7 @@
 		box-shadow: none;
 
 		&:has(.initial-report)  {
-			width: 11in;
+			width: 100%;
 			height: 8.5in;
 		}
 	}
@@ -132,8 +132,11 @@
 		}
 	}
 
-	table.report-table tbody tr td {
-		padding: 0.125in 0.1in;
+	table.report-table {
+		max-width: initial;
+		tbody tr td {
+			padding: 0.125in 0.1in;
+		}
 	}
 
 	h3.certify.certify {
