@@ -2215,7 +2215,7 @@ table.participant-info, table.referer-info {
 
 table.report-table {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 1600px;
 	font-size: 0.9rem;
 	margin: 0 auto;
 }
@@ -2831,7 +2831,7 @@ ul.authentic-certificate li small {
 		box-shadow: none;
 	}
 	.main-content:has(.initial-report) {
-		width: 11in;
+		width: 100%;
 		height: 8.5in;
 	}
 	.single-certificates.single-certificates.single-certificates .main-content.main-content.main-content {
@@ -2922,6 +2922,9 @@ ul.authentic-certificate li small {
 	}
 	table tbody tr td.pass-fail {
 		font-size: 11pt;
+	}
+	table.report-table {
+		max-width: initial;
 	}
 	table.report-table tbody tr td {
 		padding: 0.125in 0.1in;
