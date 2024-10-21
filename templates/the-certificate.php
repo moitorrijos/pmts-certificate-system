@@ -420,8 +420,8 @@
 							$ref_resolution_expiry_date = $ref_res['ref_resolution_expiry_date'];
 							
 							if ( 
-								$ref_issue_date_timestamp > $ref_res['resolution_issue_date']
-								&& $ref_issue_date_timestamp <= $ref_res['resolution_expiry_date']
+								$issue_date_timestamp > $ref_res['ref_resolution_issue_date']
+								&& $issue_date_timestamp <= $ref_res['ref_resolution_expiry_date']
 							) {
 								break;
 							}
